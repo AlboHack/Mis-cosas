@@ -1,0 +1,9 @@
+[
+  {"skill": "ensenar-ingenieria", "repo": "mattpocock/skills", "ruta": "skills/productivity/teach/SKILL.md", "licencia": "MIT"},
+  {"skill": "interrogar-planteamiento", "repo": "mattpocock/skills", "ruta": "skills/productivity/grilling/SKILL.md", "licencia": "MIT"},
+  {"skill": "writing-for-agents", "repo": "mattpocock/skills", "ruta": "skills/productivity/writing-for-agents/SKILL.md", "licencia": "MIT"},
+  {"skill": "redaccion-tecnica-informes", "repo": "K-Dense-AI/claude-scientific-skills", "ruta": "skills/scientific-writing/SKILL.md", "licencia": "MIT"},
+  {"skill": "buscar-y-evaluar-skills", "repo": "vercel-labs/skills", "ruta": "skills/find-skills/SKILL.md", "licencia": "MIT"},
+  {"skill": "pdf-ingenieria", "repo": "anthropics/skills", "ruta": "skills/pdf/SKILL.md", "licencia": "propietaria: solo referencia, no se copia"},
+  {"skill": "verificacion-independiente", "repo": "obra/superpowers", "ruta": "skills/verification-before-completion/SKILL.md", "licencia": "MIT"}
+]

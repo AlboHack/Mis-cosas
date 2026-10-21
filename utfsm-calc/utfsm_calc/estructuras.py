@@ -2,6 +2,16 @@
 N > 0 tracción. Unidades consistentes a elección (Tonf, m)."""
 import numpy as np
 def portico(nudos, elems, apoyos, cargas_nudo, resortes={}, extra_dofs=0):
+    """Rigidez directa de un pórtico plano.
+
+    nudos: {nombre: (x, z)}
+    elems: [dict(i, j, E, A, I, q=0, hinge_end=None|'i'|'j', kappa0=0)]; q local, + hacia +w local;
+           kappa0 > 0 si la fibra inferior se alarga (gradiente térmico).
+    apoyos: {nudo: [gdl restringidos]} con 0 = u, 1 = w, 2 = theta. Ej.: {'A': [0, 1, 2]}.
+    cargas_nudo: {nudo: (Fx, Fz, M)}.  resortes: {(nudo, gdl): k}.
+    extra_dofs: número de extremos con rótula (comparar_portico lo calcula solo).
+    Devuelve (U, R): U[n] = (u, w, theta), R[n] = (Rx, Rz, M); giro y momento antihorario +.
+    """
     # nudos: {n:(x,z)}; elems: lista de dict(i,j,E,A,I,q=0,hinge_end=None,kappa0=0)
     names=list(nudos); idx={n:3*k for k,n in enumerate(names)}
     nd=3*len(names)+extra_dofs; K=np.zeros((nd,nd)); F=np.zeros(nd); extra=3*len(names)
