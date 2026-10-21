@@ -15,3 +15,7 @@
 | 2026-10-21 | verification-before-completion (superpowers) no se adopta | verificacion-independiente ya la cubre con contenido de ingeniería | Solo registrada en fuentes para comparar |
 | 2026-10-21 | pdf de Anthropic solo como referencia | Licencia propietaria: no se copia a un repo público | — |
 
+| 2026-10-21 | Nueva skill consejo-tecnico, adaptada de council (tsenart, MIT) con ideas de Council (Miessler, MIT) y llm-council (karpathy) | Evaluar una decisión desde varias lentes técnicas con desacuerdo real, no una lista de pros y contras | Caso 03 |
+| 2026-10-21 | consejo-tecnico solo a pedido, tres voces por defecto | Un consejo multiplica el texto de la respuesta; en cada tarea choca con la regla 8 | Description "Usar solo cuando" |
+| 2026-10-21 | Council de Miessler no se copia | Obliga a un curl a localhost y a escribir un log en cada uso | Leído en el commit 5e2f2e8 |
+| 2026-10-21 | Voces como roles técnicos, no personajes (tsenart usa Feynman, Sun Tzu) | El rol fija qué evidencia exige cada voz; el personaje solo cambia el tono | — |

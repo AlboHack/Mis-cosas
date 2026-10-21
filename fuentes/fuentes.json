@@ -5,5 +5,7 @@
   {"skill": "redaccion-tecnica-informes", "repo": "K-Dense-AI/claude-scientific-skills", "ruta": "skills/scientific-writing/SKILL.md", "licencia": "MIT"},
   {"skill": "buscar-y-evaluar-skills", "repo": "vercel-labs/skills", "ruta": "skills/find-skills/SKILL.md", "licencia": "MIT"},
   {"skill": "pdf-ingenieria", "repo": "anthropics/skills", "ruta": "skills/pdf/SKILL.md", "licencia": "propietaria: solo referencia, no se copia"},
-  {"skill": "verificacion-independiente", "repo": "obra/superpowers", "ruta": "skills/verification-before-completion/SKILL.md", "licencia": "MIT"}
+  {"skill": "verificacion-independiente", "repo": "obra/superpowers", "ruta": "skills/verification-before-completion/SKILL.md", "licencia": "MIT"},
+  {"skill": "consejo-tecnico", "repo": "tsenart/council-skill", "ruta": "skills/council/references/protocol.md", "licencia": "MIT"},
+  {"skill": "consejo-tecnico", "repo": "danielmiessler/Personal_AI_Infrastructure", "ruta": "LifeOS/install/skills/Council/SKILL.md", "licencia": "MIT"}
 ]
