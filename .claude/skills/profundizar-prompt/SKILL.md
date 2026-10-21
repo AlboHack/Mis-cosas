@@ -1,16 +1,14 @@
 ---
 name: "profundizar-prompt"
-description: "Usar al iniciar cualquier tarea nueva y sustantiva de Nicolás (informe, cálculo, análisis, script, estudio para certamen) para profundizar el encargo antes de ejecutarlo; también cuando pida mejorar o reescribir un prompt o quiera una versión más profunda de una tarea."
+description: "Usar solo cuando Nicolás pida profundizar, mejorar o reescribir un prompt, o una versión más profunda de una tarea. El bloque breve de inicio de tarea lo cubre la regla 4 de las instrucciones."
 ---
 
 # Profundizar un encargo
 
 El objetivo es una versión más profunda de la tarea, no una más larga. No se agregan entregables ni secciones: se cambia el estándar con que se hace y se juzga lo que ya se pidió.
 
-## Dos modos
-- **Modo automático** (la skill se activa sola al iniciar una tarea nueva): hacer el análisis de las cuatro preguntas en forma breve, mostrarlo en un bloque corto al inicio ("Cómo lo voy a abordar") y ejecutar la tarea con ese estándar. No reescribir el prompt ni esperar aprobación, salvo que la tarea sea cara de rehacer y el análisis cambie su alcance; en ese caso, preguntar una sola vez.
-- **Modo explícito** (Nicolás pide profundizar o reescribir un prompt): hacer el análisis completo y entregar el prompt reescrito, sin ejecutar la tarea hasta que lo pida.
-- No activar en preguntas rápidas, correcciones puntuales, cambios de formato o continuaciones de una tarea ya profundizada.
+## Alcance
+Entregar el análisis completo y el prompt reescrito, sin ejecutar la tarea hasta que Nicolás lo pida. En tareas normales no se carga esta skill: la regla 4 de las instrucciones pide la versión breve de las cuatro preguntas.
 
 ## Las cuatro preguntas
 Responder cada una con ejemplos concretos del área del encargo (ingeniería estructural, fluidos, transporte, construcción y FICA, LaTeX, Python):
@@ -22,7 +20,7 @@ Responder cada una con ejemplos concretos del área del encargo (ingeniería est
 
 Si alguna respuesta es genérica ("revisar bien", "usar buenas prácticas"), reemplazarla por una acción comprobable.
 
-## Reescritura del prompt (modo explícito)
+## Reescritura del prompt
 Redactar el prompt nuevo para pedir exactamente lo identificado:
 - mantener el mismo alcance y los mismos entregables del original;
 - pedir partir del material crudo del punto 2;
@@ -32,5 +30,5 @@ Redactar el prompt nuevo para pedir exactamente lo identificado:
 
 Entregar: las cuatro respuestas, el prompt reescrito en un bloque listo para copiar y una línea sobre qué cambió respecto del original.
 
-## Al cerrar la tarea (ambos modos)
+## Al cerrar la tarea
 Verificar el resultado contra el juez externo del punto 4 y decir en una línea si lo cumplió.
