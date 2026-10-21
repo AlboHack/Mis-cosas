@@ -1,0 +1,21 @@
+name: skills-zip
+# Empaqueta cada skill en un .zip y lo publica en la release "skills" para subirlo a claude.ai desde la tablet.
+on:
+  push:
+    branches: [main]
+    paths: [".claude/skills/**", ".github/workflows/skills-zip.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: scripts/empaquetar_skills.sh dist
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete skills -y --cleanup-tag || true
+          gh release create skills dist/*.zip --target "$GITHUB_SHA" --title "Skills (última versión)" \
+            --notes "Commit $GITHUB_SHA. Subir el .zip de la skill cambiada en claude.ai > Configuración > Capacidades > Skills."

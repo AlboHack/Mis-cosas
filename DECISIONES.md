@@ -19,3 +19,5 @@
 | 2026-10-21 | consejo-tecnico solo a pedido, tres voces por defecto | Un consejo multiplica el texto de la respuesta; en cada tarea choca con la regla 8 | Description "Usar solo cuando" |
 | 2026-10-21 | Council de Miessler no se copia | Obliga a un curl a localhost y a escribir un log en cada uso | Leído en el commit 5e2f2e8 |
 | 2026-10-21 | Voces como roles técnicos, no personajes (tsenart usa Feynman, Sun Tzu) | El rol fija qué evidencia exige cada voz; el personaje solo cambia el tono | — |
+| 2026-10-21 | Skills como .zip en una release y contexto por la integración de GitHub del proyecto | Nicolás trabaja desde la tablet: descargar y subir un zip reemplaza copiar SKILL.md a mano | Script probado: 14 zip con la carpeta en la raíz |
+| 2026-10-21 | Vigía semanal de skills como tarea programada que entrega pull requests | Traer mejoras de fuentes y skills nuevas sin que Nicolás tenga que pedirlo, con revisión antes de main | Tarea creada el 2026-10-21 |
