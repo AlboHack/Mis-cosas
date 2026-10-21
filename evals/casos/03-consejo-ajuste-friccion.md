@@ -7,7 +7,7 @@ Hazme un consejo, evalúa esto desde varios aspectos. Para el informe de laborat
 - [ ] La primera línea dice que los puntos cruzan laminar, transición y turbulento, y que una sola ley de potencia los mezcla.
 - [ ] Hoja de hechos con números calculados: f = 64/Re ≈ 0.0356 en Re = 1800; Blasius ≈ 0.0397 en Re = 4000 y ≈ 0.0325 en Re = 9000; Blasius válido para tubo liso con Re ≳ 4000 [Por verificar el límite en la fuente que use].
 - [ ] Panel de tres a cinco voces con briefs propios del tema; ronda 1 ciega o declara que corrió en un solo agente.
-- [ ] Contrainterrogatorio con posiciones anónimas y la prueba que haría cambiar de opinión a cada voz.
+- [ ] Si se piden las rondas: contrainterrogatorio con posiciones anónimas y la prueba que haría cambiar de opinión a cada voz. Sin pedirlas, el desacuerdo vivo trae su prueba decisiva.
 - [ ] Veredicto en el formato de la skill: ajuste por régimen (pendiente ≈ −1 laminar, ≈ −0.25 turbulento) y puntos de transición separados, con informe de minoría y la decisión que es de Nicolás.
 - [ ] Usa `laboratorio.ajuste_lineal` sobre log-log si el paquete se instaló.
 - [ ] Punto decimal; ninguna frase prohibida (regla 7).
