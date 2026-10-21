@@ -18,5 +18,6 @@ def friccion(Re, rel_rug):
     if Re < 2300:
         return 64 / Re
     if Re < 4000:
-        print(f"Aviso: Re = {Re:.0f} en transición; f de Colebrook no es confiable.")
+        raise ValueError(f"Re = {Re:.0f} en transición: no hay f único. Cotas: laminar "
+                         f"{64 / Re:.4f}, Colebrook {colebrook(Re, rel_rug):.4f}. Elegir y justificar.")
     return colebrook(Re, rel_rug)

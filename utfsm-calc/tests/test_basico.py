@@ -33,6 +33,8 @@ def test_fluidos():
     assert colebrook(1e5, 1e-4) == pytest.approx(0.018514, rel=1e-4)
     assert swamee_jain(1e5, 1e-4) == pytest.approx(colebrook(1e5, 1e-4), rel=0.02)
     assert friccion(1000, 0.001) == pytest.approx(0.064)
+    with pytest.raises(ValueError):
+        friccion(2490, 0.001)
 
 def test_cpm_vpi():
     t, ruta, T = cpm({'A': (3, []), 'B': (2, ['A']), 'C': (4, ['A']), 'D': (1, ['B', 'C'])})
