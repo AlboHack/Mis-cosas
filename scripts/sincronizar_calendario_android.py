@@ -1,4 +1,4 @@
-import subprocess, json, re, os
+import subprocess, json, re, os, sys
 from datetime import datetime, timezone, timedelta
 
 TZ = timezone(timedelta(hours=-3))
@@ -67,7 +67,7 @@ eventos = [
         "start": (2026, 11, 20, 14, 0),
         "end": (2026, 11, 20, 16, 30),
         "loc": "Campus San Joaquin",
-        "desc": "Tercer certamen de Mecanica de Fluidos: Unidades 5 y 6 (Navier-Stokes y Leyes de conservacion)."
+        "desc": "Tercer certamen de Mecanica de Fluidos - Unidades 5 y 6 (Navier-Stokes y Leyes de conservacion)."
     },
     {
         "ramo": "FICA",
@@ -105,38 +105,57 @@ eventos = [
 
 def adb_shell(cmd):
     p = subprocess.run(["adb", "shell", cmd], capture_output=True, text=True)
-    return p.stdout.strip(), p.returncode
+    out = p.stdout.strip()
+    if p.returncode != 0 or "[ERROR]" in out or "usage:" in out.lower():
+        return out, 1
+    return out, 0
 
 def get_google_calendar_id():
-    out, code = adb_shell("content query --uri content://com.android.calendar/calendars --projection _id:ownerAccount")
-    if code != 0:
-        return 7
+    out, code = adb_shell(f"content query --uri content://com.android.calendar/calendars --projection _id:ownerAccount --where \"deleted=0 AND ownerAccount='{ACCOUNT}'\"")
+    if code != 0 or not out:
+        print(f"ERROR CRITICO: No se pudo consultar la cuenta {ACCOUNT} en com.android.calendar (código {code}).", file=sys.stderr)
+        return None
     for row in out.splitlines():
         if ACCOUNT in row:
             m = re.search(r'_id=(\d+)', row)
             if m:
                 return int(m.group(1))
-    return 7
+    print(f"ERROR CRITICO: Cuenta {ACCOUNT} no encontrada en los calendarios activos de Android.", file=sys.stderr)
+    return None
 
 def sync_android_calendar():
     cal_id = get_google_calendar_id()
+    if cal_id is None:
+        return 1
+        
     print(f"=== SINCRONIZANDO CON ANDROID GOOGLE CALENDAR (ID {cal_id}: {ACCOUNT}) ===", flush=True)
     
-    out_ev, code = adb_shell(f"content query --uri content://com.android.calendar/events --projection _id:title:dtstart:dtend --where \"calendar_id={cal_id}\"")
+    # Consultar eventos activos (deleted=0)
+    out_ev, code = adb_shell(f"content query --uri content://com.android.calendar/events --projection _id:title:dtstart:dtend:eventLocation:description --where \"calendar_id={cal_id} AND deleted=0\"")
+    if code != 0:
+        print("ERROR: Fallo al consultar eventos de calendario.", file=sys.stderr)
+        return 1
+        
     existentes = {}
-    if code == 0:
-        for row in out_ev.splitlines():
-            m_id = re.search(r'_id=(\d+)', row)
-            m_ti = re.search(r'title=([^,]+)', row)
-            m_st = re.search(r'dtstart=(\d+)', row)
-            if m_id and m_ti and m_st:
-                existentes[m_ti.group(1).strip()] = {
-                    "id": m_id.group(1),
-                    "dtstart": int(m_st.group(1))
-                }
-                
+    for row in out_ev.splitlines():
+        m_id = re.search(r'_id=(\d+)', row)
+        m_ti = re.search(r'title=(.*?)(?:,\s*dtstart=)', row)
+        m_st = re.search(r'dtstart=(\d+)', row)
+        m_en = re.search(r'dtend=(\d+)', row)
+        m_loc = re.search(r'eventLocation=(.*?)(?:,\s*description=)', row)
+        m_desc = re.search(r'description=(.*)$', row)
+        if m_id and m_ti and m_st:
+            existentes[m_ti.group(1).strip()] = {
+                "id": m_id.group(1),
+                "dtstart": int(m_st.group(1)),
+                "dtend": int(m_en.group(1)) if m_en else 0,
+                "loc": m_loc.group(1).strip() if m_loc else "",
+                "desc": m_desc.group(1).strip() if m_desc else ""
+            }
+            
     actualizados = 0
     insertados = 0
+    errores = 0
     
     for ev in eventos:
         y, m, d, H, M = ev["start"]
@@ -144,30 +163,55 @@ def sync_android_calendar():
         dt_start = int(datetime(y, m, d, H, M, tzinfo=TZ).timestamp() * 1000)
         dt_end = int(datetime(ey, em, ed, eH, eM, tzinfo=TZ).timestamp() * 1000)
         titulo = ev["titulo"]
+        loc = ev["loc"]
+        desc = ev["desc"]
         
         if titulo in existentes:
-            ev_id = existentes[titulo]["id"]
-            ev_start = existentes[titulo]["dtstart"]
-            if ev_start != dt_start:
-                adb_shell(f"content update --uri content://com.android.calendar/events --bind dtstart:l:{dt_start} --bind dtend:l:{dt_end} --where \"_id={ev_id}\"")
-                print(f" [ACTUALIZADO POR CORRECCION DE FECHA] {titulo} (ID {ev_id})", flush=True)
-                actualizados += 1
-            else:
-                pass
+            cur = existentes[titulo]
+            ev_id = cur["id"]
+            
+            # Comparar dtstart, dtend, loc y desc
+            needs_update = (
+                cur["dtstart"] != dt_start or
+                cur["dtend"] != dt_end or
+                cur["loc"] != loc or
+                cur["desc"] != desc
+            )
+            
+            if needs_update:
+                update_cmd = (
+                    f"content update --uri content://com.android.calendar/events "
+                    f"--bind dtstart:l:{dt_start} "
+                    f"--bind dtend:l:{dt_end} "
+                    f"--bind eventLocation:s:\"{loc}\" "
+                    f"--bind description:s:\"{desc}\" "
+                    f"--where \"_id={ev_id}\""
+                )
+                _, u_code = adb_shell(update_cmd)
+                if u_code == 0:
+                    print(f" [ACTUALIZADO COMPLETO] {titulo} (ID {ev_id}): inicio, fin y sala alineados.", flush=True)
+                    actualizados += 1
+                else:
+                    print(f" [ERROR AL ACTUALIZAR] {titulo} (código {u_code})", file=sys.stderr)
+                    errores += 1
         else:
             insert_cmd = (
                 f"content insert --uri content://com.android.calendar/events "
                 f"--bind calendar_id:i:{cal_id} "
                 f"--bind title:s:\"{titulo}\" "
-                f"--bind description:s:\"{ev['desc']}\" "
-                f"--bind eventLocation:s:\"{ev['loc']}\" "
+                f"--bind description:s:\"{desc}\" "
+                f"--bind eventLocation:s:\"{loc}\" "
                 f"--bind dtstart:l:{dt_start} "
                 f"--bind dtend:l:{dt_end} "
                 f"--bind eventTimezone:s:\"America/Santiago\" "
                 f"--bind hasAlarm:i:1"
             )
-            adb_shell(insert_cmd)
-            
+            _, i_code = adb_shell(insert_cmd)
+            if i_code != 0:
+                print(f" [ERROR AL INSERTAR] {titulo} (código {i_code})", file=sys.stderr)
+                errores += 1
+                continue
+                
             q_out, _ = adb_shell(f"content query --uri content://com.android.calendar/events --projection _id --where \"calendar_id={cal_id} AND title='{titulo}' AND dtstart={dt_start}\"")
             m_new = re.search(r'_id=(\d+)', q_out)
             if m_new:
@@ -178,7 +222,8 @@ def sync_android_calendar():
                 print(f" [INSERTADO] {titulo} (ID {new_id}) con 3 alarmas (7d, 3d, 1d)", flush=True)
                 insertados += 1
 
-    print(f"Sincronizacion de calendario finalizada: {insertados} insertados, {actualizados} actualizados.", flush=True)
+    print(f"Sincronizacion de calendario finalizada: {insertados} insertados, {actualizados} actualizados, {errores} errores.", flush=True)
+    return 0 if errores == 0 else 1
 
 if __name__ == "__main__":
-    sync_android_calendar()
+    sys.exit(sync_android_calendar())

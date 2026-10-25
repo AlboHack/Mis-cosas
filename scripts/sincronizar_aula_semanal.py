@@ -185,7 +185,9 @@ def run_sync():
                         f_data = urllib.request.urlopen(req_dl, timeout=30).read()
                         valido, mot = is_valid_document(f_data, fname)
                         if not valido:
-                            log(f"  [DESCARTADO NO VÁLIDO] {fname}: {mot}")
+                            err_v = f"Documento inválido en {dl_url} ({fname}): {mot}"
+                            log(f"  [ERROR VALIDACIÓN] {err_v}")
+                            errores.append(err_v)
                             continue
                             
                         sha_curr = hashlib.sha256(f_data).hexdigest()
@@ -256,7 +258,9 @@ def run_sync():
                 data = resp.read()
                 valido, mot = is_valid_document(data, fname)
                 if not valido:
-                    log(f"  [DESCARTADO NO VÁLIDO] {fname}: {mot}")
+                    err_v = f"Documento inválido en {rurl} ({fname}): {mot}"
+                    log(f"  [ERROR VALIDACIÓN] {err_v}")
+                    errores.append(err_v)
                     continue
                     
                 sha_curr = hashlib.sha256(data).hexdigest()
@@ -307,11 +311,22 @@ def run_sync():
             log("Subiendo paquete delta vía rclone a Google Drive...")
             rc_p = subprocess.run(["rclone", "copy", zip_delta, "gdrive:Universidad/Deltas/"], capture_output=True, text=True)
             if rc_p.returncode == 0:
-                log("¡Paquete delta subido y verificado exitosamente con rclone!")
+                zip_base = os.path.basename(zip_delta)
+                chk = subprocess.run(["rclone", "lsjson", f"gdrive:Universidad/Deltas/{zip_base}"], capture_output=True, text=True)
+                if chk.returncode == 0 and zip_base in chk.stdout:
+                    log("¡Paquete delta subido y verificado exitosamente con rclone lsjson!")
+                else:
+                    err_rc = f"Fallo al verificar con rclone lsjson ({chk.returncode}): {chk.stderr.strip()}"
+                    log(f"  [ERROR] {err_rc}")
+                    errores.append(err_rc)
             else:
-                log(f"Advertencia rclone ({rc_p.returncode}): {rc_p.stderr.strip()}")
+                err_rc = f"Fallo rclone copy ({rc_p.returncode}): {rc_p.stderr.strip()}"
+                log(f"  [ERROR] {err_rc}")
+                errores.append(err_rc)
         else:
-            log(f"Paquete delta guardado localmente en: {zip_delta}")
+            err_rc = "rclone no está instalado o no disponible en PATH para subida a Google Drive."
+            log(f"  [ERROR] {err_rc}")
+            errores.append(err_rc)
     else:
         log("INCREMENTAL: Sin archivos nuevos en Aula USM esta semana. No se genera ZIP ni subida a Drive.")
         
@@ -358,8 +373,13 @@ def run_sync():
     # 5. Sincronización de calendario nativo
     try:
         from sincronizar_calendario_android import sync_android_calendar
-        sync_android_calendar()
-        log("Calendario nativo verificado y al día.")
+        res_cal = sync_android_calendar()
+        if res_cal != 0:
+            err_c = f"Sincronización de calendario reportó errores (código {res_cal})."
+            log(f"  [ERROR] {err_c}")
+            errores.append(err_c)
+        else:
+            log("Calendario nativo verificado y al día.")
     except Exception as ce:
         err_c = f"Excepción en sincronización de calendario: {ce}"
         log(f"  [ERROR] {err_c}")
