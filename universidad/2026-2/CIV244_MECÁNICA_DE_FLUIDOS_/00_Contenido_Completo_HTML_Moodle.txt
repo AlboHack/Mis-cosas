@@ -1,0 +1,2252 @@
+======================================================================
+AULA USM - CONTENIDO COMPLETO EXTRAÍDO DE LOS HTML: Fluidos
+ID: 62182 | URL: https://aula.usm.cl/course/view.php?id=62182
+======================================================================
+
+--- TEXTO DEL CURSO PRINCIPAL ---
+Curso: (202602)(CIV244) MECÁNICA DE FLUIDOS|Paralelos:200 | AULA USM
+Tamaño de fuente
+A-
+A
+A+
+Color del sitio
+R
+A
+A
+A
+Salta al contenido principal
+Panel lateral
+Página Principal
+Área personal
+Mis cursos
+Más
+Buscar por todo el sitio
+Buscar
+Cerrar
+Realizar búsqueda
+Selector de búsqueda de entrada
+40
+Notificaciones
+No tienes notificaciones
+Ver todo
+12
+Hay 12 conversaciones sin leer
+Guías de Brickfield
+Sistema detectado
+Unknown
+Default browser
+¿Cómo puedo...?
+Activar el modo lector
+Léeme la página
+Cambiar el tamaño del texto
+Cambiar el estilo del texto
+Cambiar la familia de fuentes
+Cambiar el color del texto
+Cambiar el color de fondo
+Cambiar el espaciado del texto
+Activar el modo oscuro
+Traducir la página
+Crear accesibilidad
+Documentos
+Presentaciones
+Formatos de documentos alternativos
+Accesibilidad
+Perfil
+Calificaciones
+Calendario
+Archivos privados
+Informes
+Preferencias
+Idioma
+Cerrar sesión
+Selector de idioma
+English ‎(en)‎
+Español - Internacional ‎(es)‎
+Curso
+Participantes
+Calificaciones
+Competencias
+Más
+AULA USM
+Página Principal
+Área personal
+Mis cursos
+Expandir todo
+Colapsar todo
+(202602)(CIV244) MECÁNICA DE FLUIDOS|Paralelos:200
+Bloques de contenido principales
+Abrir índice del curso
+Perfilado de sección
+Información General
+Ayudantías
+Unidad 1
+Unidad 2
+Unidad 3
+Unidad 4
+Unidad 5
+Unidad 6
+Seleccionar actividad Etiqueta
+Hecho
+Seleccionar actividad Etiqueta
+Marcar como hecha
+Seleccionar actividad Nombre de la asignatura:&nbsp;Mecánica
+de Fluidos...
+Marcar como hecha
+Nombre de la asignatura:  Mecánica
+de Fluidos
+SIGLA:  CIV244
+Departamento que lo imparte:  Obras
+Civiles
+Semestre que se dicta:  Par
+Dedicación de tiempo (SCT):   203 horas cronológicas
+Seleccionar actividad Descripción de la asignatura:&nbsp;El estudiante d...
+Marcar como hecha
+Descripción de la asignatura:  El estudiante desarrolla los fundamentos teóricos que le permiten modelar el comportamiento, tanto cinemático como dinámico, de los fluidos, principalmente aquellos considerados incompresibles. Con ello, el estudiante analiza, formula y resuelve problemas propios de la mecánica de fluidos, que finalmente describe conceptualmente, desde una perspectiva de tipo científica con desarrollos fenomenológicos rigurosos, que vincula con la comprensión de la física de los procesos hidrodinámicos para entender los alcances y limitaciones que tienen las aproximaciones habitualmente usadas en la Ingeniería Civil. El estudiante adquiere el fundamento para las asignaturas posteriores de la carrera en las áreas de la Ingeniería Hidráulica, Medio Ambiental y Marítima.
+Seleccionar actividad Noticias y avisos
+Noticias y avisos Foro
+Seleccionar actividad Programa de Estudio (descargar aquí)
+Programa de Estudio (descargar aquí) Archivo
+Marcar como hecha
+Seleccionar actividad Planificación de la Asignatura
+Planificación de la Asignatura Carpeta
+Marcar como hecha
+Seleccionar actividad Programa 2026-25
+Programa 2026-25 Archivo
+Seleccionar actividad Material de clases
+Material de clases Carpeta
+Seleccionar actividad Apuntes USM
+Apuntes USM Carpeta
+Seleccionar actividad Certámenes anteriores
+Certámenes anteriores Carpeta
+Seleccionar actividad Entrega apuntes C1
+Entrega apuntes C1 Tarea
+Seleccionar actividad Certámenes
+Certámenes Carpeta
+Contáctanos
+Síganos
+Contactar con el soporte del sitio
+Usted se ha identificado como NICOLAS EDUARDO ALBORNOZ PAVEZ ( Cerrar sesión )
+Resumen de retención de datos
+Opinar sobre este software
+Descargar la app para dispositivos móviles
+Cambiar al tema estándar
+Descargar la app para dispositivos móviles
+Desarrollado por Moodle
+Este tema fue desarrollado por
+Mensajería
+Contactos
+Mensajes seleccionados:
+1
+×
+Buscar personas y mensajes
+Contactos
+0
+Hay 0 solicitudes de contacto pendientes
+Buscar personas y mensajes
+Configuración
+Contactos
+Peticiones
+0
+Hay 0 solicitudes de contacto pendientes
+No hay contactos
+No hay solicitudes de contacto
+Solicitud de contacto enviada
+Espacio personal
+Guardar borradores de mensajes, notas, etc, para acceder a ellos más tarde.
+Borrar para mí y para todos los demás
+Bloque
+Desbloquear
+Quitar
+Añadir
+Borrar
+Borrar
+Enviar solicitud de contacto
+Aceptar y añadir a los contactos
+Rechazar
+OK
+Cancelar
+Destacados
+( )
+conversaciones en total
+Hay conversaciones sin leer
+Sin conversaciones destacadas
+Grupo
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciónes de grupo
+Privado
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciones privadas
+Contactos
+No contactos
+Cargar más
+Mensajes
+Cargar más
+No hay resultados
+Buscar personas y mensajes
+Privacidad
+Puede restringir quién puede enviarle mensajes
+Aceptar mensajes desde:
+Únicamente mis contactos
+Mis contactos y cualquier persona de mis cursos
+Preferencias de notificación
+General
+Usar "intro" para enviar
+Eliminar mensajes seleccionados
+Enviar solicitud de contacto
+Ha bloqueado a este usuario.
+Desbloquear usuario
+No puede enviar mensajes a este usuario
+Ver todo
+
+--- TEXTO DE TODAS LAS ACTIVIDADES Y MÓDULOS ---
+
+=== ACTIVIDAD: [FORUM] Noticias y avisos  Foro (ID: 8047497) ===
+URL: https://aula.usm.cl/mod/forum/view.php?id=8047497
+Noticias y avisos | AULA USM
+Tamaño de fuente
+A-
+A
+A+
+Color del sitio
+R
+A
+A
+A
+Salta al contenido principal
+Panel lateral
+Página Principal
+Área personal
+Mis cursos
+Más
+Buscar por todo el sitio
+Buscar
+Cerrar
+Realizar búsqueda
+Selector de búsqueda de entrada
+40
+Notificaciones
+No tienes notificaciones
+Ver todo
+12
+Hay 12 conversaciones sin leer
+Guías de Brickfield
+Sistema detectado
+Unknown
+Default browser
+¿Cómo puedo...?
+Activar el modo lector
+Léeme la página
+Cambiar el tamaño del texto
+Cambiar el estilo del texto
+Cambiar la familia de fuentes
+Cambiar el color del texto
+Cambiar el color de fondo
+Cambiar el espaciado del texto
+Activar el modo oscuro
+Traducir la página
+Crear accesibilidad
+Documentos
+Presentaciones
+Formatos de documentos alternativos
+Accesibilidad
+Perfil
+Calificaciones
+Calendario
+Archivos privados
+Informes
+Preferencias
+Idioma
+Cerrar sesión
+Selector de idioma
+English ‎(en)‎
+Español - Internacional ‎(es)‎
+AULA USM
+Página Principal
+Área personal
+Mis cursos
+Expandir todo
+Colapsar todo
+Noticias y avisos
+(202602)(CIV244) MECÁNICA DE FLUIDOS|Paralelos:200
+Información General
+Noticias y avisos
+Abrir índice del curso
+Requisitos de finalización
+Avisos y novedades generales
+Buscar en los foros
+Buscar en los foros
+Mostrando 23 de 23 discusiones
+Estado
+Debate
+Comenzado por
+Último mensaje
+Réplicas
+Acciones
+Instrucciones C2
+Bloqueado
+FRANCISCO JOSE SOTO SIMPSON
+23 oct 2026
+FRANCISCO JOSE SOTO SIMPSON
+23 oct 2026
+0
+Marcar como favorita esta discusión
+Laboratorio 2 recuperativo
+Bloqueado
+RICARDO ALFONSO QUINTEROS OBREGON
+20 oct 2026
+RICARDO ALFONSO QUINTEROS OBREGON
+20 oct 2026
+0
+Marcar como favorita esta discusión
+Ayudantía pre-certamen
+Bloqueado
+LUCIANA SOFIA TIRAFERRI COLOMBO
+20 oct 2026
+LUCIANA SOFIA TIRAFERRI COLOMBO
+20 oct 2026
+0
+Marcar como favorita esta discusión
+Laboratorio 2 pendiente
+Bloqueado
+RICARDO ALFONSO QUINTEROS OBREGON
+19 oct 2026
+RICARDO ALFONSO QUINTEROS OBREGON
+19 oct 2026
+0
+Marcar como favorita esta discusión
+Mña no hay clases
+Bloqueado
+FRANCISCO JOSE SOTO SIMPSON
+19 oct 2026
+FRANCISCO JOSE SOTO SIMPSON
+19 oct 2026
+0
+Marcar como favorita esta discusión
+Inscripciones: Laboratorio 2
+Bloqueado
+RICARDO ALFONSO QUINTEROS OBREGON
+7 oct 2026
+RICARDO ALFONSO QUINTEROS OBREGON
+7 oct 2026
+0
+Marcar como favorita esta discusión
+Notas C1
+Bloqueado
+FRANCISCO JOSE SOTO SIMPSON
+6 oct 2026
+FRANCISCO JOSE SOTO SIMPSON
+6 oct 2026
+0
+Marcar como favorita esta discusión
+Ayudantía Miércoles 7
+Bloqueado
+LUCIANA SOFIA TIRAFERRI COLOMBO
+6 oct 2026
+LUCIANA SOFIA TIRAFERRI COLOMBO
+6 oct 2026
+0
+Marcar como favorita esta discusión
+Inicio clase hoy
+Bloqueado
+FRANCISCO JOSE SOTO SIMPSON
+2 oct 2026
+FRANCISCO JOSE SOTO SIMPSON
+2 oct 2026
+0
+Marcar como favorita esta discusión
+Entrega parcial desafío semestral
+Bloqueado
+FRANCISCO JOSE SOTO SIMPSON
+30 sept 2026
+FRANCISCO JOSE SOTO SIMPSON
+30 sept 2026
+0
+Marcar como favorita esta discusión
+Mña hay clases
+Bloqueado
+FRANCISCO JOSE SOTO SIMPSON
+28 sept 2026
+FRANCISCO JOSE SOTO SIMPSON
+28 sept 2026
+0
+Marcar como favorita esta discusión
+Instrucciones C1
+Bloqueado
+FRANCISCO JOSE SOTO SIMPSON
+25 sept 2026
+FRANCISCO JOSE SOTO SIMPSON
+25 sept 2026
+0
+Marcar como favorita esta discusión
+Apoyo C1
+Bloqueado
+FRANCISCO JOSE SOTO SIMPSON
+21 sept 2026
+FRANCISCO JOSE SOTO SIMPSON
+21 sept 2026
+0
+Marcar como favorita esta discusión
+Suspensión Clases día viernes
+Bloqueado
+KATHALINA ANTONIA PINO GONZALEZ
+10 sept 2026
+KATHALINA ANTONIA PINO GONZALEZ
+10 sept 2026
+0
+Marcar como favorita esta discusión
+Suspensión de clase
+Bloqueado
+KATHALINA ANTONIA PINO GONZALEZ
+7 sept 2026
+KATHALINA ANTONIA PINO GONZALEZ
+7 sept 2026
+0
+Marcar como favorita esta discusión
+Laboratorio de Hidrostática
+Bloqueado
+RICARDO ALFONSO QUINTEROS OBREGON
+3 sept 2026
+RICARDO ALFONSO QUINTEROS OBREGON
+3 sept 2026
+0
+Marcar como favorita esta discusión
+Ayudantía 2
+Bloqueado
+LUCIANA SOFIA TIRAFERRI COLOMBO
+25 ago 2026
+LUCIANA SOFIA TIRAFERRI COLOMBO
+25 ago 2026
+0
+Marcar como favorita esta discusión
+Sala y horario ayudantías
+Bloqueado
+LUCIANA SOFIA TIRAFERRI COLOMBO
+19 ago 2026
+LUCIANA SOFIA TIRAFERRI COLOMBO
+19 ago 2026
+0
+Marcar como favorita esta discusión
+Cápsula Ayudantía 1
+Bloqueado
+KATHALINA ANTONIA PINO GONZALEZ
+19 ago 2026
+KATHALINA ANTONIA PINO GONZALEZ
+19 ago 2026
+0
+Marcar como favorita esta discusión
+Información de ayudantía de hoy
+Bloqueado
+KATHALINA ANTONIA PINO GONZALEZ
+18 ago 2026
+KATHALINA ANTONIA PINO GONZALEZ
+18 ago 2026
+0
+Marcar como favorita esta discusión
+Horario ayudantía
+Bloqueado
+LUCIANA SOFIA TIRAFERRI COLOMBO
+12 ago 2026
+LUCIANA SOFIA TIRAFERRI COLOMBO
+12 ago 2026
+0
+Marcar como favorita esta discusión
+Ayudantías Mecánica de Fluidos – Encuesta de disponibilidad
+Bloqueado
+KATHALINA ANTONIA PINO GONZALEZ
+11 ago 2026
+KATHALINA ANTONIA PINO GONZALEZ
+11 ago 2026
+0
+Marcar como favorita esta discusión
+Inicio clases CIV244
+Bloqueado
+FRANCISCO JOSE SOTO SIMPSON
+3 ago 2026
+FRANCISCO JOSE SOTO SIMPSON
+3 ago 2026
+0
+Marcar como favorita esta discusión
+Ir a...
+Ir a...
+Programa de Estudio (descargar aquí)
+Planificación de la Asignatura
+Programa 2026-25
+Material de clases
+Apuntes USM
+Certámenes anteriores
+Entrega apuntes C1
+Certámenes
+Cápsula Ayudantía 1
+Ayudantía 1
+Ayudantía 2
+Ayudantía 3
+Ayudantía 4
+Ayudantía Extra
+Cápsula Ayudantía Extra
+Ayudantía 5
+Ayudantía 6
+Ayudantía 7
+Ayudantía 8
+Siguiente actividad
+Programa de Estudio (descargar aquí)
+Contáctanos
+Síganos
+Contactar con el soporte del sitio
+Usted se ha identificado como NICOLAS EDUARDO ALBORNOZ PAVEZ ( Cerrar sesión )
+Resumen de retención de datos
+Opinar sobre este software
+Descargar la app para dispositivos móviles
+Cambiar al tema estándar
+Descargar la app para dispositivos móviles
+Desarrollado por Moodle
+Este tema fue desarrollado por
+Mensajería
+Contactos
+Mensajes seleccionados:
+1
+×
+Buscar personas y mensajes
+Contactos
+0
+Hay 0 solicitudes de contacto pendientes
+Buscar personas y mensajes
+Configuración
+Contactos
+Peticiones
+0
+Hay 0 solicitudes de contacto pendientes
+No hay contactos
+No hay solicitudes de contacto
+Solicitud de contacto enviada
+Espacio personal
+Guardar borradores de mensajes, notas, etc, para acceder a ellos más tarde.
+Borrar para mí y para todos los demás
+Bloque
+Desbloquear
+Quitar
+Añadir
+Borrar
+Borrar
+Enviar solicitud de contacto
+Aceptar y añadir a los contactos
+Rechazar
+OK
+Cancelar
+Destacados
+( )
+conversaciones en total
+Hay conversaciones sin leer
+Sin conversaciones destacadas
+Grupo
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciónes de grupo
+Privado
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciones privadas
+Contactos
+No contactos
+Cargar más
+Mensajes
+Cargar más
+No hay resultados
+Buscar personas y mensajes
+Privacidad
+Puede restringir quién puede enviarle mensajes
+Aceptar mensajes desde:
+Únicamente mis contactos
+Mis contactos y cualquier persona de mis cursos
+Preferencias de notificación
+General
+Usar "intro" para enviar
+Eliminar mensajes seleccionados
+Enviar solicitud de contacto
+Ha bloqueado a este usuario.
+Desbloquear usuario
+No puede enviar mensajes a este usuario
+Ver todo
+
+=== ACTIVIDAD: [RESOURCE] Programa de Estudio (descargar aquí)  Archivo (ID: 8047498) ===
+URL: https://aula.usm.cl/mod/resource/view.php?id=8047498
+202602_J1_C7_CIV244_3502: Programa de Estudio (descargar aquí) | AULA USM
+Tamaño de fuente
+A-
+A
+A+
+Color del sitio
+R
+A
+A
+A
+Salta al contenido principal
+Panel lateral
+Página Principal
+Área personal
+Mis cursos
+Más
+Buscar por todo el sitio
+Buscar
+Cerrar
+Realizar búsqueda
+Selector de búsqueda de entrada
+40
+Notificaciones
+No tienes notificaciones
+Ver todo
+12
+Hay 12 conversaciones sin leer
+Guías de Brickfield
+Sistema detectado
+Unknown
+Default browser
+¿Cómo puedo...?
+Activar el modo lector
+Léeme la página
+Cambiar el tamaño del texto
+Cambiar el estilo del texto
+Cambiar la familia de fuentes
+Cambiar el color del texto
+Cambiar el color de fondo
+Cambiar el espaciado del texto
+Activar el modo oscuro
+Traducir la página
+Crear accesibilidad
+Documentos
+Presentaciones
+Formatos de documentos alternativos
+Accesibilidad
+Perfil
+Calificaciones
+Calendario
+Archivos privados
+Informes
+Preferencias
+Idioma
+Cerrar sesión
+Selector de idioma
+English ‎(en)‎
+Español - Internacional ‎(es)‎
+AULA USM
+Página Principal
+Área personal
+Mis cursos
+Expandir todo
+Colapsar todo
+Programa de Estudio (descargar aquí)
+(202602)(CIV244) MECÁNICA DE FLUIDOS|Paralelos:200
+Información General
+Programa de Estudio (descargar aquí)
+Abrir índice del curso
+Requisitos de finalización
+Marcar como hecha
+Haga clic en CIV 244 - Mecánica de Fluidos final.pdf para ver el archivo.
+Actividad previa
+Noticias y avisos
+Ir a...
+Ir a...
+Noticias y avisos
+Planificación de la Asignatura
+Programa 2026-25
+Material de clases
+Apuntes USM
+Certámenes anteriores
+Entrega apuntes C1
+Certámenes
+Cápsula Ayudantía 1
+Ayudantía 1
+Ayudantía 2
+Ayudantía 3
+Ayudantía 4
+Ayudantía Extra
+Cápsula Ayudantía Extra
+Ayudantía 5
+Ayudantía 6
+Ayudantía 7
+Ayudantía 8
+Siguiente actividad
+Planificación de la Asignatura
+Contáctanos
+Síganos
+Contactar con el soporte del sitio
+Usted se ha identificado como NICOLAS EDUARDO ALBORNOZ PAVEZ ( Cerrar sesión )
+Resumen de retención de datos
+Opinar sobre este software
+Descargar la app para dispositivos móviles
+Cambiar al tema estándar
+Descargar la app para dispositivos móviles
+Desarrollado por Moodle
+Este tema fue desarrollado por
+Mensajería
+Contactos
+Mensajes seleccionados:
+1
+×
+Buscar personas y mensajes
+Contactos
+0
+Hay 0 solicitudes de contacto pendientes
+Buscar personas y mensajes
+Configuración
+Contactos
+Peticiones
+0
+Hay 0 solicitudes de contacto pendientes
+No hay contactos
+No hay solicitudes de contacto
+Solicitud de contacto enviada
+Espacio personal
+Guardar borradores de mensajes, notas, etc, para acceder a ellos más tarde.
+Borrar para mí y para todos los demás
+Bloque
+Desbloquear
+Quitar
+Añadir
+Borrar
+Borrar
+Enviar solicitud de contacto
+Aceptar y añadir a los contactos
+Rechazar
+OK
+Cancelar
+Destacados
+( )
+conversaciones en total
+Hay conversaciones sin leer
+Sin conversaciones destacadas
+Grupo
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciónes de grupo
+Privado
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciones privadas
+Contactos
+No contactos
+Cargar más
+Mensajes
+Cargar más
+No hay resultados
+Buscar personas y mensajes
+Privacidad
+Puede restringir quién puede enviarle mensajes
+Aceptar mensajes desde:
+Únicamente mis contactos
+Mis contactos y cualquier persona de mis cursos
+Preferencias de notificación
+General
+Usar "intro" para enviar
+Eliminar mensajes seleccionados
+Enviar solicitud de contacto
+Ha bloqueado a este usuario.
+Desbloquear usuario
+No puede enviar mensajes a este usuario
+Ver todo
+
+=== ACTIVIDAD: [FOLDER] Planificación de la Asignatura  Carpeta (ID: 8047499) ===
+URL: https://aula.usm.cl/mod/folder/view.php?id=8047499
+202602_J1_C7_CIV244_3502: Planificación de la Asignatura | AULA USM
+Tamaño de fuente
+A-
+A
+A+
+Color del sitio
+R
+A
+A
+A
+Salta al contenido principal
+Panel lateral
+Página Principal
+Área personal
+Mis cursos
+Más
+Buscar por todo el sitio
+Buscar
+Cerrar
+Realizar búsqueda
+Selector de búsqueda de entrada
+40
+Notificaciones
+No tienes notificaciones
+Ver todo
+12
+Hay 12 conversaciones sin leer
+Guías de Brickfield
+Sistema detectado
+Unknown
+Default browser
+¿Cómo puedo...?
+Activar el modo lector
+Léeme la página
+Cambiar el tamaño del texto
+Cambiar el estilo del texto
+Cambiar la familia de fuentes
+Cambiar el color del texto
+Cambiar el color de fondo
+Cambiar el espaciado del texto
+Activar el modo oscuro
+Traducir la página
+Crear accesibilidad
+Documentos
+Presentaciones
+Formatos de documentos alternativos
+Accesibilidad
+Perfil
+Calificaciones
+Calendario
+Archivos privados
+Informes
+Preferencias
+Idioma
+Cerrar sesión
+Selector de idioma
+English ‎(en)‎
+Español - Internacional ‎(es)‎
+AULA USM
+Página Principal
+Área personal
+Mis cursos
+Expandir todo
+Colapsar todo
+Planificación de la Asignatura
+(202602)(CIV244) MECÁNICA DE FLUIDOS|Paralelos:200
+Información General
+Planificación de la Asignatura
+Abrir índice del curso
+Requisitos de finalización
+Marcar como hecha
+Actividad previa
+Programa de Estudio (descargar aquí)
+Ir a...
+Ir a...
+Noticias y avisos
+Programa de Estudio (descargar aquí)
+Programa 2026-25
+Material de clases
+Apuntes USM
+Certámenes anteriores
+Entrega apuntes C1
+Certámenes
+Cápsula Ayudantía 1
+Ayudantía 1
+Ayudantía 2
+Ayudantía 3
+Ayudantía 4
+Ayudantía Extra
+Cápsula Ayudantía Extra
+Ayudantía 5
+Ayudantía 6
+Ayudantía 7
+Ayudantía 8
+Siguiente actividad
+Programa 2026-25
+Contáctanos
+Síganos
+Contactar con el soporte del sitio
+Usted se ha identificado como NICOLAS EDUARDO ALBORNOZ PAVEZ ( Cerrar sesión )
+Resumen de retención de datos
+Opinar sobre este software
+Descargar la app para dispositivos móviles
+Cambiar al tema estándar
+Descargar la app para dispositivos móviles
+Desarrollado por Moodle
+Este tema fue desarrollado por
+Mensajería
+Contactos
+Mensajes seleccionados:
+1
+×
+Buscar personas y mensajes
+Contactos
+0
+Hay 0 solicitudes de contacto pendientes
+Buscar personas y mensajes
+Configuración
+Contactos
+Peticiones
+0
+Hay 0 solicitudes de contacto pendientes
+No hay contactos
+No hay solicitudes de contacto
+Solicitud de contacto enviada
+Espacio personal
+Guardar borradores de mensajes, notas, etc, para acceder a ellos más tarde.
+Borrar para mí y para todos los demás
+Bloque
+Desbloquear
+Quitar
+Añadir
+Borrar
+Borrar
+Enviar solicitud de contacto
+Aceptar y añadir a los contactos
+Rechazar
+OK
+Cancelar
+Destacados
+( )
+conversaciones en total
+Hay conversaciones sin leer
+Sin conversaciones destacadas
+Grupo
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciónes de grupo
+Privado
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciones privadas
+Contactos
+No contactos
+Cargar más
+Mensajes
+Cargar más
+No hay resultados
+Buscar personas y mensajes
+Privacidad
+Puede restringir quién puede enviarle mensajes
+Aceptar mensajes desde:
+Únicamente mis contactos
+Mis contactos y cualquier persona de mis cursos
+Preferencias de notificación
+General
+Usar "intro" para enviar
+Eliminar mensajes seleccionados
+Enviar solicitud de contacto
+Ha bloqueado a este usuario.
+Desbloquear usuario
+No puede enviar mensajes a este usuario
+Ver todo
+
+=== ACTIVIDAD: [RESOURCE] Programa 2026-25  Archivo (ID: 8217356) ===
+URL: https://aula.usm.cl/mod/resource/view.php?id=8217356
+%PDF-1.7
+4 0 obj
+(Identity)
+endobj
+5 0 obj
+(Adobe)
+endobj
+8 0 obj
+>
+stream
+x `E?^U3CH 2=3#\Ap7H 1dBL¥lEDEE@AA*⊲EDS=$w?񪫫^Uzի@(! %D,/iJȐ)(*u7>Uc^Y࢈HmCyYyiQ쌸q1BʨoCYiE 6rrgYח&ľmZ%c.r-DZ~}e~+O\=p`b!Fv\ҫ'.|BKBH)H(APdVxDhH'#Nֳ$,Ȍ &+ݍ*%Wݣ&(
+]Ђ%+>KD
+I ~~~~~߻gU{>JIW~~~Uտ5C=zjtl==̇n~Oǵ.G}?O'6㷖l*Izynmm2?q'-_"+"
+b-؇v%IMNƐ d#Y'2R,V(˔JHrPn$Mld@}UR:/;#38p؞'SBlOMxC^~ײK\|ǢnmsfWVZVZR\4kfa|g^n#7O:%+sƍ3zÇMkoDwrwDv ҹ6cq35bj6#*ו*P
+eQň d*CE&R2> ǦdV+Y@MZJTm֜Ujm՟gBb[e}8Nm5.Fvd\Q6({`֮e*ROAdf>TB\Y$\B(Ǵ!h(3-w夺eji5:u r"x~ "S %Lj!505(51OڍdO(Px.iN }
+ɶh |vMg57'TܫҭC@ёW-AJ^2dQ"c**D' b;V3u592#2IlUE[QhoWhu81=e-v՜f`-rx[m`k^YTj+s'ecYP"4E̅0?e"0 Q^W'9V"&jāVp6>z$@Cjt '\yULnv=TU`G:Hqkdl)ItmҙVsf'jϭm|ڛ#=KfX˛)--=v2#X
+^fbNZizg5휛XlqgR>KC}^6AޙVwe|kOh(|`9րJWV\wNl}B\\*߄u@0r AjEġqYUUXN|'5)Sy=贱qأ=qusS풻]5r5W5etk'ՋXehմ)u>%j '9'$Ug)jr9l3ɔrz&G/ՔS5iztsrӴ馩)ɪ)j^nmiR74SFW4j4.I5Mz4j94jF$N2'0祥uH1:0i_l.4vӀv)bMrSjM5ݐ& tǌYFgd+L#qd
+!'h`,L:S$s^sirU2K,岯yg|m} 0v1dwU57b= DR#YHIXtљPP,Qk_DbRCH@5 $XwH$s A0{N6ʬ?LI0?O[oslݙ>u.߳SjE4awUr[jx\%SK 5b*jFۡ=Ȝ٭־4V>Jڪώ5v{0p?SVWN`x/.6BHPC` L.kTYHmnκ_}nikxoʽzmP[6QYP5,tRkZH$h2EI}@g {A'\k՝*K7u3ЇbK!P0ȘQ:
+XU\kqԶ}[fv94׽z}]B SAM0gMVиy[d\kRͤ 4On\/6qo۷Ŷ4:!jJ힏T=_}kD>06#>5c=HL1Ry[c4CͅC%Y>0FGĳpF?_ylyCafQ{ݓvKU]ׯEsFOM39fl]8{)ٓz{t+oiEVT&83ƴ۲뙸e3UwU'#WPR+_T#+lWX>ڍejK#! $}hWDg)o8L[ЋE5a2IڵkXZ̍b\0ptcF؜IԈ` zTnEld(wU?Tl&I2qC$ 7fSٳѸ Cy$ x7CSny2ϐ$-D/:n! \8O+6zgtepDhPQ1!3j,.-|O[=FWkn_c^pqcvBr#%Smaۄق: mіeuV,T"Ar*r9))ݵeX*wаۗl9iQ3̯dMK摷/w7+yV=zOѩ$X!3Lu2`hXxv3*,,(H-Ȕ.)n^oSeM%8(fsu"굝mw-}w-^#-2wuEm6e fLc;v3Pi%)mo IDk8"Ť!$ٮ?%I>:CVh0gJ]c(~IwlZ/F>F]ypJYPɲ3)̷V>tVҁN͌ DH9cv"(dEˤKrd(M[}h
+#j5IwKMTgUu$(Mh>H앮kҳ wvߠe#ߵx-3̺jincJl􊒁}fIgFARh ]}p4gs}F%GDȽLzc&箃g?=cK]6Y:z1X?o6|A[a!R iVǤ苂W4cK:v҇/o9=̻Ul^7x۪ƥLy|hqBb0'hma{0o Lwg*Qj_e2z@sԟ,)}7!-BZXM܅I'Z¸\g|W7ʼ9;ncg7ؙآ} SB
+~3RVWwM]05wάf-㽄IcC!@@X3MHc)O@a"gOB&c䝣ez:oG}vGځ,F `9(w߀9 / E'r(i.2r>M^HXCҋz ڊ>*"ϩrЈK$F\|u-#S"ʗ*x*EK0WG}q\цS9O+Dn.(:\xl)fyqm+:[1
+ǷbMQ,3G'\%Ex.i}^q:[Nby+gh -.)y"q#x(+ܔB"l"R5P˻n\ɮǸj})skhwVqc4YW!(!3A+h\s{U$\
+:}=!~¦Սl-AZ.SON3ջTs^闧u406W}+kZ
+uX& q"\Lr:{QunʓƓb.t@ƐdҋGC-OyV[)g٨q,R$T+!VC[=
+H#VZR ᣠ20_|CzF
+wzV!zU&錫bd^+n[5fM~hv-KČ8g,t[zm}r]RCSǽL sw]~W)?p:tj bt2yܡ낑F. N-;;2nݰh↉\qO`\Y_,[5dԸ`\}47S@\Wgh0n,`bڸ:\t`ɸs\0n'y+mqkǭH4Gp4O{z܎q;E+G}d܎"M=ajUA途)+ulR딘 5{?_ZQyg4.+tm(/uy\-n?9zM۰jRMWH}[sT˒ow&S>a=SD~jrׯ~J8AuE_ߑxt.m8+*sV! ovKóQ?ݧ.My25R+mV5[Gqy߫-,ig*yd6+4?F~N~SZۆi|]jR6)j_(4As][9/j}\zilWn] ^9gV%_.pP&,+W93 \|`&t'G|>,E*Uuk{*нHkCP? T?f&6NU/Qt k`ŵUf?_L-B=Oris\_;{{%K{?^drׯ35$7K˝~)޷rw`k_Y9Eqj{JZ}k9{a>_ Z#xW㽤K-uF;eΒ\6rru~u>#mxI>g M`+}k8}/hYktP {x57vm'7]hj7n^z5r55KVux~N}b}@l+/ӄϳN.N|k"h7/P}y}JX+*Yǡb ^vM?5m軬>Y%x Y::[O߯^c+/:?η5ϗ oVLE/O@^p&{Q*/ g _4xt:)^#]bֺOr}ݧ)GuWxg~~ƻ^5/vqS#l^)Nw0>S`a{?=CXՓ E遗_^ᾁEjt~3&+_4k?Ϲ[Zy θ{.>!zz3鱣W֝0u3Sύ>݂ﻎz_ι[~ېw_Mj5o;[~xοMUu cG(SI2݈r7܍(w#%R$Z=111$Xڠ*="=I77#}Oa}
+JgW=v9S}Kz^}8@b I| Xz>׀o 1ӓ9'gqgu va~DbA;G[-f%O٧d#}Id5 Evlf*S)^'OI].iԗl"Z!ϐݳ=`u@>ߋu_;vvræ&&g\ewNֹs7k+q=J6@ړ>%7 6L$ff-%f5FN'@er7d=qaOM jVе-Bәеk9EҽU9-;5:XY8ErfyZyd)g6!W\C5\CjzJ@4akh0{=BCqͥ\si\5ư7_ښޥmX}>
+43jM=v#M;p0M:N.\iWn K !ˀG 6}na7)1`),=x#BUI,c!,u`,Z %\#蛬#HaX}=~ȆQc l2e,zRBGayБSl&t;VBSjbU'@/l#y^eϳ]^ ?M=EAb-hQ
+s)ssaWkO@'hy}~-ɒn@5h6Xe,Mj/gCk]0)YJf\)MJc#p6J,f6[[6#=Za!RNJcy$yH:AߐA"/
+H'fs&J^5o+=2kDht9Y='ҸgϊN2Eȭ!O'^?C j.vKE닫9wC|.-'࢛ NjsZ[׊6{FMd̔SFCtv&4Tu7ك9֨O u
+RVWnGi#mC"1CPנ;8ro:>sϽLQL:ag~Us=ܻZ\,r/xs琻mr?P_  `O ^S"0_3tr.u^ kUʂWI*^UJWYj{=!pWrRopI7hI~GǇ Bl[oC4|O!|!|I;ϰ[{%{p +p0^~Bk| [8. x[ Y6˦[ǊJp1l1| ,,sρ5p?xzC H|1g~eWxV!eggSRvKV?d!%H ,GxRG#˓:K,_%b3GQ oےNc/h'콓hYEdidEsf\'vӹ{/_=&`Wcn%}Q"}|;&K__ɗد%|M?o1z1v|~~K%gw;kD/dwɏ}'Z`?+fcɯwɔl vil(v#avv=b>b^Jo`9[ʖb߾=};,{vug/T5H5RJs4hjk4(ëDk{g3%Ӓi%|Ev匿r@+֮zu9B@8umxhf4Ova'kueֶ=s``k+tXs&00M9uy2X4bPՁߠ{r 3,Xs0i|
+x|o$"%!U`}7!SKo.E 1r-+,-Xւ
+!FԨ鐫eye4B}ǖV^-P'R-5n\ez{Kaa ͒x}6K%඄r[[&'[[Vb߲66ᜭ6ֲ?k1Xܲ>ǲڲ։cyB_[޲|flrJY%y`U=sqVmm5ךjMU^ĵ:ݺ]#3I#GSm_ZˠOsIKlGmlZWXk(aȵ4zNm;mG;lGI}Cw[?~e=H1!4!2UBlBBBG%{=՞5WB?> %l$LI nJȶW
+|HȮ$OV&OXPp%> J6N m~фWހ~/N8c[p.bm-0nndnco[l12ll9Е[6/o[Io=I-!
+f+YyH.#-y8,a>G3+y2 p}5@\_&_`/{؋l^d+"[يVEb/{؋l^d+"[يVEb/{؋l^d+"[يVE:b/{5؋M>~iFVww`?pE~/__ !(#O?o?~f| +Iox,{` ?x/ N?/^^^U%@ ){B=!Şb?Hҁh7F #}AsF`MA!4P0p`:pp$pp4pp,pp
+ >>\|QcǁO 7nnn>|Yvs]hs7pz֨'Y40
+|S=RO'n>`"1vKľbߑVΑ q>NX-B0;NVk5i;a߀Si$fI}|Ǿ'ۅi#Jͥ$T"I%E0~F⥖RKģCIblx1IR,qRJڒ%L  d,HJVbrDl)vNJvHi/'Rx(%fR')
+*u"dWri!AM3q*\G7Fq Σ xD#MNG"HHBӃMǆ7%Fccc#1blۀLBI
+!$d,Φ2I6q,2& wd#_"hjL-4igP44>QtJ - '>MҥEw{)?zC߂cP4l_Г(y3,=O,g!,ϚCŢǬ%03kG:N4zX
+Jϱlߎ0& $6eASf@?}b B0+fe9?BKsJVXgv?+[l#Kf[س{=]4eC>"y0F7{M ɵeAKcS%6]In\WX>6+
+"br6bwCv :qQWH+5@∙H*;
+mIAJ?DRCV2L&LJ
+R$rYEZ{dn( v2F+Mڐ=A^Fr#fu.b$O7";ep+ \vRjFURg01h(%4EGhHch Ӂ5mMp8)4)&jBL͈[q+"@mhN#RiGib]iW.Nf0+R7T
+4+s|$a_UA@ٗY$Ƅ]VIl"ʾ *P
+(V &.`UKm5yﭶ>|37s3̝dK674}4}e 4ePd%x'I2E@B̔V ۳$yXŵ/m缕Uyյݲ]es\'9(]mJcrЃWQq[)pupcgSz9-藟:號lp{륐/y9|mW2W!_# {WǣiC5k&蕥)Z5E,>\m>YU:J
+)8ZSS\xk,j*ҼN6E
+ʹm͡im\:k[T;jGׅ"x{jOzd[+h9K gk6\WBO_#&CQCtҁ&Ws]W5\yT u64s~?su.4C( 8>ynyMvݎ^
+T5O;tJu}G^}ωa#k?s%ٸ&g[qF?s8Y^ & @cd6mM등등pv5y>yy>yg8ߓi\Ѓsi\v;W/ǫZʵ B6o@~5jl[#>菳 ^HcF#jGc8wrCWW:Ruy.X#XQŵ`.ɭqp=Idd
+d$2G=2G/2G2Gc2G%;W,ǜ[+ x?㕅8jRQ⺇RR
+((dZddZ`*hׂZRgI#כstZɀ!AlВP9w=?^2Air@ir r@ir@ir@yz[َ]!;dkE>(Uu
+)CƸ!Qxscd+W!!Y*`@㉮䉆DVAc %yFJJsʃd1K"e-v5۰YGEB()ԛ1GsrFF6O$'_*E!C@BeG1F3nNnOVOV^}
+p֖c%+'+t&+t!+t&+t!+4%+4#+4%+4#+DVhJVhFVhJVhFVH!+-w
+r&O (rm,F'~J &@QJ@paiC)W(E@f6۩_|sLgMߚ˨YmwVm/Ԭ}IM%(/g{ODhӘi2/~'m3yי{$jgṩ̱5:L96؎P~G.6ՑY땵Ԍ\L[,iF}-ڗ;B7dpҖ*]NLs gQlWzbbSGxVm¼X~Ϛ3LߘF.Q>oggQDVbytsC|yBEG\&1)e:EL>BM9 q7eK`SgMaѓ?Ong]E9;WOI˽ԿL^( B*ּ5*4;C.M4Mu}yt3Kuk8m{
+rw7fzaŻЋ%?|$Llxt4qYPc$9|rncI^YMOtr4XFs&KTkc5Z6YoOY1M0ՑĵėSa(?^7'"6cDKp~g6Q[zL`R׸=e,J^o,*zfﲭZ!l_7d7~}\G"pc_c.֌'J޵؎[`"b;uȒ y4op)Й2^/Kxk x'I}beס:IťAAwZ$:.1JL R2db%b"1XXȑ=w]W%bczc*8MWj!h%ҥx: I@+*H`5V*:2_}HO^"}Hp]%FƗ. AKxڸ~;^k_i;ixKPynЃἿ^5wKd0^tl4^^ݧ={#ݫAr gfKӤP(#|͏e']}eڗLi_2+\}şУo̷QԦQc~}, |{wte\*3om۬W )@B||6{dI óyN%InC\a}| S9â#jGߟ2
+ys$J.2ltm5S',HfpF!$M[夗Y2Ύ}h~Kduwz[6WൎzBfJږe]cwӛ5C{tn+%yȐt/Uܩo _)z>~*~&pxDRHf!n8&Dx_'@{>iv1gW .k:zܕ,梯,Kk-Z\.p~rAղ)h\_׌g\C~8ɅF^sGFu߄6u ،7d)S.-4$oA/O;s֣evøֳrU6!@\
+:6gZz
+z;tG1{۽㎻w{};w}>tIwʝv3,jRA*[ϋM9c{79 -se37n=}v#o3i "AXՠZP`Fvqw3hN:lOBfRc:1O!!b22/7.ϥx(6bXhmtXqzYZ: 9`Ab
+ƶ[~.\![͊ `u /%`(V0rjOTMEچ}zÞ+9qa=A;N{Zdh+sw=/ŵ@lW7ەLm.amW֙Eu=@t*+aUۮM?'́+v zu=A_+jv ~獅b;y Rt[.\.\y.5_5-WnCnq`d
+n_mnX.?j| >
+/CIDToGIDMap /Identity
+/FontDescriptor >
+/Subtype /CIDFontType2
+/Type /Font
+/W 9 0 R
+>> ]
+/Encoding /Identity-H
+/Subtype /Type0
+/ToUnicode 10 0 R
+/Type /Font
+>>
+endobj
+12 0 obj
+(Identity)
+endobj
+13 0 obj
+(Adobe)
+endobj
+16 0 obj
+>
+stream
+x xTE7^Uv$@ݝ@B 1¾!a3Mֆlt*AqAap1("#:*ㆣfTŸ,_սd{x+nݪSN:ԩIPBHWd2=2gzlB~I0:wVRHMΝBxr 1;&*E}sbBCʊ++c 1eςRgu՞ r?!ҀʚbWD7b/5RUZoOi~)W^+'B}5u}$Zgi!Xd˒^ɫ"=L_Xt߿H}ru#BB?u
+J+gNw9H2N &I3YOhZLMtS7Iw?"3~
+a.hO(~pƃ+KQO|DrTI$𒗐-n%s;j7kk qrҘ52~jA0fijcr8K] ^OY4FzR#W8*O^ϣųqL汮fHrJ)Y{(Fl*L
+mm[A)p%hJUFr ϰzifARTV8؄4iHmV.jTc[`iEyj$FE), 1S!Up61ׅ#~PXONBqbBYЪ[idycyׂiP#.-.~4~A_4bЍ2xК}t c>JiMDm&qwZIG(^ aPmL#ãd{j7_ཌsgGP\TmԐ21FFоbmsהW`6.׵XǻۗpqI܍Anz8afWWqokP@44? P&3t.!`%m5і-=?O8ޅ |c4=כޚv./Di"[nmN^[S֍671^X0`X%xnK}buG`1~.@.IaCۊƕXu@-Z_ W`7/|o
+]sD8%QMѻ;%ĻV&LZۦ6`%j^;I#kE'F:^++qhoU
+6
+'׀a?$1KM1N `%CÐM?g`c
+Fd\q@Wd6y@^A AZ!^&갋cu,>kaޟ5!yp\mkVxxƫlK-\eFe6\"*GG64`;mT~&#8y#OD{]91/4k,p4etkM'6m|9VavL-:x,6 RFFIrFN5+IF&UFF3jzw\Դj~jԔ~r*Qr&튚FMFUG.fh5jT+jMaU-oFQY]QW*oFSԨ+-QC!Qը(5jpԚAQԨ^oFFF%G8pETgTsb0Vtψm֬(ԳlK+(D.ݷ{^jTd#sVY=&r8/w1$bf!C22ra ha{EwB}r!)CB3\b Ʀ$uj4XB,46}PzzZjjfs>Rn!Ci=ya $>)##)~ȍE\8t԰MVrVIDVY6ʂY𘑔.먅Z$"IAڍ>C~K[r!tP;#Mߌ5og#(KI|*'8q7 Vb
+19'礄C,xnIIdKCIGzW2Z6cύcJh޵cVkkg6Y;\|GIBLF9h5$2,[װ0;ϵ\Z*=w7-?TېU4]4]o12}kVkr9I7b
+6# !J32BRBR41ȡݺ2-1Z~~n_ݐ#ѫ=pߋ;T&h~_,#曨DdJ9#kwE\8NDOZmc:%=J`JϧrᚂlД#+T
+%ꯌ?o2| 40M'_fKJWۓHn_66#c>w,]}ҔO9&1{[NCn
+d42&1hHJ.!4nt\ߥ-oG*jP=20[0CnXacAˮYklܲeT|~_-MM#eCOcO?8ia4OA  Ƙ .~{tИ_~-sa/| T# |cLHh/jj^́O>1d/_?1\$=ͣXQjVDXX`/9P(fg q38?pn ,UHXSpT0A!.uf}s69{?K΂ȞFMɟ 'ϝ;iR(Ag9tT3-;>ᇏ? {ɠ`E#FRJr#5,A d>iؠ ^3O˅YkȔN=\sHβA+Clp_@i;uū&Q2t5UzR}ΉWtrc+aAX~df.={Z%'K8&qRB|Q
+{%ۀ2@I3'gxUhfOOKܝwٚ{-eӋsK7bΔy|ዋn m9lMw*?&qY}}-/繯ؿ(Rd28%51y'iB ܼGٚUx#wd,̟X@Bh3*){%t#˳{&yͻƯ_*9O^Z%Z$gE%;dD%O"Г`'w͸I?ɢ/̑v^^{a DZ2H^V0S.]h_?#AaHff&Ag/BEԕfuCRxI;pgP+o
+%єk&^W9k§˟r.XaSW;x`aFq~Ǉ&SŊ{+Zb1ۮ^xGdVnڝfcJgdonfԘC2h MCdIjb}-BC[F"A1kHH+5Oq6tɁGF31ι!sΚ1tV?CU7_wt5_)o5#WV%OKy"i^/~vcX\e'CIfGg+O(OIomŸ40 4HMulHIqlNohh+_weiM{CEjjrfd8}aF42~j`4J[aSBgF#5úM>|S'i_wəm
+T2$Fio|>f'2X0.^1F{)DEў55Aoywso|W~C9A㹣vXo^q;*B}c>]u>si`Z*#uq.ia+ե5LdSCO>4&cnۥG?Y? $w,iFڥ'1Jꄉ{h}!*%O yKeˎ?㛥oΟq4srr?1fDgAe ]?LC˅jt}\W+ld!WVN]'K調rr͝vk&t떒Пo}6~Eً&Yl9)a$4!_Y89uGوYϟ Z6X_a
+\g$wl{q:MO0,'yם׭o>71WSs|V!#6ܺrQNEN>Jzm(p4}zGXo! -PmW:9c`f!CwY5m Gwݪa11_,HM=f̐@U\ߣ#u>G>|d!AWreDuummFj&`>T&hCޚ`]; c} ix 9w'$"?K(>fB&Xpg!ꍍ
+\HCeeƐko_2hPJ̈H1Ͽӓ3;;{[yқn6wĬ)`0 jFLq#Ǎw>}?1}.]g0'>~΄C̚01)'@{08^s4>]ճA ѦZk)Bpv&m=5[7L4-YAiK%3j&:u[N>;?;mxf`k|X,c!!55,m8fdDzMp1ĠN&7 :w5PA[^=^8qlOhIgk]%ܒMϢ&%m8AlC=4_YԤ&A.fj6^w5kǫ^7N:['jk2Z;g}zx\Yz,6x5)klCaxtRAyƳb^zseNk`/QE\VT*Q)zFHˌ-4cQh*(5jYÑ>ղɆqO|wb?J1Nj`cޟmwl4PKֿ}{P'hui(hMKMKeP~b>Yws&'Ӳ=#ts[η4oK˗-?
+JJkrr5sU+:i=ioԕ?j(ՂRNӌ6 ƿs t>d"SFڥvW]3}AQ^)+]{v>t_ 𜏞^G ?E g"5$C ߦ~|>u3!xs7!xs61䜷[DKS?%@r&r޺ ʛ@}ș9[@CQބYo!'Ud-P&[fM}6@مב3sM؅;Dy]vBJH7͂V@SD NQ! '!}
+-@w 5+[TyzCSȷ7#ߦCK]|CϤ/
+.9y.1(o\].Gx_R^H4V/$čc@@/Qve!-e HKrX!eJ2#>GG0s]*LLIw~zH,Lnq&jxM/ E/zٟY/HI~[7L?^L9H`>GGr  Rkw8딸ں̤rG}Ţy5UIvP(_)$vҼʚyIURg҄#r&MI*雈.s`3yHTrKU:L[T*Ji/-IPʜ
+4AQ˔Rg:̫;cDD؝@.Quu5;)%5ŋJ녘2Ge)e`+yIY!,ꝎbN#HŕJ8JGCAW[G]Tp>Gi.W騫HPJEťռTTJ b^wIEMUpY(}Jj 21z^j*+kT82,.SіjpzUoy4{GǺ; z,)Ng%DTh1&'8drJzh!ww+N{Iiݹ5˝5jTګbnQmms,Rz$X,ĪVڗiKTt"B9 \諮dBAxu֔,*So b^R(h*\ᾦr諔V+-Bq+ЅxE]uv"$(U9fIue욨J|:5
+ZX)TVֶ('k1].%AV,Kz/QU{bjiJslKCFL RQ8Izԍ@IjEnGjI!SQWN*V'Jq/b%3[kjo-|4^SZJXxb%ZjekQPP'hߔ/G#։97N1ώb/]Fc;PS'5ˀW$IHh4aDЩ!U ]qu5,^G\:DQS.:ZL ^s+\{s+c[_Gg&\'m/Ś&`z]*:ŹH)"nsG{Qt/yr|2sj
+Ү5%q=Oaֹ1l]ci$|"j5Y׎d൮\jZF :^ސ{ OGq^'ZP״^ ^+KY-Mpv-נڑyJQ~_ܹs5]z{vfWkhsOاyyۋ鞽Vuz=QݵVcxG5:bjq2.qn?burNl?jKݿ݅ev(x^.ZKuCo.JuU%AmX,"H{wd9 vI'YN֒9L>$&8ד˜rg^_M#Bv|_>~%ǫT- ω4P0ޓĽ~XMIjFz\61񆑗dN+iNLxc)i&R
+i65,(/$c>3G! xgE#/H뉼$;ӬD &iz#OM &}~zˠL?mgiMJ{ Ng"uMkn^$%OfAwҠUv'w ׬^~ᅵU3~wuX;=^SZBZ~O>ߎhǣmhs㢣RWڑ#3)Wz8񈖆Sj旙 Tb.eΗQ B1︤-b,EP/RүRqQT߈JJ瑚v/9ߛu+nrxɰͼ8;a7)w9""}Vݩ+e"?! .nu?[c/u3nx=vfeB(r5A+tO@7~|ﶦ/NŻKzl3[>[ԅ](UP:_V吺3Tg]BB[VgQ6'O%>J.HnozŻw=mL:UԼwNw\J{ԋD gvؗjeG+(]^o5ttx pa|By$Ļ[[aݞh]u'Է\'袗gk?vS\6Jnnwm[kf5 ڀߥ/:}>"5a~7K0"E )]ܶ1n}-">8.7{'F"2,I&Q{c:^viOwHG5]rOu\nM;;ڮsRo~wv ޺wi4uU+[v{W4_0+?Uc$0is;>GNaxn̦2mo+鸼vk;b:qK;yt[vCg>Cݓ_% Ső̧m}hsPqQOn3x{'cFUe^yGU/׈~ۏqMFӗbo̺ i'->C"^Vޮ>
+гI]i~M"zwZqPSYox͡I_&]7yvPm/2㑾]L2O[OTMs!V;T p .Z"RJ\{k&糰w ]m]nݥNU'Q \t"_R[ ۘoA2d+^>_?{ڽg#xW  ;^ &v]j!.{Ioav9Z⧿;53Ua~6s v p%SmVux'uJX(3wsǏ{EgI]o?au>$G"ϳb ' +]W=n8ǭbMAUW{h7o?w)uux`ߒJgZ}W.Bj4L?^|K;Y韅mƞ.Je_I:bN5U[Έtc\"EhIJ׻Szh6I]~e)@񣟡? ě'C{.h6/U̯WJЧf"Ѣ"vX1AOB[fUzwqk%ڷy]w761]KZTo^b"a- @ϋ
+N(B#Ѯ8 }B:+$Z:;wd7ha[M3]{+nzuNS.μې&qA& k'yWvNeKaռN!wMҗxapqEP'M4y&c@1 %T~V+)L~V~YԿLi7ݚ&Q)֐vsִ|{_7ɏ˯ȯGf/g"i @80"g@9o ?%0#}a}wigk1u?ZcA[qR)
+>qNIiyiwL[VV*ӜiKQ{szBE[yyo7ҝ&RB[3J;ԝ#t%K+MDr՛|mI|0ΛY ݠp3N&WpE]P&Y}!>b~RJ?~
+9Hpp40QWos-:l֡ͳ7.bȝ~N=)B6S )f
+d3E#r /JyBZKc z,A%+KNiXZ*-VH+Ujvi$}%}'$,"*~JRLd&˲Q6ɾYahq>:WO-G9I͆d)"G
+!kQ)
+#OfB N3d2NTZJW-_I50aYdSRǖ%-g"$39'+Qvda3X3k&o7F
+B5U}}d|'ke`>٣пNDva^6]k /"3ʰ+2S Iu)\{A9[wԃL;l'%J_tܓ/? O_ҿC0}Mߣ## ~FI#=EOS1&3323e]YgQLa1,aq/Y2Ka(6M`UbVjXg+Jfk:ne[}~;g/HJz``3ҏ%q[Ȁ-~ma ԗIè#bt>e$a "}|/,G>S,g/]򫰝3vα4Aγ,RnGTfEX9FnSm-`w v7q+l7Mq[aU:큝0aް#4[`/;F[vFoin4NHr{ in4Q>#?`oIoc;~-QG=᡺P9AN 6y{SSiw[2Q>'_D~X^Ű5J^0qڶ)ћǕr$i/Zϡ>uVRCcIxn 4a}m=I4XBzQ۪s~HXzoqϪySă1D{I'Ð,MO
+&T-d1Bv4N%?G|-lZѴ/.3vâJJ:@P'&'z e+nYN2=u-z?},Dzv}wQ>$}#}}uc=_Y/֋mӏX"}[(=,,]Aai,~zBa6~ΪX=jY-FUkqm?Ͱ蓰{W3Goܢa}H2{
+ ~EW[6}"c@>g_[=)s)f1n,U| )H
+b`R2ll+Ų+)JCY-e0y˖s6l$,6O]N}M9OB>4ISЧ:O[>.N.C;CGРRФ+hBMz&=#4%Ф hI(d:+7߰
+z35И߄Ɯ̤ƨ\c510`ݺ@cgEhIВD%IBK-IZ.J%9BKF-#dВ;#cЏ)Џl*;-&pV(al#YBcfK~#fЛp) K^lH
++hV"RIeB*9:@~B~UʟʟOI9ij_{Rqo5^*Fi
+x ^w@G)ߕqK/?Ž2_/'MD%ђ[6bF8JĽ_fH'u.z*ޡݷJx|DC|k "o(̌'D_QIWĉ Ar09P9.rWbP&&\G;b)IR2b,'*&w\rΥ_p fp5*5*fo,6
+͂o[|˂oI-}ߒ[|KoYm|2;A08!X|7ďK͊`1HB ԂIW |/G-6 [v!ܭn%{=h = x
+p 4 wD^X ,p@6``$ G~>`P jN@-,,,,\XX XXX1O g/_g Ω'ģ D(P?1+h:` ??BB  ? ~|37C؅vz֧ ӄi" c{Γ/v\d{)C뫞({'a;Y߳~lH_iTfk(m^J+km,~wl&mӦbm "%~va;5َi4NK0nnےF$s'Aâ#El[4Rޤ5͎kT!p`5\9wXffUNn.Mpiv@zG&fd;j巴u.m πGF[#(i#t5aDߏ9j yJEtR3^reB&")7pr+W)*;GbcXdb(ɱQbg+ωKkz5EiRD򽋚3':ϵŌ%v5[c7ni CX-VcƎi\TE)Ւi02-̏lYTkY;β²"v\g`{--[vǑ"}hyO1ټ˗ɎcrJbF[CEW{р~ ٩vpX6'9?y2ꑽ^d78>yݩa O/mK""uQ>=gqےx";|~+ٙ܎2?zT:Ѵ䛒3D^V^$y ,ihl8>y8#'q^ĘT3;q1J|]ĆGK삕^Ic&MIe2l2kҀg,z%n'GB3.9)9-]+yw%7&$MnOIM|#^CåQiVEU)QZT|.m_ڹkޥ=!KC7M&+@
++W]wW]wW]!N^
++wWo[GBACV@F/x=F^}/d#>&fǱ [ B C@% +7@|9'ϐÐ#G>T`)Aqb)@1V}Z9΅TTA#NHG N?BNt9r
++;THi!g@΄9rd7ȅ !ä-td$d#hX8x%r$ȥɐ) CL
+r5dȵ CACn,,=,,,Yrd5dd-r+6ȟ!Cr'.ݐ{  z)Ƃ{A3q{^{ސJa|kgRŹBU׶Gc?)
+!T!7$ihK44BpO5k:I7޺sփO^NX'93OVF'D(.1˒s,f@QF-SDS˙ |`HoT%|P>E*W䗒_J~)nB$B,Ĥj̐)]rCVȒR.BvȖ
+XП#>>Q(Cu 5BIzBa(kRO)
+EHn'y~h Msx%#-^:ׁu 72T+c31g|>]b,z-E+֠~ˢr,6EU
+iikUhʴV6RskZ+ZRZQY,63ڬl[8Y (- |`9rP+ԂWi p"$d(u&fǄ2`-.C  $n*MI}L8WX!1F='QX*Q/n|Q_E*tmgmgm=}~SQ~$~ #zD/p45_?"Y̰ɷLqFl +kZV(V ~!~]٨KߨYs\WE%uhe!h#mD[xN;kv::ZgɱDxc"f]+|ڔ:hSN'Z֤/#Ϣe1,Ɩ%-Kڔq68!x/4h.qv2fB]v52f!l͵v-4s:u]BZH[BZl58mVmV6\hfmBͶW+
+l.%l=iFF_ƚ6kڬ)kӣ
+QQzTuzT=:USMϩOLzK[*8>ҐOSi@C=$;pP^WzE6p}Lh*ZyM+y_
+ GkX-ֹlr\z[ctW#agy% ;﫦yCny"dgF:CjCm$2a#6R(LyhIL@oLM[9 Wp >}>|'j_k|>X7FeQºgus&jIJtMHH4dI8ʡ4T:Bsyͤ"PB]7.{Ӥ/r>J.K.g cȓ!R9Y. qO\%%'dT\a5RIʟ%_nce/lMa,&K}+fӊٰ"U_W(O`kkO|cc,BoV?hfnU' HCQ ku4>Y#ttԑ:
+:Ejt_u`u1#7u7uZ9):\p)'c-
+8(آc-
+sub6畱lB+cل^XL/l@/,6Zcbbe(uJ;h(劆R箴}&ܭ%%`B!]ǚ8ROMrZ#_MSO.fA3pkQ[ո&9N>%S|#GT|>"{VEdU>,YdUYUzU5D^uLHTGMS:Z"ψWZb-F6@6DDKNh\Ljch|eRG[hi-4%_+?"3b*~kLsqV"ksX;
+^+3L3-k.[j O7aT}9\oӌ.#Kl28;~ƨH8"F
+Āb#E28G7"zdp!\.$kB26\H&Q\ĵD"%jVnVV\LOXy-qq)qPX#;ë]vk׸^ox06:~J||b3]C[x'R;"z=ou
+$uvE5sRElߣ(#|&+dyۢˠI&JR-|Ssc |J'G_e){ʣ].yL#Ӵ2^Md8.&8 Zl5q[3c+,gY]Ñ65p%rbOSe+qû:fsTޑ!Kc~'Ӵl ٱ^LZklG:Nc3]e[yݭLin`: dx7ْ[HMs>;6
+/_0&o3nAvHsر*RS\vu%7*s{P=V{;W,&Oq"@_izV,VbsF}ߚؙ=RA:ddCD|u/U
+_pD Јºy6=߅|{{KcI='"OZm]yb"^K ?mMwmna{ɟ.ᨷK8%mw G]± &_4"6 V'6&6!6%k>r[39T:v;pIEH[5{ h q';"jx&$TP{k"D=Ői=K3Şg-Eb3mlBIeQoDz>oʎ,VD~ѠnmOkQ9/_m6;Wg*3~;W~3>kY}EyUCsBS(׵/᭴΢渎?q)O.-{ d*m)0!\&c0-\23U0aIXFuR/\f0'\a^83
+g'9KT,m]
+l"|5P,GFT3ݏR$t.e\W{IWz)AW3*uުvE;.[=v{mFi ;KaW,Jѐ
+BPyhچNЃ{@h$hJk&d>ueXnwES\-;pZSǣ۞xv q05QbPkhGZS?o5>7ئiRL+㚎om3k>w>3E@@ɰ(yVSwpSyߣH ϣ^D)=DOFO!k)[-|`zfp.4REqadwq&=t9CΔ^h{G~1h^9*uօ{tS3m]`q/@e4`p9pOf +焙ƅ/N7"रxiKS^}^z+顏`39pnǩh3_ |fsb6>W.#F 犯v?4Z5YgƹzMkz>b/% wj]ͮAu +ҿ6ܩ V;z^]}4 %z77 w!cCڣ}{]>+
+endstream
+endobj
+19 0 obj
+>
+/CIDToGIDMap /Identity
+/FontDescriptor >
+/Subtype /CIDFontType2
+/Type /Font
+/W 17 0 R
+>> ]
+/Encoding /Identity-H
+/Subtype /Type0
+/ToUnicode 18 0 R
+/Type /Font
+>>
+endobj
+20 0 obj
+(Identity)
+endobj
+21 0 obj
+(Adobe)
+endobj
+24 0 obj
+>
+stream
+x} \GpUw300 20\.EEEeF@;*j0Q51&MM2ff.ǘcĘ&Uuj6~vo^z{a? N_2!fÔYEefV@h)E%Ys#!tk/*JL§JUQqfwsf"xi25EH!4,iGPUt|՛ZCOB5nmk#[R@O ~\?GǮ1Hb]y,V~2#{h6Jb%bd:B-P%sg9꘿
+q8=b6B=+ўQףWW5?Gx?cʲHZFt|4nz'j7tϽ? q423P06EB˂@Mƣ\,`BC?S3 >K _\$ c)=^@ٳhY2b>Ty,M\y2:6贡a@U?O9V_?R2
+_>/D_u/rHN p| =P d49h Z@Ϡ;'cRY*.?2 =Eܫ PgZE+Hwzz15|t lnVp&,+Çs&$+=-h4Vx6aabsfˇaӣiqaS#"τM&GaQr|Xv~&,33?6Qχݦv>1,c-,}ƇM[jK ÌgƇ KÒBkK-lL-âȑASX;2"|ma[!6>l|XH lJ7"% }H$y]PF@\4moD[)JSҸu9Wpl|sxN]J,QK=)~$&r4e Ɣ(˙rbM&~oGqO(ʂyxSoToE%sxky-(4kzc,,L첣 >>SϜũG*^zm;{;f5%"A^HbM
+L@f*̴8-mA3!FK|s38+zE_狈tOB)P=WyaaZT"p.o`r%a@_.YuCLb{Y6{ޝv6`
+)irF 2) j6T
+0P}'?C{-[~n;|g{v-':|cz#ɓE2_g/KNո=V^K 5^8.HÎ)#"|OaTbD,AUp*$;4>%2Ud*BZtƪ黰qkQQbVVܣs%~nƴjFfw]ן%l¥*HA$
+qw `V=U[qRcK~w\8睓n/eG+K+7&q3Lc45# 2ooyszoOTc~T' ~six$NCZ_kʢJl+ʱ;3+D-kX]X RM ڻzlG]vmec9㌆ y-ZqƄFƼ9'?~lvn*Rckp|=sVT쭪ba[ǲvAP]bzOܩr~O7yb#&4\aBhO*32B-Dqb ьwCܻd9Oo8PLfo5zB0:FSSDR/{),ڄvxrX.*٤J%H.Ļ2n5%wX16v0~^&v"]Iw揲-h9 eX VmѪr74T1$$~#?Qbo=|ǋ Fcݾgmf)w]qJB$B]zr `|xu{omxf_4IIi4cМtHZt,77s޲n`6{X޳bLl0դP_t}|Dj©W q8$?;%fpɪݛ^yq۸qc6{/G\G|ڣKXuvt!ʑw:EVr|U QFt-Ib$ʢb_?(g;k/{y]?ؖ_iXa#'>yv譓/4>mr%I kLK-UjzH5v(􅍛K̑
+M7dcY1-q=b[vj^yg|9o=?Ug߽⛂17zKJ@I ]T̡YEu[I5GWV32gL$0DK"eƫ>k^*֋OL#т8-Ե[e{=+kVY%["+ϬN7L^&,s9.RU9T?ir~ܭcFXZQv"Y@`L1]>K}*[my*ɽU*M+d!"=.vH(@;hI®]OO]meoLѝ^XM>X&gXpз#Hs >Y؅Fbݹݱgx={?luFmik{:Cدɐ̡ 1O?b\#kJ"CkXCR3{:H8T 㗌ތ*?9wdX#㱡SWď3)mM@eM*9F,B!{FL8\7 jd:aڵNAWiӦG?[ =7ퟢ֢zgC=̞6:rKt\xmsｦ1tmT|W_>-5Dvm`41]sު`STHƠ8S`;2Pn)d8Q`1Z_fX0lӡ*~6>#qGÿmAO|/=ret6{w9̏,1,.qkc5o/add9\4V!Xŀ&dR9kypGA*wb-D҇+}#ؑWGɯ%yqIbğ*XMqbm]Slʭ :v؃QryII1=ʒWMNj
+QOkuvjq6.dI^،XIij{QiVG[>O^/3 o/{r+  j6\>90$yVl^zw}rǙku;Z~U;uj?83*-hi\T_Dȑ,˱c\ŲqU8Ǜ
+X0JKI:$&Mafȝm\}Wڹ`˛m\c]%^_cKzV5Ԭ=V9}gsǽ9yf:
+$}A{/TkWzca5y7zbLњPId}|0R北究q2IiiTFN]$\'evd>N+> _ɂP8*6%jjqSqGaGq*)8H&Pڴ$7Ih&gz~p֩#rk\-fGsw?##V7Җ?ھh];eNeeҼwl{BxGL1j9:\-M%Jz?R#84ED9&o#+!a{Ӷ}˼МEV.o$eoz%m7ϓo]^򶚌kWF3] 9J2rDKJE z: ~+&?[~&XM!`(pO%a2ҫ2p2..2%l=Dڀ 41$?nvZf1Qd&-|)ZͶUcemvd񡙫,xhqFC,6aꕇC{Z2۾֬{gꢖ4Mm)YY&NmW;H6Ց8AG8':GSэAB>Q6舯8tD|DEHr oe#.Xpǆۗ[q]>>NÏ/{dٲisvNK+_mx=8^`4~(štSDAЇL'n47&jwFy63"̙A{G-7 ѐi ^om}}պmmmkwh+/xy{" W/79L={QZpEielՏW5y^ܵ U`laLj5UP.$i= WgH}"\Wά[`yѮgnSי
+W5?2wʾk3Hj8
+\v/&'88Uuәc&SӶU';R3y诘8V.d1)xY]e?ƾ0 5Ӡ#Z?bYy6}x.DCqṘ>^HE? shI}.y cs[*opWҎ"[zͧ_>Zo>ܺ)ŋW]|Y]t܁\?]feJW;/Z dt{d*/P"uϘa03L/3*Aa1B}P~+32V.OO_^{[VPPmeg/:n=x]s37o9}C12 oѥ.ܠqE~KU:~B/nw13U>AV:-ieI3&ܶq6cؓx̥͞dƜ9ZI/D2m,BM$&b"Oq=+JgN=Fr+;gN阒9u^̙9&iSƔz.'B~6$$/Y9 =B4JCm߈mmxwMn,u0Tc3o|!U eNųoxrڢISSVXsf̞[0⊹Ko%c2 }Mj_X*H^
+"a gfkPpfaDkϖՓNRWW㝿*ki}{c4喈Vy,ciȑ88V(Ky'g2YG}KATܷ $u؈odMc9]'TTDau˦guLӒs>bb mY+f1-Vm>$p6PG,IfA
+v4VĒFqK '3/٘TT| UL*uE| })JOΤE9DM5rˣٿ3Fv`T_fB|ʣH(ů㗷l!f^Qb&y'YKVfvxeO-3AXdGKm_KŶ.x֕=anszbWjY4߀F>(tg _^"Rю굱jmvGG'hc~s;?Kuٺ|]nUץ[۬ۥ_wHwDwBwJ}9ݧ+(#@|ib@]i[o_"/ߥ@ϟFLOq!䩁0J@+˅ ?x(`
+h WvSHp>9?~9wPPPPP:3a+; ?#B ;!V
+w*Zo@Kwzp'aKgt@h>@"@+B,:89+)8(p5r5Dt2zY
+/D H
+im-?PޒPc=p7as M5~Z0O ,^&FGI|tZAa -)2:B ma'`}87 |03(,BR\vSU }~_*M +|
+/Rx@ L
+X
+^" >/ L
+K){_W )`e_0$ђ$ZNf N'B5N
+@*A3(~̠PSBiPY"`Re wE
+/3 T} iIV
+Ꮢ_*/vSH0+ 3}?ܟ  .\ɯ M KD3>J(>JRmh>ږ'^C7lEXØ%^&dr`:͗RXTc 1FNbD
+_U9bE*v\pdȗ#P^/(m^5I1db^B lH&{H̻kLN^
+.M[eOyFC ijm鉉ꄚD3P#E1;:n%OΝYT;:e#ÁAKs!A_`5Y`zJf.mvKmfl4mx}{ܥoڠAKu,pHHl rRc5=}mKMGY_gm"i's#" vX[ZChRMcG-An6Yxym0gZG>-tXՍֶx}h6RXci&`-6}(Xo:V'wJ.>40umڦDF{\hi'%JFԖN\ݲB"LksK;p*p@TW[Dy *jvnReBfk{K~fk,w4mH(&&%1+9HBSάok-Mf"sZ:Zʵ4ge[Gkk'K.A_ҡo2wuY L%M
+v@Jq^.j"3uRQ&Ɠ6R kM !}Ksc>:ZoiԺqKѩ,6 vʠB/&blV赶\.= *
+KQ&i4K&XLQC[K
+@jHC\umO-s+Hԉjk1k5ZʧU/BmsV\Wk32uN9TVmt
+RG/W+jfnlQ}kst7;Trw&-QQOᐔ9\q3-4 {fd.ƸtUrIB]4a=} N+G4F[]W|D'M trzv"k.(|d\܂PosjdmtTt!@B9(Clam97;`=ZwVBE|6v=4WG/z&-v/s7V\K}eh(G7Sad&9P'mi.G'jL]ߕ'wt+EHF=sh;[躽ݴBEbiUSZB,,ΌB$kMzN(A[@'d,@]#\M[X'G!.LNܐ'#zq"0zІ>@h l{Ѳ.[#To,Bx30ORϒ*дiz,V?G"%~Fh==T"ϔ7&3;Ў'$脜/VHFpTHMOYQ>_#6kJ}]Td:S')HF97W>,&sΘpŴp:@F0hxi; 3ή %'FB~Ą5 seXf 85FPz,%\28x@87>ߍ*qq"u"Ly$PL]JcRRS#{_3>:xx"Y)MƯ`A"?BL]ϑliBaRHnejB!Mꡜ~.uOR=2T8 U~7b2n%\$֊RȪۋt1§U-Ox^y+/L@s
+=QGV V6Wp;disKSNR{ CF[|FuC0CÅ'ǒK?)=pz择1ZBpH?HӠ+?)}4Dzq!S ?N/CZ̇($%$pPt,!uYx"w &9*N[amA1(tL31wi8\zzMr18T+zto!3w&7t́\GK׸d 0уГa)WT$JvE z6R{P%󢸊EE8> Bw+Xw6oh~`f
+;:.{Xd -6t;j H/.mvOF*NGyڂ>1'cw`\ ;A030"~?J"=*!EO 'Z`6ŭ)O7\4J~_'5rwx-c=ެ.f+ɪ8W5w{&q>l98G׉\4z:No])7Fr qӕDuԒb9)ckfU9j.a98vZAQ'?ZCR|pE6x4AIknZ.z!%LKT6ׄBi(W.g_\Z-rZZۅ-HV4n(OggѹPɜs$Љssrdî雴 9; ˹{ބީO=E >_KVOG.tY`霜
+yV{M
+knbi|pɑw:4?IPXI
+2C{HYϻ#%gHg]ΓhoPKCpp!,O,M\!g8{#РX~ݯD7!"y`մL_o]>Э]?cCIV0M\^=rgYɹ2uM:v}h^CNM7vKѱz]@/l;7377_.2f5̻[g4F7m90;kaEwTrg7Α:RFCfΡ:G=G
+csHi#4cv_q1W{nzb2{ܧ'FE"PD:GloR@=$DX~-hyN~i4D pƆ _W)_zV2q{vK_J7Alʣ% |BIn*u`?9z;ںkYN ?FD[ /!?%@sCrև؋"цً݋1Jj$$O!P;=q]A6~]fڸ0Rojɘu.kxrc+"ј_O/rZj!m+`G!{
+/  Ovv8*sɎ2!n$ ?[9 -{JF25)ޓ}p:uMWևA[KDZZߒ:s)ΪÑX0~g+y="lr]DRN?td(~OkQ"zD}{aOt J)=NB,9[:PuD"H$A y fNҷt4O}!e|01tC?x #A2^׽ON ؇U 4:2{_~ße/-ܗ
+p )][/}n,?ߒEhVV{g=%t 'hIK-ECf(E4BB)oj[>h4Nf19F䴜+GR7ϛGyC4|Ҭtj3[^Wa[2xxx_JW`"p?`闔+U
+@P{K_㣥I6PKЖiaG_J$b5Bz;WcЅPCB5
+3+}#(*}#~W~7{!S6y(\*"/ɒ!Y-$"Qɗ)R[BJn;tG0.ce 2Q̐y2_^UFֺCBPG.8"5˨:]KB#}jmzK{ 'plf/]`x/m=Yzt帤IWWN2YH#:+WjGI>-}د6ŉjS$ˣ,O.#O\NW+Y"KgF+Ua}[Z/A9(8,UK|D.pPk=r-D~?xDu/p? Gd)*2^M
+yuKpiyh)Ń?n_&?W -ic$ƴO(}g>T=Xl-8Wp%jΕuEo=N8H9J,m=,zXHmV̝ڈ_mk\KįMkį~-#O뾣ƾ5Dʛrw"Of.Y?)ȻywƏީ{JpcOyi@Oz' ?:9ڻ,%"^f/RSvӈNt%z(M:=Coҏ>JtӠ3BNG/suEq|O܋R3y 5Oih!yI^\'oWn͒
+&ۥ8a'BU%~VaGMa︶5䤜CDm_$$r.]F,Br\5qMk^S4+o7g>|:i|:m|Tm|tiiqi?iZmm52c˼LZnLZiLzOIoK${`R:X|6N(ooH{n111?1/ƘReH2Fq{Я*cp2#ς%cIcImcIcI]cI}cɥƒ?K604\k,^&6r
+,ik,taN/ c:"o0*
+UqUtwaJOcR/cRP_P?PU}}%OC>GBM
+@ېC含'P=#BRpp-U(Pت.3-ӞB+B=N5E싂/
+Sm+EQqힹV:3⺭[赅#f*ۈ'F 1J] B&:glZZ8 3JS 0 BK1z X,^p
+^Vo o5@Ps  Fwc{8` 5]RZ~vB?;NM)~b)~b)X]'33 K#6?/3~݁.y4{i*(3qN-Z:1zXEFc,Cp%\|IӸ6צǸ_B3_C0N0:E@Nr&Ędy y)t,g_p7{ιM35Y3Ԛ9ɫ>\_c/NNߡ!c!\B+,*u![h Muinێ9-c_KCy7o jK`/`@ph8WCptp|p0#SM>rѾB`X>k,\6V]EBb!S-Ok2UCБ!hf.B.)(eWp_*CcJc'-66 Vh3kp`l=0)AYKˑ*SiE6gަ.:!͊Ntt3'0ah cB5=090- GqѹѹzdE{GRkB[_G"!Hj$#= TTEF.44i5%+2 2ǌLL  _; W5m{!G|#?1@׍5_?N?,sKKgpĸb1A{ ='
+8t16t,P &@S@sJ*jh n mv-m|;pp'
+tzRgT@/Яt7 A``p0F #Qhn`p0l'}L Ӏ\C 0 cسDqgkgvkgvkgvgSLO)1Ş1c=c3{跧 toOMɦl_Uӟ3%檘Y,tVtVtV:Vi+״bJ~Di-gr-gbVoIj4әBY*⪭Ksi_Yİi.eL96Ms~rrA~_鯌鯜oskش_ju8o+j YAJCm!2wrp-1kW#gLk5`z=N0&^LC6"_Uʯ*ky-e:^G~a;ӷ>}p' |)(ğTMǽ߼߼e"no[{x( pK#=#|GGb?Xg?O)>4j~ACJʊNpL?'2`Hv&HeJ" JCMGC9z(A5 dGUYg]"z\#+
+ΨY%ށ()$7M̮ʙ-3OY }9>)IxcO5޳>[${%U;zqq}R ȩ\/g\wuԑ:+˓"gC`82;CN6~Ynao7Ik]HoK;il#RVxtAήyI76CzPX"7GP̘؋e!%w2a2ua)#)fr
+lnbg",,,jq+*{=i"fKcWYGv,3dJPJ.qWcؓhd.WKKgğbyս /%jfe,Cv(f :W9_W #א,U6+Mu[+e M0,6zD zӬ'b=aL,L,L,L,m>v5)]XKLW;NԅzҭԛA]wjOdΡnS|iVwܓsK3&}ţ߭x)z s??oy^g꘏蘏1?c>~Z| R{dNh'SOʩe$ix&5&kq-jho'd
+x1_C-U-o.3wH;wGsoMME|({"s$D_pcs(n7n*l6OS)\bWjYvoeYvoeYvoe6WzBoն޳Ь0`VgV0+̳fyf Ğ|
+]1֊UBcg5b>+z4έr6'o|\')O9ƧS
+MG_UVAFYgUl2VU1VUelЧG*RyxJWʈrxyp  NijCJJ111118׫˕68A/SE?z-)k!'crʔ&,19K|:wFSM2T`a/ˏ:d#KO6ɾ41/M#X;c%7rZ^+dJK)'*j{u/?囆~?0,?Rzw#OݼUtW|Rt6F4*e_6ad%
+OZJnG1 cYf++b&RioI!a\y>.Q[XR
+BK/r
+{5ң!7$ZܸcZ9K,K%V%gpid),q^g)ˍc' >!bgϩ% X-Ĥ/xϛ;:;dr]AkEv>Cl]c*Ɠ*yn۷M+#+>5eV~nSYzmfKexkFk=ιv*9ØJ\4VZAG !xؗت\[
+E=TwCd ow*O!>ƧdD)+9+QH
+t:`uXOiܽ!rDf=(ڵDBWi5`Јf;L0#M5Ylr&KPP3XK?xhAo;,6n=YY$ /Ft&2L6ל[:X~[X뷅e~[X@o {m[^~K[跄}-a_s'4OQmrօƾ,om@|#voo;ǷƷMr.oǷ;?;'؝!]=TybƛFڨ2l2bF~Sl`I '%l+}#)dIڊ'`|iS[͐du6blv_`ktl[ſXE{tx9r7pl$'~D.ʪ!w;/g5 wW қz}꿔pauRI=1ǷX
+`[L>a(|"vlCLوrJǹ+ů=
+~U_4k)%e4>RR#VOCä??Oi0_z^OL]HjyQڭ$1j N&>KOCw5L[͢od.oțZת}[;gXIYn솸P7cFn7s~^䞍Cn{=u7&~7=঺Mٵqm];upU*,(@߬o_Og Xt6,-ƞ>Sta͏F+7{T%Se7=Fuٵ=W'F99}twr39v8mZ,7/^2Gjo{{{ۄY)a:pnt7t-#V_g&zQlkzjE7ЍtF?؆R;jŠ*rܽv\&sLHs[\+I+QH{M:ײgX'y֍lAw!; ;r  8]_.0P0(psu=Qߛ v!Ǹ!qm Ǻ\;]̵tM{qܛ]x r`)#K{v3
+q&%7K-`x>g7cX%Rf.cz&(˝0VT^=%}8tjG0pi3')}F[svvW]oiʨusY.`~cx[!H%O؊V}=,@/D.Bp~-wΕztzX4!o
+CtJ^7NCړ~xbʉy|ƯNBSo׭xVd`X,{45ԯ]QF\kx%gX.pY`0=jԭݨvC׳@C{;AwW{p]3p%kZٳȾbz׊64"W#dI2whcxW; .:Ge(*U7w{s|&늱+iöz0l05NJ0l+6u%U|ͬOLz8 ]bkIͅc] r|1nЕ`oA~_[r/g:OQO>>ťL $EJ:dT&IԆ5XWfL0֕` uJ0zn3z>KY[5J dC:?JA?k^^] u(r{-96ya6;0:uK}e3ҏT >
+/CIDToGIDMap /Identity
+/FontDescriptor >
+/Subtype /CIDFontType2
+/Type /Font
+/W 25 0 R
+>> ]
+/Encoding /Identity-H
+/Subtype /Type0
+/ToUnicode 26 0 R
+/Type /Font
+>>
+endobj
+28 0 obj
+>
+stream
+x]M8skIes=4@o"%KjPiHl=w/]vNbO/&1W:{Ө/}xL?+O+s{I]n^=پ_ѐ ;+`t|X0?E_JYt|X=Ej{4MPd"pOH${Ꝺ8OuBKHN?|3 @:C>Ƃvjs#eŤ.s )u߼%
+Q !!dܯga-d2$f'@GNȇ%G HGNȇ%~DD HGNȇ%*^tUsW2hM8 .IKX( -.5o'C>okD0ƎA !2jbJ( N
+4s.ME#
+4䳁bUΛNVq%gyU!D4ುGnA'*z&Dt|C7#
+L$|.
+aE⳥]^t&m0%@i'l4!l*`L Ґ%JБa kQґ/ O/d%tSt6H!p0=o2Q)kT' : >eU.#P@#H'~](б!
+4s.Q!
+1"
+
+s.شA&GBқKP8"}%@GNȇ%;7 Q04 %BXDtB|[Llx֛B仳@F@ !21돱hB`Dt|(vVŠ|ỏP P {DXvB#! :JC>(jsxBQ!%y#!{@R4!,;@ !2#QR4s.ME#
+4SF*åb*oH*~GҐO^@K>|ׅRP !2V7rl]dH*~t|J(gzB~Dt|ׅ͈B~Dt|D Q P .vڦx7imWmgzm0 :JC>e{=6Q !]+5D0t'/\ R"|Xl
+D!^4೥]aa]bycJtJ5G",RA !2Plq\gRq4䄡f>u___Գov_/BJs߯oOo2?NX:մ}˫K\tz?t(;h;?/&a; XJOg3..Ô7n`-]x{p'{xק_gcFǺeB)]_U؀=oPx1~$[e
+2juZG§~ `[O`~
+RAs)5 A*ֵ/TQ'0]0. huc0xUu0g3fyfNc55p5дs]%Q0M,7{>g;pO0d`!tk#u |S ѫfʆ'Et-'R(O@]od-d~hEql8[Y 6pR׉"_djML0lBzyH鍂beSרq\/Dvq`/redKex]=}n"pXk#͗OḓԡVEd-4h{C4=_ԈYv>ư͖«f"ԋr5k5avk=}J; =+Yyϟ\xYCiKԶ2u@U]=va[Cvg!E#[mnX)__|ROC~HxDT pwC]H{030~`9Ȇ)nY`nH66Lu~Ƹvq_[ox@u#O?aEDܤ'ɒVeW(8^?|$"!KG}qoCiD_a#i  aHn& ZtGMcc&0mєZ؁zOGԱ+v옲'jcRǚ75G):l [gctH")@SQIE9φY׏?iBjۘ=0=&3*x/e=fgB\=4!z(_}??jXz|~2f^Qb~U'f:/(jD~$Ck|hf7vb#iq1XsYiD$)'$>pw۫ˈ)ˇU/zhQcyMjliw- Y6ҡy象yHdB~#ρ#w8CKȭ]߬9| }aZɁ\K7hZ`ֵ&sp.MX- X KiY*z;e)k 3f++)Y\jުylY$&BsV!yP %sCE\t2B̅)>[@ua
+zn}S9ŻHA~t27s:϶%Uܛoxe,JTgIcxq:ZhZ龡 [ BcQ\~ucqJH^\y]-WZ@^Wh27mlҼ3=8Пe8-deZAI*fokfuSn_θϰu}(̘ܧAsڹYF~toэeC0+Ao9x!j@wa_X9q2S~ pƳJU&ۙt.AUG+ʜ2f6*UoEn7ϷcAc;׮umM + "yV=g%sVZ+qVQ[ s#Bp
+@$J:Z닺VI->a]?V{Jƻ&2{a Cge=$+Gu*2U%!~ȊW
+}WMɐOC󃓵aCLՄːN¨'FV/ zd&GG9aTo=6A;ilT@9.}*H)ZX%߻ʒ_;ZQ=͍[;%_H+>.i֢Or oiZ@\o1@w}H 2懮pAwDМmҷYl,٥Cf\CެewR9߾A]ڎ"}uTUꊠ$O{,Nu1mU5,pp7-.e\ɖ~pR,*|xȕ|8kD.˕m%S4qNYW8fĎYߓ;} l\Po&r׈} TGo "tvw7ɞVzlJaO\ aiw]}hոQSÆ[U;杲ݏa7N~0rfܸAsfdgDӚnB\X=긣? 2- U[@+drgBi 9zEp@\:+I훀jLműV߯]+/-T0N,2!۳Y-%Y45bs9ex2?jnH!.-*GEO.kq}Wq #՗])`ڴR[tx3,;臟o*9|ۂϷ5Q\m+gOAs P,;^{ߝ^TOt7EA:0}ٲ-ulȻ-NTO&cO֨]yV2o36sj2zXf}jK9هۨbeG+ڸvV+SƹtB!jvR>-Mt4un=:L9/tc~4oǦ9i:]a4v `ǽ5SǸi}hWuv- >x3KpoOPP ttE+J :p">$eInC_%}9*D:% V 葓Pvrл nҹ('Cm\&$Uҗ\_Hр)
+I !q._R^@:J@(!ѹnZ6 ۀ+J :p">$e^,'ڐ܆qZ},XQс! Ɍ) T_%݈L R &$pm&7!ѹ ~6~e>@^ %8u,q*QW'ҹ(A &`Z,Wu;Y(  'CP{.F7s/݈m@ %)7_%=FHbE ^oBL10s?ĊI@.|6$:uۀtnJ@(=onCs5sPbE DNć$;WI_^Hр)
+I =+ԕ z$ V@tD|HV߀~$Aow&i._!Uj ojKF $NQ]  Non(CNv|(J%) '#$J8eZ&:q>RvPmTGs?gq 6# L4IpH,!+C0)KHt VwrXM,I :q>RB%$,!;-%xV )aRI ,a2KHt V0-|=a0>|)!E]nJ}D%$>Bbޣo3}3J :q>BKGF?Gmt|?jkŨˁ2ݮ:=Mc%W NLˆ3Zܦ'\+,QTֵTU֝Xaw.L07L2wrKt+o9s[UbU5TDUObO5NDOIbI5HDICCdECy4E`mXaqo@8Qu`XaMވU6 oxc
+c|`ĉcxW
+W|Ǡ_.+,/1(Kx?
+?| >
+>>
+endobj
+3 0 obj
+>
+endobj
+10 0 obj
+>
+stream
+/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo > def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange endcodespacerange 20 beginbfchar endbfchar endcmap CMapName currentdict /CMap defineresource pop end end
+endstream
+endobj
+9 0 obj
+[ 1 1 535 2 2 535 28 28 636 34 34 625 40 40 506 62 62 494 73 73 242 91 91 454 97 97 721 98 98 643 105 105 666 139 139 515 152 152 620 171 171 529 853 853 506 855 855 506 857 857 506 859 859 506 991 991 187 1015 1015 306 ]
+endobj
+6 0 obj
+[ -721 -281 721 938 ]
+endobj
+7 0 obj
+721
+endobj
+18 0 obj
+>
+stream
+/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo > def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange endcodespacerange 32 beginbfchar endbfchar endcmap CMapName currentdict /CMap defineresource pop end end
+endstream
+endobj
+17 0 obj
+[ 1 1 552 26 26 558 28 28 633 34 34 632 40 40 514 73 73 271 75 75 271 86 86 333 91 91 459 97 97 734 98 98 645 105 105 657 135 135 569 139 139 538 147 147 450 152 152 617 171 171 549 180 180 526 847 847 506 848 848 506 849 849 506 850 850 506 851 851 506 852 852 506 853 853 506 854 854 506 855 855 506 856 856 506 974 974 180 991 991 266 1020 1020 306 1021 1021 306 ]
+endobj
+14 0 obj
+[ -734 -281 734 938 ]
+endobj
+15 0 obj
+734
+endobj
+26 0 obj
+>
+stream
+/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo > def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange endcodespacerange 59 beginbfchar endbfchar endcmap CMapName currentdict /CMap defineresource pop end end
+endstream
+endobj
+25 0 obj
+[ 1 1 534 26 26 552 28 28 632 34 34 626 40 40 509 62 62 479 73 73 243 91 91 456 97 97 722 98 98 644 105 105 667 132 132 528 135 135 555 139 139 519 147 147 436 152 152 620 171 171 530 205 205 487 206 206 487 230 230 514 232 232 479 238 238 514 244 244 485 267 267 278 268 268 449 275 275 506 278 278 224 280 280 224 292 292 224 295 295 447 299 299 242 305 305 784 306 306 506 314 314 504 315 315 504 341 341 514 343 343 514 344 344 309 348 348 442 357 357 296 362 362 510 381 381 414 389 389 414 399 399 399 847 847 506 848 848 506 849 849 506 850 850 506 851 851 506 852 852 506 853 853 506 854 854 506 855 855 506 856 856 506 974 974 187 991 991 260 992 992 260 993 993 260 1009 1009 306 ]
+endobj
+22 0 obj
+[ -784 -281 784 938 ]
+endobj
+23 0 obj
+784
+endobj
+2 0 obj
+>
+endobj
+1 0 obj
+>
+endobj
+30 0 obj
+>
+endobj
+xref
+0 31
+0000000000 65535 f
+0000101615 00000 n
+0000101556 00000 n
+0000097190 00000 n
+0000000009 00000 n
+0000000035 00000 n
+0000098263 00000 n
+0000098300 00000 n
+0000000058 00000 n
+0000098026 00000 n
+0000097369 00000 n
+0000027090 00000 n
+0000027562 00000 n
+0000027589 00000 n
+0000099528 00000 n
+0000099566 00000 n
+0000027613 00000 n
+0000099144 00000 n
+0000098319 00000 n
+0000056439 00000 n
+0000056917 00000 n
+0000056944 00000 n
+0000101498 00000 n
+0000101536 00000 n
+0000056968 00000 n
+0000100790 00000 n
+0000099586 00000 n
+0000089796 00000 n
+0000090274 00000 n
+0000097123 00000 n
+0000101664 00000 n
+trailer
+>
+startxref
+101925
+%%EOF
+
+=== ACTIVIDAD: [FOLDER] Material de clases  Carpeta (ID: 8217361) ===
+URL: https://aula.usm.cl/mod/folder/view.php?id=8217361
+202602_J1_C7_CIV244_3502: Material de clases | AULA USM
+Tamaño de fuente
+A-
+A
+A+
+Color del sitio
+R
+A
+A
+A
+Salta al contenido principal
+Panel lateral
+Página Principal
+Área personal
+Mis cursos
+Más
+Buscar por todo el sitio
+Buscar
+Cerrar
+Realizar búsqueda
+Selector de búsqueda de entrada
+40
+Notificaciones
+No tienes notificaciones
+Ver todo
+12
+Hay 12 conversaciones sin leer
+Guías de Brickfield
+Sistema detectado
+Unknown
+Default browser
+¿Cómo puedo...?
+Activar el modo lector
+Léeme la página
+Cambiar el tamaño del texto
+Cambiar el estilo del texto
+Cambiar la familia de fuentes
+Cambiar el color del texto
+Cambiar el color de fondo
+Cambiar el espaciado del texto
+Activar el modo oscuro
+Traducir la página
+Crear accesibilidad
+Documentos
+Presentaciones
+Formatos de documentos alternativos
+Accesibilidad
+Perfil
+Calificaciones
+Calendario
+Archivos privados
+Informes
+Preferencias
+Idioma
+Cerrar sesión
+Selector de idioma
+English ‎(en)‎
+Español - Internacional ‎(es)‎
+AULA USM
+Página Principal
+Área personal
+Mis cursos
+Expandir todo
+Colapsar todo
+Material de clases
+(202602)(CIV244) MECÁNICA DE FLUIDOS|Paralelos:200
+Información General
+Material de clases
+Abrir índice del curso
+Requisitos de finalización
+Descargar carpeta
+CIV244_Clase_01_handout.pdf
+CIV244_Clase_02_handout.pdf
+CIV244_Clase_03_handout.pdf
+CIV244_Clase_04_Ejemplo.pdf
+CIV244_Clase_04_handout.pdf
+CIV244_Clase_05_handout.pdf
+CIV244_Clase_06_handout.pdf
+CIV244_Clase_07_handout.pdf
+CIV244_Clase_08_Ejemplo.pdf
+CIV244_Clase_08_handout.pdf
+CIV244_Clase_09_handout.pdf
+CIV244_Clase_10_handout.pdf
+CIV244_Clase_11.pdf
+CIV244_Clase_12_handout.pdf
+CIV244_Clase_13_handout.pdf
+CIV244_Clase_14_handout.pdf
+CIV244_Clase_15.pdf
+Actividad previa
+Programa 2026-25
+Ir a...
+Ir a...
+Noticias y avisos
+Programa de Estudio (descargar aquí)
+Planificación de la Asignatura
+Programa 2026-25
+Apuntes USM
+Certámenes anteriores
+Entrega apuntes C1
+Certámenes
+Cápsula Ayudantía 1
+Ayudantía 1
+Ayudantía 2
+Ayudantía 3
+Ayudantía 4
+Ayudantía Extra
+Cápsula Ayudantía Extra
+Ayudantía 5
+Ayudantía 6
+Ayudantía 7
+Ayudantía 8
+Siguiente actividad
+Apuntes USM
+Contáctanos
+Síganos
+Contactar con el soporte del sitio
+Usted se ha identificado como NICOLAS EDUARDO ALBORNOZ PAVEZ ( Cerrar sesión )
+Resumen de retención de datos
+Opinar sobre este software
+Descargar la app para dispositivos móviles
+Cambiar al tema estándar
+Descargar la app para dispositivos móviles
+Desarrollado por Moodle
+Este tema fue desarrollado por
+Mensajería
+Contactos
+Mensajes seleccionados:
+1
+×
+Buscar personas y mensajes
+Contactos
+0
+Hay 0 solicitudes de contacto pendientes
+Buscar personas y mensajes
+Configuración
+Contactos
+Peticiones
+0
+Hay 0 solicitudes de contacto pendientes
+No hay contactos
+No hay solicitudes de contacto
+Solicitud de contacto enviada
+Espacio personal
+Guardar borradores de mensajes, notas, etc, para acceder a ellos más tarde.
+Borrar para mí y para todos los demás
+Bloque
+Desbloquear
+Quitar
+Añadir
+Borrar
+Borrar
+Enviar solicitud de contacto
+Aceptar y añadir a los contactos
+Rechazar
+OK
+Cancelar
+Destacados
+( )
+conversaciones en total
+Hay conversaciones sin leer
+Sin conversaciones destacadas
+Grupo
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciónes de grupo
+Privado
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciones privadas
+Contactos
+No contactos
+Cargar más
+Mensajes
+Cargar más
+No hay resultados
+Buscar personas y mensajes
+Privacidad
+Puede restringir quién puede enviarle mensajes
+Aceptar mensajes desde:
+Únicamente mis contactos
+Mis contactos y cualquier persona de mis cursos
+Preferencias de notificación
+General
+Usar "intro" para enviar
+Eliminar mensajes seleccionados
+Enviar solicitud de contacto
+Ha bloqueado a este usuario.
+Desbloquear usuario
+No puede enviar mensajes a este usuario
+Ver todo
+
+=== ACTIVIDAD: [FOLDER] Apuntes USM  Carpeta (ID: 8217370) ===
+URL: https://aula.usm.cl/mod/folder/view.php?id=8217370
+202602_J1_C7_CIV244_3502: Apuntes USM | AULA USM
+Tamaño de fuente
+A-
+A
+A+
+Color del sitio
+R
+A
+A
+A
+Salta al contenido principal
+Panel lateral
+Página Principal
+Área personal
+Mis cursos
+Más
+Buscar por todo el sitio
+Buscar
+Cerrar
+Realizar búsqueda
+Selector de búsqueda de entrada
+40
+Notificaciones
+No tienes notificaciones
+Ver todo
+12
+Hay 12 conversaciones sin leer
+Guías de Brickfield
+Sistema detectado
+Unknown
+Default browser
+¿Cómo puedo...?
+Activar el modo lector
+Léeme la página
+Cambiar el tamaño del texto
+Cambiar el estilo del texto
+Cambiar la familia de fuentes
+Cambiar el color del texto
+Cambiar el color de fondo
+Cambiar el espaciado del texto
+Activar el modo oscuro
+Traducir la página
+Crear accesibilidad
+Documentos
+Presentaciones
+Formatos de documentos alternativos
+Accesibilidad
+Perfil
+Calificaciones
+Calendario
+Archivos privados
+Informes
+Preferencias
+Idioma
+Cerrar sesión
+Selector de idioma
+English ‎(en)‎
+Español - Internacional ‎(es)‎
+AULA USM
+Página Principal
+Área personal
+Mis cursos
+Expandir todo
+Colapsar todo
+Apuntes USM
+(202602)(CIV244) MECÁNICA DE FLUIDOS|Paralelos:200
+Información General
+Apuntes USM
+Abrir índice del curso
+Requisitos de finalización
+Descargar carpeta
+Apunte-02-Propiedades_mecanicas_1.pdf
+Apunte-03-Propiedades_mecanicas_2.pdf
+Apunte-04-Analisis_dimensional.pdf
+Apunte-05-Estatica_fluidos_fuerzas.pdf
+Apunte-06-Equilibrio_mecanico.pdf
+Apunte-07-Fuerzas_sobre_superficies_planas.pdf
+Apunte-08-Fuerzas_sobre_superficies_curvas.pdf
+Apunte-09-Cinematica_introduccion.pdf
+Apunte-10-Cinematica_conservacion_masa.pdf
+Apunte-11-Cinematica_movimiento_relativo.pdf
+Apunte-12-FlujoIdealReal-EcuacionEuler.pdf
+Apunte-13-FlujoIdealReal-AplicacionesEulerBernoulli.pdf
+Apunte-14-FlujoIdealReal-NavierStokes.pdf
+Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf
+Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf
+Actividad previa
+Material de clases
+Ir a...
+Ir a...
+Noticias y avisos
+Programa de Estudio (descargar aquí)
+Planificación de la Asignatura
+Programa 2026-25
+Material de clases
+Certámenes anteriores
+Entrega apuntes C1
+Certámenes
+Cápsula Ayudantía 1
+Ayudantía 1
+Ayudantía 2
+Ayudantía 3
+Ayudantía 4
+Ayudantía Extra
+Cápsula Ayudantía Extra
+Ayudantía 5
+Ayudantía 6
+Ayudantía 7
+Ayudantía 8
+Siguiente actividad
+Certámenes anteriores
+Contáctanos
+Síganos
+Contactar con el soporte del sitio
+Usted se ha identificado como NICOLAS EDUARDO ALBORNOZ PAVEZ ( Cerrar sesión )
+Resumen de retención de datos
+Opinar sobre este software
+Descargar la app para dispositivos móviles
+Cambiar al tema estándar
+Descargar la app para dispositivos móviles
+Desarrollado por Moodle
+Este tema fue desarrollado por
+Mensajería
+Contactos
+Mensajes seleccionados:
+1
+×
+Buscar personas y mensajes
+Contactos
+0
+Hay 0 solicitudes de contacto pendientes
+Buscar personas y mensajes
+Configuración
+Contactos
+Peticiones
+0
+Hay 0 solicitudes de contacto pendientes
+No hay contactos
+No hay solicitudes de contacto
+Solicitud de contacto enviada
+Espacio personal
+Guardar borradores de mensajes, notas, etc, para acceder a ellos más tarde.
+Borrar para mí y para todos los demás
+Bloque
+Desbloquear
+Quitar
+Añadir
+Borrar
+Borrar
+Enviar solicitud de contacto
+Aceptar y añadir a los contactos
+Rechazar
+OK
+Cancelar
+Destacados
+( )
+conversaciones en total
+Hay conversaciones sin leer
+Sin conversaciones destacadas
+Grupo
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciónes de grupo
+Privado
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciones privadas
+Contactos
+No contactos
+Cargar más
+Mensajes
+Cargar más
+No hay resultados
+Buscar personas y mensajes
+Privacidad
+Puede restringir quién puede enviarle mensajes
+Aceptar mensajes desde:
+Únicamente mis contactos
+Mis contactos y cualquier persona de mis cursos
+Preferencias de notificación
+General
+Usar "intro" para enviar
+Eliminar mensajes seleccionados
+Enviar solicitud de contacto
+Ha bloqueado a este usuario.
+Desbloquear usuario
+No puede enviar mensajes a este usuario
+Ver todo
+
+=== ACTIVIDAD: [FOLDER] Certámenes anteriores  Carpeta (ID: 8311749) ===
+URL: https://aula.usm.cl/mod/folder/view.php?id=8311749
+202602_J1_C7_CIV244_3502: Certámenes anteriores | AULA USM
+Tamaño de fuente
+A-
+A
+A+
+Color del sitio
+R
+A
+A
+A
+Salta al contenido principal
+Panel lateral
+Página Principal
+Área personal
+Mis cursos
+Más
+Buscar por todo el sitio
+Buscar
+Cerrar
+Realizar búsqueda
+Selector de búsqueda de entrada
+40
+Notificaciones
+No tienes notificaciones
+Ver todo
+12
+Hay 12 conversaciones sin leer
+Guías de Brickfield
+Sistema detectado
+Unknown
+Default browser
+¿Cómo puedo...?
+Activar el modo lector
+Léeme la página
+Cambiar el tamaño del texto
+Cambiar el estilo del texto
+Cambiar la familia de fuentes
+Cambiar el color del texto
+Cambiar el color de fondo
+Cambiar el espaciado del texto
+Activar el modo oscuro
+Traducir la página
+Crear accesibilidad
+Documentos
+Presentaciones
+Formatos de documentos alternativos
+Accesibilidad
+Perfil
+Calificaciones
+Calendario
+Archivos privados
+Informes
+Preferencias
+Idioma
+Cerrar sesión
+Selector de idioma
+English ‎(en)‎
+Español - Internacional ‎(es)‎
+AULA USM
+Página Principal
+Área personal
+Mis cursos
+Expandir todo
+Colapsar todo
+Certámenes anteriores
+(202602)(CIV244) MECÁNICA DE FLUIDOS|Paralelos:200
+Información General
+Certámenes anteriores
+Abrir índice del curso
+Requisitos de finalización
+Descargar carpeta
+CIV244_2022_C1_Pauta.pdf
+CIV244_2022_C1.pdf
+CIV244_2022_C2_Pauta.pdf
+CIV244_2022_C2.pdf
+CIV244_2023_C1_Pauta.pdf
+CIV244_2023_C1.pdf
+CIV244_2023_C2_Pauta.pdf
+CIV244_2023_C2.pdf
+CIV244_2024_C1_Pauta.pdf
+CIV244_2024_C1.pdf
+CIV244_2024_C2.pdf
+Actividad previa
+Apuntes USM
+Ir a...
+Ir a...
+Noticias y avisos
+Programa de Estudio (descargar aquí)
+Planificación de la Asignatura
+Programa 2026-25
+Material de clases
+Apuntes USM
+Entrega apuntes C1
+Certámenes
+Cápsula Ayudantía 1
+Ayudantía 1
+Ayudantía 2
+Ayudantía 3
+Ayudantía 4
+Ayudantía Extra
+Cápsula Ayudantía Extra
+Ayudantía 5
+Ayudantía 6
+Ayudantía 7
+Ayudantía 8
+Siguiente actividad
+Entrega apuntes C1
+Contáctanos
+Síganos
+Contactar con el soporte del sitio
+Usted se ha identificado como NICOLAS EDUARDO ALBORNOZ PAVEZ ( Cerrar sesión )
+Resumen de retención de datos
+Opinar sobre este software
+Descargar la app para dispositivos móviles
+Cambiar al tema estándar
+Descargar la app para dispositivos móviles
+Desarrollado por Moodle
+Este tema fue desarrollado por
+Mensajería
+Contactos
+Mensajes seleccionados:
+1
+×
+Buscar personas y mensajes
+Contactos
+0
+Hay 0 solicitudes de contacto pendientes
+Buscar personas y mensajes
+Configuración
+Contactos
+Peticiones
+0
+Hay 0 solicitudes de contacto pendientes
+No hay contactos
+No hay solicitudes de contacto
+Solicitud de contacto enviada
+Espacio personal
+Guardar borradores de mensajes, notas, etc, para acceder a ellos más tarde.
+Borrar para mí y para todos los demás
+Bloque
+Desbloquear
+Quitar
+Añadir
+Borrar
+Borrar
+Enviar solicitud de contacto
+Aceptar y añadir a los contactos
+Rechazar
+OK
+Cancelar
+Destacados
+( )
+conversaciones en total
+Hay conversaciones sin leer
+Sin conversaciones destacadas
+Grupo
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciónes de grupo
+Privado
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciones privadas
+Contactos
+No contactos
+Cargar más
+Mensajes
+Cargar más
+No hay resultados
+Buscar personas y mensajes
+Privacidad
+Puede restringir quién puede enviarle mensajes
+Aceptar mensajes desde:
+Únicamente mis contactos
+Mis contactos y cualquier persona de mis cursos
+Preferencias de notificación
+General
+Usar "intro" para enviar
+Eliminar mensajes seleccionados
+Enviar solicitud de contacto
+Ha bloqueado a este usuario.
+Desbloquear usuario
+No puede enviar mensajes a este usuario
+Ver todo
+
+=== ACTIVIDAD: [ASSIGN] Entrega apuntes C1  Tarea (ID: 8323629) ===
+URL: https://aula.usm.cl/mod/assign/view.php?id=8323629
+202602_J1_C7_CIV244_3502: Entrega apuntes C1 | AULA USM
+Tamaño de fuente
+A-
+A
+A+
+Color del sitio
+R
+A
+A
+A
+Salta al contenido principal
+Panel lateral
+Página Principal
+Área personal
+Mis cursos
+Más
+Buscar por todo el sitio
+Buscar
+Cerrar
+Realizar búsqueda
+Selector de búsqueda de entrada
+40
+Notificaciones
+No tienes notificaciones
+Ver todo
+12
+Hay 12 conversaciones sin leer
+Guías de Brickfield
+Sistema detectado
+Unknown
+Default browser
+¿Cómo puedo...?
+Activar el modo lector
+Léeme la página
+Cambiar el tamaño del texto
+Cambiar el estilo del texto
+Cambiar la familia de fuentes
+Cambiar el color del texto
+Cambiar el color de fondo
+Cambiar el espaciado del texto
+Activar el modo oscuro
+Traducir la página
+Crear accesibilidad
+Documentos
+Presentaciones
+Formatos de documentos alternativos
+Accesibilidad
+Perfil
+Calificaciones
+Calendario
+Archivos privados
+Informes
+Preferencias
+Idioma
+Cerrar sesión
+Selector de idioma
+English ‎(en)‎
+Español - Internacional ‎(es)‎
+AULA USM
+Página Principal
+Área personal
+Mis cursos
+Expandir todo
+Colapsar todo
+Entrega apuntes C1
+(202602)(CIV244) MECÁNICA DE FLUIDOS|Paralelos:200
+Información General
+Entrega apuntes C1
+Abrir índice del curso
+Requisitos de finalización
+Entrega parcial "desafío semestral"
+Estado de la entrega
+Estado de la entrega
+Estado de la entrega
+Enviado para calificar
+Estado de la calificación
+Sin calificar
+Última modificación
+viernes, 2 de octubre de 2026, 21:27
+Archivos enviados
+Albornoz1_Nicolás1.pdf
+2 de octubre de 2026, 21:27 Exportar al portafolios
+Comentarios de la entrega
+___picture___ ___name___ - ___time___
+___content___
+Mostrar comentarios Comentarios ( 0 )
+Comentario
+Guardar comentario | Cancelar
+Actividad previa
+Certámenes anteriores
+Ir a...
+Ir a...
+Noticias y avisos
+Programa de Estudio (descargar aquí)
+Planificación de la Asignatura
+Programa 2026-25
+Material de clases
+Apuntes USM
+Certámenes anteriores
+Certámenes
+Cápsula Ayudantía 1
+Ayudantía 1
+Ayudantía 2
+Ayudantía 3
+Ayudantía 4
+Ayudantía Extra
+Cápsula Ayudantía Extra
+Ayudantía 5
+Ayudantía 6
+Ayudantía 7
+Ayudantía 8
+Siguiente actividad
+Certámenes
+Contáctanos
+Síganos
+Contactar con el soporte del sitio
+Usted se ha identificado como NICOLAS EDUARDO ALBORNOZ PAVEZ ( Cerrar sesión )
+Resumen de retención de datos
+Opinar sobre este software
+Descargar la app para dispositivos móviles
+Cambiar al tema estándar
+Descargar la app para dispositivos móviles
+Desarrollado por Moodle
+Este tema fue desarrollado por
+Mensajería
+Contactos
+Mensajes seleccionados:
+1
+×
+Buscar personas y mensajes
+Contactos
+0
+Hay 0 solicitudes de contacto pendientes
+Buscar personas y mensajes
+Configuración
+Contactos
+Peticiones
+0
+Hay 0 solicitudes de contacto pendientes
+No hay contactos
+No hay solicitudes de contacto
+Solicitud de contacto enviada
+Espacio personal
+Guardar borradores de mensajes, notas, etc, para acceder a ellos más tarde.
+Borrar para mí y para todos los demás
+Bloque
+Desbloquear
+Quitar
+Añadir
+Borrar
+Borrar
+Enviar solicitud de contacto
+Aceptar y añadir a los contactos
+Rechazar
+OK
+Cancelar
+Destacados
+( )
+conversaciones en total
+Hay conversaciones sin leer
+Sin conversaciones destacadas
+Grupo
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciónes de grupo
+Privado
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciones privadas
+Contactos
+No contactos
+Cargar más
+Mensajes
+Cargar más
+No hay resultados
+Buscar personas y mensajes
+Privacidad
+Puede restringir quién puede enviarle mensajes
+Aceptar mensajes desde:
+Únicamente mis contactos
+Mis contactos y cualquier persona de mis cursos
+Preferencias de notificación
+General
+Usar "intro" para enviar
+Eliminar mensajes seleccionados
+Enviar solicitud de contacto
+Ha bloqueado a este usuario.
+Desbloquear usuario
+No puede enviar mensajes a este usuario
+Ver todo
+
+=== ACTIVIDAD: [FOLDER] Certámenes  Carpeta (ID: 8339316) ===
+URL: https://aula.usm.cl/mod/folder/view.php?id=8339316
+202602_J1_C7_CIV244_3502: Certámenes | AULA USM
+Tamaño de fuente
+A-
+A
+A+
+Color del sitio
+R
+A
+A
+A
+Salta al contenido principal
+Panel lateral
+Página Principal
+Área personal
+Mis cursos
+Más
+Buscar por todo el sitio
+Buscar
+Cerrar
+Realizar búsqueda
+Selector de búsqueda de entrada
+40
+Notificaciones
+No tienes notificaciones
+Ver todo
+12
+Hay 12 conversaciones sin leer
+Guías de Brickfield
+Sistema detectado
+Unknown
+Default browser
+¿Cómo puedo...?
+Activar el modo lector
+Léeme la página
+Cambiar el tamaño del texto
+Cambiar el estilo del texto
+Cambiar la familia de fuentes
+Cambiar el color del texto
+Cambiar el color de fondo
+Cambiar el espaciado del texto
+Activar el modo oscuro
+Traducir la página
+Crear accesibilidad
+Documentos
+Presentaciones
+Formatos de documentos alternativos
+Accesibilidad
+Perfil
+Calificaciones
+Calendario
+Archivos privados
+Informes
+Preferencias
+Idioma
+Cerrar sesión
+Selector de idioma
+English ‎(en)‎
+Español - Internacional ‎(es)‎
+AULA USM
+Página Principal
+Área personal
+Mis cursos
+Expandir todo
+Colapsar todo
+Certámenes
+(202602)(CIV244) MECÁNICA DE FLUIDOS|Paralelos:200
+Información General
+Certámenes
+Abrir índice del curso
+Requisitos de finalización
+Descargar carpeta
+CIV244_2026_C1_RUBRICA.pdf
+CIV244_2026_C1.pdf
+Actividad previa
+Entrega apuntes C1
+Ir a...
+Ir a...
+Noticias y avisos
+Programa de Estudio (descargar aquí)
+Planificación de la Asignatura
+Programa 2026-25
+Material de clases
+Apuntes USM
+Certámenes anteriores
+Entrega apuntes C1
+Cápsula Ayudantía 1
+Ayudantía 1
+Ayudantía 2
+Ayudantía 3
+Ayudantía 4
+Ayudantía Extra
+Cápsula Ayudantía Extra
+Ayudantía 5
+Ayudantía 6
+Ayudantía 7
+Ayudantía 8
+Siguiente actividad
+Cápsula Ayudantía 1
+Contáctanos
+Síganos
+Contactar con el soporte del sitio
+Usted se ha identificado como NICOLAS EDUARDO ALBORNOZ PAVEZ ( Cerrar sesión )
+Resumen de retención de datos
+Opinar sobre este software
+Descargar la app para dispositivos móviles
+Cambiar al tema estándar
+Descargar la app para dispositivos móviles
+Desarrollado por Moodle
+Este tema fue desarrollado por
+Mensajería
+Contactos
+Mensajes seleccionados:
+1
+×
+Buscar personas y mensajes
+Contactos
+0
+Hay 0 solicitudes de contacto pendientes
+Buscar personas y mensajes
+Configuración
+Contactos
+Peticiones
+0
+Hay 0 solicitudes de contacto pendientes
+No hay contactos
+No hay solicitudes de contacto
+Solicitud de contacto enviada
+Espacio personal
+Guardar borradores de mensajes, notas, etc, para acceder a ellos más tarde.
+Borrar para mí y para todos los demás
+Bloque
+Desbloquear
+Quitar
+Añadir
+Borrar
+Borrar
+Enviar solicitud de contacto
+Aceptar y añadir a los contactos
+Rechazar
+OK
+Cancelar
+Destacados
+( )
+conversaciones en total
+Hay conversaciones sin leer
+Sin conversaciones destacadas
+Grupo
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciónes de grupo
+Privado
+( )
+conversaciones en total
+Hay conversaciones sin leer
+No hay conversaciones privadas
+Contactos
+No contactos
+Cargar más
+Mensajes
+Cargar más
+No hay resultados
+Buscar personas y mensajes
+Privacidad
+Puede restringir quién puede enviarle mensajes
+Aceptar mensajes desde:
+Únicamente mis contactos
+Mis contactos y cualquier persona de mis cursos
+Preferencias de notificación
+General
+Usar "intro" para enviar
+Eliminar mensajes seleccionados
+Enviar solicitud de contacto
+Ha bloqueado a este usuario.
+Desbloquear usuario
+No puede enviar mensajes a este usuario
+Ver todo

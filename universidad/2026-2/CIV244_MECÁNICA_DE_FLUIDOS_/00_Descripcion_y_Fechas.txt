@@ -1,0 +1,23 @@
+======================================================================
+ASIGNATURA: Fluidos (CIV244 - Mecánica de Fluidos)
+DEPARTAMENTO: Obras Civiles | DEDICACIÓN: 203 hrs cronológicas (SCT)
+AULA USM ID: 62182 | URL: https://aula.usm.cl/course/view.php?id=62182
+======================================================================
+
+DESCRIPCIÓN DE LA ASIGNATURA:
+El estudiante desarrolla los fundamentos teóricos que le permiten modelar el comportamiento,
+tanto cinemático como dinámico, de los fluidos, principalmente aquellos considerados incompresibles.
+Con ello, el estudiante analiza, formula y resuelve problemas propios de la mecánica de fluidos,
+que finalmente describe conceptualmente, desde una perspectiva de tipo científica con desarrollos
+fenomenológicos rigurosos, que vincula con la comprensión de la física de los procesos hidrodinámicos.
+
+EQUIPO DOCENTE:
+- Profesor: Ricardo Quinteros (ricardo.quinteros@usm.cl) | Sala de consultas: KS-203
+
+FECHAS DE EVALUACIONES PENDIENTES:
+1. CERTAMEN 3: Viernes 20 de Noviembre de 2026 (14:00 - 16:30 h)
+   - Contenidos: Unidades 5 y 6 (Navier-Stokes y Leyes de conservación integrales/diferenciales).
+2. Entrega de Notas Finales: Viernes 27 de Noviembre de 2026 (12:00 h)
+
+DOCUMENTOS Y COPIAS HTML:
+- Ver carpeta 'HTML_Moodle/' para copias completas de páginas, instrucciones de laboratorios y foros.

@@ -1,0 +1,76 @@
+=======================================================================
+       CALENDARIO DE EVALUACIONES PENDIENTES - SEMESTRE 2026-2         
+   (Auditoría Total HTML y Foros | FICA / FAE / Fluidos / Transporte)   
+=======================================================================
+
+📌 FICA: Control 2
+   📅 Cuándo: Lunes 26 de Octubre a las 16:00 h
+   📍 Lugar / Sala: Aula USM / Sala Asignada
+   📝 Detalle: Evaluación Control 2 de Fundamentos de Ingeniería de Construcción y Administración (FICA).
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes
+
+📌 FAE: CERTAMEN 2 (Reprogramado)
+   📅 Cuándo: Martes 27 de Octubre de 17:30 a 20:00 h
+   📍 Lugar / Sala: Campus San Joaquín (Sala B-103 / A012)
+   📝 Detalle: Segundo certamen de Fundamentos de Análisis Estructural (FAE). Reprogramado por alerta meteorológica (Aviso Foro 498536). Bloques 13-14-15-16.
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes
+
+📌 FAE: Cierre Entrega Tarea N°1 (SAP2000)
+   📅 Cuándo: Martes 27 de Octubre hasta las 23:59 h
+   📍 Lugar / Sala: Aula USM (Módulo Tarea 8325772)
+   📝 Detalle: Plazo final de entrega extendido de Tarea N°1 en software SAP2000 (Aviso Foro 497827 y Moodle Assign).
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes
+
+📌 FICA: Caso Práctico 2
+   📅 Cuándo: Lunes 02 de Noviembre a las 16:00 h
+   📍 Lugar / Sala: Aula USM
+   📝 Detalle: Resolución y entrega de Caso Práctico 2 de FICA.
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes
+
+📌 FICA: CERTAMEN 2
+   📅 Cuándo: Lunes 09 de Noviembre a las 16:00 h
+   📍 Lugar / Sala: Sala de Cátedra FICA
+   📝 Detalle: Segundo certamen semestral de FICA.
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes
+
+📌 FAE: CERTAMEN 3
+   📅 Cuándo: Martes 10 de Noviembre de 17:30 a 20:00 h (Sala B-103)
+   📍 Lugar / Sala: Sala B-103
+   📝 Detalle: Tercer certamen de Fundamentos de Análisis Estructural. Bloques 13-14-15-16.
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes
+
+📌 Transporte: CERTAMEN 3
+   📅 Cuándo: Miércoles 18 de Noviembre de 14:00 a 16:30 h
+   📍 Lugar / Sala: Salas B014 / B103
+   📝 Detalle: Tercer certamen semestral de Ingeniería de Transporte (Modelación Ortúzar, Guía N°3).
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes
+
+📌 Fluidos: CERTAMEN 3
+   📅 Cuándo: Viernes 20 de Noviembre de 14:00 a 16:30 h
+   📍 Lugar / Sala: Campus San Joaquín
+   📝 Detalle: Tercer certamen de Mecánica de Fluidos: Unidades 5 y 6 (Navier-Stokes y Leyes de conservación).
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes
+
+📌 FICA: Presentación 2 + Informe Final
+   📅 Cuándo: Lunes 23 de Noviembre a las 16:00 h
+   📍 Lugar / Sala: Sala de Cátedra FICA / Aula USM
+   📝 Detalle: Defensa final de proyecto de construcción y entrega de Informe 2 en Aula USM.
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes
+
+📌 Fluidos: Entrega Notas Finales
+   📅 Cuándo: Viernes 27 de Noviembre a las 12:00 h
+   📍 Lugar / Sala: Aula USM / SIGA
+   📝 Detalle: Publicación oficial de notas finales y actas de Mecánica de Fluidos.
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes
+
+📌 Transporte: Certamen Recuperativo
+   📅 Cuándo: Miércoles 02 de Diciembre de 14:00 a 16:30 h
+   📍 Lugar / Sala: Salas B014 / B103
+   📝 Detalle: Certamen recuperativo final de Ingeniería de Transporte.
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes
+
+📌 FAE: CERTAMEN 4 (Final)
+   📅 Cuándo: Miércoles 02 de Diciembre de 17:30 a 20:00 h (Sala A012)
+   📍 Lugar / Sala: Sala A012
+   📝 Detalle: Cuarto certamen semestral de Fundamentos de Análisis Estructural. Bloques 13-14-15-16.
+   🔔 Recordatorios en Calendario: 1 semana antes, 3 días antes y 1 día antes

@@ -1,0 +1,30 @@
+======================================================================
+ASIGNATURA: FAE (CIV233 - Fundamentos de Análisis Estructural)
+DEPARTAMENTO: Obras Civiles | DEDICACIÓN: 187 hrs cronológicas (SCT)
+AULA USM ID: 62178 | URL: https://aula.usm.cl/course/view.php?id=62178
+======================================================================
+
+DESCRIPCIÓN DE LA ASIGNATURA:
+El estudiante determina las fuerzas internas y desplazamientos causados por solicitaciones
+estáticas en estructuras isostáticas e hiperestáticas constituidas por materiales de comportamiento
+lineal y no lineal. También identifica las deformadas, y analiza algunos casos especiales tales
+como cambios de temperatura, defectos de fabricación, asentamientos y resortes. El estudiante
+integra los fundamentos para el desarrollo de métodos de análisis estructural, que son aplicables
+tanto en el caso estático como dinámico.
+
+HORARIOS Y SALAS:
+- Cátedra: Miércoles | Bloques 13-14 / 15-16 (17:30 - 18:40 / 18:50 - 20:00) | Sala A012
+- Ayudantía: Viernes | Bloques 7-8 (12:30 - 13:40) | Sala K300
+- Ayudantes: Gabriel Flores (gabriel.floresf@usm.cl) | Matías Muñoz (mmunozr@usm.cl)
+
+FECHAS DE CERTÁMENES Y ENTREGAS PENDIENTES:
+1. CERTAMEN 2 (Reprogramado): Martes 27 de Octubre de 2026 (17:30 - 20:00 h)
+   * Nota: Postergado desde el 20-Oct por alerta meteorológica y sistema frontal (Aviso Foro 498536).
+2. Entrega Tarea N°1 (SAP2000): Martes 27 de Octubre de 2026 (Hasta las 23:59 h en Aula)
+   * Plazo extendido formalmente por el profesorado (Aviso Foro 497827).
+3. CERTAMEN 3: Martes 10 de Noviembre de 2026 (17:30 - 20:00 h | Sala B-103)
+4. CERTAMEN 4 (Final): Miércoles 02 de Diciembre de 2026 (17:30 - 20:00 h | Sala A012)
+
+DOCUMENTOS Y COPIAS HTML:
+- Ver carpeta 'HTML_Moodle/' para copias de todas las páginas, actividades y discusiones de foro.
+- Ver carpeta 'Material_y_Apuntes/' y 'Evaluaciones_y_Entregas/'.

@@ -1,0 +1,110 @@
+[
+  {
+    "ramo": "FICA",
+    "titulo": "FICA: Control 2",
+    "start": "20261026T160000",
+    "end": "20261026T180000",
+    "fecha_legible": "Lunes 26 de Octubre a las 16:00 h",
+    "loc": "Aula USM / Sala Asignada",
+    "desc": "Evaluación Control 2 de Fundamentos de Ingeniería de Construcción y Administración (FICA)."
+  },
+  {
+    "ramo": "FAE",
+    "titulo": "FAE: CERTAMEN 2 (Reprogramado)",
+    "start": "20261027T173000",
+    "end": "20261027T200000",
+    "fecha_legible": "Martes 27 de Octubre de 17:30 a 20:00 h",
+    "loc": "Campus San Joaquín (Sala B-103 / A012)",
+    "desc": "Segundo certamen de Fundamentos de Análisis Estructural (FAE). Reprogramado por alerta meteorológica (Aviso Foro 498536). Bloques 13-14-15-16."
+  },
+  {
+    "ramo": "FAE",
+    "titulo": "FAE: Cierre Entrega Tarea N°1 (SAP2000)",
+    "start": "20261027T235900",
+    "end": "20261028T003000",
+    "fecha_legible": "Martes 27 de Octubre hasta las 23:59 h",
+    "loc": "Aula USM (Módulo Tarea 8325772)",
+    "desc": "Plazo final de entrega extendido de Tarea N°1 en software SAP2000 (Aviso Foro 497827 y Moodle Assign)."
+  },
+  {
+    "ramo": "FICA",
+    "titulo": "FICA: Caso Práctico 2",
+    "start": "20261102T160000",
+    "end": "20261102T180000",
+    "fecha_legible": "Lunes 02 de Noviembre a las 16:00 h",
+    "loc": "Aula USM",
+    "desc": "Resolución y entrega de Caso Práctico 2 de FICA."
+  },
+  {
+    "ramo": "FICA",
+    "titulo": "FICA: CERTAMEN 2",
+    "start": "20261109T160000",
+    "end": "20261109T183000",
+    "fecha_legible": "Lunes 09 de Noviembre a las 16:00 h",
+    "loc": "Sala de Cátedra FICA",
+    "desc": "Segundo certamen semestral de FICA."
+  },
+  {
+    "ramo": "FAE",
+    "titulo": "FAE: CERTAMEN 3",
+    "start": "20261110T173000",
+    "end": "20261110T200000",
+    "fecha_legible": "Martes 10 de Noviembre de 17:30 a 20:00 h (Sala B-103)",
+    "loc": "Sala B-103",
+    "desc": "Tercer certamen de Fundamentos de Análisis Estructural. Bloques 13-14-15-16."
+  },
+  {
+    "ramo": "Transporte",
+    "titulo": "Transporte: CERTAMEN 3",
+    "start": "20261118T140000",
+    "end": "20261118T163000",
+    "fecha_legible": "Miércoles 18 de Noviembre de 14:00 a 16:30 h",
+    "loc": "Salas B014 / B103",
+    "desc": "Tercer certamen semestral de Ingeniería de Transporte (Modelación Ortúzar, Guía N°3)."
+  },
+  {
+    "ramo": "Fluidos",
+    "titulo": "Fluidos: CERTAMEN 3",
+    "start": "20261120T140000",
+    "end": "20261120T163000",
+    "fecha_legible": "Viernes 20 de Noviembre de 14:00 a 16:30 h",
+    "loc": "Campus San Joaquín",
+    "desc": "Tercer certamen de Mecánica de Fluidos: Unidades 5 y 6 (Navier-Stokes y Leyes de conservación)."
+  },
+  {
+    "ramo": "FICA",
+    "titulo": "FICA: Presentación 2 + Informe Final",
+    "start": "20261123T160000",
+    "end": "20261123T190000",
+    "fecha_legible": "Lunes 23 de Noviembre a las 16:00 h",
+    "loc": "Sala de Cátedra FICA / Aula USM",
+    "desc": "Defensa final de proyecto de construcción y entrega de Informe 2 en Aula USM."
+  },
+  {
+    "ramo": "Fluidos",
+    "titulo": "Fluidos: Entrega Notas Finales",
+    "start": "20261127T120000",
+    "end": "20261127T130000",
+    "fecha_legible": "Viernes 27 de Noviembre a las 12:00 h",
+    "loc": "Aula USM / SIGA",
+    "desc": "Publicación oficial de notas finales y actas de Mecánica de Fluidos."
+  },
+  {
+    "ramo": "Transporte",
+    "titulo": "Transporte: Certamen Recuperativo",
+    "start": "20261202T140000",
+    "end": "20261202T163000",
+    "fecha_legible": "Miércoles 02 de Diciembre de 14:00 a 16:30 h",
+    "loc": "Salas B014 / B103",
+    "desc": "Certamen recuperativo final de Ingeniería de Transporte."
+  },
+  {
+    "ramo": "FAE",
+    "titulo": "FAE: CERTAMEN 4 (Final)",
+    "start": "20261202T173000",
+    "end": "20261202T200000",
+    "fecha_legible": "Miércoles 02 de Diciembre de 17:30 a 20:00 h (Sala A012)",
+    "loc": "Sala A012",
+    "desc": "Cuarto certamen semestral de Fundamentos de Análisis Estructural. Bloques 13-14-15-16."
+  }
+]

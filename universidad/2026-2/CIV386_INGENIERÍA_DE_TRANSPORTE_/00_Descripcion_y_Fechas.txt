@@ -1,0 +1,22 @@
+======================================================================
+ASIGNATURA: Transporte (CIV386 - Ingeniería de Transporte)
+DEPARTAMENTO: Obras Civiles | DEDICACIÓN: 145 hrs cronológicas (SCT)
+AULA USM ID: 62192 | URL: https://aula.usm.cl/course/view.php?id=62192
+======================================================================
+
+DESCRIPCIÓN DE LA ASIGNATURA:
+El estudiante distingue y analiza sistemas de transporte urbano, entendiendo los procesos de
+movilidad y su modelamiento matemático desde la necesidad por transporte hasta la operación
+de sistemas y redes, evaluando el impacto de diversos factores económicos, territoriales,
+sociales, culturales y tecnológicos.
+
+EQUIPO DOCENTE:
+- Profesor: Cristóbal Pineda A. | Salas habituales: B014 / B103
+
+FECHAS DE EVALUACIONES PENDIENTES:
+1. CERTAMEN 3: Miércoles 18 de Noviembre de 2026 (14:00 - 16:30 h)
+   - Contenidos: Unidad III y Modelación de Ortúzar (Guía N°3 disponible en Aula).
+2. Certamen Recuperativo: Miércoles 02 de Diciembre de 2026 (14:00 - 16:30 h)
+
+DOCUMENTOS Y COPIAS HTML:
+- Ver carpeta 'HTML_Moodle/' para copias de todas las secciones y avisos de cátedra.

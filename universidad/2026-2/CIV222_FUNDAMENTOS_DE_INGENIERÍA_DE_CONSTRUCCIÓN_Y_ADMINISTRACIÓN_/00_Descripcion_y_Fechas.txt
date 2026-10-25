@@ -1,0 +1,26 @@
+======================================================================
+ASIGNATURA: FICA (CIV222 - Fundamentos de Ingeniería de Construcción y Administración)
+DEPARTAMENTO: Obras Civiles | DEDICACIÓN: 140 hrs cronológicas (SCT)
+AULA USM ID: 62177 | URL: https://aula.usm.cl/course/view.php?id=62177
+======================================================================
+
+DESCRIPCIÓN DE LA ASIGNATURA:
+El estudiante inicia el aprendizaje al concepto de proyecto en la industria de la construcción,
+etapas del ciclo de vida de un proyecto y sus participantes. Analiza la prefactibilidad de un
+proyecto a través de herramientas de ingeniería económica. Identifica los recursos involucrados
+en actividades de proyectos de construcción y métodos constructivos para ejecutar dichas actividades.
+Estima los costos involucrados en las actividades de un proyecto de construcción. Identifica las
+recientes herramientas tecnológicas y de gestión de la construcción.
+
+HORARIO Y SALAS:
+- Cátedra: Lunes | Bloques 11-12 (16:00 - 17:10) y 13-14 (17:30 - 18:40)
+
+EVALUACIONES Y FECHAS PENDIENTES (SEMESTRE 2026-2):
+1. Control 2: Lunes 26 de Octubre de 2026 (16:00 h)
+2. Caso Práctico 2: Lunes 02 de Noviembre de 2026 (16:00 h)
+3. CERTAMEN 2: Lunes 09 de Noviembre de 2026 (16:00 h)
+4. Presentación 2 + Informe Final: Lunes 23 de Noviembre de 2026 (16:00 h)
+
+DOCUMENTOS Y COPIAS HTML:
+- Ver carpeta 'HTML_Moodle/' para copias de todas las páginas y actividades del curso.
+- Ver carpeta 'Planificacion/' y 'Material_y_Apuntes/' para presentaciones y pautas.
