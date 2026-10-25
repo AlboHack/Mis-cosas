@@ -19,7 +19,7 @@ eventos = [
         "start": (2026, 10, 27, 17, 30),
         "end": (2026, 10, 27, 20, 0),
         "loc": "Campus San Joaquin (Salas B-103 / A012)",
-        "desc": "Segundo certamen de Fundamentos de Analisis Estructural (FAE). Reprogramado por alerta meteorologica. Bloques 13-14-15-16."
+        "desc": "Segundo certamen de Fundamentos de Analisis Estructural (FAE). Reprogramado por alerta meteorologica (Aviso Foro 498536). Bloques 13-14-15-16."
     },
     {
         "ramo": "FAE",
@@ -57,41 +57,41 @@ eventos = [
         "ramo": "Transporte",
         "titulo": "Transporte - CERTAMEN 3",
         "start": (2026, 11, 18, 14, 0),
-        "end": (2026, 11, 18, 15, 30),
-        "loc": "Sala de Catedra Transporte",
-        "desc": "Tercer certamen de Ingenieria de Transporte."
+        "end": (2026, 11, 18, 16, 30),
+        "loc": "Salas B014 / B103",
+        "desc": "Tercer certamen semestral de Ingenieria de Transporte (Modelacion Ortuzar, Guia N 3)."
     },
     {
         "ramo": "Fluidos",
         "titulo": "Fluidos - CERTAMEN 3",
-        "start": (2026, 11, 23, 14, 0),
-        "end": (2026, 11, 23, 16, 0),
-        "loc": "Sala de Catedra CIV244",
-        "desc": "Tercer certamen semestral de Mecanica de Fluidos."
+        "start": (2026, 11, 20, 14, 0),
+        "end": (2026, 11, 20, 16, 30),
+        "loc": "Campus San Joaquin",
+        "desc": "Tercer certamen de Mecanica de Fluidos: Unidades 5 y 6 (Navier-Stokes y Leyes de conservacion)."
     },
     {
         "ramo": "FICA",
         "titulo": "FICA - Presentacion 2 + Informe Final",
         "start": (2026, 11, 23, 16, 0),
         "end": (2026, 11, 23, 18, 30),
-        "loc": "Sala de Catedra FICA",
-        "desc": "Presentacion oral 2 y entrega final del informe de proyecto grupal de FICA."
+        "loc": "Sala de Catedra FICA / Aula USM",
+        "desc": "Defensa final de proyecto de construccion y entrega de Informe 2 en Aula USM."
     },
     {
         "ramo": "Fluidos",
         "titulo": "Fluidos - Entrega Notas Finales",
-        "start": (2026, 11, 27, 18, 0),
-        "end": (2026, 11, 27, 19, 0),
-        "loc": "Aula USM",
-        "desc": "Publicacion oficial de notas finales y promedios de Mecanica de Fluidos."
+        "start": (2026, 11, 27, 12, 0),
+        "end": (2026, 11, 27, 13, 0),
+        "loc": "Aula USM / SIGA",
+        "desc": "Publicacion oficial de notas finales y actas de Mecanica de Fluidos."
     },
     {
         "ramo": "Transporte",
         "titulo": "Transporte - Certamen Recuperativo",
-        "start": (2026, 11, 30, 14, 0),
-        "end": (2026, 11, 30, 15, 30),
-        "loc": "Sala Asignada",
-        "desc": "Certamen recuperativo y extraordinario de Ingenieria de Transporte."
+        "start": (2026, 12, 2, 14, 0),
+        "end": (2026, 12, 2, 16, 30),
+        "loc": "Salas B014 / B103",
+        "desc": "Certamen recuperativo final de Ingenieria de Transporte."
     },
     {
         "ramo": "FAE",
@@ -108,10 +108,9 @@ def adb_shell(cmd):
     return p.stdout.strip(), p.returncode
 
 def get_google_calendar_id():
-    """Busca dinamicamente el ID del calendario de Google perteneciente a ACCOUNT."""
     out, code = adb_shell("content query --uri content://com.android.calendar/calendars --projection _id:ownerAccount")
     if code != 0:
-        return 7  # Fallback estándar
+        return 7
     for row in out.splitlines():
         if ACCOUNT in row:
             m = re.search(r'_id=(\d+)', row)
@@ -123,7 +122,6 @@ def sync_android_calendar():
     cal_id = get_google_calendar_id()
     print(f"=== SINCRONIZANDO CON ANDROID GOOGLE CALENDAR (ID {cal_id}: {ACCOUNT}) ===", flush=True)
     
-    # Consultar eventos existentes para este semestre
     out_ev, code = adb_shell(f"content query --uri content://com.android.calendar/events --projection _id:title:dtstart:dtend --where \"calendar_id={cal_id}\"")
     existentes = {}
     if code == 0:
@@ -150,16 +148,13 @@ def sync_android_calendar():
         if titulo in existentes:
             ev_id = existentes[titulo]["id"]
             ev_start = existentes[titulo]["dtstart"]
-            # Si la fecha cambio (reprogramacion), actualizar
             if ev_start != dt_start:
                 adb_shell(f"content update --uri content://com.android.calendar/events --bind dtstart:l:{dt_start} --bind dtend:l:{dt_end} --where \"_id={ev_id}\"")
-                print(f" [ACTUALIZADO POR CAMBIO DE FECHA] {titulo} (ID {ev_id})", flush=True)
+                print(f" [ACTUALIZADO POR CORRECCION DE FECHA] {titulo} (ID {ev_id})", flush=True)
                 actualizados += 1
             else:
-                # Ya existe y con la misma fecha
                 pass
         else:
-            # Insertar nuevo
             insert_cmd = (
                 f"content insert --uri content://com.android.calendar/events "
                 f"--bind calendar_id:i:{cal_id} "
@@ -173,7 +168,6 @@ def sync_android_calendar():
             )
             adb_shell(insert_cmd)
             
-            # Obtener ID recien insertado para añadir alarmas
             q_out, _ = adb_shell(f"content query --uri content://com.android.calendar/events --projection _id --where \"calendar_id={cal_id} AND title='{titulo}' AND dtstart={dt_start}\"")
             m_new = re.search(r'_id=(\d+)', q_out)
             if m_new:
