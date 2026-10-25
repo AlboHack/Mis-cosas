@@ -7,8 +7,8 @@
 
 ## Semestre actual (2° semestre 2026)
 
-- Ramos: \[completar, p. ej. Fundamentos de Análisis Estructural, CIV222 Fundamentos de Ingeniería de Construcción y Administración, Mecánica de Fluidos, Ingeniería de Transporte\]
-- Próximas entregas y certámenes: \[completar con fechas\]
+- Ramos: FICA (CIV222 Fundamentos de Ingeniería de Construcción y Administración), FAE (CIV233 Fundamentos de Análisis Estructural), Fluidos (CIV244 Mecánica de Fluidos), Transporte (CIV386 Ingeniería de Transporte) y Prácticas Obras Civiles (POC_SJ_VV).
+- Calendario de evaluaciones, contenidos y material disponible por ramo: ver Semestre_2026-2.md.
 
 ## Experiencia
 
@@ -20,7 +20,13 @@
 
 ## Herramientas
 
-LaTeX (TikZ, pgfplots, booktabs, siunitx, fancyhdr, plantillas del Depto. de Obras Civiles UTFSM, compilación en Overleaf), SAP2000, AutoCAD, MATLAB, Python (NumPy, SciPy, SymPy), LINGO, lp\_solve, SQL y Excel.
+LaTeX (TikZ, pgfplots, booktabs, siunitx, fancyhdr, plantillas del Depto. de Obras Civiles UTFSM, compilación en Overleaf), SAP2000 v27, AutoCAD, MATLAB, Python (NumPy, SciPy, SymPy), LINGO, lp\_solve, SQL y Excel.
+
+## Entorno de trabajo
+
+- Trabaja desde una tablet Xiaomi Pad 5 (Claude en el navegador).
+- Material de los ramos en el repo AlboHack/Mis-cosas, carpeta `universidad/2026-2/<ramo>/` (Material_y_Apuntes, Planificacion, Evaluaciones_y_Entregas, HTML_Moodle). Un script en la tablet lo sincroniza desde Aula USM los sábados a las 10:00.
+- Las evaluaciones están en su Google Calendar con alarmas a 7 días, 3 días y 1 día.
 
 ## Convenciones de trabajo
 
