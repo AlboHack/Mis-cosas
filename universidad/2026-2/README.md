@@ -59,7 +59,7 @@
 
 ### 🌊 3. Fluidos — Mecánica de Fluidos
 * **Sigla Oficial:** `CIV244` | **Aula ID:** `62182` | **Créditos SCT:** 203 horas cronológicas
-* **Profesor:** Ricardo Quinteros (`ricardo.quinteros@usm.cl`) | Sala de atención: **KS-203**
+* **Profesor:** Francisco Soto Simpson (Aula muestra a Ricardo Quinteros, KS-203, en la ficha del ramo)
 * **Temario Principal:** Estática de fluidos, fuerzas sobre compuertas planas y curvas, cinemática de fluidos, leyes de conservación integrales (volumen de control, Reynolds), ecuación diferencial de Navier-Stokes, ecuación de Euler y Bernoulli aplicada a conductos y tuberías.
 * **Evaluaciones Pasadas:**
   * Laboratorio 1: Fuerzas sobre superficies planas (Hidrostática) — Realizado en septiembre.
