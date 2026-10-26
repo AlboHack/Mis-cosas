@@ -216,11 +216,16 @@ def sync_android_calendar():
             m_new = re.search(r'_id=(\d+)', q_out)
             if m_new:
                 new_id = m_new.group(1)
-                adb_shell(f"content insert --uri content://com.android.calendar/reminders --bind event_id:i:{new_id} --bind minutes:i:10080 --bind method:i:1")
-                adb_shell(f"content insert --uri content://com.android.calendar/reminders --bind event_id:i:{new_id} --bind minutes:i:4320 --bind method:i:1")
-                adb_shell(f"content insert --uri content://com.android.calendar/reminders --bind event_id:i:{new_id} --bind minutes:i:1440 --bind method:i:1")
+                for mins in [10080, 4320, 1440]:
+                    _, r_code = adb_shell(f"content insert --uri content://com.android.calendar/reminders --bind event_id:i:{new_id} --bind minutes:i:{mins} --bind method:i:1")
+                    if r_code != 0:
+                        print(f" [ERROR AL INSERTAR RECORDATORIO] {titulo} ({mins} min, código {r_code})", file=sys.stderr)
+                        errores += 1
                 print(f" [INSERTADO] {titulo} (ID {new_id}) con 3 alarmas (7d, 3d, 1d)", flush=True)
                 insertados += 1
+            else:
+                print(f" [ERROR CRÍTICO] No se encontró _id tras insertar evento: {titulo}", file=sys.stderr)
+                errores += 1
 
     print(f"Sincronizacion de calendario finalizada: {insertados} insertados, {actualizados} actualizados, {errores} errores.", flush=True)
     return 0 if errores == 0 else 1

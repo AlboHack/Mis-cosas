@@ -6,86 +6,59 @@ print("======================================================================")
 print("BATERÍA DE PRUEBAS DE ACEPTACIÓN TÉCNICA (T2, T6, T8 & CALENDARIO)")
 print("======================================================================\n")
 
-# ----------------------------------------------------------------------
-# PRUEBA T2: Mismo nombre y URL, contenido distinto
-# ----------------------------------------------------------------------
-print("--- [EJECUTANDO T2: Detección de Modificación y Versionado Incremental] ---")
-test_dir = tempfile.mkdtemp(prefix="t2_test_")
-try:
-    fname = "Guia_Diseno_CIV244.pdf"
-    url_clean = "https://aula.usm.cl/pluginfile.php/8047065/mod_folder/content/1/Guia_Diseno_CIV244.pdf"
-    local_fpath = os.path.join(test_dir, fname)
-    
-    # Estado inicial: Versión 1 ya descargada y en manifest
-    v1_data = b"%PDF-1.4 Contenido inicial de la guia de diseno semana 1"
-    v1_sha = hashlib.sha256(v1_data).hexdigest()
-    with open(local_fpath, "wb") as f:
-        f.write(v1_data)
-        
-    manifest = {
-        url_clean: {
-            "sha256": v1_sha,
-            "bytes": len(v1_data),
-            "local_path": local_fpath,
-            "last_seen": "2026-10-18T10:00:00"
-        }
-    }
-    print(f"Estado inicial: {fname} (v1, {len(v1_data)} bytes, sha: {v1_sha[:10]}...)")
-    
-    # Semana 2: Servidor entrega versión modificada (misma URL o nuevo contenido)
-    v2_data = b"%PDF-1.4 Contenido ACTUALIZADO con correcciones de pauta semana 2"
-    v2_sha = hashlib.sha256(v2_data).hexdigest()
-    
-    # Lógica de sincronizar_aula_semanal.py ante contenido modificado:
-    sha_curr = v2_sha
-    archivos_descargados = []
-    
-    if os.path.exists(local_fpath):
-        old_sha = hashlib.sha256(open(local_fpath, "rb").read()).hexdigest()
-        if old_sha != sha_curr:
-            v_ext = os.path.splitext(fname)[1]
-            v_base = os.path.splitext(fname)[0]
-            f_old_backup = os.path.join(test_dir, f"{v_base}_v{datetime.now().strftime('%Y%m%d')}{v_ext}")
-            shutil.move(local_fpath, f_old_backup)
-            print(f"  -> [VERSIÓN ANTERIOR ARCHIVADA] {os.path.basename(local_fpath)} -> {os.path.basename(f_old_backup)}")
-            
-    with open(local_fpath, "wb") as out_f:
-        out_f.write(v2_data)
-        
-    manifest[url_clean] = {
-        "sha256": v2_sha,
-        "bytes": len(v2_data),
-        "local_path": local_fpath,
-        "last_seen": datetime.now().isoformat()
-    }
-    archivos_descargados.append(local_fpath)
-    print(f"  -> [NUEVO O MODIFICADO] Escrito nuevo {fname} ({len(v2_data)} bytes)")
-    print(f"  -> Manifest actualizado: sha256={v2_sha[:10]}..., bytes={len(v2_data)}")
-    
-    # Verificaciones
-    backup_expected = os.path.join(test_dir, f"Guia_Diseno_CIV244_v{datetime.now().strftime('%Y%m%d')}.pdf")
-    t2_pass = (
-        os.path.exists(backup_expected) and
-        os.path.exists(local_fpath) and
-        hashlib.sha256(open(backup_expected, "rb").read()).hexdigest() == v1_sha and
-        hashlib.sha256(open(local_fpath, "rb").read()).hexdigest() == v2_sha and
-        manifest[url_clean]["sha256"] == v2_sha and
-        len(archivos_descargados) == 1
-    )
-    print(f"Resultado T2: {'PASS' if t2_pass else 'FAIL'}\n")
-finally:
-    shutil.rmtree(test_dir, ignore_errors=True)
+SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+SYNC_SCRIPT = os.path.join(SCRIPTS_DIR, "sincronizar_aula_semanal.py")
+CAL_SCRIPT = os.path.join(SCRIPTS_DIR, "sincronizar_calendario_android.py")
+T2_REAL_SCRIPT = os.path.join(SCRIPTS_DIR, "test_t2_real.py")
 
 # ----------------------------------------------------------------------
-# PRUEBA T6: Conflicto en el rebase -> rebase --abort, error en log, sin push
+# PRUEBA T2: test_t2_real.py ejerciendo run_sync() real de producción
 # ----------------------------------------------------------------------
-print("--- [EJECUTANDO T6: Manejo Seguro de Conflicto en Rebase Git] ---")
+print("--- [EJECUTANDO T2: Detección de Modificación y Versionado Incremental (Real)] ---")
+t2_dir = tempfile.mkdtemp(prefix="t2_prod_")
+t2_pass = False
+try:
+    # Corrida 1: Moodle sirve versión 1
+    p1 = subprocess.run([sys.executable, T2_REAL_SCRIPT, SYNC_SCRIPT, t2_dir, "1"], capture_output=True, text=True)
+    print("Salida corrida 1:")
+    for line in p1.stdout.splitlines():
+        if "ARCHIVO:" in line or "NUEVO ARCHIVO" in line or "RESULTADO:" in line:
+            print(f"  {line}")
+            
+    # Corrida 2: Moodle sirve versión 2 modificada en la misma URL
+    p2 = subprocess.run([sys.executable, T2_REAL_SCRIPT, SYNC_SCRIPT, t2_dir, "2"], capture_output=True, text=True)
+    print("Salida corrida 2:")
+    for line in p2.stdout.splitlines():
+        if "ARCHIVO:" in line or "VERSIÓN ANTERIOR" in line or "NUEVO ARCHIVO" in line or "RESULTADO:" in line:
+            print(f"  {line}")
+            
+    # Verificaciones de archivo en disco
+    target_f = os.path.join(t2_dir, "2026-2", "CIV244_MECÁNICA_DE_FLUIDOS_", "Evaluaciones_y_Entregas", "Certamenes", "Pauta.pdf")
+    hoy = datetime.now().strftime("%Y%m%d")
+    archived_f = os.path.join(t2_dir, "2026-2", "CIV244_MECÁNICA_DE_FLUIDOS_", "Evaluaciones_y_Entregas", "Certamenes", f"Pauta_v{hoy}.pdf")
+    
+    if os.path.exists(target_f) and os.path.exists(archived_f):
+        c_vigente = open(target_f, "rb").read()
+        c_backup = open(archived_f, "rb").read()
+        if b"version 2" in c_vigente and b"version 1" in c_backup:
+            t2_pass = True
+            print(f"  -> Verificado: Archivo vigente contiene 'version 2', respaldo '{os.path.basename(archived_f)}' contiene 'version 1'.")
+            
+    print(f"Resultado T2: {'PASS' if t2_pass else 'FAIL'}\n")
+finally:
+    shutil.rmtree(t2_dir, ignore_errors=True)
+
+# ----------------------------------------------------------------------
+# PRUEBA T6: pull --rebase --autostash con divergencia upstream y abort
+# ----------------------------------------------------------------------
+print("--- [EJECUTANDO T6: Manejo Seguro de Conflicto en Rebase Git (pull --rebase --autostash)] ---")
 temp_git = tempfile.mkdtemp(prefix="t6_test_")
+t6_pass = False
 try:
     repo = os.path.join(temp_git, "repo")
     subprocess.run(["git", "init", "-b", "main", repo], check=True, capture_output=True)
-    subprocess.run(["git", "config", "user.name", "Antigravity"], cwd=repo, check=True)
-    subprocess.run(["git", "config", "user.email", "antigravity@test.local"], cwd=repo, check=True)
+    subprocess.run(["git", "config", "user.name", "Tester"], cwd=repo, check=True)
+    subprocess.run(["git", "config", "user.email", "tester@test.local"], cwd=repo, check=True)
     
     # Commit base
     f_path = os.path.join(repo, "apunte.txt")
@@ -94,71 +67,71 @@ try:
     subprocess.run(["git", "add", "apunte.txt"], cwd=repo, check=True)
     subprocess.run(["git", "commit", "-m", "commit base"], cwd=repo, check=True, capture_output=True)
     
-    # Crear rama que simula el estado upstream en origin/main
-    subprocess.run(["git", "branch", "upstream_main"], cwd=repo, check=True)
-    
-    # Cambio local conflictivo
+    # Crear rama upstream y commit conflictivo
+    subprocess.run(["git", "branch", "upstream"], cwd=repo, check=True)
+    subprocess.run(["git", "checkout", "upstream"], cwd=repo, check=True, capture_output=True)
     with open(f_path, "w") as f:
-        f.write("Cambio local conflictivo no sincronizado\n")
+        f.write("Cambio remoto upstream conflictivo en la misma linea\n")
+    subprocess.run(["git", "commit", "-am", "cambio upstream"], cwd=repo, check=True, capture_output=True)
+    
+    # Empaquetar upstream como remote bundle
+    bundle_path = os.path.join(temp_git, "origin.bundle")
+    subprocess.run(["git", "bundle", "create", bundle_path, "refs/heads/upstream"], cwd=repo, check=True, capture_output=True)
+    
+    # Volver a main y hacer commit local conflictivo
+    subprocess.run(["git", "checkout", "main"], cwd=repo, check=True, capture_output=True)
+    with open(f_path, "w") as f:
+        f.write("Cambio local no sincronizado en la misma linea\n")
     subprocess.run(["git", "commit", "-am", "cambio local"], cwd=repo, check=True, capture_output=True)
     
-    # Cambio remoto upstream conflictivo en la misma línea
-    subprocess.run(["git", "checkout", "upstream_main"], cwd=repo, check=True, capture_output=True)
-    with open(f_path, "w") as f:
-        f.write("Cambio remoto conflictivo en upstream\n")
-    subprocess.run(["git", "commit", "-am", "cambio remoto upstream"], cwd=repo, check=True, capture_output=True)
-    subprocess.run(["git", "checkout", "main"], cwd=repo, check=True, capture_output=True)
+    # Vincular origin al bundle
+    subprocess.run(["git", "remote", "add", "origin", bundle_path], cwd=repo, check=True)
     
-    # Ejecutar la lógica de rebase con aborto automático idéntica a sincronizar_aula_semanal.py
+    # Ejecutar la lógica exacta de sincronizar_aula_semanal.py (líneas 338-343)
     errores = []
-    print("Simulando pull con rebase ante divergencia upstream conflictiva...")
-    p_rebase = subprocess.run(["git", "rebase", "upstream_main"], cwd=repo, capture_output=True, text=True)
+    print("Ejecutando pull --rebase --autostash origin ante divergencia upstream conflictiva...")
+    p_pull = subprocess.run(["git", "pull", "--rebase", "--autostash", "origin", "upstream:refs/remotes/origin/main"], cwd=repo, capture_output=True, text=True)
     
-    if p_rebase.returncode != 0:
-        print(f"  -> Conflicto detectado (código {p_rebase.returncode}): {p_rebase.stdout.strip()}")
+    if p_pull.returncode != 0:
+        print(f"  -> Conflicto detectado (código {p_pull.returncode}): {p_pull.stdout.strip()}")
         p_abort = subprocess.run(["git", "rebase", "--abort"], cwd=repo, capture_output=True, text=True)
-        err_g = f"Git rebase conflictivo, abortado exitosamente (código abort {p_abort.returncode})"
+        err_g = f"Git rebase conflictivo, abortado: {p_pull.stderr.strip()[:60]}..."
         errores.append(err_g)
-        print(f"  -> {err_g}")
-    else:
-        print("  -> ERROR: No se produjo el conflicto esperado.")
+        print("  -> Git rebase abortado exitosamente.")
         
-    # Verificar que el repo local quedó limpio y sin rebase pendiente
     status_p = subprocess.run(["git", "status"], cwd=repo, capture_output=True, text=True)
-    rebase_in_progress = "rebase in progress" in status_p.stdout or os.path.exists(os.path.join(repo, ".git", "rebase-merge")) or os.path.exists(os.path.join(repo, ".git", "rebase-apply"))
+    rebase_in_progress = "rebase in progress" in status_p.stdout or os.path.exists(os.path.join(repo, ".git", "rebase-merge"))
     
-    t6_pass = (p_rebase.returncode != 0 and len(errores) == 1 and not rebase_in_progress)
+    t6_pass = (p_pull.returncode != 0 and len(errores) == 1 and not rebase_in_progress)
     print(f"Resultado T6: {'PASS' if t6_pass else 'FAIL'}\n")
 finally:
     shutil.rmtree(temp_git, ignore_errors=True)
 
 # ----------------------------------------------------------------------
-# PRUEBA T8: Subida a Drive y Verificación con rclone lsjson
+# PRUEBA T8: Subida a Drive y Verificación con rclone lsjson (Nombre y Tamaño)
 # ----------------------------------------------------------------------
 print("--- [EJECUTANDO T8: Verificación Determinística de Subida con rclone lsjson] ---")
 temp_rclone = tempfile.mkdtemp(prefix="t8_rclone_")
+t8_pass = False
 try:
-    # Crear archivo zip delta de prueba
     zip_path = os.path.join(temp_rclone, "Universidad_Nuevos_20261025_test.zip")
     with open(zip_path, "wb") as f:
-        f.write(b"PK\x03\x04" + b"X" * 1024) # ZIP sintético con magic bytes
+        f.write(b"PK\x03\x04" + b"X" * 1024)
     expected_bytes = os.path.getsize(zip_path)
     zip_base = os.path.basename(zip_path)
     
-    # Destino remoto simulado usando rclone (backend local)
     remote_dest = os.path.join(temp_rclone, "remote_dest")
     os.makedirs(remote_dest, exist_ok=True)
     
     print(f"Paquete delta generado: {zip_base} ({expected_bytes} bytes)")
     print("Ejecutando rclone copy...")
     rc_p = subprocess.run(["rclone", "copy", zip_path, remote_dest], capture_output=True, text=True)
-    
     print(f"rclone copy returncode: {rc_p.returncode}")
-    print("Ejecutando rclone lsjson para verificación de integridad...")
+    
+    print("Ejecutando rclone lsjson para verificación de integridad (nombre y tamaño)...")
     chk = subprocess.run(["rclone", "lsjson", os.path.join(remote_dest, zip_base)], capture_output=True, text=True)
     print(f"rclone lsjson output: {chk.stdout.strip()}")
     
-    t8_pass = False
     if chk.returncode == 0:
         items = json.loads(chk.stdout.strip())
         if len(items) > 0:
@@ -172,10 +145,10 @@ finally:
     shutil.rmtree(temp_rclone, ignore_errors=True)
 
 # ----------------------------------------------------------------------
-# PRUEBA CALENDARIO: Segunda corrida con 0 insertados, 0 actualizados
+# PRUEBA CALENDARIO: Ejecuta scripts/sincronizar_calendario_android.py
 # ----------------------------------------------------------------------
-print("--- [EJECUTANDO CALENDARIO: Segunda Corrida (Idempotencia Estricta)] ---")
-cal_p = subprocess.run(["python3", "/data/data/com.agycli/files/home/sincronizar_calendario_android.py"], capture_output=True, text=True)
+print("--- [EJECUTANDO CALENDARIO: Segunda Corrida en Copia Versionada (Idempotencia)] ---")
+cal_p = subprocess.run([sys.executable, CAL_SCRIPT], capture_output=True, text=True)
 print(cal_p.stdout.strip())
 if cal_p.stderr.strip():
     print("STDERR:", cal_p.stderr.strip())
@@ -188,5 +161,7 @@ cal_pass = (
 print(f"Resultado Calendario Idempotencia: {'PASS' if cal_pass else 'FAIL'}\n")
 
 print("======================================================================")
-print(f"RESUMEN GLOBAL: {'TODAS LAS PRUEBAS PASARON (PASS)' if (t2_pass and t6_pass and t8_pass and cal_pass) else 'FALLÓ ALGUNA PRUEBA'}")
+global_pass = t2_pass and t6_pass and t8_pass and cal_pass
+print(f"RESUMEN GLOBAL: {'TODAS LAS PRUEBAS PASARON (PASS)' if global_pass else 'FALLÓ ALGUNA PRUEBA'}")
 print("======================================================================")
+sys.exit(0 if global_pass else 1)

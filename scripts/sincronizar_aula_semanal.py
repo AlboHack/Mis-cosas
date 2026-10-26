@@ -10,6 +10,14 @@ from datetime import datetime
 from html import unescape
 import zipfile
 
+# Asegurar rutas de búsqueda para módulos locales
+_script_dir = os.path.dirname(os.path.abspath(__file__))
+if _script_dir not in sys.path:
+    sys.path.insert(0, _script_dir)
+_home_dir = "/data/data/com.agycli/files/home"
+if _home_dir not in sys.path:
+    sys.path.insert(0, _home_dir)
+
 BASE_URL = "https://aula.usm.cl"
 ROOT_DIR = "/storage/emulated/0/Download/Universidad/2026-2"
 REPO_DIR = "/data/data/com.agycli/files/home/Mis-cosas"
@@ -103,6 +111,9 @@ def determine_subfolder(cshort, ftitle):
 
 def run_sync():
     # 1. Lockfile para evitar ejecuciones concurrentes
+    lock_dir = os.path.dirname(LOCK_FILE)
+    if lock_dir:
+        os.makedirs(lock_dir, exist_ok=True)
     lock_fd = open(LOCK_FILE, "w")
     try:
         fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -169,20 +180,28 @@ def run_sync():
                     url_clean = dl_url.split("?")[0]
                     local_fpath = os.path.join(target_dir, fname)
                     
-                    # Verificación contra manifest
-                    manifest_entry = manifest.get(url_clean)
-                    if manifest_entry and os.path.exists(local_fpath):
-                        if os.path.getsize(local_fpath) == manifest_entry.get("bytes"):
-                            manifest[url_clean]["last_seen"] = datetime.now().isoformat()
-                            continue
-                            
-                    # Descargar y validar
+                    # Verificación y descarga determinística
                     try:
                         req_dl = urllib.request.Request(dl_url, headers={
                             "Cookie": f"MoodleSession={cookie}",
                             "User-Agent": "Mozilla/5.0 (Linux; Android 13; Xiaomi Pad 5) AppleWebKit/537.36"
                         })
-                        f_data = urllib.request.urlopen(req_dl, timeout=30).read()
+                        resp_dl = urllib.request.urlopen(req_dl, timeout=30)
+                        
+                        # 1. Comprobación de cabeceras ETag / Last-Modified si el servidor las provee
+                        etag = resp_dl.headers.get("ETag") or resp_dl.headers.get("etag")
+                        last_mod = resp_dl.headers.get("Last-Modified") or resp_dl.headers.get("last-modified")
+                        
+                        manifest_entry = manifest.get(url_clean)
+                        if manifest_entry and os.path.exists(local_fpath):
+                            if etag and manifest_entry.get("etag") == etag:
+                                manifest[url_clean]["last_seen"] = datetime.now().isoformat()
+                                continue
+                            if last_mod and manifest_entry.get("last_modified") == last_mod:
+                                manifest[url_clean]["last_seen"] = datetime.now().isoformat()
+                                continue
+                                
+                        f_data = resp_dl.read()
                         valido, mot = is_valid_document(f_data, fname)
                         if not valido:
                             err_v = f"Documento inválido en {dl_url} ({fname}): {mot}"
@@ -192,24 +211,33 @@ def run_sync():
                             
                         sha_curr = hashlib.sha256(f_data).hexdigest()
                         
-                        # Si existía versión previa con diferente hash, archivar versión previa
+                        # Si existía versión previa en disco
                         if os.path.exists(local_fpath):
                             old_sha = hashlib.sha256(open(local_fpath, "rb").read()).hexdigest()
                             if old_sha != sha_curr:
                                 v_ext = os.path.splitext(fname)[1]
                                 v_base = os.path.splitext(fname)[0]
                                 f_old_backup = os.path.join(target_dir, f"{v_base}_v{datetime.now().strftime('%Y%m%d')}{v_ext}")
-                                shutil.move(local_fpath, f_old_backup)
+                                shutil.copy2(local_fpath, f_old_backup)
                                 log(f"  [VERSIÓN ANTERIOR ARCHIVADA] -> {os.path.basename(f_old_backup)}")
-                            else:
-                                manifest[url_clean] = {"sha256": sha_curr, "bytes": len(f_data), "local_path": local_fpath, "last_seen": datetime.now().isoformat()}
+                            elif manifest_entry and manifest_entry.get("sha256") == sha_curr:
+                                manifest[url_clean]["last_seen"] = datetime.now().isoformat()
+                                if etag: manifest[url_clean]["etag"] = etag
+                                if last_mod: manifest[url_clean]["last_modified"] = last_mod
                                 continue
                                 
                         os.makedirs(target_dir, exist_ok=True)
                         with open(local_fpath, "wb") as out_f:
                             out_f.write(f_data)
                             
-                        manifest[url_clean] = {"sha256": sha_curr, "bytes": len(f_data), "local_path": local_fpath, "last_seen": datetime.now().isoformat()}
+                        manifest[url_clean] = {
+                            "sha256": sha_curr,
+                            "bytes": len(f_data),
+                            "local_path": local_fpath,
+                            "etag": etag,
+                            "last_modified": last_mod,
+                            "last_seen": datetime.now().isoformat()
+                        }
                         archivos_descargados.append(local_fpath)
                         log(f"  [NUEVO ARCHIVO] {cshort} -> {sub_path}/{fname}")
                     except Exception as dl_err:
@@ -249,9 +277,16 @@ def run_sync():
                 target_dir = os.path.join(cdir, dest_sub)
                 local_fpath = os.path.join(target_dir, fname)
                 
+                # Comprobación de cabeceras ETag / Last-Modified si el servidor las provee
+                etag = resp.headers.get("ETag") or resp.headers.get("etag")
+                last_mod = resp.headers.get("Last-Modified") or resp.headers.get("last-modified")
+                
                 manifest_entry = manifest.get(url_clean)
                 if manifest_entry and os.path.exists(local_fpath):
-                    if os.path.getsize(local_fpath) == manifest_entry.get("bytes"):
+                    if etag and manifest_entry.get("etag") == etag:
+                        manifest[url_clean]["last_seen"] = datetime.now().isoformat()
+                        continue
+                    if last_mod and manifest_entry.get("last_modified") == last_mod:
                         manifest[url_clean]["last_seen"] = datetime.now().isoformat()
                         continue
                         
@@ -270,17 +305,26 @@ def run_sync():
                         v_ext = os.path.splitext(fname)[1]
                         v_base = os.path.splitext(fname)[0]
                         f_old = os.path.join(target_dir, f"{v_base}_v{datetime.now().strftime('%Y%m%d')}{v_ext}")
-                        shutil.move(local_fpath, f_old)
+                        shutil.copy2(local_fpath, f_old)
                         log(f"  [VERSIÓN ANTERIOR ARCHIVADA] -> {os.path.basename(f_old)}")
-                    else:
-                        manifest[url_clean] = {"sha256": sha_curr, "bytes": len(data), "local_path": local_fpath, "last_seen": datetime.now().isoformat()}
+                    elif manifest_entry and manifest_entry.get("sha256") == sha_curr:
+                        manifest[url_clean]["last_seen"] = datetime.now().isoformat()
+                        if etag: manifest[url_clean]["etag"] = etag
+                        if last_mod: manifest[url_clean]["last_modified"] = last_mod
                         continue
                         
                 os.makedirs(target_dir, exist_ok=True)
                 with open(local_fpath, "wb") as out_f:
                     out_f.write(data)
                     
-                manifest[url_clean] = {"sha256": sha_curr, "bytes": len(data), "local_path": local_fpath, "last_seen": datetime.now().isoformat()}
+                manifest[url_clean] = {
+                    "sha256": sha_curr,
+                    "bytes": len(data),
+                    "local_path": local_fpath,
+                    "etag": etag,
+                    "last_modified": last_mod,
+                    "last_seen": datetime.now().isoformat()
+                }
                 archivos_descargados.append(local_fpath)
                 log(f"  [NUEVO RECURSO] {cshort} -> {dest_sub}/{fname}")
             except Exception as re_err:
@@ -312,11 +356,20 @@ def run_sync():
             rc_p = subprocess.run(["rclone", "copy", zip_delta, "gdrive:Universidad/Deltas/"], capture_output=True, text=True)
             if rc_p.returncode == 0:
                 zip_base = os.path.basename(zip_delta)
+                zip_bytes = os.path.getsize(zip_delta)
                 chk = subprocess.run(["rclone", "lsjson", f"gdrive:Universidad/Deltas/{zip_base}"], capture_output=True, text=True)
-                if chk.returncode == 0 and zip_base in chk.stdout:
-                    log("¡Paquete delta subido y verificado exitosamente con rclone lsjson!")
+                verificado = False
+                if chk.returncode == 0:
+                    try:
+                        items = json.loads(chk.stdout.strip())
+                        if len(items) > 0 and items[0].get("Name") == zip_base and items[0].get("Size") == zip_bytes:
+                            verificado = True
+                    except Exception:
+                        pass
+                if verificado:
+                    log(f"¡Paquete delta subido y verificado exitosamente con rclone lsjson ({zip_base}, {zip_bytes} bytes)!")
                 else:
-                    err_rc = f"Fallo al verificar con rclone lsjson ({chk.returncode}): {chk.stderr.strip()}"
+                    err_rc = f"Fallo al verificar con rclone lsjson: salida '{chk.stdout.strip()}', error: '{chk.stderr.strip()}'"
                     log(f"  [ERROR] {err_rc}")
                     errores.append(err_rc)
             else:
