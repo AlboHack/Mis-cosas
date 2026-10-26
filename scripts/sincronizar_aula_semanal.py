@@ -28,6 +28,8 @@ _home_dir = "/data/data/com.agycli/files/home"
 if _home_dir not in sys.path:
     sys.path.insert(0, _home_dir)
 
+from aula_novedades import sincronizar_novedades  # noqa: E402
+
 BASE_URL = os.environ.get("MOODLE_BASE_URL", "https://aula.usm.cl")
 ROOT_DIR = os.environ.get("SYNC_ROOT_DIR", "/storage/emulated/0/Download/Universidad/2026-2")
 DELTA_DIR = os.environ.get("SYNC_DELTA_DIR", "/storage/emulated/0/Download")
@@ -37,6 +39,8 @@ TOKEN_FILE = os.environ.get("MOODLE_TOKEN_FILE", os.path.expanduser("~/.moodle_t
 META_FILE = os.environ.get("MOODLE_META_FILE", os.path.expanduser("~/.moodle_token.meta"))
 MANIFEST_FILE = os.environ.get("SYNC_MANIFEST_FILE", "/storage/emulated/0/Download/Universidad/sync_manifest.json")
 LOCK_FILE = os.environ.get("SYNC_LOCK_FILE", os.path.expanduser("~/.sync_aula.lock"))
+# Mensajes privados: solo en la tablet (fuera del repo y fuera de la carpeta respaldada en Drive)
+MENSAJES_FILE = os.environ.get("SYNC_MENSAJES_FILE", "/storage/emulated/0/Download/Universidad/mensajes_privados_aula.md")
 
 # Verificación estricta de aislamiento en modo prueba
 if os.environ.get("SYNC_TEST_MODE") == "1":
@@ -46,7 +50,8 @@ if os.environ.get("SYNC_TEST_MODE") == "1":
         ("SYNC_DELTA_DIR", DELTA_DIR),
         ("SYNC_REPO_DIR", REPO_DIR),
         ("SYNC_LOG_FILE", LOG_FILE),
-        ("SYNC_MANIFEST_FILE", MANIFEST_FILE)
+        ("SYNC_MANIFEST_FILE", MANIFEST_FILE),
+        ("SYNC_MENSAJES_FILE", MENSAJES_FILE)
     ]:
         resolved = os.path.realpath(os.path.expanduser(path_val))
         if (
@@ -164,7 +169,11 @@ class MoodleAPIClient:
         "core_webservice_get_site_info",
         "core_course_get_contents",
         "core_calendar_get_calendar_events",
-        "mod_forum_get_forum_discussions"
+        "mod_forum_get_forum_discussions",
+        "mod_forum_get_forums_by_courses",
+        "mod_forum_get_discussion_posts",
+        "core_message_get_conversations",
+        "core_message_get_conversation_messages"
     }
 
     def __init__(self, base_url, token):
@@ -404,77 +413,7 @@ def sincronizar_evaluaciones(client, repo_dir):
     log(f"  [EVALUACIONES] Guardadas {len(result_list)} evaluaciones en {out_eval}")
     return out_eval
 
-def sincronizar_foros_avisos(client, courses, repo_dir):
-    """Extrae avisos y novedades de cada curso y actualiza avisos.md sólo si hay cambios."""
-    for c in courses:
-        cid = c["id"]
-        cshort = c["short"]
-        folder = c["folder"]
-        
-        try:
-            sections = client.call("core_course_get_contents", {"courseid": cid})
-        except Exception as e:
-            log(f"  [ERROR] No se pudieron obtener secciones de {cshort} para foros: {e}", token_to_mask=client.token)
-            continue
-
-        forum_ids = []
-        for s in sections:
-            for m in s.get("modules", []):
-                if m.get("modname") == "forum":
-                    forum_ids.append((m.get("instance"), m.get("name")))
-
-        discussions_all = []
-        for fid, fname in forum_ids:
-            try:
-                res_f = client.call("mod_forum_get_forum_discussions", {"forumid": fid})
-                for d in res_f.get("discussions", []):
-                    discussions_all.append(d)
-            except Exception as fe:
-                log(f"  [ERROR] Error leyendo foro {fid} ({fname}) de {cshort}: {fe}", token_to_mask=client.token)
-
-        if not discussions_all:
-            continue
-
-        # Ordenar discusiones por fecha descendente
-        discussions_all.sort(key=lambda d: d.get("created", 0), reverse=True)
-
-        lines = [
-            f"# Avisos y Novedades - {cshort}",
-            ""
-        ]
-        for d in discussions_all:
-            created_dt = datetime.fromtimestamp(d.get("created", 0), tz=TZ).strftime("%Y-%m-%d %H:%M")
-            author = d.get("userfullname", "Docente")
-            subject = d.get("name", "Sin asunto")
-            body = strip_html_tags(d.get("message", ""))
-            disc_id = d.get("discussion", "")
-            
-            lines.append(f"## {subject}")
-            lines.append(f"- **Fecha:** {created_dt}")
-            lines.append(f"- **Autor:** {author}")
-            lines.append(f"- **ID:** {disc_id}")
-            lines.append("")
-            lines.append(body)
-            lines.append("")
-            lines.append("---")
-            lines.append("")
-
-        new_content = "\n".join(lines).rstrip() + "\n"
-        target_path = os.path.join(repo_dir, "universidad/2026-2", folder, "avisos.md")
-        
-        # Verificar si cambió antes de reescribir
-        existing_content = ""
-        if os.path.exists(target_path):
-            with open(target_path, "r", encoding="utf-8") as ef:
-                existing_content = ef.read()
-
-        if existing_content.strip() != new_content.strip():
-            os.makedirs(os.path.dirname(target_path), exist_ok=True)
-            with open(target_path, "w", encoding="utf-8") as out_f:
-                out_f.write(new_content)
-            log(f"  [AVISOS ACTUALIZADOS] {cshort} -> avisos.md ({len(discussions_all)} discusiones)")
-
-def escribir_estado_sincronizacion(repo_dir, nuevos, n_errores):
+def escribir_estado_sincronizacion(repo_dir, nuevos, n_errores, novedades=None):
     """Escribe universidad/2026-2/ultima_sincronizacion.json en cada corrida que llega a esta etapa.
 
     Así cada sábado hay un commit chore(sync) aunque no haya archivos nuevos, y la tarea de
@@ -488,6 +427,7 @@ def escribir_estado_sincronizacion(repo_dir, nuevos, n_errores):
         "estado": "OK" if n_errores == 0 else "CON ERRORES",
         "archivos_nuevos_o_modificados": nuevos,
         "errores": n_errores,
+        "novedades": novedades or {},
     }
     with open(destino, "w", encoding="utf-8") as f:
         json.dump(estado, f, ensure_ascii=False, indent=2)
@@ -526,6 +466,7 @@ def run_sync():
     try:
         site_info = client.call("core_webservice_get_site_info")
         username = site_info.get("username", "desconocido")
+        userid = site_info.get("userid")
         log(f"Sesión validada exitosamente vía API para usuario: {username}")
     except InvalidTokenError as ite:
         log(f"  [ERROR CRÍTICO] {ite}")
@@ -571,6 +512,7 @@ def run_sync():
     # -------------------------------------------------------------
     plan_descargas = []
     course_sections = {}
+    rutas_reparadas = 0
 
     for c in courses:
         cid = c["id"]
@@ -615,6 +557,17 @@ def run_sync():
                     # Comprobación de manifiesto
                     manifest_entry = manifest.get(url_clean)
                     target_check_path = manifest_entry.get("local_path", local_fpath) if manifest_entry else local_fpath
+
+                    # Ruta del manifest obsoleta (p. ej. tras borrar duplicados): si el contenido
+                    # registrado sigue en disco en otra carpeta del curso, se repara la ruta sin descargar.
+                    if manifest_entry and not os.path.exists(target_check_path):
+                        sha_reg = manifest_entry.get("sha256")
+                        ruta_viva = c_hashes.get(sha_reg) if sha_reg else None
+                        if ruta_viva and os.path.exists(ruta_viva):
+                            log(f"  [RUTA REPARADA] {cshort} -> {fname}: {os.path.relpath(ruta_viva, cdir)}")
+                            manifest_entry["local_path"] = ruta_viva
+                            target_check_path = ruta_viva
+                            rutas_reparadas += 1
 
                     if manifest_entry and os.path.exists(target_check_path):
                         # Caso: Archivo ya existe y está registrado
@@ -667,6 +620,9 @@ def run_sync():
                                 "filesize": filesize,
                                 "timemodified": timemodified
                             })
+
+    if rutas_reparadas:
+        log(f"  [MANIFEST] {rutas_reparadas} ruta(s) obsoleta(s) reparada(s) contra el contenido en disco (sin descargar).")
 
     # Guardia estricto de límite masivo (>20 archivos pendientes)
     # Se evalúa en la fase de plan ANTES de descargar o escribir ningún byte en disco
@@ -756,11 +712,19 @@ def run_sync():
     log("-------------------------------------------------------")
     log(f"RESULTADO: {len(archivos_descargados)} archivo(s) nuevo(s) o modificado(s). Errores: {len(errores)}")
 
-    # 3. Foros de avisos
+    # 3. Novedades: foros (docentes), cambios en la página de cada ramo y mensajes privados
+    novedades = {}
     try:
-        sincronizar_foros_avisos(client, courses, REPO_DIR)
+        novedades, err_nov = sincronizar_novedades(
+            client, courses, REPO_DIR, userid, MENSAJES_FILE, lambda m: log(m, token_to_mask=token)
+        )
+        for e in err_nov:
+            log(f"  [ERROR] {e}", token_to_mask=token)
+            errores.append(e.replace(token, "[TOKEN_MASKED]"))
+        if novedades.get("alertas_evaluacion"):
+            log(f"  [ALERTA] {novedades['alertas_evaluacion']} publicación(es) o cambio(s) mencionan una posible modificación de evaluación. Revisar avisos.md, cambios_pagina.md y mensajes.")
     except Exception as fe:
-        err_f = f"Excepción al sincronizar avisos de foros: {fe}"
+        err_f = f"Excepción al sincronizar novedades: {fe}"
         log(f"  [ERROR] {err_f}", token_to_mask=token)
         errores.append(err_f)
 
@@ -862,7 +826,7 @@ def run_sync():
 
     # 7. Latido de la corrida: deja constancia en el repo de que la sincronización corrió
     try:
-        escribir_estado_sincronizacion(REPO_DIR, len(archivos_descargados), len(errores))
+        escribir_estado_sincronizacion(REPO_DIR, len(archivos_descargados), len(errores), novedades)
     except Exception as he:
         err_h = f"No se pudo escribir ultima_sincronizacion.json: {he}"
         log(f"  [ERROR] {err_h}")

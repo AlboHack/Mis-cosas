@@ -86,6 +86,7 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
                 resp = {
                     "username": "nicolas.albornozp@usm.cl",
                     "fullname": "NICOLAS ALBORNOZ",
+                    "userid": 21469,
                     "siteurl": "https://aula.usm.cl",
                     "functions": []
                 }
@@ -207,6 +208,15 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
                 }
             elif wsfunc == "mod_forum_get_forum_discussions":
                 resp = {"discussions": server_state["discussions"]}
+            elif wsfunc == "mod_forum_get_forums_by_courses":
+                cid = int(params.get("courseids[0]", 0))
+                resp = [{"id": 555, "course": cid, "type": "news", "name": "Noticias"}] if cid == 62177 else []
+            elif wsfunc == "mod_forum_get_discussion_posts":
+                resp = {"posts": []}
+            elif wsfunc == "core_message_get_conversations":
+                resp = {"conversations": []}
+            elif wsfunc == "core_message_get_conversation_messages":
+                resp = {"messages": [], "members": []}
             else:
                 resp = {"errorcode": "unknownerror", "message": "Unknown function"}
 
@@ -335,6 +345,7 @@ def run_test_suite():
         "SYNC_LOG_FILE": test_log_file,
         "SYNC_MANIFEST_FILE": test_manifest_file,
         "SYNC_LOCK_FILE": test_lock_file,
+        "SYNC_MENSAJES_FILE": os.path.join(test_env_dir, "mensajes_privados_aula.md"),
         "SYNC_TEST_MODE": "1",
         "SYNC_DISABLE_GIT": "1",
         "SYNC_DISABLE_DRIVE": "1",
@@ -348,7 +359,7 @@ def run_test_suite():
     # Guardia de aislamiento estricto (Claude: Aborta si alguna ruta apunta a /storage/emulated/0 o ~/Mis-cosas)
     _real_repo = os.path.realpath(os.path.expanduser("~/Mis-cosas"))
     _real_mapping = os.path.realpath(os.path.expanduser("~/.calendario_mapping.json"))
-    for k in ["SYNC_ROOT_DIR", "SYNC_DELTA_DIR", "SYNC_REPO_DIR", "SYNC_LOG_FILE", "SYNC_MANIFEST_FILE", "CALENDAR_MAPPING_FILE", "CALENDAR_EVALUACIONES_FILE"]:
+    for k in ["SYNC_ROOT_DIR", "SYNC_DELTA_DIR", "SYNC_REPO_DIR", "SYNC_LOG_FILE", "SYNC_MANIFEST_FILE", "SYNC_MENSAJES_FILE", "CALENDAR_MAPPING_FILE", "CALENDAR_EVALUACIONES_FILE"]:
         v = env_overrides[k]
         resolved = os.path.realpath(os.path.expanduser(v))
         if (
@@ -452,6 +463,32 @@ def run_test_suite():
     )
     print(f"  Salida: {[line for line in p_t9.stdout.splitlines() if 'RESULTADO:' in line]}")
     print(f"Resultado T9': {'PASS' if t9_pass else 'FAIL'}\n")
+
+    # ----------------------------------------------------------------------
+    # T26: Ruta del manifest obsoleta con el archivo presente en otra carpeta -> se repara, 0 pendientes
+    # ----------------------------------------------------------------------
+    print("--- [EJECUTANDO T26: Reparación de rutas obsoletas del manifest] ---")
+    server_state["mode"] = "normal"
+    man26 = json.load(open(test_manifest_file, encoding="utf-8"))
+    url26, ent26 = next((u, e) for u, e in man26.items() if os.path.exists(e.get("local_path", "")))
+    ruta_vieja = ent26["local_path"]
+    ruta_nueva = os.path.join(os.path.dirname(os.path.dirname(ruta_vieja)), "Reubicado_T26", os.path.basename(ruta_vieja))
+    os.makedirs(os.path.dirname(ruta_nueva), exist_ok=True)
+    shutil.move(ruta_vieja, ruta_nueva)
+    p_t26 = subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
+    man26b = json.load(open(test_manifest_file, encoding="utf-8"))
+    t26_pass = (
+        p_t26.returncode == 0
+        and "[RUTA REPARADA]" in p_t26.stdout
+        and "RESULTADO: 0 archivo(s) nuevo(s)" in p_t26.stdout
+        and man26b[url26]["local_path"] == ruta_nueva
+        and not os.path.exists(ruta_vieja)
+    )
+    print(f"  Código {p_t26.returncode}; ruta reparada en manifest: {man26b[url26]['local_path'] == ruta_nueva}; sin re-descarga: {not os.path.exists(ruta_vieja)}")
+    shutil.move(ruta_nueva, ruta_vieja)
+    man26b[url26]["local_path"] = ruta_vieja
+    json.dump(man26b, open(test_manifest_file, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
+    print(f"Resultado T26: {'PASS' if t26_pass else 'FAIL'}\n")
 
     # ----------------------------------------------------------------------
     # T10: Error de red forzado -> token ausente en logs, manifest y diff
@@ -786,7 +823,7 @@ def run_test_suite():
     if os.path.exists(hb_path):
         hb_txt = open(hb_path, encoding="utf-8").read()
         hb = json.loads(hb_txt)
-        campos_ok = set(hb) == {"fecha", "estado", "archivos_nuevos_o_modificados", "errores"}
+        campos_ok = set(hb) == {"fecha", "estado", "archivos_nuevos_o_modificados", "errores", "novedades"}
         estado_coherente = (hb["estado"] == "OK") == (p_t20.returncode == 0)
         sin_token = test_token not in hb_txt
         t20_pass = campos_ok and estado_coherente and sin_token
@@ -890,7 +927,7 @@ def run_test_suite():
     # RESUMEN GLOBAL
     # ----------------------------------------------------------------------
     print("======================================================================")
-    global_pass = t2_pass and t3_pass and t9_pass and t10_pass and t11_pass and t12_pass and t14_pass and t15_pass and t16_pass and t17_pass and t18_pass and t20_pass and avisos_pass and t13_pass
+    global_pass = t2_pass and t3_pass and t9_pass and t10_pass and t11_pass and t12_pass and t14_pass and t15_pass and t16_pass and t17_pass and t18_pass and t20_pass and t26_pass and avisos_pass and t13_pass
     print(f"RESUMEN GLOBAL: {'TODAS LAS PRUEBAS PASARON (100% PASS)' if global_pass else 'FALLÓ ALGUNA PRUEBA'}")
     print("======================================================================")
     return 0 if global_pass else 1

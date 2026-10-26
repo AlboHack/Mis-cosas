@@ -19,3 +19,5 @@
 | 2026-10-26 | Respaldo en Drive con `rclone copy`, nunca `sync` | `sync` replica en Drive cualquier pérdida local | T18 |
 | 2026-10-26 | Hook `scripts/hooks/pre-push` en vez de la skill git-guardrails | git-guardrails es un hook de Claude Code y no corre en Antigravity; el hook de git corre con cualquier agente | T19 |
 | 2026-10-26 | Skills para Antigravity: tdd y diagnosing-bugs (mattpocock/skills@5beb35b); strategic-compact descartada | Instrucciones puras y portables; strategic-compact depende de hooks de Claude Code | Lectura de cada SKILL.md |
+| 2026-10-26 | Novedades de Aula: foros (solo docentes y ayudantes, con sus respuestas), cambios en la página de cada ramo y mensajes privados; detector de posibles cambios de evaluación | Las reprogramaciones llegan por foro, por texto en la página o por mensaje, no por el calendario de Aula | T21–T25 |
+| 2026-10-26 | Mensajes privados solo en la tablet; textos y nombres de estudiantes fuera del repo | El repo es público: son conversaciones personales y datos de terceros | T21, T23 |
