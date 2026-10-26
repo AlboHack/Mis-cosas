@@ -1,0 +1,81 @@
+{
+ "modulos": {
+  "759061": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "759062": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "759063": {
+   "archivos": [],
+   "descripcion": "Nombre de la asignatura: Prácticas Obras Civiles\n\nEncargada: Camila Almonacid - practicas.oocc@usm.cl",
+   "fechas": {},
+   "nombre": "Nombre de la asignatura: Prácticas Obras Civiles C...",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "759064": {
+   "archivos": [],
+   "descripcion": "Descripción de la asignatura: Prácticas de Operario (Industriales) y Profesionales, realizadas en empresas externas.",
+   "fechas": {},
+   "nombre": "Descripción de la asignatura:&nbsp;Prácticas de Op...",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "759065": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Noticias y avisos",
+   "seccion": "Información General",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "759067": {
+   "archivos": [
+    "AYUDA EN LA BÚSQUEDA DE PRÁCTICAS.pdf",
+    "CRITERIOS OCIV 2025.pdf",
+    "DIEZ CLAVES PARA LA PRACTICA PROFESIONAL.pdf",
+    "EL VARIADO APRENDIZAJE QUE OFRECE EL DEBUT EN EL MUNDO LABORAL.pdf",
+    "EVALUACION DE ALUMNO.pdf",
+    "EVALUACION DE EMPRESA.pdf",
+    "FORMULARIOS ONLINE.pdf",
+    "INSTRUCCIONES.pdf",
+    "PAUTA DEL INFORME.pdf",
+    "PLANTILLA DEL INFORME.docx",
+    "PREGUNTAS FRECUENTES.pdf",
+    "PRESENTACION EXPLICATIVA 2026.pdf",
+    "RECETAS PARA SALTAR LA PRIMERA VALLA.pdf",
+    "REGISTROS EMPRESAS QUE HAN RECIBIDO PRACTICANTES.png",
+    "REGLAMENTO GENERAL Nº43.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Documentos Importantes",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  }
+ },
+ "secciones": {
+  "53697": {
+   "nombre": "Información General",
+   "resumen": "",
+   "visible": 1
+  }
+ }
+}

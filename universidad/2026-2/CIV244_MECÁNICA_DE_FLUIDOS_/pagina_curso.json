@@ -1,0 +1,351 @@
+{
+ "modulos": {
+  "8047493": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047494": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047495": {
+   "archivos": [],
+   "descripcion": "Nombre de la asignatura: Mecánica\nde Fluidos\nSIGLA: CIV244\nDepartamento que lo imparte: Obras\nCiviles\nSemestre que se dicta: Par\nDedicación de tiempo (SCT): 203 horas cronológicas",
+   "fechas": {},
+   "nombre": "Nombre de la asignatura:&nbsp;Mecánica\nde Fluidos...",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047496": {
+   "archivos": [],
+   "descripcion": "Descripción de la asignatura: El estudiante desarrolla los fundamentos teóricos que le permiten modelar el comportamiento, tanto cinemático como dinámico, de los fluidos, principalmente aquellos considerados incompresibles. Con ello, el estudiante analiza, formula y resuelve problemas propios de la mecánica de fluidos, que finalmente describe conceptualmente, desde una perspectiva de tipo científica con desarrollos fenomenológicos rigurosos, que vincula con la comprensión de la física de los procesos hidrodinámicos para entender los alcances y limitaciones que tienen las aproximaciones habitualmente usadas en la Ingeniería Civil. El estudiante adquiere el fundamento para las asignaturas posteriores de la carrera en las áreas de la Ingeniería Hidráulica, Medio Ambiental y Marítima.",
+   "fechas": {},
+   "nombre": "Descripción de la asignatura:&nbsp;El estudiante d...",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047497": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Noticias y avisos",
+   "seccion": "Información General",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "8047498": {
+   "archivos": [
+    "CIV 244 - Mecánica de Fluidos final.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Programa de Estudio (descargar aquí)",
+   "seccion": "Información General",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047499": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Planificación de la Asignatura",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8217356": {
+   "archivos": [
+    "CIV244-2026-2_Programacion_R1.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Programa 2026-25",
+   "seccion": "Información General",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8217361": {
+   "archivos": [
+    "CIV244_Clase_01_handout.pdf",
+    "CIV244_Clase_02_handout.pdf",
+    "CIV244_Clase_03_handout.pdf",
+    "CIV244_Clase_04_Ejemplo.pdf",
+    "CIV244_Clase_04_handout.pdf",
+    "CIV244_Clase_05_handout.pdf",
+    "CIV244_Clase_06_handout.pdf",
+    "CIV244_Clase_07_handout.pdf",
+    "CIV244_Clase_08_Ejemplo.pdf",
+    "CIV244_Clase_08_handout.pdf",
+    "CIV244_Clase_09_handout.pdf",
+    "CIV244_Clase_10_handout.pdf",
+    "CIV244_Clase_11.pdf",
+    "CIV244_Clase_12_handout.pdf",
+    "CIV244_Clase_13_handout.pdf",
+    "CIV244_Clase_14_handout.pdf",
+    "CIV244_Clase_15.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Material de clases",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8217370": {
+   "archivos": [
+    "Apunte-02-Propiedades_mecanicas_1.pdf",
+    "Apunte-03-Propiedades_mecanicas_2.pdf",
+    "Apunte-04-Analisis_dimensional.pdf",
+    "Apunte-05-Estatica_fluidos_fuerzas.pdf",
+    "Apunte-06-Equilibrio_mecanico.pdf",
+    "Apunte-07-Fuerzas_sobre_superficies_planas.pdf",
+    "Apunte-08-Fuerzas_sobre_superficies_curvas.pdf",
+    "Apunte-09-Cinematica_introduccion.pdf",
+    "Apunte-10-Cinematica_conservacion_masa.pdf",
+    "Apunte-11-Cinematica_movimiento_relativo.pdf",
+    "Apunte-12-FlujoIdealReal-EcuacionEuler.pdf",
+    "Apunte-13-FlujoIdealReal-AplicacionesEulerBernoulli.pdf",
+    "Apunte-14-FlujoIdealReal-NavierStokes.pdf",
+    "Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf",
+    "Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Apuntes USM",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8261418": {
+   "archivos": [
+    "Ayudantía_1.pdf",
+    "Desarrollo Ayudantía 1.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía 1",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8261430": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Cápsula Ayudantía 1",
+   "seccion": "Ayudantías ",
+   "tipo": "url",
+   "visible": 1
+  },
+  "8293901": {
+   "archivos": [
+    "Ayudantía_3.pdf",
+    "Ayudantía_3_pauta.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía 3",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8297095": {
+   "archivos": [
+    "Ayudantía 2.pdf",
+    "Pauta ayudantía 2.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía 2",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8297101": {
+   "archivos": [],
+   "descripcion": "Ayudantes\n\nKathalina Pino González: kathalina.pino@usm.cl\n\nLuciana Tiraferri Colombo: ltiraferri@usm.cl",
+   "fechas": {},
+   "nombre": "Ayudantes",
+   "seccion": "Ayudantías ",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8298699": {
+   "archivos": [
+    "Ayudantía 4.pdf",
+    "Pauta Ayudantía 4.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía 4",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8311749": {
+   "archivos": [
+    "CIV244_2022_C1.pdf",
+    "CIV244_2022_C1_Pauta.pdf",
+    "CIV244_2022_C2.pdf",
+    "CIV244_2022_C2_Pauta.pdf",
+    "CIV244_2023_C1.pdf",
+    "CIV244_2023_C1_Pauta.pdf",
+    "CIV244_2023_C2.pdf",
+    "CIV244_2023_C2_Pauta.pdf",
+    "CIV244_2024_C1.pdf",
+    "CIV244_2024_C1_Pauta.pdf",
+    "CIV244_2024_C2.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Certámenes anteriores",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8311768": {
+   "archivos": [
+    "Ayudantía_extra.pdf",
+    "Desarrollo Ayudantía Extra.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía Extra",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8311971": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Cápsula Ayudantía Extra",
+   "seccion": "Ayudantías ",
+   "tipo": "url",
+   "visible": 1
+  },
+  "8314734": {
+   "archivos": [
+    "Ayudantía_5 .pdf",
+    "Pauta_ayudantía_5.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía 5",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8323629": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Entrega apuntes C1",
+   "seccion": "Información General",
+   "tipo": "assign",
+   "visible": 1
+  },
+  "8336363": {
+   "archivos": [
+    "Ayudantía n°6.pdf",
+    "Pauta Ayudantía 6.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía 6",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8339316": {
+   "archivos": [
+    "CIV244_2026_C1.pdf",
+    "CIV244_2026_C1_RUBRICA.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Certámenes",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8343611": {
+   "archivos": [
+    "Ayudantía_7.pdf",
+    "Desarrollo_Ayudantía_7.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía 7",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8353018": {
+   "archivos": [
+    "Ayudantía n°8 CIV224.pdf",
+    "Pauta Ayudantía 8.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía 8",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
+   "visible": 1
+  }
+ },
+ "secciones": {
+  "556475": {
+   "nombre": "Información General",
+   "resumen": "",
+   "visible": 1
+  },
+  "556476": {
+   "nombre": "Unidad 1",
+   "resumen": "",
+   "visible": 0
+  },
+  "556477": {
+   "nombre": "Unidad 2",
+   "resumen": "",
+   "visible": 0
+  },
+  "556478": {
+   "nombre": "Unidad 3",
+   "resumen": "",
+   "visible": 0
+  },
+  "556479": {
+   "nombre": "Unidad 4",
+   "resumen": "",
+   "visible": 0
+  },
+  "556480": {
+   "nombre": "Unidad 5",
+   "resumen": "",
+   "visible": 0
+  },
+  "556481": {
+   "nombre": "Unidad 6",
+   "resumen": "",
+   "visible": 0
+  },
+  "570286": {
+   "nombre": "Ayudantías ",
+   "resumen": "",
+   "visible": 1
+  }
+ }
+}

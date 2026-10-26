@@ -1,0 +1,180 @@
+{
+ "modulos": {
+  "8047121": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047122": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047123": {
+   "archivos": [],
+   "descripcion": "Nombre de la asignatura: Fundamentos\nde Análisis estructural\nSIGLA: CIV233\nDepartamento que lo imparte: Obras Civiles\nSemestre que se dicta: Par\nDedicación de tiempo (SCT): 187 horas cronológicas",
+   "fechas": {},
+   "nombre": "Nombre de la asignatura:&nbsp;Fundamentos\nde Anál...",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047124": {
+   "archivos": [],
+   "descripcion": "Descripción de la asignatura: El estudiante determina las fuerzas internas y desplazamientos causados por solicitaciones estáticas en estructuras isostáticas e hiperestáticas constituidas por materiales de comportamiento lineal y no lineal. También identifica las deformadas, y analiza algunos casos especiales tales como cambios de temperatura, defectos de fabricación, asentamientos y resortes. El estudiante integra los fundamentos para el desarrollo de métodos de análisis estructural, que son aplicables tanto en el caso estático como dinámico.\n\nHorario Cátedra:\n\nMiércoles | Bloques 13-14 / 15-16 | 17:30-18:40 / 18:50-20.00\n\nSala A012\n\nHorario Ayudantía:\n\nViernes | Bloques 7-8 | 12:30-13:40\n\nSala K300\n\nAyudantes: Gabriel Flores (gabriel.floresf@usm.cl) | Matias Muñoz (mmunozr@usm.cl)\n\nFechas Certámenes:\n\nC1: Martes 29 de Septiembre - Bloques 13-14-15-16 | Sala B-103\n\nC2: Martes 20 de Octubre - Bloques 13-14-15-16 | Sala B-103\n\nC3: Martes 10 de Noviembre - Bloques 13-14-15-16 | Sala B-103\n\nC4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012",
+   "fechas": {},
+   "nombre": "Descripción de la asignatura: El estudiante...",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047125": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Noticias y avisos",
+   "seccion": "Información General",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "8047126": {
+   "archivos": [
+    "CIV 233 - Fundamentos del Análisis Estructural final.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Programa de Estudio (descargar aquí)",
+   "seccion": "Información General",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047127": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Planificación de la Asignatura",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8261268": {
+   "archivos": [
+    "01_Conceptos_Basicos.pdf",
+    "02_Trabajo_Virtual.pdf",
+    "03_CargaUnitaria.pdf",
+    "04_Flexibilidad_SistHiperestaticos.pdf",
+    "A_Tablas_Integrales (REV2).pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Clases",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8277809": {
+   "archivos": [
+    "Ayudantía_01.pdf",
+    "Ayudantía_02.pdf",
+    "Ayudantía_03.pdf",
+    "Ayudantía_04.pdf",
+    "Ayudantía_05.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantías",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8278954": {
+   "archivos": [
+    "Guía_01.pdf",
+    "Guía_02.pdf",
+    "Guía_03.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Guías",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8278955": {
+   "archivos": [
+    "Instrucciones instalacion SAP2000 27.pdf",
+    "Tarea_01.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Tareas",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8278960": {
+   "archivos": [
+    "00_Reglas del Curso.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Reglas del Curso",
+   "seccion": "Información General",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8325772": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {
+    "Apertura:": 1791169200,
+    "Cierre:": 1793156340
+   },
+   "nombre": "Tarea N°1",
+   "seccion": "Información General",
+   "tipo": "assign",
+   "visible": 1
+  },
+  "8347849": {
+   "archivos": [
+    "Notas 15-10.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Notas 15-10",
+   "seccion": "Información General",
+   "tipo": "resource",
+   "visible": 1
+  }
+ },
+ "secciones": {
+  "556448": {
+   "nombre": "Información General",
+   "resumen": "",
+   "visible": 1
+  },
+  "556449": {
+   "nombre": "Unidad 1",
+   "resumen": "",
+   "visible": 0
+  },
+  "556450": {
+   "nombre": "Unidad 2",
+   "resumen": "",
+   "visible": 0
+  },
+  "556451": {
+   "nombre": "Unidad 3",
+   "resumen": "",
+   "visible": 0
+  }
+ }
+}

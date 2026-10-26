@@ -1,0 +1,722 @@
+{
+ "modulos": {
+  "8047059": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047060": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047061": {
+   "archivos": [],
+   "descripcion": "Nombre de la asignatura: Fundamento de Ingeniería de Construcción y Administración\nSIGLA: CIV222\nDepartamento que lo imparte: Obras Civiles\nSemestre que se dicta: Par\nDedicación de tiempo (SCT): 140 horas cronológicas",
+   "fechas": {},
+   "nombre": "\nNombre de la asignatura: Fundamento de Ingenierí...",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047062": {
+   "archivos": [],
+   "descripcion": "Descripción de la asignatura: El estudiante inicia el aprendizaje al concepto de proyecto en la industria de la construcción, etapas del ciclo de vida de un proyecto y sus participantes. Analiza la prefactibilidad de un proyecto a través de herramientas de ingeniería económica. Identifica los recursos involucrados en actividades de proyectos de construcción y métodos constructivos para ejecutar dichas actividades. Estima los costos involucrados en las actividades de un proyecto de construcción. Identifica, las recientes herramientas tecnológicas y de gestión de la construcción.",
+   "fechas": {},
+   "nombre": "Descripción de la asignatura:&nbsp;El estudiante i...",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047063": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Noticias y avisos",
+   "seccion": "Información General",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "8047064": {
+   "archivos": [
+    "CIV 222 - Fundamentos de Ingeniería de Construcción y Administración final.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Programa de Estudio (descargar aquí)",
+   "seccion": "Información General",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047065": {
+   "archivos": [
+    "CIV222 2026-20 Planificación de la Asignatura.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Planificación de la Asignatura",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8047066": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047067": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Foro de consultas sobre la  Unidad N° 1:  Introducción a la industria de la construcción, el concepto de proyecto, sus componentes, el proceso de la gestión de proyectos de construcción, sus etapas y recursos involucrados",
+   "seccion": "Unidad 1",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "8047068": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047069": {
+   "archivos": [],
+   "descripcion": "Identifica el ciclo de vida de un proyecto y sus etapas describiendo las actividades y características del proyecto.",
+   "fechas": {},
+   "nombre": "\nIdentifica el ciclo de vida de un proyecto y sus...",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047070": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047071": {
+   "archivos": [],
+   "descripcion": "– Introducción a la industria de la construcción, el concepto de proyecto, sus componentes.\n\n– El proceso de la gestión de proyectos de construcción, sus etapas y recursos involucrados.",
+   "fechas": {},
+   "nombre": "– Introducción a la industria de la construcción, ...",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047072": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047073": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047074": {
+   "archivos": [
+    "Presentación Unidad 1_Empresa constructora.pdf",
+    "Presentación Unidad 1_FUNDAM 1.PDF",
+    "Presentación Unidad 1_Introducción y portfolio.pdf",
+    "Presentación Unidad 1_La Industria de la Construccion.pdf",
+    "Presentación Unidad 1_Organización de la constructora.pdf",
+    "Presentación Unidad 1_Proyectos de Construccion.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Presentaciones",
+   "seccion": "Unidad 1",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8047075": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Grabaciones de clases en formato streaming",
+   "seccion": "Unidad 1",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8047076": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Documentos complementarios",
+   "seccion": "Unidad 1",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8047077": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047078": {
+   "archivos": [
+    "Pauta Aprender Leer.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 1_Pauta Aprender Leer",
+   "seccion": "Unidad 1",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047079": {
+   "archivos": [
+    "Objetivos de un Portafolio-.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 1_Objetivos de un Portafolio",
+   "seccion": "Unidad 1",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047080": {
+   "archivos": [
+    "Texto de apoyo Unidad 1_PMBOK Capitulo 1.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 1_PMBOK Capitulo 1.pdf",
+   "seccion": "Unidad 1",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047081": {
+   "archivos": [
+    "Texto de apoyo Unidad 1_PMBOK Capitulo 2.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 1_PMBOK Capitulo 2.pdf",
+   "seccion": "Unidad 1",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047082": {
+   "archivos": [
+    "Texto de apoyo Unidad 1_Lectura Capitulo 3.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 1_Lectura Capitulo 3.pdf",
+   "seccion": "Unidad 1",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047083": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047084": {
+   "archivos": [],
+   "descripcion": "Evaluaciones a realizar en periodos de modalidad online",
+   "fechas": {},
+   "nombre": "\nEvaluaciones a realizar en periodos de modalidad...",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047085": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047086": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Foro de consultas sobre la Unidad N° 2:  La organización de un proyecto y sus participantes durante las distintas etapas del ciclo de vida, etapas de factibilidad, diseño, y construcción, métodos constructivos y sus recursos involucrados",
+   "seccion": "Unidad 2",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "8047087": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047088": {
+   "archivos": [],
+   "descripcion": "1. Identifica el ciclo de vida de un proyecto y sus etapas describiendo las actividades y características del proyecto.\n\n2. Estudia la prefactibilidad de un proyecto utilizando herramientas de ingeniería económica.\n\n3. Identifica las actividades, métodos constructivos, recursos y plazos asociados de un proyecto estimando los costos involucrados en las actividades y etapas del proyecto de construcción.",
+   "fechas": {},
+   "nombre": "\n1. Identifica el ciclo de vida de un proyecto y ...",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047089": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047090": {
+   "archivos": [],
+   "descripcion": "– La organización de un proyecto y sus participantes durante las distintas etapas del ciclo de vida.\n– Etapas de factibilidad, diseño, y construcción.\n\n– Métodos constructivos y sus recursos involucrados.",
+   "fechas": {},
+   "nombre": "– La organización de un proyecto y sus participant...",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047091": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047092": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047093": {
+   "archivos": [
+    "Presentación Unidad 2_Análisis de datos.pdf",
+    "Presentación Unidad 2_Análisis de rendimiento.pdf",
+    "Presentación Unidad 2_Contabilidad.pdf",
+    "Presentación Unidad 2_Contratos y propuestas en proyectos de construccion.pdf",
+    "Presentación Unidad 2_Costo proyecto construcción.pdf",
+    "Presentación Unidad 2_Criterios de evaluación entre pares.pdf",
+    "Presentación Unidad 2_Esquema de licitación.pdf",
+    "Presentación Unidad 2_Evaluación entre pares.pdf",
+    "Presentación Unidad 2_FUNDAM 1.PDF",
+    "Presentación Unidad 2_Gestión del tiempo.pdf",
+    "Presentación Unidad 2_Mind map.pdf",
+    "Presentación Unidad 2_Modelamiento de procesos.pdf",
+    "Presentación Unidad 2_Observar y medir productividad y pérdida.pdf",
+    "Presentación Unidad 2_Planificacion proyectos construcción.pdf",
+    "Presentación Unidad 2_Precios y presupuesto.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Presentaciones ",
+   "seccion": "Unidad 2",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8047094": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Grabaciones de clases en formato streaming",
+   "seccion": "Unidad 2",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8047095": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Documentos complementarios",
+   "seccion": "Unidad 2",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8047096": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047097": {
+   "archivos": [
+    "Motivacion.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 2_Motivación",
+   "seccion": "Unidad 2",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047098": {
+   "archivos": [
+    "Lectura CIV222 4.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 2_Lectura CIV222 4",
+   "seccion": "Unidad 2",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047099": {
+   "archivos": [
+    "Presentacion de la Propuesta Proyecto.docx"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 2_Presentación de la Propuesta Proyecto",
+   "seccion": "Unidad 2",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047100": {
+   "archivos": [
+    "Cronograma asociados con los trabajadores.xlsx"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 2_Cronograma asociados con los trabajadores",
+   "seccion": "Unidad 2",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047101": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047102": {
+   "archivos": [],
+   "descripcion": "Evaluaciones a realizar en periodos de modalidad online.",
+   "fechas": {},
+   "nombre": "\nEvaluaciones a realizar en periodos de modalidad...",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047103": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047104": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Foro de consultas sobre la Unidad N° 3:  Estimación de costos involucrados en proyectos de construcción, análisis y estudio de la prefactibilidad de un proyecto",
+   "seccion": "Unidad 3",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "8047105": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047106": {
+   "archivos": [],
+   "descripcion": "1. Identifica las actividades, métodos constructivos, recursos y plazos asociados de un proyecto estimando los costos involucrados en las actividades y etapas del proyecto de construcción.\n\n2. Estudia la prefactibilidad de un proyecto utilizando herramientas de ingeniería económica.\n\n3. Identifica aplicaciones y tecnologías de carácter novedoso en la industria de la construcción describiendo las ventajas y desventajas de cada una.",
+   "fechas": {},
+   "nombre": "\n1. Identifica las actividades, métodos construct...",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047107": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047108": {
+   "archivos": [],
+   "descripcion": "– Estimación de costos involucrados en proyectos de construcción.\n\n– Evaluación económica con los indicadores, valor presente y tasa interna de retorno.",
+   "fechas": {},
+   "nombre": "– Estimación de costos involucrados en proyectos d...",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047109": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047110": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047111": {
+   "archivos": [
+    "Presentación Unidad 3_Análisis de recursos.pdf",
+    "Presentación Unidad 3_Capacitaciones.pdf",
+    "Presentación Unidad 3_Control de procesos.pdf",
+    "Presentación Unidad 3_Planificación de recursos financieros.pdf",
+    "Presentación Unidad 3_Satisfacción laboral.pdf",
+    "Presentación Unidad 3_Seguimiento y control de proyectos.pdf",
+    "Presentación Unidad 3_Técnicas basicas de planificacion.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Presentaciones",
+   "seccion": "Unidad 3",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8047112": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Grabaciones de clases en formato streaming ",
+   "seccion": "Unidad 3",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8047113": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Documentos complementarios",
+   "seccion": "Unidad 3",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8047114": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047115": {
+   "archivos": [
+    "Ejemplo PU - Analisis Recursos.xlsx"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 3_Ejemplo PU - Análisis recursos",
+   "seccion": "Unidad 3",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047116": {
+   "archivos": [
+    "Pauta por Proyecto.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 3_Pauta por proyecto",
+   "seccion": "Unidad 3",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047117": {
+   "archivos": [
+    "Ejemplo_Valor_Ganado.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 3_Ejemplo Valor Ganado",
+   "seccion": "Unidad 3",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047118": {
+   "archivos": [
+    "Ejumplo2 Valor Ganado.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Actividad Unidad 3_Ejemplo 2 Valor Ganado",
+   "seccion": "Unidad 3",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8047119": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8047120": {
+   "archivos": [],
+   "descripcion": "Evaluaciones a realizar en periodos de modalidad online.",
+   "fechas": {},
+   "nombre": "\nEvaluaciones a realizar en periodos de modalidad...",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8162401": {
+   "archivos": [
+    "Administración de Proyectos Civiles - Mario Campero y Luis Alarcon.pdf",
+    "CIV222 2026-20 Complemento a la Gestión de Proyectos.pdf",
+    "CIV222 2026-20 Ejercicio 2 CPM+Gantt + Ppto.xlsx",
+    "CIV222 2026-20 Ejercicio 3.pdf",
+    "CIV222 2026-20 Ejercicio Gestión de Costos.pdf",
+    "CIV222 2026-20 Fundamentos de la Ingeniería y Construcción y Administración.pdf",
+    "CIV222 2026-20 Unidad 1.pdf",
+    "CIV222 2026-20 Unidad 2-3.pdf",
+    "CIV222 2026-20 Unidad 4-5.pdf",
+    "CIV222 2026-20 Unidad 6-7.pdf",
+    "HendricksonBook.pdf",
+    "Libro - Planificacion y Control de Proyectos - Serpell.pdf",
+    "Listado de rendimientos.pdf",
+    "PMBOK 7Ed.pdf",
+    "PMBOKGuideSixthEd_SPA-unlocked-compressed.pdf",
+    "PMI - Guía de los fundamentos para la dirección de proyectos (Guía del PMBOK).pdf",
+    "Preparacion-Evaluación-Proyectos-SAPAG-5ta.pdf",
+    "Preparación y Evaluación de Proyectos - SapagSapag.pdf",
+    "Procesos y Técnicas de Construcción - H. de Solminihac G.Thenoux.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "CIV222 2026-20 PPTs y Apuntes",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8162406": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {
+    "Apertura:": 1785729600,
+    "Cierre:": 1786392000
+   },
+   "nombre": "CIV222 2026-20 Entrega de Proyectos",
+   "seccion": "Información General",
+   "tipo": "assign",
+   "visible": 1
+  },
+  "8280891": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {
+    "Apertura:": 1787544000,
+    "Cierre:": 1788807600
+   },
+   "nombre": "CIV222 2026-20 Entrega Tarea 1 (Caso Edificio Kandinsky)",
+   "seccion": "Información General",
+   "tipo": "assign",
+   "visible": 1
+  },
+  "8289923": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {
+    "Apertura:": 1788148800,
+    "Cierre:": 1788807600
+   },
+   "nombre": "CIV222 2026-20 Entrega Control 1",
+   "seccion": "Información General",
+   "tipo": "assign",
+   "visible": 1
+  },
+  "8311533": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {
+    "Apertura:": 1789959600,
+    "Cierre:": 1791226800
+   },
+   "nombre": "CIV222 2026-20 Entrega Informe + PPT Presentación 1",
+   "seccion": "Información General",
+   "tipo": "assign",
+   "visible": 1
+  }
+ },
+ "secciones": {
+  "556444": {
+   "nombre": "Información General",
+   "resumen": "",
+   "visible": 1
+  },
+  "556445": {
+   "nombre": "Unidad 1",
+   "resumen": "",
+   "visible": 1
+  },
+  "556446": {
+   "nombre": "Unidad 2",
+   "resumen": "",
+   "visible": 1
+  },
+  "556447": {
+   "nombre": "Unidad 3",
+   "resumen": "",
+   "visible": 1
+  }
+ }
+}

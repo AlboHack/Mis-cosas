@@ -1,0 +1,725 @@
+{
+ "modulos": {
+  "8048254": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048255": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048256": {
+   "archivos": [],
+   "descripcion": "Nombre de la asignatura: Ingeniería\nde Transporte\nSIGLA: CIV386\nDepartamento que lo imparte: Obras Civiles\nSemestre que se dicta: Par\nDedicación de tiempo (SCT): 145 horas cronológicas",
+   "fechas": {},
+   "nombre": "Nombre de la asignatura:&nbsp;Ingeniería\nde Trans...",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048257": {
+   "archivos": [],
+   "descripcion": "Descripción de la asignatura: El estudiante distingue y analiza sistemas de transporte urbano, entendiendo los procesos de movilidad y su modelamiento matemático desde la necesidad por transporte hasta la operación de sistemas y redes, evaluando el impacto de diversos factores económicos, territoriales, sociales, culturales y tecnológicos.",
+   "fechas": {},
+   "nombre": "Descripción de la asignatura:&nbsp; El estudiante ...",
+   "seccion": "Información General",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048258": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Noticias y avisos",
+   "seccion": "Información General",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "8048259": {
+   "archivos": [
+    "CIV 386 - Ingeniería de Transporte final.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Programa de Estudio (descargar aquí)",
+   "seccion": "Información General",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8048260": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Planificación de la Asignatura",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048261": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048262": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Foro de consultas sobre la  Unidad N° 1:  Planificación urbana y transporte de los sistemas de transportes",
+   "seccion": "Unidad 1",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "8048263": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048264": {
+   "archivos": [],
+   "descripcion": "Distingue las principales variables en la planificación de sistemas de transporte terrestre evaluando el impacto de factores económicos, territoriales, sociales y culturales.",
+   "fechas": {},
+   "nombre": "\nDistingue las principales variables en la planif...",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048265": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048266": {
+   "archivos": [],
+   "descripcion": "– Institucionalidad del transporte en Chile.\n\n– Fundamentos de planificación urbana.",
+   "fechas": {},
+   "nombre": "\n– Institucionalidad del transporte en Chile.\n– ...",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048267": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048268": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048269": {
+   "archivos": [
+    "11 Presentacion Curso.pdf",
+    "12 Introduccion.pdf",
+    "21 Transporte Sustentable I.pdf",
+    "22 Transporte Sustentable II.pdf",
+    "23 Planificacion Transporte I.pdf",
+    "24 Planificacion Transporte II.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Presentaciones",
+   "seccion": "Unidad 1",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048270": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Grabaciones de clases en formato streaming",
+   "seccion": "Unidad 1",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048271": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Documentos complementarios",
+   "seccion": "Unidad 1",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048272": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048273": {
+   "archivos": [],
+   "descripcion": "Sin información.",
+   "fechas": {},
+   "nombre": "Sin información.",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048274": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048275": {
+   "archivos": [],
+   "descripcion": "Evaluaciones a realizar en periodos de modalidad online.",
+   "fechas": {},
+   "nombre": "\nEvaluaciones a realizar en periodos de modalidad...",
+   "seccion": "Unidad 1",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048276": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048277": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Foro de consultas sobre la Unidad N° 2:   Modelos de demanda",
+   "seccion": "Unidad 2",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "8048278": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048279": {
+   "archivos": [],
+   "descripcion": "Analiza ventajas y desventajas de los sistemas de transporte urbano evaluando el impacto y la confiabilidad de los resultados en distintas etapas de los proyectos.",
+   "fechas": {},
+   "nombre": "\nAnaliza ventajas y desventajas de los sistemas d...",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048280": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048281": {
+   "archivos": [],
+   "descripcion": "– Caracterización y fundamentos de los modelos de movilidad urbana: cuanto, dónde y cómo viajar (generación, distribución y partición modal).",
+   "fechas": {},
+   "nombre": "\n– Caracterización y fundamentos de los modelos d...",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048282": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048283": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048284": {
+   "archivos": [
+    "31 Modelo Cuatro Etapas.pdf",
+    "32 Generacion I.pdf",
+    "33 Generacion II.pdf",
+    "35 Distribucion I.pdf",
+    "36 Distribucion II.pdf",
+    "37 Particion Modal I.pdf",
+    "38b Particion Modal II (No Video).pdf",
+    "39 Particion Modal III.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Presentaciones ",
+   "seccion": "Unidad 2",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048285": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Grabaciones de clases en formato streaming",
+   "seccion": "Unidad 2",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048286": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Documentos complementarios",
+   "seccion": "Unidad 2",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048287": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048288": {
+   "archivos": [],
+   "descripcion": "Sin información.",
+   "fechas": {},
+   "nombre": "Sin información.",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048289": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048290": {
+   "archivos": [],
+   "descripcion": "Evaluaciones a realizar en periodos de modalidad online.",
+   "fechas": {},
+   "nombre": "\nEvaluaciones a realizar en periodos de modalidad...",
+   "seccion": "Unidad 2",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048291": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048292": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Foro de consultas sobre la  Unidad N° 3:  Modelos de oferta",
+   "seccion": "Unidad 3",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "8048293": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048294": {
+   "archivos": [],
+   "descripcion": "Compara ventajas y desventajas de los sistemas de transporte terrestre inteligente asociadas a un proyecto específico considerando las aplicaciones, desarrollo tecnológico, obsolescencia, costos y otros.",
+   "fechas": {},
+   "nombre": "\nCompara ventajas y desventajas de los sistemas d...",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048295": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048296": {
+   "archivos": [],
+   "descripcion": "– Sistemas cíclicos para el transporte de carga y pasajeros.\n\n– Ingeniería de tránsito.",
+   "fechas": {},
+   "nombre": "\n– Sistemas cíclicos para el transporte de carga ...",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048297": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048298": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048299": {
+   "archivos": [
+    "41 Sistema Ciclico Simple.pdf",
+    "42 Sistema Ciclico Retorno.pdf",
+    "43 Sistema Ciclico General (No Video).pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Presentaciones",
+   "seccion": "Unidad 3",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048300": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Grabaciones de clases en formato streaming ",
+   "seccion": "Unidad 3",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048301": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Documentos complementarios",
+   "seccion": "Unidad 3",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048302": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048303": {
+   "archivos": [],
+   "descripcion": "Sin información.",
+   "fechas": {},
+   "nombre": "Sin información.",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048304": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048305": {
+   "archivos": [],
+   "descripcion": "Evaluaciones a realizar en periodos de modalidad online.",
+   "fechas": {},
+   "nombre": "\nEvaluaciones a realizar en periodos de modalidad...",
+   "seccion": "Unidad 3",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048306": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 4",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048307": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Foro de consultas sobre la  Unidad N° 4: Equilibrio en redes de transporte",
+   "seccion": "Unidad 4",
+   "tipo": "forum",
+   "visible": 1
+  },
+  "8048308": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 4",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048309": {
+   "archivos": [],
+   "descripcion": "Compara ventajas y desventajas de los sistemas de transporte terrestre inteligente asociadas a un proyecto específico considerando las aplicaciones, desarrollo tecnológico, obsolescencia, costos y otros.",
+   "fechas": {},
+   "nombre": "\nCompara ventajas y desventajas de los sistemas d...",
+   "seccion": "Unidad 4",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048310": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 4",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048311": {
+   "archivos": [],
+   "descripcion": "– Equilibrio multimodal.\n\n– Identificación de externalidades y paradojas urbanas.",
+   "fechas": {},
+   "nombre": "\n– Equilibrio multimodal.\n– Identificación de ex...",
+   "seccion": "Unidad 4",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048312": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 4",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048313": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 4",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048314": {
+   "archivos": [
+    "51 Nociones Redes.pdf",
+    "52 Primer Principio Wardrop.pdf",
+    "53 Segundo Principio Wardrop.pdf",
+    "54 Paradojas.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Presentaciones ",
+   "seccion": "Unidad 4",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048315": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Grabaciones de clases en formato streaming",
+   "seccion": "Unidad 4",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048316": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Documentos complementarios ",
+   "seccion": "Unidad 4",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8048317": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 4",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048318": {
+   "archivos": [],
+   "descripcion": "Sin información.",
+   "fechas": {},
+   "nombre": "Sin información.",
+   "seccion": "Unidad 4",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048319": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Etiqueta",
+   "seccion": "Unidad 4",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8048320": {
+   "archivos": [],
+   "descripcion": "Evaluaciones a realizar en periodos de modalidad online.",
+   "fechas": {},
+   "nombre": "\nEvaluaciones a realizar en periodos de modalidad...",
+   "seccion": "Unidad 4",
+   "tipo": "label",
+   "visible": 1
+  },
+  "8277472": {
+   "archivos": [
+    "Ortuzar (2011) - Modelling Transport.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Referencias Bibliográficas",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8283784": {
+   "archivos": [
+    "Guia 1 (Enunciado).pdf",
+    "Guia 1 (Pauta).pdf",
+    "Guia 2 (Enunciado).pdf",
+    "Guia 2 (Pauta).pdf",
+    "Guia 3 (Enunciado).pdf",
+    "Guia 3 (Pauta).pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Guias de Estudio",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8289880": {
+   "archivos": [
+    "Ayudantia 1 (Enunciado).pdf",
+    "Ayudantia 1 (Pauta).pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantías",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8311625": {
+   "archivos": [
+    "Certamen 1 (Enunciado).pdf",
+    "Certamen 1 (Pauta).pdf",
+    "Certamen 2 (Enunciado).pdf",
+    "Certamen 2 (Pauta).pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Certamenes",
+   "seccion": "Información General",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8348986": {
+   "archivos": [
+    "2026pr Notas.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "17/10 Notas (C2)",
+   "seccion": "Información General",
+   "tipo": "resource",
+   "visible": 1
+  }
+ },
+ "secciones": {
+  "556531": {
+   "nombre": "Información General",
+   "resumen": "",
+   "visible": 1
+  },
+  "556532": {
+   "nombre": "Unidad 1",
+   "resumen": "",
+   "visible": 1
+  },
+  "556533": {
+   "nombre": "Unidad 2",
+   "resumen": "",
+   "visible": 1
+  },
+  "556534": {
+   "nombre": "Unidad 3",
+   "resumen": "",
+   "visible": 1
+  },
+  "556535": {
+   "nombre": "Unidad 4",
+   "resumen": "",
+   "visible": 1
+  }
+ }
+}
