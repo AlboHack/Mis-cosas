@@ -13,6 +13,7 @@ import shutil
 import tempfile
 import subprocess
 import json
+import hashlib
 import time
 import socket
 from datetime import datetime
@@ -89,35 +90,121 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
                     "functions": []
                 }
             elif wsfunc == "core_course_get_contents":
-                v = server_state["file_version"]
-                tmod = server_state["timemodified"]
-                resp = [
-                    {
+                cid = int(params.get("courseid", 0))
+                if cid != 62177:
+                    resp = []
+                elif server_state["mode"] == "t15":
+                    resp = [
+                        {
+                            "name": "General",
+                            "modules": [
+                                {
+                                    "name": "Pauta Reubicada",
+                                    "modname": "resource",
+                                    "contents": [
+                                        {
+                                            "type": "file",
+                                            "filename": "Pauta_Nueva_Seccion.pdf",
+                                            "filesize": len(server_state.get("t15_data", b"")),
+                                            "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/t15/Pauta_Nueva_Seccion.pdf",
+                                            "timemodified": TS_V1
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                elif server_state["mode"] == "t16":
+                    modules_25 = []
+                    for i in range(25):
+                        fname = f"Doc_{i}.pdf"
+                        prefix = f"%PDF-1.4 Unique {fname} content "
+                        sz = len((prefix + "X" * (120 - len(prefix))).encode("utf-8"))
+                        modules_25.append({
+                            "name": f"Documento {i}",
+                            "modname": "resource",
+                            "contents": [
+                                {
+                                    "type": "file",
+                                    "filename": fname,
+                                    "filesize": sz,
+                                    "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/t16/{fname}",
+                                    "timemodified": TS_V1 + i
+                                }
+                            ]
+                        })
+                    resp = [{"name": "General", "modules": modules_25}]
+                elif server_state["mode"] == "t17":
+                    contents_t17 = [
+                        {
+                            "type": "file",
+                            "filename": "Pauta_Vigente.pdf",
+                            "filesize": len(server_state.get("t17_pauta_v2", b"")),
+                            "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/t17/Pauta_Vigente.pdf",
+                            "timemodified": TS_V2
+                        }
+                    ]
+                    for i in range(21):
+                        fname = f"Doc_Nuevo_{i}.pdf"
+                        prefix = f"%PDF-1.4 T17 Doc {i} content "
+                        sz = len((prefix + "X" * (120 - len(prefix))).encode("utf-8"))
+                        contents_t17.append({
+                            "type": "file",
+                            "filename": fname,
+                            "filesize": sz,
+                            "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/t17/{fname}",
+                            "timemodified": TS_V1
+                        })
+                    resp = [{
                         "name": "General",
                         "modules": [
                             {
-                                "name": "Pauta",
+                                "name": "Contenidos T17",
                                 "modname": "resource",
-                                "contents": [
-                                    {
-                                        "type": "file",
-                                        "filename": "Pauta.pdf",
-                                        "filesize": len(get_file_content(v)),
-                                        "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/123/mod_resource/content/1/Pauta.pdf",
-                                        "timemodified": tmod
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "Noticias",
-                                "modname": "forum",
-                                "instance": 555
+                                "contents": contents_t17
                             }
                         ]
-                    }
-                ]
+                    }]
+                else:
+                    v = server_state["file_version"]
+                    tmod = server_state["timemodified"]
+                    resp = [
+                        {
+                            "name": "General",
+                            "modules": [
+                                {
+                                    "name": "Pauta",
+                                    "modname": "resource",
+                                    "contents": [
+                                        {
+                                            "type": "file",
+                                            "filename": "Pauta.pdf",
+                                            "filesize": len(get_file_content(v)),
+                                            "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/123/mod_resource/content/1/Pauta.pdf",
+                                            "timemodified": tmod
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Noticias",
+                                    "modname": "forum",
+                                    "instance": 555
+                                }
+                            ]
+                        }
+                    ]
             elif wsfunc == "core_calendar_get_calendar_events":
-                resp = {"events": []}
+                resp = {
+                    "events": [
+                        {
+                            "id": 1124478,
+                            "courseid": 62178,
+                            "name": "Vencimiento de Tarea N°1",
+                            "timestart": 1793156340,
+                            "timeduration": 0
+                        }
+                    ]
+                }
             elif wsfunc == "mod_forum_get_forum_discussions":
                 resp = {"discussions": server_state["discussions"]}
             else:
@@ -127,8 +214,22 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
             return
 
         if "/webservice/pluginfile.php" in self.path:
-            v = server_state["file_version"]
-            data = get_file_content(v)
+            if server_state["mode"] == "t15":
+                data = server_state.get("t15_data", b"")
+            elif server_state["mode"] == "t16":
+                fname = self.path.split("/")[-1].split("?")[0]
+                prefix = f"%PDF-1.4 Unique {fname} content "
+                data = (prefix + "X" * (120 - len(prefix))).encode("utf-8")
+            elif server_state["mode"] == "t17":
+                fname = self.path.split("/")[-1].split("?")[0]
+                if fname == "Pauta_Vigente.pdf":
+                    data = server_state.get("t17_pauta_v2", b"")
+                else:
+                    prefix = f"%PDF-1.4 T17 {fname} content "
+                    data = (prefix + "X" * (120 - len(prefix))).encode("utf-8")
+            else:
+                v = server_state["file_version"]
+                data = get_file_content(v)
             self.send_response(200)
             self.send_header("Content-Type", "application/pdf")
             self.send_header("Content-Length", str(len(data)))
@@ -144,10 +245,24 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
             self.send_response(500)
             self.end_headers()
             return
-            
+
         if "/webservice/pluginfile.php" in self.path:
-            v = server_state["file_version"]
-            data = get_file_content(v)
+            if server_state["mode"] == "t15":
+                data = server_state.get("t15_data", b"")
+            elif server_state["mode"] == "t16":
+                fname = self.path.split("/")[-1].split("?")[0]
+                prefix = f"%PDF-1.4 Unique {fname} content "
+                data = (prefix + "X" * (120 - len(prefix))).encode("utf-8")
+            elif server_state["mode"] == "t17":
+                fname = self.path.split("/")[-1].split("?")[0]
+                if fname == "Pauta_Vigente.pdf":
+                    data = server_state.get("t17_pauta_v2", b"")
+                else:
+                    prefix = f"%PDF-1.4 T17 {fname} content "
+                    data = (prefix + "X" * (120 - len(prefix))).encode("utf-8")
+            else:
+                v = server_state["file_version"]
+                data = get_file_content(v)
             self.send_response(200)
             self.send_header("Content-Type", "application/pdf")
             self.send_header("Content-Length", str(len(data)))
@@ -160,7 +275,7 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
 
 def run_test_suite():
     print("======================================================================")
-    print("BATERÍA DE PRUEBAS DE ACEPTACIÓN TÉCNICA (API TOKEN: T2', T3', T9', T10, T11, T12, T13, T14)")
+    print("BATERÍA DE PRUEBAS DE ACEPTACIÓN TÉCNICA (API TOKEN: T2', T3', T9', T10, T11, T12, T13, T14, T15, T16, T17)")
     print("======================================================================\n")
 
     # Registro de estado previo real para T13
@@ -222,6 +337,7 @@ def run_test_suite():
         "SYNC_LOCK_FILE": test_lock_file,
         "SYNC_TEST_MODE": "1",
         "SYNC_DISABLE_GIT": "1",
+        "SYNC_DISABLE_DRIVE": "1",
         "CALENDAR_TEST_MODE": "1",
         "CALENDAR_SIMULATE_ADB": "1",
         "CALENDAR_SIM_STATE_FILE": test_cal_sim_file,
@@ -490,6 +606,206 @@ def run_test_suite():
     print(f"Resultado T14: {'PASS' if t14_pass else 'FAIL'}\n")
 
     # ----------------------------------------------------------------------
+    # T15: Detección por Contenido contra lo Existente (Hash SHA-256 por Curso)
+    # ----------------------------------------------------------------------
+    print("--- [EJECUTANDO T15: Deduplicación por Contenido con Estructura Diferente] ---")
+    t15_content = b"%PDF-1.4 Contenido identico para prueba T15 de deduplicacion - Hash estricto 88888"
+    course_folder = "CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_"
+    old_subfolder = os.path.join(test_root_dir, course_folder, "Carpeta_Antigua_Desordenada")
+    os.makedirs(old_subfolder, exist_ok=True)
+    old_file_path = os.path.join(old_subfolder, "Archivo_Antiguo.pdf")
+    with open(old_file_path, "wb") as f:
+        f.write(t15_content)
+
+    if os.path.exists(test_manifest_file):
+        os.remove(test_manifest_file)
+
+    server_state["mode"] = "t15"
+    server_state["t15_data"] = t15_content
+
+    p_t15 = subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
+
+    new_dest = os.path.join(test_root_dir, course_folder, "Planificacion/General/Pauta_Nueva_Seccion.pdf")
+    file_not_written = not os.path.exists(new_dest)
+    zero_new_reported = "0 archivo(s) nuevo(s)" in p_t15.stdout
+    dup_omitted = "[DUPLICADO OMITIDO]" in p_t15.stdout
+
+    manifest_t15 = {}
+    if os.path.exists(test_manifest_file):
+        with open(test_manifest_file, "r", encoding="utf-8") as mf:
+            manifest_t15 = json.load(mf)
+
+    mapped_correctly = False
+    for k, v in manifest_t15.items():
+        if "Pauta_Nueva_Seccion.pdf" in k and v.get("local_path") == old_file_path:
+            mapped_correctly = True
+            break
+
+    eval_json_p = os.path.join(test_repo_dir, "universidad/2026-2/evaluaciones.json")
+    eval_dedup_pass = False
+    if os.path.exists(eval_json_p):
+        with open(eval_json_p, "r", encoding="utf-8") as ef:
+            eval_data = json.load(ef)
+        uids = [e["uid"] for e in eval_data]
+        eval_dedup_pass = ("1124478" not in uids and "manual-FAE-Entrega Tarea 1 SAP2000" in uids and len(eval_data) == 12)
+
+    t15_pass = (
+        p_t15.returncode == 0 and
+        file_not_written and
+        zero_new_reported and
+        dup_omitted and
+        mapped_correctly and
+        eval_dedup_pass
+    )
+    print(f"  Código de retorno 0: {p_t15.returncode == 0}")
+    print(f"  Archivo NO duplicado en disco: {file_not_written}")
+    print(f"  0 nuevos archivos reportados: {zero_new_reported}")
+    print(f"  Log registró [DUPLICADO OMITIDO]: {dup_omitted}")
+    print(f"  Manifest mapeado a archivo existente: {mapped_correctly}")
+    print(f"  Deduplicación de evaluaciones (12 eventos sin duplicado API): {eval_dedup_pass}")
+    print(f"Resultado T15: {'PASS' if t15_pass else 'FAIL'}\n")
+
+    # ----------------------------------------------------------------------
+    # T16: Límite Masivo Estricto (>20 archivos nuevos corta todo)
+    # ----------------------------------------------------------------------
+    print("--- [EJECUTANDO T16: Límite Masivo (>20) Bloqueante] ---")
+    server_state["mode"] = "t16"
+
+    if os.path.exists(test_manifest_file):
+        os.remove(test_manifest_file)
+
+    p_t16_block = subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
+    manifest_saved_on_block = os.path.exists(test_manifest_file)
+    git_status_repo = subprocess.run(["git", "status", "--porcelain"], cwd=test_repo_dir, capture_output=True, text=True).stdout.strip()
+    msg_revision = "revisión requerida" in p_t16_block.stdout.lower() or "revision requerida" in p_t16_block.stdout.lower()
+
+    p_t16_allow = subprocess.run([sys.executable, SYNC_SCRIPT, "--permitir-masivo"], env=env_prod, capture_output=True, text=True)
+    manifest_saved_on_allow = os.path.exists(test_manifest_file)
+    manifest_count = 0
+    if manifest_saved_on_allow:
+        with open(test_manifest_file, "r", encoding="utf-8") as mf:
+            manifest_count = len(json.load(mf))
+
+    t16_pass = (
+        p_t16_block.returncode == 1 and
+        not manifest_saved_on_block and
+        msg_revision and
+        git_status_repo == "" and
+        p_t16_allow.returncode == 0 and
+        manifest_saved_on_allow and
+        manifest_count >= 25
+    )
+    print(f"  Bloqueo: código de retorno 1: {p_t16_block.returncode == 1}")
+    print(f"  Bloqueo: manifest NO guardado: {not manifest_saved_on_block}")
+    print(f"  Bloqueo: mensaje 'revisión requerida': {msg_revision}")
+    print(f"  Bloqueo: repo git limpio: {git_status_repo == ''}")
+    print(f"  Permitido: código de retorno 0: {p_t16_allow.returncode == 0}")
+    print(f"  Permitido: manifest guardado ({manifest_count} entradas >= 25): {manifest_count >= 25}")
+    print(f"Resultado T16: {'PASS' if t16_pass else 'FAIL'}\n")
+
+    # ----------------------------------------------------------------------
+    # T17: Límite Masivo Preventivo (1 Modificado + 21 Nuevos corta todo ANTES de escribir)
+    # ----------------------------------------------------------------------
+    print("--- [EJECUTANDO T17: Límite Masivo Preventivo (1 Modificado + 21 Nuevos)] ---")
+    course_folder = "CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_"
+    pauta_dir = os.path.join(test_root_dir, course_folder, "Planificacion/General")
+    os.makedirs(pauta_dir, exist_ok=True)
+    pauta_path = os.path.join(pauta_dir, "Pauta_Vigente.pdf")
+
+    # 1. Sembrar archivo vigente y registrarlo en manifest (Versión 1)
+    c_original = b"%PDF-1.4 Contenido original de Pauta Vigente - Version 1"
+    with open(pauta_path, "wb") as f:
+        f.write(c_original)
+    sha_original = hashlib.sha256(c_original).hexdigest()
+
+    url_vigente = f"http://127.0.0.1:{port}/webservice/pluginfile.php/t17/Pauta_Vigente.pdf"
+    manifest_t17_init = {
+        url_vigente: {
+            "timemodified": TS_V1,
+            "filesize": len(c_original),
+            "local_path": pauta_path,
+            "sha256": sha_original,
+            "last_seen": datetime.now().isoformat()
+        }
+    }
+    with open(test_manifest_file, "w", encoding="utf-8") as mf:
+        json.dump(manifest_t17_init, mf, indent=2)
+
+    server_state["mode"] = "t17"
+    server_state["t17_pauta_v2"] = b"%PDF-1.4 Contenido MODIFICADO de Pauta Vigente - Version 2"
+
+    # 2. Ejecutar SIN --permitir-masivo
+    p_t17_block = subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
+
+    # Verificaciones T17:
+    # - Código 1
+    # - Archivo original intacto (mismo sha256 y contenido)
+    # - Cero archivos de respaldo _v* creados
+    # - Cero archivos nuevos en disco
+    # - Manifest intacto sin cambios
+    c_after = open(pauta_path, "rb").read() if os.path.exists(pauta_path) else b""
+    sha_after = hashlib.sha256(c_after).hexdigest()
+    file_intact = (c_after == c_original and sha_after == sha_original)
+
+    backups_created = [f for f in os.listdir(pauta_dir) if f.startswith("Pauta_Vigente_v")]
+    zero_backups = (len(backups_created) == 0)
+
+    new_files_in_dir = [f for f in os.listdir(pauta_dir) if f.startswith("Doc_Nuevo")]
+    zero_new_files = (len(new_files_in_dir) == 0)
+
+    manifest_after = json.load(open(test_manifest_file, "r", encoding="utf-8")) if os.path.exists(test_manifest_file) else {}
+    manifest_intact = (manifest_after.get(url_vigente, {}).get("timemodified") == TS_V1 and len(manifest_after) == 1)
+    msg_revision = "revisión requerida" in p_t17_block.stdout.lower() or "revision requerida" in p_t17_block.stdout.lower()
+
+    t17_pass = (
+        p_t17_block.returncode == 1 and
+        file_intact and
+        zero_backups and
+        zero_new_files and
+        manifest_intact and
+        msg_revision
+    )
+    print(f"  Bloqueo preventivo: código de retorno 1: {p_t17_block.returncode == 1}")
+    print(f"  Archivo original 100% intacto: {file_intact} (sha={sha_after[:10]}...)")
+    print(f"  Cero respaldos _v* espurios creados: {zero_backups} (encontrados: {backups_created})")
+    print(f"  Cero archivos nuevos escritos en disco: {zero_new_files}")
+    print(f"  Manifest intacto sin modificaciones: {manifest_intact}")
+    print(f"  Mensaje 'revisión requerida' emitido: {msg_revision}")
+    print(f"Resultado T17: {'PASS' if t17_pass else 'FAIL'}\n")
+
+    # ----------------------------------------------------------------------
+    # T18: El respaldo en Drive nunca borra en destino lo que falte en origen
+    # ----------------------------------------------------------------------
+    print("--- [EJECUTANDO T18: Respaldo rclone no destructivo] ---")
+    from sincronizar_aula_semanal import construir_comando_respaldo_arbol
+    cmd_t18 = construir_comando_respaldo_arbol("rclone", "/origen", "gdrive:Universidad/2026-2/", dry_run=True)
+    usa_copy = (cmd_t18[1] == "copy" and "--dry-run" in cmd_t18)
+    sin_flags_borrado = not any(a.startswith("--delete") or a in ("--max-delete",) for a in cmd_t18)
+    print(f"  Subcomando 'copy' (no 'sync'): {usa_copy} -> {' '.join(cmd_t18[:4])}")
+    print(f"  Sin flags --delete*: {sin_flags_borrado}")
+
+    rclone_real = shutil.which("rclone")
+    conserva_en_destino = True
+    if rclone_real:
+        t18_dir = tempfile.mkdtemp(prefix="t18_rclone_")
+        src18, dst18 = os.path.join(t18_dir, "origen"), os.path.join(t18_dir, "destino")
+        os.makedirs(src18)
+        for n in ("a.pdf", "b.pdf"):
+            with open(os.path.join(src18, n), "wb") as f:
+                f.write(b"%PDF-1.4 " + n.encode())
+        subprocess.run(construir_comando_respaldo_arbol(rclone_real, src18, dst18), capture_output=True, text=True)
+        os.remove(os.path.join(src18, "b.pdf"))  # simula pérdida local
+        r18 = subprocess.run(construir_comando_respaldo_arbol(rclone_real, src18, dst18), capture_output=True, text=True)
+        conserva_en_destino = (r18.returncode == 0 and os.path.exists(os.path.join(dst18, "b.pdf")))
+        print(f"  rclone real: archivo borrado en origen se conserva en destino: {conserva_en_destino}")
+        shutil.rmtree(t18_dir, ignore_errors=True)
+    else:
+        print("  rclone no instalado: se omite la verificación con rclone real (solo se valida el comando).")
+
+    t18_pass = usa_copy and sin_flags_borrado and conserva_en_destino
+    print(f"Resultado T18: {'PASS' if t18_pass else 'FAIL'}\n")
+
+    # ----------------------------------------------------------------------
     # AVISOS: avisos.md solo se reescribe si hay novedades y sin *Última verificación*
     # ----------------------------------------------------------------------
     print("--- [EJECUTANDO AVISOS: Idempotencia y Formato en Foros] ---")
@@ -552,7 +868,7 @@ def run_test_suite():
     # RESUMEN GLOBAL
     # ----------------------------------------------------------------------
     print("======================================================================")
-    global_pass = t2_pass and t3_pass and t9_pass and t10_pass and t11_pass and t12_pass and avisos_pass and t13_pass and t14_pass
+    global_pass = t2_pass and t3_pass and t9_pass and t10_pass and t11_pass and t12_pass and t14_pass and t15_pass and t16_pass and t17_pass and t18_pass and avisos_pass and t13_pass
     print(f"RESUMEN GLOBAL: {'TODAS LAS PRUEBAS PASARON (100% PASS)' if global_pass else 'FALLÓ ALGUNA PRUEBA'}")
     print("======================================================================")
     return 0 if global_pass else 1

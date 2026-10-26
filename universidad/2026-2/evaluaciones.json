@@ -20,16 +20,6 @@
     "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
   },
   {
-    "uid": "1124478",
-    "ramo": "FAE",
-    "codigo": "CIV233",
-    "evaluacion": "Vencimiento de Tarea N°1",
-    "inicio": "2026-10-27T23:59:00-03:00",
-    "fin": "2026-10-27T23:59:00-03:00",
-    "lugar": "Aula USM",
-    "fuente": "api:core_calendar_get_calendar_events"
-  },
-  {
     "uid": "manual-FAE-Entrega Tarea 1 SAP2000",
     "ramo": "FAE",
     "codigo": "CIV233",

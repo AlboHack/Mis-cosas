@@ -11,9 +11,7 @@ import re
 import os
 import sys
 import shlex
-from datetime import datetime, timezone, timedelta
-
-TZ = timezone(timedelta(hours=-3))
+from datetime import datetime
 ACCOUNT = "albornoz.pavez@gmail.com"
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -226,11 +224,17 @@ def sync_android_calendar(evaluaciones_path=DEFAULT_EVALUACIONES, mapping_path=D
             ramo = ev.get("ramo", "").lower()
             evaluacion = ev.get("evaluacion", "").lower()
             
+            # Conjunto de IDs ya asignados a otros UIDs en el mapping (garantía de biyección 1 a 1)
+            already_assigned_ids = {str(v) for k, v in mapping.items() if k != uid}
+
             # Buscar candidatos por hora de inicio (±1 h) y coincidencia de ramo
             candidates = []
             for ex in existing_list:
                 if abs(ex["dtstart"] - st_ms) < 3600 * 1000 and (ramo in ex["title"].lower() or ramo in ex["desc"].lower()):
-                    candidates.append(ex)
+                    if str(ex["id"]) in already_assigned_ids:
+                        print(f" [ERROR AMBIGÜEDAD] Candidato _id={ex['id']} ya está asignado a otro UID en el mapping. Omitiendo para {uid}.", file=sys.stderr)
+                    else:
+                        candidates.append(ex)
             
             if len(candidates) == 1:
                 new_id = candidates[0]["id"]
@@ -244,11 +248,21 @@ def sync_android_calendar(evaluaciones_path=DEFAULT_EVALUACIONES, mapping_path=D
             else:
                 # Fallback secundario: coincidencia exacta por título
                 cand_title = [ex for ex in existing_list if ramo in ex["title"].lower() and any(w in ex["title"].lower() for w in evaluacion.split())]
-                if len(cand_title) == 1:
-                    new_id = cand_title[0]["id"]
+                cand_title_unassigned = [c for c in cand_title if str(c["id"]) not in already_assigned_ids]
+                if len(cand_title_unassigned) == 1:
+                    new_id = cand_title_unassigned[0]["id"]
                     mapping[uid] = new_id
                     mapping_modified = True
                     print(f" AVISO: _id obsoleto para {uid}, re-emparejado con {new_id}")
+
+    # Verificación estricta de biyección 1 a 1: ningún _id puede estar asignado a más de un UID
+    seen_ids = set()
+    for u, mid in list(mapping.items()):
+        mid_str = str(mid)
+        if mid_str in seen_ids:
+            print(f" [ERROR CRÍTICO BIYECCIÓN] El _id {mid_str} está asignado a múltiples UIDs en el mapping (conflicto en UID {u}).", file=sys.stderr)
+            return 1
+        seen_ids.add(mid_str)
 
     if mapping_modified:
         os.makedirs(os.path.dirname(os.path.abspath(mapping_path)), exist_ok=True)
@@ -328,6 +342,11 @@ def sync_android_calendar(evaluaciones_path=DEFAULT_EVALUACIONES, mapping_path=D
             m_new = re.search(r'_id=(\d+)', q_out)
             if m_new:
                 new_id = m_new.group(1)
+                if new_id in seen_ids:
+                    print(f" [ERROR CRÍTICO BIYECCIÓN] Nuevo _id {new_id} ya existe en mapping para otro UID.", file=sys.stderr)
+                    errores += 1
+                    continue
+                seen_ids.add(new_id)
                 mapping[uid] = new_id
                 mapping_modified = True
                 for mins in [10080, 4320, 1440]:

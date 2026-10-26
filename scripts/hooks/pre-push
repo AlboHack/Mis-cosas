@@ -1,0 +1,66 @@
+#!/bin/sh
+"exec" "python3" "$0" "$@"
+"""Hook pre-push: protege la rama main de AlboHack/Mis-cosas.
+
+Permite push a main solo si:
+  (a) es fast-forward (nunca reescribe historia), y
+  (b) todos los commits nuevos tocan solo universidad/ (commits de la sincronización semanal),
+      o bien ALLOW_MAIN_PUSH=1 está definido (merge de código aprobado en revisión).
+Las demás ramas no se restringen.
+
+Instalación (una vez, en la tablet):
+  cp scripts/hooks/pre-push .git/hooks/pre-push && chmod +x .git/hooks/pre-push
+"""
+import os
+import subprocess
+import sys
+
+ZERO = "0" * 40
+RAMA_PROTEGIDA = "refs/heads/main"
+PREFIJO_DATOS = "universidad/"
+
+
+def git(*args):
+    return subprocess.run(["git", *args], capture_output=True, text=True)
+
+
+def bloquear(msg):
+    sys.stderr.write(f"BLOQUEADO por pre-push: {msg}\n")
+    sys.exit(1)
+
+
+def main():
+    permitir_codigo = os.environ.get("ALLOW_MAIN_PUSH") == "1"
+    for linea in sys.stdin.read().splitlines():
+        partes = linea.split()
+        if len(partes) != 4:
+            continue
+        _local_ref, local_sha, remote_ref, remote_sha = partes
+        if remote_ref != RAMA_PROTEGIDA:
+            continue
+        if local_sha == ZERO:
+            bloquear("borrar main no está permitido.")
+        if remote_sha != ZERO:
+            if git("cat-file", "-e", remote_sha).returncode != 0:
+                bloquear("no tengo el commit remoto de main; haz 'git fetch origin main' y reintenta.")
+            if git("merge-base", "--is-ancestor", remote_sha, local_sha).returncode != 0:
+                bloquear("push no fast-forward a main (reescritura de historia).")
+            rango = f"{remote_sha}..{local_sha}"
+        else:
+            rango = local_sha
+        if permitir_codigo:
+            continue
+        archivos = git("diff", "--name-only", rango if remote_sha != ZERO else local_sha).stdout.split()
+        if remote_sha == ZERO:
+            bloquear("main remota no existe; push inicial requiere ALLOW_MAIN_PUSH=1.")
+        fuera = [f for f in archivos if not f.startswith(PREFIJO_DATOS)]
+        if fuera:
+            bloquear(
+                f"{len(fuera)} archivo(s) fuera de {PREFIJO_DATOS} (ej.: {fuera[0]}). "
+                "Código a main solo tras APROBADO en revisión, con ALLOW_MAIN_PUSH=1."
+            )
+    sys.exit(0)
+
+
+if __name__ == "__main__":
+    main()
