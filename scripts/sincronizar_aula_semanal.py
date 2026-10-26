@@ -461,7 +461,13 @@ def run_sync():
                             pass
         course_sha_indexes[c["id"]] = c_index
 
-    # 2. Descarga incremental de contenidos de cursos vía core_course_get_contents
+    # -------------------------------------------------------------
+    # FASE 1: PLANIFICACIÓN (Detección previa sin escribir en disco)
+    # Recorrer cursos y armar lista de archivos por descargar
+    # -------------------------------------------------------------
+    plan_descargas = []
+    course_sections = {}
+
     for c in courses:
         cid = c["id"]
         cshort = c["short"]
@@ -471,6 +477,7 @@ def run_sync():
 
         try:
             sections = client.call("core_course_get_contents", {"courseid": cid})
+            course_sections[cid] = sections
         except InvalidTokenError as ite:
             log(f"  [ERROR CRÍTICO] {ite}")
             return 1
@@ -511,57 +518,26 @@ def run_sync():
                             manifest[url_clean]["last_seen"] = datetime.now().isoformat()
                             continue
                         else:
-                            # Caso T2': timemodified o tamaño cambió -> descargar y respaldar versión anterior
-                            try:
-                                data = client.download_file(fileurl, local_fpath)
-                                data_sha = hashlib.sha256(data).hexdigest()
-
-                                # Si el contenido nuevo ya existe en otra parte del curso
-                                if data_sha in c_hashes and c_hashes[data_sha] != target_check_path:
-                                    existing_disk_p = c_hashes[data_sha]
-                                    manifest[url_clean] = {
-                                        "timemodified": timemodified,
-                                        "filesize": filesize,
-                                        "local_path": existing_disk_p,
-                                        "sha256": data_sha,
-                                        "last_seen": datetime.now().isoformat()
-                                    }
-                                    log(f"  [DUPLICADO OMITIDO] {cshort} -> {fname} ya existe en {os.path.relpath(existing_disk_p, cdir)}. No se descarga ni copia.")
-                                    continue
-
-                                v_ext = os.path.splitext(fname)[1]
-                                v_base = os.path.splitext(fname)[0]
-                                old_mod = manifest_entry.get("timemodified")
-                                if old_mod and isinstance(old_mod, (int, float)) and old_mod > 0:
-                                    date_str = datetime.fromtimestamp(old_mod).strftime("%Y%m%d")
-                                else:
-                                    date_str = datetime.now().strftime("%Y%m%d")
-                                f_old_backup = os.path.join(target_dir, f"{v_base}_v{date_str}{v_ext}")
-                                if os.path.exists(local_fpath):
-                                    shutil.copy2(local_fpath, f_old_backup)
-                                    log(f"  [VERSIÓN ANTERIOR RESPALDADA] -> {os.path.basename(f_old_backup)}")
-
-                                os.makedirs(target_dir, exist_ok=True)
-                                with open(local_fpath, "wb") as out_f:
-                                    out_f.write(data)
-
-                                c_hashes[data_sha] = local_fpath
-                                manifest[url_clean] = {
-                                    "timemodified": timemodified,
-                                    "filesize": filesize,
-                                    "local_path": local_fpath,
-                                    "sha256": data_sha,
-                                    "last_seen": datetime.now().isoformat()
-                                }
-                                archivos_descargados.append(local_fpath)
-                                log(f"  [ARCHIVO MODIFICADO] {cshort} -> {sub_path}/{fname}")
-                            except Exception as dl_err:
-                                err_msg = f"Error descargando modificación {fname}: {dl_err}"
-                                log(f"  [ERROR] {err_msg}", token_to_mask=token)
-                                errores.append(err_msg)
+                            # Caso modificación pendiente
+                            plan_descargas.append({
+                                "tipo": "modificado",
+                                "course": c,
+                                "sec_name": sec_name,
+                                "sub_path": sub_path,
+                                "target_dir": target_dir,
+                                "fname": fname,
+                                "fileurl": fileurl,
+                                "url_clean": url_clean,
+                                "local_fpath": local_fpath,
+                                "target_check_path": target_check_path,
+                                "filesize": filesize,
+                                "timemodified": timemodified,
+                                "manifest_entry": manifest_entry
+                            })
                     else:
-                        # Caso T9': No está en manifest, pero archivo ya existe en disco con tamaño idéntico
+                        # No está en manifest
                         if os.path.exists(local_fpath) and os.path.getsize(local_fpath) == filesize:
+                            # Caso T9': archivo ya existe en disco con tamaño idéntico -> registrar sin descargar
                             try:
                                 sha = hashlib.sha256(open(local_fpath, "rb").read()).hexdigest()
                             except Exception:
@@ -574,61 +550,106 @@ def run_sync():
                                 "last_seen": datetime.now().isoformat()
                             }
                             c_hashes[sha] = local_fpath
-                            continue # 0 nuevos archivos
-
-                        # Archivo nuevo: descargar y verificar existencia previa por SHA-256 en el curso
-                        try:
-                            data = client.download_file(fileurl, local_fpath)
-                            data_sha = hashlib.sha256(data).hexdigest()
-
-                            # Detección por contenido contra lo existente en el curso
-                            if data_sha in c_hashes:
-                                existing_disk_p = c_hashes[data_sha]
-                                manifest[url_clean] = {
-                                    "timemodified": timemodified,
-                                    "filesize": filesize,
-                                    "local_path": existing_disk_p,
-                                    "sha256": data_sha,
-                                    "last_seen": datetime.now().isoformat()
-                                }
-                                log(f"  [DUPLICADO OMITIDO] {cshort} -> {fname} ya existe en {os.path.relpath(existing_disk_p, cdir)}. No se descarga ni copia.")
-                                continue
-
-                            os.makedirs(target_dir, exist_ok=True)
-                            with open(local_fpath, "wb") as out_f:
-                                out_f.write(data)
-
-                            c_hashes[data_sha] = local_fpath
-                            manifest[url_clean] = {
-                                "timemodified": timemodified,
+                            continue
+                        else:
+                            # Caso nuevo pendiente
+                            plan_descargas.append({
+                                "tipo": "nuevo",
+                                "course": c,
+                                "sec_name": sec_name,
+                                "sub_path": sub_path,
+                                "target_dir": target_dir,
+                                "fname": fname,
+                                "fileurl": fileurl,
+                                "url_clean": url_clean,
+                                "local_fpath": local_fpath,
                                 "filesize": filesize,
-                                "local_path": local_fpath,
-                                "sha256": data_sha,
-                                "last_seen": datetime.now().isoformat()
-                            }
-                            archivos_descargados.append(local_fpath)
-                            log(f"  [NUEVO ARCHIVO] {cshort} -> {sub_path}/{fname}")
-                        except Exception as dl_err:
-                            err_msg = f"Error descargando {fname}: {dl_err}"
-                            log(f"  [ERROR] {err_msg}", token_to_mask=token)
-                            errores.append(err_msg)
+                                "timemodified": timemodified
+                            })
 
-    # Guardia estricto de límite masivo (>20 archivos)
-    # Si hay más de 20 archivos nuevos y no se pasa --permitir-masivo:
-    # 1. No se guarda el manifest
-    # 2. No se suben a Drive ni a Git
-    # 3. Se limpian los archivos recién escritos para dejar el repo y disco limpios
-    # 4. El script sale con código 1 y mensaje 'revisión requerida'
-    if len(archivos_descargados) > 20 and "--permitir-masivo" not in sys.argv:
-        msg_masivo = f"ALERTA: Se detectaron {len(archivos_descargados)} archivos nuevos (>20). Límite de seguridad activado: revisión requerida. No se guardará manifest ni se subirá a Drive/Git."
+    # Guardia estricto de límite masivo (>20 archivos pendientes)
+    # Se evalúa en la fase de plan ANTES de descargar o escribir ningún byte en disco
+    if len(plan_descargas) > 20 and "--permitir-masivo" not in sys.argv:
+        msg_masivo = f"ALERTA: Se detectaron {len(plan_descargas)} archivos pendientes de descarga (>20). Límite de seguridad activado: revisión requerida. No se descarga ni modifica ningún archivo en disco, manifest, repo ni Drive."
         log(f"  [ALERTA DE SEGURIDAD] {msg_masivo}")
-        for nf in archivos_descargados:
-            try:
-                if os.path.exists(nf):
-                    os.remove(nf)
-            except Exception:
-                pass
+        for item in plan_descargas[:10]:
+            log(f"    - [{item['tipo']}] {item['course']['short']}: {item['fname']} ({item['filesize']} bytes)")
+        if len(plan_descargas) > 10:
+            log(f"    ... y {len(plan_descargas) - 10} archivos adicionales.")
         return 1
+
+    # -------------------------------------------------------------
+    # FASE 2: EJECUCIÓN (Descargas con deduplicación por SHA-256)
+    # -------------------------------------------------------------
+    for item in plan_descargas:
+        c = item["course"]
+        cid = c["id"]
+        cshort = c["short"]
+        cdir = os.path.join(ROOT_DIR, c["folder"])
+        c_hashes = course_sha_indexes.get(cid, {})
+        fname = item["fname"]
+        fileurl = item["fileurl"]
+        url_clean = item["url_clean"]
+        local_fpath = item["local_fpath"]
+        target_dir = item["target_dir"]
+        sub_path = item["sub_path"]
+        filesize = item["filesize"]
+        timemodified = item["timemodified"]
+        tipo = item["tipo"]
+
+        try:
+            data = client.download_file(fileurl, local_fpath)
+            data_sha = hashlib.sha256(data).hexdigest()
+
+            # Deduplicación por hash SHA-256 dentro del curso
+            target_check = item.get("target_check_path", local_fpath)
+            if data_sha in c_hashes and c_hashes[data_sha] != target_check:
+                existing_disk_p = c_hashes[data_sha]
+                manifest[url_clean] = {
+                    "timemodified": timemodified,
+                    "filesize": filesize,
+                    "local_path": existing_disk_p,
+                    "sha256": data_sha,
+                    "last_seen": datetime.now().isoformat()
+                }
+                log(f"  [DUPLICADO OMITIDO] {cshort} -> {fname} ya existe en {os.path.relpath(existing_disk_p, cdir)}. No se descarga ni copia.")
+                continue
+
+            if tipo == "modificado":
+                # Respaldar versión anterior antes de sobreescribir
+                manifest_entry = item.get("manifest_entry", {})
+                v_ext = os.path.splitext(fname)[1]
+                v_base = os.path.splitext(fname)[0]
+                old_mod = manifest_entry.get("timemodified")
+                if old_mod and isinstance(old_mod, (int, float)) and old_mod > 0:
+                    date_str = datetime.fromtimestamp(old_mod).strftime("%Y%m%d")
+                else:
+                    date_str = datetime.now().strftime("%Y%m%d")
+                f_old_backup = os.path.join(target_dir, f"{v_base}_v{date_str}{v_ext}")
+                if os.path.exists(local_fpath):
+                    shutil.copy2(local_fpath, f_old_backup)
+                    log(f"  [VERSIÓN ANTERIOR RESPALDADA] -> {os.path.basename(f_old_backup)}")
+
+            os.makedirs(target_dir, exist_ok=True)
+            with open(local_fpath, "wb") as out_f:
+                out_f.write(data)
+
+            c_hashes[data_sha] = local_fpath
+            manifest[url_clean] = {
+                "timemodified": timemodified,
+                "filesize": filesize,
+                "local_path": local_fpath,
+                "sha256": data_sha,
+                "last_seen": datetime.now().isoformat()
+            }
+            archivos_descargados.append(local_fpath)
+            tag_log = "[ARCHIVO MODIFICADO]" if tipo == "modificado" else "[NUEVO ARCHIVO]"
+            log(f"  {tag_log} {cshort} -> {sub_path}/{fname}")
+
+        except Exception as dl_err:
+            err_msg = f"Error procesando {fname}: {dl_err}"
+            log(f"  [ERROR] {err_msg}", token_to_mask=token)
+            errores.append(err_msg)
 
     guardar_manifest(manifest)
     log("-------------------------------------------------------")
@@ -651,11 +672,7 @@ def run_sync():
         errores.append(err_e)
 
     # 5. Subida INCREMENTAL a Google Drive (SÓLO si hubo archivos nuevos)
-    if len(archivos_descargados) > 20 and "--permitir-masivo" not in sys.argv:
-        err_lim = f"ALERTA: Se detectaron {len(archivos_descargados)} archivos nuevos (>20). Deteniendo corrida antes de Drive."
-        log(f"  [ALERTA DE SEGURIDAD] {err_lim}")
-        errores.append(err_lim)
-    elif len(archivos_descargados) > 0:
+    if len(archivos_descargados) > 0:
         if os.environ.get("SYNC_DISABLE_DRIVE") or os.environ.get("SYNC_TEST_MODE") == "1":
             log("Subida a Google Drive omitida (modo de prueba o SYNC_DISABLE_DRIVE activo).")
         else:

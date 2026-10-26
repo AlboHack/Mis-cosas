@@ -13,6 +13,7 @@ import shutil
 import tempfile
 import subprocess
 import json
+import hashlib
 import time
 import socket
 from datetime import datetime
@@ -89,7 +90,10 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
                     "functions": []
                 }
             elif wsfunc == "core_course_get_contents":
-                if server_state["mode"] == "t15":
+                cid = int(params.get("courseid", 0))
+                if cid != 62177:
+                    resp = []
+                elif server_state["mode"] == "t15":
                     resp = [
                         {
                             "name": "General",
@@ -130,6 +134,37 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
                             ]
                         })
                     resp = [{"name": "General", "modules": modules_25}]
+                elif server_state["mode"] == "t17":
+                    contents_t17 = [
+                        {
+                            "type": "file",
+                            "filename": "Pauta_Vigente.pdf",
+                            "filesize": len(server_state.get("t17_pauta_v2", b"")),
+                            "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/t17/Pauta_Vigente.pdf",
+                            "timemodified": TS_V2
+                        }
+                    ]
+                    for i in range(21):
+                        fname = f"Doc_Nuevo_{i}.pdf"
+                        prefix = f"%PDF-1.4 T17 Doc {i} content "
+                        sz = len((prefix + "X" * (120 - len(prefix))).encode("utf-8"))
+                        contents_t17.append({
+                            "type": "file",
+                            "filename": fname,
+                            "filesize": sz,
+                            "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/t17/{fname}",
+                            "timemodified": TS_V1
+                        })
+                    resp = [{
+                        "name": "General",
+                        "modules": [
+                            {
+                                "name": "Contenidos T17",
+                                "modname": "resource",
+                                "contents": contents_t17
+                            }
+                        ]
+                    }]
                 else:
                     v = server_state["file_version"]
                     tmod = server_state["timemodified"]
@@ -185,6 +220,13 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
                 fname = self.path.split("/")[-1].split("?")[0]
                 prefix = f"%PDF-1.4 Unique {fname} content "
                 data = (prefix + "X" * (120 - len(prefix))).encode("utf-8")
+            elif server_state["mode"] == "t17":
+                fname = self.path.split("/")[-1].split("?")[0]
+                if fname == "Pauta_Vigente.pdf":
+                    data = server_state.get("t17_pauta_v2", b"")
+                else:
+                    prefix = f"%PDF-1.4 T17 {fname} content "
+                    data = (prefix + "X" * (120 - len(prefix))).encode("utf-8")
             else:
                 v = server_state["file_version"]
                 data = get_file_content(v)
@@ -211,6 +253,13 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
                 fname = self.path.split("/")[-1].split("?")[0]
                 prefix = f"%PDF-1.4 Unique {fname} content "
                 data = (prefix + "X" * (120 - len(prefix))).encode("utf-8")
+            elif server_state["mode"] == "t17":
+                fname = self.path.split("/")[-1].split("?")[0]
+                if fname == "Pauta_Vigente.pdf":
+                    data = server_state.get("t17_pauta_v2", b"")
+                else:
+                    prefix = f"%PDF-1.4 T17 {fname} content "
+                    data = (prefix + "X" * (120 - len(prefix))).encode("utf-8")
             else:
                 v = server_state["file_version"]
                 data = get_file_content(v)
@@ -226,7 +275,7 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
 
 def run_test_suite():
     print("======================================================================")
-    print("BATERÍA DE PRUEBAS DE ACEPTACIÓN TÉCNICA (API TOKEN: T2', T3', T9', T10, T11, T12, T13, T14, T15, T16)")
+    print("BATERÍA DE PRUEBAS DE ACEPTACIÓN TÉCNICA (API TOKEN: T2', T3', T9', T10, T11, T12, T13, T14, T15, T16, T17)")
     print("======================================================================\n")
 
     # Registro de estado previo real para T13
@@ -655,6 +704,76 @@ def run_test_suite():
     print(f"Resultado T16: {'PASS' if t16_pass else 'FAIL'}\n")
 
     # ----------------------------------------------------------------------
+    # T17: Límite Masivo Preventivo (1 Modificado + 21 Nuevos corta todo ANTES de escribir)
+    # ----------------------------------------------------------------------
+    print("--- [EJECUTANDO T17: Límite Masivo Preventivo (1 Modificado + 21 Nuevos)] ---")
+    course_folder = "CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_"
+    pauta_dir = os.path.join(test_root_dir, course_folder, "Planificacion/General")
+    os.makedirs(pauta_dir, exist_ok=True)
+    pauta_path = os.path.join(pauta_dir, "Pauta_Vigente.pdf")
+
+    # 1. Sembrar archivo vigente y registrarlo en manifest (Versión 1)
+    c_original = b"%PDF-1.4 Contenido original de Pauta Vigente - Version 1"
+    with open(pauta_path, "wb") as f:
+        f.write(c_original)
+    sha_original = hashlib.sha256(c_original).hexdigest()
+
+    url_vigente = f"http://127.0.0.1:{port}/webservice/pluginfile.php/t17/Pauta_Vigente.pdf"
+    manifest_t17_init = {
+        url_vigente: {
+            "timemodified": TS_V1,
+            "filesize": len(c_original),
+            "local_path": pauta_path,
+            "sha256": sha_original,
+            "last_seen": datetime.now().isoformat()
+        }
+    }
+    with open(test_manifest_file, "w", encoding="utf-8") as mf:
+        json.dump(manifest_t17_init, mf, indent=2)
+
+    server_state["mode"] = "t17"
+    server_state["t17_pauta_v2"] = b"%PDF-1.4 Contenido MODIFICADO de Pauta Vigente - Version 2"
+
+    # 2. Ejecutar SIN --permitir-masivo
+    p_t17_block = subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
+
+    # Verificaciones T17:
+    # - Código 1
+    # - Archivo original intacto (mismo sha256 y contenido)
+    # - Cero archivos de respaldo _v* creados
+    # - Cero archivos nuevos en disco
+    # - Manifest intacto sin cambios
+    c_after = open(pauta_path, "rb").read() if os.path.exists(pauta_path) else b""
+    sha_after = hashlib.sha256(c_after).hexdigest()
+    file_intact = (c_after == c_original and sha_after == sha_original)
+
+    backups_created = [f for f in os.listdir(pauta_dir) if f.startswith("Pauta_Vigente_v")]
+    zero_backups = (len(backups_created) == 0)
+
+    new_files_in_dir = [f for f in os.listdir(pauta_dir) if f.startswith("Doc_Nuevo")]
+    zero_new_files = (len(new_files_in_dir) == 0)
+
+    manifest_after = json.load(open(test_manifest_file, "r", encoding="utf-8")) if os.path.exists(test_manifest_file) else {}
+    manifest_intact = (manifest_after.get(url_vigente, {}).get("timemodified") == TS_V1 and len(manifest_after) == 1)
+    msg_revision = "revisión requerida" in p_t17_block.stdout.lower() or "revision requerida" in p_t17_block.stdout.lower()
+
+    t17_pass = (
+        p_t17_block.returncode == 1 and
+        file_intact and
+        zero_backups and
+        zero_new_files and
+        manifest_intact and
+        msg_revision
+    )
+    print(f"  Bloqueo preventivo: código de retorno 1: {p_t17_block.returncode == 1}")
+    print(f"  Archivo original 100% intacto: {file_intact} (sha={sha_after[:10]}...)")
+    print(f"  Cero respaldos _v* espurios creados: {zero_backups} (encontrados: {backups_created})")
+    print(f"  Cero archivos nuevos escritos en disco: {zero_new_files}")
+    print(f"  Manifest intacto sin modificaciones: {manifest_intact}")
+    print(f"  Mensaje 'revisión requerida' emitido: {msg_revision}")
+    print(f"Resultado T17: {'PASS' if t17_pass else 'FAIL'}\n")
+
+    # ----------------------------------------------------------------------
     # AVISOS: avisos.md solo se reescribe si hay novedades y sin *Última verificación*
     # ----------------------------------------------------------------------
     print("--- [EJECUTANDO AVISOS: Idempotencia y Formato en Foros] ---")
@@ -717,7 +836,7 @@ def run_test_suite():
     # RESUMEN GLOBAL
     # ----------------------------------------------------------------------
     print("======================================================================")
-    global_pass = t2_pass and t3_pass and t9_pass and t10_pass and t11_pass and t12_pass and t14_pass and t15_pass and t16_pass and avisos_pass and t13_pass
+    global_pass = t2_pass and t3_pass and t9_pass and t10_pass and t11_pass and t12_pass and t14_pass and t15_pass and t16_pass and t17_pass and avisos_pass and t13_pass
     print(f"RESUMEN GLOBAL: {'TODAS LAS PRUEBAS PASARON (100% PASS)' if global_pass else 'FALLÓ ALGUNA PRUEBA'}")
     print("======================================================================")
     return 0 if global_pass else 1
