@@ -69,6 +69,30 @@ def compute_file_sha256(filepath):
     except Exception:
         return ""
 
+def actualizar_manifest_sha256(root_dir):
+    """Genera/actualiza manifest_sha256.json en la raíz del árbol para auditoría estricta e integridad en Drive."""
+    try:
+        manifest = {}
+        for root, dirs, files in os.walk(root_dir):
+            for f in sorted(files):
+                if f == 'manifest_sha256.json':
+                    continue
+                full_path = os.path.join(root, f)
+                rel_path = os.path.relpath(full_path, root_dir)
+                sha = compute_file_sha256(full_path)
+                if sha:
+                    manifest[rel_path] = {
+                        "sha256": sha,
+                        "bytes": os.path.getsize(full_path)
+                    }
+        manifest_path = os.path.join(root_dir, "manifest_sha256.json")
+        with open(manifest_path, "w", encoding="utf-8") as mf:
+            json.dump(manifest, mf, indent=2, ensure_ascii=False)
+        return manifest_path
+    except Exception as me:
+        log(f"  [ADVERTENCIA] Error al generar manifest_sha256: {me}")
+        return None
+
 def to_timestamp_safe(dt_val):
     """Convierte fecha ISO o timestamp a float de forma segura ante naive/aware."""
     if isinstance(dt_val, (int, float)):
@@ -723,12 +747,37 @@ def run_sync():
                 
                 rclone_bin = shutil.which("rclone")
                 if rclone_bin:
+                    # 5.1 Generar/actualizar manifiesto de integridad SHA-256
+                    actualizar_manifest_sha256(ROOT_DIR)
+
+                    # 5.2 Sincronización del árbol completo de asignaturas a Google Drive
+                    log("Sincronizando árbol de asignaturas vía rclone a Google Drive (gdrive:Universidad/2026-2/)...")
+                    rclone_sync_cmd = [
+                        rclone_bin, "sync", ROOT_DIR, "gdrive:Universidad/2026-2/",
+                        "--fast-list",
+                        "--drive-chunk-size", "64M",
+                        "--transfers", "3",
+                        "--checkers", "6",
+                        "--update"
+                    ]
+                    if "--dry-run" in sys.argv:
+                        rclone_sync_cmd.append("--dry-run")
+
+                    rc_sync = subprocess.run(rclone_sync_cmd, capture_output=True, text=True)
+                    if rc_sync.returncode == 0:
+                        log("¡Árbol de asignaturas sincronizado exitosamente con Google Drive!")
+                    else:
+                        err_sync = f"Fallo rclone sync árbol ({rc_sync.returncode}): {rc_sync.stderr.strip()}"
+                        log(f"  [ERROR] {err_sync}")
+                        errores.append(err_sync)
+
+                    # 5.3 Respaldo adicional en paquete delta ZIP
                     log("Subiendo paquete delta vía rclone a Google Drive...")
-                    rc_p = subprocess.run(["rclone", "copy", zip_delta, "gdrive:Universidad/Deltas/"], capture_output=True, text=True)
+                    rc_p = subprocess.run([rclone_bin, "copy", zip_delta, "gdrive:Universidad/Deltas/"], capture_output=True, text=True)
                     if rc_p.returncode == 0:
                         zip_base = os.path.basename(zip_delta)
                         zip_bytes = os.path.getsize(zip_delta)
-                        chk = subprocess.run(["rclone", "lsjson", f"gdrive:Universidad/Deltas/{zip_base}"], capture_output=True, text=True)
+                        chk = subprocess.run([rclone_bin, "lsjson", f"gdrive:Universidad/Deltas/{zip_base}"], capture_output=True, text=True)
                         verificado = False
                         if chk.returncode == 0:
                             try:
