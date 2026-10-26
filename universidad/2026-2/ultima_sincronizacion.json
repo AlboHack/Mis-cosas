@@ -1,10 +1,10 @@
 {
-  "fecha": "2026-10-26T19:20:52-03:00",
+  "fecha": "2026-10-26T19:31:28-03:00",
   "estado": "OK",
-  "archivos_nuevos_o_modificados": 1,
+  "archivos_nuevos_o_modificados": 0,
   "errores": 0,
   "novedades": {
-    "avisos_actualizados": 5,
+    "avisos_actualizados": 0,
     "cambios_pagina": 0,
     "mensajes_privados_recientes": 0,
     "alertas_evaluacion": 4
