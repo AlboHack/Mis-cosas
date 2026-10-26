@@ -1,0 +1,122 @@
+[
+  {
+    "uid": "manual-FICA-Control 2",
+    "ramo": "FICA",
+    "codigo": "CIV222",
+    "evaluacion": "Control 2",
+    "inicio": "2026-10-26T16:00:00-03:00",
+    "fin": "2026-10-26T18:40:00-03:00",
+    "lugar": "Aula USM",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "manual-FAE-Certamen 2",
+    "ramo": "FAE",
+    "codigo": "CIV233",
+    "evaluacion": "Certamen 2",
+    "inicio": "2026-10-27T17:30:00-03:00",
+    "fin": "2026-10-27T20:00:00-03:00",
+    "lugar": "B-103 / A012",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "manual-FAE-Entrega Tarea 1 SAP2000",
+    "ramo": "FAE",
+    "codigo": "CIV233",
+    "evaluacion": "Entrega Tarea 1 SAP2000",
+    "inicio": "2026-10-27T23:59:00-03:00",
+    "fin": "2026-10-27T23:59:00-03:00",
+    "lugar": "Aula USM",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "manual-FICA-Caso Práctico 2",
+    "ramo": "FICA",
+    "codigo": "CIV222",
+    "evaluacion": "Caso Práctico 2",
+    "inicio": "2026-11-02T16:00:00-03:00",
+    "fin": "2026-11-02T18:40:00-03:00",
+    "lugar": "Aula USM",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "manual-FICA-Certamen 2",
+    "ramo": "FICA",
+    "codigo": "CIV222",
+    "evaluacion": "Certamen 2",
+    "inicio": "2026-11-09T16:00:00-03:00",
+    "fin": "2026-11-09T18:40:00-03:00",
+    "lugar": "Sala de cátedra",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "manual-FAE-Certamen 3",
+    "ramo": "FAE",
+    "codigo": "CIV233",
+    "evaluacion": "Certamen 3",
+    "inicio": "2026-11-10T17:30:00-03:00",
+    "fin": "2026-11-10T20:00:00-03:00",
+    "lugar": "B-103",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "manual-Transporte-Certamen 3",
+    "ramo": "Transporte",
+    "codigo": "CIV386",
+    "evaluacion": "Certamen 3",
+    "inicio": "2026-11-18T14:00:00-03:00",
+    "fin": "2026-11-18T16:30:00-03:00",
+    "lugar": "B014 / B103",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "manual-Fluidos-Certamen 3",
+    "ramo": "Fluidos",
+    "codigo": "CIV244",
+    "evaluacion": "Certamen 3",
+    "inicio": "2026-11-20T14:00:00-03:00",
+    "fin": "2026-11-20T16:30:00-03:00",
+    "lugar": "Campus San Joaquín",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "manual-FICA-Presentación 2 + Informe Final",
+    "ramo": "FICA",
+    "codigo": "CIV222",
+    "evaluacion": "Presentación 2 + Informe Final",
+    "inicio": "2026-11-23T16:00:00-03:00",
+    "fin": "2026-11-23T18:40:00-03:00",
+    "lugar": "Sala de cátedra / Aula USM",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "manual-Fluidos-Publicación notas finales",
+    "ramo": "Fluidos",
+    "codigo": "CIV244",
+    "evaluacion": "Publicación notas finales",
+    "inicio": "2026-11-27T12:00:00-03:00",
+    "fin": "2026-11-27T12:00:00-03:00",
+    "lugar": "Aula USM / SIGA",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "manual-Transporte-Certamen recuperativo",
+    "ramo": "Transporte",
+    "codigo": "CIV386",
+    "evaluacion": "Certamen recuperativo",
+    "inicio": "2026-12-02T14:00:00-03:00",
+    "fin": "2026-12-02T16:30:00-03:00",
+    "lugar": "B014 / B103",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "manual-FAE-Certamen 4",
+    "ramo": "FAE",
+    "codigo": "CIV233",
+    "evaluacion": "Certamen 4",
+    "inicio": "2026-12-02T17:30:00-03:00",
+    "fin": "2026-12-02T20:00:00-03:00",
+    "lugar": "A012",
+    "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  }
+]
