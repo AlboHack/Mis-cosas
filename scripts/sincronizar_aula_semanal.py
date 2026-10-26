@@ -474,6 +474,27 @@ def sincronizar_foros_avisos(client, courses, repo_dir):
                 out_f.write(new_content)
             log(f"  [AVISOS ACTUALIZADOS] {cshort} -> avisos.md ({len(discussions_all)} discusiones)")
 
+def escribir_estado_sincronizacion(repo_dir, nuevos, n_errores):
+    """Escribe universidad/2026-2/ultima_sincronizacion.json en cada corrida que llega a esta etapa.
+
+    Así cada sábado hay un commit chore(sync) aunque no haya archivos nuevos, y la tarea de
+    contexto de Claude distingue "semana sin novedades" de "la sincronización no corrió".
+    No incluye textos de error (podrían contener rutas o datos sensibles), solo conteos.
+    """
+    destino = os.path.join(repo_dir, "universidad", "2026-2", "ultima_sincronizacion.json")
+    os.makedirs(os.path.dirname(destino), exist_ok=True)
+    estado = {
+        "fecha": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "estado": "OK" if n_errores == 0 else "CON ERRORES",
+        "archivos_nuevos_o_modificados": nuevos,
+        "errores": n_errores,
+    }
+    with open(destino, "w", encoding="utf-8") as f:
+        json.dump(estado, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    return destino
+
+
 def run_sync():
     lock_dir = os.path.dirname(LOCK_FILE)
     if lock_dir:
@@ -824,7 +845,30 @@ def run_sync():
     else:
         log("INCREMENTAL: Sin archivos nuevos en Aula USM esta semana. No se genera ZIP ni subida a Drive.")
 
-    # 6. Sincronización INCREMENTAL con GitHub AlboHack/Mis-cosas
+    # 6. Sincronización de calendario nativo (antes de git, para que el estado lo incluya)
+    try:
+        from sincronizar_calendario_android import sync_android_calendar
+        res_cal = sync_android_calendar()
+        if res_cal != 0:
+            err_c = f"Sincronización de calendario reportó errores (código {res_cal})."
+            log(f"  [ERROR] {err_c}")
+            errores.append(err_c)
+        else:
+            log("Calendario nativo verificado y al día.")
+    except Exception as ce:
+        err_c = f"Excepción en sincronización de calendario: {ce}"
+        log(f"  [ERROR] {err_c}")
+        errores.append(err_c)
+
+    # 7. Latido de la corrida: deja constancia en el repo de que la sincronización corrió
+    try:
+        escribir_estado_sincronizacion(REPO_DIR, len(archivos_descargados), len(errores))
+    except Exception as he:
+        err_h = f"No se pudo escribir ultima_sincronizacion.json: {he}"
+        log(f"  [ERROR] {err_h}")
+        errores.append(err_h)
+
+    # 8. Sincronización INCREMENTAL con GitHub AlboHack/Mis-cosas
     if os.path.exists(REPO_DIR) and os.path.isdir(os.path.join(REPO_DIR, ".git")) and not os.environ.get("SYNC_DISABLE_GIT"):
         try:
             log("Sincronizando con repositorio GitHub AlboHack/Mis-cosas...")
@@ -860,21 +904,6 @@ def run_sync():
             err_g = f"Excepción en sincronización GitHub: {ge}"
             log(f"  [ERROR] {err_g}")
             errores.append(err_g)
-
-    # 7. Sincronización de calendario nativo
-    try:
-        from sincronizar_calendario_android import sync_android_calendar
-        res_cal = sync_android_calendar()
-        if res_cal != 0:
-            err_c = f"Sincronización de calendario reportó errores (código {res_cal})."
-            log(f"  [ERROR] {err_c}")
-            errores.append(err_c)
-        else:
-            log("Calendario nativo verificado y al día.")
-    except Exception as ce:
-        err_c = f"Excepción en sincronización de calendario: {ce}"
-        log(f"  [ERROR] {err_c}")
-        errores.append(err_c)
 
     log(f"FINALIZADO. Estado: {'OK' if len(errores) == 0 else 'CON ERRORES (' + str(len(errores)) + ')'}")
     log("=======================================================")

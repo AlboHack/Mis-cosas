@@ -15,3 +15,7 @@
 | 2026-10-21 | verification-before-completion (superpowers) no se adopta | verificacion-independiente ya la cubre con contenido de ingeniería | Solo registrada en fuentes para comparar |
 | 2026-10-21 | pdf de Anthropic solo como referencia | Licencia propietaria: no se copia a un repo público | — |
 
+| 2026-10-26 | Reparto de la automatización: Claude escribe y prueba el código en ramas `claude/...`; Antigravity lo ejecuta en la tablet (adb, rclone, calendario reales), hace el merge squash y reporta | Pedido de Nicolás; las fallas del día (pruebas sobre datos reales, commits directos a main, `rclone sync`) salieron del código escrito sin revisión | Iteraciones del 25 y 26-oct |
+| 2026-10-26 | Respaldo en Drive con `rclone copy`, nunca `sync` | `sync` replica en Drive cualquier pérdida local | T18 |
+| 2026-10-26 | Hook `scripts/hooks/pre-push` en vez de la skill git-guardrails | git-guardrails es un hook de Claude Code y no corre en Antigravity; el hook de git corre con cualquier agente | T19 |
+| 2026-10-26 | Skills para Antigravity: tdd y diagnosing-bugs (mattpocock/skills@5beb35b); strategic-compact descartada | Instrucciones puras y portables; strategic-compact depende de hooks de Claude Code | Lectura de cada SKILL.md |

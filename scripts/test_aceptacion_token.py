@@ -774,6 +774,28 @@ def run_test_suite():
     print(f"Resultado T17: {'PASS' if t17_pass else 'FAIL'}\n")
 
     # ----------------------------------------------------------------------
+    # T20: Latido ultima_sincronizacion.json en cada corrida completa
+    # ----------------------------------------------------------------------
+    print("--- [EJECUTANDO T20: Latido de sincronización] ---")
+    server_state["mode"] = "normal"
+    hb_path = os.path.join(test_repo_dir, "universidad/2026-2/ultima_sincronizacion.json")
+    if os.path.exists(hb_path):
+        os.remove(hb_path)
+    p_t20 = subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
+    t20_pass = False
+    if os.path.exists(hb_path):
+        hb_txt = open(hb_path, encoding="utf-8").read()
+        hb = json.loads(hb_txt)
+        campos_ok = set(hb) == {"fecha", "estado", "archivos_nuevos_o_modificados", "errores"}
+        estado_coherente = (hb["estado"] == "OK") == (p_t20.returncode == 0)
+        sin_token = test_token not in hb_txt
+        t20_pass = campos_ok and estado_coherente and sin_token
+        print(f"  Archivo escrito: True | campos: {campos_ok} | estado coherente con código {p_t20.returncode}: {estado_coherente} | sin token: {sin_token}")
+    else:
+        print("  Archivo ultima_sincronizacion.json no escrito")
+    print(f"Resultado T20: {'PASS' if t20_pass else 'FAIL'}\n")
+
+    # ----------------------------------------------------------------------
     # T18: El respaldo en Drive nunca borra en destino lo que falte en origen
     # ----------------------------------------------------------------------
     print("--- [EJECUTANDO T18: Respaldo rclone no destructivo] ---")
@@ -868,7 +890,7 @@ def run_test_suite():
     # RESUMEN GLOBAL
     # ----------------------------------------------------------------------
     print("======================================================================")
-    global_pass = t2_pass and t3_pass and t9_pass and t10_pass and t11_pass and t12_pass and t14_pass and t15_pass and t16_pass and t17_pass and t18_pass and avisos_pass and t13_pass
+    global_pass = t2_pass and t3_pass and t9_pass and t10_pass and t11_pass and t12_pass and t14_pass and t15_pass and t16_pass and t17_pass and t18_pass and t20_pass and avisos_pass and t13_pass
     print(f"RESUMEN GLOBAL: {'TODAS LAS PRUEBAS PASARON (100% PASS)' if global_pass else 'FALLÓ ALGUNA PRUEBA'}")
     print("======================================================================")
     return 0 if global_pass else 1
