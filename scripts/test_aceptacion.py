@@ -49,6 +49,23 @@ finally:
     shutil.rmtree(t2_dir, ignore_errors=True)
 
 # ----------------------------------------------------------------------
+# PRUEBA T3: Detección proactiva de sesión expirada (exit code 1, sin cambios)
+# ----------------------------------------------------------------------
+print("--- [EJECUTANDO T3: Detección de Sesión Expirada y Manejo Crítico (Real)] ---")
+t3_dir = tempfile.mkdtemp(prefix="t3_prod_")
+t3_pass = False
+try:
+    T3_REAL_SCRIPT = os.path.join(SCRIPTS_DIR, "test_t3_real.py")
+    p3 = subprocess.run([sys.executable, T3_REAL_SCRIPT, SYNC_SCRIPT, t3_dir], capture_output=True, text=True)
+    for line in p3.stdout.splitlines():
+        if "Código de retorno:" in line or "ERROR CRÍTICO" in line or "Manifest" in line:
+            print(f"  {line}")
+    t3_pass = (p3.returncode == 0)
+    print(f"Resultado T3: {'PASS' if t3_pass else 'FAIL'}\n")
+finally:
+    shutil.rmtree(t3_dir, ignore_errors=True)
+
+# ----------------------------------------------------------------------
 # PRUEBA T6: pull --rebase --autostash con divergencia upstream y abort
 # ----------------------------------------------------------------------
 print("--- [EJECUTANDO T6: Manejo Seguro de Conflicto en Rebase Git (pull --rebase --autostash)] ---")
@@ -161,7 +178,7 @@ cal_pass = (
 print(f"Resultado Calendario Idempotencia: {'PASS' if cal_pass else 'FAIL'}\n")
 
 print("======================================================================")
-global_pass = t2_pass and t6_pass and t8_pass and cal_pass
+global_pass = t2_pass and t3_pass and t6_pass and t8_pass and cal_pass
 print(f"RESUMEN GLOBAL: {'TODAS LAS PRUEBAS PASARON (PASS)' if global_pass else 'FALLÓ ALGUNA PRUEBA'}")
 print("======================================================================")
 sys.exit(0 if global_pass else 1)

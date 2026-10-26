@@ -129,6 +129,27 @@ def run_sync():
     
     cookie = get_cookie()
     if not cookie:
+        log("  [ERROR CRÍTICO] Archivo .moodle_cookie no existe o está vacío.")
+        return 1
+        
+    # Verificación proactiva de sesión viva en /my/
+    try:
+        req_check = urllib.request.Request(f"{BASE_URL}/my/", headers={
+            "Cookie": f"MoodleSession={cookie}",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 13; Xiaomi Pad 5) AppleWebKit/537.36"
+        })
+        resp_check = urllib.request.urlopen(req_check, timeout=25)
+        check_url = resp_check.geturl()
+        check_body = resp_check.read().decode(errors="ignore")
+        if any(k in check_url for k in ["login", "portada", "errorcode"]):
+            log(f"  [ERROR CRÍTICO] Sesión de Aula expirada o inválida (URL final: {check_url}). Abortando sincronización.")
+            log("FINALIZADO. Estado: CON ERRORES (1)")
+            log("=======================================================")
+            return 1
+    except Exception as ce:
+        log(f"  [ERROR CRÍTICO] Fallo al verificar sesión de Aula en /my/: {ce}")
+        log("FINALIZADO. Estado: CON ERRORES (1)")
+        log("=======================================================")
         return 1
         
     courses = [
@@ -153,7 +174,16 @@ def run_sync():
                 "Cookie": f"MoodleSession={cookie}",
                 "User-Agent": "Mozilla/5.0 (Linux; Android 13; Xiaomi Pad 5) AppleWebKit/537.36"
             })
-            chtml = urllib.request.urlopen(req, timeout=25).read().decode(errors="ignore")
+            resp_c = urllib.request.urlopen(req, timeout=25)
+            c_url = resp_c.geturl()
+            if any(k in c_url for k in ["login", "portada", "errorcode"]):
+                err_exp = f"Sesión de Aula expiró a mitad de ejecución en curso {cshort} ({c_url})."
+                log(f"  [ERROR CRÍTICO] {err_exp}")
+                errores.append(err_exp)
+                log(f"FINALIZADO. Estado: CON ERRORES ({len(errores)})")
+                log("=======================================================")
+                return 1
+            chtml = resp_c.read().decode(errors="ignore")
         except Exception as e:
             err_msg = f"{cshort} vista de curso: {e}"
             log(f"  [ERROR] {err_msg}")
