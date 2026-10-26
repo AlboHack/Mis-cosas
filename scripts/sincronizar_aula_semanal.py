@@ -63,16 +63,69 @@ if os.environ.get("SYNC_TEST_MODE") == "1":
 
 TZ = timezone(timedelta(hours=-3))
 
+HASH_CACHE_FILE = os.environ.get("SYNC_HASH_CACHE", os.path.expanduser("~/.sync_hash_cache.json"))
+_hash_cache = None
+_hash_cache_sucio = False
+
+
+def _cache_hashes():
+    global _hash_cache
+    if _hash_cache is None:
+        _hash_cache = {}
+        try:
+            with open(HASH_CACHE_FILE, "r", encoding="utf-8") as f:
+                _hash_cache = json.load(f)
+        except Exception:
+            _hash_cache = {}
+    return _hash_cache
+
+
 def compute_file_sha256(filepath):
-    """Calcula el hash SHA-256 de un archivo en bloques de 64KB para optimizar el uso de memoria."""
+    """SHA-256 de un archivo, reutilizando el valor guardado si tamaño y fecha no cambiaron.
+
+    Evita recalcular cada corrida el hash de todo el material (cientos de MB en la tablet).
+    La firma (tamaño, mtime en ns) cambia si el archivo se reescribe, y entonces se recalcula.
+    """
+    global _hash_cache_sucio
+    try:
+        st = os.stat(filepath)
+    except OSError:
+        return ""
+    clave = os.path.realpath(filepath)
+    firma = [st.st_size, st.st_mtime_ns]
+    cache = _cache_hashes()
+    previo = cache.get(clave)
+    if previo and previo[:2] == firma:
+        return previo[2]
     h = hashlib.sha256()
     try:
         with open(filepath, "rb") as fp:
             while chunk := fp.read(65536):
                 h.update(chunk)
-        return h.hexdigest()
     except Exception:
         return ""
+    cache[clave] = firma + [h.hexdigest()]
+    _hash_cache_sucio = True
+    return h.hexdigest()
+
+
+def guardar_cache_hashes():
+    """Guarda el caché de hashes (descarta rutas que ya no existen). Escritura atómica."""
+    global _hash_cache_sucio
+    cache = _cache_hashes()
+    vivos = {k: v for k, v in cache.items() if os.path.exists(k)}
+    if not _hash_cache_sucio and len(vivos) == len(cache):
+        return
+    try:
+        os.makedirs(os.path.dirname(HASH_CACHE_FILE) or ".", exist_ok=True)
+        tmp = HASH_CACHE_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(vivos, f)
+        os.replace(tmp, HASH_CACHE_FILE)
+        _hash_cache_sucio = False
+    except Exception as e:
+        log(f"  AVISO: no se pudo guardar el caché de hashes: {e}")
+
 
 RCLONE_SUBCOMANDOS_DESTRUCTIVOS = {"sync", "move", "moveto", "delete", "deletefile", "purge", "rmdir", "rmdirs", "cleanup", "dedupe"}
 
@@ -505,6 +558,7 @@ def run_sync():
                         if h:
                             c_index[h] = full_p
         course_sha_indexes[c["id"]] = c_index
+    guardar_cache_hashes()
 
     # -------------------------------------------------------------
     # FASE 1: PLANIFICACIÓN (Detección previa sin escribir en disco)
@@ -869,6 +923,7 @@ def run_sync():
             log(f"  [ERROR] {err_g}")
             errores.append(err_g)
 
+    guardar_cache_hashes()
     log(f"FINALIZADO. Estado: {'OK' if len(errores) == 0 else 'CON ERRORES (' + str(len(errores)) + ')'}")
     log("=======================================================")
     return 0 if len(errores) == 0 else 1

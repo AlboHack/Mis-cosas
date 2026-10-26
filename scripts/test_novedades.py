@@ -180,16 +180,66 @@ def t25_detector():
     ])
 
 
+def t27_cache_hashes(tmp):
+    print("--- T27: Caché de hashes (no recalcula archivos sin cambios) ---")
+    import time
+    import sincronizar_aula_semanal as s
+    os.makedirs(tmp, exist_ok=True)
+    s.HASH_CACHE_FILE = os.path.join(tmp, "cache.json")
+    s._hash_cache = None
+    ruta = os.path.join(tmp, "a.pdf")
+    with open(ruta, "wb") as f:
+        f.write(b"%PDF-1.4 version 1")
+    h1 = s.compute_file_sha256(ruta)
+    s.guardar_cache_hashes()
+    guardado = os.path.exists(s.HASH_CACHE_FILE)
+
+    s._hash_cache = None  # simula una corrida nueva que lee el caché del disco
+    lecturas = []
+    abrir_original = open
+
+    def abrir_espia(p, *a, **k):
+        if p == ruta:
+            lecturas.append(p)
+        return abrir_original(p, *a, **k)
+    import builtins
+    builtins.open = abrir_espia
+    try:
+        h2 = s.compute_file_sha256(ruta)
+    finally:
+        builtins.open = abrir_original
+    sin_releer = (h2 == h1 and lecturas == [])
+
+    time.sleep(0.01)
+    with open(ruta, "wb") as f:
+        f.write(b"%PDF-1.4 version 2 distinta")
+    h3 = s.compute_file_sha256(ruta)
+    import hashlib
+    recalcula = h3 == hashlib.sha256(b"%PDF-1.4 version 2 distinta").hexdigest()
+
+    os.remove(ruta)
+    s.guardar_cache_hashes()
+    import json
+    podado = os.path.realpath(ruta) not in json.load(open(s.HASH_CACHE_FILE))
+    return resultado("T27", [
+        ("caché guardado", guardado),
+        ("segunda corrida usa el caché sin leer el archivo", sin_releer),
+        ("archivo modificado se recalcula", recalcula),
+        ("rutas inexistentes se podan", podado),
+    ])
+
+
 def main():
     if os.environ.get("SYNC_TEST_MODE") != "1":
         os.environ["SYNC_TEST_MODE"] = "1"
     tmp = tempfile.mkdtemp(prefix="novedades_")
     for k, v in {"SYNC_ROOT_DIR": "r", "SYNC_DELTA_DIR": "d", "SYNC_REPO_DIR": "repo", "SYNC_LOG_FILE": "log.txt",
-                 "SYNC_MANIFEST_FILE": "m.json", "SYNC_MENSAJES_FILE": "msj.md", "SYNC_LOCK_FILE": "lock"}.items():
+                 "SYNC_MANIFEST_FILE": "m.json", "SYNC_MENSAJES_FILE": "msj.md", "SYNC_LOCK_FILE": "lock", "SYNC_HASH_CACHE": "hc.json"}.items():
         os.environ[k] = os.path.join(tmp, v)
     try:
         oks = [t21_foros(os.path.join(tmp, "a")), t22_pagina(os.path.join(tmp, "b")),
-               t23_mensajes(os.path.join(tmp, "c")), t24_lista_blanca(), t25_detector()]
+               t23_mensajes(os.path.join(tmp, "c")), t24_lista_blanca(), t25_detector(),
+               t27_cache_hashes(os.path.join(tmp, "e"))]
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     print(f"RESUMEN NOVEDADES: {'TODAS PASARON' if all(oks) else 'FALLÓ ALGUNA'}")

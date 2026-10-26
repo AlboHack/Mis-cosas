@@ -346,6 +346,7 @@ def run_test_suite():
         "SYNC_MANIFEST_FILE": test_manifest_file,
         "SYNC_LOCK_FILE": test_lock_file,
         "SYNC_MENSAJES_FILE": os.path.join(test_env_dir, "mensajes_privados_aula.md"),
+        "SYNC_HASH_CACHE": os.path.join(test_env_dir, "hash_cache.json"),
         "SYNC_TEST_MODE": "1",
         "SYNC_DISABLE_GIT": "1",
         "SYNC_DISABLE_DRIVE": "1",

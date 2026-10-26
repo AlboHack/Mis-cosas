@@ -50,7 +50,9 @@ def main():
             rango = local_sha
         if permitir_codigo:
             continue
-        archivos = git("diff", "--name-only", rango if remote_sha != ZERO else local_sha).stdout.split()
+        # -z y quotepath=off: rutas con espacios o tildes llegan literales (sin comillas ni cortes)
+        salida = git("-c", "core.quotepath=off", "diff", "--name-only", "-z", rango).stdout
+        archivos = [a for a in salida.split("\0") if a]
         if remote_sha == ZERO:
             bloquear("main remota no existe; push inicial requiere ALLOW_MAIN_PUSH=1.")
         fuera = [f for f in archivos if not f.startswith(PREFIJO_DATOS)]

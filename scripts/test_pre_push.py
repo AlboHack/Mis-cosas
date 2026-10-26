@@ -42,12 +42,15 @@ def main():
         commit(repo, "universidad/2026-2/x.pdf", "pdf", "chore(sync)")
         casos.append(("datos de sincronización a main: permitido", run(["git", "push", "origin", "main"], repo, env_sin).returncode == 0))
 
+        commit(repo, "universidad/2026-2/CIV222_INGENIERÍA_DE_CONSTRUCCIÓN_/Información General/Guía 1 (Pauta).pdf", "pdf", "chore(sync) tildes y espacios")
+        casos.append(("datos con tildes y espacios a main: permitido", run(["git", "push", "origin", "main"], repo, env_sin).returncode == 0))
+
         commit(repo, "scripts/a.py", "2", "codigo")
         casos.append(("código a main sin aprobación: bloqueado", run(["git", "push", "origin", "main"], repo, env_sin).returncode != 0))
         casos.append(("código a main con ALLOW_MAIN_PUSH=1: permitido",
                       run(["git", "push", "origin", "main"], repo, dict(env_sin, ALLOW_MAIN_PUSH="1")).returncode == 0))
 
-        run(["git", "reset", "-q", "--hard", "HEAD~2"], repo)
+        run(["git", "reset", "-q", "--hard", "HEAD~3"], repo)
         commit(repo, "universidad/2026-2/y.pdf", "otro", "divergente")
         casos.append(("force push a main (aun con ALLOW_MAIN_PUSH=1): bloqueado",
                       run(["git", "push", "--force", "origin", "main"], repo, dict(env_sin, ALLOW_MAIN_PUSH="1")).returncode != 0))
