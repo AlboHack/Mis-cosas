@@ -20,6 +20,7 @@ if _home_dir not in sys.path:
 
 BASE_URL = "https://aula.usm.cl"
 ROOT_DIR = "/storage/emulated/0/Download/Universidad/2026-2"
+DELTA_DIR = "/storage/emulated/0/Download"
 REPO_DIR = "/data/data/com.agycli/files/home/Mis-cosas"
 LOG_FILE = "/storage/emulated/0/Download/Universidad/Registro_Sincronizaciones.log"
 COOKIE_FILE = "/data/data/com.agycli/files/home/.moodle_cookie"
@@ -220,10 +221,15 @@ def run_sync():
                                 f_old_backup = os.path.join(target_dir, f"{v_base}_v{datetime.now().strftime('%Y%m%d')}{v_ext}")
                                 shutil.copy2(local_fpath, f_old_backup)
                                 log(f"  [VERSIÓN ANTERIOR ARCHIVADA] -> {os.path.basename(f_old_backup)}")
-                            elif manifest_entry and manifest_entry.get("sha256") == sha_curr:
-                                manifest[url_clean]["last_seen"] = datetime.now().isoformat()
-                                if etag: manifest[url_clean]["etag"] = etag
-                                if last_mod: manifest[url_clean]["last_modified"] = last_mod
+                            else:
+                                manifest[url_clean] = {
+                                    "sha256": sha_curr,
+                                    "bytes": len(f_data),
+                                    "local_path": local_fpath,
+                                    "etag": etag,
+                                    "last_modified": last_mod,
+                                    "last_seen": datetime.now().isoformat()
+                                }
                                 continue
                                 
                         os.makedirs(target_dir, exist_ok=True)
@@ -307,10 +313,15 @@ def run_sync():
                         f_old = os.path.join(target_dir, f"{v_base}_v{datetime.now().strftime('%Y%m%d')}{v_ext}")
                         shutil.copy2(local_fpath, f_old)
                         log(f"  [VERSIÓN ANTERIOR ARCHIVADA] -> {os.path.basename(f_old)}")
-                    elif manifest_entry and manifest_entry.get("sha256") == sha_curr:
-                        manifest[url_clean]["last_seen"] = datetime.now().isoformat()
-                        if etag: manifest[url_clean]["etag"] = etag
-                        if last_mod: manifest[url_clean]["last_modified"] = last_mod
+                    else:
+                        manifest[url_clean] = {
+                            "sha256": sha_curr,
+                            "bytes": len(data),
+                            "local_path": local_fpath,
+                            "etag": etag,
+                            "last_modified": last_mod,
+                            "last_seen": datetime.now().isoformat()
+                        }
                         continue
                         
                 os.makedirs(target_dir, exist_ok=True)
@@ -338,48 +349,54 @@ def run_sync():
     
     # 3. Subida INCREMENTAL a Google Drive (SÓLO si hubo archivos nuevos)
     if len(archivos_descargados) > 0:
-        fecha_str = datetime.now().strftime('%Y%m%d')
-        zip_delta = f"/storage/emulated/0/Download/Universidad_Nuevos_{fecha_str}.zip"
-        
-        with zipfile.ZipFile(zip_delta, 'w', zipfile.ZIP_DEFLATED) as zf_new:
-            for nf in archivos_descargados:
-                rel = os.path.relpath(nf, ROOT_DIR)
-                zf_new.write(nf, rel)
-                
-        sz_mb = os.path.getsize(zip_delta) / (1024 * 1024)
-        log(f"Paquete Delta generado ({sz_mb:.2f} MB con {len(archivos_descargados)} archivos).")
-        
-        # Comprobar si rclone está disponible para subida determinística
-        rclone_bin = shutil.which("rclone")
-        if rclone_bin:
-            log("Subiendo paquete delta vía rclone a Google Drive...")
-            rc_p = subprocess.run(["rclone", "copy", zip_delta, "gdrive:Universidad/Deltas/"], capture_output=True, text=True)
-            if rc_p.returncode == 0:
-                zip_base = os.path.basename(zip_delta)
-                zip_bytes = os.path.getsize(zip_delta)
-                chk = subprocess.run(["rclone", "lsjson", f"gdrive:Universidad/Deltas/{zip_base}"], capture_output=True, text=True)
-                verificado = False
-                if chk.returncode == 0:
-                    try:
-                        items = json.loads(chk.stdout.strip())
-                        if len(items) > 0 and items[0].get("Name") == zip_base and items[0].get("Size") == zip_bytes:
-                            verificado = True
-                    except Exception:
-                        pass
-                if verificado:
-                    log(f"¡Paquete delta subido y verificado exitosamente con rclone lsjson ({zip_base}, {zip_bytes} bytes)!")
+        try:
+            fecha_str = datetime.now().strftime('%Y%m%d')
+            os.makedirs(DELTA_DIR, exist_ok=True)
+            zip_delta = os.path.join(DELTA_DIR, f"Universidad_Nuevos_{fecha_str}.zip")
+            
+            with zipfile.ZipFile(zip_delta, 'w', zipfile.ZIP_DEFLATED) as zf_new:
+                for nf in archivos_descargados:
+                    rel = os.path.relpath(nf, ROOT_DIR)
+                    zf_new.write(nf, rel)
+                    
+            sz_mb = os.path.getsize(zip_delta) / (1024 * 1024)
+            log(f"Paquete Delta generado ({sz_mb:.2f} MB con {len(archivos_descargados)} archivos).")
+            
+            # Comprobar si rclone está disponible para subida determinística
+            rclone_bin = shutil.which("rclone")
+            if rclone_bin:
+                log("Subiendo paquete delta vía rclone a Google Drive...")
+                rc_p = subprocess.run(["rclone", "copy", zip_delta, "gdrive:Universidad/Deltas/"], capture_output=True, text=True)
+                if rc_p.returncode == 0:
+                    zip_base = os.path.basename(zip_delta)
+                    zip_bytes = os.path.getsize(zip_delta)
+                    chk = subprocess.run(["rclone", "lsjson", f"gdrive:Universidad/Deltas/{zip_base}"], capture_output=True, text=True)
+                    verificado = False
+                    if chk.returncode == 0:
+                        try:
+                            items = json.loads(chk.stdout.strip())
+                            if len(items) > 0 and items[0].get("Name") == zip_base and items[0].get("Size") == zip_bytes:
+                                verificado = True
+                        except Exception:
+                            pass
+                    if verificado:
+                        log(f"¡Paquete delta subido y verificado exitosamente con rclone lsjson ({zip_base}, {zip_bytes} bytes)!")
+                    else:
+                        err_rc = f"Fallo al verificar con rclone lsjson: salida '{chk.stdout.strip()}', error: '{chk.stderr.strip()}'"
+                        log(f"  [ERROR] {err_rc}")
+                        errores.append(err_rc)
                 else:
-                    err_rc = f"Fallo al verificar con rclone lsjson: salida '{chk.stdout.strip()}', error: '{chk.stderr.strip()}'"
+                    err_rc = f"Fallo rclone copy ({rc_p.returncode}): {rc_p.stderr.strip()}"
                     log(f"  [ERROR] {err_rc}")
                     errores.append(err_rc)
             else:
-                err_rc = f"Fallo rclone copy ({rc_p.returncode}): {rc_p.stderr.strip()}"
+                err_rc = "rclone no está instalado o no disponible en PATH para subida a Google Drive."
                 log(f"  [ERROR] {err_rc}")
                 errores.append(err_rc)
-        else:
-            err_rc = "rclone no está instalado o no disponible en PATH para subida a Google Drive."
-            log(f"  [ERROR] {err_rc}")
-            errores.append(err_rc)
+        except Exception as ze:
+            err_z = f"Excepción al generar o subir paquete delta ZIP: {ze}"
+            log(f"  [ERROR] {err_z}")
+            errores.append(err_z)
     else:
         log("INCREMENTAL: Sin archivos nuevos en Aula USM esta semana. No se genera ZIP ni subida a Drive.")
         
