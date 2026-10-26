@@ -58,6 +58,32 @@ if os.environ.get("SYNC_TEST_MODE") == "1":
 
 TZ = timezone(timedelta(hours=-3))
 
+def compute_file_sha256(filepath):
+    """Calcula el hash SHA-256 de un archivo en bloques de 64KB para optimizar el uso de memoria."""
+    h = hashlib.sha256()
+    try:
+        with open(filepath, "rb") as fp:
+            while chunk := fp.read(65536):
+                h.update(chunk)
+        return h.hexdigest()
+    except Exception:
+        return ""
+
+def to_timestamp_safe(dt_val):
+    """Convierte fecha ISO o timestamp a float de forma segura ante naive/aware."""
+    if isinstance(dt_val, (int, float)):
+        return float(dt_val)
+    if isinstance(dt_val, str):
+        try:
+            dt = datetime.fromisoformat(dt_val)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=TZ)
+            return dt.timestamp()
+        except Exception:
+            return None
+    return None
+
+
 def log(msg, token_to_mask=None):
     if token_to_mask:
         msg = msg.replace(token_to_mask, "[TOKEN_MASKED]")
@@ -281,35 +307,47 @@ def sincronizar_evaluaciones(client, repo_dir):
             log(f"  [ERROR] No se pudo leer evaluaciones_manual.json: {me}")
 
     # Fusión determinística: lo manual prevalece sobre la API
-    # Si un evento de la API tiene el mismo ramo y un inicio a ±1 h de una entrada manual
+    # Si un evento de la API tiene el mismo curso (ramo o código) y un inicio a ±1 h de una entrada manual
     # (o el mismo nombre), prevalece la manual y el de la API se descarta, con registro en el log.
     filtered_api_events = []
     for ev_api in api_events:
-        st_api = datetime.fromisoformat(ev_api["inicio"])
+        ts_api = to_timestamp_safe(ev_api.get("inicio"))
         ramo_api = ev_api.get("ramo", "").strip().lower()
+        cod_api = ev_api.get("codigo", "").strip().lower()
+        eval_api_name = ev_api.get("evaluacion", "").strip().lower()
         
         coincide_manual = False
         matching_man = None
         for ev_man in manual_events:
             ramo_man = ev_man.get("ramo", "").strip().lower()
-            if ramo_api == ramo_man:
-                st_man = datetime.fromisoformat(ev_man["inicio"])
-                if abs((st_api - st_man).total_seconds()) <= 3600:
+            cod_man = ev_man.get("codigo", "").strip().lower()
+            eval_man_name = ev_man.get("evaluacion", "").strip().lower()
+
+            mismo_curso = (
+                (ramo_api and ramo_man and ramo_api == ramo_man) or
+                (cod_api and cod_man and cod_api == cod_man) or
+                (ramo_api and cod_man and ramo_api == cod_man) or
+                (cod_api and ramo_man and cod_api == ramo_man)
+            )
+
+            if mismo_curso:
+                ts_man = to_timestamp_safe(ev_man.get("inicio"))
+                if ts_api is not None and ts_man is not None and abs(ts_api - ts_man) <= 3600:
                     coincide_manual = True
                     matching_man = ev_man
                     break
-                if ev_api.get("evaluacion", "").strip().lower() == ev_man.get("evaluacion", "").strip().lower():
+                if eval_api_name and eval_man_name and eval_api_name == eval_man_name:
                     coincide_manual = True
                     matching_man = ev_man
                     break
 
         if coincide_manual and matching_man:
-            log(f"  [FUSIÓN EVALUACIONES] Evento API '{ev_api['evaluacion']}' descartado por coincidir con entrada manual '{matching_man['evaluacion']}' ({matching_man['ramo']} a las {matching_man['inicio']}).")
+            log(f"  [FUSIÓN EVALUACIONES] Evento API '{ev_api.get('evaluacion')}' descartado por coincidir con entrada manual '{matching_man.get('evaluacion')}' ({matching_man.get('ramo')} a las {matching_man.get('inicio')}).")
         else:
             filtered_api_events.append(ev_api)
 
     merged_list = list(manual_events) + filtered_api_events
-    result_list = sorted(merged_list, key=lambda x: x["inicio"])
+    result_list = sorted(merged_list, key=lambda x: x.get("inicio", ""))
     
     out_eval = os.path.join(repo_dir, "universidad/2026-2/evaluaciones.json")
     os.makedirs(os.path.dirname(out_eval), exist_ok=True)
@@ -453,12 +491,9 @@ def run_sync():
                 for f in files:
                     full_p = os.path.join(root, f)
                     if os.path.isfile(full_p):
-                        try:
-                            with open(full_p, "rb") as fp:
-                                h = hashlib.sha256(fp.read()).hexdigest()
-                                c_index[h] = full_p
-                        except Exception:
-                            pass
+                        h = compute_file_sha256(full_p)
+                        if h:
+                            c_index[h] = full_p
         course_sha_indexes[c["id"]] = c_index
 
     # -------------------------------------------------------------
@@ -538,10 +573,7 @@ def run_sync():
                         # No está en manifest
                         if os.path.exists(local_fpath) and os.path.getsize(local_fpath) == filesize:
                             # Caso T9': archivo ya existe en disco con tamaño idéntico -> registrar sin descargar
-                            try:
-                                sha = hashlib.sha256(open(local_fpath, "rb").read()).hexdigest()
-                            except Exception:
-                                sha = ""
+                            sha = compute_file_sha256(local_fpath)
                             manifest[url_clean] = {
                                 "timemodified": timemodified,
                                 "filesize": filesize,

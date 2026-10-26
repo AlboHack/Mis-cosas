@@ -818,7 +818,7 @@ def run_test_suite():
     post_dir_mtime = os.path.getmtime(REAL_ROOT_DIR) if os.path.exists(REAL_ROOT_DIR) else 0
     post_log_mtime = os.path.getmtime(REAL_LOG_FILE) if os.path.exists(REAL_LOG_FILE) else 0
 
-    git_clean = (post_git_status == pre_git_status)
+    git_clean = (post_git_status == "" and post_git_status == pre_git_status)
     dir_intact = (post_dir_mtime == pre_dir_mtime)
     log_intact = (post_log_mtime == pre_log_mtime)
 
