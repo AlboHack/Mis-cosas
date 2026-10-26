@@ -560,7 +560,11 @@ def run_sync():
         errores.append(err_e)
 
     # 5. Subida INCREMENTAL a Google Drive (SÓLO si hubo archivos nuevos)
-    if len(archivos_descargados) > 0:
+    if len(archivos_descargados) > 20:
+        err_lim = f"ALERTA: Se detectaron {len(archivos_descargados)} archivos nuevos (>20). Deteniendo corrida antes de Drive para verificar manifest."
+        log(f"  [ALERTA DE SEGURIDAD] {err_lim}")
+        errores.append(err_lim)
+    elif len(archivos_descargados) > 0:
         try:
             fecha_str = datetime.now().strftime('%Y%m%d')
             os.makedirs(DELTA_DIR, exist_ok=True)
