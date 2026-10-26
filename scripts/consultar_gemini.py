@@ -213,6 +213,9 @@ class PureWebSocketClient:
         Recibe y decodifica el siguiente mensaje de texto completo,
         gestionando fragmentación, control frames y tramas de 16/64 bits.
         """
+        if not isinstance(self._buf, bytearray):
+            self._buf = bytearray(self._buf)
+
         while True:
             if len(self._buf) >= 2:
                 b0 = self._buf[0]
@@ -700,7 +703,7 @@ def main():
                 parser.error(f"El archivo especificado no existe: {args.file}")
             with open(args.file, "r", encoding="utf-8") as f:
                 prompt = f.read()
-    elif args.prompt:
+    elif args.prompt is not None:
         if args.prompt == "-":
             prompt = sys.stdin.read()
         else:
@@ -709,9 +712,10 @@ def main():
         if not sys.stdin.isatty():
             prompt = sys.stdin.read()
         else:
-            parser.error("Debe proporcionar un prompt como argumento o mediante la opción -f / --file.")
+            sys.stderr.write("Error: Debe proporcionar un prompt como argumento o mediante la opción -f / --file. El prompt no puede estar vacío.\n")
+            sys.exit(1)
 
-    if not prompt or not prompt.strip():
+    if prompt is None or not prompt.strip():
         sys.stderr.write("Error: El prompt proporcionado está vacío.\n")
         sys.exit(1)
 
