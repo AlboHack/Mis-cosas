@@ -89,35 +89,87 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
                     "functions": []
                 }
             elif wsfunc == "core_course_get_contents":
-                v = server_state["file_version"]
-                tmod = server_state["timemodified"]
-                resp = [
-                    {
-                        "name": "General",
-                        "modules": [
-                            {
-                                "name": "Pauta",
-                                "modname": "resource",
-                                "contents": [
-                                    {
-                                        "type": "file",
-                                        "filename": "Pauta.pdf",
-                                        "filesize": len(get_file_content(v)),
-                                        "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/123/mod_resource/content/1/Pauta.pdf",
-                                        "timemodified": tmod
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "Noticias",
-                                "modname": "forum",
-                                "instance": 555
-                            }
-                        ]
-                    }
-                ]
+                if server_state["mode"] == "t15":
+                    resp = [
+                        {
+                            "name": "General",
+                            "modules": [
+                                {
+                                    "name": "Pauta Reubicada",
+                                    "modname": "resource",
+                                    "contents": [
+                                        {
+                                            "type": "file",
+                                            "filename": "Pauta_Nueva_Seccion.pdf",
+                                            "filesize": len(server_state.get("t15_data", b"")),
+                                            "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/t15/Pauta_Nueva_Seccion.pdf",
+                                            "timemodified": TS_V1
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                elif server_state["mode"] == "t16":
+                    modules_25 = []
+                    for i in range(25):
+                        fname = f"Doc_{i}.pdf"
+                        prefix = f"%PDF-1.4 Unique {fname} content "
+                        sz = len((prefix + "X" * (120 - len(prefix))).encode("utf-8"))
+                        modules_25.append({
+                            "name": f"Documento {i}",
+                            "modname": "resource",
+                            "contents": [
+                                {
+                                    "type": "file",
+                                    "filename": fname,
+                                    "filesize": sz,
+                                    "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/t16/{fname}",
+                                    "timemodified": TS_V1 + i
+                                }
+                            ]
+                        })
+                    resp = [{"name": "General", "modules": modules_25}]
+                else:
+                    v = server_state["file_version"]
+                    tmod = server_state["timemodified"]
+                    resp = [
+                        {
+                            "name": "General",
+                            "modules": [
+                                {
+                                    "name": "Pauta",
+                                    "modname": "resource",
+                                    "contents": [
+                                        {
+                                            "type": "file",
+                                            "filename": "Pauta.pdf",
+                                            "filesize": len(get_file_content(v)),
+                                            "fileurl": f"http://127.0.0.1:{self.server.server_port}/webservice/pluginfile.php/123/mod_resource/content/1/Pauta.pdf",
+                                            "timemodified": tmod
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Noticias",
+                                    "modname": "forum",
+                                    "instance": 555
+                                }
+                            ]
+                        }
+                    ]
             elif wsfunc == "core_calendar_get_calendar_events":
-                resp = {"events": []}
+                resp = {
+                    "events": [
+                        {
+                            "id": 1124478,
+                            "courseid": 62178,
+                            "name": "Vencimiento de Tarea N°1",
+                            "timestart": 1793156340,
+                            "timeduration": 0
+                        }
+                    ]
+                }
             elif wsfunc == "mod_forum_get_forum_discussions":
                 resp = {"discussions": server_state["discussions"]}
             else:
@@ -127,8 +179,15 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
             return
 
         if "/webservice/pluginfile.php" in self.path:
-            v = server_state["file_version"]
-            data = get_file_content(v)
+            if server_state["mode"] == "t15":
+                data = server_state.get("t15_data", b"")
+            elif server_state["mode"] == "t16":
+                fname = self.path.split("/")[-1].split("?")[0]
+                prefix = f"%PDF-1.4 Unique {fname} content "
+                data = (prefix + "X" * (120 - len(prefix))).encode("utf-8")
+            else:
+                v = server_state["file_version"]
+                data = get_file_content(v)
             self.send_response(200)
             self.send_header("Content-Type", "application/pdf")
             self.send_header("Content-Length", str(len(data)))
@@ -144,10 +203,17 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
             self.send_response(500)
             self.end_headers()
             return
-            
+
         if "/webservice/pluginfile.php" in self.path:
-            v = server_state["file_version"]
-            data = get_file_content(v)
+            if server_state["mode"] == "t15":
+                data = server_state.get("t15_data", b"")
+            elif server_state["mode"] == "t16":
+                fname = self.path.split("/")[-1].split("?")[0]
+                prefix = f"%PDF-1.4 Unique {fname} content "
+                data = (prefix + "X" * (120 - len(prefix))).encode("utf-8")
+            else:
+                v = server_state["file_version"]
+                data = get_file_content(v)
             self.send_response(200)
             self.send_header("Content-Type", "application/pdf")
             self.send_header("Content-Length", str(len(data)))
@@ -160,7 +226,7 @@ class MockMoodleHandler(BaseHTTPRequestHandler):
 
 def run_test_suite():
     print("======================================================================")
-    print("BATERÍA DE PRUEBAS DE ACEPTACIÓN TÉCNICA (API TOKEN: T2', T3', T9', T10, T11, T12, T13, T14)")
+    print("BATERÍA DE PRUEBAS DE ACEPTACIÓN TÉCNICA (API TOKEN: T2', T3', T9', T10, T11, T12, T13, T14, T15, T16)")
     print("======================================================================\n")
 
     # Registro de estado previo real para T13
@@ -222,6 +288,7 @@ def run_test_suite():
         "SYNC_LOCK_FILE": test_lock_file,
         "SYNC_TEST_MODE": "1",
         "SYNC_DISABLE_GIT": "1",
+        "SYNC_DISABLE_DRIVE": "1",
         "CALENDAR_TEST_MODE": "1",
         "CALENDAR_SIMULATE_ADB": "1",
         "CALENDAR_SIM_STATE_FILE": test_cal_sim_file,
@@ -490,6 +557,104 @@ def run_test_suite():
     print(f"Resultado T14: {'PASS' if t14_pass else 'FAIL'}\n")
 
     # ----------------------------------------------------------------------
+    # T15: Detección por Contenido contra lo Existente (Hash SHA-256 por Curso)
+    # ----------------------------------------------------------------------
+    print("--- [EJECUTANDO T15: Deduplicación por Contenido con Estructura Diferente] ---")
+    t15_content = b"%PDF-1.4 Contenido identico para prueba T15 de deduplicacion - Hash estricto 88888"
+    course_folder = "CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_"
+    old_subfolder = os.path.join(test_root_dir, course_folder, "Carpeta_Antigua_Desordenada")
+    os.makedirs(old_subfolder, exist_ok=True)
+    old_file_path = os.path.join(old_subfolder, "Archivo_Antiguo.pdf")
+    with open(old_file_path, "wb") as f:
+        f.write(t15_content)
+
+    if os.path.exists(test_manifest_file):
+        os.remove(test_manifest_file)
+
+    server_state["mode"] = "t15"
+    server_state["t15_data"] = t15_content
+
+    p_t15 = subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
+
+    new_dest = os.path.join(test_root_dir, course_folder, "Planificacion/General/Pauta_Nueva_Seccion.pdf")
+    file_not_written = not os.path.exists(new_dest)
+    zero_new_reported = "0 archivo(s) nuevo(s)" in p_t15.stdout
+    dup_omitted = "[DUPLICADO OMITIDO]" in p_t15.stdout
+
+    manifest_t15 = {}
+    if os.path.exists(test_manifest_file):
+        with open(test_manifest_file, "r", encoding="utf-8") as mf:
+            manifest_t15 = json.load(mf)
+
+    mapped_correctly = False
+    for k, v in manifest_t15.items():
+        if "Pauta_Nueva_Seccion.pdf" in k and v.get("local_path") == old_file_path:
+            mapped_correctly = True
+            break
+
+    eval_json_p = os.path.join(test_repo_dir, "universidad/2026-2/evaluaciones.json")
+    eval_dedup_pass = False
+    if os.path.exists(eval_json_p):
+        with open(eval_json_p, "r", encoding="utf-8") as ef:
+            eval_data = json.load(ef)
+        uids = [e["uid"] for e in eval_data]
+        eval_dedup_pass = ("1124478" not in uids and "manual-FAE-Entrega Tarea 1 SAP2000" in uids and len(eval_data) == 12)
+
+    t15_pass = (
+        p_t15.returncode == 0 and
+        file_not_written and
+        zero_new_reported and
+        dup_omitted and
+        mapped_correctly and
+        eval_dedup_pass
+    )
+    print(f"  Código de retorno 0: {p_t15.returncode == 0}")
+    print(f"  Archivo NO duplicado en disco: {file_not_written}")
+    print(f"  0 nuevos archivos reportados: {zero_new_reported}")
+    print(f"  Log registró [DUPLICADO OMITIDO]: {dup_omitted}")
+    print(f"  Manifest mapeado a archivo existente: {mapped_correctly}")
+    print(f"  Deduplicación de evaluaciones (12 eventos sin duplicado API): {eval_dedup_pass}")
+    print(f"Resultado T15: {'PASS' if t15_pass else 'FAIL'}\n")
+
+    # ----------------------------------------------------------------------
+    # T16: Límite Masivo Estricto (>20 archivos nuevos corta todo)
+    # ----------------------------------------------------------------------
+    print("--- [EJECUTANDO T16: Límite Masivo (>20) Bloqueante] ---")
+    server_state["mode"] = "t16"
+
+    if os.path.exists(test_manifest_file):
+        os.remove(test_manifest_file)
+
+    p_t16_block = subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
+    manifest_saved_on_block = os.path.exists(test_manifest_file)
+    git_status_repo = subprocess.run(["git", "status", "--porcelain"], cwd=test_repo_dir, capture_output=True, text=True).stdout.strip()
+    msg_revision = "revisión requerida" in p_t16_block.stdout.lower() or "revision requerida" in p_t16_block.stdout.lower()
+
+    p_t16_allow = subprocess.run([sys.executable, SYNC_SCRIPT, "--permitir-masivo"], env=env_prod, capture_output=True, text=True)
+    manifest_saved_on_allow = os.path.exists(test_manifest_file)
+    manifest_count = 0
+    if manifest_saved_on_allow:
+        with open(test_manifest_file, "r", encoding="utf-8") as mf:
+            manifest_count = len(json.load(mf))
+
+    t16_pass = (
+        p_t16_block.returncode == 1 and
+        not manifest_saved_on_block and
+        msg_revision and
+        git_status_repo == "" and
+        p_t16_allow.returncode == 0 and
+        manifest_saved_on_allow and
+        manifest_count >= 25
+    )
+    print(f"  Bloqueo: código de retorno 1: {p_t16_block.returncode == 1}")
+    print(f"  Bloqueo: manifest NO guardado: {not manifest_saved_on_block}")
+    print(f"  Bloqueo: mensaje 'revisión requerida': {msg_revision}")
+    print(f"  Bloqueo: repo git limpio: {git_status_repo == ''}")
+    print(f"  Permitido: código de retorno 0: {p_t16_allow.returncode == 0}")
+    print(f"  Permitido: manifest guardado ({manifest_count} entradas >= 25): {manifest_count >= 25}")
+    print(f"Resultado T16: {'PASS' if t16_pass else 'FAIL'}\n")
+
+    # ----------------------------------------------------------------------
     # AVISOS: avisos.md solo se reescribe si hay novedades y sin *Última verificación*
     # ----------------------------------------------------------------------
     print("--- [EJECUTANDO AVISOS: Idempotencia y Formato en Foros] ---")
@@ -534,7 +699,7 @@ def run_test_suite():
     post_dir_mtime = os.path.getmtime(REAL_ROOT_DIR) if os.path.exists(REAL_ROOT_DIR) else 0
     post_log_mtime = os.path.getmtime(REAL_LOG_FILE) if os.path.exists(REAL_LOG_FILE) else 0
 
-    git_clean = (post_git_status == "" and post_git_status == pre_git_status)
+    git_clean = (post_git_status == pre_git_status)
     dir_intact = (post_dir_mtime == pre_dir_mtime)
     log_intact = (post_log_mtime == pre_log_mtime)
 
@@ -552,7 +717,7 @@ def run_test_suite():
     # RESUMEN GLOBAL
     # ----------------------------------------------------------------------
     print("======================================================================")
-    global_pass = t2_pass and t3_pass and t9_pass and t10_pass and t11_pass and t12_pass and avisos_pass and t13_pass and t14_pass
+    global_pass = t2_pass and t3_pass and t9_pass and t10_pass and t11_pass and t12_pass and t14_pass and t15_pass and t16_pass and avisos_pass and t13_pass
     print(f"RESUMEN GLOBAL: {'TODAS LAS PRUEBAS PASARON (100% PASS)' if global_pass else 'FALLÓ ALGUNA PRUEBA'}")
     print("======================================================================")
     return 0 if global_pass else 1

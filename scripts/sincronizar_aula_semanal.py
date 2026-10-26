@@ -280,18 +280,36 @@ def sincronizar_evaluaciones(client, repo_dir):
         except Exception as me:
             log(f"  [ERROR] No se pudo leer evaluaciones_manual.json: {me}")
 
-    # Fusión determinística: lo manual prevalece sobre la API por clave (ramo, evaluacion)
-    merged = {}
-    for ev in api_events:
-        key = (ev["ramo"].lower(), ev["evaluacion"].lower())
-        merged[key] = ev
+    # Fusión determinística: lo manual prevalece sobre la API
+    # Si un evento de la API tiene el mismo ramo y un inicio a ±1 h de una entrada manual
+    # (o el mismo nombre), prevalece la manual y el de la API se descarta, con registro en el log.
+    filtered_api_events = []
+    for ev_api in api_events:
+        st_api = datetime.fromisoformat(ev_api["inicio"])
+        ramo_api = ev_api.get("ramo", "").strip().lower()
+        
+        coincide_manual = False
+        matching_man = None
+        for ev_man in manual_events:
+            ramo_man = ev_man.get("ramo", "").strip().lower()
+            if ramo_api == ramo_man:
+                st_man = datetime.fromisoformat(ev_man["inicio"])
+                if abs((st_api - st_man).total_seconds()) <= 3600:
+                    coincide_manual = True
+                    matching_man = ev_man
+                    break
+                if ev_api.get("evaluacion", "").strip().lower() == ev_man.get("evaluacion", "").strip().lower():
+                    coincide_manual = True
+                    matching_man = ev_man
+                    break
 
-    for ev in manual_events:
-        key = (ev["ramo"].lower(), ev["evaluacion"].lower())
-        # Sobreescribir o agregar manual
-        merged[key] = ev
+        if coincide_manual and matching_man:
+            log(f"  [FUSIÓN EVALUACIONES] Evento API '{ev_api['evaluacion']}' descartado por coincidir con entrada manual '{matching_man['evaluacion']}' ({matching_man['ramo']} a las {matching_man['inicio']}).")
+        else:
+            filtered_api_events.append(ev_api)
 
-    result_list = sorted(list(merged.values()), key=lambda x: x["inicio"])
+    merged_list = list(manual_events) + filtered_api_events
+    result_list = sorted(merged_list, key=lambda x: x["inicio"])
     
     out_eval = os.path.join(repo_dir, "universidad/2026-2/evaluaciones.json")
     os.makedirs(os.path.dirname(out_eval), exist_ok=True)
@@ -424,11 +442,31 @@ def run_sync():
     manifest = cargar_manifest()
     archivos_descargados = []
 
+    # Construir índice de hashes (sha256 -> ruta_en_disco) por curso
+    # Se calcula una sola vez por corrida para detectar archivos existentes bajo otra estructura
+    course_sha_indexes = {}
+    for c in courses:
+        cdir = os.path.join(ROOT_DIR, c["folder"])
+        c_index = {}
+        if os.path.exists(cdir):
+            for root, _, files in os.walk(cdir):
+                for f in files:
+                    full_p = os.path.join(root, f)
+                    if os.path.isfile(full_p):
+                        try:
+                            with open(full_p, "rb") as fp:
+                                h = hashlib.sha256(fp.read()).hexdigest()
+                                c_index[h] = full_p
+                        except Exception:
+                            pass
+        course_sha_indexes[c["id"]] = c_index
+
     # 2. Descarga incremental de contenidos de cursos vía core_course_get_contents
     for c in courses:
         cid = c["id"]
         cshort = c["short"]
         cdir = os.path.join(ROOT_DIR, c["folder"])
+        c_hashes = course_sha_indexes.get(cid, {})
         log(f"Revisando contenidos de: {cshort} (ID: {cid})...")
 
         try:
@@ -465,8 +503,9 @@ def run_sync():
 
                     # Comprobación de manifiesto
                     manifest_entry = manifest.get(url_clean)
+                    target_check_path = manifest_entry.get("local_path", local_fpath) if manifest_entry else local_fpath
 
-                    if manifest_entry and os.path.exists(local_fpath):
+                    if manifest_entry and os.path.exists(target_check_path):
                         # Caso: Archivo ya existe y está registrado
                         if manifest_entry.get("timemodified") == timemodified and manifest_entry.get("filesize") == filesize:
                             manifest[url_clean]["last_seen"] = datetime.now().isoformat()
@@ -475,6 +514,21 @@ def run_sync():
                             # Caso T2': timemodified o tamaño cambió -> descargar y respaldar versión anterior
                             try:
                                 data = client.download_file(fileurl, local_fpath)
+                                data_sha = hashlib.sha256(data).hexdigest()
+
+                                # Si el contenido nuevo ya existe en otra parte del curso
+                                if data_sha in c_hashes and c_hashes[data_sha] != target_check_path:
+                                    existing_disk_p = c_hashes[data_sha]
+                                    manifest[url_clean] = {
+                                        "timemodified": timemodified,
+                                        "filesize": filesize,
+                                        "local_path": existing_disk_p,
+                                        "sha256": data_sha,
+                                        "last_seen": datetime.now().isoformat()
+                                    }
+                                    log(f"  [DUPLICADO OMITIDO] {cshort} -> {fname} ya existe en {os.path.relpath(existing_disk_p, cdir)}. No se descarga ni copia.")
+                                    continue
+
                                 v_ext = os.path.splitext(fname)[1]
                                 v_base = os.path.splitext(fname)[0]
                                 old_mod = manifest_entry.get("timemodified")
@@ -483,17 +537,20 @@ def run_sync():
                                 else:
                                     date_str = datetime.now().strftime("%Y%m%d")
                                 f_old_backup = os.path.join(target_dir, f"{v_base}_v{date_str}{v_ext}")
-                                shutil.copy2(local_fpath, f_old_backup)
-                                log(f"  [VERSIÓN ANTERIOR RESPALDADA] -> {os.path.basename(f_old_backup)}")
+                                if os.path.exists(local_fpath):
+                                    shutil.copy2(local_fpath, f_old_backup)
+                                    log(f"  [VERSIÓN ANTERIOR RESPALDADA] -> {os.path.basename(f_old_backup)}")
 
+                                os.makedirs(target_dir, exist_ok=True)
                                 with open(local_fpath, "wb") as out_f:
                                     out_f.write(data)
 
+                                c_hashes[data_sha] = local_fpath
                                 manifest[url_clean] = {
                                     "timemodified": timemodified,
                                     "filesize": filesize,
                                     "local_path": local_fpath,
-                                    "sha256": hashlib.sha256(data).hexdigest(),
+                                    "sha256": data_sha,
                                     "last_seen": datetime.now().isoformat()
                                 }
                                 archivos_descargados.append(local_fpath)
@@ -516,20 +573,37 @@ def run_sync():
                                 "sha256": sha,
                                 "last_seen": datetime.now().isoformat()
                             }
+                            c_hashes[sha] = local_fpath
                             continue # 0 nuevos archivos
 
-                        # Archivo nuevo
+                        # Archivo nuevo: descargar y verificar existencia previa por SHA-256 en el curso
                         try:
                             data = client.download_file(fileurl, local_fpath)
+                            data_sha = hashlib.sha256(data).hexdigest()
+
+                            # Detección por contenido contra lo existente en el curso
+                            if data_sha in c_hashes:
+                                existing_disk_p = c_hashes[data_sha]
+                                manifest[url_clean] = {
+                                    "timemodified": timemodified,
+                                    "filesize": filesize,
+                                    "local_path": existing_disk_p,
+                                    "sha256": data_sha,
+                                    "last_seen": datetime.now().isoformat()
+                                }
+                                log(f"  [DUPLICADO OMITIDO] {cshort} -> {fname} ya existe en {os.path.relpath(existing_disk_p, cdir)}. No se descarga ni copia.")
+                                continue
+
                             os.makedirs(target_dir, exist_ok=True)
                             with open(local_fpath, "wb") as out_f:
                                 out_f.write(data)
 
+                            c_hashes[data_sha] = local_fpath
                             manifest[url_clean] = {
                                 "timemodified": timemodified,
                                 "filesize": filesize,
                                 "local_path": local_fpath,
-                                "sha256": hashlib.sha256(data).hexdigest(),
+                                "sha256": data_sha,
                                 "last_seen": datetime.now().isoformat()
                             }
                             archivos_descargados.append(local_fpath)
@@ -538,6 +612,23 @@ def run_sync():
                             err_msg = f"Error descargando {fname}: {dl_err}"
                             log(f"  [ERROR] {err_msg}", token_to_mask=token)
                             errores.append(err_msg)
+
+    # Guardia estricto de límite masivo (>20 archivos)
+    # Si hay más de 20 archivos nuevos y no se pasa --permitir-masivo:
+    # 1. No se guarda el manifest
+    # 2. No se suben a Drive ni a Git
+    # 3. Se limpian los archivos recién escritos para dejar el repo y disco limpios
+    # 4. El script sale con código 1 y mensaje 'revisión requerida'
+    if len(archivos_descargados) > 20 and "--permitir-masivo" not in sys.argv:
+        msg_masivo = f"ALERTA: Se detectaron {len(archivos_descargados)} archivos nuevos (>20). Límite de seguridad activado: revisión requerida. No se guardará manifest ni se subirá a Drive/Git."
+        log(f"  [ALERTA DE SEGURIDAD] {msg_masivo}")
+        for nf in archivos_descargados:
+            try:
+                if os.path.exists(nf):
+                    os.remove(nf)
+            except Exception:
+                pass
+        return 1
 
     guardar_manifest(manifest)
     log("-------------------------------------------------------")
@@ -560,58 +651,61 @@ def run_sync():
         errores.append(err_e)
 
     # 5. Subida INCREMENTAL a Google Drive (SÓLO si hubo archivos nuevos)
-    if len(archivos_descargados) > 20:
-        err_lim = f"ALERTA: Se detectaron {len(archivos_descargados)} archivos nuevos (>20). Deteniendo corrida antes de Drive para verificar manifest."
+    if len(archivos_descargados) > 20 and "--permitir-masivo" not in sys.argv:
+        err_lim = f"ALERTA: Se detectaron {len(archivos_descargados)} archivos nuevos (>20). Deteniendo corrida antes de Drive."
         log(f"  [ALERTA DE SEGURIDAD] {err_lim}")
         errores.append(err_lim)
     elif len(archivos_descargados) > 0:
-        try:
-            fecha_str = datetime.now().strftime('%Y%m%d')
-            os.makedirs(DELTA_DIR, exist_ok=True)
-            zip_delta = os.path.join(DELTA_DIR, f"Universidad_Nuevos_{fecha_str}.zip")
-            
-            with zipfile.ZipFile(zip_delta, 'w', zipfile.ZIP_DEFLATED) as zf_new:
-                for nf in archivos_descargados:
-                    rel = os.path.relpath(nf, ROOT_DIR)
-                    zf_new.write(nf, rel)
-                    
-            sz_mb = os.path.getsize(zip_delta) / (1024 * 1024)
-            log(f"Paquete Delta generado ({sz_mb:.2f} MB con {len(archivos_descargados)} archivos).")
-            
-            rclone_bin = shutil.which("rclone")
-            if rclone_bin:
-                log("Subiendo paquete delta vía rclone a Google Drive...")
-                rc_p = subprocess.run(["rclone", "copy", zip_delta, "gdrive:Universidad/Deltas/"], capture_output=True, text=True)
-                if rc_p.returncode == 0:
-                    zip_base = os.path.basename(zip_delta)
-                    zip_bytes = os.path.getsize(zip_delta)
-                    chk = subprocess.run(["rclone", "lsjson", f"gdrive:Universidad/Deltas/{zip_base}"], capture_output=True, text=True)
-                    verificado = False
-                    if chk.returncode == 0:
-                        try:
-                            items = json.loads(chk.stdout.strip())
-                            if len(items) > 0 and items[0].get("Name") == zip_base and items[0].get("Size") == zip_bytes:
-                                verificado = True
-                        except Exception:
-                            pass
-                    if verificado:
-                        log(f"¡Paquete delta subido y verificado exitosamente con rclone lsjson ({zip_base}, {zip_bytes} bytes)!")
+        if os.environ.get("SYNC_DISABLE_DRIVE") or os.environ.get("SYNC_TEST_MODE") == "1":
+            log("Subida a Google Drive omitida (modo de prueba o SYNC_DISABLE_DRIVE activo).")
+        else:
+            try:
+                fecha_str = datetime.now().strftime('%Y%m%d')
+                os.makedirs(DELTA_DIR, exist_ok=True)
+                zip_delta = os.path.join(DELTA_DIR, f"Universidad_Nuevos_{fecha_str}.zip")
+                
+                with zipfile.ZipFile(zip_delta, 'w', zipfile.ZIP_DEFLATED) as zf_new:
+                    for nf in archivos_descargados:
+                        rel = os.path.relpath(nf, ROOT_DIR)
+                        zf_new.write(nf, rel)
+                        
+                sz_mb = os.path.getsize(zip_delta) / (1024 * 1024)
+                log(f"Paquete Delta generado ({sz_mb:.2f} MB con {len(archivos_descargados)} archivos).")
+                
+                rclone_bin = shutil.which("rclone")
+                if rclone_bin:
+                    log("Subiendo paquete delta vía rclone a Google Drive...")
+                    rc_p = subprocess.run(["rclone", "copy", zip_delta, "gdrive:Universidad/Deltas/"], capture_output=True, text=True)
+                    if rc_p.returncode == 0:
+                        zip_base = os.path.basename(zip_delta)
+                        zip_bytes = os.path.getsize(zip_delta)
+                        chk = subprocess.run(["rclone", "lsjson", f"gdrive:Universidad/Deltas/{zip_base}"], capture_output=True, text=True)
+                        verificado = False
+                        if chk.returncode == 0:
+                            try:
+                                items = json.loads(chk.stdout.strip())
+                                if len(items) > 0 and items[0].get("Name") == zip_base and items[0].get("Size") == zip_bytes:
+                                    verificado = True
+                            except Exception:
+                                pass
+                        if verificado:
+                            log(f"¡Paquete delta subido y verificado exitosamente con rclone lsjson ({zip_base}, {zip_bytes} bytes)!")
+                        else:
+                            err_rc = f"Fallo al verificar con rclone lsjson: salida '{chk.stdout.strip()}'"
+                            log(f"  [ERROR] {err_rc}")
+                            errores.append(err_rc)
                     else:
-                        err_rc = f"Fallo al verificar con rclone lsjson: salida '{chk.stdout.strip()}'"
+                        err_rc = f"Fallo rclone copy ({rc_p.returncode}): {rc_p.stderr.strip()}"
                         log(f"  [ERROR] {err_rc}")
                         errores.append(err_rc)
                 else:
-                    err_rc = f"Fallo rclone copy ({rc_p.returncode}): {rc_p.stderr.strip()}"
+                    err_rc = "rclone no está disponible para subida a Google Drive."
                     log(f"  [ERROR] {err_rc}")
                     errores.append(err_rc)
-            else:
-                err_rc = "rclone no está disponible para subida a Google Drive."
-                log(f"  [ERROR] {err_rc}")
-                errores.append(err_rc)
-        except Exception as ze:
-            err_z = f"Excepción al generar o subir paquete delta ZIP: {ze}"
-            log(f"  [ERROR] {err_z}")
-            errores.append(err_z)
+            except Exception as ze:
+                err_z = f"Excepción al generar o subir paquete delta ZIP: {ze}"
+                log(f"  [ERROR] {err_z}")
+                errores.append(err_z)
     else:
         log("INCREMENTAL: Sin archivos nuevos en Aula USM esta semana. No se genera ZIP ni subida a Drive.")
 
