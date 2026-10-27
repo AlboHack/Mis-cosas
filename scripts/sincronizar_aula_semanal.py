@@ -17,7 +17,6 @@ import shutil
 import fcntl
 import sys
 import unicodedata
-import zipfile
 from datetime import datetime, timezone, timedelta
 
 # Asegurar rutas de búsqueda para módulos locales
@@ -149,6 +148,46 @@ def construir_comando_respaldo_arbol(rclone_bin, origen, destino, dry_run=False)
     if cmd[1] in RCLONE_SUBCOMANDOS_DESTRUCTIVOS or any(a.startswith("--delete") for a in cmd):
         raise AssertionError(f"Comando rclone destructivo no permitido: {cmd[1]}")
     return cmd
+
+
+DRIVE_DESTINO = "gdrive:Universidad/2026-2"
+
+
+def respaldar_en_drive(rclone_bin, archivos_nuevos, dry_run=False, run=subprocess.run):
+    """Copia el árbol local a Drive con la misma estructura (ramo/subcarpeta/archivo) y verifica.
+
+    - Corre en todas las corridas (no solo con archivos nuevos): si una semana falló la subida,
+      la siguiente la completa. `copy --update` solo transfiere lo que falta o cambió.
+    - Cada archivo nuevo se verifica en su ruta final de Drive con `rclone lsjson` (nombre y tamaño).
+    - Sin paquetes ZIP ni carpeta Deltas.
+    Devuelve la lista de errores (vacía si todo quedó en su lugar).
+    """
+    errores = []
+    cmd = construir_comando_respaldo_arbol(rclone_bin, ROOT_DIR, DRIVE_DESTINO + "/", dry_run)
+    log(f"Respaldando árbol de asignaturas en Google Drive ({DRIVE_DESTINO}/<ramo>/<subcarpeta>)...")
+    r = run(cmd, capture_output=True, text=True)
+    if r.returncode != 0:
+        return [f"Fallo rclone copy árbol ({r.returncode}): {(r.stderr or '').strip()}"]
+    if dry_run:
+        return errores
+    for local in archivos_nuevos:
+        rel = os.path.relpath(local, ROOT_DIR).replace(os.sep, "/")
+        destino = f"{DRIVE_DESTINO}/{rel}"
+        chk = run([rclone_bin, "lsjson", destino], capture_output=True, text=True)
+        ok = False
+        if chk.returncode == 0:
+            try:
+                items = json.loads((chk.stdout or "").strip() or "[]")
+                ok = len(items) == 1 and items[0].get("Size") == os.path.getsize(local)
+            except ValueError:
+                ok = False
+        if ok:
+            log(f"  [DRIVE] {rel}")
+        else:
+            errores.append(f"No verificado en Drive: {rel}")
+    if archivos_nuevos and not errores:
+        log(f"¡{len(archivos_nuevos)} archivo(s) nuevo(s) verificados en su carpeta de Drive!")
+    return errores
 
 
 def actualizar_manifest_sha256(root_dir):
@@ -790,78 +829,23 @@ def run_sync():
         log(f"  [ERROR] {err_e}", token_to_mask=token)
         errores.append(err_e)
 
-    # 5. Subida INCREMENTAL a Google Drive (SÓLO si hubo archivos nuevos)
-    if len(archivos_descargados) > 0:
-        if os.environ.get("SYNC_DISABLE_DRIVE") or os.environ.get("SYNC_TEST_MODE") == "1":
-            log("Subida a Google Drive omitida (modo de prueba o SYNC_DISABLE_DRIVE activo).")
+    # 5. Respaldo en Google Drive: cada archivo en su ramo y subcarpeta (mismo árbol que la tablet)
+    if os.environ.get("SYNC_DISABLE_DRIVE") or os.environ.get("SYNC_TEST_MODE") == "1":
+        log("Subida a Google Drive omitida (modo de prueba o SYNC_DISABLE_DRIVE activo).")
+    else:
+        rclone_bin = shutil.which("rclone")
+        if not rclone_bin:
+            errores.append("rclone no está disponible para el respaldo en Google Drive.")
+            log(f"  [ERROR] {errores[-1]}")
         else:
             try:
-                fecha_str = datetime.now().strftime('%Y%m%d')
-                os.makedirs(DELTA_DIR, exist_ok=True)
-                zip_delta = os.path.join(DELTA_DIR, f"Universidad_Nuevos_{fecha_str}.zip")
-                
-                with zipfile.ZipFile(zip_delta, 'w', zipfile.ZIP_DEFLATED) as zf_new:
-                    for nf in archivos_descargados:
-                        rel = os.path.relpath(nf, ROOT_DIR)
-                        zf_new.write(nf, rel)
-                        
-                sz_mb = os.path.getsize(zip_delta) / (1024 * 1024)
-                log(f"Paquete Delta generado ({sz_mb:.2f} MB con {len(archivos_descargados)} archivos).")
-                
-                rclone_bin = shutil.which("rclone")
-                if rclone_bin:
-                    # 5.1 Generar/actualizar manifiesto de integridad SHA-256
-                    actualizar_manifest_sha256(ROOT_DIR)
-
-                    # 5.2 Respaldo del árbol completo de asignaturas en Google Drive (solo agrega/actualiza, nunca borra)
-                    log("Respaldando árbol de asignaturas vía rclone copy en Google Drive (gdrive:Universidad/2026-2/)...")
-                    rclone_sync_cmd = construir_comando_respaldo_arbol(
-                        rclone_bin, ROOT_DIR, "gdrive:Universidad/2026-2/", "--dry-run" in sys.argv
-                    )
-
-                    rc_sync = subprocess.run(rclone_sync_cmd, capture_output=True, text=True)
-                    if rc_sync.returncode == 0:
-                        log("¡Árbol de asignaturas respaldado exitosamente en Google Drive!")
-                    else:
-                        err_sync = f"Fallo rclone copy árbol ({rc_sync.returncode}): {rc_sync.stderr.strip()}"
-                        log(f"  [ERROR] {err_sync}")
-                        errores.append(err_sync)
-
-                    # 5.3 Respaldo adicional en paquete delta ZIP
-                    log("Subiendo paquete delta vía rclone a Google Drive...")
-                    rc_p = subprocess.run([rclone_bin, "copy", zip_delta, "gdrive:Universidad/Deltas/"], capture_output=True, text=True)
-                    if rc_p.returncode == 0:
-                        zip_base = os.path.basename(zip_delta)
-                        zip_bytes = os.path.getsize(zip_delta)
-                        chk = subprocess.run([rclone_bin, "lsjson", f"gdrive:Universidad/Deltas/{zip_base}"], capture_output=True, text=True)
-                        verificado = False
-                        if chk.returncode == 0:
-                            try:
-                                items = json.loads(chk.stdout.strip())
-                                if len(items) > 0 and items[0].get("Name") == zip_base and items[0].get("Size") == zip_bytes:
-                                    verificado = True
-                            except Exception:
-                                pass
-                        if verificado:
-                            log(f"¡Paquete delta subido y verificado exitosamente con rclone lsjson ({zip_base}, {zip_bytes} bytes)!")
-                        else:
-                            err_rc = f"Fallo al verificar con rclone lsjson: salida '{chk.stdout.strip()}'"
-                            log(f"  [ERROR] {err_rc}")
-                            errores.append(err_rc)
-                    else:
-                        err_rc = f"Fallo rclone copy ({rc_p.returncode}): {rc_p.stderr.strip()}"
-                        log(f"  [ERROR] {err_rc}")
-                        errores.append(err_rc)
-                else:
-                    err_rc = "rclone no está disponible para subida a Google Drive."
-                    log(f"  [ERROR] {err_rc}")
-                    errores.append(err_rc)
+                actualizar_manifest_sha256(ROOT_DIR)
+                for e in respaldar_en_drive(rclone_bin, archivos_descargados, "--dry-run" in sys.argv):
+                    log(f"  [ERROR] {e}")
+                    errores.append(e)
             except Exception as ze:
-                err_z = f"Excepción al generar o subir paquete delta ZIP: {ze}"
-                log(f"  [ERROR] {err_z}")
-                errores.append(err_z)
-    else:
-        log("INCREMENTAL: Sin archivos nuevos en Aula USM esta semana. No se genera ZIP ni subida a Drive.")
+                errores.append(f"Excepción en el respaldo de Google Drive: {ze}")
+                log(f"  [ERROR] {errores[-1]}")
 
     # 6. Sincronización de calendario nativo (antes de git, para que el estado lo incluya)
     try:

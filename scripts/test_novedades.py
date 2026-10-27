@@ -229,6 +229,46 @@ def t27_cache_hashes(tmp):
     ])
 
 
+def t29_drive_por_ramo(tmp):
+    print("--- T29: Drive con la misma estructura ramo/subcarpeta, sin Deltas ---")
+    import json as _json
+    import types
+    import sincronizar_aula_semanal as s
+    s.ROOT_DIR = os.path.join(tmp, "2026-2")
+    nuevo = os.path.join(s.ROOT_DIR, "CIV222_FICA_", "Material_y_Apuntes", "Unidad 3", "Ejercicio Costos.pdf")
+    os.makedirs(os.path.dirname(nuevo))
+    with open(nuevo, "wb") as f:
+        f.write(b"%PDF-1.4 costos")
+    cmds = []
+
+    def fake(talla, copia_ok=True):
+        def run(cmd, **k):
+            cmds.append(cmd)
+            if cmd[1] == "copy":
+                return types.SimpleNamespace(returncode=0 if copia_ok else 1, stdout="", stderr="falla red")
+            nombre = cmd[2].rsplit("/", 1)[-1]
+            return types.SimpleNamespace(returncode=0, stdout=_json.dumps([{"Name": nombre, "Size": talla}]), stderr="")
+        return run
+
+    e_ok = s.respaldar_en_drive("rclone", [nuevo], run=fake(os.path.getsize(nuevo)))
+    destino_ok = any(c[1] == "lsjson" and c[2] == "gdrive:Universidad/2026-2/CIV222_FICA_/Material_y_Apuntes/Unidad 3/Ejercicio Costos.pdf" for c in cmds)
+    copia_arbol = any(c[1] == "copy" and c[2] == s.ROOT_DIR and c[3] == "gdrive:Universidad/2026-2/" for c in cmds)
+    sin_deltas = not any("Deltas" in " ".join(c) or ".zip" in " ".join(c) for c in cmds)
+    e_talla = s.respaldar_en_drive("rclone", [nuevo], run=fake(1))
+    e_copia = s.respaldar_en_drive("rclone", [nuevo], run=fake(0, copia_ok=False))
+    cmds.clear()
+    e_vacio = s.respaldar_en_drive("rclone", [], run=fake(0))
+    corre_sin_nuevos = len(cmds) == 1 and cmds[0][1] == "copy"
+    return resultado("T29", [
+        ("copia el árbol completo a gdrive:Universidad/2026-2/", copia_arbol),
+        ("verifica el archivo en su ramo y subcarpeta", destino_ok and e_ok == []),
+        ("ningún ZIP ni carpeta Deltas", sin_deltas),
+        ("tamaño distinto en Drive = error", len(e_talla) == 1),
+        ("fallo de rclone copy = error", len(e_copia) == 1 and "rclone copy" in e_copia[0]),
+        ("corre también sin archivos nuevos (completa subidas fallidas)", corre_sin_nuevos and e_vacio == []),
+    ])
+
+
 def main():
     if os.environ.get("SYNC_TEST_MODE") != "1":
         os.environ["SYNC_TEST_MODE"] = "1"
@@ -239,7 +279,7 @@ def main():
     try:
         oks = [t21_foros(os.path.join(tmp, "a")), t22_pagina(os.path.join(tmp, "b")),
                t23_mensajes(os.path.join(tmp, "c")), t24_lista_blanca(), t25_detector(),
-               t27_cache_hashes(os.path.join(tmp, "e"))]
+               t27_cache_hashes(os.path.join(tmp, "e")), t29_drive_por_ramo(os.path.join(tmp, "f"))]
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     print(f"RESUMEN NOVEDADES: {'TODAS PASARON' if all(oks) else 'FALLÓ ALGUNA'}")
