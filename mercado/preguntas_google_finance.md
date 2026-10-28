@@ -35,3 +35,7 @@ Fechas y hora (Chile) de los próximos eventos hasta el 15 de diciembre, con la 
 - IPC (CPI) y PCE de EE.UU.
 - Feriados y medias jornadas de la bolsa de EE.UU. (Acción de Gracias)
 - Resultados trimestrales de las 5 mayores empresas del S&P 500, si caen en el período
+
+## 5. Preguntas a la IA de Google Finance
+Además de las secciones anteriores, responder `mercado/preguntas_ia_google_finance.md` (30 preguntas) en
+`mercado/google_finance/AAAA-MM-DD_ia.md`.
