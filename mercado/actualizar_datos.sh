@@ -21,7 +21,7 @@ fi
 cd "$WT" || exit 1
 git pull -q --rebase origin "$RAMA" 2>/dev/null || true
 # trae siempre la versión vigente de los scripts de mercado desde main (si ya están ahí)
-git checkout -q origin/main -- mercado/descargar.sh mercado/tickers.txt 2>/dev/null || true
+git checkout -q origin/main -- mercado/descargar.sh mercado/descargar.py mercado/tickers.txt 2>/dev/null || true
 
 salida=$(sh mercado/descargar.sh 2>&1)
 echo "[$(ts)] $(echo "$salida" | grep -c '^OK') OK, $(echo "$salida" | grep -c '^ERROR') ERROR" >> "$LOG"
