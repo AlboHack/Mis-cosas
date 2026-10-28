@@ -1,0 +1,14 @@
+# ticker  descripción (una línea por ETF; el script de descarga usa la primera columna)
+VOO   S&P 500 (Vanguard) - posición de referencia
+VTI   Mercado total EE.UU.
+QQQ   Nasdaq-100 (tecnología grande)
+VUG   Crecimiento EE.UU.
+SCHD  Dividendos EE.UU. (calidad)
+IWM   Russell 2000 (empresas pequeñas)
+SMH   Semiconductores
+XLE   Energía
+VXUS  Mundo ex EE.UU.
+VWO   Emergentes
+ECH   Chile (MSCI Chile)
+GLD   Oro
+BND   Bonos agregados EE.UU.
