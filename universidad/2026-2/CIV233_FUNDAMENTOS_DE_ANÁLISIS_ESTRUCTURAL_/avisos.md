@@ -1,5 +1,91 @@
 # Avisos y Novedades - FAE
 
+## FAE - Ayudantía
+- **Fecha:** 2026-10-29 17:53
+- **Autor:** GABRIEL ALEJANDRO FLORES FUENTES
+- **Foro:** Noticias y avisos
+- **ID:** d501765
+
+Buenas tardes, estimad@s compañer@s:
+
+Esperando que estén bien, les recuerdo que mañana 30/10 tenemos ayudantía. Los espero!
+
+Saludos!
+
+Gabriel FF
+
+---
+
+## Guía de Ejercicios Unidad 4
+- **Fecha:** 2026-10-29 12:46
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d501675
+
+Estimados/as:
+
+Les informo que la guía de ejercicios correspondiente a los contenidos de la Unidad 4, que serán evaluados en el Certamen 3, ya se encuentra disponible en la plataforma AULA.
+
+Les recomiendo utilizar este material como complemento para el estudio y la preparación del certamen.
+
+Saludos cordiales,
+
+---
+
+## Recorreción C1
+- **Fecha:** 2026-10-29 12:44
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d501674
+
+Estimados/as,
+
+Para solicitar una recorrección del Certamen 1, deberán seguir las siguientes instrucciones:
+
+Revisar la pauta de corrección, disponible en la carpeta “Pautas Certámenes” de la página principal del curso.
+
+Escanear su certamen y, utilizando un editor de texto o PDF, incorporar sus observaciones al costado de cada desarrollo que deseen someter a recorrección. En cada caso, deberán explicar de manera clara y fundamentada por qué consideran que el puntaje asignado no corresponde al desarrollo presentado.
+
+Enviar la solicitud por correo electrónico, adjuntando el documento en PDF con las observaciones, a más tardar el miércoles 4 de noviembre. El asunto del correo debe tener el siguiente formato: “Recorrección C1 - Nombre Apellido”.
+
+Es importante que las solicitudes sean específicas y estén fundamentadas en el desarrollo realizado y en los criterios establecidos en la pauta. Eviten juicios de valor o comentarios generales que no justifiquen objetivamente la solicitud. Por ejemplo, indicar que “sabía todo, pero me equivoqué en un signo” no constituye una justificación suficiente; en su lugar, deben señalar el desarrollo realizado, identificar el criterio de corrección que consideran que no se aplicó correctamente y explicar por qué correspondería asignar un puntaje diferente.
+
+Las solicitudes que no cumplan con estas instrucciones o que no se envíen dentro del plazo establecido podrían no ser consideradas.
+
+Saludos cordiales,
+
+---
+
+## Recordatorio Certamen 2
+- **Fecha:** 2026-10-27 10:50
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d501039
+
+Estimados/as:
+
+Les recuerdo que el Certamen N°2 del curso se realizará hoy martes 27 de octubre, durante los Bloques 13-16 (17:30-20:00) en la Sala B-103.
+
+Los contenidos evaluados corresponden a todos los asociados a la Unidad 3 (Método de Carga Unitaria Aplicado a Estructuras Isostáticas)
+
+Para su correcto desarrollo, considere las siguientes instrucciones:
+
+El certamen tendrá una duración máxima de 2 horas con 30 minutos. Llegue al menos 10 minutos antes del inicio del certamen.
+
+Se permite solo el uso de calculadora científica, un formulario personal (máximo 1 plana, debidamente identificado con su nombre, solo fórmulas sin ejemplos ni ejercicios resueltos y se deberá entregar junto con el certamen). Se le hará entrega junto con el enunciado, las tablas de integración.
+
+No se permite el uso de apuntes, libros, teléfonos celulares u otros dispositivos electrónicos. Los celulares deberán permanecer apagados y guardados dentro de su mochila.
+
+Cada estudiante deberá traer hojas blancas o cuadriculadas tamaño carta o A4 para desarrollar el certamen. Todas las hojas entregadas deben estar numeradas e incluir el nombre del estudiante en la esquina superior derecha. No se aceptarán hojas sin identificación.
+
+El desarrollo puede realizarse con lápiz mina, pero las respuestas finales deben escribirse con lápiz pasta.
+
+Durante el certamen no se permite comunicación entre estudiantes. Solo se responderán dudas relacionadas con la interpretación del enunciado.
+
+Mucho éxito en el certamen.
+
+---
+
 ## FAE - Ayudantía Pre-Certamen2
 - **Fecha:** 2026-10-22 17:39
 - **Autor:** GABRIEL ALEJANDRO FLORES FUENTES

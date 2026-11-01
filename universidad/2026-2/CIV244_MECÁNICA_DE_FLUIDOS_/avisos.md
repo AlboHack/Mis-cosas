@@ -1,5 +1,30 @@
 # Avisos y Novedades - Fluidos
 
+## Notas C2
+- **Fecha:** 2026-10-30 20:55
+- **Autor:** FRANCISCO JOSE SOTO SIMPSON
+- **Foro:** Noticias y avisos
+- **ID:** d502074
+
+En el adjunto.
+
+Saludos,
+FSS
+
+---
+
+## Entrega apuntes C2
+- **Fecha:** 2026-10-29 22:07
+- **Autor:** FRANCISCO JOSE SOTO SIMPSON
+- **Foro:** Noticias y avisos
+- **ID:** d501809
+
+Está habilitado el link para la entrega.
+
+Fecha límite: lunes 02/11 23:59
+
+---
+
 ## Actividades semana 26oct
 - **Fecha:** 2026-10-26 10:43
 - **Autor:** FRANCISCO JOSE SOTO SIMPSON

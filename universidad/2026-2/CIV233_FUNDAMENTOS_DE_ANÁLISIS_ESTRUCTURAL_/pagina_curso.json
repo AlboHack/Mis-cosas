@@ -86,7 +86,8 @@
     "Ayudantía_02.pdf",
     "Ayudantía_03.pdf",
     "Ayudantía_04.pdf",
-    "Ayudantía_05.pdf"
+    "Ayudantía_05.pdf",
+    "Ayudantía_06.pdf"
    ],
    "descripcion": "",
    "fechas": {},
@@ -97,6 +98,7 @@
   },
   "8278954": {
    "archivos": [
+    "Guia_04.pdf",
     "Guía_01.pdf",
     "Guía_02.pdf",
     "Guía_03.pdf"
@@ -152,6 +154,17 @@
    "nombre": "Notas 15-10",
    "seccion": "Información General",
    "tipo": "resource",
+   "visible": 1
+  },
+  "8359777": {
+   "archivos": [
+    "Pauta_C01_2026-2.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Pautas Certámenes",
+   "seccion": "Información General",
+   "tipo": "folder",
    "visible": 1
   }
  },

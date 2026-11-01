@@ -40,6 +40,16 @@
     "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
   },
   {
+    "uid": "1134898",
+    "ramo": "Fluidos",
+    "codigo": "CIV244",
+    "evaluacion": "Vencimiento de Entrega apuntes C2",
+    "inicio": "2026-11-02T23:59:00-03:00",
+    "fin": "2026-11-02T23:59:00-03:00",
+    "lugar": "Aula USM",
+    "fuente": "api:core_calendar_get_calendar_events"
+  },
+  {
     "uid": "manual-FICA-Certamen 2",
     "ramo": "FICA",
     "codigo": "CIV222",

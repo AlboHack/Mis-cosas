@@ -94,7 +94,9 @@
     "CIV244_Clase_12_handout.pdf",
     "CIV244_Clase_13_handout.pdf",
     "CIV244_Clase_14_handout.pdf",
-    "CIV244_Clase_15.pdf"
+    "CIV244_Clase_15.pdf",
+    "CIV244_Clase_16_handout.pdf",
+    "CIV244_Clase_17_handout.pdf"
    ],
    "descripcion": "",
    "fechas": {},
@@ -303,6 +305,18 @@
    "nombre": "Ayudantía 8",
    "seccion": "Ayudantías ",
    "tipo": "folder",
+   "visible": 1
+  },
+  "8360331": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {
+    "Apertura:": 1793242800,
+    "Cierre:": 1793674740
+   },
+   "nombre": "Entrega apuntes C2",
+   "seccion": "Información General",
+   "tipo": "assign",
    "visible": 1
   }
  },
