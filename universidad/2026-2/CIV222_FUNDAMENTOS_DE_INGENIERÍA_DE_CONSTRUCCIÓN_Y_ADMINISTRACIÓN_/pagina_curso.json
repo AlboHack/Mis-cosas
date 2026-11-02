@@ -695,6 +695,18 @@
    "seccion": "Información General",
    "tipo": "assign",
    "visible": 1
+  },
+  "8361957": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {
+    "Apertura:": 1793588400,
+    "Cierre:": 1794279540
+   },
+   "nombre": "CIV222 2026-20 Entrega Tarea 2 (Gestión de Costos)",
+   "seccion": "Información General",
+   "tipo": "assign",
+   "visible": 1
   }
  },
  "secciones": {

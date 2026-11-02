@@ -60,6 +60,16 @@
     "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
   },
   {
+    "uid": "1136179",
+    "ramo": "FICA",
+    "codigo": "CIV222",
+    "evaluacion": "Vencimiento de CIV222 2026-20 Entrega Tarea 2 (Gestión de Costos)",
+    "inicio": "2026-11-09T23:59:00-03:00",
+    "fin": "2026-11-09T23:59:00-03:00",
+    "lugar": "Aula USM",
+    "fuente": "api:core_calendar_get_calendar_events"
+  },
+  {
     "uid": "manual-FAE-Certamen 3",
     "ramo": "FAE",
     "codigo": "CIV233",
