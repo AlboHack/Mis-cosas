@@ -423,27 +423,32 @@ def guardar_manifest(manifest):
 
 def determine_subfolder(cshort, section_name, mod=None, filename=None):
     clean_sec = sanitizar(section_name).strip()
-    s_lower = clean_sec.lower()
-    mod_name = (mod.get("name") or "").lower() if mod else ""
-    mod_type = (mod.get("modname") or "").lower() if mod else ""
-    f_name = (filename or "").lower()
+    def _norm(t):
+        if not t:
+            return ""
+        return unicodedata.normalize('NFKD', str(t)).encode('ascii', 'ignore').decode('ascii').lower()
 
-    eval_kw = ["tarea", "control", "certam", "entrega", "evaluaci", "pauta", "rúbrica", "rubrica", "notas", "caso práctico", "caso practico"]
-    if mod_type == "assign" or any(k in mod_name for k in eval_kw) or any(k in f_name for k in eval_kw) or any(k in s_lower for k in eval_kw):
-        if any(k in s_lower for k in ["certam", "control", "tarea"]):
+    s_norm = _norm(clean_sec)
+    mod_name = _norm(mod.get("name") if mod else "")
+    mod_type = _norm(mod.get("modname") if mod else "")
+    f_name = _norm(filename or "")
+
+    eval_kw = ["tarea", "control", "certam", "entrega", "evaluaci", "pauta", "rubrica", "notas", "caso practico", "_c1", "_c2", "_c3", "-c1", "-c2", "-c3"]
+    if mod_type == "assign" or any(k in mod_name for k in eval_kw) or any(k in f_name for k in eval_kw) or any(k in s_norm for k in eval_kw):
+        if any(k in s_norm for k in ["certam", "control", "tarea"]):
             return os.path.join("Evaluaciones_y_Entregas", clean_sec)
         return "Evaluaciones_y_Entregas"
 
-    mat_kw = ["ayudant", "guía", "guia", "handout", "clase", "ppt", "apunte", "bibliograf", "lectura", "libro", "rendimiento", "ejercicio"]
-    if any(k in mod_name for k in mat_kw) or any(k in f_name for k in mat_kw) or any(k in s_lower for k in mat_kw):
-        if any(k in s_lower for k in ["ayudant", "guía", "guia", "clase", "material", "apunte", "unidad"]):
+    mat_kw = ["ayudant", "guia", "handout", "clase", "ppt", "apunte", "bibliograf", "lectura", "libro", "rendimiento", "ejercicio"]
+    if any(k in mod_name for k in mat_kw) or any(k in f_name for k in mat_kw) or any(k in s_norm for k in mat_kw):
+        if any(k in s_norm for k in ["ayudant", "guia", "clase", "material", "apunte", "unidad"]):
             return os.path.join("Material_y_Apuntes", clean_sec)
         return "Material_y_Apuntes"
 
-    if any(k in s_lower for k in ["planificaci", "programa", "calendario"]) or any(k in mod_name for k in ["programa", "planificaci", "calendario"]):
+    if any(k in s_norm for k in ["planificaci", "programa", "calendario"]) or any(k in mod_name for k in ["programa", "planificaci", "calendario"]):
         return os.path.join("Planificacion", clean_sec)
 
-    if any(k in s_lower for k in ["general", "información general", "informacion general"]):
+    if any(k in s_norm for k in ["general", "informacion general"]):
         return os.path.join("Planificacion", clean_sec)
 
     return os.path.join("Material_y_Apuntes", clean_sec)
@@ -932,6 +937,16 @@ def run_sync():
         err_c = f"Excepción en sincronización de calendario: {ce}"
         log(f"  [ERROR] {err_c}")
         errores.append(err_c)
+
+    # 6.5 Generación de contextos de asignaturas para Claude
+    try:
+        from generar_contexto_ramos import generar_contexto_para_ramo, generar_contexto_semestre, COURSES_META
+        for cm in COURSES_META:
+            generar_contexto_para_ramo(cm, client=client)
+        generar_contexto_semestre()
+        log("Contextos incrementales de asignaturas generados con éxito.")
+    except Exception as gce:
+        log(f"  [AVISO] No se pudieron generar contextos de asignaturas: {gce}")
 
     # 7. Latido de la corrida: deja constancia en el repo de que la sincronización corrió
     try:
