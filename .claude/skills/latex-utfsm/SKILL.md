@@ -1,6 +1,6 @@
 ---
 name: "latex-utfsm"
-description: "Usar al generar o corregir LaTeX con formato UTFSM: informes, tablas booktabs/siunitx, TikZ, pgfplots, memorias de cálculo con handcalcs, errores de compilación y paso de PDF, capturas o transcripciones de clases a LaTeX."
+description: "Usar al generar o corregir LaTeX con formato UTFSM: informes, tablas booktabs/siunitx, TikZ, pgfplots, memorias de cálculo con handcalcs, errores de compilación, paso de PDF o capturas a LaTeX, y revisión de compaginación del PDF final."
 ---
 
 # LaTeX estándar UTFSM (Depto. de Obras Civiles)
