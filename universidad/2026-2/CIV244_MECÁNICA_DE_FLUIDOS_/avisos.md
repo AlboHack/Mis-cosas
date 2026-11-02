@@ -1,5 +1,22 @@
 # Avisos y Novedades - Fluidos
 
+## Clase martes 03/11
+- **Fecha:** 2026-11-02 17:28
+- **Autor:** FRANCISCO JOSE SOTO SIMPSON
+- **Foro:** Noticias y avisos
+- **ID:** d502461
+
+Hola,
+
+Mañana no hay clases.
+
+La presentación de conservación del momentum lineal (que vimos el viernes) está arriba.
+
+Saludos,
+FSS
+
+---
+
 ## Notas C2
 - **Fecha:** 2026-10-30 20:55
 - **Autor:** FRANCISCO JOSE SOTO SIMPSON
