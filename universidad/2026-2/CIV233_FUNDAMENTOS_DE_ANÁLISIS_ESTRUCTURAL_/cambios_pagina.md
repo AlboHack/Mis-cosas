@@ -1,5 +1,10 @@
 # Cambios en la página del ramo
 
+## 2026-11-02
+
+- Archivos agregados en folder «Tareas» (Información General): Tarea_02.pdf
+- Nuevo: assign «Tarea N°2» (Información General) [Apertura:: 2026-11-01 00:00; Cierre:: 2026-11-16 23:59]
+
 ## 2026-11-01
 
 - Archivos agregados en folder «Ayudantías» (Información General): Ayudantía_06.pdf

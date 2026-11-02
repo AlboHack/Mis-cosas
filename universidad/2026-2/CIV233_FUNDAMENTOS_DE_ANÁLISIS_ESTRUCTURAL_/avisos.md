@@ -1,5 +1,19 @@
 # Avisos y Novedades - FAE
 
+## Tarea N°2
+- **Fecha:** 2026-11-01 17:39
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d502169
+
+Estimados/as:
+
+Les comento que ya se encuentra en AULA el enunciado e instrucciones de la Tarea N°2 del curso, cuya fecha de entrega está proyectada para el próximo lunes 16 de noviembre.
+
+Saludos,
+
+---
+
 ## FAE - Ayudantía
 - **Fecha:** 2026-10-29 17:53
 - **Autor:** GABRIEL ALEJANDRO FLORES FUENTES

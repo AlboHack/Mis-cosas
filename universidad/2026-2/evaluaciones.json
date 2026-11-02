@@ -70,6 +70,16 @@
     "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
   },
   {
+    "uid": "1135795",
+    "ramo": "FAE",
+    "codigo": "CIV233",
+    "evaluacion": "Vencimiento de Tarea N°2",
+    "inicio": "2026-11-16T23:59:00-03:00",
+    "fin": "2026-11-16T23:59:00-03:00",
+    "lugar": "Aula USM",
+    "fuente": "api:core_calendar_get_calendar_events"
+  },
+  {
     "uid": "manual-Transporte-Certamen 3",
     "ramo": "Transporte",
     "codigo": "CIV386",
