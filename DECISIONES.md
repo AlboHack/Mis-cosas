@@ -27,3 +27,4 @@
 ## 2026-11-02 — Enunciados de entregas (mod_assign)
 - Motivo: la Tarea 2 de FICA (CIV222, vence 2026-11-09 23:59 -03:00) es una entrega cuyo enunciado va como `introattachments`; `core_course_get_contents` no lo lista y no se descargaba.
 - Cambio: `mod_assign_get_assignments` (solo lectura) a la lista blanca; `agregar_enunciados_de_entregas` los suma al módulo como archivos y el flujo normal los descarga. Falla de la llamada = aviso, no aborta. Prueba T29 (`test_enunciados.py`).
+- Corrección de pruebas: `scripts/test_t2_real.py` utilizaba mocks HTML de web scraping obsoletos (anteriores a la migración REST API de Moodle), provocando `JSONDecodeError` al invocar `sincronizar_aula_semanal.py`. Se actualizó para simular respuestas JSON de Moodle WebService REST (`core_webservice_get_site_info`, `core_course_get_contents`, etc.), logrando 100% PASS en `test_aceptacion.py`.
