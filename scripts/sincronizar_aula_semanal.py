@@ -421,15 +421,32 @@ def guardar_manifest(manifest):
     with open(MANIFEST_FILE, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
-def determine_subfolder(cshort, section_name):
+def determine_subfolder(cshort, section_name, mod=None, filename=None):
     clean_sec = sanitizar(section_name).strip()
     s_lower = clean_sec.lower()
-    if any(k in s_lower for k in ["planificaci", "programa", "calendario", "general"]):
+    mod_name = (mod.get("name") or "").lower() if mod else ""
+    mod_type = (mod.get("modname") or "").lower() if mod else ""
+    f_name = (filename or "").lower()
+
+    eval_kw = ["tarea", "control", "certam", "entrega", "evaluaci", "pauta", "rúbrica", "rubrica", "notas", "caso práctico", "caso practico"]
+    if mod_type == "assign" or any(k in mod_name for k in eval_kw) or any(k in f_name for k in eval_kw) or any(k in s_lower for k in eval_kw):
+        if any(k in s_lower for k in ["certam", "control", "tarea"]):
+            return os.path.join("Evaluaciones_y_Entregas", clean_sec)
+        return "Evaluaciones_y_Entregas"
+
+    mat_kw = ["ayudant", "guía", "guia", "handout", "clase", "ppt", "apunte", "bibliograf", "lectura", "libro", "rendimiento", "ejercicio"]
+    if any(k in mod_name for k in mat_kw) or any(k in f_name for k in mat_kw) or any(k in s_lower for k in mat_kw):
+        if any(k in s_lower for k in ["ayudant", "guía", "guia", "clase", "material", "apunte", "unidad"]):
+            return os.path.join("Material_y_Apuntes", clean_sec)
+        return "Material_y_Apuntes"
+
+    if any(k in s_lower for k in ["planificaci", "programa", "calendario"]) or any(k in mod_name for k in ["programa", "planificaci", "calendario"]):
         return os.path.join("Planificacion", clean_sec)
-    elif any(k in s_lower for k in ["certam", "control", "tarea", "entrega", "evaluaci"]):
-        return os.path.join("Evaluaciones_y_Entregas", clean_sec)
-    else:
-        return os.path.join("Material_y_Apuntes", clean_sec)
+
+    if any(k in s_lower for k in ["general", "información general", "informacion general"]):
+        return os.path.join("Planificacion", clean_sec)
+
+    return os.path.join("Material_y_Apuntes", clean_sec)
 
 def sincronizar_evaluaciones(client, repo_dir):
     """Consulta eventos de calendario con la API y fusiona con evaluaciones_manual.json."""
@@ -609,6 +626,7 @@ def run_sync():
 
     manifest = cargar_manifest()
     archivos_descargados = []
+    archivos_reubicados = []
 
     # Construir índice de hashes (sha256 -> ruta_en_disco) por curso
     # Se calcula una sola vez por corrida para detectar archivos existentes bajo otra estructura
@@ -664,8 +682,6 @@ def run_sync():
 
         for sec in sections:
             sec_name = sec.get("name") or "General"
-            sub_path = determine_subfolder(cshort, sec_name)
-            target_dir = os.path.join(cdir, sub_path)
 
             for mod in sec.get("modules", []):
                 for cont in mod.get("contents", []):
@@ -680,12 +696,31 @@ def run_sync():
                     if not fname or not fileurl:
                         continue
 
+                    sub_path = determine_subfolder(cshort, sec_name, mod=mod, filename=fname)
+                    target_dir = os.path.join(cdir, sub_path)
                     url_clean = fileurl.split("?")[0]
                     local_fpath = os.path.join(target_dir, fname)
 
                     # Comprobación de manifiesto
                     manifest_entry = manifest.get(url_clean)
                     target_check_path = manifest_entry.get("local_path", local_fpath) if manifest_entry else local_fpath
+
+                    # Reubicación a subcarpeta correcta si la ruta previa en disco difiere de la calculada
+                    if manifest_entry and target_check_path != local_fpath and os.path.exists(target_check_path):
+                        os.makedirs(target_dir, exist_ok=True)
+                        if not os.path.exists(local_fpath):
+                            old_p = target_check_path
+                            shutil.move(old_p, local_fpath)
+                            manifest_entry["local_path"] = local_fpath
+                            target_check_path = local_fpath
+                            sha_m = manifest_entry.get("sha256")
+                            if sha_m:
+                                c_hashes[sha_m] = local_fpath
+                            archivos_reubicados.append((old_p, local_fpath))
+                            log(f"  [REUBICADO] {cshort} -> {fname}: {os.path.relpath(local_fpath, cdir)}")
+                        else:
+                            manifest_entry["local_path"] = local_fpath
+                            target_check_path = local_fpath
 
                     # Ruta del manifest obsoleta (p. ej. tras borrar duplicados): si el contenido
                     # registrado sigue en disco en otra carpeta del curso, se repara la ruta sin descargar.
@@ -928,8 +963,22 @@ def run_sync():
                         dst_f = os.path.join(target_repo_uni, rel)
                         os.makedirs(os.path.dirname(dst_f), exist_ok=True)
                         shutil.copy2(src_f, dst_f)
+
+                if len(archivos_reubicados) > 0:
+                    for old_f, new_f in archivos_reubicados:
+                        rel_old = os.path.relpath(old_f, ROOT_DIR)
+                        dst_old = os.path.join(target_repo_uni, rel_old)
+                        if os.path.exists(dst_old):
+                            try:
+                                os.remove(dst_old)
+                            except Exception:
+                                pass
+                        rel_new = os.path.relpath(new_f, ROOT_DIR)
+                        dst_new = os.path.join(target_repo_uni, rel_new)
+                        os.makedirs(os.path.dirname(dst_new), exist_ok=True)
+                        shutil.copy2(new_f, dst_new)
                 
-                subprocess.run(["git", "add", "universidad/2026-2/"], cwd=REPO_DIR, check=True)
+                subprocess.run(["git", "add", "-A", "universidad/2026-2/"], cwd=REPO_DIR, check=True)
                 p_diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=REPO_DIR)
                 if p_diff.returncode != 0:
                     fecha_c = datetime.now().strftime('%Y-%m-%d')
