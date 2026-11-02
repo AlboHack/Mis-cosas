@@ -23,3 +23,7 @@
 | 2026-10-26 | Mensajes privados solo en la tablet; textos y nombres de estudiantes fuera del repo | El repo es público: son conversaciones personales y datos de terceros | T21, T23 |
 | 2026-10-26 | Programación: cron (cronie) cada hora + `programador_sync.py` que decide si corresponde (sábado ≥ 10:00, o 7 días sin corrida exitosa) con reintento cada 6 h; crond se relanza desde `~/.bashrc` | com.agycli no recibe BOOT_COMPLETED (Termux:Boot no aplica); la recuperación cubre tablet apagada o crond detenido por HyperOS. Se descarta el programador de Antigravity: depende de una sesión del agente y no es determinístico | T28 |
 | 2026-10-27 | Drive: solo el árbol `gdrive:Universidad/2026-2/<ramo>/<subcarpeta>`, copiado en cada corrida y verificado archivo por archivo; se eliminan el ZIP semanal y la carpeta `Deltas` | Nicolás quiere cada archivo en su ramo; el ZIP duplicaba el material y confundía dónde quedó lo nuevo | T29 |
+
+## 2026-11-02 — Enunciados de entregas (mod_assign)
+- Motivo: la Tarea 2 de FICA (CIV222, vence 2026-11-09 23:59 -03:00) es una entrega cuyo enunciado va como `introattachments`; `core_course_get_contents` no lo lista y no se descargaba.
+- Cambio: `mod_assign_get_assignments` (solo lectura) a la lista blanca; `agregar_enunciados_de_entregas` los suma al módulo como archivos y el flujo normal los descarga. Falla de la llamada = aviso, no aborta. Prueba T29 (`test_enunciados.py`).

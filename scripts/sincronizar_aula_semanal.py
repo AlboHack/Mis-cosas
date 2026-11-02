@@ -265,7 +265,8 @@ class MoodleAPIClient:
         "mod_forum_get_forums_by_courses",
         "mod_forum_get_discussion_posts",
         "core_message_get_conversations",
-        "core_message_get_conversation_messages"
+        "core_message_get_conversation_messages",
+        "mod_assign_get_assignments"  # solo lectura: enunciados adjuntos a las entregas
     }
 
     def __init__(self, base_url, token):
@@ -355,6 +356,33 @@ class MoodleAPIClient:
         if ext in [".docx", ".xlsx", ".zip", ".pptx"] and not data.startswith(b"PK"):
             return False, "Cabecera no coincide con formato Office/Zip (PK ausente)"
         return True, "OK"
+
+def agregar_enunciados_de_entregas(client, cid, sections):
+    """Las entregas (mod_assign) traen su enunciado como 'introattachments', que
+    core_course_get_contents no lista. Se agregan al módulo como archivos sintéticos para que
+    el flujo normal (manifiesto, hash, Drive, commit) los trate igual. Devuelve cuántos agregó."""
+    data = client.call("mod_assign_get_assignments", {"courseids[0]": cid})
+    por_cmid = {}
+    for crs in (data.get("courses", []) if isinstance(data, dict) else []):
+        for a in crs.get("assignments", []):
+            por_cmid[a.get("cmid")] = a
+    agregados = 0
+    for sec in sections:
+        for mod in sec.get("modules", []):
+            if mod.get("modname") != "assign":
+                continue
+            a = por_cmid.get(mod.get("id"))
+            if not a:
+                continue
+            conts = mod.setdefault("contents", [])
+            ya = {c.get("filename") for c in conts}
+            for f in a.get("introattachments", []) or []:
+                if f.get("filename") in ya or not f.get("fileurl"):
+                    continue
+                conts.append({"type": "file", "filename": f["filename"], "fileurl": f["fileurl"],
+                              "filesize": f.get("filesize", 0), "timemodified": f.get("timemodified", 0)})
+                agregados += 1
+    return agregados
 
 def get_token():
     if os.path.exists(TOKEN_FILE):
@@ -617,6 +645,14 @@ def run_sync():
         try:
             sections = client.call("core_course_get_contents", {"courseid": cid})
             course_sections[cid] = sections
+            try:
+                n_ens = agregar_enunciados_de_entregas(client, cid, sections)
+                if n_ens:
+                    log(f"  {cshort}: {n_ens} adjunto(s) de enunciado de entregas detectados")
+            except InvalidTokenError:
+                raise
+            except Exception as e_ens:
+                log(f"  [AVISO] {cshort}: no se pudieron leer enunciados de entregas: {e_ens}", token_to_mask=token)
         except InvalidTokenError as ite:
             log(f"  [ERROR CRÍTICO] {ite}")
             return 1
