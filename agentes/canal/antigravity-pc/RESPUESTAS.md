@@ -655,3 +655,92 @@ pruebas
 v4.1_retirada
 ```
 
+
+
+## P9 · 2026-11-03 · antigravity-pc
+
+### 1. Estado previo (Antes)
+```powershell
+Get-CimInstance Win32_VideoController | Select-Object Name, DriverVersion, DriverDate
+pnputil /enum-drivers /class Display | Out-File "$env:USERPROFILE\Mantenimiento\drivers_display_antes.txt"
+Get-Content "$env:USERPROFILE\Mantenimiento\drivers_display_antes.txt"
+```
+Salida literal:
+```text
+Name                               DriverVersion DriverDate         
+----                               ------------- ----------         
+NVIDIA GeForce GTX 1650            32.0.16.1047  18-05-2026 20:00:00
+AMD Radeon(TM) RX Vega 10 Graphics 27.20.1028.1  13-07-2020 20:00:00
+
+Utilidad PnP de Microsoft
+
+Nombre publicado:     oem77.inf
+Nombre original:      nvaci.inf
+Nombre del proveedor:      NVIDIA
+Nombre de clase:         Display
+GUID de clase:         {4d36e968-e325-11ce-bfc1-08002be10318}
+Versión del controlador:     05/19/2026 32.0.16.1047
+Nombre del firmante:        Microsoft Windows Hardware Compatibility Publisher
+
+Nombre publicado:     oem58.inf
+Nombre original:      u0357645.inf
+Nombre del proveedor:      Advanced Micro Devices, Inc.
+Nombre de clase:         Display
+GUID de clase:         {4d36e968-e325-11ce-bfc1-08002be10318}
+Versión del controlador:     07/14/2020 27.20.1028.1
+Nombre del firmante:        Microsoft Windows Hardware Compatibility Publisher
+```
+
+### 2. Descarga y verificación del instalador
+```powershell
+$inst = Get-ChildItem "$env:USERPROFILE\Downloads", "D:\Descargas Opera" -Filter "*adrenalin*.exe" -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+$inst.FullName; [math]::Round($inst.Length/1MB,1)
+Get-AuthenticodeSignature $inst.FullName | Select-Object Status, @{n='Firmante';e={$_.SignerCertificate.Subject}}
+```
+Salida literal:
+```text
+D:\Descargas Opera\whql-amd-software-adrenalin-edition-26.5.2-win11-may-vega-polaris.exe
+623.4
+
+Status   : Valid
+Firmante : CN=Advanced Micro Devices, O=Advanced Micro Devices, S=California, C=US
+```
+
+### 3. Instalación
+Instalación completada por Nicolás en modo recomendado sin panel adicional ni Factory Reset. Reinicio completado exitosamente a las 18:24.
+
+### 4. Estado posterior (Después)
+```powershell
+Get-CimInstance Win32_VideoController | Select-Object Name, DriverVersion, DriverDate, Status
+Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\GraphicsDrivers' -Name HwSchMode -ErrorAction SilentlyContinue | Select-Object HwSchMode
+Import-Module 'C:\Users\albor\Mantenimiento\perfil-nitro\PerfilNitro.psm1' -Force; Get-EstadoAjustes | Format-Table Id, Aplicado -AutoSize
+```
+Salida literal:
+```text
+Name                               DriverVersion   DriverDate          Status
+----                               -------------   ----------          ------
+NVIDIA GeForce GTX 1650            32.0.16.1047    18-05-2026 20:00:00 OK    
+AMD Radeon(TM) RX Vega 10 Graphics 31.0.21925.1001 19-05-2026 20:00:00 OK    
+
+HwSchMode
+---------
+        2
+
+Id                       Aplicado
+--                       --------
+svchost-agrupado             True
+telemetria                   True
+entrega-p2p                  True
+apps-fondo                   True
+gpu-scheduling               True
+modo-juego                   True
+inicio-reducememory          True
+inicio-onenote               True
+inicio-opera-assistant       True
+inicio-wallpaper-engine      True
+hibernacion-reducida        False
+almacenamiento-reservado    False
+efectos-visuales            False
+defender-modelos-sap        False
+```
+

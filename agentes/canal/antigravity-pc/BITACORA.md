@@ -49,3 +49,6 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 18:12 | INICIO | P9
 2026-11-03 18:13 | PASO | P9 Paso 1: drivers_display_antes.txt generado (NVIDIA 32.0.16.1047, AMD 27.20.1028.1)
 2026-11-03 18:17 | PASO | P9 Paso 2: instalador verificado whql-amd-software-adrenalin-edition-26.5.2 (623.4 MB, Valid, Advanced Micro Devices)
+2026-11-03 18:24 | REINICIO | Segundo reinicio completado tras instalar driver AMD (LastBootUpTime: 18:24:33)
+2026-11-03 18:26 | PASO | P9 Paso 4 verificado: AMD Vega 10 actualizada a 31.0.21925.1001 (OK), HwSchMode=2, 10 ajustes de perfil activos en True
+2026-11-03 18:27 | OK | P9 respondido en RESPUESTAS.md (pendiente prueba de vista 3D en SAP2000 por Nicolas)
