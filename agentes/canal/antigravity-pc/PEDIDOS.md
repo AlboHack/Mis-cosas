@@ -196,3 +196,12 @@ cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --
 powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\Instalar.ps1
 ```
 Debe mostrar `Purga de prioridad baja: True` y `Mantenimiento: Fallas: 0 | Perfil: Fallas: 0`. Si no, reportar y NO seguir con P8. Reportar la salida literal.
+
+## P12 · abierto · GTX 1650 permanente para SAP2000 y MATLAB (sin administrador y sin intervención de Nicolás)
+Nicolás pidió que quede configurado sin que él haga nada. La preferencia de GPU vive en HKCU: **no usar Ejecutar-Elevado**. Se puede hacer en cualquier momento, también antes de P8.
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\P12-gpu.ps1
+git checkout main
+```
+El script aplica el ajuste `gpu-dedicada-ingenieria` y lo verifica: si SAP2000 no está abierto, lo abre con `D:\Modelos RUN\PRACTICA RODRIGO.sdb`, espera 40 s, revisa con `nvidia-smi` y los contadores de GPU qué tarjeta usa, y cierra solo esa instancia sin guardar cambios. Si Nicolás está usando SAP2000, lo verifica sin cerrarlo. Reportar la salida literal; en la bitácora anotar `OK` si `SAP2000.exe` aparece en la lista de procesos de `nvidia-smi`, o `ERROR` si no.
