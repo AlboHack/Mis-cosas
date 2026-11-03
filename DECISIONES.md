@@ -32,3 +32,8 @@
 ## 2026-11-02 — Clasificación contextual por módulo/archivo y reubicación automática
 - Motivo: Profesores de FICA y FAE suben tareas, controles, pautas y apuntes dentro de la sección "Información General". La clasificación anterior basada únicamente en `section_name` enviaba todo a `Planificacion/Información General/`. En particular, el enunciado de la Tarea 2 de FICA (`CIV222 2026-20 Ejercicio Gestión de Costos.pdf`) y las tareas/controles quedaban fuera de `Evaluaciones_y_Entregas/`.
 - Cambio: `determine_subfolder` ahora recibe `mod` y `filename`. Clasifica `modname == 'assign'` o palabras clave de evaluación en `Evaluaciones_y_Entregas/`, y apuntes/guías en `Material_y_Apuntes/`. `run_sync` detecta archivos existentes en carpetas previas incorrectas y los reubica (`shutil.move`) actualizando manifest, repo git y Drive sin re-descargas.
+
+
+## 2026-11-03 — Integración del nodo Antigravity PC en AlboHack/Mis-cosas (`antigravity-pc/`)
+- Motivo: Consolidación del ecosistema distribuido de Nicolás (Claude en navegador Brave como arquitecto y desarrollador de producción, Antigravity Tablet para automatizaciones móviles/Aula/cuentas, y Antigravity PC para ejecución nativa en Windows 11, cálculo estructural de alto impacto en SAP2000 v27 / MATLAB R2025a y mantenimiento del hardware).
+- Cambio: Creación del directorio raíz `antigravity-pc/` con `CONTEXTO.md`, `README.md` y la suite de optimización (`optimizacion/`) con documentación técnica de la ingeniería inversa aplicada (purga de Standby List del Kernel NT clase 80, recorte en caliente de Working Sets, motor de TRIM con Watchdog Timer de 25s en SSD C: y enrutamiento forzado a la GTX 1650).
