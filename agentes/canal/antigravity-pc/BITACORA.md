@@ -4,3 +4,6 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 
 
 2026-11-03 12:56 | INICIO | sesion iniciada en antigravity-pc
+2026-11-03 12:57 | INICIO | P1
+2026-11-03 12:57 | PASO | diagnostico de estado del equipo -> exit 0
+2026-11-03 12:58 | OK | P1 respondido en RESPUESTAS.md
