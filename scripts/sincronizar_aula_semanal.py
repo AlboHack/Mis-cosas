@@ -176,7 +176,7 @@ def respaldar_en_drive(rclone_bin, archivos_nuevos, dry_run=False, run=subproces
     """
     errores = []
     cmd = construir_comando_respaldo_arbol(rclone_bin, ROOT_DIR, DRIVE_DESTINO + "/", dry_run)
-    log(f"Respaldando árbol de asignaturas en Google Drive ({DRIVE_DESTINO}/<ramo>/<subcarpeta>)...")
+    log(f"Respaldando el espejo de Aula en Google Drive ({DRIVE_DESTINO}/<ramo>/<sección>)...")
     r = run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         return [f"Fallo rclone copy árbol ({r.returncode}): {(r.stderr or '').strip()}"]

@@ -4,6 +4,10 @@ import shutil
 import sys
 import tempfile
 
+# Aislamiento: log y caché de hashes temporales (sin esto escribía en el log real de la tablet)
+_tmp_aislado = tempfile.mkdtemp(prefix="espejo_env_")
+os.environ["SYNC_LOG_FILE"] = os.path.join(_tmp_aislado, "log.txt")
+os.environ["SYNC_HASH_CACHE"] = os.path.join(_tmp_aislado, "hash_cache.json")
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import sincronizar_aula_semanal as s  # noqa: E402
 
