@@ -39,3 +39,48 @@ Test-Path 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
   Sí: `Desinstalador_Raiz_Core.ps1` se ejecutó el 2026-10-21 (desinstalando y desvinculando CCleaner, apps de IObit, Brave, Lightworks, BleachBit, PrivaZer y SAP2000 v19). `Nitro_Optimizer` se ejecutó en Modo 4 (Recorte en caliente Opera GX/Discord), Modo 5 (Limpieza Rápida) y con el flag `-QuickRAM` (Liberador 1 clic).
 - **Cuando la v4.1 purgaba la standby, ¿qué mensaje mostraba: "[OK] Standby List purgada", "STATUS_PRIVILEGE_NOT_HELD" u otro código?**
   Sin elevación UAC mostró `STATUS_PRIVILEGE_NOT_HELD` (código `3221225569` / `0xC0000061`); con elevación de Administrador mediante el `.bat` autoelevado mostró: `[OK] Standby List purgada con exito (Kernel NT / ISLC)`.
+
+
+## P2 · 2026-11-03 · antigravity-pc
+
+### Ejecución de Pruebas.ps1 en Windows PowerShell 5.1
+```text
+OK    sintaxis Pruebas.ps1
+OK    UTF-8 con BOM Pruebas.ps1 (PowerShell 5.1 lee sin BOM como ANSI)
+OK    sintaxis Mantenimiento.ps1
+OK    UTF-8 con BOM Mantenimiento.ps1 (PowerShell 5.1 lee sin BOM como ANSI)
+OK    sintaxis Mantenimiento.psm1
+OK    UTF-8 con BOM Mantenimiento.psm1 (PowerShell 5.1 lee sin BOM como ANSI)
+OK    purga con standby grande y libre escaso
+OK    sin purga con libre suficiente
+OK    sin purga con standby chica
+OK    borde: standby = umbral purga, libre = umbral no
+OK    ruta entre comillas con argumentos
+OK    ruta sin comillas con espacios
+OK    MSI /I se convierte en /x silencioso
+OK    QuietUninstallString tiene prioridad
+OK    agrega silencio sin duplicarlo
+OK    SAP2000 19 no toca SAP2000 27
+OK    protegido nunca coincide
+OK    ^Brave$ no toca BraveSoftware Update
+OK    patrón con prefijo opcional
+OK    rechaza raíces y carpetas de sistema o perfil
+OK    acepta carpetas de programa
+OK    todos los patrones anclados con ^
+OK    ningún programa activo coincide con un protegido
+OK    Brave inactivo hasta que Nicolás decida
+OK    residuos seguros con un perfil típico
+Whatif: Se está realizando la operación "C:\no\existe.exe /S" en el destino "CCleaner".
+OK    simulación de desinstalación no ejecuta nada
+OK    estado de memoria legible
+Whatif: Se está realizando la operación "Borrar" en el destino "C:\Users\albor\AppData\Local\Temp\...".
+Whatif: Se está realizando la operación "Crear directorio" en el destino "Destino: C:\Users\albor\AppData\Local\Mantenimiento".
+Whatif: Se está realizando la operación "Crear directorio" en el destino "Destino: C:\Users\albor\AppData\Local\Mantenimiento\logs".
+Whatif: Se está realizando la operación "Agregar contenido" en el destino "Ruta de acceso: C:\Users\albor\AppData\Local\Mantenimiento\logs\20261103.log".
+OK    temporales en simulación
+OK    programas instalados legibles
+
+Fallas: 0
+```
+
+`pwsh` (PowerShell 7) no está instalado en este equipo; la línea se omitió según lo indicado.
