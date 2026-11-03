@@ -14,3 +14,4 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 16:31 | PASO | P5: sincronizar_sabados.sh sin --permitir-masivo
 2026-11-03 16:49 | OK | P5: sincronización finalizada con alerta esperada (350 archivos pendientes de retiro, 210 reubicados)
 2026-11-03 16:51 | FIN | Respondido P5 en el canal. Queda pendiente corrida con --permitir-masivo (P6).
+2026-11-03 16:58 | INICIO | P6: clasificar 350 retiros y aplicar espejo si procede
