@@ -21,3 +21,10 @@ jobs:
       - name: Perfil del Nitro (Windows PowerShell 5.1)
         shell: powershell
         run: ./antigravity-pc/perfil-nitro/pruebas/Pruebas.ps1
+      - name: Ejecutar-Elevado (Windows PowerShell 5.1)
+        shell: powershell
+        run: |
+          'Write-Output "hola-elevado"; cmd /c ver | Out-String' | Set-Content "$env:TEMP\t.ps1"
+          $out = & ./antigravity-pc/Ejecutar-Elevado.ps1 -Script "$env:TEMP\t.ps1" -Nombre ci | Out-String
+          $out
+          if ($out -notmatch 'hola-elevado' -or $out -notmatch 'Microsoft Windows') { exit 1 }
