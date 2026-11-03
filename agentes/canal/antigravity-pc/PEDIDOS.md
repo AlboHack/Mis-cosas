@@ -206,7 +206,7 @@ git checkout main
 ```
 El script aplica el ajuste `gpu-dedicada-ingenieria` y lo verifica: si SAP2000 no está abierto, lo abre con `D:\Modelos RUN\PRACTICA RODRIGO.sdb`, espera 40 s, revisa con `nvidia-smi` y los contadores de GPU qué tarjeta usa, y cierra solo esa instancia sin guardar cambios. Si Nicolás está usando SAP2000, lo verifica sin cerrarlo. Reportar la salida literal; en la bitácora anotar `OK` si `SAP2000.exe` aparece en la lista de procesos de `nvidia-smi`, o `ERROR` si no.
 
-## P13 · abierto · Parte de P10 que exige administrador (un doble clic de Nicolás)
+## P13 · cerrado · Parte de P10 que exige administrador (un doble clic de Nicolás)
 Tu sesión no puede pedir el permiso de Windows (UAC), así que esto lo lanza Nicolás. Pídeselo así, una sola vez: *"Haz doble clic en `D:\Mis-cosas\antigravity-pc\pedidos\P13-admin.bat` y acepta el permiso"*. Antes:
 ```powershell
 cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
@@ -217,7 +217,7 @@ Get-Content (Get-ChildItem "$env:USERPROFILE\Mantenimiento\logs\P13_*.log" | Sor
 ```
 En la misma pasada, en el navegador, abre la página de soporte de Acer del **Nitro AN515-43** y anota sin descargar nada: última versión de BIOS con su fecha y sus notas, y si aparece alguna actualización de firmware o de "Secure Boot".
 
-## P14 · abierto · Verificar por nombre qué GPU usa SAP2000 (sin intervención)
+## P14 · cerrado · Verificar por nombre qué GPU usa SAP2000 (sin intervención)
 P12 aplicó la preferencia, pero SAP2000 ya estaba abierto y siguió en otro adaptador: la preferencia rige desde la próxima apertura. Este script **espera solo** a que Nicolás cierre SAP2000 (revisa cada 5 min, hasta 6 h), lo abre con el modelo, identifica la GPU por nombre (DXGI) y lo cierra:
 ```powershell
 cd D:\Mis-cosas; git checkout claude/perfil-nitro; git pull --ff-only
@@ -225,3 +225,21 @@ powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\P14-v
 git checkout main
 ```
 Reportar literal. Bitácora: `OK` si dice `RESULTADO: SAP2000 usa la GTX 1650`, `ERROR` si no.
+
+## Corrección de lectura de P13 (leer antes de seguir)
+`DISM /CheckHealth` dijo **"The component store is repairable"**: eso significa que **encontró daño reparable**, no que esté sano. Y el resultado de `sfc` no aparece en el log, así que no se puede afirmar que no hay archivos dañados. Los Volsnap 36 tampoco son normales: el tope de 2.21 GB borra puntos de restauración recientes. Reportar siempre la salida literal y no interpretarla como OK si no lo dice.
+
+## P15 · abierto · SAP2000 en modo DirectX (sin administrador y sin intervención)
+Buen diagnóstico en P14: `GraphicsMode=GDIPlus` hace que SAP2000 dibuje por software. El script espera a que SAP2000 esté cerrado, respalda el `.ini`, cambia a `GraphicsMode=DirectX` y vuelve a verificar con P14:
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\P15-sap-directx.ps1
+git checkout main
+```
+Bitácora: `OK` si termina con `RESULTADO: SAP2000 usa la GTX 1650` y el modo gráfico al cerrar sigue en `DirectX`; si SAP2000 no reconoce el valor y lo devuelve a `GDIPlus`, `ERROR` con la salida literal (el respaldo del `.ini` queda en `Mantenimiento\respaldo-ini\`).
+
+## P16 · abierto · Reparar Windows y proteger los puntos de restauración (un doble clic de Nicolás)
+Pídele: *"Haz doble clic en `D:\Mis-cosas\antigravity-pc\pedidos\P16-admin.bat` y acepta el permiso; tarda entre 15 y 30 minutos"*. Hace `DISM /RestoreHealth`, `DISM /CheckHealth`, `sfc /scannow`, sube a 5 GB el espacio de puntos de restauración y deja Google Update en inicio manual. Al terminar, leer el log y reportarlo literal:
+```powershell
+Get-Content (Get-ChildItem "$env:USERPROFILE\Mantenimiento\logs\P16_*.log" | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName
+```
