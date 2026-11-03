@@ -27,3 +27,4 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 13:17 | OK | P6 respondido en RESPUESTAS.md (instalacion completa, pruebas 0 fallas)
 2026-11-03 13:25 | NICOLAS | opcion 7 Diagnostico probada: Kingston SSD y WDC HDD Healthy/OK, TRIM activo (DisableDeleteNotify=0)
 2026-11-03 13:25 | OK | Mantenimiento verificado en ejecucion interactiva por Nicolas
+2026-11-03 16:59 | INICIO | P5 (ejecucion tras merge en main)
