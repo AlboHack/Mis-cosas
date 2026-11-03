@@ -3,7 +3,7 @@
 Leer primero `agentes/canal/README.md`. Responder en `RESPUESTAS.md` de esta carpeta.
 PowerShell como administrador, en `D:\Mis-cosas`.
 
-## P1 · abierto · Estado del equipo (solo lectura)
+## P1 · cerrado · Estado del equipo (solo lectura)
 ```powershell
 $PSVersionTable.PSVersion.ToString()
 (Get-CimInstance Win32_OperatingSystem) | Select-Object Caption, Version, OSLanguage
@@ -17,7 +17,7 @@ Responder además en una línea cada una:
 - ¿Se ejecutó alguna vez `Desinstalador_Raiz_Core.ps1` o `Nitro_Optimizer` (y qué modos)?
 - Cuando la v4.1 purgaba la standby, ¿qué mensaje mostraba: "[OK] Standby List purgada", "STATUS_PRIVILEGE_NOT_HELD" u otro código?
 
-## P2 · abierto · Pruebas del mantenimiento nuevo en el Nitro (solo lectura salvo la purga, que es inocua)
+## P2 · cerrado · Pruebas del mantenimiento nuevo en el Nitro (solo lectura salvo la purga, que es inocua)
 ```powershell
 git fetch origin claude/pc-mantenimiento
 git checkout claude/pc-mantenimiento
@@ -27,7 +27,7 @@ git checkout canal
 ```
 Si `pwsh` no está instalado, decirlo y omitir esa línea.
 
-## P3 · abierto · Simulación de desinstalación y de limpieza (no borra nada)
+## P3 · cerrado · Simulación de desinstalación y de limpieza (no borra nada)
 ```powershell
 git checkout claude/pc-mantenimiento
 Import-Module .\antigravity-pc\mantenimiento\Mantenimiento.psm1 -Force
@@ -46,3 +46,19 @@ Get-Process SAP2000, SAPFire -ErrorAction SilentlyContinue | Select-Object Proce
 ```
 Indicar el modelo usado (número de nudos y barras, tipo de análisis) y cuánto tardó el análisis.
 (Para el paso 1 del Import-Module, la rama `claude/pc-mantenimiento` debe estar en el checkout; volver a `canal` al terminar.)
+
+## P5 · abierto · Cuando `main` tenga el mantenimiento nuevo (después del P4 de la tablet)
+Primero comprobar que el merge ya llegó; si la primera línea no dice "espejo de Aula", responder solo eso y esperar:
+```powershell
+cd D:\Mis-cosas; git fetch origin; git log origin/main --oneline -1
+```
+Si ya llegó:
+```powershell
+git checkout main; git pull --ff-only
+Copy-Item agentes\antigravity\reglas\04-protocolo-claude.md "$HOME\.agents\rules\04-protocolo-claude.md" -Force
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\mantenimiento\pruebas\Pruebas.ps1
+Test-Path "$env:USERPROFILE\OneDrive\Escritorio\Nitro_Optimizer.bat", "$env:USERPROFILE\OneDrive\Escritorio\Desinstalador_Raiz_Bloatware.bat", "$env:USERPROFILE\OneDrive\Escritorio\Liberar_RAM_Juegos.bat"
+```
+Reportar la salida literal. No borrar las copias de la v4.1 del Escritorio: si existen, Claude pedirá a Nicolás que confirme reemplazarlas por accesos directos a `Mantenimiento.bat`.
+
+P4 (memoria durante un análisis en SAP2000) sigue abierto: hacerlo la próxima vez que Nicolás corra un modelo.
