@@ -44,3 +44,4 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 18:04 | INICIO | P11
 2026-11-03 18:04 | PASO | Instalar.ps1 -> Purga baja: True, Mantenimiento 0 fallas, Perfil 0 fallas, exit 0
 2026-11-03 18:05 | OK | P11 respondido en RESPUESTAS.md (copia instalada actualizada, acceso directo Perfil Nitro creado)
+2026-11-03 18:05 | REINICIO | P8 y P11 completados; listo para reiniciar el Nitro para consolidar svchost
