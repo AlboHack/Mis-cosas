@@ -227,6 +227,20 @@
       ]
     },
     {
+      "id": "servicio-google-update-manual",
+      "nombre": "Google Update en inicio manual",
+      "fuente": "Auditoría P13 del Nitro: Service Control Manager 7000/7009, 19 tiempos de espera de 30 s de gupdate en 30 días",
+      "por_que": "El servicio no alcanza a arrancar con Windows y hace esperar 30 s al arranque. En manual, la tarea programada de Google sigue actualizando cuando hace falta.",
+      "riesgo": "Bajo: Chrome y los programas de Google se actualizan con su tarea programada.",
+      "activo": true,
+      "servicios": [
+        {
+          "nombre": "gupdate",
+          "inicio": "Manual"
+        }
+      ]
+    },
+    {
       "id": "hibernacion-reducida",
       "nombre": "hiberfil.sys reducido (mantiene el inicio rápido)",
       "fuente": "Microsoft, powercfg /hibernate /type reduced; winutil WPFTweaksHiber la apaga por completo",
