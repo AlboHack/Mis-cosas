@@ -44,7 +44,7 @@ tail -40 /storage/emulated/0/Download/Universidad/Registro_Sincronizaciones.log
 ```
 Esta corrida va **sin** `--permitir-masivo`. Copia cada archivo a su carpeta de Aula sin descargarlo y debe terminar con `ALERTA: N archivos ya no figuran en Aula`: es la estructura anterior. En esta corrida no se borra nada ni se toca el repo. Reportar literal las líneas `[ESTRUCTURA AULA]`, `RESULTADO`, `ALERTA`, las 10 rutas que lista, cualquier `[ERROR]` y el hash de `main` después del merge. La corrida con `--permitir-masivo` llegará como P5 cuando Claude revise este reporte.
 
-## P5 · abierto · Repetir P4 con la corrección de T31
+## P5 · cerrado · Repetir P4 con la corrección de T31
 Tu diagnóstico de P4 era correcto: `shutil.copy2` conserva la fecha y el caché de hashes dejaba vigente el hash viejo. Corregido en `claude/espejo-aula` (`copiar_con_hash`, commit `084d08d`). El PLAN de `/tmp` también se aplicó: desde ahora los pedidos usan `$T`.
 ```
 cd ~/Mis-cosas && git fetch origin && git checkout claude/espejo-aula && git pull --ff-only
@@ -53,3 +53,29 @@ for t in test_espejo test_novedades test_programador test_pre_push test_enunciad
 git status --porcelain | head
 ```
 Si alguna prueba falla o `git status` no sale vacío: reportar y NO seguir. Si todo pasa, seguir con los pasos de P4 desde el merge (merge squash a `main`, reinstalar el hook, `bash scripts/sincronizar_sabados.sh` **sin** `--permitir-masivo` y `tail -40` del log), y reportar lo mismo que pedía P4.
+
+## P6 · abierto · Clasificar los 350 archivos por retirar y, si el veredicto es OK, aplicar el espejo
+P5 quedó perfecto (merge `96d8df8`, 210 reubicados, alerta de 350 por retirar). Antes de borrar hay que saber qué son esos 350. Nicolás ya confirmó el espejo con borrados; Drive conserva todo porque `rclone copy` no borra.
+```
+cd ~/Mis-cosas && git fetch origin
+T="${TMPDIR:-$PREFIX/tmp}"
+git show origin/claude/espejo-ajustes:scripts/clasificar_retiros.py > "$T/clasificar_retiros.py"
+python3 "$T/clasificar_retiros.py"
+```
+Reportar la salida completa y literal.
+- Si la última línea es `VEREDICTO: REVISAR`: NO seguir. Claude se lo muestra a Nicolás.
+- Si es `VEREDICTO: OK`:
+```
+git checkout main && git pull --ff-only
+bash scripts/sincronizar_sabados.sh --permitir-masivo
+grep -E "RESULTADO|\[REPO\]|ERROR|FINALIZADO" /storage/emulated/0/Download/Universidad/Registro_Sincronizaciones.log | tail -8
+git log origin/main --oneline -2
+```
+Y después, en la misma pasada, integrar los ajustes:
+```
+git checkout claude/espejo-ajustes && git pull --ff-only
+for t in test_espejo test_novedades test_enunciados test_aceptacion_token; do python3 scripts/pruebas/$t.py > "$T/$t.log" 2>&1; echo "$t -> $?"; grep -E "^Resultado|RESUMEN" "$T/$t.log" | tail -2; done
+git status --porcelain | head
+git checkout main && git pull --ff-only && git merge --squash claude/espejo-ajustes && git commit -m "feat(sync): clasificador de retiros y test_espejo aislado" && ALLOW_MAIN_PUSH=1 git push origin main
+```
+Si alguna prueba falla, no hacer ese último merge y reportar.

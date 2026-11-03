@@ -47,7 +47,7 @@ Get-Process SAP2000, SAPFire -ErrorAction SilentlyContinue | Select-Object Proce
 Indicar el modelo usado (número de nudos y barras, tipo de análisis) y cuánto tardó el análisis.
 (Para el paso 1 del Import-Module, la rama `claude/pc-mantenimiento` debe estar en el checkout; volver a `canal` al terminar.)
 
-## P5 · abierto (esperar merge de la tablet) · Cuando `main` tenga el mantenimiento nuevo (después del P4 de la tablet)
+## P5 · abierto (el merge ya llegó: 96d8df8) · Cuando `main` tenga el mantenimiento nuevo (después del P4 de la tablet)
 Primero comprobar que el merge ya llegó; si la primera línea no dice "espejo de Aula", responder solo eso y esperar:
 ```powershell
 cd D:\Mis-cosas; git fetch origin; git log origin/main --oneline -1
