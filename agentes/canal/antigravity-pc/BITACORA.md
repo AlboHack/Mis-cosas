@@ -48,3 +48,4 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 18:11 | OK | Equipo reiniciado con exito (LastBootUpTime: 18:10:47); svchost consolidado
 2026-11-03 18:12 | INICIO | P9
 2026-11-03 18:13 | PASO | P9 Paso 1: drivers_display_antes.txt generado (NVIDIA 32.0.16.1047, AMD 27.20.1028.1)
+2026-11-03 18:17 | PASO | P9 Paso 2: instalador verificado whql-amd-software-adrenalin-edition-26.5.2 (623.4 MB, Valid, Advanced Micro Devices)
