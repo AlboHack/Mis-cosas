@@ -8,3 +8,4 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 13:24 | ERROR | P4: test_espejo falló (Resultado T31: FAIL - FALLA segunda pasada sin cambios)
 2026-11-03 13:25 | PLAN | Corrección de test_espejo.py e invalidación de caché de hashes en pruebas
 2026-11-03 13:25 | FIN | Respondidos P1, P2 y P4 en canal. Pendiente fix de Claude en test_espejo.py para continuar con merge y sincronización.
+2026-11-03 16:26 | INICIO | P5: pruebas de claude/espejo-aula con fix T31
