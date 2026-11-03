@@ -15,3 +15,6 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 16:49 | OK | P5: sincronización finalizada con alerta esperada (350 archivos pendientes de retiro, 210 reubicados)
 2026-11-03 16:51 | FIN | Respondido P5 en el canal. Queda pendiente corrida con --permitir-masivo (P6).
 2026-11-03 16:58 | INICIO | P6: clasificar 350 retiros y aplicar espejo si procede
+2026-11-03 17:00 | PASO | P6: python3 clasificar_retiros.py -> COPIA: 216 | GENERADO: 15 | SOLO_AQUI: 119
+2026-11-03 17:01 | OK | P6: veredicto REVISAR. Detenida la ejecución según protocolo, sin aplicar retiros masivos
+2026-11-03 17:01 | FIN | Respondido P6 en el canal. Pendiente decisión de Claude y Nicolás sobre los 119 archivos SOLO_AQUI.

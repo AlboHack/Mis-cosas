@@ -291,3 +291,150 @@ bash scripts/sincronizar_sabados.sh
 [2026-11-03 16:49:25] =======================================================
 ```
 
+
+
+## P6 · 2026-11-03 · antigravity-tablet
+
+### 1. Clasificación de retiros pendientes en el árbol de la tablet
+Comando ejecutado:
+```bash
+cd ~/Mis-cosas && git fetch origin
+T="${TMPDIR:-$PREFIX/tmp}"
+git show origin/claude/espejo-ajustes:scripts/clasificar_retiros.py > "$T/clasificar_retiros.py"
+python3 "$T/clasificar_retiros.py"
+```
+
+Salida completa y literal:
+```text
+COPIA: 216 | GENERADO: 15 | SOLO_AQUI: 119
+SOLO_AQUI     0.23 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/curso_principal.html
+SOLO_AQUI     0.21 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/forum_8047063_Noticias_y_avisos__Foro.html
+SOLO_AQUI     0.17 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/resource_8047064_Programa_de_Estudio__descargar_aqu____Ar.html
+SOLO_AQUI     0.17 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/folder_8047065_Planificaci_n_de_la_Asignatura__Carpeta.html
+SOLO_AQUI     0.19 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/folder_8162401_CIV222_2026-20_PPTs_y_Apuntes__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/assign_8311533_CIV222_2026-20_Entrega_Informe___PPT_Pre.html
+SOLO_AQUI     0.18 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/assign_8289923_CIV222_2026-20_Entrega_Control_1__Tarea.html
+SOLO_AQUI     0.18 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/assign_8280891_CIV222_2026-20_Entrega_Tarea_1__Caso_Edi.html
+SOLO_AQUI     0.17 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/assign_8162406_CIV222_2026-20_Entrega_de_Proyectos__Tar.html
+SOLO_AQUI     0.18 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/Foros/disc_497871_CIV222_2026-20_-_C_digo_Liberado_ExpoEdi.html
+SOLO_AQUI     0.18 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/Foros/disc_487867_CIV222_2026-20_Archivos_Clase_lunes_31-a.html
+SOLO_AQUI     0.17 MB  CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle/Foros/disc_480458_CIV222_2026-20_Horarios_y_agradecimiento.html
+SOLO_AQUI     0.24 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/curso_principal.html
+SOLO_AQUI     0.46 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/forum_8047125_Noticias_y_avisos__Foro.html
+SOLO_AQUI     0.16 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/resource_8047126_Programa_de_Estudio__descargar_aqu____Ar.html
+SOLO_AQUI     0.16 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/folder_8047127_Planificaci_n_de_la_Asignatura__Carpeta.html
+SOLO_AQUI     0.32 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/resource_8278960_Reglas_del_Curso__Archivo.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/folder_8261268_Clases__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/folder_8277809_Ayudant_as__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/folder_8278954_Gu_as__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/folder_8278955_Tareas__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/assign_8325772_Tarea_N_1.html
+SOLO_AQUI     0.02 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/resource_8347849_Notas_15-10__Archivo.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_500059_FAE_-_Ayudant_a_Pre-Certamen2.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_499694_Link_Clase_21-10.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_499488_Clase_21_10.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_498536_Postergaci_n_Certamen_2.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_497827_Certamen_1_y_Tarea_1.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_497286_Suspensi_n_Clase_y_Ayudant_a.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_496334_Clase_Viernes_09-10.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_495591_FAE_-_Capsula_SAP2000.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_495580_Cambio_excepcional_de_horario___Ayudant_.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_494650_FAE_-_Ayudant_a__Atraso_.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_494550_Gu_a_de_Ejercicios_N_3.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_494549_Instructivo_Instalaci_n_SAP2000.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_494495_FAE_-_Ayudant_a_4.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_493234_Instrucciones_Certamen_1.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_492449_FAE_-_Ayudant_a.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_490809_FAE_-_Ayudant_a_3__ONLINE_.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_489042_FAE_-_04_09_No_hay_ayudant_a.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_486965_FAE_-_Ayudant_a_N_2.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_485635_Gu_a_de_Estudio_Personal_N_1.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_485081_Ayudant_a_N_1.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_484759_Clase_19-08.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_482689_Suspensi_n_Clases_12-08.html
+SOLO_AQUI     0.17 MB  CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/Foros/disc_481422_Bienvenida_y_Fecha_Primera_Clase.html
+SOLO_AQUI     0.24 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/curso_principal.html
+SOLO_AQUI     0.46 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/forum_8047497_Noticias_y_avisos__Foro.html
+SOLO_AQUI     0.16 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/resource_8047498_Programa_de_Estudio__descargar_aqu____Ar.html
+SOLO_AQUI     0.16 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/folder_8047499_Planificaci_n_de_la_Asignatura__Carpeta.html
+SOLO_AQUI     0.06 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/resource_8217356_Programa_2026-25__Archivo.html
+SOLO_AQUI     0.18 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/folder_8217361_Material_de_clases__Carpeta.html
+SOLO_AQUI     0.18 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/folder_8217370_Apuntes_USM__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/folder_8311749_Cert_menes_anteriores__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/assign_8323629_Entrega_apuntes_C1__Tarea.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/folder_8339316_Cert_menes__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_500312_Instrucciones_C2.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_499372_Laboratorio_2_recuperativo.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_499317_Ayudant_a_pre-certamen.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_498902_Laboratorio_2_pendiente.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_498738_M_a_no_hay_clases.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_495893_Inscripciones__Laboratorio_2.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_495650_Notas_C1.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_495617_Ayudant_a_Mi_rcoles_7.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_494711_Inicio_clase_hoy.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_494003_Entrega_parcial_desaf_o_semestral.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_493523_M_a_hay_clases.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_492744_Instrucciones_C1.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_491493_Apoyo_C1.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_490731_Suspensi_n_Clases_d_a_viernes_.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_489560_Suspensi_n_de_clase_.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_488926_Laboratorio_de_Hidrost_tica.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_486255_Ayudant_a_2_.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_484843_Sala_y_horario_ayudant_as.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_484624_C_psula_Ayudant_a_1.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_484292_Informaci_n_de_ayudant_a_de_hoy.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_483002_Horario_ayudant_a.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_482691_Ayudant_as_Mec_nica_de_Fluidos___Encuest.html
+SOLO_AQUI     0.17 MB  CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle/Foros/disc_480210_Inicio_clases_CIV244.html
+SOLO_AQUI     0.07 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/Material_y_Apuntes/2026pr Notas.pdf
+SOLO_AQUI     0.23 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/curso_principal.html
+SOLO_AQUI     0.27 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/forum_8048258_Noticias_y_avisos__Foro.html
+SOLO_AQUI     0.17 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/resource_8048259_Programa_de_Estudio__descargar_aqu____Ar.html
+SOLO_AQUI     0.17 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/folder_8048260_Planificaci_n_de_la_Asignatura__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/folder_8277472_Referencias_Bibliogr_ficas__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/folder_8283784_Guias_de_Estudio__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/folder_8289880_Ayudant_as__Carpeta.html
+SOLO_AQUI     0.17 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/folder_8311625_Certamenes__Carpeta.html
+SOLO_AQUI     0.04 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/resource_8348986_17_10_Notas__C2___Archivo.html
+SOLO_AQUI     0.18 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/Foros/disc_498229_CIV386_Notas_C2.html
+SOLO_AQUI     0.19 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/Foros/disc_494990_CIV386_Indicaciones_Certamen_N_2.html
+SOLO_AQUI     0.19 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/Foros/disc_491435_CIV386_Notas_C1.html
+SOLO_AQUI     0.17 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/Foros/disc_491875_CIV386_Informa_Suspensi_n_Clases.html
+SOLO_AQUI     0.18 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/Foros/disc_488952_CIV386_Informa_Cambio_de_Salas.html
+SOLO_AQUI     0.17 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/Foros/disc_486718_CIV386_Indicaciones_Certamen_N_1.html
+SOLO_AQUI     0.17 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/Foros/disc_482222_CIV386_Informa_Nueva_Sala_Lunes.html
+SOLO_AQUI     0.17 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle/Foros/disc_481324_CIV386_Consulta_Modificaci_n_Horario_Lun.html
+SOLO_AQUI     0.25 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/curso_principal.html
+SOLO_AQUI     0.15 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/forum_58_Anuncios_de_la_p_gina.html
+SOLO_AQUI     0.40 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/forum_759065_Noticias_y_avisos.html
+SOLO_AQUI     0.18 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/folder_759067_Documentos_Importantes.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_436245_Solicitud_de_cartas_de_presentaci_n_.html
+SOLO_AQUI     0.19 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_418840_Oferta_de_pr_cticas_profesionales.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_425610_Registros_de_empresas_que_han_recibido_p.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_422724_Oferta_pr_ctica_profesional_Nava_Consult.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_419916_Actualizaci_n_de_informaci_n_.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_418259_Oferta_pr_cticas_profesionales_en_CORFO.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_363537_Actualizaci_n_links_formularios.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_352139_Actualizaci_n_proceso_de_revisi_n_de_inf.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_295463_Encargado_de_Pr_cticas.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_295462_ENTREGA_DE_DOCUMENTOS_PRACTICAS_2024.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_275393_Informes_entregados_hasta_el_26_09_2023_.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_241245_ENTREGA_DE_DOCUMENTOS_PRACTICAS_2023.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_205804_IMPORTANTE__Si_entregaste_tu_informe_de_.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_152956_Oferta_de_Pr_ctica_en_la_construcci_n_de.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_149212_ENTREGA_DOCUMENTOS_PRACTICA_2022.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_136847_IMPORTANTE_Si_ya_entregaste_tu_informe.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_135813__Buscas_pr_ctica_profesional__Charla_Flu.html
+SOLO_AQUI     0.17 MB  POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle/Foros/disc_53125_ENTREGA_DE_DOCUMENTOS_DE_PRACTICA_2021.html
+VEREDICTO: REVISAR
+```
+
+### 2. Veredicto y estado del pedido
+- **Veredicto obtenido:** `VEREDICTO: REVISAR`
+- Conforme a la instrucción expresa de P6:
+  > *"Si la última línea es `VEREDICTO: REVISAR`: NO seguir. Claude se lo muestra a Nicolás."*
+- **Acción tomada:** Se detuvo la ejecución de inmediato sin correr `sincronizar_sabados.sh --permitir-masivo` ni realizar merge de `claude/espejo-ajustes`. Queda a la espera de la revisión de Claude y Nicolás.
+- **Detalle de los 119 archivos `SOLO_AQUI`:**
+  - 117 archivos son volcados HTML generados en sesiones anteriores dentro de las carpetas `<ramo>/HTML_Moodle/` y sus foros.
+  - 1 archivo de notas en PDF: `CIV386_INGENIERÍA_DE_TRANSPORTE_/Material_y_Apuntes/2026pr Notas.pdf` (0.07 MB).
+  - 1 archivo HTML de notas: `CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/resource_8347849_Notas_15-10__Archivo.html` (0.02 MB).
