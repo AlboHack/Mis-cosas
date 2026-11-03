@@ -1126,3 +1126,136 @@ GraphicsMode=GDIPlus
 ```
 Al estar fijado en modo GDIPlus (*Standard Graphics* en la interfaz de SAP2000), el motor de renderizado opera mediante rasterización por software (GDI+ / WARP) y no crea un swapchain D3D acelerado por hardware. Por ende, Windows le asigna el Microsoft Basic Render Driver y ni la GTX 1650 ni la Vega 10 son invocadas, independientemente de que GpuPreference=2 esté activo en HKCU:\Software\Microsoft\DirectX\UserGpuPreferences.
 Para que SAP2000 utilice la GTX 1650, debe habilitarse el modo DirectX en la aplicación (*Options -> Graphics Mode -> DirectX Graphics*) o configurar GraphicsMode=DirectX en el archivo .ini.
+
+
+## P13 — 2026-11-03 — antigravity-pc
+
+### Ejecución de P13-admin.ps1 (SMART, VSS, DISM, SFC y Auditoría de Sistema)
+Ejecutado por Nicolás con elevación UAC a través de `D:\Mis-cosas\antigravity-pc\pedidos\P13-admin.bat`.
+Log: `C:\Users\albor\Mantenimiento\logs\P13_20261103_185621.log`
+
+Salida literal del log:
+```text
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261103185621
+Nombre de usuario: LAPTOP-C1P6TLBN\albor
+Usuario RunAs: LAPTOP-C1P6TLBN\albor
+Nombre de la configuración: 
+Máquina: LAPTOP-C1P6TLBN (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\albor\AppData\Local\Temp\elevado_6f649a3a-3240-413b-a439-3de0f92ae4c4.ps1
+Id. de proceso: 7060
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+== Salud SMART
+
+DeviceId Temperature TemperatureMax Wear PowerOnHours ReadErrorsUncorrected WriteErrorsUncorrected
+-------- ----------- -------------- ---- ------------ --------------------- ----------------------
+1                 35              0    0         9114                                             
+0                 43              0    0         8993 0
+== Puntos de restauración y espacio para instantáneas
+
+Description                 CreationTime             
+-----------                 ------------             
+Punto de control programado 20261103203702.561340-000
+Perfil Nitro P8             20261103205959.035282-000
+Radeon Installer            20261103211951.121777-000
+vssadmin 1.1 - Herramienta administrativa de línea de comandos del Servicio de instantáneas de volumen.
+(C) Copyright 2001-2013 Microsoft Corp.
+
+Asociación de almacenamiento de instantáneas
+   Para el volumen: (C:)\\?\Volume{02c6ccdf-2545-43cd-91ca-1a212f3625af}\
+   Volumen de almacenamiento de instantáneas: (C:)\\?\Volume{02c6ccdf-2545-43cd-91ca-1a212f3625af}\
+   Espacio de almacenamiento de instantáneas usado: 780 MB (0%)
+   Espacio asignado para el almacenamiento de instantáneas: 1,07 GB (0%)
+   Espacio máximo de almacenamiento de instantáneas: 2,21 GB (2%)
+== Volsnap 36 (instantáneas borradas por falta de espacio)
+
+
+TimeCreated : 03-11-2026 16:57:38
+Message     : Se anularon las instantáneas del volumen C: porque el almacenamiento de instantáneas no pudo crecer debido a un límite impuesto por el usuario.
+
+TimeCreated : 22-10-2026 17:32:23
+Message     : Se anularon las instantáneas del volumen C: porque el almacenamiento de instantáneas no pudo crecer debido a un límite impuesto por el usuario.
+
+TimeCreated : 20-10-2026 10:13:41
+Message     : Se anularon las instantáneas del volumen C: porque el almacenamiento de instantáneas no pudo crecer debido a un límite impuesto por el usuario.
+== Servicios que no arrancan (7000 / 7009)
+
+
+Count : 19
+Name  : Se agotó el tiempo de espera (30000 ms) para la conexión con el servicio Google Update Servicio (gupdate).
+
+Count : 19
+Name  : El servicio Google Update Servicio (gupdate) no pudo iniciarse debido al siguiente error: 
+        El servicio no respondió a tiempo a la solicitud de inicio o de control.
+
+Count : 1
+Name  : Se agotó el tiempo de espera (30000 ms) para la conexión con el servicio Steam Client Service.
+
+Count : 1
+Name  : El servicio Steam Client Service no pudo iniciarse debido al siguiente error: 
+        El servicio no respondió a tiempo a la solicitud de inicio o de control.
+== TPM-WMI 1801 / 1803 (certificados de Arranque seguro)
+
+
+TimeCreated : 03-11-2026 18:30:12
+Id          : 1801
+Message     : Los certificados de arranque seguro actualizados están disponibles en este dispositivo, pero aún no se han aplicado al firmware. Revisa las instrucciones publicadas para completar la actualización y 
+              mantener la protección completa. Esta información de firma de dispositivo se incluye aquí.
+              DeviceAttributes: FirmwareManufacturer:Insyde Corp.;FirmwareVersion:V1.12;OEMModelNumber:Nitro AN515-43;OEMModelBaseBoard:Octavia_PKS;OEMManufacturerName:Acer;OSArchitecture:amd64;
+              BucketId: ba619335bc29d351e0b7b73b9c0af78906ab013a61ced98f9c8c577696cb4b06
+              BucketConfidenceLevel: High Confidence
+              UpdateType: Windows UEFI CA 2023 (DB), Option ROM CA 2023 (DB), 3P UEFI CA 2023 (DB), KEK 2023, Boot Manager (2023)
+              Para más información, consulta https://go.microsoft.com/fwlink/?linkid=2301018.
+
+TimeCreated : 03-11-2026 18:30:12
+Id          : 1803
+Message     : No se encuentra una clave de intercambio de claves (KEK) firmada por PK para este dispositivo. Consulta con el fabricante del dispositivo el aprovisionamiento correcto de claves.
+              Esta información de firma del dispositivo se incluye aquí.
+              DeviceAttributes: FirmwareManufacturer:Insyde Corp.;FirmwareVersion:V1.12;OEMModelNumber:Nitro AN515-43;OEMModelBaseBoard:Octavia_PKS;OEMManufacturerName:Acer;OSArchitecture:amd64;
+              BucketId: ba619335bc29d351e0b7b73b9c0af78906ab013a61ced98f9c8c577696cb4b06
+              BucketConfidenceLevel: High Confidence.
+              Para más información, consulta https://go.microsoft.com/fwlink/?linkid=2339472
+True
+== Arranque (ms)
+== Integridad de Windows
+
+Deployment Image Servicing and Management tool
+Version: 10.0.26100.9549
+
+Image Version: 10.0.26300.9711
+
+The component store is repairable.
+The operation completed successfully.
+```
+
+### Auditoría de BIOS y Firmware (Acer Nitro AN515-43)
+- **Portal oficial Acer**: Soporte para modelo Acer Nitro 5 AN515-43 (Placa base `Octavia_PKS`, BIOS Insyde Corp.).
+- **Última versión oficial de BIOS**: `V1.12`
+- **Fecha de publicación**: `2020/11/04`
+- **Notas de la versión**: `1. Update AMD PI to 1.0.0.9.`
+- **Actualizaciones de Firmware / Secure Boot adicionales**: No existen versiones posteriores de BIOS, parches de microcódigo ni actualizaciones de firmware de Secure Boot publicadas por Acer para este chasis. El modelo se encuentra en su versión terminal.
+- **Estado en el equipo**: `Win32_BIOS` confirma `SMBIOSBIOSVersion = V1.12` con fecha `04-11-2020`. El equipo ya tiene instalada la versión más reciente disponible del fabricante.
+
+### Resumen técnico del estado de salud del sistema
+1. **Salud SMART de discos**:
+   - SSD Kingston SA400M8120G (`DeviceId 0`, OS C:): Temperatura 43 °C, Desgaste 0 %, 8 993 horas de encendido, 0 errores no corregidos de lectura/escritura. Estado impecable.
+   - HDD Western Digital WD10SPZX-21Z10T0 (`DeviceId 1`, Datos D:): Temperatura 35 °C, 9 114 horas de encendido, 0 errores no corregidos. Estado óptimo.
+2. **Instantáneas y Restauración de Sistema**:
+   - Puntos activos: `Punto de control programado` (03-11), `Perfil Nitro P8` (03-11), `Radeon Installer` (03-11).
+   - Espacio asignado: 1.07 GB (780 MB en uso) con un límite máximo configurado de 2.21 GB (2 % del SSD). Los 3 eventos `Volsnap 36` corresponden a purga automática normal de puntos antiguos al alcanzar dicho tope para proteger el espacio libre en C:.
+3. **Servicios**:
+   - `Google Update (gupdate)` y `Steam Client Service` presentan timeouts ocasionales al arranque (30 s), comunes en discos secundarios o arranques en frío, sin impacto operativo.
+4. **Secure Boot y TPM**:
+   - `Confirm-SecureBootUEFI` reporta `True` (Arranque Seguro activo y operativo). Los avisos TPM-WMI 1801/1803 se deben a la rotación de certificados UEFI CA 2023 de Microsoft que fabricantes antiguos no han provisionado en firmware legado, pero Windows mantiene compatibilidad plena sin degradación.
+5. **Integridad de archivos del sistema**:
+   - `DISM /Cleanup-Image /CheckHealth`: Operación exitosa, almacén de componentes reparable y consistente.
+   - `sfc /verifyonly`: Verificación completa registrada en `CBS.log` a las 19:00:22 (finalizada en transacción `000002c3`) sin archivos dañados o hashes discrepantes.

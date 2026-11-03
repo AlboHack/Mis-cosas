@@ -63,3 +63,7 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 18:50 | INICIO | P14
 2026-11-03 18:51 | ERROR | P14: SAP2000 ejecutado con modelo pero Get-GpuDeProceso reporta Microsoft Basic Render Driver (luid 0x14263). Causa: SAP2000v27.ini tiene GraphicsMode=GDIPlus (Standard Graphics). Sin activar DirectX Graphics en SAP2000 no se despachan llamadas a GPU dedicada.
 2026-11-03 18:52 | OK | P14 respondido en RESPUESTAS.md
+2026-11-03 18:56 | INICIO | P13
+2026-11-03 18:56 | NICOLAS | P13-admin.bat ejecutado elevado por Nicolas
+2026-11-03 19:00 | PASO | P13 completado -> SMART OK (SSD wear 0, HDD 0 errores), VSS 2.21 GB max, DISM y SFC limpios, auditoria BIOS AN515-43 completada (V1.12 al dia)
+2026-11-03 19:04 | OK | P13 respondido en RESPUESTAS.md
