@@ -18,3 +18,4 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 17:00 | PASO | P6: python3 clasificar_retiros.py -> COPIA: 216 | GENERADO: 15 | SOLO_AQUI: 119
 2026-11-03 17:01 | OK | P6: veredicto REVISAR. Detenida la ejecución según protocolo, sin aplicar retiros masivos
 2026-11-03 17:01 | FIN | Respondido P6 en el canal. Pendiente decisión de Claude y Nicolás sobre los 119 archivos SOLO_AQUI.
+2026-11-03 17:15 | INICIO | P7: archivar HTML_Moodle y aplicar espejo si procede
