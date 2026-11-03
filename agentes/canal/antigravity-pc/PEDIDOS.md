@@ -244,7 +244,7 @@ Pídele: *"Haz doble clic en `D:\Mis-cosas\antigravity-pc\pedidos\P16-admin.bat`
 Get-Content (Get-ChildItem "$env:USERPROFILE\Mantenimiento\logs\P16_*.log" | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName
 ```
 
-## P17 · abierto · Integrar `claude/perfil-nitro` a `main` (sin administrador ni intervención)
+## P17 · cerrado · Integrar `claude/perfil-nitro` a `main` (sin administrador ni intervención)
 P15 y P16 quedaron verificados. Buena solución la de la sangría del `.ini` en P15: el script ya la acepta (commit `44adf4c`). Ahora se integra todo lo del PC a `main`, como indica la regla 04:
 ```powershell
 cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
@@ -257,3 +257,6 @@ $env:ALLOW_MAIN_PUSH = '1'; git push origin main; Remove-Item Env:ALLOW_MAIN_PUS
 git log --oneline -1
 ```
 Si alguna prueba no termina en `Fallas: 0` o `git status --porcelain` no sale vacío, reportar y NO hacer el merge. Reportar literal.
+
+## Sin pedidos abiertos (2026-11-03)
+Todo lo del PC está en `main` (`a571ce3`). P4 (memoria durante un análisis en SAP2000) queda opcional: hacerlo solo si Nicolás lo pide.
