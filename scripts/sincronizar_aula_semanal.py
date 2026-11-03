@@ -421,37 +421,89 @@ def guardar_manifest(manifest):
     with open(MANIFEST_FILE, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
-def determine_subfolder(cshort, section_name, mod=None, filename=None):
-    clean_sec = sanitizar(section_name).strip()
-    def _norm(t):
-        if not t:
-            return ""
-        return unicodedata.normalize('NFKD', str(t)).encode('ascii', 'ignore').decode('ascii').lower()
+# ---------------------------------------------------------------- espejo de Aula
+# universidad/2026-2/<ramo>/ es igual a Aula: una carpeta por sección y, dentro, los archivos como los
+# publica el docente. Lo que genera la automatización (contexto, avisos, foto de la página) va en
+# <ramo>/_contexto/ y el espejo nunca lo toca.
+CARPETA_CONTEXTO = "_contexto"
+LIMITE_RETIROS = 20          # más archivos retirados de Aula en una corrida exige --permitir-masivo
+LIMITE_GIT_MB = 95           # GitHub rechaza archivos sobre 100 MB; los mayores quedan en la tablet y en Drive
 
-    s_norm = _norm(clean_sec)
-    mod_name = _norm(mod.get("name") if mod else "")
-    mod_type = _norm(mod.get("modname") if mod else "")
-    f_name = _norm(filename or "")
 
-    eval_kw = ["tarea", "control", "certam", "entrega", "evaluaci", "pauta", "rubrica", "notas", "caso practico", "_c1", "_c2", "_c3", "-c1", "-c2", "-c3"]
-    if mod_type == "assign" or any(k in mod_name for k in eval_kw) or any(k in f_name for k in eval_kw) or any(k in s_norm for k in eval_kw):
-        if any(k in s_norm for k in ["certam", "control", "tarea"]):
-            return os.path.join("Evaluaciones_y_Entregas", clean_sec)
-        return "Evaluaciones_y_Entregas"
+def nombre_seccion(sec, indice):
+    """Carpeta de una sección: su número con dos dígitos (orden de Aula) y su nombre."""
+    num = sec.get("section")
+    if not isinstance(num, int):
+        num = indice
+    nombre = sanitizar(sec.get("name") or "").strip() or ("General" if num == 0 else f"Sección {num}")
+    return f"{num:02d} {nombre}"
 
-    mat_kw = ["ayudant", "guia", "handout", "clase", "ppt", "apunte", "bibliograf", "lectura", "libro", "rendimiento", "ejercicio"]
-    if any(k in mod_name for k in mat_kw) or any(k in f_name for k in mat_kw) or any(k in s_norm for k in mat_kw):
-        if any(k in s_norm for k in ["ayudant", "guia", "clase", "material", "apunte", "unidad"]):
-            return os.path.join("Material_y_Apuntes", clean_sec)
-        return "Material_y_Apuntes"
 
-    if any(k in s_norm for k in ["planificaci", "programa", "calendario"]) or any(k in mod_name for k in ["programa", "planificaci", "calendario"]):
-        return os.path.join("Planificacion", clean_sec)
+def ruta_espejo(sec, indice, mod, cont):
+    """Ruta de un archivo relativa a la carpeta del ramo, como se ve en Aula.
 
-    if any(k in s_norm for k in ["general", "informacion general"]):
-        return os.path.join("Planificacion", clean_sec)
+    Un recurso de un solo archivo queda directo en la sección; carpetas, entregas y recursos con
+    varios archivos quedan en una subcarpeta con el nombre del módulo (y sus subcarpetas internas).
+    """
+    partes = [nombre_seccion(sec, indice)]
+    archivos = [c for c in mod.get("contents", []) if c.get("type") == "file"]
+    if not (mod.get("modname") == "resource" and len(archivos) == 1):
+        partes.append(sanitizar(mod.get("name") or "").strip() or f"Módulo {mod.get('id')}")
+    partes += [sanitizar(x).strip() for x in (cont.get("filepath") or "/").split("/") if x.strip()]
+    partes.append(sanitizar(cont.get("filename", "")).strip())
+    return os.path.join(*partes)
 
-    return os.path.join("Material_y_Apuntes", clean_sec)
+
+def archivos_del_ramo(cdir):
+    """Archivos del espejo en la carpeta de un ramo: todo menos _contexto/ y los ocultos."""
+    if not os.path.isdir(cdir):
+        return
+    for root, dirs, files in os.walk(cdir):
+        dirs[:] = [d for d in dirs if d != CARPETA_CONTEXTO and not d.startswith(".")]
+        for f in files:
+            if not f.startswith("."):
+                yield os.path.join(root, f)
+
+
+def borrar_carpetas_vacias(cdir):
+    for root, dirs, files in os.walk(cdir, topdown=False):
+        if root == cdir or CARPETA_CONTEXTO in os.path.relpath(root, cdir).split(os.sep):
+            continue
+        if not os.listdir(root):
+            os.rmdir(root)
+
+
+def reflejar_en_repo(courses, root_dir, repo_uni, limite_mb=LIMITE_GIT_MB):
+    """Deja cada ramo del repo igual a su espejo en la tablet: copia lo nuevo o distinto y borra lo
+    que ya no está en Aula. No toca _contexto/, los archivos ocultos ni lo que está fuera de los ramos.
+    Devuelve (copiados, borrados, omitidos_por_tamaño)."""
+    copiados = borrados = omitidos = 0
+    tope = limite_mb * 1024 * 1024
+    for c in courses:
+        src = os.path.join(root_dir, c["folder"])
+        dst = os.path.join(repo_uni, c["folder"])
+        if not os.path.isdir(src):
+            continue
+        origen = {}
+        for p in archivos_del_ramo(src):
+            if os.path.getsize(p) > tope:
+                omitidos += 1
+                log(f"  [OMITIDO DE GIT > {limite_mb} MB] {os.path.relpath(p, root_dir)}")
+                continue
+            origen[os.path.relpath(p, src)] = p
+        for rel, p in origen.items():
+            d = os.path.join(dst, rel)
+            if (not os.path.exists(d) or os.path.getsize(d) != os.path.getsize(p)
+                    or compute_file_sha256(d) != compute_file_sha256(p)):
+                os.makedirs(os.path.dirname(d), exist_ok=True)
+                shutil.copy2(p, d)
+                copiados += 1
+        for p in list(archivos_del_ramo(dst)):
+            if os.path.relpath(p, dst) not in origen:
+                os.remove(p)
+                borrados += 1
+        borrar_carpetas_vacias(dst)
+    return copiados, borrados, omitidos
 
 def sincronizar_evaluaciones(client, repo_dir):
     """Consulta eventos de calendario con la API y fusiona con evaluaciones_manual.json."""
@@ -655,8 +707,10 @@ def run_sync():
     # Recorrer cursos y armar lista de archivos por descargar
     # -------------------------------------------------------------
     plan_descargas = []
+    plan_copias = []            # (origen, destino, url): contenido ya en disco que va a su carpeta de Aula
     course_sections = {}
-    rutas_reparadas = 0
+    esperados = {}              # cid -> rutas que Aula publica hoy
+    urls_vistas = set()
 
     for c in courses:
         cid = c["id"]
@@ -685,7 +739,9 @@ def run_sync():
             errores.append(err_msg)
             continue
 
-        for sec in sections:
+        esperados_c = esperados.setdefault(cid, set())
+        dueno_ruta = {}
+        for indice, sec in enumerate(sections):
             sec_name = sec.get("name") or "General"
 
             for mod in sec.get("modules", []):
@@ -701,97 +757,53 @@ def run_sync():
                     if not fname or not fileurl:
                         continue
 
-                    sub_path = determine_subfolder(cshort, sec_name, mod=mod, filename=fname)
-                    target_dir = os.path.join(cdir, sub_path)
                     url_clean = fileurl.split("?")[0]
-                    local_fpath = os.path.join(target_dir, fname)
+                    local_fpath = os.path.join(cdir, ruta_espejo(sec, indice, mod, cont))
+                    if dueno_ruta.get(local_fpath, url_clean) != url_clean:
+                        # Dos archivos de Aula con el mismo nombre en la misma carpeta: se distinguen por el módulo
+                        base_n, ext_n = os.path.splitext(local_fpath)
+                        local_fpath = f"{base_n} [{mod.get('id')}]{ext_n}"
+                    dueno_ruta[local_fpath] = url_clean
+                    esperados_c.add(local_fpath)
+                    urls_vistas.add(url_clean)
+                    target_dir = os.path.dirname(local_fpath)
 
-                    # Comprobación de manifiesto
+                    item = {"tipo": "nuevo", "course": c, "sec_name": sec_name,
+                            "sub_path": os.path.relpath(target_dir, cdir), "target_dir": target_dir,
+                            "fname": fname, "fileurl": fileurl, "url_clean": url_clean,
+                            "local_fpath": local_fpath, "filesize": filesize, "timemodified": timemodified}
                     manifest_entry = manifest.get(url_clean)
-                    target_check_path = manifest_entry.get("local_path", local_fpath) if manifest_entry else local_fpath
 
-                    # Reubicación a subcarpeta correcta si la ruta previa en disco difiere de la calculada
-                    if manifest_entry and target_check_path != local_fpath and os.path.exists(target_check_path):
-                        os.makedirs(target_dir, exist_ok=True)
-                        if not os.path.exists(local_fpath):
-                            old_p = target_check_path
-                            shutil.move(old_p, local_fpath)
+                    if manifest_entry and manifest_entry.get("timemodified") == timemodified \
+                            and manifest_entry.get("filesize") == filesize:
+                        manifest_entry["last_seen"] = datetime.now().isoformat()
+                        if os.path.exists(local_fpath):
                             manifest_entry["local_path"] = local_fpath
-                            target_check_path = local_fpath
-                            sha_m = manifest_entry.get("sha256")
-                            if sha_m:
-                                c_hashes[sha_m] = local_fpath
-                            archivos_reubicados.append((old_p, local_fpath))
-                            log(f"  [REUBICADO] {cshort} -> {fname}: {os.path.relpath(local_fpath, cdir)}")
-                        else:
-                            manifest_entry["local_path"] = local_fpath
-                            target_check_path = local_fpath
-
-                    # Ruta del manifest obsoleta (p. ej. tras borrar duplicados): si el contenido
-                    # registrado sigue en disco en otra carpeta del curso, se repara la ruta sin descargar.
-                    if manifest_entry and not os.path.exists(target_check_path):
-                        sha_reg = manifest_entry.get("sha256")
-                        ruta_viva = c_hashes.get(sha_reg) if sha_reg else None
-                        if ruta_viva and os.path.exists(ruta_viva):
-                            log(f"  [RUTA REPARADA] {cshort} -> {fname}: {os.path.relpath(ruta_viva, cdir)}")
-                            manifest_entry["local_path"] = ruta_viva
-                            target_check_path = ruta_viva
-                            rutas_reparadas += 1
-
-                    if manifest_entry and os.path.exists(target_check_path):
-                        # Caso: Archivo ya existe y está registrado
-                        if manifest_entry.get("timemodified") == timemodified and manifest_entry.get("filesize") == filesize:
-                            manifest[url_clean]["last_seen"] = datetime.now().isoformat()
                             continue
-                        else:
-                            # Caso modificación pendiente
-                            plan_descargas.append({
-                                "tipo": "modificado",
-                                "course": c,
-                                "sec_name": sec_name,
-                                "sub_path": sub_path,
-                                "target_dir": target_dir,
-                                "fname": fname,
-                                "fileurl": fileurl,
-                                "url_clean": url_clean,
-                                "local_fpath": local_fpath,
-                                "target_check_path": target_check_path,
-                                "filesize": filesize,
-                                "timemodified": timemodified,
-                                "manifest_entry": manifest_entry
-                            })
+                        # Ya descargado en otra carpeta (estructura anterior o ruta obsoleta): se copia sin descargar
+                        origen = manifest_entry.get("local_path")
+                        if not (origen and os.path.exists(origen)):
+                            origen = c_hashes.get(manifest_entry.get("sha256"))
+                        if origen and os.path.exists(origen):
+                            plan_copias.append((origen, local_fpath, url_clean))
+                            continue
+                        plan_descargas.append(item)
+                    elif manifest_entry:
+                        item["tipo"] = "modificado"
+                        plan_descargas.append(item)
+                    elif os.path.exists(local_fpath) and os.path.getsize(local_fpath) == filesize:
+                        # Caso T9': archivo ya existe en disco con tamaño idéntico -> registrar sin descargar
+                        sha = compute_file_sha256(local_fpath)
+                        manifest[url_clean] = {
+                            "timemodified": timemodified,
+                            "filesize": filesize,
+                            "local_path": local_fpath,
+                            "sha256": sha,
+                            "last_seen": datetime.now().isoformat()
+                        }
+                        c_hashes[sha] = local_fpath
                     else:
-                        # No está en manifest
-                        if os.path.exists(local_fpath) and os.path.getsize(local_fpath) == filesize:
-                            # Caso T9': archivo ya existe en disco con tamaño idéntico -> registrar sin descargar
-                            sha = compute_file_sha256(local_fpath)
-                            manifest[url_clean] = {
-                                "timemodified": timemodified,
-                                "filesize": filesize,
-                                "local_path": local_fpath,
-                                "sha256": sha,
-                                "last_seen": datetime.now().isoformat()
-                            }
-                            c_hashes[sha] = local_fpath
-                            continue
-                        else:
-                            # Caso nuevo pendiente
-                            plan_descargas.append({
-                                "tipo": "nuevo",
-                                "course": c,
-                                "sec_name": sec_name,
-                                "sub_path": sub_path,
-                                "target_dir": target_dir,
-                                "fname": fname,
-                                "fileurl": fileurl,
-                                "url_clean": url_clean,
-                                "local_fpath": local_fpath,
-                                "filesize": filesize,
-                                "timemodified": timemodified
-                            })
-
-    if rutas_reparadas:
-        log(f"  [MANIFEST] {rutas_reparadas} ruta(s) obsoleta(s) reparada(s) contra el contenido en disco (sin descargar).")
+                        plan_descargas.append(item)
 
     # Guardia estricto de límite masivo (>20 archivos pendientes)
     # Se evalúa en la fase de plan ANTES de descargar o escribir ningún byte en disco
@@ -805,81 +817,94 @@ def run_sync():
         return 1
 
     # -------------------------------------------------------------
-    # FASE 2: EJECUCIÓN (Descargas con deduplicación por SHA-256)
+    # FASE 2: EJECUCIÓN
     # -------------------------------------------------------------
+    # 2a. Contenido ya descargado que va a su carpeta de Aula: se copia (no se mueve, porque otra
+    # entrada puede usar el mismo origen); lo que sobre en la carpeta anterior se retira en 2c.
+    for origen, destino, url_clean in plan_copias:
+        try:
+            os.makedirs(os.path.dirname(destino), exist_ok=True)
+            shutil.copy2(origen, destino)
+            manifest[url_clean]["local_path"] = destino
+            archivos_reubicados.append((origen, destino))
+        except Exception as cp_err:
+            errores.append(f"Error ubicando {os.path.basename(destino)}: {cp_err}")
+            log(f"  [ERROR] {errores[-1]}")
+    if plan_copias:
+        log(f"  [ESTRUCTURA AULA] {len(plan_copias)} archivo(s) ubicados en su carpeta de Aula sin descargar.")
+
+    # 2b. Descargas. Cada archivo de Aula queda en su propia ruta, aunque su contenido se repita en
+    # otra sección; una versión modificada reemplaza a la anterior (la previa queda en el historial de git).
     for item in plan_descargas:
         c = item["course"]
         cid = c["id"]
         cshort = c["short"]
-        cdir = os.path.join(ROOT_DIR, c["folder"])
         c_hashes = course_sha_indexes.get(cid, {})
         fname = item["fname"]
-        fileurl = item["fileurl"]
         url_clean = item["url_clean"]
         local_fpath = item["local_fpath"]
-        target_dir = item["target_dir"]
-        sub_path = item["sub_path"]
-        filesize = item["filesize"]
-        timemodified = item["timemodified"]
         tipo = item["tipo"]
 
         try:
-            data = client.download_file(fileurl, local_fpath)
+            data = client.download_file(item["fileurl"], local_fpath)
             data_sha = hashlib.sha256(data).hexdigest()
-
-            # Deduplicación por hash SHA-256 dentro del curso
-            target_check = item.get("target_check_path", local_fpath)
-            if data_sha in c_hashes and c_hashes[data_sha] != target_check:
-                existing_disk_p = c_hashes[data_sha]
-                manifest[url_clean] = {
-                    "timemodified": timemodified,
-                    "filesize": filesize,
-                    "local_path": existing_disk_p,
-                    "sha256": data_sha,
-                    "last_seen": datetime.now().isoformat()
-                }
-                log(f"  [DUPLICADO OMITIDO] {cshort} -> {fname} ya existe en {os.path.relpath(existing_disk_p, cdir)}. No se descarga ni copia.")
-                continue
-
-            if tipo == "modificado":
-                # Respaldar versión anterior antes de sobreescribir
-                manifest_entry = item.get("manifest_entry", {})
-                v_ext = os.path.splitext(fname)[1]
-                v_base = os.path.splitext(fname)[0]
-                old_mod = manifest_entry.get("timemodified")
-                if old_mod and isinstance(old_mod, (int, float)) and old_mod > 0:
-                    date_str = datetime.fromtimestamp(old_mod).strftime("%Y%m%d")
-                else:
-                    date_str = datetime.now().strftime("%Y%m%d")
-                f_old_backup = os.path.join(target_dir, f"{v_base}_v{date_str}{v_ext}")
-                if os.path.exists(local_fpath):
-                    shutil.copy2(local_fpath, f_old_backup)
-                    log(f"  [VERSIÓN ANTERIOR RESPALDADA] -> {os.path.basename(f_old_backup)}")
-
-            os.makedirs(target_dir, exist_ok=True)
+            os.makedirs(item["target_dir"], exist_ok=True)
             with open(local_fpath, "wb") as out_f:
                 out_f.write(data)
 
             c_hashes[data_sha] = local_fpath
             manifest[url_clean] = {
-                "timemodified": timemodified,
-                "filesize": filesize,
+                "timemodified": item["timemodified"],
+                "filesize": item["filesize"],
                 "local_path": local_fpath,
                 "sha256": data_sha,
                 "last_seen": datetime.now().isoformat()
             }
             archivos_descargados.append(local_fpath)
             tag_log = "[ARCHIVO MODIFICADO]" if tipo == "modificado" else "[NUEVO ARCHIVO]"
-            log(f"  {tag_log} {cshort} -> {sub_path}/{fname}")
+            log(f"  {tag_log} {cshort} -> {item['sub_path']}/{fname}")
 
         except Exception as dl_err:
             err_msg = f"Error procesando {fname}: {dl_err}"
             log(f"  [ERROR] {err_msg}", token_to_mask=token)
             errores.append(err_msg)
 
+    # 2c. Retiro: lo que está en la carpeta de un ramo y Aula ya no publica. Solo en ramos cuyo
+    # listado llegó completo, y con más de LIMITE_RETIROS archivos exige --permitir-masivo.
+    retiros = []
+    for c in courses:
+        if c["id"] not in course_sections:
+            continue
+        cdir = os.path.join(ROOT_DIR, c["folder"])
+        retiros += [p for p in archivos_del_ramo(cdir) if p not in esperados.get(c["id"], set())]
+    espejo_completo = True
+    if len(retiros) > LIMITE_RETIROS and "--permitir-masivo" not in sys.argv:
+        espejo_completo = False
+        msg_ret = (f"ALERTA: {len(retiros)} archivos ya no figuran en Aula (>{LIMITE_RETIROS}). No se retira nada "
+                   f"ni se actualiza el repo hasta revisarlo; para aplicarlo, correr con --permitir-masivo.")
+        log(f"  [ALERTA DE SEGURIDAD] {msg_ret}")
+        for r in retiros[:10]:
+            log(f"    - {os.path.relpath(r, ROOT_DIR)}")
+        errores.append(msg_ret)
+    else:
+        for r in retiros:
+            try:
+                os.remove(r)
+                log(f"  [RETIRADO DE AULA] {os.path.relpath(r, ROOT_DIR)}")
+            except Exception as rm_err:
+                errores.append(f"No se pudo retirar {os.path.relpath(r, ROOT_DIR)}: {rm_err}")
+        for c in courses:
+            if c["id"] in course_sections:
+                borrar_carpetas_vacias(os.path.join(ROOT_DIR, c["folder"]))
+        # El manifiesto olvida lo retirado: si vuelve a Aula, se descarga de nuevo
+        carpetas_ok = tuple(os.path.join(ROOT_DIR, c["folder"]) + os.sep for c in courses if c["id"] in course_sections)
+        for url in [u for u, e in manifest.items()
+                    if u not in urls_vistas and str(e.get("local_path", "")).startswith(carpetas_ok)]:
+            del manifest[url]
+
     guardar_manifest(manifest)
     log("-------------------------------------------------------")
-    log(f"RESULTADO: {len(archivos_descargados)} archivo(s) nuevo(s) o modificado(s). Errores: {len(errores)}")
+    log(f"RESULTADO: {len(archivos_descargados)} archivo(s) nuevo(s) o modificado(s), {len(plan_copias)} reubicado(s), {len(retiros) if espejo_completo else 0} retirado(s). Errores: {len(errores)}")
 
     # 3. Novedades: foros (docentes), cambios en la página de cada ramo y mensajes privados
     novedades = {}
@@ -968,31 +993,12 @@ def run_sync():
                 errores.append(err_g)
             else:
                 target_repo_uni = os.path.join(REPO_DIR, "universidad/2026-2")
-                if len(archivos_descargados) > 0:
-                    for src_f in archivos_descargados:
-                        sz_mb = os.path.getsize(src_f) / (1024 * 1024)
-                        if sz_mb >= 50:
-                            log(f"  [OMITIDO DE GIT > 50 MB] {os.path.basename(src_f)} ({sz_mb:.1f} MB)")
-                            continue
-                        rel = os.path.relpath(src_f, ROOT_DIR)
-                        dst_f = os.path.join(target_repo_uni, rel)
-                        os.makedirs(os.path.dirname(dst_f), exist_ok=True)
-                        shutil.copy2(src_f, dst_f)
+                if espejo_completo:
+                    n_cp, n_bo, n_om = reflejar_en_repo(courses, ROOT_DIR, target_repo_uni)
+                    log(f"  [REPO] Espejo de Aula: {n_cp} copiado(s), {n_bo} retirado(s), {n_om} sobre {LIMITE_GIT_MB} MB solo en tablet y Drive.")
+                else:
+                    log("  [REPO] Espejo no actualizado: retiro pendiente de revisión (--permitir-masivo).")
 
-                if len(archivos_reubicados) > 0:
-                    for old_f, new_f in archivos_reubicados:
-                        rel_old = os.path.relpath(old_f, ROOT_DIR)
-                        dst_old = os.path.join(target_repo_uni, rel_old)
-                        if os.path.exists(dst_old):
-                            try:
-                                os.remove(dst_old)
-                            except Exception:
-                                pass
-                        rel_new = os.path.relpath(new_f, ROOT_DIR)
-                        dst_new = os.path.join(target_repo_uni, rel_new)
-                        os.makedirs(os.path.dirname(dst_new), exist_ok=True)
-                        shutil.copy2(new_f, dst_new)
-                
                 subprocess.run(["git", "add", "-A", "universidad/2026-2/"], cwd=REPO_DIR, check=True)
                 p_diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=REPO_DIR)
                 if p_diff.returncode != 0:

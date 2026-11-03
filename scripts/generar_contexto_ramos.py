@@ -230,24 +230,24 @@ def extraer_tareas_asignadas(client, cid):
         return {}
 
 def escanear_archivos_locales(dir_ramo):
-    """Escanea los archivos descargados clasificados en el ramo."""
+    """Escanea el espejo de Aula del ramo (todo menos _contexto/). subcarpeta = sección de Aula."""
     archivos = {}
-    for sub in ["Evaluaciones_y_Entregas", "Material_y_Apuntes", "Planificacion"]:
-        sdir = os.path.join(dir_ramo, sub)
-        if os.path.exists(sdir):
-            for root, _, files in os.walk(sdir):
-                for f in files:
-                    if f.startswith(".") or f == "desktop.ini":
-                        continue
-                    full_p = os.path.join(root, f)
-                    rel = os.path.relpath(full_p, dir_ramo).replace(os.sep, "/")
-                    st = os.stat(full_p)
-                    archivos[f] = {
-                        "relpath": rel,
-                        "subcarpeta": sub,
-                        "size": st.st_size,
-                        "mtime": int(st.st_mtime)
-                    }
+    for root, dirs, files in os.walk(dir_ramo):
+        dirs[:] = [d for d in dirs if d != "_contexto" and not d.startswith(".")]
+        for f in files:
+            if f.startswith(".") or f == "desktop.ini":
+                continue
+            full_p = os.path.join(root, f)
+            rel = os.path.relpath(full_p, dir_ramo).replace(os.sep, "/")
+            if "/" not in rel:
+                continue
+            st = os.stat(full_p)
+            archivos[f] = {
+                "relpath": rel,
+                "subcarpeta": rel.split("/")[0],
+                "size": st.st_size,
+                "mtime": int(st.st_mtime)
+            }
     return archivos
 
 def cargar_evaluaciones_ramo(sigla, short_name):
@@ -313,21 +313,22 @@ def generar_contexto_para_ramo(cmeta, client=None, now_dt=None):
         now_dt = datetime.now(TZ)
 
     dir_ramo = os.path.join(BASE_DIR, cmeta["folder"])
-    os.makedirs(dir_ramo, exist_ok=True)
+    dir_ctx = os.path.join(dir_ramo, "_contexto")   # lo generado va aparte del espejo de Aula
+    os.makedirs(dir_ctx, exist_ok=True)
 
     cid = cmeta["id"]
     sigla = cmeta["sigla"]
     short_name = cmeta["short"]
 
     # 1. Datos de Aula
-    sections = extraer_secciones_y_modulos(client, cid, dir_ramo)
+    sections = extraer_secciones_y_modulos(client, cid, dir_ctx)
     assignments_api = extraer_tareas_asignadas(client, cid)
     evaluaciones = cargar_evaluaciones_ramo(sigla, short_name)
-    avisos = cargar_avisos_recientes(dir_ramo, max_avisos=6)
+    avisos = cargar_avisos_recientes(dir_ctx, max_avisos=6)
     archivos_locales = escanear_archivos_locales(dir_ramo)
 
     # 2. Cargar estado previo para detección incremental
-    estado_path = os.path.join(dir_ramo, ".contexto_estado.json")
+    estado_path = os.path.join(dir_ctx, ".contexto_estado.json")
     estado_previo = {}
     if os.path.exists(estado_path):
         try:
@@ -390,7 +391,7 @@ def generar_contexto_para_ramo(cmeta, client=None, now_dt=None):
         pass
 
     # 3. Leer historial previo de Contexto_Asignatura.md si existe
-    contexto_md_path = os.path.join(dir_ramo, "Contexto_Asignatura.md")
+    contexto_md_path = os.path.join(dir_ctx, "Contexto_Asignatura.md")
     historial_previo = ""
     if os.path.exists(contexto_md_path):
         try:
@@ -578,7 +579,7 @@ def generar_contexto_para_ramo(cmeta, client=None, now_dt=None):
     L.append("## 💾 5. Inventario de Archivos Locales en Disco y Google Drive")
     L.append(f"Total de archivos sincronizados: **{len(archivos_locales)}**")
     L.append("")
-    for sub in ["Evaluaciones_y_Entregas", "Material_y_Apuntes", "Planificacion"]:
+    for sub in sorted({d["subcarpeta"] for d in archivos_locales.values()}):
         sub_files = [d for d in archivos_locales.values() if d["subcarpeta"] == sub]
         sub_files.sort(key=lambda x: x["relpath"].lower())
         L.append(f"### 📂 `{sub}/` ({len(sub_files)} archivos)")
@@ -586,7 +587,7 @@ def generar_contexto_para_ramo(cmeta, client=None, now_dt=None):
             L.append("| Archivo | Tamaño | Modificado | Estado Google Drive |")
             L.append("|---------|--------|------------|---------------------|")
             for sf in sub_files:
-                f_name = os.path.basename(sf["relpath"])
+                f_name = sf["relpath"].split("/", 1)[1]
                 sz = format_bytes(sf["size"])
                 mt = ts_to_str(sf["mtime"])
                 L.append(f"| `{f_name}` | {sz} | {mt} | Sincronizado |")

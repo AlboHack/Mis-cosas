@@ -2,6 +2,16 @@
 
 Qué archivos se movieron, borraron o renombraron en cada ordenamiento. El porqué de cada decisión está en `DECISIONES.md`. Todo lo borrado se recupera con `git show <commit>^:<ruta>`.
 
+## 2026-11-03 · Espejo de Aula (rama `claude/espejo-aula`)
+
+| Antes | Después |
+|---|---|
+| `<ramo>/Contexto_Asignatura.md`, `.contexto_estado.json`, `avisos.md`, `cambios_pagina.md`, `pagina_curso.json` | `<ramo>/_contexto/` (movidos con su historial) |
+| `<ramo>/Planificacion/`, `Evaluaciones_y_Entregas/`, `Material_y_Apuntes/` | `<ramo>/NN Sección/[Módulo/]`; la primera corrida de la tablet con `--permitir-masivo` reubica todo y retira lo anterior |
+| `<archivo>_vAAAAMMDD` al cambiar un archivo en Aula | Sin copia: la versión anterior queda en el historial de git |
+| `determine_subfolder` (categorías por palabras clave) | `ruta_espejo`, `archivos_del_ramo`, `reflejar_en_repo` en `scripts/sincronizar_aula_semanal.py` |
+| — | `scripts/pruebas/test_espejo.py` (T31) y T32 en `test_aceptacion_token.py` |
+
 ## 2026-11-03 · Ordenamiento general (rama `claude/orden-repo`)
 
 ### Archivos generados viejos que ningún script mantiene (no vienen de Aula)

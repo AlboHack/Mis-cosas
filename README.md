@@ -23,7 +23,7 @@ Configuración de Claude para Ingeniería Civil UTFSM y automatizaciones de Nico
 Ramas: `main` estable; `claude/<tema>` trabajo de Claude; `ag/<nodo>` aportes de un nodo Antigravity; `canal` conversación Claude ↔ Antigravity (no se mezcla a `main`).
 
 ## Universidad
-Cada ramo en `universidad/2026-2/<SIGLA_NOMBRE>/` tiene `Contexto_Asignatura.md` (generado por `scripts/generar_contexto_ramos.py`), `Evaluaciones_y_Entregas/`, `Material_y_Apuntes/`, `Planificacion/`, `avisos.md` y `cambios_pagina.md`. El resumen del semestre está en `Contexto_Semestre_2026-2.md` y las fechas en `evaluaciones.json` (fusión de Aula con `evaluaciones_manual.json`). Archivos de más de 50 MB quedan solo en la tablet y en Drive (GitHub rechaza archivos sobre 100 MB).
+Cada ramo en `universidad/2026-2/<SIGLA_NOMBRE>/` es un espejo de Aula: una carpeta `NN Sección` por sección, en el orden de Aula, con los archivos tal como los publica el docente (lo que Aula retira se retira aquí). Lo que genera la automatización va en `<ramo>/_contexto/`: `Contexto_Asignatura.md`, `avisos.md`, `cambios_pagina.md` y `pagina_curso.json`. El resumen del semestre está en `Contexto_Semestre_2026-2.md` y las fechas en `evaluaciones.json` (fusión de Aula con `evaluaciones_manual.json`). Archivos de más de 95 MB quedan solo en la tablet y en Drive (GitHub rechaza archivos sobre 100 MB).
 
 ## Llevar los cambios a claude.ai
 1. Skills: descargar el .zip desde la release [skills](https://github.com/AlboHack/Mis-cosas/releases/tag/skills) y subirlo en claude.ai > Configuración > Capacidades > Skills (reemplaza la versión anterior).

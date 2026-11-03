@@ -70,7 +70,7 @@ def t21_foros(tmp):
          "message": "<p>Entran unidades 5 y 6. Además, el certamen 3 se posterga al lunes 23.</p>", "subject": "Re: Duda C3"},
     ]
     resumen, errores = an.sincronizar_novedades(c, curso(), tmp, None, None, lambda m: None, ahora=AHORA)
-    avisos = open(os.path.join(tmp, "universidad/2026-2/CIV244/avisos.md"), encoding="utf-8").read()
+    avisos = open(os.path.join(tmp, "universidad/2026-2/CIV244/_contexto/avisos.md"), encoding="utf-8").read()
     return resultado("T21", [
         ("sin errores", errores == []),
         ("aviso del docente en foro news incluido", "Bienvenida" in avisos),
@@ -91,7 +91,7 @@ def t22_pagina(tmp):
          "dates": [{"label": "Vencimiento:", "timestamp": T + 3 * DIA}]},
     ]}]
     c.secciones[1] = base
-    dir_ramo = os.path.join(tmp, "universidad/2026-2/CIV244")
+    dir_ramo = os.path.join(tmp, "universidad/2026-2/CIV244/_contexto")
     an.sincronizar_novedades(c, curso(), tmp, None, None, lambda m: None, ahora=AHORA)
     linea_base_sin_bitacora = not os.path.exists(os.path.join(dir_ramo, "cambios_pagina.md"))
 

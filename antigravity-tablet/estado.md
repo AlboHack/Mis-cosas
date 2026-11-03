@@ -7,6 +7,7 @@ Actualizar con fecha en cada cambio. Antes de dar por cierto el estado de una ra
 
 | Rama | Estado | Espera |
 |---|---|---|
+| `claude/espejo-aula` | Sincronización como espejo de Aula, sobre `claude/orden-repo` | P4 de la tablet: pruebas, merge y primera corrida con `--permitir-masivo` |
 | `claude/orden-repo` | Ordenamiento: pruebas a `scripts/pruebas/` y aisladas, archivos generados viejos fuera, consejo-tecnico, esta carpeta | P3 de la tablet (pruebas) y confirmación de Nicolás para el merge (incluye borrados) |
 | `claude/latex-compaginacion` | Mejora de la skill latex-utfsm (2 commits) | Merge |
 | `claude/pc-mantenimiento` | Mantenimiento del Nitro 5 reescrito, CI en Windows verde | P2 del PC |
@@ -21,5 +22,5 @@ Actualizar con fecha en cada cambio. Antes de dar por cierto el estado de una ra
 - P2: lista de `PLAN` de lo que quiere que Claude programe.
 - P3: pruebas de `claude/orden-repo` sin merge.
 
-## Pendiente de diseño
-`universidad/` debe quedar igual a Aula. Hoy no lo es: `determine_subfolder` reparte los archivos en tres categorías propias por palabras clave y mueve los que cambia de categoría, de modo que un mismo archivo puede aparecer en otra carpeta que la de Aula, y los archivos sobre 50 MB no llegan al repo.
+## Espejo de Aula (rama `claude/espejo-aula`)
+`universidad/` pasa a ser igual a Aula. Hay carpetas por sección y módulo, se retira lo que Aula quita y lo generado queda en `_contexto/`. Todas las suites pasan fuera de la tablet. Falta la primera corrida real en la tablet, con `--permitir-masivo`: reubica todos los archivos y retira la estructura anterior (Planificacion/Evaluaciones_y_Entregas/Material_y_Apuntes). Nicolás confirmó el espejo exacto con borrados el 2026-11-03.

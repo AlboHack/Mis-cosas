@@ -420,34 +420,26 @@ def run_test_suite():
     print(f"Resultado T3': {'PASS' if t3_pass else 'FAIL'}\n")
 
     # ----------------------------------------------------------------------
-    # T2': Modificación incremental (timemodified cambia -> versión nueva + respaldo YYYYMMDD)
+    # T2': Modificación incremental (timemodified cambia -> la versión nueva reemplaza a la anterior, sin _v)
     # ----------------------------------------------------------------------
-    print("--- [EJECUTANDO T2': Modificación Incremental y Respaldo por timemodified (Fecha YYYYMMDD)] ---")
-    target_clean_dir = os.path.join(test_root_dir, "CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Planificacion/General")
-    os.makedirs(target_clean_dir, exist_ok=True)
+    print("--- [EJECUTANDO T2': Modificación Incremental en el Espejo de Aula] ---")
+    target_clean_dir = os.path.join(test_root_dir, "CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/00 General")
     server_state["mode"] = "normal"
     server_state["file_version"] = 1
     server_state["timemodified"] = TS_V1
 
     # Corrida 1: Descarga versión 1
     subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
-    
+
     # Corrida 2: timemodified cambia a TS_V2, versión 2
     server_state["file_version"] = 2
     server_state["timemodified"] = TS_V2
     subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
 
     vigente_f = os.path.join(target_clean_dir, "Pauta.pdf")
-    respaldo_f = os.path.join(target_clean_dir, f"Pauta_v{DATE_STR_V1}.pdf")
-
-    t2_pass = False
-    if os.path.exists(vigente_f) and os.path.exists(respaldo_f):
-        c_vig = open(vigente_f, "rb").read()
-        c_res = open(respaldo_f, "rb").read()
-        if b"Version 2" in c_vig and b"Version 1" in c_res:
-            t2_pass = True
-            print(f"  -> Verificado: Archivo vigente contiene 'Version 2', respaldo 'Pauta_v{DATE_STR_V1}.pdf' contiene 'Version 1'.")
-
+    respaldos = [f for f in os.listdir(target_clean_dir) if f.startswith("Pauta_v")] if os.path.isdir(target_clean_dir) else ["?"]
+    t2_pass = os.path.exists(vigente_f) and b"Version 2" in open(vigente_f, "rb").read() and not respaldos
+    print(f"  Vigente con 'Version 2' en '00 General/Pauta.pdf': {os.path.exists(vigente_f)}; respaldos _v: {respaldos}")
     print(f"Resultado T2': {'PASS' if t2_pass else 'FAIL'}\n")
 
     # ----------------------------------------------------------------------
@@ -466,29 +458,31 @@ def run_test_suite():
     print(f"Resultado T9': {'PASS' if t9_pass else 'FAIL'}\n")
 
     # ----------------------------------------------------------------------
-    # T26: Ruta del manifest obsoleta con el archivo presente en otra carpeta -> se repara, 0 pendientes
+    # T26: Archivo registrado que quedó en otra carpeta -> vuelve a su carpeta de Aula sin descargar
+    #      y la copia fuera de lugar se retira
     # ----------------------------------------------------------------------
-    print("--- [EJECUTANDO T26: Reparación de rutas obsoletas del manifest] ---")
+    print("--- [EJECUTANDO T26: Archivo fuera de su carpeta de Aula] ---")
     server_state["mode"] = "normal"
     man26 = json.load(open(test_manifest_file, encoding="utf-8"))
     url26, ent26 = next((u, e) for u, e in man26.items() if os.path.exists(e.get("local_path", "")))
-    ruta_vieja = ent26["local_path"]
-    ruta_nueva = os.path.join(os.path.dirname(os.path.dirname(ruta_vieja)), "Reubicado_T26", os.path.basename(ruta_vieja))
-    os.makedirs(os.path.dirname(ruta_nueva), exist_ok=True)
-    shutil.move(ruta_vieja, ruta_nueva)
+    ruta_aula = ent26["local_path"]
+    ruta_otra = os.path.join(os.path.dirname(os.path.dirname(ruta_aula)), "Reubicado_T26", os.path.basename(ruta_aula))
+    os.makedirs(os.path.dirname(ruta_otra), exist_ok=True)
+    shutil.move(ruta_aula, ruta_otra)
+    man26[url26]["local_path"] = ruta_otra
+    json.dump(man26, open(test_manifest_file, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
     p_t26 = subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
     man26b = json.load(open(test_manifest_file, encoding="utf-8"))
     t26_pass = (
         p_t26.returncode == 0
-        and "[RUTA REPARADA]" in p_t26.stdout
+        and "[ESTRUCTURA AULA] 1 archivo(s)" in p_t26.stdout
         and "RESULTADO: 0 archivo(s) nuevo(s)" in p_t26.stdout
-        and man26b[url26]["local_path"] == ruta_nueva
-        and not os.path.exists(ruta_vieja)
+        and "[RETIRADO DE AULA]" in p_t26.stdout
+        and man26b[url26]["local_path"] == ruta_aula
+        and os.path.exists(ruta_aula)
+        and not os.path.exists(os.path.dirname(ruta_otra))
     )
-    print(f"  Código {p_t26.returncode}; ruta reparada en manifest: {man26b[url26]['local_path'] == ruta_nueva}; sin re-descarga: {not os.path.exists(ruta_vieja)}")
-    shutil.move(ruta_nueva, ruta_vieja)
-    man26b[url26]["local_path"] = ruta_vieja
-    json.dump(man26b, open(test_manifest_file, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
+    print(f"  Código {p_t26.returncode}; de vuelta en su carpeta: {os.path.exists(ruta_aula)}; copia fuera de lugar retirada: {not os.path.exists(ruta_otra)}")
     print(f"Resultado T26: {'PASS' if t26_pass else 'FAIL'}\n")
 
     # ----------------------------------------------------------------------
@@ -644,9 +638,10 @@ def run_test_suite():
     print(f"Resultado T14: {'PASS' if t14_pass else 'FAIL'}\n")
 
     # ----------------------------------------------------------------------
-    # T15: Detección por Contenido contra lo Existente (Hash SHA-256 por Curso)
+    # T15: Espejo: un archivo con el mismo contenido en otra carpeta no reemplaza al de Aula,
+    #      y lo que Aula no publica se retira
     # ----------------------------------------------------------------------
-    print("--- [EJECUTANDO T15: Deduplicación por Contenido con Estructura Diferente] ---")
+    print("--- [EJECUTANDO T15: Espejo de Aula con contenido repetido fuera de lugar] ---")
     t15_content = b"%PDF-1.4 Contenido identico para prueba T15 de deduplicacion - Hash estricto 88888"
     course_folder = "CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_"
     old_subfolder = os.path.join(test_root_dir, course_folder, "Carpeta_Antigua_Desordenada")
@@ -663,21 +658,12 @@ def run_test_suite():
 
     p_t15 = subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
 
-    new_dest = os.path.join(test_root_dir, course_folder, "Planificacion/General/Pauta_Nueva_Seccion.pdf")
-    file_not_written = not os.path.exists(new_dest)
-    zero_new_reported = "0 archivo(s) nuevo(s)" in p_t15.stdout
-    dup_omitted = "[DUPLICADO OMITIDO]" in p_t15.stdout
-
-    manifest_t15 = {}
-    if os.path.exists(test_manifest_file):
-        with open(test_manifest_file, "r", encoding="utf-8") as mf:
-            manifest_t15 = json.load(mf)
-
-    mapped_correctly = False
-    for k, v in manifest_t15.items():
-        if "Pauta_Nueva_Seccion.pdf" in k and v.get("local_path") == old_file_path:
-            mapped_correctly = True
-            break
+    new_dest = os.path.join(test_root_dir, course_folder, "00 General/Pauta_Nueva_Seccion.pdf")
+    en_su_carpeta = os.path.exists(new_dest) and open(new_dest, "rb").read() == t15_content
+    antiguo_retirado = not os.path.exists(old_file_path) and "[RETIRADO DE AULA]" in p_t15.stdout
+    solo_aula = sorted(os.path.relpath(os.path.join(r, f), os.path.join(test_root_dir, course_folder))
+                       for r, _, fs in os.walk(os.path.join(test_root_dir, course_folder)) for f in fs
+                       if "_contexto" not in r) == ["00 General/Pauta_Nueva_Seccion.pdf"]
 
     eval_json_p = os.path.join(test_repo_dir, "universidad/2026-2/evaluaciones.json")
     eval_dedup_pass = False
@@ -687,19 +673,11 @@ def run_test_suite():
         uids = [e["uid"] for e in eval_data]
         eval_dedup_pass = ("1124478" not in uids and "manual-FAE-Entrega Tarea 1 SAP2000" in uids and len(eval_data) == 12)
 
-    t15_pass = (
-        p_t15.returncode == 0 and
-        file_not_written and
-        zero_new_reported and
-        dup_omitted and
-        mapped_correctly and
-        eval_dedup_pass
-    )
+    t15_pass = p_t15.returncode == 0 and en_su_carpeta and antiguo_retirado and solo_aula and eval_dedup_pass
     print(f"  Código de retorno 0: {p_t15.returncode == 0}")
-    print(f"  Archivo NO duplicado en disco: {file_not_written}")
-    print(f"  0 nuevos archivos reportados: {zero_new_reported}")
-    print(f"  Log registró [DUPLICADO OMITIDO]: {dup_omitted}")
-    print(f"  Manifest mapeado a archivo existente: {mapped_correctly}")
+    print(f"  Archivo de Aula en '00 General/': {en_su_carpeta}")
+    print(f"  Archivo fuera de Aula retirado: {antiguo_retirado}")
+    print(f"  La carpeta del ramo tiene solo lo de Aula: {solo_aula}")
     print(f"  Deduplicación de evaluaciones (12 eventos sin duplicado API): {eval_dedup_pass}")
     print(f"Resultado T15: {'PASS' if t15_pass else 'FAIL'}\n")
 
@@ -742,11 +720,32 @@ def run_test_suite():
     print(f"Resultado T16: {'PASS' if t16_pass else 'FAIL'}\n")
 
     # ----------------------------------------------------------------------
+    # T32: Retiro masivo: si más de 20 archivos dejan de estar en Aula, no se borra nada sin --permitir-masivo
+    # ----------------------------------------------------------------------
+    print("--- [EJECUTANDO T32: Retiro masivo bloqueante] ---")
+    server_state["mode"] = "normal"
+    server_state["file_version"] = 1
+    server_state["timemodified"] = TS_V1
+    dir_t16 = os.path.join(test_root_dir, "CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_", "00 General")
+    p_t32_block = subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
+    docs_tras_bloqueo = len([f for f in os.listdir(dir_t16) if f.startswith("Doc_")])
+    p_t32_allow = subprocess.run([sys.executable, SYNC_SCRIPT, "--permitir-masivo"], env=env_prod, capture_output=True, text=True)
+    docs_tras_permitir = len([f for f in os.listdir(dir_t16) if f.startswith("Doc_")]) if os.path.isdir(dir_t16) else 0
+    t32_pass = (
+        p_t32_block.returncode == 1 and "ya no figuran en Aula" in p_t32_block.stdout and docs_tras_bloqueo == 25
+        and p_t32_allow.returncode == 0 and docs_tras_permitir == 0
+        and os.path.exists(os.path.join(dir_t16, "Pauta.pdf"))
+    )
+    print(f"  Bloqueo: código 1 y 25 archivos intactos: {p_t32_block.returncode == 1 and docs_tras_bloqueo == 25}")
+    print(f"  Con --permitir-masivo: 25 retirados y queda solo lo de Aula: {docs_tras_permitir == 0}")
+    print(f"Resultado T32: {'PASS' if t32_pass else 'FAIL'}\n")
+
+    # ----------------------------------------------------------------------
     # T17: Límite Masivo Preventivo (1 Modificado + 21 Nuevos corta todo ANTES de escribir)
     # ----------------------------------------------------------------------
     print("--- [EJECUTANDO T17: Límite Masivo Preventivo (1 Modificado + 21 Nuevos)] ---")
     course_folder = "CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_"
-    pauta_dir = os.path.join(test_root_dir, course_folder, "Planificacion/General")
+    pauta_dir = os.path.join(test_root_dir, course_folder, "00 General/Contenidos T17")
     os.makedirs(pauta_dir, exist_ok=True)
     pauta_path = os.path.join(pauta_dir, "Pauta_Vigente.pdf")
 
@@ -874,7 +873,7 @@ def run_test_suite():
         {"discussion": 101, "name": "Aviso 1", "userfullname": "Profesor", "created": 1785000000, "message": "<p>Mensaje 1</p>"}
     ]
     subprocess.run([sys.executable, SYNC_SCRIPT], env=env_prod, capture_output=True, text=True)
-    avisos_path = os.path.join(test_repo_dir, "universidad/2026-2/CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/avisos.md")
+    avisos_path = os.path.join(test_repo_dir, "universidad/2026-2/CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/_contexto/avisos.md")
     
     avisos_pass = False
     if os.path.exists(avisos_path):

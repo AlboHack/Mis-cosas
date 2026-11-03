@@ -33,18 +33,15 @@ try:
         if "ARCHIVO:" in line or "VERSIÓN ANTERIOR" in line or "NUEVO ARCHIVO" in line or "RESULTADO:" in line:
             print(f"  {line}")
             
-    # Verificaciones de archivo en disco
-    target_f = os.path.join(t2_dir, "2026-2", "CIV244_MECÁNICA_DE_FLUIDOS_", "Evaluaciones_y_Entregas", "Certamenes", "Pauta.pdf")
-    hoy = datetime.now().strftime("%Y%m%d")
-    archived_f = os.path.join(t2_dir, "2026-2", "CIV244_MECÁNICA_DE_FLUIDOS_", "Evaluaciones_y_Entregas", "Certamenes", f"Pauta_v{hoy}.pdf")
-    
-    if os.path.exists(target_f) and os.path.exists(archived_f):
-        c_vigente = open(target_f, "rb").read()
-        c_backup = open(archived_f, "rb").read()
-        if b"version 2" in c_vigente and b"version 1" in c_backup:
+    # Verificaciones de archivo en disco: la versión 2 reemplaza a la 1 en la carpeta de la sección de Aula, sin _v
+    sec_dir = os.path.join(t2_dir, "2026-2", "CIV244_MECÁNICA_DE_FLUIDOS_", "00 Certamenes")
+    target_f = os.path.join(sec_dir, "Pauta.pdf")
+    if os.path.exists(target_f):
+        respaldos = [f for f in os.listdir(sec_dir) if f.startswith("Pauta_v")]
+        if b"version 2" in open(target_f, "rb").read() and not respaldos:
             t2_pass = True
-            print(f"  -> Verificado: Archivo vigente contiene 'version 2', respaldo '{os.path.basename(archived_f)}' contiene 'version 1'.")
-            
+            print("  -> Verificado: '00 Certamenes/Pauta.pdf' contiene 'version 2' y no quedan respaldos _v.")
+
     print(f"Resultado T2: {'PASS' if t2_pass else 'FAIL'}\n")
 finally:
     shutil.rmtree(t2_dir, ignore_errors=True)
