@@ -32,3 +32,4 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 17:00 | PASO | Pruebas.ps1 en main -> Fallas: 0, exit 0
 2026-11-03 17:00 | PASO | Test-Path v4.1 en Escritorio -> False, False, False (movidos en P6 a v4.1_retirada)
 2026-11-03 17:01 | OK | P5 respondido en RESPUESTAS.md
+2026-11-03 17:16 | INICIO | P7
