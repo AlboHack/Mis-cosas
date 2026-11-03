@@ -306,7 +306,7 @@ def sincronizar_novedades(client, courses, repo_dir, userid, archivo_mensajes, l
     base = os.path.join(repo_dir, "universidad", "2026-2")
 
     for c in courses:
-        dir_ramo = os.path.join(base, c["folder"])
+        dir_ramo = os.path.join(base, c["folder"], "_contexto")   # lo generado va aparte del espejo de Aula
         try:
             publicaciones, docentes = recolectar_foros(client, c["id"])
             if publicaciones:

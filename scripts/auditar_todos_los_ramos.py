@@ -80,12 +80,9 @@ def auditar():
             print(f"   ✓ Archivos Aula vs Disco: 100% concordante ({len(archivos_disco)} archivos locales)")
             
         # Desglose por subcarpetas
-        n_eval = len([f for f, d in archivos_disco.items() if d["subcarpeta"] == "Evaluaciones_y_Entregas"])
-        n_mat = len([f for f, d in archivos_disco.items() if d["subcarpeta"] == "Material_y_Apuntes"])
-        n_plan = len([f for f, d in archivos_disco.items() if d["subcarpeta"] == "Planificacion"])
-        print(f"      - Evaluaciones_y_Entregas: {n_eval} archivos")
-        print(f"      - Material_y_Apuntes:     {n_mat} archivos")
-        print(f"      - Planificacion:          {n_plan} archivos")
+        for sec in sorted({d["subcarpeta"] for d in archivos_disco.values()}):
+            n_sec = len([f for f, d in archivos_disco.items() if d["subcarpeta"] == sec])
+            print(f"      - {sec}: {n_sec} archivos")
         
         # B. Tareas en Aula (mod_assign)
         if client:
@@ -107,7 +104,7 @@ def auditar():
             print(f"      • {ev.get('evaluacion')} ({ev.get('inicio', '')[:16]}) -> {ev.get('lugar')}")
 
         # D. Archivo de Contexto Incremental (Contexto_Asignatura.md)
-        ctx_file = os.path.join(dir_ramo, "Contexto_Asignatura.md")
+        ctx_file = os.path.join(dir_ramo, "_contexto", "Contexto_Asignatura.md")
         if os.path.exists(ctx_file):
             sz = os.path.getsize(ctx_file)
             with open(ctx_file, "r", encoding="utf-8") as cf:
@@ -132,7 +129,7 @@ def auditar():
             errores_globales.append(f"{sigla}: Contexto_Asignatura.md no existe")
             
         # E. Estado Incremental (.contexto_estado.json)
-        estado_f = os.path.join(dir_ramo, ".contexto_estado.json")
+        estado_f = os.path.join(dir_ramo, "_contexto", ".contexto_estado.json")
         if os.path.exists(estado_f):
             print(f"   ✓ Estado incremental (.contexto_estado.json): PRESENTE y sincronizado\n")
         else:
