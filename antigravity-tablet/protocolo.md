@@ -19,4 +19,4 @@ Rama `canal`, carpeta `agentes/canal/antigravity-tablet/`, nunca se mezcla a `ma
 - `RESPUESTAS.md`: lo escribe solo AG, una sección `## P<n>` por pedido con la salida literal.
 - `BITACORA.md`: lo escribe solo AG, una línea por evento en el momento en que ocurre (`INICIO`, `PASO`, `OK`, `ERROR`, `CAMBIO`, `DEJA`, `VUELVE`, `NICOLAS`, `PLAN`, `DUDA`, `FIN`).
 
-Instrucciones completas para AG: `agentes/canal/PROMPT_ANTIGRAVITY.md` (rama `canal`). Claude revisa el canal cada hora entre 8:23 y 23:23 (hora de Chile).
+Instrucciones completas para AG: `agentes/canal/PROMPT_ANTIGRAVITY.md` (rama `canal`). Claude revisa el canal cuando Nicolás se lo pide ("revisa el canal").
