@@ -72,3 +72,7 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 19:12 | PASO | P15 ejecutado: GraphicsMode=DirectX aplicado, SAP2000 renderizo en NVIDIA GeForce GTX 1650 (luid 0x142c9), modo grafico se conservo al cerrar
 2026-11-03 19:12 | OK | P15: RESULTADO: SAP2000 usa la GTX 1650 (modo grafico al cerrar: GraphicsMode=DirectX)
 2026-11-03 19:13 | OK | P15 respondido en RESPUESTAS.md
+2026-11-03 19:14 | INICIO | P16
+2026-11-03 19:14 | NICOLAS | P16-admin.bat ejecutado elevado por Nicolas
+2026-11-03 19:53 | PASO | P16 completado -> DISM RestoreHealth exitoso, DISM CheckHealth: "No component store corruption detected", SFC: sin infracciones, shadowstorage subido a 5 GB max, gupdate en manual
+2026-11-03 20:18 | OK | P16 respondido en RESPUESTAS.md
