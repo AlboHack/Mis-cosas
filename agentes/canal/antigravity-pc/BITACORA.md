@@ -45,3 +45,6 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 18:04 | PASO | Instalar.ps1 -> Purga baja: True, Mantenimiento 0 fallas, Perfil 0 fallas, exit 0
 2026-11-03 18:05 | OK | P11 respondido en RESPUESTAS.md (copia instalada actualizada, acceso directo Perfil Nitro creado)
 2026-11-03 18:05 | REINICIO | P8 y P11 completados; listo para reiniciar el Nitro para consolidar svchost
+2026-11-03 18:11 | OK | Equipo reiniciado con exito (LastBootUpTime: 18:10:47); svchost consolidado
+2026-11-03 18:12 | INICIO | P9
+2026-11-03 18:13 | PASO | P9 Paso 1: drivers_display_antes.txt generado (NVIDIA 32.0.16.1047, AMD 27.20.1028.1)
