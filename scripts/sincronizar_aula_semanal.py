@@ -239,16 +239,6 @@ def log(msg, token_to_mask=None):
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(formatted + "\n")
 
-# Listas de notas o de curso traen ROL y nombres de compañeros: quedan en la tablet y en Drive, nunca en el repo público.
-PATRON_DATOS_TERCEROS = re.compile(
-    r"(^|[\s_\-(])(notas|calificaciones|n[oó]mina|lista\s+de\s+(alumnos|estudiantes|curso)|asistencia)([\s_\-.)]|$)",
-    re.IGNORECASE)
-
-
-def es_dato_de_terceros(nombre_archivo):
-    return bool(PATRON_DATOS_TERCEROS.search(os.path.basename(nombre_archivo)))
-
-
 def sanitizar(nombre):
     clean = re.sub(r'[/\\?%*:|"<>]', '_', nombre).strip()
     return unicodedata.normalize('NFC', clean)
@@ -981,9 +971,6 @@ def run_sync():
                 if len(archivos_descargados) > 0:
                     for src_f in archivos_descargados:
                         sz_mb = os.path.getsize(src_f) / (1024 * 1024)
-                        if es_dato_de_terceros(src_f):
-                            log(f"  [OMITIDO DE GIT: datos de terceros] {os.path.basename(src_f)}")
-                            continue
                         if sz_mb >= 50:
                             log(f"  [OMITIDO DE GIT > 50 MB] {os.path.basename(src_f)} ({sz_mb:.1f} MB)")
                             continue
@@ -1001,8 +988,6 @@ def run_sync():
                                 os.remove(dst_old)
                             except Exception:
                                 pass
-                        if es_dato_de_terceros(new_f):
-                            continue
                         rel_new = os.path.relpath(new_f, ROOT_DIR)
                         dst_new = os.path.join(target_repo_uni, rel_new)
                         os.makedirs(os.path.dirname(dst_new), exist_ok=True)

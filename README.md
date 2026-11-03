@@ -1,6 +1,6 @@
 # Mis-cosas
 
-Configuración de Claude para Ingeniería Civil UTFSM y automatizaciones de Nicolás. Repositorio público: sin contraseñas, tokens, finanzas ni datos de compañeros.
+Configuración de Claude para Ingeniería Civil UTFSM y automatizaciones de Nicolás. Repositorio público: sin contraseñas, tokens ni finanzas.
 
 ## Mapa
 
@@ -16,13 +16,14 @@ Configuración de Claude para Ingeniería Civil UTFSM y automatizaciones de Nico
 | `scripts/hooks/pre-push` | Bloquea pushes a `main` que no sean de la sincronización o de un merge aprobado | — |
 | `universidad/2026-2/` | Material y contexto de cada ramo | Solo la sincronización (`chore(sync)`) |
 | `agentes/` | Reglas para los nodos Antigravity (tablet y PC) | Claude |
+| `antigravity-tablet/` | Cómo funciona el nodo tablet: protocolo, plantilla de pedidos, sincronización con Aula, errores y estado | Claude; AG agrega `CONTEXTO.md` |
 | `DECISIONES.md` | Una fila por decisión: qué, por qué y con qué evidencia | Quien decide |
 | `REGISTRO_CAMBIOS.md` | Archivos movidos, borrados o renombrados en cada ordenamiento | Claude |
 
 Ramas: `main` estable; `claude/<tema>` trabajo de Claude; `ag/<nodo>` aportes de un nodo Antigravity; `canal` conversación Claude ↔ Antigravity (no se mezcla a `main`).
 
 ## Universidad
-Cada ramo en `universidad/2026-2/<SIGLA_NOMBRE>/` tiene `Contexto_Asignatura.md` (generado por `scripts/generar_contexto_ramos.py`), `Evaluaciones_y_Entregas/`, `Material_y_Apuntes/`, `Planificacion/`, `avisos.md` y `cambios_pagina.md`. El resumen del semestre está en `Contexto_Semestre_2026-2.md` y las fechas en `evaluaciones.json` (fusión de Aula con `evaluaciones_manual.json`). Archivos de más de 50 MB y listas de notas quedan solo en la tablet y en Drive.
+Cada ramo en `universidad/2026-2/<SIGLA_NOMBRE>/` tiene `Contexto_Asignatura.md` (generado por `scripts/generar_contexto_ramos.py`), `Evaluaciones_y_Entregas/`, `Material_y_Apuntes/`, `Planificacion/`, `avisos.md` y `cambios_pagina.md`. El resumen del semestre está en `Contexto_Semestre_2026-2.md` y las fechas en `evaluaciones.json` (fusión de Aula con `evaluaciones_manual.json`). Archivos de más de 50 MB quedan solo en la tablet y en Drive (GitHub rechaza archivos sobre 100 MB).
 
 ## Llevar los cambios a claude.ai
 1. Skills: descargar el .zip desde la release [skills](https://github.com/AlboHack/Mis-cosas/releases/tag/skills) y subirlo en claude.ai > Configuración > Capacidades > Skills (reemplaza la versión anterior).
