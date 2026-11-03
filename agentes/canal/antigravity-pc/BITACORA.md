@@ -41,3 +41,6 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 18:02 | PASO | Ejecutar-Elevado.ps1 -> Solicitud no compatible (Antigravity no puede invocar UAC)
 2026-11-03 18:02 | PASO | P8 ejecutado elevado por Nicolas -> 10 ajustes aplicados, punto de restauracion OK, exit 0
 2026-11-03 18:03 | OK | P8 respondido en RESPUESTAS.md (pendiente reinicio del equipo)
+2026-11-03 18:04 | INICIO | P11
+2026-11-03 18:04 | PASO | Instalar.ps1 -> Purga baja: True, Mantenimiento 0 fallas, Perfil 0 fallas, exit 0
+2026-11-03 18:05 | OK | P11 respondido en RESPUESTAS.md (copia instalada actualizada, acceso directo Perfil Nitro creado)

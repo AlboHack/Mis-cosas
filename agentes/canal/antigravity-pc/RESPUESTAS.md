@@ -623,3 +623,35 @@ C:\Users\albor\Documents\Proyectos
 C:\Users\albor\OneDrive\Escritorio\Windows defender\DefenderControl.exe
 ```
 
+
+
+## P11 · 2026-11-03 · antigravity-pc
+
+### Ejecución de Instalar.ps1 (Actualización de C:\Users\albor\Mantenimiento)
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\Instalar.ps1
+```
+Salida literal:
+```text
+Updating 6686ba4..5528dcd
+Fast-forward
+ .github/workflows/pc-mantenimiento.yml           | 10 ++++++
+ antigravity-pc/mantenimiento/pruebas/Pruebas.ps1 |  3 +-
+ antigravity-pc/pedidos/Instalar.ps1              | 44 ++++++++++++++++++++++++
+ 3 files changed, 56 insertions(+), 1 deletion(-)
+ create mode 100644 antigravity-pc/pedidos/Instalar.ps1
+Versión: origin/claude/perfil-nitro 5528dcd
+Purga de prioridad baja: True
+Mantenimiento: Fallas: 0 | Perfil: Fallas: 0
+Iniciar calculo.lnk
+Liberar RAM.lnk
+Mantenimiento.lnk
+Perfil Nitro.lnk
+Terminar calculo.lnk
+logs
+perfil-nitro
+pruebas
+v4.1_retirada
+```
+
