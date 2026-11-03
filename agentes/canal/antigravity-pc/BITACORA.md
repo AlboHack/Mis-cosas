@@ -20,3 +20,8 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 13:10 | PASO | git log origin/main -1 -> f94f3d4
 2026-11-03 13:10 | OK | P5 respondido en RESPUESTAS.md (esperando merge en main)
 2026-11-03 13:15 | INICIO | P6
+2026-11-03 13:15 | PASO | P6 Paso 1 copia instalacion -> exit 0
+2026-11-03 13:16 | PASO | P6 Paso 2 Pruebas.ps1 -> Fallas: 0, exit 0
+2026-11-03 13:16 | PASO | P6 Paso 3 mover v4.1 a respaldo -> 5 archivos movidos, exit 0
+2026-11-03 13:16 | PASO | P6 Paso 4 accesos directos -> 4 lnk creados en Escritorio, exit 0
+2026-11-03 13:17 | OK | P6 respondido en RESPUESTAS.md (instalacion completa, pruebas 0 fallas)
