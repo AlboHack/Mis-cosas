@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-03T16:49:08-03:00",
-  "estado": "CON ERRORES",
+  "fecha": "2026-11-03T17:26:01-03:00",
+  "estado": "OK",
   "archivos_nuevos_o_modificados": 0,
-  "errores": 1,
+  "errores": 0,
   "novedades": {
     "avisos_actualizados": 0,
     "cambios_pagina": 0,
