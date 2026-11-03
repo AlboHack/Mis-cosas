@@ -118,7 +118,9 @@ public static class MemoriaNt {
         bool prev;
         uint st = RtlAdjustPrivilege(13, true, false, out prev);
         if (st != 0) return st;
-        int orden = 4; // MemoryPurgeStandbyList
+        // 5 = MemoryPurgeLowPriorityStandbyList: solo la caché de prioridad baja. Mem Reduct marca la purga
+        // completa (4) y la de la lista modificada (3) como causantes de congelamientos (REDUCT_MASK_FREEZES).
+        int orden = 5;
         return NtSetSystemInformation(80, ref orden, 4); // SystemMemoryListInformation
     }
 }

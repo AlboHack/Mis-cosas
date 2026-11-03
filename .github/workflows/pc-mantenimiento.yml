@@ -2,7 +2,7 @@ name: pc-mantenimiento
 # Prueba antigravity-pc/mantenimiento en Windows real, con PowerShell 7 y con Windows PowerShell 5.1 (el que abre Mantenimiento.bat).
 on:
   push:
-    paths: ["antigravity-pc/mantenimiento/**", ".github/workflows/pc-mantenimiento.yml"]
+    paths: ["antigravity-pc/**", ".github/workflows/pc-mantenimiento.yml"]
   workflow_dispatch:
 jobs:
   pruebas:
@@ -15,3 +15,26 @@ jobs:
       - name: Windows PowerShell 5.1
         shell: powershell
         run: ./antigravity-pc/mantenimiento/pruebas/Pruebas.ps1
+      - name: Perfil del Nitro (PowerShell 7)
+        shell: pwsh
+        run: ./antigravity-pc/perfil-nitro/pruebas/Pruebas.ps1
+      - name: Perfil del Nitro (Windows PowerShell 5.1)
+        shell: powershell
+        run: ./antigravity-pc/perfil-nitro/pruebas/Pruebas.ps1
+      - name: Ejecutar-Elevado (Windows PowerShell 5.1)
+        shell: powershell
+        run: |
+          'Write-Output "hola-elevado"; cmd /c ver | Out-String' | Set-Content "$env:TEMP\t.ps1"
+          $out = & ./antigravity-pc/Ejecutar-Elevado.ps1 -Script "$env:TEMP\t.ps1" -Nombre ci | Out-String
+          $out
+          if ($out -notmatch 'hola-elevado' -or $out -notmatch 'Microsoft Windows') { exit 1 }
+      - name: Instalar (Windows PowerShell 5.1)
+        shell: powershell
+        run: |
+          git fetch -q origin
+          New-Item -ItemType Directory "$env:TEMP\MantPrueba\v4.1_retirada" -Force | Out-Null
+          'Write-Host viejo' | Set-Content "$env:TEMP\MantPrueba\v4.1_retirada\Nitro_Optimizer_Core.ps1"
+          $out = & ./antigravity-pc/pedidos/Instalar.ps1 -Rama HEAD -Destino "$env:TEMP\MantPrueba" -SinAccesos | Out-String
+          $out
+          if (-not (Test-Path "$env:TEMP\MantPrueba\v4.1_retirada\Nitro_Optimizer_Core.ps1")) { exit 1 }
+          if ($out -notmatch 'Purga de prioridad baja: True' -or $out -notmatch 'Mantenimiento: Fallas: 0 \| Perfil: Fallas: 0') { exit 1 }
