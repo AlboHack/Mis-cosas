@@ -254,3 +254,55 @@ Antigravity     7512 361
 NTFS DisableDeleteNotify = 0  (Permite que se envien operaciones de recorte al dispositivo de almacenamiento)
 Enter para volver:
 ```
+
+
+### Ejecución de P5 tras llegada del merge a main
+```powershell
+git checkout main; git pull --ff-only
+Copy-Item agentes\antigravity\reglas\04-protocolo-claude.md "$HOME\.agents\rules\04-protocolo-claude.md" -Force
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\mantenimiento\pruebas\Pruebas.ps1
+Test-Path "$env:USERPROFILE\OneDrive\Escritorio\Nitro_Optimizer.bat", "$env:USERPROFILE\OneDrive\Escritorio\Desinstalador_Raiz_Bloatware.bat", "$env:USERPROFILE\OneDrive\Escritorio\Liberar_RAM_Juegos.bat"
+```
+Salida literal:
+```text
+Updating f94f3d4..bafc738
+Fast-forward (incluye 96d8df8 feat(sync): universidad/ como espejo de Aula; repo ordenado)
+
+OK    sintaxis Pruebas.ps1
+OK    UTF-8 con BOM Pruebas.ps1 (PowerShell 5.1 lee sin BOM como ANSI)
+OK    sintaxis Mantenimiento.ps1
+OK    UTF-8 con BOM Mantenimiento.ps1 (PowerShell 5.1 lee sin BOM como ANSI)
+OK    sintaxis Mantenimiento.psm1
+OK    UTF-8 con BOM Mantenimiento.psm1 (PowerShell 5.1 lee sin BOM como ANSI)
+OK    purga con standby grande y libre escaso
+OK    sin purga con libre suficiente
+OK    sin purga con standby chica
+OK    borde: standby = umbral purga, libre = umbral no
+OK    ruta entre comillas con argumentos
+OK    ruta sin comillas con espacios
+OK    MSI /I se convierte en /x silencioso
+OK    QuietUninstallString tiene prioridad
+OK    agrega silencio sin duplicarlo
+OK    SAP2000 19 no toca SAP2000 27
+OK    protegido nunca coincide
+OK    ^Brave$ no toca BraveSoftware Update
+OK    patrón con prefijo opcional
+OK    rechaza raíces y carpetas de sistema o perfil
+OK    acepta carpetas de programa
+OK    todos los patrones anclados con ^
+OK    ningún programa activo coincide con un protegido
+OK    Brave inactivo hasta que Nicolás decida
+OK    residuos seguros con un perfil típico
+Whatif: Se está realizando la operación "C:\no\existe.exe /S" en el destino "CCleaner".
+OK    simulación de desinstalación no ejecuta nada
+OK    estado de memoria legible
+OK    temporales en simulación
+OK    programas instalados legibles
+
+Fallas: 0
+False
+False
+False
+```
+Nota: Los 3 archivos de la v4.1 en el Escritorio devuelven False porque fueron retirados a $env:USERPROFILE\Mantenimiento\v4.1_retirada en el paso 3 de P6.
+

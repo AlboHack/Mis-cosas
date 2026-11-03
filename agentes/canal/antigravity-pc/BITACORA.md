@@ -28,3 +28,7 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 13:25 | NICOLAS | opcion 7 Diagnostico probada: Kingston SSD y WDC HDD Healthy/OK, TRIM activo (DisableDeleteNotify=0)
 2026-11-03 13:25 | OK | Mantenimiento verificado en ejecucion interactiva por Nicolas
 2026-11-03 16:59 | INICIO | P5 (ejecucion tras merge en main)
+2026-11-03 17:00 | PASO | git checkout main && git pull --ff-only -> bafc738 (incluye merge 96d8df8)
+2026-11-03 17:00 | PASO | Pruebas.ps1 en main -> Fallas: 0, exit 0
+2026-11-03 17:00 | PASO | Test-Path v4.1 en Escritorio -> False, False, False (movidos en P6 a v4.1_retirada)
+2026-11-03 17:01 | OK | P5 respondido en RESPUESTAS.md
