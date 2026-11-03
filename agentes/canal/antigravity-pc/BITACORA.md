@@ -36,3 +36,5 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 17:17 | PASO | Pruebas.ps1 perfil-nitro -> Fallas: 0, exit 0
 2026-11-03 17:18 | PASO | auditoria de sistema P7 ejecutada
 2026-11-03 17:20 | OK | P7 respondido en RESPUESTAS.md (auditoria completa, modelos en D:\Modelos RUN)
+2026-11-03 17:58 | INICIO | P8
+2026-11-03 17:58 | DUDA | Sesion de fondo no elevada (Admin role: False); script preparado en D:\Mis-cosas\aplicar_p8.bat para ejecucion como Administrador por Nicolas
