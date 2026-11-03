@@ -438,3 +438,88 @@ VEREDICTO: REVISAR
   - 117 archivos son volcados HTML generados en sesiones anteriores dentro de las carpetas `<ramo>/HTML_Moodle/` y sus foros.
   - 1 archivo de notas en PDF: `CIV386_INGENIERÍA_DE_TRANSPORTE_/Material_y_Apuntes/2026pr Notas.pdf` (0.07 MB).
   - 1 archivo HTML de notas: `CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle/resource_8347849_Notas_15-10__Archivo.html` (0.02 MB).
+
+
+## P7 · 2026-11-03 · antigravity-tablet
+
+### 1. Archivar HTML_Moodle en _contexto y verificación del clasificador
+Comando ejecutado:
+```bash
+cd ~/Mis-cosas && git fetch origin && git checkout main && git pull --ff-only
+T="${TMPDIR:-$PREFIX/tmp}"; R=/storage/emulated/0/Download/Universidad/2026-2
+for d in "$R"/*/HTML_Moodle; do [ -d "$d" ] && mkdir -p "$(dirname "$d")/_contexto" && mv "$d" "$(dirname "$d")/_contexto/HTML_Moodle" && echo "movido: $d"; done
+git show origin/claude/espejo-ajustes:scripts/clasificar_retiros.py > "$T/clasificar_retiros.py"
+python3 "$T/clasificar_retiros.py"
+```
+
+Salida literal:
+```text
+movido: /storage/emulated/0/Download/Universidad/2026-2/CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/HTML_Moodle
+movido: /storage/emulated/0/Download/Universidad/2026-2/CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/HTML_Moodle
+movido: /storage/emulated/0/Download/Universidad/2026-2/CIV244_MECÁNICA_DE_FLUIDOS_/HTML_Moodle
+movido: /storage/emulated/0/Download/Universidad/2026-2/CIV386_INGENIERÍA_DE_TRANSPORTE_/HTML_Moodle
+movido: /storage/emulated/0/Download/Universidad/2026-2/POC_SJ_VV_Prácticas_Obras_Civiles/HTML_Moodle
+COPIA: 216 | GENERADO: 15 | SOLO_AQUI: 1
+SOLO_AQUI     0.07 MB  CIV386_INGENIERÍA_DE_TRANSPORTE_/Material_y_Apuntes/2026pr Notas.pdf
+VEREDICTO: REVISAR
+```
+- **Condición de P7 cumplida:** Exactamente una línea `SOLO_AQUI` correspondiente a `CIV386_INGENIERÍA_DE_TRANSPORTE_/Material_y_Apuntes/2026pr Notas.pdf`. Se procedió con la ejecución de los pasos de aplicación del espejo.
+
+### 2. Corrida con `--permitir-masivo`
+Comando ejecutado:
+```bash
+git checkout main && git pull --ff-only
+bash scripts/sincronizar_sabados.sh --permitir-masivo
+grep -E "RESULTADO|\[REPO\]|ERROR|FINALIZADO" /storage/emulated/0/Download/Universidad/Registro_Sincronizaciones.log | tail -8
+git log origin/main --oneline -2
+```
+
+Salida literal de grep en `Registro_Sincronizaciones.log`:
+```text
+[2026-11-02 23:07:30] RESULTADO: 0 archivo(s) nuevo(s) o modificado(s). Errores: 0
+[2026-11-02 23:08:11] FINALIZADO. Estado: OK
+[2026-11-03 16:31:22] RESULTADO: 0 archivo(s) nuevo(s) o modificado(s), 210 reubicado(s), 0 retirado(s). Errores: 1
+[2026-11-03 16:49:09]   [REPO] Espejo no actualizado: retiro pendiente de revisión (--permitir-masivo).
+[2026-11-03 16:49:25] FINALIZADO. Estado: CON ERRORES (1)
+[2026-11-03 17:17:03] RESULTADO: 0 archivo(s) nuevo(s) o modificado(s), 0 reubicado(s), 232 retirado(s). Errores: 0
+[2026-11-03 17:26:04]   [REPO] Espejo de Aula: 210 copiado(s), 211 retirado(s), 0 sobre 95 MB solo en tablet y Drive.
+[2026-11-03 17:26:31] FINALIZADO. Estado: OK
+```
+
+Salida literal de `git log origin/main --oneline -2`:
+```text
+d7e779f chore(sync): actualizacion semanal incremental (2026-11-03)
+bafc738 chore(sync): actualizacion semanal incremental (2026-11-03)
+```
+
+### 3. Pruebas y merge de ajustes (`claude/espejo-ajustes`)
+Comando ejecutado:
+```bash
+git checkout claude/espejo-ajustes && git pull --ff-only
+for t in test_espejo test_novedades test_enunciados test_aceptacion_token; do python3 scripts/pruebas/$t.py > "$T/$t.log" 2>&1; echo "$t -> $?"; grep -E "^Resultado|RESUMEN" "$T/$t.log" | tail -2; done
+git status --porcelain | head
+git checkout main && git pull --ff-only && git merge --squash claude/espejo-ajustes && git commit -m "feat(sync): clasificador de retiros y test_espejo aislado" && ALLOW_MAIN_PUSH=1 git push origin main
+```
+
+Salida literal de pruebas:
+```text
+test_espejo -> 0
+Resultado T31: PASS
+test_novedades -> 0
+Resultado T29: PASS
+RESUMEN NOVEDADES: TODAS PASARON
+test_enunciados -> 0
+Resultado T29: PASS
+test_aceptacion_token -> 0
+Resultado T13: PASS
+RESUMEN GLOBAL: TODAS LAS PRUEBAS PASARON (100% PASS)
+```
+
+Salida literal de `git status --porcelain`:
+```text
+(vacío)
+```
+
+Salida de commit y push en `main`:
+- **Commit hash:** `3526cb4` (`3526cb4 feat(sync): clasificador de retiros y test_espejo aislado`)
+- **Push:** `To https://github.com/AlboHack/Mis-cosas.git  d7e779f..3526cb4  main -> main`
