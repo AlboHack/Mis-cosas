@@ -229,7 +229,7 @@ Reportar literal. Bitácora: `OK` si dice `RESULTADO: SAP2000 usa la GTX 1650`, 
 ## Corrección de lectura de P13 (leer antes de seguir)
 `DISM /CheckHealth` dijo **"The component store is repairable"**: eso significa que **encontró daño reparable**, no que esté sano. Y el resultado de `sfc` no aparece en el log, así que no se puede afirmar que no hay archivos dañados. Los Volsnap 36 tampoco son normales: el tope de 2.21 GB borra puntos de restauración recientes. Reportar siempre la salida literal y no interpretarla como OK si no lo dice.
 
-## P15 · abierto · SAP2000 en modo DirectX (sin administrador y sin intervención)
+## P15 · cerrado · SAP2000 en modo DirectX (sin administrador y sin intervención)
 Buen diagnóstico en P14: `GraphicsMode=GDIPlus` hace que SAP2000 dibuje por software. El script espera a que SAP2000 esté cerrado, respalda el `.ini`, cambia a `GraphicsMode=DirectX` y vuelve a verificar con P14:
 ```powershell
 cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
@@ -238,8 +238,22 @@ git checkout main
 ```
 Bitácora: `OK` si termina con `RESULTADO: SAP2000 usa la GTX 1650` y el modo gráfico al cerrar sigue en `DirectX`; si SAP2000 no reconoce el valor y lo devuelve a `GDIPlus`, `ERROR` con la salida literal (el respaldo del `.ini` queda en `Mantenimiento\respaldo-ini\`).
 
-## P16 · abierto · Reparar Windows y proteger los puntos de restauración (un doble clic de Nicolás)
+## P16 · cerrado · Reparar Windows y proteger los puntos de restauración (un doble clic de Nicolás)
 Pídele: *"Haz doble clic en `D:\Mis-cosas\antigravity-pc\pedidos\P16-admin.bat` y acepta el permiso; tarda entre 15 y 30 minutos"*. Hace `DISM /RestoreHealth`, `DISM /CheckHealth`, `sfc /scannow`, sube a 5 GB el espacio de puntos de restauración y deja Google Update en inicio manual. Al terminar, leer el log y reportarlo literal:
 ```powershell
 Get-Content (Get-ChildItem "$env:USERPROFILE\Mantenimiento\logs\P16_*.log" | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName
 ```
+
+## P17 · abierto · Integrar `claude/perfil-nitro` a `main` (sin administrador ni intervención)
+P15 y P16 quedaron verificados. Buena solución la de la sangría del `.ini` en P15: el script ya la acepta (commit `44adf4c`). Ahora se integra todo lo del PC a `main`, como indica la regla 04:
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\mantenimiento\pruebas\Pruebas.ps1 | Select-Object -Last 1
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\perfil-nitro\pruebas\Pruebas.ps1 | Select-Object -Last 1
+git status --porcelain
+git checkout main; git pull --ff-only
+git merge --squash claude/perfil-nitro; git commit -m "feat(antigravity-pc): perfil del Nitro, mantenimiento final, pedidos P8-P16"
+$env:ALLOW_MAIN_PUSH = '1'; git push origin main; Remove-Item Env:ALLOW_MAIN_PUSH
+git log --oneline -1
+```
+Si alguna prueba no termina en `Fallas: 0` o `git status --porcelain` no sale vacío, reportar y NO hacer el merge. Reportar literal.
