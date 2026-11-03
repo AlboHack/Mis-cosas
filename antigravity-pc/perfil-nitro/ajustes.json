@@ -9,7 +9,12 @@
       "riesgo": "Bajo. Puede afectar servicios de Xbox. Requiere reiniciar.",
       "activo": true,
       "registro": [
-        { "ruta": "HKLM:\\SYSTEM\\CurrentControlSet\\Control", "nombre": "SvcHostSplitThresholdInKB", "valor": "RAM_KB", "tipo": "DWord" }
+        {
+          "ruta": "HKLM:\\SYSTEM\\CurrentControlSet\\Control",
+          "nombre": "SvcHostSplitThresholdInKB",
+          "valor": "RAM_KB",
+          "tipo": "DWord"
+        }
       ]
     },
     {
@@ -19,9 +24,19 @@
       "por_que": "DiagTrack escribe y sube datos en segundo plano; en un SSD de 120 GB y con 12 GB de RAM es carga sin beneficio.",
       "riesgo": "Bajo.",
       "activo": true,
-      "servicios": [ { "nombre": "DiagTrack", "inicio": "Disabled" } ],
+      "servicios": [
+        {
+          "nombre": "DiagTrack",
+          "inicio": "Disabled"
+        }
+      ],
       "registro": [
-        { "ruta": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection", "nombre": "AllowTelemetry", "valor": 0, "tipo": "DWord" }
+        {
+          "ruta": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
+          "nombre": "AllowTelemetry",
+          "valor": 0,
+          "tipo": "DWord"
+        }
       ]
     },
     {
@@ -32,7 +47,12 @@
       "riesgo": "Bajo.",
       "activo": true,
       "registro": [
-        { "ruta": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeliveryOptimization", "nombre": "DODownloadMode", "valor": 0, "tipo": "DWord" }
+        {
+          "ruta": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeliveryOptimization",
+          "nombre": "DODownloadMode",
+          "valor": 0,
+          "tipo": "DWord"
+        }
       ]
     },
     {
@@ -43,7 +63,12 @@
       "riesgo": "Bajo: notificaciones de apps de la Tienda pueden llegar tarde.",
       "activo": true,
       "registro": [
-        { "ruta": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\BackgroundAccessApplications", "nombre": "GlobalUserDisabled", "valor": 1, "tipo": "DWord" }
+        {
+          "ruta": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\BackgroundAccessApplications",
+          "nombre": "GlobalUserDisabled",
+          "valor": 1,
+          "tipo": "DWord"
+        }
       ]
     },
     {
@@ -55,7 +80,12 @@
       "activo": true,
       "requiere": "Test-GpuDedicadaWddm27",
       "registro": [
-        { "ruta": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers", "nombre": "HwSchMode", "valor": 2, "tipo": "DWord" }
+        {
+          "ruta": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers",
+          "nombre": "HwSchMode",
+          "valor": 2,
+          "tipo": "DWord"
+        }
       ]
     },
     {
@@ -66,17 +96,42 @@
       "riesgo": "Bajo.",
       "activo": true,
       "registro": [
-        { "ruta": "HKCU:\\Software\\Microsoft\\GameBar", "nombre": "AllowAutoGameMode", "valor": 1, "tipo": "DWord" },
-        { "ruta": "HKCU:\\Software\\Microsoft\\GameBar", "nombre": "AutoGameModeEnabled", "valor": 1, "tipo": "DWord" }
+        {
+          "ruta": "HKCU:\\Software\\Microsoft\\GameBar",
+          "nombre": "AllowAutoGameMode",
+          "valor": 1,
+          "tipo": "DWord"
+        },
+        {
+          "ruta": "HKCU:\\Software\\Microsoft\\GameBar",
+          "nombre": "AutoGameModeEnabled",
+          "valor": 1,
+          "tipo": "DWord"
+        }
+      ]
+    },
+    {
+      "id": "inicio-reducememory",
+      "nombre": "Quitar ReduceMemory del arranque",
+      "fuente": "Auditoría P7 del Nitro; técnica descartada por Mem Reduct (henrypp/memreduct, REDUCT_MASK_FREEZES)",
+      "por_que": "Liberador de RAM antiguo que arranca con Windows y vacía la memoria de trabajo de los procesos: provoca los tirones que se quieren evitar. Mantenimiento.bat ya purga solo cuando hace falta.",
+      "riesgo": "Bajo: se respalda el valor y se puede deshacer.",
+      "activo": true,
+      "registro": [
+        {
+          "ruta": "Registry::HKEY_USERS\\S-1-5-19\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+          "nombre": "ReduceMemory",
+          "eliminar": true
+        }
       ]
     },
     {
       "id": "hibernacion-reducida",
       "nombre": "hiberfil.sys reducido (mantiene el inicio rápido)",
       "fuente": "Microsoft, powercfg /hibernate /type reduced; winutil WPFTweaksHiber la apaga por completo",
-      "por_que": "hiberfil.sys ocupa ~40 % de la RAM (~4.6 GB) en un SSD de 120 GB. 'reduced' lo baja a ~20 % y conserva el inicio rápido; apagarla del todo se pierde la hibernación en el notebook.",
-      "riesgo": "Bajo: se pierde la opción Hibernar del menú, se mantiene Suspender e inicio rápido.",
-      "activo": true,
+      "por_que": "En el Nitro la hibernación ya está apagada (P7: sin hiberfil.sys, HibernateEnabled=0): aplicar 'reduced' la reactivaría y crearía un archivo de ~2.3 GB. Solo para equipos con hibernación completa.",
+      "riesgo": "Medio en el Nitro: reactiva la hibernación.",
+      "activo": false,
       "comando": {
         "aplicar": "powercfg /hibernate /type reduced",
         "deshacer": "powercfg /hibernate /type full",
@@ -104,11 +159,44 @@
       "riesgo": "Estético.",
       "activo": false,
       "registro": [
-        { "ruta": "HKCU:\\Control Panel\\Desktop", "nombre": "MenuShowDelay", "valor": "200", "tipo": "String" },
-        { "ruta": "HKCU:\\Control Panel\\Desktop\\WindowMetrics", "nombre": "MinAnimate", "valor": "0", "tipo": "String" },
-        { "ruta": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced", "nombre": "TaskbarAnimations", "valor": 0, "tipo": "DWord" },
-        { "ruta": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects", "nombre": "VisualFXSetting", "valor": 3, "tipo": "DWord" }
+        {
+          "ruta": "HKCU:\\Control Panel\\Desktop",
+          "nombre": "MenuShowDelay",
+          "valor": "200",
+          "tipo": "String"
+        },
+        {
+          "ruta": "HKCU:\\Control Panel\\Desktop\\WindowMetrics",
+          "nombre": "MinAnimate",
+          "valor": "0",
+          "tipo": "String"
+        },
+        {
+          "ruta": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+          "nombre": "TaskbarAnimations",
+          "valor": 0,
+          "tipo": "DWord"
+        },
+        {
+          "ruta": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects",
+          "nombre": "VisualFXSetting",
+          "valor": 3,
+          "tipo": "DWord"
+        }
       ]
+    },
+    {
+      "id": "defender-modelos-sap",
+      "nombre": "Excluir la carpeta de modelos de SAP2000 del análisis en tiempo real de Defender",
+      "fuente": "Microsoft Defender: Add-MpPreference -ExclusionPath; carpeta informada en P7",
+      "por_que": "SAP2000 escribe archivos de análisis grandes en la carpeta del modelo y Defender (349 MB en P7) los revisa al escribirse. Se excluye solo D:\\Modelos RUN, no el programa ni el disco.",
+      "riesgo": "Medio: un archivo malicioso en esa carpeta no se revisaría en tiempo real (el análisis programado sigue).",
+      "activo": false,
+      "comando": {
+        "aplicar": "Add-MpPreference -ExclusionPath 'D:\\Modelos RUN'",
+        "deshacer": "Remove-MpPreference -ExclusionPath 'D:\\Modelos RUN'",
+        "estado": "@((Get-MpPreference).ExclusionPath) -contains 'D:\\Modelos RUN'"
+      }
     }
   ]
 }

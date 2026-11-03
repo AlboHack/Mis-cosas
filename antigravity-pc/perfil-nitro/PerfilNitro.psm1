@@ -48,6 +48,7 @@ function Test-Aplicado {
     foreach ($r in @(Get-Propiedad $Ajuste 'registro')) {
         if (-not $r) { continue }
         $v = Get-ValorRegistro $r.ruta $r.nombre
+        if (Get-Propiedad $r 'eliminar') { if ($v.Existe) { return $false } else { continue } }
         if (-not $v.Existe -or "$($v.Valor)" -ne "$(Resolve-ValorAjuste $r.valor)") { return $false }
     }
     foreach ($s in @(Get-Propiedad $Ajuste 'servicios')) {
@@ -108,6 +109,7 @@ function Set-Ajustes {
         $resp = Save-Respaldo $a
         foreach ($r in @(Get-Propiedad $a 'registro')) {
             if (-not $r) { continue }
+            if (Get-Propiedad $r 'eliminar') { Remove-ItemProperty -Path $r.ruta -Name $r.nombre -ErrorAction SilentlyContinue; continue }
             if (-not (Test-Path $r.ruta)) { New-Item -Path $r.ruta -Force | Out-Null }
             New-ItemProperty -Path $r.ruta -Name $r.nombre -Value (Resolve-ValorAjuste $r.valor) -PropertyType $r.tipo -Force | Out-Null
         }
@@ -138,7 +140,10 @@ function Undo-Ajustes {
             $previo = Get-Content $archivo -Raw -Encoding UTF8 | ConvertFrom-Json
             foreach ($r in @($previo.registro)) {
                 if (-not $r) { continue }
-                if ($r.existe) { New-ItemProperty -Path $r.ruta -Name $r.nombre -Value $r.valor -PropertyType $r.tipo -Force | Out-Null }
+                if ($r.existe) {
+                    if (-not (Test-Path $r.ruta)) { New-Item -Path $r.ruta -Force | Out-Null }
+                    New-ItemProperty -Path $r.ruta -Name $r.nombre -Value $r.valor -PropertyType $r.tipo -Force | Out-Null
+                }
                 else { Remove-ItemProperty -Path $r.ruta -Name $r.nombre -ErrorAction SilentlyContinue }
             }
             foreach ($s in @($previo.servicios)) { if ($s) { Set-Service -Name $s.nombre -StartupType $s.inicio } }

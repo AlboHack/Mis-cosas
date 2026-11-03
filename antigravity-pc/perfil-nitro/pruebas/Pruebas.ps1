@@ -22,8 +22,8 @@ Probar 'ids únicos' { @($cat.id | Select-Object -Unique).Count -eq @($cat).Coun
 Probar 'cada ajuste cita su fuente, su motivo y su riesgo' { -not ($cat | Where-Object { -not $_.fuente -or -not $_.por_que -or -not $_.riesgo }) }
 Probar 'cada ajuste hace algo (registro, servicio o comando)' { -not ($cat | Where-Object { -not ((P $_ 'registro') -or (P $_ 'servicios') -or (P $_ 'comando')) }) }
 Probar 'los comandos se pueden deshacer y consultar' { -not ($cat | Where-Object { $c = P $_ 'comando'; $c -and (-not $c.aplicar -or -not $c.deshacer -or -not $c.estado) }) }
-Probar 'claves solo en HKLM: o HKCU: y tipos válidos' {
-    -not ($cat | ForEach-Object { P $_ 'registro' } | Where-Object { $_ -and ($_.ruta -notmatch '^HK(LM|CU):\\' -or $_.tipo -notin 'DWord', 'String', 'QWord', 'Binary') })
+Probar 'claves solo en HKLM:, HKCU: o HKEY_USERS y tipos válidos' {
+    -not ($cat | ForEach-Object { P $_ 'registro' } | Where-Object { $_ -and ($_.ruta -notmatch '^(HK(LM|CU):|Registry::HKEY_USERS)\\' -or (-not (P $_ 'eliminar') -and $_.tipo -notin 'DWord', 'String', 'QWord', 'Binary')) })
 }
 Probar 'riesgo medio o decisión estética: inactivos por defecto' { -not ($cat | Where-Object { $_.activo -and $_.riesgo -match '^(Medio|Alto|Estético)' }) }
 
@@ -35,11 +35,13 @@ if ([System.Environment]::OSVersion.Platform -eq 'Win32NT') {
     Remove-Item $clave -Recurse -ErrorAction SilentlyContinue
     New-Item $clave -Force | Out-Null
     New-ItemProperty $clave -Name Existente -Value 7 -PropertyType DWord | Out-Null
+    New-ItemProperty $clave -Name ABorrar -Value 'C:\x.exe' -PropertyType String | Out-Null
     @{ ajustes = @(
         @{ id = 'prueba'; nombre = 'prueba'; fuente = 'x'; por_que = 'x'; riesgo = 'Bajo'; activo = $true
            registro = @(
                @{ ruta = $clave; nombre = 'Existente'; valor = 1; tipo = 'DWord' },
-               @{ ruta = $clave; nombre = 'Nuevo'; valor = 'si'; tipo = 'String' }) }
+               @{ ruta = $clave; nombre = 'Nuevo'; valor = 'si'; tipo = 'String' },
+               @{ ruta = $clave; nombre = 'ABorrar'; eliminar = $true }) }
     ) } | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $tmp 'cat.json') -Encoding UTF8
     $env:PERFIL_NITRO_CATALOGO = Join-Path $tmp 'cat.json'
     $env:PERFIL_NITRO_RESPALDO = Join-Path $tmp 'respaldo'
@@ -50,12 +52,16 @@ if ([System.Environment]::OSVersion.Platform -eq 'Win32NT') {
     Set-Ajustes -WhatIf
     Probar '-WhatIf no cambia nada' { (Get-ItemProperty $clave).Existente -eq 7 -and -not (Get-ItemProperty $clave -Name Nuevo -ErrorAction SilentlyContinue) }
     Set-Ajustes
-    Probar 'aplicar deja los valores del catálogo' { (Get-ItemProperty $clave).Existente -eq 1 -and (Get-ItemProperty $clave).Nuevo -eq 'si' -and (Test-Aplicado $aj) }
+    Probar 'aplicar deja los valores del catálogo y borra el marcado' {
+        (Get-ItemProperty $clave).Existente -eq 1 -and (Get-ItemProperty $clave).Nuevo -eq 'si' -and
+        -not (Get-ItemProperty $clave -Name ABorrar -ErrorAction SilentlyContinue) -and (Test-Aplicado $aj)
+    }
     Set-Ajustes
     Probar 'segunda aplicación no pisa el respaldo original' { (Get-Content (Join-Path $env:PERFIL_NITRO_RESPALDO 'prueba.json') -Raw | ConvertFrom-Json).registro[0].valor -eq 7 }
     Undo-Ajustes -Ids prueba
     Probar 'deshacer restaura el valor previo y borra el que no existía' {
-        (Get-ItemProperty $clave).Existente -eq 7 -and -not (Get-ItemProperty $clave -Name Nuevo -ErrorAction SilentlyContinue)
+        (Get-ItemProperty $clave).Existente -eq 7 -and -not (Get-ItemProperty $clave -Name Nuevo -ErrorAction SilentlyContinue) -and
+        (Get-ItemProperty $clave).ABorrar -eq 'C:\x.exe'
     }
     Probar 'RAM_KB se resuelve a la RAM instalada' { (Resolve-ValorAjuste 'RAM_KB') -gt 1000000 }
     Probar 'chequeo de GPU dedicada responde' { (Test-GpuDedicadaWddm27) -is [bool] }

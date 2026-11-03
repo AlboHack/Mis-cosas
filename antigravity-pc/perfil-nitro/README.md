@@ -18,5 +18,15 @@ Doble clic en `Perfil.bat`: muestra qué está aplicado, simula, aplica (primero
 - **Deshabilitar Windows Search:** el repo y MATLAB están en D: y la búsqueda se volvería lenta. Se decide con los datos de la auditoría.
 - **Recortar la memoria de los procesos y borrar las cachés de shaders:** ver `mantenimiento/README.md`.
 
-## Pendiente de la auditoría (P7 del PC)
-Espacio libre en C:, tamaño de `hiberfil.sys`, programas que arrancan con Windows, apps preinstaladas, versión de los drivers de NVIDIA y AMD, y consumo de Defender durante un análisis en SAP2000. Con esos datos se decide sobre el almacenamiento reservado, los efectos visuales y las exclusiones de Defender. [Por verificar] el valor de `HiberFileType` para el modo reducido se confirma en el Nitro.
+## Resultado de la auditoría (P7, 2026-11-03)
+| Dato | Valor | Consecuencia |
+|---|---|---|
+| Espacio libre en C: | 30.5 GB de 110 | El almacenamiento reservado sigue activo; no hace falta liberar esos 7 GB |
+| Hibernación | Apagada, sin `hiberfil.sys` | `hibernacion-reducida` queda inactivo: la reactivaría |
+| Archivo de paginación | 8.5 GB asignados, pico de 1.3 GB | Se deja administrado por Windows, en el SSD |
+| Ya aplicados | telemetría, apps en segundo plano, HAGS, modo de juego | — |
+| Por aplicar (activos) | `svchost-agrupado`, `entrega-p2p`, `inicio-reducememory` | Pedido P8 |
+| Arranque | ReduceMemory (liberador antiguo, cuenta LOCAL SERVICE) | Nuevo ajuste `inicio-reducememory` |
+| Driver AMD Vega 10 | 27.20.1028.1, julio de 2020 | Actualizar a mano desde AMD (Ryzen 7 3750H) [Por verificar la última versión disponible] |
+| Plan de energía | Alto rendimiento fijo | Recomendado: Equilibrado como base y "Iniciar calculo" para SAP2000 o MATLAB |
+| Defender | 349 MB; modelos en `D:\Modelos RUN` | `defender-modelos-sap` inactivo hasta que Nicolás decida |
