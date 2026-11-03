@@ -12,7 +12,8 @@ function Probar([string]$Nombre, [scriptblock]$Bloque) {
 }
 
 # --- sintaxis de todos los scripts
-foreach ($f in Get-ChildItem $raiz -Recurse -Include *.ps1, *.psm1) {
+# Solo los archivos propios: instalada, la carpeta también guarda v4.1_retirada\ y el perfil del Nitro
+foreach ($f in @('Mantenimiento.ps1', 'Mantenimiento.psm1', 'pruebas\Pruebas.ps1') | ForEach-Object { Get-Item (Join-Path $raiz $_) }) {
     Probar "sintaxis $($f.Name)" {
         $err = $null
         [System.Management.Automation.Language.Parser]::ParseFile($f.FullName, [ref]$null, [ref]$err) | Out-Null
