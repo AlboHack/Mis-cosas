@@ -524,3 +524,102 @@ opera           238
 ### 4. Carpeta de modelos SAP2000
 Nicolás guarda sus modelos de análisis estructural en `D:\Modelos RUN` (donde reside `PRACTICA RODRIGO.sdb`); adicionalmente existen archivos descargados de evaluaciones en `D:\Descargas Opera` (`Pregunta 1 item a).sdb` y `Pregunta 2 item a).sdb`). Para la exclusión de Windows Defender, la ruta principal recomendada es `D:\Modelos RUN`.
 
+
+
+## P8 · 2026-11-03 · antigravity-pc
+
+### 1. Intento con Ejecutar-Elevado.ps1 desde sesión Antigravity
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\Ejecutar-Elevado.ps1 -Script antigravity-pc\pedidos\P8.ps1 -Nombre P8
+```
+Salida literal:
+```text
+ERROR: no se aceptó el permiso de administrador (Este comando no se puede ejecutar debido al error: Solicitud no compatible.)
+Sin log: el script elevado no llegó a correr.
+```
+Causa técnica: En Windows 11, las sesiones de fondo/servicio de Antigravity no tienen acceso al escritorio interactivo para elevar procesos vía `Start-Process -Verb RunAs` (error `ERROR_NOT_SUPPORTED` / "Solicitud no compatible").
+
+### 2. Ejecución elevada por Nicolás (PowerShell como Administrador / P8)
+```powershell
+([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\perfil-nitro\pruebas\Pruebas.ps1
+Import-Module .\antigravity-pc\perfil-nitro\PerfilNitro.psm1 -Force
+Checkpoint-Computer -Description 'Perfil Nitro P8' -RestorePointType MODIFY_SETTINGS
+Set-Ajustes
+Get-EstadoAjustes | Format-Table Id, Activo, Aplicado, Requisito -AutoSize
+Get-ChildItem "$env:LOCALAPPDATA\PerfilNitro\respaldo" | Select-Object Name
+DISM /Online /Get-ReservedStorageState
+(Get-MpPreference).ExclusionPath
+```
+Salida literal:
+```text
+True
+
+OK    sintaxis Pruebas.ps1
+OK    UTF-8 con BOM Pruebas.ps1
+OK    sintaxis Perfil.ps1
+OK    UTF-8 con BOM Perfil.ps1
+OK    sintaxis PerfilNitro.psm1
+OK    UTF-8 con BOM PerfilNitro.psm1
+OK    ids únicos
+OK    cada ajuste cita su fuente, su motivo y su riesgo
+OK    cada ajuste hace algo (registro, servicio o comando)
+OK    los comandos se pueden deshacer y consultar
+OK    claves solo en HKLM:, HKCU: o HKEY_USERS y tipos válidos
+OK    riesgo medio o decisión estética: inactivos por defecto
+OK    estado inicial: no aplicado
+Whatif: Se está realizando la operación "prueba" en el destino "prueba".
+OK    -WhatIf no cambia nada
+prueba: aplicado (respaldo en C:\Users\albor\AppData\Local\Temp\perfil_d6d4a521-4f36-43a2-af1e-5874fb42f0e2\respaldo\prueba.json).
+OK    aplicar deja los valores del catálogo y borra el marcado
+prueba: ya aplicado.
+OK    segunda aplicación no pisa el respaldo original
+prueba: deshecho.
+OK    deshacer restaura el valor previo y borra el que no existía
+OK    RAM_KB se resuelve a la RAM instalada
+OK    chequeo de GPU dedicada responde
+
+Fallas: 0
+
+Punto de restauracion creado exitosamente.
+
+Id                       Activo Aplicado Requisito
+--                       ------ -------- ---------
+svchost-agrupado           True     True      True
+telemetria                 True     True      True
+entrega-p2p                True     True      True
+apps-fondo                 True     True      True
+gpu-scheduling             True     True      True
+modo-juego                 True     True      True
+inicio-reducememory        True     True      True
+inicio-onenote             True     True      True
+inicio-opera-assistant     True     True      True
+inicio-wallpaper-engine    True     True      True
+hibernacion-reducida      False    False      True
+almacenamiento-reservado  False    False      True
+efectos-visuales          False    False      True
+defender-modelos-sap      False    False      True
+
+Name
+----
+entrega-p2p.json
+inicio-opera-assistant.json
+inicio-wallpaper-engine.json
+svchost-agrupado.json
+
+Deployment Image Servicing and Management tool
+Version: 10.0.26100.9549
+
+Image Version: 10.0.26300.9711
+
+Reserved storage is enabled.
+
+The operation completed successfully.
+
+C:\Program Files\MATLAB
+C:\Program Files\Windows Defender\MsMpEng.exe
+C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2110.6-0
+C:\Users\albor\Documents\Proyectos
+C:\Users\albor\OneDrive\Escritorio\Windows defender\DefenderControl.exe
+```
+
