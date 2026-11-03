@@ -84,3 +84,25 @@ Fallas: 0
 ```
 
 `pwsh` (PowerShell 7) no está instalado en este equipo; la línea se omitió según lo indicado.
+
+
+## P3 · 2026-11-03 · antigravity-pc
+
+### Comando 1: Uninstall-Programas -WhatIf
+```powershell
+Import-Module .\antigravity-pc\mantenimiento\Mantenimiento.psm1 -Force
+Uninstall-Programas -WhatIf
+# (Sin salida: ningún programa de la lista programas_a_quitar.json está instalado actualmente en el Registro).
+```
+
+### Comando 2: Clear-Temporales -WhatIf
+```powershell
+(Clear-Temporales -WhatIf | Out-Null); 'simulación terminada'
+# Whatif: Se está realizando la operación "Borrar" en el destino "C:\Users\albor\AppData\Local\Temp\007c57cd-5bf4-4d54-bd44-c14b72dc7243.tmp".
+# Whatif: Se está realizando la operación "Borrar" en el destino "C:\Users\albor\AppData\Local\Temp\76cfa644-ab5e-4075-88e4-bb9e8a7526e6.tmp".
+# Whatif: Se está realizando la operación "Borrar" en el destino "C:\Users\albor\AppData\Local\Temp\8f2e87a1-3a10-40de-a1c1-e674b8e4cb06.tmp".
+# Whatif: Se está realizando la operación "Crear directorio" en el destino "Destino: C:\Users\albor\AppData\Local\Mantenimiento".
+# Whatif: Se está realizando la operación "Crear directorio" en el destino "Destino: C:\Users\albor\AppData\Local\Mantenimiento\logs".
+# Whatif: Se está realizando la operación "Agregar contenido" en el destino "Ruta de acceso: C:\Users\albor\AppData\Local\Mantenimiento\logs\20261103.log".
+# simulación terminada
+```
