@@ -188,3 +188,11 @@ Pedirle a Nicolás que abra SAP2000 v27 con `D:\Modelos RUN\PRACTICA RODRIGO.sdb
 - Pantalla negra que no vuelve en 1 minuto: Nicolás presiona **Win + Ctrl + Shift + B**, que reinicia el driver de video.
 - Errores o fallas en SAP2000 o en juegos: Administrador de dispositivos → Adaptadores de pantalla → AMD Radeon → Propiedades → Controlador → **Revertir al controlador anterior**. Si no está disponible: restaurar el punto 'Antes driver AMD'.
 Reportar todo literal, incluidos los mensajes del instalador.
+
+## P11 · abierto · Actualizar la copia instalada del Escritorio (hacer **antes** de P8; no necesita administrador)
+La copia de `C:\Users\albor\Mantenimiento` es la de P6 y le falta la purga de memoria de prioridad baja. El instalador la actualiza, agrega el perfil del Nitro con su acceso directo "Perfil Nitro" y conserva `v4.1_retirada\`, `logs\` y los respaldos.
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\Instalar.ps1
+```
+Debe mostrar `Purga de prioridad baja: True` y `Mantenimiento: Fallas: 0 | Perfil: Fallas: 0`. Si no, reportar y NO seguir con P8. Reportar la salida literal.
