@@ -80,7 +80,7 @@ git checkout main && git pull --ff-only && git merge --squash claude/espejo-ajus
 ```
 Si alguna prueba falla, no hacer ese último merge y reportar.
 
-## P7 · abierto · Archivar HTML_Moodle en _contexto y aplicar el espejo
+## P7 · cerrado · Archivar HTML_Moodle en _contexto y aplicar el espejo
 De los 119 SOLO_AQUI de P6, 118 son volcados HTML de páginas y foros de Aula (`<ramo>/HTML_Moodle/`) de un método de descarga anterior. No son archivos de Aula, pero conservan el texto de los foros: se **mueven** a `<ramo>/_contexto/HTML_Moodle/`, que el espejo no toca (no se borran). El restante, `CIV386.../Material_y_Apuntes/2026pr Notas.pdf`, es una versión vieja de la lista de notas: Aula publica la vigente y Drive conserva la vieja. Nicolás confirmó el espejo exacto con borrados.
 ```
 cd ~/Mis-cosas && git fetch origin && git checkout main && git pull --ff-only

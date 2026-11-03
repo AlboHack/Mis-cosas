@@ -97,7 +97,7 @@ Get-ChildItem $bk | Select-Object Name
 ```
 Reportar la salida literal de cada paso, con `Fallas: N` del paso 2. Al terminar, decirle a Nicolás que pruebe el acceso "Mantenimiento" (pide permiso de administrador), opción 7 Diagnóstico, y anotar en la bitácora lo que muestre.
 
-## P7 · abierto · Auditoría del Nitro para el perfil de optimización (solo lectura)
+## P7 · cerrado · Auditoría del Nitro para el perfil de optimización (solo lectura)
 Nicolás pidió optimizar el PC para su uso. La rama `claude/perfil-nitro` trae `antigravity-pc/perfil-nitro/`: un catálogo de ajustes con su fuente, que se pueden aplicar y deshacer. **Este pedido no aplica nada**: mide el equipo para decidir qué ajustes activar. PowerShell como administrador.
 ```powershell
 cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
@@ -119,3 +119,21 @@ Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 15 Nam
 git checkout main
 ```
 Reportar todo literal. Responder además en una línea: ¿en qué carpeta guarda Nicolás los modelos de SAP2000 (para evaluar una exclusión de Defender acotada a esa carpeta)?
+
+## P8 · abierto · Aplicar el perfil del Nitro (ajustes activos) — PowerShell **como administrador**
+P7 se corrió sin elevar (DISM dio error 740 y Defender no mostró exclusiones). Nicolás pidió configurar la optimización: se aplican solo los ajustes **activos** y de riesgo bajo. Cada uno guarda su valor previo y se puede deshacer.
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\perfil-nitro\pruebas\Pruebas.ps1
+Import-Module .\antigravity-pc\perfil-nitro\PerfilNitro.psm1 -Force
+Checkpoint-Computer -Description 'Perfil Nitro P8' -RestorePointType MODIFY_SETTINGS
+Set-Ajustes -WhatIf
+Set-Ajustes
+Get-EstadoAjustes | Format-Table Id, Activo, Aplicado, Requisito -AutoSize
+Get-ChildItem "$env:LOCALAPPDATA\PerfilNitro\respaldo" | Select-Object Name
+DISM /Online /Get-ReservedStorageState
+(Get-MpPreference).ExclusionPath
+git checkout main
+```
+Si la primera línea dice `False`, detenerse: hay que abrir PowerShell como administrador. Si `Checkpoint-Computer` falla porque la protección del sistema está apagada, reportarlo y seguir. Después **reiniciar el equipo** (svchost lo requiere) y anotar `REINICIO` en la bitácora. Reportar todo literal.
