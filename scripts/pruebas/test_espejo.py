@@ -54,6 +54,14 @@ try:
     escribir(os.path.join(repo, "CIV244/_contexto/.contexto_estado.json"), b"{}")
     escribir(os.path.join(repo, "evaluaciones.json"), b"[]")
 
+    # Caso de la tablet: versión vieja en el repo ya en el caché de hashes, con el mismo tamaño y la misma
+    # fecha que la nueva (copy2 conserva la fecha). La comparación no debe fiarse del hash viejo.
+    clase_tab, clase_repo = os.path.join(root, "CIV244/03 Unidad 2/Clase.pdf"), os.path.join(repo, "CIV244/03 Unidad 2/Clase.pdf")
+    s.compute_file_sha256(clase_repo)
+    st_t = os.stat(clase_tab)
+    os.utime(clase_repo, ns=(st_t.st_atime_ns, st_t.st_mtime_ns))
+    s.compute_file_sha256(clase_repo)
+
     cp, bo, om = s.reflejar_en_repo(curso, root, repo, limite_mb=1 / 1024)  # tope de 1 KB para probar el límite
     en_repo = sorted(os.path.relpath(os.path.join(r, x), repo) for r, _, fs in os.walk(repo) for x in fs)
     comprobar("copia lo nuevo y lo modificado", cp == 2 and open(os.path.join(repo, "CIV244/03 Unidad 2/Clase.pdf"), "rb").read() == b"clase v2")

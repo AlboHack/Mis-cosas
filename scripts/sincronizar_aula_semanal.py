@@ -108,6 +108,18 @@ def compute_file_sha256(filepath):
     return h.hexdigest()
 
 
+def copiar_con_hash(origen, destino):
+    """shutil.copy2 conserva la fecha del origen: si el destino ya estaba en el caché con el mismo
+    tamaño y esa misma fecha, su hash anterior pasaría por vigente. Se registra el hash del origen."""
+    global _hash_cache_sucio
+    sha = compute_file_sha256(origen)
+    shutil.copy2(origen, destino)
+    st = os.stat(destino)
+    if sha:
+        _cache_hashes()[os.path.realpath(destino)] = [st.st_size, st.st_mtime_ns, sha]
+        _hash_cache_sucio = True
+
+
 def guardar_cache_hashes():
     """Guarda el caché de hashes (descarta rutas que ya no existen). Escritura atómica."""
     global _hash_cache_sucio
@@ -496,7 +508,7 @@ def reflejar_en_repo(courses, root_dir, repo_uni, limite_mb=LIMITE_GIT_MB):
             if (not os.path.exists(d) or os.path.getsize(d) != os.path.getsize(p)
                     or compute_file_sha256(d) != compute_file_sha256(p)):
                 os.makedirs(os.path.dirname(d), exist_ok=True)
-                shutil.copy2(p, d)
+                copiar_con_hash(p, d)
                 copiados += 1
         for p in list(archivos_del_ramo(dst)):
             if os.path.relpath(p, dst) not in origen:
@@ -824,7 +836,7 @@ def run_sync():
     for origen, destino, url_clean in plan_copias:
         try:
             os.makedirs(os.path.dirname(destino), exist_ok=True)
-            shutil.copy2(origen, destino)
+            copiar_con_hash(origen, destino)
             manifest[url_clean]["local_path"] = destino
             archivos_reubicados.append((origen, destino))
         except Exception as cp_err:
