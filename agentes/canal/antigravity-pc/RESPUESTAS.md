@@ -1027,3 +1027,61 @@ FullScanAge                   : 4294967295
 Your branch is up to date with 'origin/canal'.
 ```
 
+
+
+## P12 · 2026-11-03 · antigravity-pc
+
+### Ejecución de P12-gpu.ps1 (GTX 1650 permanente para SAP2000 y MATLAB)
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\P12-gpu.ps1
+git checkout main
+```
+Salida literal:
+```text
+gpu-dedicada-ingenieria: aplicado (respaldo en C:\Users\albor\AppData\Local\PerfilNitro\respaldo\gpu-dedicada-ingenieria.json).
+== Preferencias de GPU por programa
+
+C:\Program Files\Computers and Structures\SAP2000 27\SAP2000.exe                                              : GpuPreference=2;
+D:\Matlab\bin\matlab.exe                                                                                      : GpuPreference=2;
+D:\Matlab\bin\win64\MATLAB.exe                                                                                : GpuPreference=2;
+
+SAP2000 ya estaba abierto (PID 8084): se verifica esa instancia y no se cierra.
+== nvidia-smi
+Tue Nov  3 18:41:41 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.47                 KMD Version: 610.47        CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce GTX 1650      WDDM  |   00000000:01:00.0 Off |                  N/A |
+| N/A   58C    P0             14W /   50W |     296MiB /   4096MiB |     11%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
+== Motores de GPU usados por SAP2000 (instancias del contador)
+
+InstanceName                                                Uso
+------------                                                ---
+pid_8084_luid_0x00000000_0x00014263_phys_0_eng_0_engtype_3d   0
+pid_8084_luid_0x00000000_0x00014263_phys_0_eng_1_engtype_3d   0
+pid_8084_luid_0x00000000_0x00014263_phys_0_eng_2_engtype_3d   0
+pid_8084_luid_0x00000000_0x00014263_phys_0_eng_3_engtype_3d   0
+pid_8084_luid_0x00000000_0x00014263_phys_0_eng_4_engtype_3d   0
+pid_8084_luid_0x00000000_0x00014263_phys_0_eng_5_engtype_3d   0
+pid_8084_luid_0x00000000_0x00014263_phys_0_eng_6_engtype_3d   0
+pid_8084_luid_0x00000000_0x00014263_phys_0_eng_7_engtype_3d   0
+pid_8084_luid_0x00000000_0x00014263_phys_0_eng_8_engtype_3d   0
+
+== Memoria dedicada por adaptador (luid)
+
+InstanceName                       MB
+------------                       --
+luid_0x00000000_0x0001355e_phys_0 128
+luid_0x00000000_0x00014263_phys_0   0
+luid_0x00000000_0x000142c9_phys_0 288
+```
+Nota: Al momento de ejecutar la verificacion, SAP2000 ya se encontraba en ejecucion (PID 8084). El script respeto la sesion activa de Nicolas y no la forzo a cerrar. A partir de las proximas aperturas, DirectX dirigira SAP2000 y MATLAB directamente a la GTX 1650 (GpuPreference=2).
+

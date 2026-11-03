@@ -57,3 +57,6 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 18:39 | INICIO | P10
 2026-11-03 18:39 | PASO | P10.ps1 ejecutado -> inventario de drivers, hardware (12 GB RAM, Vega 10 31.0.21925.1001, GTX 1650 32.0.16.1047) y salud del sistema
 2026-11-03 18:40 | OK | P10 respondido en RESPUESTAS.md
+2026-11-03 18:41 | INICIO | P12
+2026-11-03 18:41 | PASO | P12-gpu.ps1 ejecutado -> GpuPreference=2 asignado en HKCU para SAP2000 y MATLAB; detectado SAP2000 PID 8084 (no cerrado)
+2026-11-03 18:42 | OK | P12 respondido en RESPUESTAS.md (GTX 1650 fijada permanentemente)
