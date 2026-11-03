@@ -142,3 +142,152 @@ Conforme a la instrucción expresa de P4:
 Y regla 04 (no modificar código, reportar el error para que Claude lo corrija):
 **Se detuvo la ejecución antes del merge squash a `main` y de la sincronización**.
 A la espera de la corrección en `claude/espejo-aula`.
+
+
+## P5 · 2026-11-03 · antigravity-tablet
+
+### 1. Batería de pruebas en rama `claude/espejo-aula`
+Comando ejecutado:
+```bash
+T="${TMPDIR:-$PREFIX/tmp}"
+for t in test_espejo test_novedades test_programador test_pre_push test_enunciados test_aceptacion test_aceptacion_token; do python3 scripts/pruebas/$t.py > "$T/$t.log" 2>&1; echo "$t -> $?"; grep -E "^Resultado|RESUMEN" "$T/$t.log"; done
+```
+
+Salida literal:
+```text
+test_espejo -> 0
+Resultado T31: PASS
+test_novedades -> 0
+Resultado T21: PASS
+Resultado T22: PASS
+Resultado T23: PASS
+Resultado T24: PASS
+Resultado T25: PASS
+Resultado T27: PASS
+Resultado T29: PASS
+RESUMEN NOVEDADES: TODAS PASARON
+test_programador -> 0
+Resultado T28: PASS
+test_pre_push -> 0
+Resultado T19: PASS
+test_enunciados -> 0
+Resultado T29: PASS
+test_aceptacion -> 0
+Resultado T2: PASS
+Resultado T3: PASS
+Resultado T6: PASS
+Resultado T8: PASS
+Resultado Calendario Idempotencia: PASS
+RESUMEN GLOBAL: TODAS LAS PRUEBAS PASARON (PASS)
+test_aceptacion_token -> 0
+Resultado T12: PASS
+Resultado T3': PASS
+Resultado T2': PASS
+Resultado T9': PASS
+Resultado T26: PASS
+Resultado T10: PASS
+Resultado T11: PASS
+Resultado T14: PASS
+Resultado T15: PASS
+Resultado T16: PASS
+Resultado T32: PASS
+Resultado T17: PASS
+Resultado T20: PASS
+Resultado T18: PASS
+Resultado Avisos Idempotencia: PASS
+Resultado T13: PASS
+RESUMEN GLOBAL: TODAS LAS PRUEBAS PASARON (100% PASS)
+```
+
+### 2. Estado de git tras las pruebas
+```text
+$ git status --porcelain
+(vacío)
+```
+
+### 3. Merge squash a `main` y reinstalación de pre-push hook
+Comando ejecutado:
+```bash
+git checkout main && git pull --ff-only && git merge --squash claude/espejo-aula && git commit -m "feat(sync): universidad/ como espejo de Aula; repo ordenado" && ALLOW_MAIN_PUSH=1 git push origin main
+cp scripts/hooks/pre-push .git/hooks/pre-push && chmod +x .git/hooks/pre-push
+```
+- **Hash de commit squash en `main`:** `96d8df8` (`96d8df8 feat(sync): universidad/ como espejo de Aula; repo ordenado`)
+- **Hook pre-push:** Reinstalado y con permisos `+x`.
+
+### 4. Comando del cron para pruebas
+Comando ejecutado:
+```bash
+grep -n "test_" "$(crontab -l | grep -o '[^ ]*programador_sync.py')" 2>/dev/null | head -3
+```
+Salida: `(vacío)`
+**Respuesta:** Ningún comando del cron llama a las pruebas hoy. `crontab` ejecuta exclusivamente `python3 /data/data/com.agycli/files/home/Mis-cosas/scripts/programador_sync.py`, el cual no incluye llamadas a suites de prueba. Las pruebas se ejecutan hoy mediante el hook `pre-push` (`.git/hooks/pre-push` -> `scripts/pruebas/test_pre_push.py`).
+
+### 5. Primera corrida de sincronización sin `--permitir-masivo`
+Comando ejecutado:
+```bash
+bash scripts/sincronizar_sabados.sh
+```
+
+#### Líneas literales requeridas (`[ESTRUCTURA AULA]`, `ALERTA`, rutas, `RESULTADO`, `[ERROR]`):
+```text
+[2026-11-03 16:31:22]   [ESTRUCTURA AULA] 210 archivo(s) ubicados en su carpeta de Aula sin descargar.
+[2026-11-03 16:31:22]   [ALERTA DE SEGURIDAD] ALERTA: 350 archivos ya no figuran en Aula (>20). No se retira nada ni se actualiza el repo hasta revisarlo; para aplicarlo, correr con --permitir-masivo.
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/00_Descripcion_y_Fechas.txt
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/00_Descripcion_y_Programa.txt
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/00_Contenido_Completo_HTML_Moodle.txt
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Planificacion/Información General/CIV222 2026-20 Planificación de la Asignatura.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Planificacion/Información General/CIV 222 - Fundamentos de Ingeniería de Construcción y Administración final.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Material_y_Apuntes/Administración de Proyectos Civiles - Mario Campero y Luis Alarcon.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Material_y_Apuntes/HendricksonBook.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Material_y_Apuntes/Listado de rendimientos.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Material_y_Apuntes/PMBOK 7Ed.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Material_y_Apuntes/PMBOKGuideSixthEd_SPA-unlocked-compressed.pdf
+-------------------------------------------------------
+[2026-11-03 16:31:22] RESULTADO: 0 archivo(s) nuevo(s) o modificado(s), 210 reubicado(s), 0 retirado(s). Errores: 1
+[2026-11-03 16:49:25] FINALIZADO. Estado: CON ERRORES (1)
+```
+
+#### Últimas 40 líneas de `Registro_Sincronizaciones.log`:
+```text
+[2026-11-03 13:19:47]   [OMITIDO DE GIT > 0.0009765625 MB] CIV244/03 Unidad 2/Grande.pdf
+[2026-11-03 13:19:47]   [OMITIDO DE GIT > 0.0009765625 MB] CIV244/03 Unidad 2/Grande.pdf
+[2026-11-03 13:20:00]   [OMITIDO DE GIT > 0.0009765625 MB] CIV244/03 Unidad 2/Grande.pdf
+[2026-11-03 16:27:14]   [OMITIDO DE GIT > 0.0009765625 MB] CIV244/03 Unidad 2/Grande.pdf
+[2026-11-03 16:27:14]   [OMITIDO DE GIT > 0.0009765625 MB] CIV244/03 Unidad 2/Grande.pdf
+[2026-11-03 16:31:10] =======================================================
+[2026-11-03 16:31:10] INICIANDO SINCRONIZACIÓN SEMANAL DETERMINÍSTICA (API)
+[2026-11-03 16:31:10] =======================================================
+[2026-11-03 16:31:11] Sesión validada exitosamente vía API para usuario: nicolas.albornozp@usm.cl
+[2026-11-03 16:31:11] Revisando contenidos de: FICA (ID: 62177)...
+[2026-11-03 16:31:12]   FICA: 5 adjunto(s) de enunciado de entregas detectados
+[2026-11-03 16:31:12] Revisando contenidos de: FAE (ID: 62178)...
+[2026-11-03 16:31:13]   FAE: 2 adjunto(s) de enunciado de entregas detectados
+[2026-11-03 16:31:13] Revisando contenidos de: Fluidos (ID: 62182)...
+[2026-11-03 16:31:13] Revisando contenidos de: Transporte (ID: 62192)...
+[2026-11-03 16:31:14] Revisando contenidos de: Prácticas (ID: 5623)...
+[2026-11-03 16:31:22]   [ESTRUCTURA AULA] 210 archivo(s) ubicados en su carpeta de Aula sin descargar.
+[2026-11-03 16:31:22]   [ALERTA DE SEGURIDAD] ALERTA: 350 archivos ya no figuran en Aula (>20). No se retira nada ni se actualiza el repo hasta revisarlo; para aplicarlo, correr con --permitir-masivo.
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/00_Descripcion_y_Fechas.txt
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/00_Descripcion_y_Programa.txt
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/00_Contenido_Completo_HTML_Moodle.txt
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Planificacion/Información General/CIV222 2026-20 Planificación de la Asignatura.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Planificacion/Información General/CIV 222 - Fundamentos de Ingeniería de Construcción y Administración final.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Material_y_Apuntes/Administración de Proyectos Civiles - Mario Campero y Luis Alarcon.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Material_y_Apuntes/HendricksonBook.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Material_y_Apuntes/Listado de rendimientos.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Material_y_Apuntes/PMBOK 7Ed.pdf
+[2026-11-03 16:31:22]     - CIV222_FUNDAMENTOS_DE_INGENIERÍA_DE_CONSTRUCCIÓN_Y_ADMINISTRACIÓN_/Material_y_Apuntes/PMBOKGuideSixthEd_SPA-unlocked-compressed.pdf
+[2026-11-03 16:31:22] -------------------------------------------------------
+[2026-11-03 16:31:22] RESULTADO: 0 archivo(s) nuevo(s) o modificado(s), 210 reubicado(s), 0 retirado(s). Errores: 1
+[2026-11-03 16:31:32]   [FUSIÓN EVALUACIONES] Evento API 'Vencimiento de Tarea N°1' descartado por coincidir con entrada manual 'Entrega Tarea 1 SAP2000' (FAE a las 2026-10-27T23:59:00-03:00).
+[2026-11-03 16:31:32]   [EVALUACIONES] Guardadas 15 evaluaciones en /data/data/com.agycli/files/home/Mis-cosas/universidad/2026-2/evaluaciones.json
+[2026-11-03 16:31:33] Respaldando árbol de asignaturas en Google Drive (gdrive:Universidad/2026-2/<ramo>/<subcarpeta>)...
+[2026-11-03 16:49:05] Calendario nativo verificado y al día.
+[2026-11-03 16:49:08] Contextos incrementales de asignaturas generados con éxito.
+[2026-11-03 16:49:08] Sincronizando con repositorio GitHub AlboHack/Mis-cosas...
+[2026-11-03 16:49:09]   [REPO] Espejo no actualizado: retiro pendiente de revisión (--permitir-masivo).
+[2026-11-03 16:49:24] ¡Repositorio GitHub actualizado con éxito (2026-11-03)!
+[2026-11-03 16:49:25] FINALIZADO. Estado: CON ERRORES (1)
+[2026-11-03 16:49:25] =======================================================
+```
+
