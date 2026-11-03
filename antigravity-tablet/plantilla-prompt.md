@@ -11,6 +11,8 @@ Lo que funciona con AG: pedidos numerados y cerrados, con comandos literales, qu
 4. <ejecución real, si corresponde>
 REPORTE (máx. N líneas): [AG] REPORTE P<n>: <campos>
 ```
+En la tablet no existe `/tmp` (Android): los logs van en `${TMPDIR:-$PREFIX/tmp}`.
+
 El paso 3 se omite cuando el pedido incluye borrados o cambios que esperan la confirmación de Nicolás.
 
 ## Reporte de AG

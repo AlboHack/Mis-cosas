@@ -32,3 +32,4 @@ flowchart LR
 | [sync-aula.md](sync-aula.md) | Arquitectura de la sincronización con Aula, programación y pruebas |
 | [errores-y-lecciones.md](errores-y-lecciones.md) | Fallas pasadas que no deben repetirse y lecciones al trabajar con AG |
 | [estado.md](estado.md) | Ramas pendientes y reportes esperados, con fecha |
+| [CONTEXTO.md](CONTEXTO.md) | Equipo, versiones, rutas y tareas programadas, escrito por la tablet (P1) |
