@@ -128,7 +128,7 @@ cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --
 powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\Ejecutar-Elevado.ps1 -Script antigravity-pc\pedidos\<script>.ps1 -Nombre <Pn>
 ```
 
-## P8 · abierto · Aplicar el perfil del Nitro (ajustes activos)
+## P8 · cerrado · Aplicar el perfil del Nitro (ajustes activos)
 **Forma de ejecutarlo (reemplaza al bloque de abajo):** `Ejecutar-Elevado.ps1 -Script antigravity-pc\pedidos\P8.ps1 -Nombre P8`. Después pedirle a Nicolás que reinicie y anotar `REINICIO`. El `aplicar_p8.bat` que preparaste se puede borrar.
 **Actualizado:** la rama ya trae también `inicio-onenote`, `inicio-opera-assistant` e `inicio-wallpaper-engine` (decisión de Nicolás). `Set-Ajustes` los aplica junto con los demás. El plan de energía queda en Alto rendimiento: no tocarlo.
 P7 se corrió sin elevar (DISM dio error 740 y Defender no mostró exclusiones). Nicolás pidió configurar la optimización: se aplican solo los ajustes **activos** y de riesgo bajo. Cada uno guarda su valor previo y se puede deshacer.
@@ -148,7 +148,7 @@ git checkout main
 ```
 Si la primera línea dice `False`, detenerse: hay que abrir PowerShell como administrador. Si `Checkpoint-Computer` falla porque la protección del sistema está apagada, reportarlo y seguir. Después **reiniciar el equipo** (svchost lo requiere) y anotar `REINICIO` en la bitácora. Reportar todo literal.
 
-## P9 · abierto · Actualizar el driver de la AMD Radeon Vega 10 (después de P8 y del reinicio)
+## P9 · cerrado · Actualizar el driver de la AMD Radeon Vega 10 (después de P8 y del reinicio)
 Nicolás lo pidió (2026-11-03). El driver actual es 27.20.1028.1, de julio de 2020. En el Nitro la Vega 10 maneja la pantalla interna y la GTX 1650 renderiza a través de ella (Optimus): durante la instalación la pantalla parpadeará o quedará en negro unos segundos. **Nicolás debe estar frente al PC.** No tocar el driver de NVIDIA.
 
 ### 1. Antes
@@ -189,7 +189,7 @@ Pedirle a Nicolás que abra SAP2000 v27 con `D:\Modelos RUN\PRACTICA RODRIGO.sdb
 - Errores o fallas en SAP2000 o en juegos: Administrador de dispositivos → Adaptadores de pantalla → AMD Radeon → Propiedades → Controlador → **Revertir al controlador anterior**. Si no está disponible: restaurar el punto 'Antes driver AMD'.
 Reportar todo literal, incluidos los mensajes del instalador.
 
-## P11 · abierto · Actualizar la copia instalada del Escritorio (hacer **antes** de P8; no necesita administrador)
+## P11 · cerrado · Actualizar la copia instalada del Escritorio (hacer **antes** de P8; no necesita administrador)
 La copia de `C:\Users\albor\Mantenimiento` es la de P6 y le falta la purga de memoria de prioridad baja. El instalador la actualiza, agrega el perfil del Nitro con su acceso directo "Perfil Nitro" y conserva `v4.1_retirada\`, `logs\` y los respaldos.
 ```powershell
 cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
@@ -197,7 +197,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\Insta
 ```
 Debe mostrar `Purga de prioridad baja: True` y `Mantenimiento: Fallas: 0 | Perfil: Fallas: 0`. Si no, reportar y NO seguir con P8. Reportar la salida literal.
 
-## P12 · abierto · GTX 1650 permanente para SAP2000 y MATLAB (sin administrador y sin intervención de Nicolás)
+## P12 · cerrado · GTX 1650 permanente para SAP2000 y MATLAB (sin administrador y sin intervención de Nicolás)
 Nicolás pidió que quede configurado sin que él haga nada. La preferencia de GPU vive en HKCU: **no usar Ejecutar-Elevado**. Se puede hacer en cualquier momento, también antes de P8.
 ```powershell
 cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
@@ -205,3 +205,23 @@ powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\P12-g
 git checkout main
 ```
 El script aplica el ajuste `gpu-dedicada-ingenieria` y lo verifica: si SAP2000 no está abierto, lo abre con `D:\Modelos RUN\PRACTICA RODRIGO.sdb`, espera 40 s, revisa con `nvidia-smi` y los contadores de GPU qué tarjeta usa, y cierra solo esa instancia sin guardar cambios. Si Nicolás está usando SAP2000, lo verifica sin cerrarlo. Reportar la salida literal; en la bitácora anotar `OK` si `SAP2000.exe` aparece en la lista de procesos de `nvidia-smi`, o `ERROR` si no.
+
+## P13 · abierto · Parte de P10 que exige administrador (un doble clic de Nicolás)
+Tu sesión no puede pedir el permiso de Windows (UAC), así que esto lo lanza Nicolás. Pídeselo así, una sola vez: *"Haz doble clic en `D:\Mis-cosas\antigravity-pc\pedidos\P13-admin.bat` y acepta el permiso"*. Antes:
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+```
+Cuando termine, lee el log y repórtalo literal (es solo lectura; `sfc` tarda unos minutos):
+```powershell
+Get-Content (Get-ChildItem "$env:USERPROFILE\Mantenimiento\logs\P13_*.log" | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName
+```
+En la misma pasada, en el navegador, abre la página de soporte de Acer del **Nitro AN515-43** y anota sin descargar nada: última versión de BIOS con su fecha y sus notas, y si aparece alguna actualización de firmware o de "Secure Boot".
+
+## P14 · abierto · Verificar por nombre qué GPU usa SAP2000 (sin intervención)
+P12 aplicó la preferencia, pero SAP2000 ya estaba abierto y siguió en otro adaptador: la preferencia rige desde la próxima apertura. Este script **espera solo** a que Nicolás cierre SAP2000 (revisa cada 5 min, hasta 6 h), lo abre con el modelo, identifica la GPU por nombre (DXGI) y lo cierra:
+```powershell
+cd D:\Mis-cosas; git checkout claude/perfil-nitro; git pull --ff-only
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\P14-verificar-gpu.ps1
+git checkout main
+```
+Reportar literal. Bitácora: `OK` si dice `RESULTADO: SAP2000 usa la GTX 1650`, `ERROR` si no.
