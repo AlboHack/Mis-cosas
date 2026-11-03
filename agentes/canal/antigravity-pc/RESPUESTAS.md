@@ -226,3 +226,31 @@ Liberar_RAM_Juegos.bat
 Nitro_Optimizer.bat
 Nitro_Optimizer_Core.ps1
 ```
+
+### Paso 5: Prueba interactiva de Nicolas (Opcion 7: Diagnostico)
+Salida literal reportada por Nicolas:
+```text
+FriendlyName         MediaType HealthStatus OperationalStatus
+------------         --------- ------------ -----------------
+KINGSTON SA400M8120G SSD       Healthy      OK
+WDC WD10SPZX-21Z10T0 HDD       Healthy      OK
+
+
+
+ProcessName       Id  MB
+-----------       --  --
+msedgewebview2  1440 541
+opera           7304 475
+opera          18960 466
+opera          20180 450
+opera           9576 450
+MsMpEng         7364 436
+opera          12308 428
+opera          20084 424
+opera          19388 363
+Antigravity     7512 361
+
+
+NTFS DisableDeleteNotify = 0  (Permite que se envien operaciones de recorte al dispositivo de almacenamiento)
+Enter para volver:
+```

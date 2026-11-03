@@ -25,3 +25,5 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 13:16 | PASO | P6 Paso 3 mover v4.1 a respaldo -> 5 archivos movidos, exit 0
 2026-11-03 13:16 | PASO | P6 Paso 4 accesos directos -> 4 lnk creados en Escritorio, exit 0
 2026-11-03 13:17 | OK | P6 respondido en RESPUESTAS.md (instalacion completa, pruebas 0 fallas)
+2026-11-03 13:25 | NICOLAS | opcion 7 Diagnostico probada: Kingston SSD y WDC HDD Healthy/OK, TRIM activo (DisableDeleteNotify=0)
+2026-11-03 13:25 | OK | Mantenimiento verificado en ejecucion interactiva por Nicolas
