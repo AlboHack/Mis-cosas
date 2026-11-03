@@ -1,0 +1,25 @@
+{
+  "protegidos": ["^SAP2000 2[0-9]", "^MATLAB", "^LINGO", "^Microsoft", "^NVIDIA", "^AMD"],
+  "programas": [
+    { "nombre": "CCleaner", "activo": true, "patron": "^CCleaner", "silencio": "/S",
+      "residuos": ["%ProgramData%\\CCleaner", "%APPDATA%\\CCleaner", "%LOCALAPPDATA%\\CCleaner"] },
+    { "nombre": "Advanced SystemCare", "activo": true, "patron": "^Advanced SystemCare", "silencio": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
+      "residuos": ["%ProgramData%\\IObit", "%APPDATA%\\IObit", "%LOCALAPPDATA%\\IObit"] },
+    { "nombre": "Smart Defrag", "activo": true, "patron": "^(IObit )?Smart Defrag", "silencio": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
+      "residuos": ["%ProgramData%\\IObit", "%APPDATA%\\IObit", "%LOCALAPPDATA%\\IObit"] },
+    { "nombre": "Driver Booster", "activo": true, "patron": "^(IObit )?Driver Booster", "silencio": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
+      "residuos": ["%ProgramData%\\IObit", "%APPDATA%\\IObit", "%LOCALAPPDATA%\\IObit"] },
+    { "nombre": "IObit Uninstaller", "activo": true, "patron": "^IObit Uninstaller", "silencio": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
+      "residuos": ["%ProgramData%\\IObit", "%APPDATA%\\IObit", "%LOCALAPPDATA%\\IObit"] },
+    { "nombre": "Lightworks", "activo": true, "patron": "^Lightworks", "silencio": "/S",
+      "residuos": ["D:\\Lightworks", "%APPDATA%\\Lightworks", "%LOCALAPPDATA%\\Lightworks"] },
+    { "nombre": "BleachBit", "activo": true, "patron": "^BleachBit", "silencio": "/allusers /S",
+      "residuos": ["D:\\BleachBit", "%APPDATA%\\BleachBit"] },
+    { "nombre": "PrivaZer", "activo": true, "patron": "^PrivaZer", "silencio": "/SILENT",
+      "residuos": ["D:\\PrivaZer", "%APPDATA%\\PrivaZer", "%LOCALAPPDATA%\\PrivaZer"] },
+    { "nombre": "SAP2000 19", "activo": true, "patron": "^SAP2000 19", "silencio": "",
+      "residuos": ["D:\\SAP2000"] },
+    { "nombre": "Brave", "activo": false, "patron": "^Brave$", "silencio": "--uninstall --system-level --force-uninstall",
+      "residuos": ["%LOCALAPPDATA%\\BraveSoftware"] }
+  ]
+}
