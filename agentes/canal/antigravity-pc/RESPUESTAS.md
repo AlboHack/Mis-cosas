@@ -3051,3 +3051,59 @@ Hora de finalización: 20261103195347
 - **Perfil Nitro (Google Update en manual)**:
   `servicio-google-update-manual: aplicado (respaldo en C:\Users\albor\AppData\Local\PerfilNitro\respaldo\servicio-google-update-manual.json).`
   `gupdate: Status = Stopped, StartType = Manual`
+
+
+## P17 — 2026-11-03 — antigravity-pc
+
+### Ejecución de P17 (Integrar claude/perfil-nitro a main)
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\mantenimiento\pruebas\Pruebas.ps1 | Select-Object -Last 1
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\perfil-nitro\pruebas\Pruebas.ps1 | Select-Object -Last 1
+git status --porcelain
+git checkout main; git pull --ff-only
+git merge --squash claude/perfil-nitro; git commit -m "feat(antigravity-pc): perfil del Nitro, mantenimiento final, pedidos P8-P16"
+$env:ALLOW_MAIN_PUSH = '1'; git push origin main; Remove-Item Env:ALLOW_MAIN_PUSH
+git log --oneline -1
+```
+
+Salida literal:
+```text
+== Pruebas Mantenimiento:
+Fallas: 0
+
+== Pruebas Perfil Nitro:
+Fallas: 0
+
+== Estado de trabajo (git status --porcelain):
+(vacío)
+
+== Merge a main y push:
+Updating 3526cb4..e6fb109
+Fast-forward
+Squash commit -- not updating HEAD
+[main a571ce3] feat(antigravity-pc): perfil del Nitro, mantenimiento final, pedidos P8-P16
+ 25 files changed, 994 insertions(+), 5 deletions(-)
+ create mode 100644 antigravity-pc/Ejecutar-Elevado.ps1
+ create mode 100644 antigravity-pc/pedidos/Instalar.ps1
+ create mode 100644 antigravity-pc/pedidos/P10.ps1
+ create mode 100644 antigravity-pc/pedidos/P12-gpu.ps1
+ create mode 100644 antigravity-pc/pedidos/P13-admin.bat
+ create mode 100644 antigravity-pc/pedidos/P13-admin.ps1
+ create mode 100644 antigravity-pc/pedidos/P14-verificar-gpu.ps1
+ create mode 100644 antigravity-pc/pedidos/P15-sap-directx.ps1
+ create mode 100644 antigravity-pc/pedidos/P16-admin.bat
+ create mode 100644 antigravity-pc/pedidos/P16-admin.ps1
+ create mode 100644 antigravity-pc/pedidos/P8.ps1
+ create mode 100644 antigravity-pc/pedidos/P9-antes.ps1
+ create mode 100644 antigravity-pc/perfil-nitro/Perfil.bat
+ create mode 100644 antigravity-pc/perfil-nitro/Perfil.ps1
+ create mode 100644 antigravity-pc/perfil-nitro/PerfilNitro.psm1
+ create mode 100644 antigravity-pc/perfil-nitro/README.md
+ create mode 100644 antigravity-pc/perfil-nitro/ajustes.json
+ create mode 100644 antigravity-pc/perfil-nitro/pruebas/Pruebas.ps1
+ create mode 100644 antigravity-pc/puntos-de-mejora.md
+To https://github.com/AlboHack/Mis-cosas.git
+   3526cb4..a571ce3  main -> main
+a571ce3 feat(antigravity-pc): perfil del Nitro, mantenimiento final, pedidos P8-P16
+```

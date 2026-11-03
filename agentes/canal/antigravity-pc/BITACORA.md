@@ -76,3 +76,7 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 19:14 | NICOLAS | P16-admin.bat ejecutado elevado por Nicolas
 2026-11-03 19:53 | PASO | P16 completado -> DISM RestoreHealth exitoso, DISM CheckHealth: "No component store corruption detected", SFC: sin infracciones, shadowstorage subido a 5 GB max, gupdate en manual
 2026-11-03 20:18 | OK | P16 respondido en RESPUESTAS.md
+2026-11-03 20:33 | INICIO | P17
+2026-11-03 20:33 | PASO | Pruebas Mantenimiento -> Fallas: 0; Pruebas PerfilNitro -> Fallas: 0; git status porcelain vacio
+2026-11-03 20:33 | PASO | Merge squash de claude/perfil-nitro a main exitoso y push a origin/main completado (commit a571ce3)
+2026-11-03 20:34 | OK | P17 respondido en RESPUESTAS.md
