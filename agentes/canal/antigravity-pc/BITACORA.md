@@ -19,3 +19,4 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 13:10 | INICIO | P5
 2026-11-03 13:10 | PASO | git log origin/main -1 -> f94f3d4
 2026-11-03 13:10 | OK | P5 respondido en RESPUESTAS.md (esperando merge en main)
+2026-11-03 13:15 | INICIO | P6
