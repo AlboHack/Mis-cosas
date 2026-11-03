@@ -1,11 +1,14 @@
 # Canal Claude ↔ Antigravity
 
+Instrucciones de trabajo de cada nodo: `PROMPT_ANTIGRAVITY.md`.
+
 Rama `canal`, nunca se mezcla a `main`. Claude Code (jefe técnico, escribe todo el código) no corre en los equipos de Nicolás; cada nodo Antigravity ejecuta, mide y responde.
 
 | Archivo | Lo escribe | Contenido |
 |---|---|---|
 | `<nodo>/PEDIDOS.md` | solo Claude | pedidos numerados P1, P2…, cada uno con comandos exactos y qué reportar |
 | `<nodo>/RESPUESTAS.md` | solo el nodo | una sección por pedido, `## P<n>`, con la salida literal |
+| `<nodo>/BITACORA.md` | solo el nodo | una línea por evento en el momento en que ocurre (inicio, paso, error, algo que cambió, dejó o volvió a funcionar) |
 
 Nodos: `antigravity-pc` (Acer Nitro 5, Windows 11) y `antigravity-tablet`.
 

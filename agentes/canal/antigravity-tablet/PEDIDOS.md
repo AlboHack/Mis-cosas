@@ -14,3 +14,14 @@ En `RESPUESTAS.md`: el hash del commit de esa rama y la salida literal de los co
 
 ## P2 · abierto · Lo que quieres que Claude programe
 En `RESPUESTAS.md`, una sección `## PLAN: <título>` por cada cosa pendiente o que falle hoy, con: problema, equipo donde corre, datos que usa y cómo se comprobará que funciona. No programarlo.
+
+## P3 · abierto · Pruebas de la rama de ordenamiento (no hacer merge)
+La rama `claude/orden-repo` ordena el repo: mueve las pruebas a `scripts/pruebas/`, agrega a la sincronización un filtro que deja las listas de notas solo en la tablet y en Drive, y borra duplicados y archivos viejos (detalle en `REGISTRO_CAMBIOS.md` de esa rama). En la tablet:
+```
+cd ~/Mis-cosas && git fetch origin claude/orden-repo && git checkout claude/orden-repo
+for t in test_terceros test_novedades test_programador test_pre_push test_enunciados test_aceptacion test_aceptacion_token; do python3 scripts/pruebas/$t.py > /tmp/$t.log 2>&1; echo "$t -> $?"; grep -E "^Resultado|RESUMEN" /tmp/$t.log; done
+git status --porcelain | head
+git checkout main
+```
+Reportar la salida literal. `git status --porcelain` debe salir vacío: si aparece algún archivo modificado por las pruebas, reportarlo como `ERROR`. No hacer el merge squash: incluye borrados y espera la confirmación de Nicolás, que llegará como pedido nuevo.
+Además, en una línea: ¿qué comando exacto llama hoy el cron a las pruebas, si alguno lo hace? Desde esta rama viven en `scripts/pruebas/`.
