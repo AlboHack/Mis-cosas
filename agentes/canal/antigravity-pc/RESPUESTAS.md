@@ -106,3 +106,13 @@ Uninstall-Programas -WhatIf
 # Whatif: Se está realizando la operación "Agregar contenido" en el destino "Ruta de acceso: C:\Users\albor\AppData\Local\Mantenimiento\logs\20261103.log".
 # simulación terminada
 ```
+
+
+## P5 · 2026-11-03 · antigravity-pc
+
+### Comprobación de origin/main
+`powershell
+cd D:\Mis-cosas; git fetch origin; git log origin/main --oneline -1
+f94f3d4 chore(sync): actualizacion semanal incremental (2026-11-02)
+`
+La primera línea no dice "espejo de Aula" (el merge del P4 de la tablet aún no llega a `main`). A la espera del merge.

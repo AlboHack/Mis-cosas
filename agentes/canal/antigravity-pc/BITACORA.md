@@ -16,3 +16,6 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 13:02 | OK | P3 respondido en RESPUESTAS.md
 2026-11-03 13:09 | INICIO | P4
 2026-11-03 13:09 | DUDA | SAP2000 v27 no esta abierto; se requiere modelo corriendo analisis para perfilar memoria
+2026-11-03 13:10 | INICIO | P5
+2026-11-03 13:10 | PASO | git log origin/main -1 -> f94f3d4
+2026-11-03 13:10 | OK | P5 respondido en RESPUESTAS.md (esperando merge en main)
