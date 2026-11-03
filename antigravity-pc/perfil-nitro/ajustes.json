@@ -1,0 +1,114 @@
+{
+  "equipo": "Acer Nitro 5 AN515-43 | Ryzen 7 3750H | GTX 1650 + Vega 10 | 12 GB DDR4 | SSD 120 GB (C:) + HDD 1 TB (D:) | Windows 11 Home",
+  "ajustes": [
+    {
+      "id": "svchost-agrupado",
+      "nombre": "Agrupar servicios en menos procesos svchost",
+      "fuente": "ChrisTitusTech/winutil config/tweaks.json WPFTweaksSvcHostSplitting (MIT)",
+      "por_que": "winutil lo recomienda para equipos con 12 GB o menos: es el caso exacto del Nitro. Menos procesos svchost, menos memoria de base.",
+      "riesgo": "Bajo. Puede afectar servicios de Xbox. Requiere reiniciar.",
+      "activo": true,
+      "registro": [
+        { "ruta": "HKLM:\\SYSTEM\\CurrentControlSet\\Control", "nombre": "SvcHostSplitThresholdInKB", "valor": "RAM_KB", "tipo": "DWord" }
+      ]
+    },
+    {
+      "id": "telemetria",
+      "nombre": "Telemetría de Windows apagada",
+      "fuente": "winutil WPFTweaksTelemetry / WPFTweaksServices (DiagTrack Disabled); Sophia Script DiagTrackService (MIT)",
+      "por_que": "DiagTrack escribe y sube datos en segundo plano; en un SSD de 120 GB y con 12 GB de RAM es carga sin beneficio.",
+      "riesgo": "Bajo.",
+      "activo": true,
+      "servicios": [ { "nombre": "DiagTrack", "inicio": "Disabled" } ],
+      "registro": [
+        { "ruta": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection", "nombre": "AllowTelemetry", "valor": 0, "tipo": "DWord" }
+      ]
+    },
+    {
+      "id": "entrega-p2p",
+      "nombre": "Optimización de distribución sin subir actualizaciones a otros equipos",
+      "fuente": "winutil WPFTweaksDeliveryOptimization (MIT)",
+      "por_que": "Evita que el notebook use su red y su disco para servir actualizaciones a otros PC.",
+      "riesgo": "Bajo.",
+      "activo": true,
+      "registro": [
+        { "ruta": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeliveryOptimization", "nombre": "DODownloadMode", "valor": 0, "tipo": "DWord" }
+      ]
+    },
+    {
+      "id": "apps-fondo",
+      "nombre": "Apps de la Tienda sin ejecución en segundo plano",
+      "fuente": "winutil WPFTweaksDisableBGapps (MIT)",
+      "por_que": "Libera RAM y CPU que usan apps que no estás mirando.",
+      "riesgo": "Bajo: notificaciones de apps de la Tienda pueden llegar tarde.",
+      "activo": true,
+      "registro": [
+        { "ruta": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\BackgroundAccessApplications", "nombre": "GlobalUserDisabled", "valor": 1, "tipo": "DWord" }
+      ]
+    },
+    {
+      "id": "gpu-scheduling",
+      "nombre": "Programación de GPU acelerada por hardware (HAGS)",
+      "fuente": "farag2/Sophia-Script-for-Windows Sophia.psm1 GPUScheduling (MIT): solo con GPU dedicada y WDDM 2.7 o superior",
+      "por_que": "La GTX 1650 la soporta; baja la latencia de cuadros en juegos. Se verifica la GPU dedicada y el WDDM antes de aplicar.",
+      "riesgo": "Bajo. Requiere reiniciar.",
+      "activo": true,
+      "requiere": "Test-GpuDedicadaWddm27",
+      "registro": [
+        { "ruta": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers", "nombre": "HwSchMode", "valor": 2, "tipo": "DWord" }
+      ]
+    },
+    {
+      "id": "modo-juego",
+      "nombre": "Modo de juego automático",
+      "fuente": "winutil WPFToggleGameMode (MIT)",
+      "por_que": "Windows prioriza el juego en primer plano y pausa actualizaciones durante la partida.",
+      "riesgo": "Bajo.",
+      "activo": true,
+      "registro": [
+        { "ruta": "HKCU:\\Software\\Microsoft\\GameBar", "nombre": "AllowAutoGameMode", "valor": 1, "tipo": "DWord" },
+        { "ruta": "HKCU:\\Software\\Microsoft\\GameBar", "nombre": "AutoGameModeEnabled", "valor": 1, "tipo": "DWord" }
+      ]
+    },
+    {
+      "id": "hibernacion-reducida",
+      "nombre": "hiberfil.sys reducido (mantiene el inicio rápido)",
+      "fuente": "Microsoft, powercfg /hibernate /type reduced; winutil WPFTweaksHiber la apaga por completo",
+      "por_que": "hiberfil.sys ocupa ~40 % de la RAM (~4.6 GB) en un SSD de 120 GB. 'reduced' lo baja a ~20 % y conserva el inicio rápido; apagarla del todo se pierde la hibernación en el notebook.",
+      "riesgo": "Bajo: se pierde la opción Hibernar del menú, se mantiene Suspender e inicio rápido.",
+      "activo": true,
+      "comando": {
+        "aplicar": "powercfg /hibernate /type reduced",
+        "deshacer": "powercfg /hibernate /type full",
+        "estado": "(Get-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Power' -Name HiberFileType -ErrorAction SilentlyContinue).HiberFileType -eq 1"
+      }
+    },
+    {
+      "id": "almacenamiento-reservado",
+      "nombre": "Desactivar el almacenamiento reservado (7-10 GB)",
+      "fuente": "winutil WPFTweaksReservedStorage (MIT): 'recomendado solo en unidades pequeñas'",
+      "por_que": "C: es de 120 GB. Se decide con el espacio libre medido en la auditoría.",
+      "riesgo": "Medio: hay que reactivarlo antes de una actualización grande de Windows o puede fallar.",
+      "activo": false,
+      "comando": {
+        "aplicar": "DISM /Online /Set-ReservedStorageState /State:Disabled",
+        "deshacer": "DISM /Online /Set-ReservedStorageState /State:Enabled",
+        "estado": "(DISM /Online /Get-ReservedStorageState | Out-String) -match 'Disabled|Deshabilitado'"
+      }
+    },
+    {
+      "id": "efectos-visuales",
+      "nombre": "Efectos visuales en modo rendimiento",
+      "fuente": "winutil WPFTweaksDisplay (MIT)",
+      "por_que": "Ahorra GPU integrada y RAM de video compartida (Vega 10 con UMA de 512 MB). Cambia el aspecto de Windows.",
+      "riesgo": "Estético.",
+      "activo": false,
+      "registro": [
+        { "ruta": "HKCU:\\Control Panel\\Desktop", "nombre": "MenuShowDelay", "valor": "200", "tipo": "String" },
+        { "ruta": "HKCU:\\Control Panel\\Desktop\\WindowMetrics", "nombre": "MinAnimate", "valor": "0", "tipo": "String" },
+        { "ruta": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced", "nombre": "TaskbarAnimations", "valor": 0, "tipo": "DWord" },
+        { "ruta": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects", "nombre": "VisualFXSetting", "valor": 3, "tipo": "DWord" }
+      ]
+    }
+  ]
+}

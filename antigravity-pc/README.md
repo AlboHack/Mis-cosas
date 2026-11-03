@@ -8,7 +8,8 @@ Espacio de trabajo y configuración técnica para la instancia de **Antigravity*
 antigravity-pc/
 ├── CONTEXTO.md              # Perfil técnico de hardware, software, rutas y rol en el ecosistema
 ├── README.md                # Este archivo de referencia
-└── mantenimiento/           # Mantenimiento de Windows con simulación previa y pruebas (ver su README)
+├── mantenimiento/           # Mantenimiento de Windows con simulación previa y pruebas (ver su README)
+└── perfil-nitro/            # Ajustes de Windows para este equipo, con fuente, respaldo y deshacer (ver su README)
 ```
 
 ## Flujo de Trabajo Tripartito (Claude $\leftrightarrow$ Tablet $\leftrightarrow$ PC)

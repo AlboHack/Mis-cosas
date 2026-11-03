@@ -2,7 +2,7 @@ name: pc-mantenimiento
 # Prueba antigravity-pc/mantenimiento en Windows real, con PowerShell 7 y con Windows PowerShell 5.1 (el que abre Mantenimiento.bat).
 on:
   push:
-    paths: ["antigravity-pc/mantenimiento/**", ".github/workflows/pc-mantenimiento.yml"]
+    paths: ["antigravity-pc/**", ".github/workflows/pc-mantenimiento.yml"]
   workflow_dispatch:
 jobs:
   pruebas:
@@ -15,3 +15,9 @@ jobs:
       - name: Windows PowerShell 5.1
         shell: powershell
         run: ./antigravity-pc/mantenimiento/pruebas/Pruebas.ps1
+      - name: Perfil del Nitro (PowerShell 7)
+        shell: pwsh
+        run: ./antigravity-pc/perfil-nitro/pruebas/Pruebas.ps1
+      - name: Perfil del Nitro (Windows PowerShell 5.1)
+        shell: powershell
+        run: ./antigravity-pc/perfil-nitro/pruebas/Pruebas.ps1
