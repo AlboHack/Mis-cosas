@@ -744,3 +744,7 @@ efectos-visuales            False
 defender-modelos-sap        False
 ```
 
+
+### 5. Validación en SAP2000 por Nicolás
+Nicolás abrió SAP2000 v27 con el modelo `D:\Modelos RUN\PRACTICA RODRIGO.sdb`, corrió el análisis y confirmó: "si todo bien" (vista 3D nítida y renderizado sin fallas ni artefactos tras la actualización del driver AMD).
+

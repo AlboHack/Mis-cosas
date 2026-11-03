@@ -52,3 +52,5 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 18:24 | REINICIO | Segundo reinicio completado tras instalar driver AMD (LastBootUpTime: 18:24:33)
 2026-11-03 18:26 | PASO | P9 Paso 4 verificado: AMD Vega 10 actualizada a 31.0.21925.1001 (OK), HwSchMode=2, 10 ajustes de perfil activos en True
 2026-11-03 18:27 | OK | P9 respondido en RESPUESTAS.md (pendiente prueba de vista 3D en SAP2000 por Nicolas)
+2026-11-03 18:31 | NICOLAS | SAP2000 v27 probado con PRACTICA RODRIGO.sdb: analisis y renderizado 3D OK sin fallas tras driver nuevo
+2026-11-03 18:31 | OK | P9 validado en terreno con SAP2000 v27
