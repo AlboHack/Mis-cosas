@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Prácticas Obras Civiles
 **Sigla:** `POC` | **Aula ID:** `5623` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=5623
-**Última Sincronización:** `2026-11-02 17:56 -03`
+**Última Sincronización:** `2026-11-02 23:08 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `POC`.

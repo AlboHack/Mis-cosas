@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Fundamentos de Análisis Estructural
 **Sigla:** `CIV233` | **Aula ID:** `62178` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62178
-**Última Sincronización:** `2026-11-02 17:56 -03`
+**Última Sincronización:** `2026-11-02 23:08 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV233`.
@@ -24,9 +24,9 @@ El estudiante determina las fuerzas internas y desplazamientos causados por soli
 |---|-------------------|--------|------------------|------------------|-------|--------|
 | 1 | **Certamen 2** | 2026-10-27 17:30 | 2026-10-27 20:00 | Finalizada | B-103 / A012 | Aula API |
 | 2 | **Entrega Tarea 1 SAP2000** | 2026-10-27 23:59 | 2026-10-27 23:59 | Finalizada | Aula USM | Aula API |
-| 3 | **Certamen 3** | 2026-11-10 17:30 | 2026-11-10 20:00 | En 8 días (10-Nov) | B-103 | Aula API |
+| 3 | **Certamen 3** | 2026-11-10 17:30 | 2026-11-10 20:00 | En 7 días (10-Nov) | B-103 | Aula API |
 | 4 | **Vencimiento de Tarea N°2** | 2026-11-16 23:59 | 2026-11-16 23:59 | En 14 días (16-Nov) | Aula USM | Aula API |
-| 5 | **Certamen 4** | 2026-12-02 17:30 | 2026-12-02 20:00 | En 30 días (02-Dec) | A012 | Aula API |
+| 5 | **Certamen 4** | 2026-12-02 17:30 | 2026-12-02 20:00 | En 29 días (02-Dec) | A012 | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 ### 📌 Tarea N°1

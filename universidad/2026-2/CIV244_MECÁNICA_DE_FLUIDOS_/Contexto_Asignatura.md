@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Mecánica de Fluidos
 **Sigla:** `CIV244` | **Aula ID:** `62182` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62182
-**Última Sincronización:** `2026-11-02 17:56 -03`
+**Última Sincronización:** `2026-11-02 23:08 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV244`.
@@ -21,7 +21,7 @@ El estudiante desarrolla los fundamentos teóricos que le permiten modelar el co
 ## 📅 2. Calendario Consolidado de Evaluaciones y Entregas
 | # | Evaluación / Hito | Inicio | Cierre / Entrega | Cuenta Regresiva | Lugar | Fuente |
 |---|-------------------|--------|------------------|------------------|-------|--------|
-| 1 | **Vencimiento de Entrega apuntes C2** | 2026-11-02 23:59 | 2026-11-02 23:59 | ¡VENCE HOY! (en 6 h) | Aula USM | Aula API |
+| 1 | **Vencimiento de Entrega apuntes C2** | 2026-11-02 23:59 | 2026-11-02 23:59 | ¡VENCE HOY! (en 0 h) | Aula USM | Aula API |
 | 2 | **Certamen 3** | 2026-11-20 14:00 | 2026-11-20 16:30 | En 17 días (20-Nov) | Campus San Joaquín | Aula API |
 | 3 | **Publicación notas finales** | 2026-11-27 12:00 | 2026-11-27 12:00 | En 24 días (27-Nov) | Aula USM / SIGA | Aula API |
 
@@ -40,7 +40,7 @@ El estudiante desarrolla los fundamentos teóricos que le permiten modelar el co
 - **Enlace en Aula:** [Entrega apuntes C2](https://aula.usm.cl/mod/assign/view.php?id=8360331)
 - **Sección:** Información General
 - **Habilitada desde:** 2026-10-29 00:00
-- **Fecha Límite (Due Date):** 2026-11-02 23:59 (¡VENCE HOY! (en 6 h))
+- **Fecha Límite (Due Date):** 2026-11-02 23:59 (¡VENCE HOY! (en 0 h))
 - **Fecha de Corte Estricto:** 2026-11-02 23:59
 
 > **Instrucciones / Enunciado:**
@@ -83,7 +83,7 @@ Dedicación de tiempo (SCT): 203 horas cronológicas
   - 📎 `CIV244_Clase_15.pdf` (2.59 MB) -> `Material_y_Apuntes/CIV244_Clase_15.pdf`
   - 📎 `CIV244_Clase_17_handout.pdf` (1.90 MB) -> `Material_y_Apuntes/CIV244_Clase_17_handout.pdf`
   - 📎 `CIV244_Clase_16_handout.pdf` (502.4 KB) -> `Material_y_Apuntes/CIV244_Clase_16_handout.pdf`
-  - 📎 `CIV244_Clase_18_handout.pdf` (331.9 KB)
+  - 📎 `CIV244_Clase_18_handout.pdf` (331.9 KB) -> `Material_y_Apuntes/CIV244_Clase_18_handout.pdf`
 - **[📁 Carpeta] Apuntes USM**
   - 📎 `Apunte-02-Propiedades_mecanicas_1.pdf` (731.7 KB) -> `Material_y_Apuntes/Apunte-02-Propiedades_mecanicas_1.pdf`
   - 📎 `Apunte-03-Propiedades_mecanicas_2.pdf` (1.15 MB) -> `Material_y_Apuntes/Apunte-03-Propiedades_mecanicas_2.pdf`
@@ -101,20 +101,20 @@ Dedicación de tiempo (SCT): 203 horas cronológicas
   - 📎 `Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf` (3.52 MB) -> `Material_y_Apuntes/Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf`
   - 📎 `Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf` (612.7 KB) -> `Material_y_Apuntes/Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf`
 - **[📁 Carpeta] Certámenes anteriores**
-  - 📎 `CIV244_2024_C1.pdf` (145.0 KB) -> `Planificacion/Información General/CIV244_2024_C1.pdf`
+  - 📎 `CIV244_2024_C1.pdf` (145.0 KB) -> `Evaluaciones_y_Entregas/CIV244_2024_C1.pdf`
   - 📎 `CIV244_2024_C1_Pauta.pdf` (1.43 MB) -> `Evaluaciones_y_Entregas/CIV244_2024_C1_Pauta.pdf`
-  - 📎 `CIV244_2023_C1.pdf` (154.0 KB) -> `Planificacion/Información General/CIV244_2023_C1.pdf`
+  - 📎 `CIV244_2023_C1.pdf` (154.0 KB) -> `Evaluaciones_y_Entregas/CIV244_2023_C1.pdf`
   - 📎 `CIV244_2023_C1_Pauta.pdf` (1.34 MB) -> `Evaluaciones_y_Entregas/CIV244_2023_C1_Pauta.pdf`
-  - 📎 `CIV244_2022_C1.pdf` (415.5 KB) -> `Planificacion/Información General/CIV244_2022_C1.pdf`
+  - 📎 `CIV244_2022_C1.pdf` (415.5 KB) -> `Evaluaciones_y_Entregas/CIV244_2022_C1.pdf`
   - 📎 `CIV244_2022_C1_Pauta.pdf` (438.1 KB) -> `Evaluaciones_y_Entregas/CIV244_2022_C1_Pauta.pdf`
-  - 📎 `CIV244_2022_C2.pdf` (463.5 KB) -> `Planificacion/Información General/CIV244_2022_C2.pdf`
+  - 📎 `CIV244_2022_C2.pdf` (463.5 KB) -> `Evaluaciones_y_Entregas/CIV244_2022_C2.pdf`
   - 📎 `CIV244_2022_C2_Pauta.pdf` (741.8 KB) -> `Evaluaciones_y_Entregas/CIV244_2022_C2_Pauta.pdf`
-  - 📎 `CIV244_2023_C2.pdf` (172.7 KB) -> `Planificacion/Información General/CIV244_2023_C2.pdf`
+  - 📎 `CIV244_2023_C2.pdf` (172.7 KB) -> `Evaluaciones_y_Entregas/CIV244_2023_C2.pdf`
   - 📎 `CIV244_2023_C2_Pauta.pdf` (2.23 MB) -> `Evaluaciones_y_Entregas/CIV244_2023_C2_Pauta.pdf`
-  - 📎 `CIV244_2024_C2.pdf` (400.3 KB) -> `Planificacion/Información General/CIV244_2024_C2.pdf`
+  - 📎 `CIV244_2024_C2.pdf` (400.3 KB) -> `Evaluaciones_y_Entregas/CIV244_2024_C2.pdf`
 - **[📝 Tarea/Entrega] Entrega apuntes C1**
 - **[📁 Carpeta] Certámenes**
-  - 📎 `CIV244_2026_C1.pdf` (1.16 MB) -> `Planificacion/Información General/CIV244_2026_C1.pdf`
+  - 📎 `CIV244_2026_C1.pdf` (1.16 MB) -> `Evaluaciones_y_Entregas/CIV244_2026_C1.pdf`
   - 📎 `CIV244_2026_C1_RUBRICA.pdf` (232.4 KB) -> `Evaluaciones_y_Entregas/CIV244_2026_C1_RUBRICA.pdf`
 - **[📝 Tarea/Entrega] Entrega apuntes C2**
 
@@ -173,17 +173,24 @@ Luciana Tiraferri Colombo: ltiraferri@usm.cl
 *Sin módulos publicados en esta sección.*
 
 ## 💾 5. Inventario de Archivos Locales en Disco y Google Drive
-Total de archivos sincronizados: **67**
+Total de archivos sincronizados: **68**
 
-### 📂 `Evaluaciones_y_Entregas/` (12 archivos)
+### 📂 `Evaluaciones_y_Entregas/` (19 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
 | `Ayudantía_3_pauta.pdf` | 274.6 KB | 2026-10-26 09:55 | Sincronizado |
+| `CIV244_2022_C1.pdf` | 415.5 KB | 2026-10-25 14:24 | Sincronizado |
 | `CIV244_2022_C1_Pauta.pdf` | 438.1 KB | 2026-10-25 14:24 | Sincronizado |
+| `CIV244_2022_C2.pdf` | 463.5 KB | 2026-10-25 14:24 | Sincronizado |
 | `CIV244_2022_C2_Pauta.pdf` | 741.8 KB | 2026-10-25 14:24 | Sincronizado |
+| `CIV244_2023_C1.pdf` | 154.0 KB | 2026-10-25 14:24 | Sincronizado |
 | `CIV244_2023_C1_Pauta.pdf` | 1.34 MB | 2026-10-25 14:24 | Sincronizado |
+| `CIV244_2023_C2.pdf` | 172.7 KB | 2026-10-25 14:24 | Sincronizado |
 | `CIV244_2023_C2_Pauta.pdf` | 2.23 MB | 2026-10-25 14:24 | Sincronizado |
+| `CIV244_2024_C1.pdf` | 145.0 KB | 2026-10-25 14:24 | Sincronizado |
 | `CIV244_2024_C1_Pauta.pdf` | 1.43 MB | 2026-10-25 14:24 | Sincronizado |
+| `CIV244_2024_C2.pdf` | 400.3 KB | 2026-10-25 14:24 | Sincronizado |
+| `CIV244_2026_C1.pdf` | 1.16 MB | 2026-10-25 14:24 | Sincronizado |
 | `CIV244_2026_C1_RUBRICA.pdf` | 232.4 KB | 2026-10-25 14:24 | Sincronizado |
 | `Pauta ayudantía 2.pdf` | 5.57 MB | 2026-10-26 09:55 | Sincronizado |
 | `Pauta Ayudantía 4.pdf` | 3.71 MB | 2026-10-26 09:55 | Sincronizado |
@@ -191,7 +198,7 @@ Total de archivos sincronizados: **67**
 | `Pauta Ayudantía 8.pdf` | 5.46 MB | 2026-10-26 09:55 | Sincronizado |
 | `Pauta_ayudantía_5.pdf` | 326.3 KB | 2026-10-26 09:55 | Sincronizado |
 
-### 📂 `Material_y_Apuntes/` (46 archivos)
+### 📂 `Material_y_Apuntes/` (47 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
 | `Apunte-02-Propiedades_mecanicas_1.pdf` | 731.7 KB | 2026-10-25 14:24 | Sincronizado |
@@ -240,19 +247,13 @@ Total de archivos sincronizados: **67**
 | `CIV244_Clase_15.pdf` | 2.59 MB | 2026-10-25 14:24 | Sincronizado |
 | `CIV244_Clase_16_handout.pdf` | 502.4 KB | 2026-11-01 13:14 | Sincronizado |
 | `CIV244_Clase_17_handout.pdf` | 1.90 MB | 2026-11-01 13:14 | Sincronizado |
+| `CIV244_Clase_18_handout.pdf` | 331.9 KB | 2026-11-02 17:56 | Sincronizado |
 
-### 📂 `Planificacion/` (9 archivos)
+### 📂 `Planificacion/` (2 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
 | `CIV 244 - Mecánica de Fluidos final.pdf` | 143.4 KB | 2026-10-25 14:24 | Sincronizado |
 | `CIV244-2026-2_Programacion_R1.pdf` | 100.2 KB | 2026-10-25 15:34 | Sincronizado |
-| `CIV244_2022_C1.pdf` | 415.5 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2022_C2.pdf` | 463.5 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2023_C1.pdf` | 154.0 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2023_C2.pdf` | 172.7 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2024_C1.pdf` | 145.0 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2024_C2.pdf` | 400.3 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2026_C1.pdf` | 1.16 MB | 2026-10-25 14:24 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
 ### 📣 Clase martes 03/11
@@ -319,6 +320,9 @@ Saludos
 Ricardo Quinteros
 
 ## 📜 Historial Incremental de Cambios
+### 🔄 Actualización: 2026-11-02 23:08 -03
+- Nuevos archivos en disco y repo: CIV244_Clase_18_handout.pdf
+
 ### 🔄 Actualización: 2026-11-02 17:56 -03
 - Nueva tarea / entrega en Aula: «Entrega apuntes C1» (Vence: Sin fecha especificada)
 - Nueva tarea / entrega en Aula: «Entrega apuntes C1» (Vence: Sin fecha especificada)

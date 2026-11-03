@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Ingeniería de Transporte
 **Sigla:** `CIV386` | **Aula ID:** `62192` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62192
-**Última Sincronización:** `2026-11-02 17:56 -03`
+**Última Sincronización:** `2026-11-02 23:08 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV386`.
@@ -41,7 +41,7 @@ Dedicación de tiempo (SCT): 145 horas cronológicas
   - 📎 `CIV 386 - Ingeniería de Transporte final.pdf` (142.6 KB)
 - **[📁 Carpeta] Planificación de la Asignatura**
 - **[📁 Carpeta] Referencias Bibliográficas**
-  - 📎 `Ortuzar (2011) - Modelling Transport.pdf` (3.64 MB) -> `Planificacion/Información General/Ortuzar (2011) - Modelling Transport.pdf`
+  - 📎 `Ortuzar (2011) - Modelling Transport.pdf` (3.64 MB) -> `Material_y_Apuntes/Ortuzar (2011) - Modelling Transport.pdf`
 - **[📁 Carpeta] Guias de Estudio**
   - 📎 `Guia 1 (Enunciado).pdf` (447.8 KB) -> `Material_y_Apuntes/Guia 1 (Enunciado).pdf`
   - 📎 `Guia 1 (Pauta).pdf` (444.3 KB) -> `Evaluaciones_y_Entregas/Guia 1 (Pauta).pdf`
@@ -142,7 +142,7 @@ Total de archivos sincronizados: **36**
 | `Guia 2 (Pauta).pdf` | 572.3 KB | 2026-10-25 14:24 | Sincronizado |
 | `Guia 3 (Pauta).pdf` | 752.4 KB | 2026-10-25 14:24 | Sincronizado |
 
-### 📂 `Material_y_Apuntes/` (26 archivos)
+### 📂 `Material_y_Apuntes/` (27 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
 | `2026pr Notas.pdf` | 67.7 KB | 2026-10-25 14:24 | Sincronizado |
@@ -150,6 +150,7 @@ Total de archivos sincronizados: **36**
 | `Guia 1 (Enunciado).pdf` | 447.8 KB | 2026-10-25 14:24 | Sincronizado |
 | `Guia 2 (Enunciado).pdf` | 492.7 KB | 2026-10-25 14:24 | Sincronizado |
 | `Guia 3 (Enunciado).pdf` | 2.30 MB | 2026-10-25 14:24 | Sincronizado |
+| `Ortuzar (2011) - Modelling Transport.pdf` | 3.64 MB | 2026-10-25 14:24 | Sincronizado |
 | `11 Presentacion Curso.pdf` | 522.5 KB | 2026-10-26 09:55 | Sincronizado |
 | `12 Introduccion.pdf` | 2.13 MB | 2026-10-26 09:56 | Sincronizado |
 | `21 Transporte Sustentable I.pdf` | 2.29 MB | 2026-10-26 09:56 | Sincronizado |
@@ -172,11 +173,10 @@ Total de archivos sincronizados: **36**
 | `53 Segundo Principio Wardrop.pdf` | 497.4 KB | 2026-10-26 09:56 | Sincronizado |
 | `54 Paradojas.pdf` | 1.55 MB | 2026-10-26 09:56 | Sincronizado |
 
-### 📂 `Planificacion/` (2 archivos)
+### 📂 `Planificacion/` (1 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
 | `CIV 386 - Ingeniería de Transporte final.pdf` | 142.6 KB | 2026-10-25 14:24 | Sincronizado |
-| `Ortuzar (2011) - Modelling Transport.pdf` | 3.64 MB | 2026-10-25 14:24 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
 ### 📣 CIV386 Suspende Clases 26/10

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-02 17:56:54",
+  "timestamp": "2026-11-02 23:08:06",
   "archivos": {
     "Certamen 1 (Enunciado).pdf": 488122,
     "Certamen 1 (Pauta).pdf": 532631,
@@ -14,6 +14,7 @@
     "Guia 2 (Enunciado).pdf": 504477,
     "Guia 3 (Enunciado).pdf": 2413720,
     "Ayudantia 1 (Enunciado).pdf": 432094,
+    "Ortuzar (2011) - Modelling Transport.pdf": 3819752,
     "11 Presentacion Curso.pdf": 535068,
     "12 Introduccion.pdf": 2229794,
     "21 Transporte Sustentable I.pdf": 2399260,
@@ -35,8 +36,7 @@
     "52 Primer Principio Wardrop.pdf": 527055,
     "53 Segundo Principio Wardrop.pdf": 509335,
     "54 Paradojas.pdf": 1622334,
-    "CIV 386 - Ingeniería de Transporte final.pdf": 146048,
-    "Ortuzar (2011) - Modelling Transport.pdf": 3819752
+    "CIV 386 - Ingeniería de Transporte final.pdf": 146048
   },
   "assignments": {},
   "avisos": [
