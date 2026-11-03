@@ -121,6 +121,7 @@ git checkout main
 Reportar todo literal. Responder además en una línea: ¿en qué carpeta guarda Nicolás los modelos de SAP2000 (para evaluar una exclusión de Defender acotada a esa carpeta)?
 
 ## P8 · abierto · Aplicar el perfil del Nitro (ajustes activos) — PowerShell **como administrador**
+**Actualizado:** la rama ya trae también `inicio-onenote`, `inicio-opera-assistant` e `inicio-wallpaper-engine` (decisión de Nicolás). `Set-Ajustes` los aplica junto con los demás. El plan de energía queda en Alto rendimiento: no tocarlo.
 P7 se corrió sin elevar (DISM dio error 740 y Defender no mostró exclusiones). Nicolás pidió configurar la optimización: se aplican solo los ajustes **activos** y de riesgo bajo. Cada uno guarda su valor previo y se puede deshacer.
 ```powershell
 cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
@@ -137,3 +138,43 @@ DISM /Online /Get-ReservedStorageState
 git checkout main
 ```
 Si la primera línea dice `False`, detenerse: hay que abrir PowerShell como administrador. Si `Checkpoint-Computer` falla porque la protección del sistema está apagada, reportarlo y seguir. Después **reiniciar el equipo** (svchost lo requiere) y anotar `REINICIO` en la bitácora. Reportar todo literal.
+
+## P9 · abierto · Actualizar el driver de la AMD Radeon Vega 10 (después de P8 y del reinicio)
+Nicolás lo pidió (2026-11-03). El driver actual es 27.20.1028.1, de julio de 2020. En el Nitro la Vega 10 maneja la pantalla interna y la GTX 1650 renderiza a través de ella (Optimus): durante la instalación la pantalla parpadeará o quedará en negro unos segundos. **Nicolás debe estar frente al PC.** No tocar el driver de NVIDIA.
+
+### 1. Antes (PowerShell como administrador)
+```powershell
+Checkpoint-Computer -Description 'Antes driver AMD' -RestorePointType MODIFY_SETTINGS
+Get-CimInstance Win32_VideoController | Select-Object Name, DriverVersion, DriverDate
+pnputil /enum-drivers /class Display | Out-File "$env:USERPROFILE\Mantenimiento\drivers_display_antes.txt"
+Get-Content "$env:USERPROFILE\Mantenimiento\drivers_display_antes.txt"
+```
+
+### 2. Descarga (navegador)
+1. Abrir la página oficial: https://www.amd.com/es/support/downloads/drivers.html/processors/ryzen/ryzen-3000-series/amd-ryzen-7-3750h.html
+2. Elegir **Windows 11 - 64-Bit Edition** y descargar **AMD Software: Adrenalin Edition** marcado **WHQL Recommended**. Claude vio 26.5.2; si la página muestra una versión más nueva y también WHQL Recommended, usar esa. No usar versiones "Optional" ni sitios que no sean amd.com.
+3. Verificar la firma del instalador descargado:
+```powershell
+$inst = Get-ChildItem "$env:USERPROFILE\Downloads", "D:\Descargas Opera" -Filter "*adrenalin*.exe" -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+$inst.FullName; [math]::Round($inst.Length/1MB,1)
+Get-AuthenticodeSignature $inst.FullName | Select-Object Status, @{n='Firmante';e={$_.SignerCertificate.Subject}}
+```
+Seguir solo si `Status` es `Valid` y el firmante es **Advanced Micro Devices**.
+
+### 3. Instalación
+Ejecutar el instalador. En las opciones elegir **Solo controlador** (Driver Only) si aparece, o **Mínima**: no instalar el panel completo ni extras. **No** marcar "Restablecimiento de fábrica" (Factory Reset). Al terminar, reiniciar y anotar `REINICIO` en la bitácora.
+
+Si el instalador dice que el equipo no es compatible o pide el driver del fabricante: detenerse y reportar el mensaje literal. La alternativa es el driver de Acer para el Nitro AN515-43 y la decide Claude.
+
+### 4. Después
+```powershell
+Get-CimInstance Win32_VideoController | Select-Object Name, DriverVersion, DriverDate, Status
+Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\GraphicsDrivers' -Name HwSchMode -ErrorAction SilentlyContinue | Select-Object HwSchMode
+cd D:\Mis-cosas; Import-Module .\antigravity-pc\perfil-nitro\PerfilNitro.psm1 -Force; Get-EstadoAjustes | Format-Table Id, Aplicado -AutoSize
+```
+Pedirle a Nicolás que abra SAP2000 v27 con `D:\Modelos RUN\PRACTICA RODRIGO.sdb`, que corra el análisis y confirme que la vista 3D se ve bien. Anotar en la bitácora lo que diga (`NICOLAS`).
+
+### Si algo sale mal
+- Pantalla negra que no vuelve en 1 minuto: Nicolás presiona **Win + Ctrl + Shift + B**, que reinicia el driver de video.
+- Errores o fallas en SAP2000 o en juegos: Administrador de dispositivos → Adaptadores de pantalla → AMD Radeon → Propiedades → Controlador → **Revertir al controlador anterior**. Si no está disponible: restaurar el punto 'Antes driver AMD'.
+Reportar todo literal, incluidos los mensajes del instalador.
