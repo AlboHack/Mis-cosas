@@ -111,6 +111,34 @@
       ]
     },
     {
+      "id": "gpu-dedicada-ingenieria",
+      "nombre": "GTX 1650 siempre para SAP2000 y MATLAB",
+      "fuente": "Windows: Configuración > Pantalla > Gráficos (UserGpuPreferences, GpuPreference=2); CSI: la vista DirectX de SAP2000 usa aceleración por hardware",
+      "por_que": "En el Nitro (Optimus) Windows elige la GPU por programa; sin esta preferencia SAP2000 puede quedar en la Vega 10. Antes solo se fijaba durante 'Iniciar calculo'; así queda permanente. El análisis (SAPFire) usa la CPU: esto acelera la vista 3D, no el cálculo.",
+      "riesgo": "Bajo: algo más de consumo de batería con SAP2000 o MATLAB abiertos.",
+      "activo": true,
+      "registro": [
+        {
+          "ruta": "HKCU:\\Software\\Microsoft\\DirectX\\UserGpuPreferences",
+          "nombre": "C:\\Program Files\\Computers and Structures\\SAP2000 27\\SAP2000.exe",
+          "valor": "GpuPreference=2;",
+          "tipo": "String"
+        },
+        {
+          "ruta": "HKCU:\\Software\\Microsoft\\DirectX\\UserGpuPreferences",
+          "nombre": "D:\\Matlab\\bin\\matlab.exe",
+          "valor": "GpuPreference=2;",
+          "tipo": "String"
+        },
+        {
+          "ruta": "HKCU:\\Software\\Microsoft\\DirectX\\UserGpuPreferences",
+          "nombre": "D:\\Matlab\\bin\\win64\\MATLAB.exe",
+          "valor": "GpuPreference=2;",
+          "tipo": "String"
+        }
+      ]
+    },
+    {
       "id": "inicio-reducememory",
       "nombre": "Quitar ReduceMemory del arranque",
       "fuente": "Auditoría P7 del Nitro; técnica descartada por Mem Reduct (henrypp/memreduct, REDUCT_MASK_FREEZES)",
