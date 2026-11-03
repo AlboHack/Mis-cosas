@@ -6,6 +6,7 @@ Espacio de trabajo y configuración técnica para la instancia de **Antigravity*
 
 ```text
 antigravity-pc/
+├── BUZON.md                 # Canal activo de ordenes y reportes con Claude Code
 ├── CONTEXTO.md              # Perfil técnico de hardware, software, rutas y rol en el ecosistema
 ├── README.md                # Este archivo de referencia
 └── optimizacion/            # Suite de mantenimiento y optimización de kernel y recursos
