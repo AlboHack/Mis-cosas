@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """T29: enunciados adjuntos a entregas (mod_assign) entran al flujo como archivos."""
 import os, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import sincronizar_aula_semanal as s
 
 class Fake:

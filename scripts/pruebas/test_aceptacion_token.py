@@ -21,7 +21,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import threading
 import urllib.parse
 
-SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRIPTS_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO_ROOT = os.path.dirname(SCRIPTS_DIR)
 SYNC_SCRIPT = os.path.join(SCRIPTS_DIR, "sincronizar_aula_semanal.py")
 CAL_SCRIPT = os.path.join(SCRIPTS_DIR, "sincronizar_calendario_android.py")

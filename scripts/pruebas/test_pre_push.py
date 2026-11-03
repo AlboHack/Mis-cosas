@@ -6,7 +6,7 @@ import subprocess
 import sys
 import tempfile
 
-HOOK = os.path.join(os.path.dirname(os.path.abspath(__file__)), "hooks", "pre-push")
+HOOK = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "hooks", "pre-push")
 
 
 def run(cmd, cwd, env=None):

@@ -6,10 +6,11 @@ print("======================================================================")
 print("BATERÍA DE PRUEBAS DE ACEPTACIÓN TÉCNICA (T2, T6, T8 & CALENDARIO)")
 print("======================================================================\n")
 
-SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+PRUEBAS_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRIPTS_DIR = os.path.dirname(PRUEBAS_DIR)
 SYNC_SCRIPT = os.path.join(SCRIPTS_DIR, "sincronizar_aula_semanal.py")
 CAL_SCRIPT = os.path.join(SCRIPTS_DIR, "sincronizar_calendario_android.py")
-T2_REAL_SCRIPT = os.path.join(SCRIPTS_DIR, "test_t2_real.py")
+T2_REAL_SCRIPT = os.path.join(PRUEBAS_DIR, "test_t2_real.py")
 
 # ----------------------------------------------------------------------
 # PRUEBA T2: test_t2_real.py ejerciendo run_sync() real de producción
@@ -55,7 +56,7 @@ print("--- [EJECUTANDO T3: Detección de Sesión Expirada y Manejo Crítico (Rea
 t3_dir = tempfile.mkdtemp(prefix="t3_prod_")
 t3_pass = False
 try:
-    T3_REAL_SCRIPT = os.path.join(SCRIPTS_DIR, "test_t3_real.py")
+    T3_REAL_SCRIPT = os.path.join(PRUEBAS_DIR, "test_t3_real.py")
     p3 = subprocess.run([sys.executable, T3_REAL_SCRIPT, SYNC_SCRIPT, t3_dir], capture_output=True, text=True)
     for line in p3.stdout.splitlines():
         if "Código de retorno:" in line or "ERROR CRÍTICO" in line or "Manifest" in line:

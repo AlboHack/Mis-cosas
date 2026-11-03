@@ -1,7 +1,12 @@
 # T2 real: ejecuta run_sync() de produccion con API Moodle REST simulada.
-# Uso: python3 test_t2_real.py scripts/sincronizar_aula_semanal.py <dir_tmp> 1 ; luego ... <mismo dir_tmp> 2
+# Uso: python3 scripts/pruebas/test_t2_real.py scripts/sincronizar_aula_semanal.py <dir_tmp> 1 ; luego ... <mismo dir_tmp> 2
 # PASA si tras la corrida 2 el archivo vigente contiene "version 2" y existe Pauta_vYYYYMMDD.pdf con "version 1".
 import importlib.util, os, sys, io, json, urllib.parse, time
+
+# Aislamiento: generar_contexto_ramos, que run_sync() importa, toma sus rutas de estas variables;
+# sin ellas escribía Contexto_Asignatura.md en el repo real.
+os.environ["SYNC_REPO_DIR"] = os.path.join(sys.argv[2], "no_repo")
+os.environ["SYNC_ROOT_DIR"] = os.path.join(sys.argv[2], "2026-2")
 
 spec = importlib.util.spec_from_file_location("sync", sys.argv[1])
 s = importlib.util.module_from_spec(spec)

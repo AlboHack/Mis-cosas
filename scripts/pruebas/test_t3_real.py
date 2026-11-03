@@ -2,6 +2,11 @@
 # PASA si run_sync() retorna 1, se registra "ERROR CRÍTICO" en log y el manifest no cambia.
 import importlib.util, os, sys, tempfile, io, json
 
+# Aislamiento: generar_contexto_ramos, que run_sync() importa, toma sus rutas de estas variables;
+# sin ellas escribía Contexto_Asignatura.md en el repo real.
+os.environ["SYNC_REPO_DIR"] = os.path.join(sys.argv[2], "no_repo")
+os.environ["SYNC_ROOT_DIR"] = os.path.join(sys.argv[2], "2026-2")
+
 spec = importlib.util.spec_from_file_location("sync", sys.argv[1])
 s = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(s)
