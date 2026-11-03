@@ -47,7 +47,7 @@ Get-Process SAP2000, SAPFire -ErrorAction SilentlyContinue | Select-Object Proce
 Indicar el modelo usado (número de nudos y barras, tipo de análisis) y cuánto tardó el análisis.
 (Para el paso 1 del Import-Module, la rama `claude/pc-mantenimiento` debe estar en el checkout; volver a `canal` al terminar.)
 
-## P5 · abierto · Cuando `main` tenga el mantenimiento nuevo (después del P4 de la tablet)
+## P5 · abierto (esperar merge de la tablet) · Cuando `main` tenga el mantenimiento nuevo (después del P4 de la tablet)
 Primero comprobar que el merge ya llegó; si la primera línea no dice "espejo de Aula", responder solo eso y esperar:
 ```powershell
 cd D:\Mis-cosas; git fetch origin; git log origin/main --oneline -1
@@ -63,7 +63,7 @@ Reportar la salida literal. No borrar las copias de la v4.1 del Escritorio: si e
 
 P4 (memoria durante un análisis en SAP2000) sigue abierto: hacerlo la próxima vez que Nicolás corra un modelo.
 
-## P6 · abierto · Instalar el mantenimiento nuevo en el Nitro y retirar la v4.1
+## P6 · cerrado · Instalar el mantenimiento nuevo en el Nitro y retirar la v4.1
 Nicolás lo confirmó en el chat con Claude el 2026-11-03: el mantenimiento nuevo reemplaza a Nitro_Optimizer y Desinstalador_Raiz. La v4.1 no se borra: se mueve a una carpeta de respaldo. No requiere esperar el merge a `main`. PowerShell como administrador, una sola pasada; si un paso falla, reportarlo y NO seguir.
 ```powershell
 # 1. Copia de la versión nueva a una carpeta fija (no depende de la rama que tenga D:\Mis-cosas)

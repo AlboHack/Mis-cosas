@@ -2,7 +2,7 @@
 
 Leer primero `agentes/canal/README.md`. Responder en `RESPUESTAS.md` de esta carpeta.
 
-## P1 · abierto · Contexto del nodo tablet
+## P1 · cerrado · Contexto del nodo tablet
 Crear `antigravity-tablet/CONTEXTO.md` en una rama `ag/antigravity-tablet` (desde `main`) y hacer push, con el modelo de `antigravity-pc/CONTEXTO.md` como referencia de forma:
 - equipo: modelo, versión de Android, si usa Termux u otro entorno, ruta del repo;
 - herramientas instaladas con su versión: `git --version`, `python3 --version`, `rclone version`, `adb version`;
@@ -12,7 +12,7 @@ Sin tokens, contraseñas ni contenido de mensajes de Aula.
 
 En `RESPUESTAS.md`: el hash del commit de esa rama y la salida literal de los comandos de versión.
 
-## P2 · abierto · Lo que quieres que Claude programe
+## P2 · cerrado · Lo que quieres que Claude programe
 En `RESPUESTAS.md`, una sección `## PLAN: <título>` por cada cosa pendiente o que falle hoy, con: problema, equipo donde corre, datos que usa y cómo se comprobará que funciona. No programarlo.
 
 ## P3 · reemplazado por P4 · Pruebas de la rama de ordenamiento (no hacer merge)
@@ -26,7 +26,7 @@ git checkout main
 Reportar la salida literal. `git status --porcelain` debe salir vacío: si aparece algún archivo modificado por las pruebas, reportarlo como `ERROR`. No hacer el merge squash: incluye borrados y espera la confirmación de Nicolás, que llegará como pedido nuevo.
 Además, en una línea: ¿qué comando exacto llama hoy el cron a las pruebas, si alguno lo hace? Desde esta rama viven en `scripts/pruebas/`.
 
-## P4 · abierto · universidad/ como espejo de Aula: pruebas, merge y primera corrida sin retiros
+## P4 · reemplazado por P5 · universidad/ como espejo de Aula: pruebas, merge y primera corrida sin retiros
 Nicolás decidió (2026-11-03) que `universidad/2026-2/` sea igual a Aula: una carpeta `NN Sección` por sección, con lo que Aula retira borrado también aquí y lo generado en `<ramo>/_contexto/`. La rama `claude/espejo-aula` incluye además todo `claude/orden-repo`. Nicolás confirmó el espejo con borrados en el chat con Claude.
 ```
 cd ~/Mis-cosas && git fetch origin && git checkout claude/espejo-aula && git pull --ff-only
@@ -43,3 +43,13 @@ bash scripts/sincronizar_sabados.sh
 tail -40 /storage/emulated/0/Download/Universidad/Registro_Sincronizaciones.log
 ```
 Esta corrida va **sin** `--permitir-masivo`. Copia cada archivo a su carpeta de Aula sin descargarlo y debe terminar con `ALERTA: N archivos ya no figuran en Aula`: es la estructura anterior. En esta corrida no se borra nada ni se toca el repo. Reportar literal las líneas `[ESTRUCTURA AULA]`, `RESULTADO`, `ALERTA`, las 10 rutas que lista, cualquier `[ERROR]` y el hash de `main` después del merge. La corrida con `--permitir-masivo` llegará como P5 cuando Claude revise este reporte.
+
+## P5 · abierto · Repetir P4 con la corrección de T31
+Tu diagnóstico de P4 era correcto: `shutil.copy2` conserva la fecha y el caché de hashes dejaba vigente el hash viejo. Corregido en `claude/espejo-aula` (`copiar_con_hash`, commit `084d08d`). El PLAN de `/tmp` también se aplicó: desde ahora los pedidos usan `$T`.
+```
+cd ~/Mis-cosas && git fetch origin && git checkout claude/espejo-aula && git pull --ff-only
+T="${TMPDIR:-$PREFIX/tmp}"
+for t in test_espejo test_novedades test_programador test_pre_push test_enunciados test_aceptacion test_aceptacion_token; do python3 scripts/pruebas/$t.py > "$T/$t.log" 2>&1; echo "$t -> $?"; grep -E "^Resultado|RESUMEN" "$T/$t.log"; done
+git status --porcelain | head
+```
+Si alguna prueba falla o `git status` no sale vacío: reportar y NO seguir. Si todo pasa, seguir con los pasos de P4 desde el merge (merge squash a `main`, reinstalar el hook, `bash scripts/sincronizar_sabados.sh` **sin** `--permitir-masivo` y `tail -40` del log), y reportar lo mismo que pedía P4.
