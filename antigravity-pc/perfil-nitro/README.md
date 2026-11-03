@@ -26,7 +26,7 @@ Doble clic en `Perfil.bat`: muestra qué está aplicado, simula, aplica (primero
 | Archivo de paginación | 8.5 GB asignados, pico de 1.3 GB | Se deja administrado por Windows, en el SSD |
 | Ya aplicados | telemetría, apps en segundo plano, HAGS, modo de juego | — |
 | Por aplicar (activos) | `svchost-agrupado`, `entrega-p2p`, `inicio-reducememory` | Pedido P8 |
-| Arranque | ReduceMemory (liberador antiguo, cuenta LOCAL SERVICE) | Nuevo ajuste `inicio-reducememory` |
+| Arranque | ReduceMemory, Enviar a OneNote, Opera GX Browser Assistant, Wallpaper Engine | `inicio-*`: los dos primeros se eliminan del arranque con respaldo; los dos últimos se deshabilitan como en el Administrador de tareas (decisión de Nicolás). Discord, LGHUB, audio y Riot Vanguard se mantienen |
 | Driver AMD Vega 10 | 27.20.1028.1, julio de 2020 | Actualizar a mano desde AMD (Ryzen 7 3750H) [Por verificar la última versión disponible] |
-| Plan de energía | Alto rendimiento fijo | Recomendado: Equilibrado como base y "Iniciar calculo" para SAP2000 o MATLAB |
+| Plan de energía | Alto rendimiento fijo | Se mantiene (decisión de Nicolás) |
 | Defender | 349 MB; modelos en `D:\Modelos RUN` | `defender-modelos-sap` inactivo hasta que Nicolás decida |

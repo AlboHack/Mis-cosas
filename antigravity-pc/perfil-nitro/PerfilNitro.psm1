@@ -111,7 +111,9 @@ function Set-Ajustes {
             if (-not $r) { continue }
             if (Get-Propiedad $r 'eliminar') { Remove-ItemProperty -Path $r.ruta -Name $r.nombre -ErrorAction SilentlyContinue; continue }
             if (-not (Test-Path $r.ruta)) { New-Item -Path $r.ruta -Force | Out-Null }
-            New-ItemProperty -Path $r.ruta -Name $r.nombre -Value (Resolve-ValorAjuste $r.valor) -PropertyType $r.tipo -Force | Out-Null
+            $valor = Resolve-ValorAjuste $r.valor
+            if ($r.tipo -eq 'Binary') { $valor = [byte[]]@($valor) }
+            New-ItemProperty -Path $r.ruta -Name $r.nombre -Value $valor -PropertyType $r.tipo -Force | Out-Null
         }
         foreach ($s in @(Get-Propiedad $a 'servicios')) {
             if (-not $s) { continue }
@@ -142,7 +144,8 @@ function Undo-Ajustes {
                 if (-not $r) { continue }
                 if ($r.existe) {
                     if (-not (Test-Path $r.ruta)) { New-Item -Path $r.ruta -Force | Out-Null }
-                    New-ItemProperty -Path $r.ruta -Name $r.nombre -Value $r.valor -PropertyType $r.tipo -Force | Out-Null
+                    $valor = if ($r.tipo -eq 'Binary') { [byte[]]@($r.valor) } else { $r.valor }
+                    New-ItemProperty -Path $r.ruta -Name $r.nombre -Value $valor -PropertyType $r.tipo -Force | Out-Null
                 }
                 else { Remove-ItemProperty -Path $r.ruta -Name $r.nombre -ErrorAction SilentlyContinue }
             }

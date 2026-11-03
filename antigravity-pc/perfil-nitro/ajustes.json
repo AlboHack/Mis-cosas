@@ -126,6 +126,79 @@
       ]
     },
     {
+      "id": "inicio-onenote",
+      "nombre": "Quitar 'Enviar a OneNote' del arranque",
+      "fuente": "Auditoría P7 del Nitro; decisión de Nicolás (2026-11-03)",
+      "por_que": "Complemento de impresión de Office que se carga en cada arranque sin usarse.",
+      "riesgo": "Bajo: se respalda el valor y se puede deshacer.",
+      "activo": true,
+      "registro": [
+        {
+          "ruta": "Registry::HKEY_USERS\\S-1-5-19\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+          "nombre": "Enviar a OneNote",
+          "eliminar": true
+        }
+      ]
+    },
+    {
+      "id": "inicio-opera-assistant",
+      "nombre": "Desactivar Opera GX Browser Assistant al arranque",
+      "fuente": "Auditoría P7; mecanismo del Administrador de tareas (StartupApproved, primer byte 03 = deshabilitado)",
+      "por_que": "Proceso auxiliar de Opera que no hace falta para usar el navegador.",
+      "riesgo": "Bajo: equivale a deshabilitarlo en el Administrador de tareas.",
+      "activo": true,
+      "registro": [
+        {
+          "ruta": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+          "nombre": "Opera GX Browser Assistant",
+          "valor": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "tipo": "Binary"
+        }
+      ]
+    },
+    {
+      "id": "inicio-wallpaper-engine",
+      "nombre": "Desactivar Wallpaper Engine al arranque",
+      "fuente": "Auditoría P7; decisión de Nicolás (2026-11-03); mecanismo StartupApproved",
+      "por_que": "Fondo animado que usa GPU y RAM de forma permanente.",
+      "riesgo": "Bajo: si se abre a mano, su propia opción 'Iniciar con Windows' puede volver a activarlo.",
+      "activo": true,
+      "registro": [
+        {
+          "ruta": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+          "nombre": "WallpaperEngine",
+          "valor": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "tipo": "Binary"
+        }
+      ]
+    },
+    {
       "id": "hibernacion-reducida",
       "nombre": "hiberfil.sys reducido (mantiene el inicio rápido)",
       "fuente": "Microsoft, powercfg /hibernate /type reduced; winutil WPFTweaksHiber la apaga por completo",

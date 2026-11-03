@@ -36,12 +36,14 @@ if ([System.Environment]::OSVersion.Platform -eq 'Win32NT') {
     New-Item $clave -Force | Out-Null
     New-ItemProperty $clave -Name Existente -Value 7 -PropertyType DWord | Out-Null
     New-ItemProperty $clave -Name ABorrar -Value 'C:\x.exe' -PropertyType String | Out-Null
+    New-ItemProperty $clave -Name Inicio -Value ([byte[]](2,0,0,0,0,0,0,0,0,0,0,0)) -PropertyType Binary | Out-Null
     @{ ajustes = @(
         @{ id = 'prueba'; nombre = 'prueba'; fuente = 'x'; por_que = 'x'; riesgo = 'Bajo'; activo = $true
            registro = @(
                @{ ruta = $clave; nombre = 'Existente'; valor = 1; tipo = 'DWord' },
                @{ ruta = $clave; nombre = 'Nuevo'; valor = 'si'; tipo = 'String' },
-               @{ ruta = $clave; nombre = 'ABorrar'; eliminar = $true }) }
+               @{ ruta = $clave; nombre = 'ABorrar'; eliminar = $true },
+               @{ ruta = $clave; nombre = 'Inicio'; valor = @(3,0,0,0,0,0,0,0,0,0,0,0); tipo = 'Binary' }) }
     ) } | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $tmp 'cat.json') -Encoding UTF8
     $env:PERFIL_NITRO_CATALOGO = Join-Path $tmp 'cat.json'
     $env:PERFIL_NITRO_RESPALDO = Join-Path $tmp 'respaldo'
@@ -54,14 +56,14 @@ if ([System.Environment]::OSVersion.Platform -eq 'Win32NT') {
     Set-Ajustes
     Probar 'aplicar deja los valores del catálogo y borra el marcado' {
         (Get-ItemProperty $clave).Existente -eq 1 -and (Get-ItemProperty $clave).Nuevo -eq 'si' -and
-        -not (Get-ItemProperty $clave -Name ABorrar -ErrorAction SilentlyContinue) -and (Test-Aplicado $aj)
+        -not (Get-ItemProperty $clave -Name ABorrar -ErrorAction SilentlyContinue) -and (Get-ItemProperty $clave).Inicio[0] -eq 3 -and (Test-Aplicado $aj)
     }
     Set-Ajustes
     Probar 'segunda aplicación no pisa el respaldo original' { (Get-Content (Join-Path $env:PERFIL_NITRO_RESPALDO 'prueba.json') -Raw | ConvertFrom-Json).registro[0].valor -eq 7 }
     Undo-Ajustes -Ids prueba
     Probar 'deshacer restaura el valor previo y borra el que no existía' {
         (Get-ItemProperty $clave).Existente -eq 7 -and -not (Get-ItemProperty $clave -Name Nuevo -ErrorAction SilentlyContinue) -and
-        (Get-ItemProperty $clave).ABorrar -eq 'C:\x.exe'
+        (Get-ItemProperty $clave).ABorrar -eq 'C:\x.exe' -and (Get-ItemProperty $clave).Inicio[0] -eq 2
     }
     Probar 'RAM_KB se resuelve a la RAM instalada' { (Resolve-ValorAjuste 'RAM_KB') -gt 1000000 }
     Probar 'chequeo de GPU dedicada responde' { (Test-GpuDedicadaWddm27) -is [bool] }
