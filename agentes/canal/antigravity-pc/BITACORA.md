@@ -60,3 +60,6 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 18:41 | INICIO | P12
 2026-11-03 18:41 | PASO | P12-gpu.ps1 ejecutado -> GpuPreference=2 asignado en HKCU para SAP2000 y MATLAB; detectado SAP2000 PID 8084 (no cerrado)
 2026-11-03 18:42 | OK | P12 respondido en RESPUESTAS.md (GTX 1650 fijada permanentemente)
+2026-11-03 18:50 | INICIO | P14
+2026-11-03 18:51 | ERROR | P14: SAP2000 ejecutado con modelo pero Get-GpuDeProceso reporta Microsoft Basic Render Driver (luid 0x14263). Causa: SAP2000v27.ini tiene GraphicsMode=GDIPlus (Standard Graphics). Sin activar DirectX Graphics en SAP2000 no se despachan llamadas a GPU dedicada.
+2026-11-03 18:52 | OK | P14 respondido en RESPUESTAS.md

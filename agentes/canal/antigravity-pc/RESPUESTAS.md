@@ -1085,3 +1085,44 @@ luid_0x00000000_0x000142c9_phys_0 288
 ```
 Nota: Al momento de ejecutar la verificacion, SAP2000 ya se encontraba en ejecucion (PID 8084). El script respeto la sesion activa de Nicolas y no la forzo a cerrar. A partir de las proximas aperturas, DirectX dirigira SAP2000 y MATLAB directamente a la GTX 1650 (GpuPreference=2).
 
+
+
+## P14 — 2026-11-03 — antigravity-pc
+
+### Ejecución de P14-verificar-gpu.ps1 (Verificación de GPU por DXGI)
+```powershell
+cd D:\Mis-cosas; git checkout claude/perfil-nitro; git pull --ff-only
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\P14-verificar-gpu.ps1
+git checkout main
+```
+Salida literal:
+```text
+== Adaptadores (DXGI)
+
+Nombre                             Luid                       VramMB
+------                             ----                       ------
+NVIDIA GeForce GTX 1650            luid_0x00000000_0x000142c9   3938
+AMD Radeon(TM) RX Vega 10 Graphics luid_0x00000000_0x0001355e    498
+Microsoft Basic Render Driver      luid_0x00000000_0x00014263      0
+
+
+
+== GPU usada por SAP2000 (PID 3132)
+
+Luid                       Adaptador                    
+----                       ---------                    
+luid_0x00000000_0x00014263 Microsoft Basic Render Driver
+
+
+
+RESULTADO: SAP2000 NO usa la GTX 1650
+SAP2000 de la prueba cerrado (el modelo no se modificó).
+```
+
+### Diagnóstico técnico de causa raíz
+Se auditó la configuración gráfica interna de SAP2000 v27 en C:\Users\albor\AppData\Local\Computers and Structures\SAP2000 27\SAP2000v27.ini:
+```ini
+GraphicsMode=GDIPlus
+```
+Al estar fijado en modo GDIPlus (*Standard Graphics* en la interfaz de SAP2000), el motor de renderizado opera mediante rasterización por software (GDI+ / WARP) y no crea un swapchain D3D acelerado por hardware. Por ende, Windows le asigna el Microsoft Basic Render Driver y ni la GTX 1650 ni la Vega 10 son invocadas, independientemente de que GpuPreference=2 esté activo en HKCU:\Software\Microsoft\DirectX\UserGpuPreferences.
+Para que SAP2000 utilice la GTX 1650, debe habilitarse el modo DirectX en la aplicación (*Options -> Graphics Mode -> DirectX Graphics*) o configurar GraphicsMode=DirectX en el archivo .ini.
