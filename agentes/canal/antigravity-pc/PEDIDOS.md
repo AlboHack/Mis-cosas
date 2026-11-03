@@ -120,7 +120,16 @@ git checkout main
 ```
 Reportar todo literal. Responder además en una línea: ¿en qué carpeta guarda Nicolás los modelos de SAP2000 (para evaluar una exclusión de Defender acotada a esa carpeta)?
 
-## P8 · abierto · Aplicar el perfil del Nitro (ajustes activos) — PowerShell **como administrador**
+
+## Cómo correr lo que necesita administrador (desde 2026-11-03)
+Tu sesión no está elevada (DUDA de P8). No escribas `.bat` propios para eso: usa el ayudante del repo. Windows mostrará **un** aviso de permiso (UAC) que Nicolás acepta, y la salida vuelve en tu consola para reportarla literal:
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\Ejecutar-Elevado.ps1 -Script antigravity-pc\pedidos\<script>.ps1 -Nombre <Pn>
+```
+
+## P8 · abierto · Aplicar el perfil del Nitro (ajustes activos)
+**Forma de ejecutarlo (reemplaza al bloque de abajo):** `Ejecutar-Elevado.ps1 -Script antigravity-pc\pedidos\P8.ps1 -Nombre P8`. Después pedirle a Nicolás que reinicie y anotar `REINICIO`. El `aplicar_p8.bat` que preparaste se puede borrar.
 **Actualizado:** la rama ya trae también `inicio-onenote`, `inicio-opera-assistant` e `inicio-wallpaper-engine` (decisión de Nicolás). `Set-Ajustes` los aplica junto con los demás. El plan de energía queda en Alto rendimiento: no tocarlo.
 P7 se corrió sin elevar (DISM dio error 740 y Defender no mostró exclusiones). Nicolás pidió configurar la optimización: se aplican solo los ajustes **activos** y de riesgo bajo. Cada uno guarda su valor previo y se puede deshacer.
 ```powershell
@@ -142,7 +151,8 @@ Si la primera línea dice `False`, detenerse: hay que abrir PowerShell como admi
 ## P9 · abierto · Actualizar el driver de la AMD Radeon Vega 10 (después de P8 y del reinicio)
 Nicolás lo pidió (2026-11-03). El driver actual es 27.20.1028.1, de julio de 2020. En el Nitro la Vega 10 maneja la pantalla interna y la GTX 1650 renderiza a través de ella (Optimus): durante la instalación la pantalla parpadeará o quedará en negro unos segundos. **Nicolás debe estar frente al PC.** No tocar el driver de NVIDIA.
 
-### 1. Antes (PowerShell como administrador)
+### 1. Antes
+**Forma de ejecutarlo:** `Ejecutar-Elevado.ps1 -Script antigravity-pc\pedidos\P9-antes.ps1 -Nombre P9` (equivale al bloque de abajo).
 ```powershell
 Checkpoint-Computer -Description 'Antes driver AMD' -RestorePointType MODIFY_SETTINGS
 Get-CimInstance Win32_VideoController | Select-Object Name, DriverVersion, DriverDate
