@@ -37,3 +37,12 @@
 ## 2026-11-03 — Integración del nodo Antigravity PC en AlboHack/Mis-cosas (`antigravity-pc/`)
 - Motivo: Consolidación del ecosistema distribuido de Nicolás (Claude en navegador Brave como arquitecto y desarrollador de producción, Antigravity Tablet para automatizaciones móviles/Aula/cuentas, y Antigravity PC para ejecución nativa en Windows 11, cálculo estructural de alto impacto en SAP2000 v27 / MATLAB R2025a y mantenimiento del hardware).
 - Cambio: Creación del directorio raíz `antigravity-pc/` con `CONTEXTO.md`, `README.md` y la suite de optimización (`optimizacion/`) con documentación técnica de la ingeniería inversa aplicada (purga de Standby List del Kernel NT clase 80, recorte en caliente de Working Sets, motor de TRIM con Watchdog Timer de 25s en SSD C: y enrutamiento forzado a la GTX 1650).
+
+
+## 2026-11-03 — Mantenimiento del Nitro 5 reescrito (`antigravity-pc/mantenimiento/`, reemplaza a `optimizacion/`)
+- Motivo: la v4.1 purgaba la standby sin habilitar SeProfileSingleProcessPrivilege, recortaba working sets y borraba cachés de shaders (ambos causan los tirones que buscaba evitar), vaciaba la papelera sin preguntar, y el desinstalador borraba claves del registro por subcadena e incluía Brave, el navegador donde corre Claude y del que depende `gemini-cli`.
+- Cambio: módulo con `-WhatIf` en toda acción destructiva, purga solo con el criterio de ISLC, sesión de cálculo con plan Alto rendimiento y restauración, desinstalación guiada por `programas_a_quitar.json` con patrones anclados, lista de protegidos y Brave inactivo. 26 pruebas sin dependencias en Linux, más 4 de humo en Windows (`pruebas/Pruebas.ps1`) y workflow en Windows real con PowerShell 7 y 5.1.
+
+## 2026-11-03 — Canal Claude ↔ Antigravity en la rama `canal`
+- Motivo: Claude Code no corre en los equipos; los nodos Antigravity necesitan una vía para recibir pedidos y devolver datos.
+- Cambio: `agentes/canal/<nodo>/PEDIDOS.md` (escribe Claude) y `RESPUESTAS.md` (escribe el nodo); regla 04 actualizada con los tres nodos.

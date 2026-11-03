@@ -1,0 +1,17 @@
+name: pc-mantenimiento
+# Prueba antigravity-pc/mantenimiento en Windows real, con PowerShell 7 y con Windows PowerShell 5.1 (el que abre Mantenimiento.bat).
+on:
+  push:
+    paths: ["antigravity-pc/mantenimiento/**", ".github/workflows/pc-mantenimiento.yml"]
+  workflow_dispatch:
+jobs:
+  pruebas:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PowerShell 7
+        shell: pwsh
+        run: ./antigravity-pc/mantenimiento/pruebas/Pruebas.ps1
+      - name: Windows PowerShell 5.1
+        shell: powershell
+        run: ./antigravity-pc/mantenimiento/pruebas/Pruebas.ps1
