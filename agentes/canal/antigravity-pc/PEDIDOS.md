@@ -47,7 +47,7 @@ Get-Process SAP2000, SAPFire -ErrorAction SilentlyContinue | Select-Object Proce
 Indicar el modelo usado (número de nudos y barras, tipo de análisis) y cuánto tardó el análisis.
 (Para el paso 1 del Import-Module, la rama `claude/pc-mantenimiento` debe estar en el checkout; volver a `canal` al terminar.)
 
-## P5 · abierto (el merge ya llegó: 96d8df8) · Cuando `main` tenga el mantenimiento nuevo (después del P4 de la tablet)
+## P5 · cerrado · Cuando `main` tenga el mantenimiento nuevo (después del P4 de la tablet)
 Primero comprobar que el merge ya llegó; si la primera línea no dice "espejo de Aula", responder solo eso y esperar:
 ```powershell
 cd D:\Mis-cosas; git fetch origin; git log origin/main --oneline -1
@@ -96,3 +96,26 @@ Get-ChildItem $esc -Filter *.lnk | Where-Object Name -match 'Mantenimiento|Liber
 Get-ChildItem $bk | Select-Object Name
 ```
 Reportar la salida literal de cada paso, con `Fallas: N` del paso 2. Al terminar, decirle a Nicolás que pruebe el acceso "Mantenimiento" (pide permiso de administrador), opción 7 Diagnóstico, y anotar en la bitácora lo que muestre.
+
+## P7 · abierto · Auditoría del Nitro para el perfil de optimización (solo lectura)
+Nicolás pidió optimizar el PC para su uso. La rama `claude/perfil-nitro` trae `antigravity-pc/perfil-nitro/`: un catálogo de ajustes con su fuente, que se pueden aplicar y deshacer. **Este pedido no aplica nada**: mide el equipo para decidir qué ajustes activar. PowerShell como administrador.
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\perfil-nitro\pruebas\Pruebas.ps1
+Import-Module .\antigravity-pc\perfil-nitro\PerfilNitro.psm1 -Force; Get-EstadoAjustes | Format-Table -AutoSize
+Get-PSDrive C, D | Select-Object Name, @{n='LibreGB';e={[math]::Round($_.Free/1GB,1)}}, @{n='UsadoGB';e={[math]::Round($_.Used/1GB,1)}}
+Get-Item C:\hiberfil.sys -Force -ErrorAction SilentlyContinue | Select-Object @{n='hiberfilGB';e={[math]::Round($_.Length/1GB,2)}}
+Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Power' -ErrorAction SilentlyContinue | Select-Object HibernateEnabled, HiberFileType, HiberFileSizePercent
+Get-CimInstance Win32_PageFileUsage | Select-Object Name, AllocatedBaseSize, CurrentUsage, PeakUsage
+DISM /Online /Get-ReservedStorageState
+powercfg /getactivescheme
+Get-CimInstance Win32_StartupCommand | Select-Object Name, Command, Location | Format-Table -AutoSize -Wrap
+Get-CimInstance Win32_VideoController | Select-Object Name, DriverVersion, DriverDate, AdapterDACType
+[Microsoft.Win32.Registry]::GetValue('HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\FeatureSetUsage','WddmVersion_Min',$null)
+(Get-CimInstance Win32_BIOS).SMBIOSBIOSVersion
+Get-AppxPackage | Where-Object { -not $_.IsFramework -and $_.SignatureKind -eq 'Store' } | Select-Object -ExpandProperty Name | Sort-Object
+(Get-MpPreference).ExclusionPath
+Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 15 Name, @{n='MB';e={[math]::Round($_.WorkingSet64/1MB)}}
+git checkout main
+```
+Reportar todo literal. Responder además en una línea: ¿en qué carpeta guarda Nicolás los modelos de SAP2000 (para evaluar una exclusión de Defender acotada a esa carpeta)?
