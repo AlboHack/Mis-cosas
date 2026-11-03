@@ -54,3 +54,6 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 18:27 | OK | P9 respondido en RESPUESTAS.md (pendiente prueba de vista 3D en SAP2000 por Nicolas)
 2026-11-03 18:31 | NICOLAS | SAP2000 v27 probado con PRACTICA RODRIGO.sdb: analisis y renderizado 3D OK sin fallas tras driver nuevo
 2026-11-03 18:31 | OK | P9 validado en terreno con SAP2000 v27
+2026-11-03 18:39 | INICIO | P10
+2026-11-03 18:39 | PASO | P10.ps1 ejecutado -> inventario de drivers, hardware (12 GB RAM, Vega 10 31.0.21925.1001, GTX 1650 32.0.16.1047) y salud del sistema
+2026-11-03 18:40 | OK | P10 respondido en RESPUESTAS.md

@@ -748,3 +748,282 @@ defender-modelos-sap        False
 ### 5. Validación en SAP2000 por Nicolás
 Nicolás abrió SAP2000 v27 con el modelo `D:\Modelos RUN\PRACTICA RODRIGO.sdb`, corrió el análisis y confirmó: "si todo bien" (vista 3D nítida y renderizado sin fallas ni artefactos tras la actualización del driver AMD).
 
+
+
+## P10 · 2026-11-03 · antigravity-pc
+
+### Ejecución de P10.ps1 (Inventario de drivers, hardware y salud del equipo)
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\P10.ps1
+```
+Salida literal:
+```text
+== Drivers
+
+DeviceClass           DeviceName                                               Manufacturer                         DriverVersion     Fecha     
+-----------           ----------                                               ------------                         -------------     -----     
+                      Airoha_APP                                                                                                                
+                      BTNOTIFYR                                                                                                                 
+                      Dispositivo perif�rico Bluetooth                                                                                          
+                      G203 LIGHTSYNC                                                                                                            
+                      xiaoai                                                                                                                    
+AUDIOPROCESSINGOBJECT Realtek Audio Effects Component                          Realtek                              13.0.6000.1905    2025-10-06
+BATTERY               Microsoft Surface ACPI-Compliant Control Method Battery  Surface                              1.2.28.0          2017-05-22
+BLUETOOTH             Bluetooth Device                                         Microsoft                            10.0.26100.9711   2006-06-20
+BLUETOOTH             Bluetooth Device                                         Microsoft                            10.0.26100.9711   2006-06-20
+BLUETOOTH             Bluetooth Device                                         Microsoft                            10.0.26100.9711   2006-06-20
+BLUETOOTH             Bluetooth Device                                         Microsoft                            10.0.26100.9711   2006-06-20
+BLUETOOTH             Bluetooth Device (RFCOMM Protocol TDI)                   Microsoft                            10.0.26100.9549   2006-06-20
+BLUETOOTH             Bluetooth USB Module                                     Qualcomm Atheros Communications      10.0.0.1272       2023-05-02
+BLUETOOTH             Device Identification Service                            Microsoft                            10.0.26100.9711   2006-06-20
+BLUETOOTH             Microsoft Bluetooth Avrcp Transport Driver               Microsoft                            10.0.26100.9549   2026-09-16
+BLUETOOTH             Microsoft Bluetooth Avrcp Transport Driver               Microsoft                            10.0.26100.9549   2026-09-16
+BLUETOOTH             Microsoft Bluetooth Avrcp Transport Driver               Microsoft                            10.0.26100.9549   2026-09-16
+BLUETOOTH             Microsoft Bluetooth Avrcp Transport Driver               Microsoft                            10.0.26100.9549   2026-09-16
+BLUETOOTH             Microsoft Bluetooth Avrcp Transport Driver               Microsoft                            10.0.26100.9549   2026-09-16
+BLUETOOTH             Microsoft Bluetooth Avrcp Transport Driver               Microsoft                            10.0.26100.9549   2026-09-16
+BLUETOOTH             Microsoft Bluetooth Enumerator                           Microsoft                            10.0.26100.9711   2006-06-20
+BLUETOOTH             Microsoft Bluetooth LE Enumerator                        Microsoft                            10.0.26100.9711   2006-06-20
+DISPLAY               AMD Radeon(TM) RX Vega 10 Graphics                       Advanced Micro Devices, Inc.         31.0.21925.1001   2026-05-19
+DISPLAY               NVIDIA GeForce GTX 1650                                  NVIDIA                               32.0.16.1047      2026-05-18
+FIRMWARE              Acer Inc. System Firmware 1.12                           Acer Inc.                            5.32.1.12         2020-05-10
+HDC                   AMD SATA Controller                                      AMD                                  1.3.1.276         2017-01-03
+HIDCLASS              Acer Airplane Mode Controller                            Acer Incorporated                    1.0.0.14          2025-09-25
+HIDCLASS              ELAN PrecisionTouchpad Filter Driver                     ELAN                                 27.6.4.1          2025-08-24
+HIDCLASS              XBOX Synthetic Gamepad Bus                               XBOX                                 18.14.58.767      2026-08-09
+MEDIA                 AMD High Definition Audio Device                         Advanced Micro Devices               10.0.1.30         2025-08-06
+MEDIA                 AMD Streaming Audio Device                               AMD                                  1.0.0.9           2024-04-28
+MEDIA                 Microsoft Bluetooth A2dp Source                          Microsoft                            10.0.26100.1      2024-03-30
+MEDIA                 Microsoft Bluetooth A2dp Source                          Microsoft                            10.0.26100.1      2024-03-30
+MEDIA                 Microsoft Bluetooth A2dp Source                          Microsoft                            10.0.26100.1      2024-03-30
+MEDIA                 Microsoft Bluetooth Hands-Free Audio device              Microsoft                            10.0.26100.9549   2026-09-16
+MEDIA                 Microsoft Bluetooth Hands-Free Audio device              Microsoft                            10.0.26100.9549   2026-09-16
+MEDIA                 Microsoft Streaming Service Proxy                        Microsoft                            10.0.26100.1      2006-06-20
+MEDIA                 Realtek Audio                                            Microsoft                            6.0.9927.1        2025-12-15
+MEDIA                 USB Audio Device                                         Microsoft                            10.0.26100.9457   2026-12-08
+MOUSE                 ELAN I2C Filter Driver                                   ELAN                                 27.6.4.1          2025-08-24
+NET                   Bluetooth Device (Personal Area Network)                 Microsoft                            10.0.26100.8972   2006-06-20
+NET                   Microsoft Kernel Debug Network Adapter                   Microsoft                            10.0.26100.8521   2006-06-20
+NET                   Microsoft Wi-Fi Direct Virtual Adapter                   Microsoft                            10.0.26100.8972   2006-06-20
+NET                   Microsoft Wi-Fi Direct Virtual Adapter                   Microsoft                            10.0.26100.8972   2006-06-20
+NET                   Qualcomm Atheros QCA61x4A Wireless Network Adapter       Qualcomm Atheros Communications Inc. 12.0.0.1272       2023-05-02
+NET                   Realtek Gaming GbE Family Controller                     Realtek                              1168.28.1224.2025 2025-12-23
+NET                   WAN Miniport (IKEv2)                                     Microsoft                            10.0.26100.1      2006-06-20
+NET                   WAN Miniport (IP)                                        Microsoft                            10.0.26100.1      2006-06-20
+NET                   WAN Miniport (IPv6)                                      Microsoft                            10.0.26100.1      2006-06-20
+NET                   WAN Miniport (L2TP)                                      Microsoft                            10.0.26100.1      2006-06-20
+NET                   WAN Miniport (Network Monitor)                           Microsoft                            10.0.26100.1      2006-06-20
+NET                   WAN Miniport (PPPOE)                                     Microsoft                            10.0.26100.1      2006-06-20
+NET                   WAN Miniport (PPTP)                                      Microsoft                            10.0.26100.1      2006-06-20
+NET                   WAN Miniport (SSTP)                                      Microsoft                            10.0.26100.1      2006-06-20
+PRINTER               EPSON L3250 Series                                       EPSON                                3.4.0.0           2023-08-05
+PRINTQUEUE            Local Print Queue                                        EPSON                                10.0.26100.1      2006-06-20
+PRINTQUEUE            Local Print Queue                                        EPSON                                10.0.26100.1      2006-06-20
+PROCESSOR             AMD Processor                                            Advanced Micro Devices               10.0.26100.9549   2009-04-20
+PROCESSOR             AMD Processor                                            Advanced Micro Devices               10.0.26100.9549   2009-04-20
+PROCESSOR             AMD Processor                                            Advanced Micro Devices               10.0.26100.9549   2009-04-20
+PROCESSOR             AMD Processor                                            Advanced Micro Devices               10.0.26100.9549   2009-04-20
+PROCESSOR             AMD Processor                                            Advanced Micro Devices               10.0.26100.9549   2009-04-20
+PROCESSOR             AMD Processor                                            Advanced Micro Devices               10.0.26100.9549   2009-04-20
+PROCESSOR             AMD Processor                                            Advanced Micro Devices               10.0.26100.9549   2009-04-20
+PROCESSOR             AMD Processor                                            Advanced Micro Devices               10.0.26100.9549   2009-04-20
+SCSIADAPTER           Microsoft Storage Spaces Controller                      Microsoft                            10.0.26100.9711   2006-06-20
+SCSIADAPTER           Xvdd SCSI Miniport                                       Xbox                                 10.0.22030.1      2026-11-09
+SECURITYDEVICES       AMD PSP 10.0 Device                                      Advanced Micro Devices Inc.          5.44.0.0          2026-03-15
+SOFTWARECOMPONENT     AMD-OpenCL User Mode Driver                              Advanced Micro Devices, Inc.         31.0.21925.1001   2026-05-19
+SOFTWARECOMPONENT     AMD-Windows Support Components                           Advanced Micro Devices, Inc.         31.0.21925.1001   2026-05-19
+SOFTWARECOMPONENT     Realtek Audio Universal Service                          Realtek                              1.0.0.267         2020-11-05
+SOFTWARECOMPONENT     Realtek Hardware Support Application                     Realtek                              11.0.6000.221     2020-02-05
+SOFTWARECOMPONENT     Waves APO                                                Waves                                4.3.0.219         2019-03-05
+SOFTWAREDEVICE        EPSON L3250 Series                                       EPSON                                10.0.26100.1      2006-06-20
+SOFTWAREDEVICE        Generic software device                                  TCL                                  10.0.26100.1      2006-06-20
+SYSTEM                ACPI Fixed Feature Button                                (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                ACPI Lid                                                 (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                ACPI Power Button                                        (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                ACPI Sleep Button                                        (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                AMD Crash Defender                                       AMD                                  23.19.0.6         2026-03-17
+SYSTEM                AMD GPIO Controller                                      Advanced Micro Devices, Inc          2.2.0.137         2026-03-21
+SYSTEM                AMD I2C Controller                                       Advanced Micro Devices, Inc.         1.2.0.126         2025-09-08
+SYSTEM                AMD SMBUS                                                Advanced Micro Devices, Inc          2.0.0.26          2025-04-11
+SYSTEM                Charge Arbitration Driver                                (Standard system devices)            10.0.26100.8972   2006-06-20
+SYSTEM                Composite Bus Enumerator                                 Microsoft                            10.0.26100.1150   2006-06-20
+SYSTEM                Direct memory access controller                          (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                High Definition Audio Bus                                AMD                                  25.30.0.1         2025-08-20
+SYSTEM                High Definition Audio Controller                         Microsoft                            10.0.26100.9711   2026-10-09
+SYSTEM                High precision event timer                               (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                Logitech G HUB Virtual Bus Enumerator                    (Standard system devices)            2026.0.0.0        2026-05-01
+SYSTEM                Microsoft ACPI-Compliant Embedded Controller             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                Microsoft ACPI-Compliant System                          Microsoft                            10.0.26100.9549   2006-06-20
+SYSTEM                Microsoft Basic Display Driver                           (Standard display types)             10.0.26100.8521   2006-06-20
+SYSTEM                Microsoft Basic Render Driver                            Microsoft                            10.0.26100.9711   2006-06-20
+SYSTEM                Microsoft Bluetooth Hands-Free Profile AudioGateway role Microsoft                            10.0.26100.1      2024-03-30
+SYSTEM                Microsoft Bluetooth Hands-Free Profile AudioGateway role Microsoft                            10.0.26100.1      2024-03-30
+SYSTEM                Microsoft Hyper-V Virtualization Infrastructure Driver   Microsoft                            10.0.26100.9711   2006-06-20
+SYSTEM                Microsoft Hypervisor Service                             Microsoft                            10.0.26100.8972   2006-06-20
+SYSTEM                Microsoft System Management BIOS Driver                  (Standard system devices)            10.0.26100.1      2006-06-20
+SYSTEM                Microsoft UEFI-Compliant System                          Microsoft                            10.0.26100.8972   2006-06-20
+SYSTEM                Microsoft Virtual Drive Enumerator                       Microsoft                            10.0.26100.1591   2006-06-20
+SYSTEM                Microsoft Windows Management Interface for ACPI          Microsoft                            10.0.26100.1150   2006-06-20
+SYSTEM                Microsoft Windows Management Interface for ACPI          Microsoft                            10.0.26100.1150   2006-06-20
+SYSTEM                Microsoft Windows Management Interface for ACPI          Microsoft                            10.0.26100.1150   2006-06-20
+SYSTEM                Motherboard resources                                    (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                Motherboard resources                                    (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                Motherboard resources                                    (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                NDIS Virtual Network Adapter Enumerator                  Microsoft                            10.0.26100.1      2006-06-20
+SYSTEM                Numeric data processor                                   (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI Express Root Complex                                 (Standard system devices)            10.0.26100.9711   2006-06-20
+SYSTEM                PCI Express Root Port                                    (Standard system devices)            10.0.26100.9711   2006-06-20
+SYSTEM                PCI Express Root Port                                    (Standard system devices)            10.0.26100.9711   2006-06-20
+SYSTEM                PCI Express Root Port                                    (Standard system devices)            10.0.26100.9711   2006-06-20
+SYSTEM                PCI Express Root Port                                    (Standard system devices)            10.0.26100.9711   2006-06-20
+SYSTEM                PCI Express Root Port                                    (Standard system devices)            10.0.26100.9711   2006-06-20
+SYSTEM                PCI standard host CPU bridge                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI standard host CPU bridge                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI standard host CPU bridge                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI standard host CPU bridge                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI standard host CPU bridge                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI standard host CPU bridge                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI standard host CPU bridge                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI standard host CPU bridge                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI standard host CPU bridge                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI standard host CPU bridge                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI standard host CPU bridge                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                PCI standard ISA bridge                                  (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                Plug and Play Software Device Enumerator                 (Standard system devices)            10.0.26100.4202   2025-05-22
+SYSTEM                Programmable interrupt controller                        (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                Remote Desktop Device Redirector Bus                     Microsoft                            10.0.26100.8972   2006-06-20
+SYSTEM                Scp Virtual Bus Driver                                   Scarlet.Crush Productions            1.0.0.103         2013-05-04
+SYSTEM                System board                                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                System CMOS/real time clock                              (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                System speaker                                           (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                System timer                                             (Standard system devices)            10.0.26100.1150   2006-06-20
+SYSTEM                UMBus Root Bus Enumerator                                Microsoft                            10.0.26100.1150   2006-06-20
+SYSTEM                Volume Manager                                           Microsoft                            10.0.26100.9711   2006-06-20
+USB                   G203 LIGHTSYNC                                           Logitech                             1.1.91.2790       2026-06-16
+USB                   USB xHCI Compliant Host Controller                       Generic USB xHCI Host Controller     10.0.26100.9711   2026-09-09
+USB                   USB xHCI Compliant Host Controller                       Generic USB xHCI Host Controller     10.0.26100.9711   2026-09-09
+
+
+
+== Drivers ofrecidos por Windows Update
+
+Title                                           DriverVerDate     
+-----                                           -------------     
+Apple, Inc. USBDevice Driver Update (552.0.0.0) 25-04-2025 0:00:00
+
+
+
+== Equipo, BIOS, RAM y discos
+Nitro AN515-43
+
+
+SMBIOSBIOSVersion : V1.12
+ReleaseDate       : 04-11-2020 21:00:00
+
+
+
+
+
+BankLabel    DeviceLocator GB Speed ConfiguredClockSpeed Manufacturer PartNumber          
+---------    ------------- -- ----- -------------------- ------------ ----------          
+P0 CHANNEL A DIMM 0         4  2667                 2400 Samsung      M471A5244CB0-CTD    
+P0 CHANNEL B DIMM 0         8  2400                 2400 Unknown      J641GU67J7240N2     
+
+
+
+
+FriendlyName         BusType MediaType  GB
+------------         ------- ---------  --
+KINGSTON SA400M8120G SATA    SSD       112
+WDC WD10SPZX-21Z10T0 SATA    HDD       932
+
+
+
+Get-StorageReliabilityCounter : El cliente no ten�a acceso disponible a un recurso CIM.
+En D:\Mis-cosas\antigravity-pc\pedidos\P10.ps1: 13 Car�cter: 20
++ Get-PhysicalDisk | Get-StorageReliabilityCounter | Select-Object Devi ...
++                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (PS_StorageCmdlets:ROOT/Microsoft/..._StorageCmdlets) [Get-StorageReli 
+   abilityCounter], CimException
+    + FullyQualifiedErrorId : MI RESULT 2,Get-StorageReliabilityCounter
+ 
+Get-StorageReliabilityCounter : El cliente no ten�a acceso disponible a un recurso CIM.
+En D:\Mis-cosas\antigravity-pc\pedidos\P10.ps1: 13 Car�cter: 20
++ Get-PhysicalDisk | Get-StorageReliabilityCounter | Select-Object Devi ...
++                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (PS_StorageCmdlets:ROOT/Microsoft/..._StorageCmdlets) [Get-StorageReli 
+   abilityCounter], CimException
+    + FullyQualifiedErrorId : MI RESULT 2,Get-StorageReliabilityCounter
+ 
+
+== Bater�a (mWh y ciclos)
+Dise�o: 
+Carga completa actual: 39532
+Ciclos: 0
+== Errores del sistema (30 d�as)
+
+Count Name                                            
+----- ----                                            
+   80 Microsoft-Windows-DistributedCOM, 10010         
+   31 Microsoft-Windows-TPM-WMI, 1803                 
+   18 Service Control Manager, 7009                   
+   18 Microsoft-Windows-TPM-WMI, 1801                 
+   18 Service Control Manager, 7000                   
+    8 Microsoft-Windows-DistributedCOM, 10005         
+    5 Microsoft-Windows-WindowsUpdateClient, 20       
+    5 Volsnap, 36                                     
+    3 Microsoft-Windows-DeviceAssociationService, 3503
+    2 Service Control Manager, 7043                   
+    1 Microsoft-Windows-Kernel-Power, 41              
+    1 EventLog, 6008                                  
+
+
+
+Kernel-Power 41:
+
+jueves, 29 de octubre de 2026 20:52:00
+domingo, 27 de septiembre de 2026 11:33:33
+WHEA:
+
+== Arranque (ms)
+== Integridad, restauraci�n y Defender
+
+Error: 740
+
+Elevated permissions are required to run DISM. 
+Use an elevated command prompt to complete these tasks.
+
+
+
+
+Debe ser administrador con una sesi�n de consola activa para poder usar la
+
+
+utilidad sfc.
+
+
+
+
+Get-ComputerRestorePoint : Acceso denegado 
+En D:\Mis-cosas\antigravity-pc\pedidos\P10.ps1: 27 Car�cter: 1
++ Get-ComputerRestorePoint | Select-Object -Last 3 Description, Creatio ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-ComputerRestorePoint], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetComputerRestorePointCommand
+ 
+
+
+
+RealTimeProtectionEnabled     : True
+AntivirusSignatureLastUpdated : 03-11-2026 8:21:45
+QuickScanAge                  : 0
+FullScanAge                   : 4294967295
+
+
+
+
+
+
+Your branch is up to date with 'origin/canal'.
+```
+
