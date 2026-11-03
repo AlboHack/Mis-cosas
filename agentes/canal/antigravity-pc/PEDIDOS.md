@@ -62,3 +62,37 @@ Test-Path "$env:USERPROFILE\OneDrive\Escritorio\Nitro_Optimizer.bat", "$env:USER
 Reportar la salida literal. No borrar las copias de la v4.1 del Escritorio: si existen, Claude pedirá a Nicolás que confirme reemplazarlas por accesos directos a `Mantenimiento.bat`.
 
 P4 (memoria durante un análisis en SAP2000) sigue abierto: hacerlo la próxima vez que Nicolás corra un modelo.
+
+## P6 · abierto · Instalar el mantenimiento nuevo en el Nitro y retirar la v4.1
+Nicolás lo confirmó en el chat con Claude el 2026-11-03: el mantenimiento nuevo reemplaza a Nitro_Optimizer y Desinstalador_Raiz. La v4.1 no se borra: se mueve a una carpeta de respaldo. No requiere esperar el merge a `main`. PowerShell como administrador, una sola pasada; si un paso falla, reportarlo y NO seguir.
+```powershell
+# 1. Copia de la versión nueva a una carpeta fija (no depende de la rama que tenga D:\Mis-cosas)
+cd D:\Mis-cosas; git fetch origin claude/espejo-aula
+$dest = "$env:USERPROFILE\Mantenimiento"
+$tmp = Join-Path $env:TEMP ("mant_" + (Get-Date -Format yyyyMMddHHmmss)); New-Item -ItemType Directory $tmp | Out-Null
+git archive -o "$tmp\m.zip" origin/claude/espejo-aula antigravity-pc/mantenimiento
+Expand-Archive "$tmp\m.zip" -DestinationPath $tmp -Force
+New-Item -ItemType Directory $dest -Force | Out-Null
+Copy-Item "$tmp\antigravity-pc\mantenimiento\*" $dest -Recurse -Force
+Get-ChildItem $dest -Recurse -File | Select-Object -ExpandProperty FullName
+
+# 2. Pruebas desde la carpeta instalada (deben terminar en "Fallas: 0")
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$dest\pruebas\Pruebas.ps1"
+
+# 3. Retirar la v4.1 del Escritorio a un respaldo (mover, no borrar)
+$bk = "$dest\v4.1_retirada"; New-Item -ItemType Directory $bk -Force | Out-Null
+$viejos = 'Nitro_Optimizer.bat','Nitro_Optimizer_Core.ps1','Liberar_RAM_Juegos.bat','Desinstalador_Raiz_Bloatware.bat','Desinstalador_Raiz_Core.ps1'
+foreach ($esc in "$env:USERPROFILE\OneDrive\Escritorio", "$env:USERPROFILE\Desktop") {
+  if (Test-Path $esc) { Get-ChildItem $esc -File | Where-Object { $viejos -contains $_.Name } | Move-Item -Destination $bk -Force -PassThru | Select-Object FullName }
+}
+
+# 4. Accesos directos en el Escritorio
+$esc = if (Test-Path "$env:USERPROFILE\OneDrive\Escritorio") { "$env:USERPROFILE\OneDrive\Escritorio" } else { "$env:USERPROFILE\Desktop" }
+$ws = New-Object -ComObject WScript.Shell
+foreach ($a in @(@('Mantenimiento', ''), @('Liberar RAM', 'Ram'), @('Iniciar calculo', 'Calculo'), @('Terminar calculo', 'FinCalculo'))) {
+  $l = $ws.CreateShortcut("$esc\$($a[0]).lnk"); $l.TargetPath = "$dest\Mantenimiento.bat"; $l.Arguments = $a[1]; $l.WorkingDirectory = $dest; $l.Save()
+}
+Get-ChildItem $esc -Filter *.lnk | Where-Object Name -match 'Mantenimiento|Liberar RAM|calculo' | Select-Object Name
+Get-ChildItem $bk | Select-Object Name
+```
+Reportar la salida literal de cada paso, con `Fallas: N` del paso 2. Al terminar, decirle a Nicolás que pruebe el acceso "Mantenimiento" (pide permiso de administrador), opción 7 Diagnóstico, y anotar en la bitácora lo que muestre.
