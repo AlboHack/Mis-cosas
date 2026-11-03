@@ -67,6 +67,11 @@ if ([System.Environment]::OSVersion.Platform -eq 'Win32NT') {
     }
     Probar 'RAM_KB se resuelve a la RAM instalada' { (Resolve-ValorAjuste 'RAM_KB') -gt 1000000 }
     Probar 'chequeo de GPU dedicada responde' { (Test-GpuDedicadaWddm27) -is [bool] }
+    Probar 'DXGI lista adaptadores con LUID en formato de contador' {
+        $ad = @(Get-AdaptadoresGpu); $ad | Format-Table | Out-String | Write-Host
+        $ad.Count -ge 1 -and -not ($ad | Where-Object { $_.Luid -notmatch '^luid_0x[0-9a-f]{8}_0x[0-9a-f]{8}$' -or -not $_.Nombre })
+    }
+    Probar 'GPU de un proceso responde sin error' { $null = @(Get-GpuDeProceso -ProcesoId $PID); $true }
 
     Remove-Item $clave -Recurse -ErrorAction SilentlyContinue
     Remove-Item $tmp -Recurse -ErrorAction SilentlyContinue

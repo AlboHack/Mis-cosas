@@ -35,6 +35,66 @@ function Test-GpuDedicadaWddm27 {
     [bool]$dedicada -and $wddm -ge 2700
 }
 
+$script:CodigoDxgi = @'
+using System;
+using System.Runtime.InteropServices;
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+public struct DXGI_ADAPTER_DESC1 {
+    [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)] public string Description;
+    public uint VendorId, DeviceId, SubSysId, Revision;
+    public UIntPtr DedicatedVideoMemory, DedicatedSystemMemory, SharedSystemMemory;
+    public uint LuidLow; public int LuidHigh; public uint Flags;
+}
+[ComImport, Guid("29038f61-3839-4626-91fd-086879011a05"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+public interface IDXGIAdapter1 {
+    [PreserveSig] int SetPrivateData(); [PreserveSig] int SetPrivateDataInterface(); [PreserveSig] int GetPrivateData(); [PreserveSig] int GetParent();
+    [PreserveSig] int EnumOutputs(); [PreserveSig] int GetDesc(); [PreserveSig] int CheckInterfaceSupport();
+    [PreserveSig] int GetDesc1(out DXGI_ADAPTER_DESC1 desc);
+}
+[ComImport, Guid("770aae78-f26f-4dba-a829-253c83d1b387"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+public interface IDXGIFactory1 {
+    [PreserveSig] int SetPrivateData(); [PreserveSig] int SetPrivateDataInterface(); [PreserveSig] int GetPrivateData(); [PreserveSig] int GetParent();
+    [PreserveSig] int EnumAdapters(); [PreserveSig] int MakeWindowAssociation(); [PreserveSig] int GetWindowAssociation(); [PreserveSig] int CreateSwapChain(); [PreserveSig] int CreateSoftwareAdapter();
+    [PreserveSig] int EnumAdapters1(uint index, out IDXGIAdapter1 adapter);
+}
+public static class Dxgi {
+    [DllImport("dxgi.dll")] static extern int CreateDXGIFactory1(ref Guid riid, [MarshalAs(UnmanagedType.Interface)] out IDXGIFactory1 factory);
+    public static DXGI_ADAPTER_DESC1[] Adaptadores() {
+        Guid g = typeof(IDXGIFactory1).GUID; IDXGIFactory1 f;
+        if (CreateDXGIFactory1(ref g, out f) != 0) return new DXGI_ADAPTER_DESC1[0];
+        var lista = new System.Collections.Generic.List<DXGI_ADAPTER_DESC1>();
+        for (uint i = 0; ; i++) {
+            IDXGIAdapter1 a;
+            if (f.EnumAdapters1(i, out a) != 0) break;
+            DXGI_ADAPTER_DESC1 d; if (a.GetDesc1(out d) == 0) lista.Add(d);
+        }
+        return lista.ToArray();
+    }
+}
+'@
+
+function Get-AdaptadoresGpu {
+    # Nombre de cada adaptador con su LUID en el formato de los contadores '\GPU Engine(*)' (luid_0xHIGH_0xLOW)
+    if (-not ('Dxgi' -as [type])) { Add-Type -TypeDefinition $script:CodigoDxgi }
+    foreach ($d in [Dxgi]::Adaptadores()) {
+        [pscustomobject]@{
+            Nombre    = $d.Description
+            Luid      = ('luid_0x{0:x8}_0x{1:x8}' -f $d.LuidHigh, $d.LuidLow)
+            VramMB    = [math]::Round([double]$d.DedicatedVideoMemory.ToUInt64() / 1MB)
+        }
+    }
+}
+
+function Get-GpuDeProceso {
+    # Adaptadores en que un proceso tiene motores 3D activos, por nombre
+    param([Parameter(Mandatory)][int]$ProcesoId)
+    $mapa = @{}; Get-AdaptadoresGpu | ForEach-Object { $mapa[$_.Luid] = $_.Nombre }
+    $luids = (Get-Counter '\GPU Engine(*)\Utilization Percentage' -ErrorAction SilentlyContinue).CounterSamples |
+        Where-Object InstanceName -match "^pid_$($ProcesoId)_(luid_0x[0-9a-f]{8}_0x[0-9a-f]{8})_.*engtype_3d" |
+        ForEach-Object { $Matches[1] } | Select-Object -Unique
+    foreach ($l in $luids) { [pscustomobject]@{ Luid = $l; Adaptador = $mapa[$l] } }
+}
+
 function Get-ValorRegistro {
     param([string]$Ruta, [string]$Nombre)
     $item = Get-ItemProperty -Path $Ruta -Name $Nombre -ErrorAction SilentlyContinue
@@ -158,4 +218,4 @@ function Undo-Ajustes {
     }
 }
 
-Export-ModuleMember -Function Get-Catalogo, Get-EstadoAjustes, Set-Ajustes, Undo-Ajustes, Test-Aplicado, Test-GpuDedicadaWddm27, Resolve-ValorAjuste
+Export-ModuleMember -Function Get-AdaptadoresGpu, Get-GpuDeProceso, Get-Catalogo, Get-EstadoAjustes, Set-Ajustes, Undo-Ajustes, Test-Aplicado, Test-GpuDedicadaWddm27, Resolve-ValorAjuste
