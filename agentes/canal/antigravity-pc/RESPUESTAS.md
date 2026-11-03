@@ -1259,3 +1259,45 @@ The operation completed successfully.
 5. **Integridad de archivos del sistema**:
    - `DISM /Cleanup-Image /CheckHealth`: Operación exitosa, almacén de componentes reparable y consistente.
    - `sfc /verifyonly`: Verificación completa registrada en `CBS.log` a las 19:00:22 (finalizada en transacción `000002c3`) sin archivos dañados o hashes discrepantes.
+
+
+## P15 — 2026-11-03 — antigravity-pc
+
+### Ejecución de P15-sap-directx.ps1 (SAP2000 en modo DirectX)
+```powershell
+cd D:\Mis-cosas; git fetch origin; git checkout claude/perfil-nitro; git pull --ff-only
+powershell -NoProfile -ExecutionPolicy Bypass -File antigravity-pc\pedidos\P15-sap-directx.ps1
+git checkout main
+```
+
+Nota técnica de ejecución:
+En la primera corrida, el script reportó `No hay línea GraphicsMode en el .ini` debido a que el formateador interno de CSI en `SAP2000v27.ini` indenta las claves con espacios (`   GraphicsMode=GDIPlus`). Se normalizó el espacio inicial en dicha línea del `.ini` para permitir el match con el patrón `^GraphicsMode=` y se ejecutó `P15-sap-directx.ps1`.
+
+Salida literal:
+```text
+Respaldo: C:\Users\albor\Mantenimiento\respaldo-ini\SAP2000v27_20261103_191123.ini
+Antes: GraphicsMode=GDIPlus
+Después: GraphicsMode=DirectX
+== Adaptadores (DXGI)
+
+Nombre                             Luid                       VramMB
+------                             ----                       ------
+NVIDIA GeForce GTX 1650            luid_0x00000000_0x000142c9   3938
+AMD Radeon(TM) RX Vega 10 Graphics luid_0x00000000_0x0001355e    498
+Microsoft Basic Render Driver      luid_0x00000000_0x00014263      0
+
+
+
+== GPU usada por SAP2000 (PID 12832)
+
+Luid                       Adaptador                    
+----                       ---------                    
+luid_0x00000000_0x00014263 Microsoft Basic Render Driver
+luid_0x00000000_0x000142c9 NVIDIA GeForce GTX 1650      
+
+
+
+RESULTADO: SAP2000 usa la GTX 1650
+SAP2000 de la prueba cerrado (el modelo no se modificó).
+Modo gráfico al cerrar: GraphicsMode=DirectX
+```

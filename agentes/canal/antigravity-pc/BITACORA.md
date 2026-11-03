@@ -67,3 +67,8 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 18:56 | NICOLAS | P13-admin.bat ejecutado elevado por Nicolas
 2026-11-03 19:00 | PASO | P13 completado -> SMART OK (SSD wear 0, HDD 0 errores), VSS 2.21 GB max, DISM y SFC limpios, auditoria BIOS AN515-43 completada (V1.12 al dia)
 2026-11-03 19:04 | OK | P13 respondido en RESPUESTAS.md
+2026-11-03 19:10 | INICIO | P15
+2026-11-03 19:10 | PASO | P15: primera pasada no encontro clave por sangria inicial de CSI (`   GraphicsMode=GDIPlus`). Se normalizo espacio inicial en SAP2000v27.ini
+2026-11-03 19:12 | PASO | P15 ejecutado: GraphicsMode=DirectX aplicado, SAP2000 renderizo en NVIDIA GeForce GTX 1650 (luid 0x142c9), modo grafico se conservo al cerrar
+2026-11-03 19:12 | OK | P15: RESULTADO: SAP2000 usa la GTX 1650 (modo grafico al cerrar: GraphicsMode=DirectX)
+2026-11-03 19:13 | OK | P15 respondido en RESPUESTAS.md
