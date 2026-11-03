@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Prácticas Obras Civiles
 **Sigla:** `POC` | **Aula ID:** `5623` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=5623
-**Última Sincronización:** `2026-11-02 23:08 -03`
+**Última Sincronización:** `2026-11-03 16:49 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `POC`.
@@ -58,24 +58,21 @@ Total de archivos sincronizados: **15**
 | `EVALUACION DE EMPRESA.pdf` | 235.9 KB | 2026-10-25 14:24 | Sincronizado |
 | `PAUTA DEL INFORME.pdf` | 354.7 KB | 2026-10-25 14:24 | Sincronizado |
 
-### 📂 `Material_y_Apuntes/` (0 archivos)
-*No hay archivos en esta carpeta.*
-
 ### 📂 `Planificacion/` (12 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
-| `AYUDA EN LA BÚSQUEDA DE PRÁCTICAS.pdf` | 30.50 MB | 2026-10-25 14:24 | Sincronizado |
-| `CRITERIOS OCIV 2025.pdf` | 234.6 KB | 2026-10-25 14:24 | Sincronizado |
-| `DIEZ CLAVES PARA LA PRACTICA PROFESIONAL.pdf` | 54.5 KB | 2026-10-25 14:24 | Sincronizado |
-| `EL VARIADO APRENDIZAJE QUE OFRECE EL DEBUT EN EL MUNDO LABORAL.pdf` | 59.1 KB | 2026-10-25 14:24 | Sincronizado |
-| `FORMULARIOS ONLINE.pdf` | 25.3 KB | 2026-10-25 14:24 | Sincronizado |
-| `INSTRUCCIONES.pdf` | 414.1 KB | 2026-10-25 14:24 | Sincronizado |
-| `PLANTILLA DEL INFORME.docx` | 419.0 KB | 2026-10-25 14:24 | Sincronizado |
-| `PREGUNTAS FRECUENTES.pdf` | 59.5 KB | 2026-10-25 14:24 | Sincronizado |
-| `PRESENTACION EXPLICATIVA 2026.pdf` | 767.1 KB | 2026-10-25 14:24 | Sincronizado |
-| `RECETAS PARA SALTAR LA PRIMERA VALLA.pdf` | 56.9 KB | 2026-10-25 14:24 | Sincronizado |
-| `REGISTROS EMPRESAS QUE HAN RECIBIDO PRACTICANTES.png` | 607.6 KB | 2026-10-25 15:35 | Sincronizado |
-| `REGLAMENTO GENERAL Nº43.pdf` | 68.1 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/AYUDA EN LA BÚSQUEDA DE PRÁCTICAS.pdf` | 30.50 MB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/CRITERIOS OCIV 2025.pdf` | 234.6 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/DIEZ CLAVES PARA LA PRACTICA PROFESIONAL.pdf` | 54.5 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/EL VARIADO APRENDIZAJE QUE OFRECE EL DEBUT EN EL MUNDO LABORAL.pdf` | 59.1 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/FORMULARIOS ONLINE.pdf` | 25.3 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/INSTRUCCIONES.pdf` | 414.1 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/PLANTILLA DEL INFORME.docx` | 419.0 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/PREGUNTAS FRECUENTES.pdf` | 59.5 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/PRESENTACION EXPLICATIVA 2026.pdf` | 767.1 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/RECETAS PARA SALTAR LA PRIMERA VALLA.pdf` | 56.9 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/REGISTROS EMPRESAS QUE HAN RECIBIDO PRACTICANTES.png` | 607.6 KB | 2026-10-25 15:35 | Sincronizado |
+| `Información General/REGLAMENTO GENERAL Nº43.pdf` | 68.1 KB | 2026-10-25 14:24 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
 ### 📣 Solicitud de cartas de presentación

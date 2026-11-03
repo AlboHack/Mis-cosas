@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Mecánica de Fluidos
 **Sigla:** `CIV244` | **Aula ID:** `62182` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62182
-**Última Sincronización:** `2026-11-02 23:08 -03`
+**Última Sincronización:** `2026-11-03 16:49 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV244`.
@@ -21,9 +21,9 @@ El estudiante desarrolla los fundamentos teóricos que le permiten modelar el co
 ## 📅 2. Calendario Consolidado de Evaluaciones y Entregas
 | # | Evaluación / Hito | Inicio | Cierre / Entrega | Cuenta Regresiva | Lugar | Fuente |
 |---|-------------------|--------|------------------|------------------|-------|--------|
-| 1 | **Vencimiento de Entrega apuntes C2** | 2026-11-02 23:59 | 2026-11-02 23:59 | ¡VENCE HOY! (en 0 h) | Aula USM | Aula API |
-| 2 | **Certamen 3** | 2026-11-20 14:00 | 2026-11-20 16:30 | En 17 días (20-Nov) | Campus San Joaquín | Aula API |
-| 3 | **Publicación notas finales** | 2026-11-27 12:00 | 2026-11-27 12:00 | En 24 días (27-Nov) | Aula USM / SIGA | Aula API |
+| 1 | **Vencimiento de Entrega apuntes C2** | 2026-11-02 23:59 | 2026-11-02 23:59 | Finalizada | Aula USM | Aula API |
+| 2 | **Certamen 3** | 2026-11-20 14:00 | 2026-11-20 16:30 | En 16 días (20-Nov) | Campus San Joaquín | Aula API |
+| 3 | **Publicación notas finales** | 2026-11-27 12:00 | 2026-11-27 12:00 | En 23 días (27-Nov) | Aula USM / SIGA | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 ### 📌 Entrega apuntes C1
@@ -40,7 +40,7 @@ El estudiante desarrolla los fundamentos teóricos que le permiten modelar el co
 - **Enlace en Aula:** [Entrega apuntes C2](https://aula.usm.cl/mod/assign/view.php?id=8360331)
 - **Sección:** Información General
 - **Habilitada desde:** 2026-10-29 00:00
-- **Fecha Límite (Due Date):** 2026-11-02 23:59 (¡VENCE HOY! (en 0 h))
+- **Fecha Límite (Due Date):** 2026-11-02 23:59 (Finalizada)
 - **Fecha de Corte Estricto:** 2026-11-02 23:59
 
 > **Instrucciones / Enunciado:**
@@ -216,18 +216,18 @@ Total de archivos sincronizados: **68**
 | `Apunte-14-FlujoIdealReal-NavierStokes.pdf` | 1.06 MB | 2026-10-25 14:24 | Sincronizado |
 | `Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf` | 3.52 MB | 2026-10-25 14:24 | Sincronizado |
 | `Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf` | 612.7 KB | 2026-10-25 14:24 | Sincronizado |
-| `Ayudantía 2.pdf` | 280.0 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantía 4.pdf` | 361.7 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantía n°6.pdf` | 355.1 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantía n°8 CIV224.pdf` | 451.7 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantía_1.pdf` | 259.9 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantía_3.pdf` | 244.5 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantía_5 .pdf` | 298.7 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantía_7.pdf` | 244.6 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantía_extra.pdf` | 252.5 KB | 2026-10-26 09:55 | Sincronizado |
-| `Desarrollo Ayudantía 1.pdf` | 1.39 MB | 2026-10-26 09:55 | Sincronizado |
-| `Desarrollo Ayudantía Extra.pdf` | 1.28 MB | 2026-10-26 09:55 | Sincronizado |
-| `Desarrollo_Ayudantía_7.pdf` | 324.9 KB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Ayudantía 2.pdf` | 280.0 KB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Ayudantía 4.pdf` | 361.7 KB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Ayudantía n°6.pdf` | 355.1 KB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Ayudantía n°8 CIV224.pdf` | 451.7 KB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Ayudantía_1.pdf` | 259.9 KB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Ayudantía_3.pdf` | 244.5 KB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Ayudantía_5 .pdf` | 298.7 KB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Ayudantía_7.pdf` | 244.6 KB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Ayudantía_extra.pdf` | 252.5 KB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Desarrollo Ayudantía 1.pdf` | 1.39 MB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Desarrollo Ayudantía Extra.pdf` | 1.28 MB | 2026-10-26 09:55 | Sincronizado |
+| `Ayudantías/Desarrollo_Ayudantía_7.pdf` | 324.9 KB | 2026-10-26 09:55 | Sincronizado |
 | `CIV244_Clase_01_handout.pdf` | 38.86 MB | 2026-10-25 14:24 | Sincronizado |
 | `CIV244_Clase_02_handout.pdf` | 3.86 MB | 2026-10-25 14:24 | Sincronizado |
 | `CIV244_Clase_03_handout.pdf` | 3.66 MB | 2026-10-25 14:24 | Sincronizado |
@@ -252,8 +252,8 @@ Total de archivos sincronizados: **68**
 ### 📂 `Planificacion/` (2 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
-| `CIV 244 - Mecánica de Fluidos final.pdf` | 143.4 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244-2026-2_Programacion_R1.pdf` | 100.2 KB | 2026-10-25 15:34 | Sincronizado |
+| `Información General/CIV 244 - Mecánica de Fluidos final.pdf` | 143.4 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/CIV244-2026-2_Programacion_R1.pdf` | 100.2 KB | 2026-10-25 15:34 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
 ### 📣 Clase martes 03/11

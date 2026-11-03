@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Ingeniería de Transporte
 **Sigla:** `CIV386` | **Aula ID:** `62192` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62192
-**Última Sincronización:** `2026-11-02 23:08 -03`
+**Última Sincronización:** `2026-11-03 16:49 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV386`.
@@ -21,8 +21,8 @@ El estudiante distingue y analiza sistemas de transporte urbano, entendiendo los
 ## 📅 2. Calendario Consolidado de Evaluaciones y Entregas
 | # | Evaluación / Hito | Inicio | Cierre / Entrega | Cuenta Regresiva | Lugar | Fuente |
 |---|-------------------|--------|------------------|------------------|-------|--------|
-| 1 | **Certamen 3** | 2026-11-18 14:00 | 2026-11-18 16:30 | En 15 días (18-Nov) | B014 / B103 | Aula API |
-| 2 | **Certamen recuperativo** | 2026-12-02 14:00 | 2026-12-02 16:30 | En 29 días (02-Dec) | B014 / B103 | Aula API |
+| 1 | **Certamen 3** | 2026-11-18 14:00 | 2026-11-18 16:30 | En 14 días (18-Nov) | B014 / B103 | Aula API |
+| 2 | **Certamen recuperativo** | 2026-12-02 14:00 | 2026-12-02 16:30 | En 28 días (02-Dec) | B014 / B103 | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 *No se registran módulos de tipo entrega en este curso.*
@@ -58,7 +58,7 @@ Dedicación de tiempo (SCT): 145 horas cronológicas
   - 📎 `Certamen 2 (Pauta).pdf` (431.4 KB) -> `Evaluaciones_y_Entregas/Certamen 2 (Pauta).pdf`
   - 📎 `Certamen 2 (Enunciado).pdf` (414.3 KB) -> `Evaluaciones_y_Entregas/Certamen 2 (Enunciado).pdf`
 - **[📄 Documento/Recurso] 29/10 Notas (C2 RECORR)**
-  - 📎 `2026pr Notas.pdf` (67.7 KB) -> `Material_y_Apuntes/2026pr Notas.pdf`
+  - 📎 `2026pr Notas.pdf` (67.7 KB) -> `Evaluaciones_y_Entregas/2026pr Notas.pdf`
 
 ### Sección: Unidad 1
 - **[💬 Foro] Foro de consultas sobre la  Unidad N° 1:  Planificación urbana y transporte de los sistemas de transportes**
@@ -130,9 +130,10 @@ Dedicación de tiempo (SCT): 145 horas cronológicas
 ## 💾 5. Inventario de Archivos Locales en Disco y Google Drive
 Total de archivos sincronizados: **36**
 
-### 📂 `Evaluaciones_y_Entregas/` (8 archivos)
+### 📂 `Evaluaciones_y_Entregas/` (9 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
+| `2026pr Notas.pdf` | 67.7 KB | 2026-11-01 13:14 | Sincronizado |
 | `Ayudantia 1 (Pauta).pdf` | 406.4 KB | 2026-10-25 14:24 | Sincronizado |
 | `Certamen 1 (Enunciado).pdf` | 476.7 KB | 2026-10-25 19:11 | Sincronizado |
 | `Certamen 1 (Pauta).pdf` | 520.1 KB | 2026-10-25 19:11 | Sincronizado |
@@ -142,41 +143,40 @@ Total de archivos sincronizados: **36**
 | `Guia 2 (Pauta).pdf` | 572.3 KB | 2026-10-25 14:24 | Sincronizado |
 | `Guia 3 (Pauta).pdf` | 752.4 KB | 2026-10-25 14:24 | Sincronizado |
 
-### 📂 `Material_y_Apuntes/` (27 archivos)
+### 📂 `Material_y_Apuntes/` (26 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
-| `2026pr Notas.pdf` | 67.7 KB | 2026-10-25 14:24 | Sincronizado |
 | `Ayudantia 1 (Enunciado).pdf` | 422.0 KB | 2026-10-25 14:24 | Sincronizado |
 | `Guia 1 (Enunciado).pdf` | 447.8 KB | 2026-10-25 14:24 | Sincronizado |
 | `Guia 2 (Enunciado).pdf` | 492.7 KB | 2026-10-25 14:24 | Sincronizado |
 | `Guia 3 (Enunciado).pdf` | 2.30 MB | 2026-10-25 14:24 | Sincronizado |
 | `Ortuzar (2011) - Modelling Transport.pdf` | 3.64 MB | 2026-10-25 14:24 | Sincronizado |
-| `11 Presentacion Curso.pdf` | 522.5 KB | 2026-10-26 09:55 | Sincronizado |
-| `12 Introduccion.pdf` | 2.13 MB | 2026-10-26 09:56 | Sincronizado |
-| `21 Transporte Sustentable I.pdf` | 2.29 MB | 2026-10-26 09:56 | Sincronizado |
-| `22 Transporte Sustentable II.pdf` | 506.7 KB | 2026-10-26 09:56 | Sincronizado |
-| `23 Planificacion Transporte I.pdf` | 1.09 MB | 2026-10-26 09:56 | Sincronizado |
-| `24 Planificacion Transporte II.pdf` | 848.1 KB | 2026-10-26 09:56 | Sincronizado |
-| `31 Modelo Cuatro Etapas.pdf` | 648.5 KB | 2026-10-26 09:56 | Sincronizado |
-| `32 Generacion I.pdf` | 366.0 KB | 2026-10-26 09:56 | Sincronizado |
-| `33 Generacion II.pdf` | 213.1 KB | 2026-10-26 09:56 | Sincronizado |
-| `35 Distribucion I.pdf` | 444.7 KB | 2026-10-26 09:56 | Sincronizado |
-| `36 Distribucion II.pdf` | 327.0 KB | 2026-10-26 09:56 | Sincronizado |
-| `37 Particion Modal I.pdf` | 4.70 MB | 2026-10-26 09:56 | Sincronizado |
-| `38b Particion Modal II (No Video).pdf` | 877.2 KB | 2026-10-26 09:56 | Sincronizado |
-| `39 Particion Modal III.pdf` | 437.5 KB | 2026-10-26 09:56 | Sincronizado |
-| `41 Sistema Ciclico Simple.pdf` | 684.2 KB | 2026-10-26 09:56 | Sincronizado |
-| `42 Sistema Ciclico Retorno.pdf` | 340.5 KB | 2026-10-26 09:56 | Sincronizado |
-| `43 Sistema Ciclico General (No Video).pdf` | 312.7 KB | 2026-10-26 09:56 | Sincronizado |
-| `51 Nociones Redes.pdf` | 454.9 KB | 2026-10-26 09:56 | Sincronizado |
-| `52 Primer Principio Wardrop.pdf` | 514.7 KB | 2026-10-26 09:56 | Sincronizado |
-| `53 Segundo Principio Wardrop.pdf` | 497.4 KB | 2026-10-26 09:56 | Sincronizado |
-| `54 Paradojas.pdf` | 1.55 MB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 1/11 Presentacion Curso.pdf` | 522.5 KB | 2026-10-26 09:55 | Sincronizado |
+| `Unidad 1/12 Introduccion.pdf` | 2.13 MB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 1/21 Transporte Sustentable I.pdf` | 2.29 MB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 1/22 Transporte Sustentable II.pdf` | 506.7 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 1/23 Planificacion Transporte I.pdf` | 1.09 MB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 1/24 Planificacion Transporte II.pdf` | 848.1 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 2/31 Modelo Cuatro Etapas.pdf` | 648.5 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 2/32 Generacion I.pdf` | 366.0 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 2/33 Generacion II.pdf` | 213.1 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 2/35 Distribucion I.pdf` | 444.7 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 2/36 Distribucion II.pdf` | 327.0 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 2/37 Particion Modal I.pdf` | 4.70 MB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 2/38b Particion Modal II (No Video).pdf` | 877.2 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 2/39 Particion Modal III.pdf` | 437.5 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 3/41 Sistema Ciclico Simple.pdf` | 684.2 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 3/42 Sistema Ciclico Retorno.pdf` | 340.5 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 3/43 Sistema Ciclico General (No Video).pdf` | 312.7 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 4/51 Nociones Redes.pdf` | 454.9 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 4/52 Primer Principio Wardrop.pdf` | 514.7 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 4/53 Segundo Principio Wardrop.pdf` | 497.4 KB | 2026-10-26 09:56 | Sincronizado |
+| `Unidad 4/54 Paradojas.pdf` | 1.55 MB | 2026-10-26 09:56 | Sincronizado |
 
 ### 📂 `Planificacion/` (1 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
-| `CIV 386 - Ingeniería de Transporte final.pdf` | 142.6 KB | 2026-10-25 14:24 | Sincronizado |
+| `Información General/CIV 386 - Ingeniería de Transporte final.pdf` | 142.6 KB | 2026-10-25 14:24 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
 ### 📣 CIV386 Suspende Clases 26/10

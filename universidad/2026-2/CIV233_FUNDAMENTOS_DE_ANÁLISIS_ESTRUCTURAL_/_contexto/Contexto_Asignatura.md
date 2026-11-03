@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Fundamentos de Análisis Estructural
 **Sigla:** `CIV233` | **Aula ID:** `62178` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62178
-**Última Sincronización:** `2026-11-02 23:08 -03`
+**Última Sincronización:** `2026-11-03 16:49 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV233`.
@@ -25,7 +25,7 @@ El estudiante determina las fuerzas internas y desplazamientos causados por soli
 | 1 | **Certamen 2** | 2026-10-27 17:30 | 2026-10-27 20:00 | Finalizada | B-103 / A012 | Aula API |
 | 2 | **Entrega Tarea 1 SAP2000** | 2026-10-27 23:59 | 2026-10-27 23:59 | Finalizada | Aula USM | Aula API |
 | 3 | **Certamen 3** | 2026-11-10 17:30 | 2026-11-10 20:00 | En 7 días (10-Nov) | B-103 | Aula API |
-| 4 | **Vencimiento de Tarea N°2** | 2026-11-16 23:59 | 2026-11-16 23:59 | En 14 días (16-Nov) | Aula USM | Aula API |
+| 4 | **Vencimiento de Tarea N°2** | 2026-11-16 23:59 | 2026-11-16 23:59 | En 13 días (16-Nov) | Aula USM | Aula API |
 | 5 | **Certamen 4** | 2026-12-02 17:30 | 2026-12-02 20:00 | En 29 días (02-Dec) | A012 | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
@@ -42,7 +42,7 @@ El estudiante determina las fuerzas internas y desplazamientos causados por soli
 - **Enlace en Aula:** [Tarea N°2](https://aula.usm.cl/mod/assign/view.php?id=8361195)
 - **Sección:** Información General
 - **Habilitada desde:** 2026-11-01 00:00
-- **Fecha Límite (Due Date):** 2026-11-16 23:59 (En 14 días (16-Nov))
+- **Fecha Límite (Due Date):** 2026-11-16 23:59 (En 13 días (16-Nov))
 - **Archivos de Enunciado Adjuntos:**
   - 📄 **Tarea_02.pdf** (`Evaluaciones_y_Entregas/Tarea_02.pdf`)
 - **Instrucciones:** *Sin texto adicional en la descripción; ver archivos adjuntos.*
@@ -158,8 +158,8 @@ Total de archivos sincronizados: **22**
 ### 📂 `Planificacion/` (2 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
-| `00_Reglas del Curso.pdf` | 564.0 KB | 2026-10-25 14:23 | Sincronizado |
-| `CIV 233 - Fundamentos del Análisis Estructural final.pdf` | 149.5 KB | 2026-10-25 14:23 | Sincronizado |
+| `Información General/00_Reglas del Curso.pdf` | 564.0 KB | 2026-10-25 14:23 | Sincronizado |
+| `Información General/CIV 233 - Fundamentos del Análisis Estructural final.pdf` | 149.5 KB | 2026-10-25 14:23 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
 ### 📣 Tarea N°2

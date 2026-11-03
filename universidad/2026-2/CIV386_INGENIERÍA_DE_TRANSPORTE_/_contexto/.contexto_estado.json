@@ -1,15 +1,8 @@
 {
-  "timestamp": "2026-11-02 23:08:06",
+  "timestamp": "2026-11-03 16:49:07",
   "archivos": {
-    "Certamen 1 (Enunciado).pdf": 488122,
-    "Certamen 1 (Pauta).pdf": 532631,
-    "Certamen 2 (Enunciado).pdf": 424202,
-    "Certamen 2 (Pauta).pdf": 441735,
-    "Guia 1 (Pauta).pdf": 454978,
-    "Guia 2 (Pauta).pdf": 586028,
-    "Guia 3 (Pauta).pdf": 770411,
-    "Ayudantia 1 (Pauta).pdf": 416121,
-    "2026pr Notas.pdf": 69296,
+    "CIV 386 - Ingeniería de Transporte final.pdf": 146048,
+    "2026pr Notas.pdf": 69359,
     "Guia 1 (Enunciado).pdf": 458502,
     "Guia 2 (Enunciado).pdf": 504477,
     "Guia 3 (Enunciado).pdf": 2413720,
@@ -36,7 +29,14 @@
     "52 Primer Principio Wardrop.pdf": 527055,
     "53 Segundo Principio Wardrop.pdf": 509335,
     "54 Paradojas.pdf": 1622334,
-    "CIV 386 - Ingeniería de Transporte final.pdf": 146048
+    "Certamen 1 (Enunciado).pdf": 488122,
+    "Certamen 1 (Pauta).pdf": 532631,
+    "Certamen 2 (Enunciado).pdf": 424202,
+    "Certamen 2 (Pauta).pdf": 441735,
+    "Guia 1 (Pauta).pdf": 454978,
+    "Guia 2 (Pauta).pdf": 586028,
+    "Guia 3 (Pauta).pdf": 770411,
+    "Ayudantia 1 (Pauta).pdf": 416121
   },
   "assignments": {},
   "avisos": [

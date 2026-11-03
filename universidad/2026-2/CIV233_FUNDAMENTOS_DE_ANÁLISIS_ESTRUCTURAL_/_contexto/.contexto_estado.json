@@ -1,11 +1,8 @@
 {
-  "timestamp": "2026-11-02 23:08:05",
+  "timestamp": "2026-11-03 16:49:06",
   "archivos": {
-    "Instrucciones instalacion SAP2000 27.pdf": 194464,
-    "Tarea_01.pdf": 577919,
-    "Tarea_02.pdf": 479671,
-    "Notas 15-10.pdf": 26678,
-    "Pauta_C01_2026-2.pdf": 200372,
+    "CIV 233 - Fundamentos del Análisis Estructural final.pdf": 153139,
+    "00_Reglas del Curso.pdf": 577486,
     "01_Conceptos_Basicos.pdf": 3730030,
     "02_Trabajo_Virtual.pdf": 1944479,
     "03_CargaUnitaria.pdf": 1909695,
@@ -21,8 +18,11 @@
     "Guía_02.pdf": 910135,
     "Guía_03.pdf": 1316595,
     "Guia_04.pdf": 2651047,
-    "CIV 233 - Fundamentos del Análisis Estructural final.pdf": 153139,
-    "00_Reglas del Curso.pdf": 577486
+    "Instrucciones instalacion SAP2000 27.pdf": 194464,
+    "Tarea_01.pdf": 577919,
+    "Tarea_02.pdf": 479671,
+    "Notas 15-10.pdf": 26678,
+    "Pauta_C01_2026-2.pdf": 200372
   },
   "assignments": {
     "8325772": {
