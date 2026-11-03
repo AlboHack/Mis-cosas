@@ -14,3 +14,5 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 13:01 | PASO | Uninstall-Programas -WhatIf -> 0 programas coincidentes
 2026-11-03 13:02 | PASO | Clear-Temporales -WhatIf -> simulacion terminada
 2026-11-03 13:02 | OK | P3 respondido en RESPUESTAS.md
+2026-11-03 13:09 | INICIO | P4
+2026-11-03 13:09 | DUDA | SAP2000 v27 no esta abierto; se requiere modelo corriendo analisis para perfilar memoria
