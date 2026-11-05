@@ -523,3 +523,130 @@ Salida literal de `git status --porcelain`:
 Salida de commit y push en `main`:
 - **Commit hash:** `3526cb4` (`3526cb4 feat(sync): clasificador de retiros y test_espejo aislado`)
 - **Push:** `To https://github.com/AlboHack/Mis-cosas.git  d7e779f..3526cb4  main -> main`
+
+
+## Tablet-config · 2026-11-05 · antigravity-tablet
+
+### Paso 1: Verificación de estado, pull de main y log
+Comandos ejecutados:
+```bash
+cd ~/Mis-cosas && git status --short | head
+git fetch origin && git checkout main && git pull --ff-only
+git log --oneline -1
+```
+
+Salida literal:
+```text
+$ git status --short | head
+(vacío)
+
+$ git fetch origin && git checkout main && git pull --ff-only
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Updating 3526cb4..e2a443e
+Fast-forward
+ .claude/settings.json                            |   6 +
+ .github/workflows/pc-mantenimiento.yml           |  25 +-
+ DECISIONES.md                                    |   6 +
+ antigravity-pc/Ejecutar-Elevado.ps1              |  29 +++
+ antigravity-pc/README.md                         |   3 +-
+ antigravity-pc/mantenimiento/Mantenimiento.psm1  |   4 +-
+ antigravity-pc/mantenimiento/README.md           |   2 +-
+ antigravity-pc/mantenimiento/pruebas/Pruebas.ps1 |   3 +-
+ antigravity-pc/pedidos/Instalar.ps1              |  44 ++++
+ antigravity-pc/pedidos/P10.ps1                   |  28 ++
+ antigravity-pc/pedidos/P12-gpu.ps1               |  32 +++
+ antigravity-pc/pedidos/P13-admin.bat             |   4 +
+ antigravity-pc/pedidos/P13-admin.ps1             |  18 ++
+ antigravity-pc/pedidos/P14-verificar-gpu.ps1     |  19 ++
+ antigravity-pc/pedidos/P15-sap-directx.ps1       |  23 ++
+ antigravity-pc/pedidos/P16-admin.bat             |   4 +
+ antigravity-pc/pedidos/P16-admin.ps1             |  16 ++
+ antigravity-pc/pedidos/P8.ps1                    |  11 +
+ antigravity-pc/pedidos/P9-antes.ps1              |   6 +
+ antigravity-pc/perfil-nitro/Perfil.bat           |   3 +
+ antigravity-pc/perfil-nitro/Perfil.ps1           |  23 ++
+ antigravity-pc/perfil-nitro/PerfilNitro.psm1     | 221 ++++++++++++++++
+ antigravity-pc/perfil-nitro/README.md            |  36 +++
+ antigravity-pc/perfil-nitro/ajustes.json         | 317 +++++++++++++++++++++++
+ antigravity-pc/perfil-nitro/pruebas/Pruebas.ps1  |  82 ++++++
+ antigravity-pc/puntos-de-mejora.md               |  42 +++
+ proyecto/instrucciones.md                        |  16 +-
+ proyecto/perfil.md                               |  28 +-
+ 28 files changed, 1033 insertions(+), 18 deletions(-)
+ create mode 100644 .claude/settings.json
+ create mode 100644 antigravity-pc/Ejecutar-Elevado.ps1
+ create mode 100644 antigravity-pc/pedidos/Instalar.ps1
+ create mode 100644 antigravity-pc/pedidos/P10.ps1
+ create mode 100644 antigravity-pc/pedidos/P12-gpu.ps1
+ create mode 100644 antigravity-pc/pedidos/P13-admin.bat
+ create mode 100644 antigravity-pc/pedidos/P13-admin.ps1
+ create mode 100644 antigravity-pc/pedidos/P14-verificar-gpu.ps1
+ create mode 100644 antigravity-pc/pedidos/P15-sap-directx.ps1
+ create mode 100644 antigravity-pc/pedidos/P16-admin.bat
+ create mode 100644 antigravity-pc/pedidos/P16-admin.ps1
+ create mode 100644 antigravity-pc/pedidos/P8.ps1
+ create mode 100644 antigravity-pc/pedidos/P9-antes.ps1
+ create mode 100644 antigravity-pc/perfil-nitro/Perfil.bat
+ create mode 100644 antigravity-pc/perfil-nitro/Perfil.ps1
+ create mode 100644 antigravity-pc/perfil-nitro/PerfilNitro.psm1
+ create mode 100644 antigravity-pc/perfil-nitro/README.md
+ create mode 100644 antigravity-pc/perfil-nitro/ajustes.json
+ create mode 100644 antigravity-pc/perfil-nitro/pruebas/Pruebas.ps1
+ create mode 100644 antigravity-pc/puntos-de-mejora.md
+
+$ git log --oneline -1
+e2a443e docs(proyecto): instrucciones y perfil con nodos, canal y espejo; plugins de ventas e ingenieria desactivados en este repo
+```
+
+### Paso 2: Verificación de la rama local `claude/config-tokens`
+Comando ejecutado:
+```bash
+git branch --list "claude/config-tokens"
+```
+Salida:
+```text
+(no existe localmente)
+```
+Nota: `git diff --stat main origin/claude/config-tokens` sale vacío (ya integrado en main).
+
+### Paso 3: Sincronización normal (sin --permitir-masivo) y log
+Comando ejecutado:
+```bash
+T="${TMPDIR:-$PREFIX/tmp}"; bash scripts/sincronizar_sabados.sh
+grep -E "RESULTADO|ALERTA|\[ERROR\]|FINALIZADO" /storage/emulated/0/Download/Universidad/Registro_Sincronizaciones.log | tail -8
+```
+
+Salida de la corrida:
+- 4 archivos nuevos descargados desde Aula (0 retiros, 0 errores).
+- Subidos a Google Drive:
+  - `CIV233_FUNDAMENTOS_DE_ANÁLISIS_ESTRUCTURAL_/00 Información General/Clases/05_Lineas_de_Influencia.pdf`
+  - `CIV244_MECÁNICA_DE_FLUIDOS_/00 Información General/Certámenes/CIV244_2026_C2_RUBRICA.pdf`
+  - `CIV244_MECÁNICA_DE_FLUIDOS_/00 Información General/Certámenes/CIV244_2026_C2.pdf`
+  - `CIV244_MECÁNICA_DE_FLUIDOS_/01 Ayudantías/Ayudantía 9/Ayudantía_9.pdf`
+- Repositorio GitHub actualizado con commit `adf9b01`.
+
+Salida literal del grep en `Registro_Sincronizaciones.log`:
+```text
+[2026-11-02 23:08:11] FINALIZADO. Estado: OK
+[2026-11-03 16:31:22]   [ALERTA DE SEGURIDAD] ALERTA: 350 archivos ya no figuran en Aula (>20). No se retira nada ni se actualiza el repo hasta revisarlo; para aplicarlo, correr con --permitir-masivo.
+[2026-11-03 16:31:22] RESULTADO: 0 archivo(s) nuevo(s) o modificado(s), 210 reubicado(s), 0 retirado(s). Errores: 1
+[2026-11-03 16:49:25] FINALIZADO. Estado: CON ERRORES (1)
+[2026-11-03 17:17:03] RESULTADO: 0 archivo(s) nuevo(s) o modificado(s), 0 reubicado(s), 232 retirado(s). Errores: 0
+[2026-11-03 17:26:31] FINALIZADO. Estado: OK
+[2026-11-05 09:45:17] RESULTADO: 4 archivo(s) nuevo(s) o modificado(s), 0 reubicado(s), 0 retirado(s). Errores: 0
+[2026-11-05 09:47:06] FINALIZADO. Estado: OK
+```
+
+### Paso 4: Log de origin/main
+Comando ejecutado:
+```bash
+git log origin/main --oneline -2
+```
+
+Salida literal:
+```text
+adf9b01 chore(sync): actualizacion semanal incremental (2026-11-05)
+e2a443e docs(proyecto): instrucciones y perfil con nodos, canal y espejo; plugins de ventas e ingenieria desactivados en este repo
+```

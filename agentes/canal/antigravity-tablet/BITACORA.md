@@ -26,3 +26,6 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 17:27 | PASO | P7: corrida de 4 pruebas en claude/espejo-ajustes
 2026-11-03 17:27 | OK | P7: 4 pruebas pasadas (100% PASS) y merge squash a main (commit 3526cb4)
 2026-11-03 17:29 | FIN | Respondido P7 en el canal. Espejo de Aula aplicado en tablet, repo y Drive.
+2026-11-05 09:45 | PASO | Tablet-config: sincronizar_sabados.sh sin --permitir-masivo (4 archivos nuevos)
+2026-11-05 09:47 | OK | Tablet-config: sincronización exitosa (commit adf9b01) sobre main e2a443e
+2026-11-05 09:48 | FIN | Respondido Tablet-config en el canal
