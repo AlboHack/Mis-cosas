@@ -3128,3 +3128,17 @@ ERROR scripts/pruebas/test_t3_real.py - AttributeError: 'NoneType' object has...
 !!!!!!!!!!!!!!!!!!! Interrupted: 5 errors during collection !!!!!!!!!!!!!!!!!!!
 5 errors in 2.89s
 ```
+
+
+## Config-tokens
+
+### Salida literal pytest (utfsm-calc/tests)
+```text
+.......                                                                  [100%]
+7 passed in 5.18s
+```
+
+### git log --oneline -1 (main)
+```text
+e2a443e docs(proyecto): instrucciones y perfil con nodos, canal y espejo; plugins de ventas e ingenieria desactivados en este repo
+```

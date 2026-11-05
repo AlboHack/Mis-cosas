@@ -81,3 +81,4 @@ Una línea por evento, en el momento en que ocurre: `AAAA-MM-DD HH:MM | TIPO | t
 2026-11-03 20:33 | PASO | Merge squash de claude/perfil-nitro a main exitoso y push a origin/main completado (commit a571ce3)
 2026-11-03 20:34 | OK | P17 respondido en RESPUESTAS.md
 2026-11-05 09:13 | ERROR | Verificación claude/plugins-contexto: utfsm-calc OK (7/7), scripts/pruebas falló (5 errores de colección). No se hace merge a main. Error registrado en RESPUESTAS.md
+2026-11-05 09:23 | OK | Merge squash de claude/config-tokens a main (e2a443e) exitoso tras pytest (7/7)
