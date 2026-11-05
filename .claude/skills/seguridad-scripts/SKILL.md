@@ -9,7 +9,7 @@ Adaptado de `security-and-hardening` (addyosmani/agent-skills, MIT). Solo las se
 
 ## Operaciones destructivas
 Un borrado vale tanto como el valor que nombra su objetivo. Antes de borrar, mover o sobrescribir una ruta, exigir las tres condiciones:
-1. La ruta resuelta (con enlaces simbólicos resueltos) está **dentro de una raíz permitida** y la lista de raíces es corta y explícita.
+1. La ruta resuelta (con enlaces simbólicos resueltos) está **dentro de una raíz permitida**. La lista es corta y nombra carpetas concretas (`D:\Descargas Opera`), nunca una unidad entera: con `D:\` como raíz, `D:\Modelos RUN` o `D:\Matlab` quedarían al alcance. Una lista de rutas prohibidas no la reemplaza, porque deja borrable todo lo que nadie pensó en prohibir.
 2. Está **al menos un nivel por debajo** de esa raíz. Una unidad, `C:\Users` o la carpeta de perfil nunca son objetivo.
 3. Hay **evidencia de que es nuestra**, leída antes de actuar: figura en el manifiesto o en el JSON de configuración.
 
