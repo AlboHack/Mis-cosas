@@ -1,7 +1,7 @@
 # 🎓 Contexto Maestro del Semestre 2026-2 (UTFSM)
 **Estudiante:** Nicolás Eduardo Albornoz Pavez (`nicolas.albornozp@usm.cl`)
 **Carrera:** Ingeniería Civil — Universidad Técnica Federico Santa María
-**Fecha de Corte:** `2026-11-03 17:26 -03`
+**Fecha de Corte:** `2026-11-05 09:46 -03`
 
 > [!IMPORTANT]
 > Este documento indexa y resume el estado actual del semestre 2026-2.
@@ -20,13 +20,13 @@
 ## 🚨 2. Cronograma Maestro de Evaluaciones Pendientes y Próximas
 | Fecha | Asignatura | Evaluación / Hito | Cuenta Regresiva | Lugar |
 |-------|------------|-------------------|------------------|-------|
-| **2026-11-09 18:40** | `CIV222` (FICA) | Certamen 2 | **En 6 días (09-Nov)** | Sala de cátedra |
-| **2026-11-09 23:59** | `CIV222` (FICA) | Vencimiento de CIV222 2026-20 Entrega Tarea 2 (Gestión de Costos) | **En 6 días (09-Nov)** | Aula USM |
-| **2026-11-10 20:00** | `CIV233` (FAE) | Certamen 3 | **En 7 días (10-Nov)** | B-103 |
-| **2026-11-16 23:59** | `CIV233` (FAE) | Vencimiento de Tarea N°2 | **En 13 días (16-Nov)** | Aula USM |
-| **2026-11-18 16:30** | `CIV386` (Transporte) | Certamen 3 | **En 14 días (18-Nov)** | B014 / B103 |
-| **2026-11-20 16:30** | `CIV244` (Fluidos) | Certamen 3 | **En 16 días (20-Nov)** | Campus San Joaquín |
-| **2026-11-23 18:40** | `CIV222` (FICA) | Presentación 2 + Informe Final | **En 20 días (23-Nov)** | Sala de cátedra / Aula USM |
-| **2026-11-27 12:00** | `CIV244` (Fluidos) | Publicación notas finales | **En 23 días (27-Nov)** | Aula USM / SIGA |
-| **2026-12-02 16:30** | `CIV386` (Transporte) | Certamen recuperativo | **En 28 días (02-Dec)** | B014 / B103 |
-| **2026-12-02 20:00** | `CIV233` (FAE) | Certamen 4 | **En 29 días (02-Dec)** | A012 |
+| **2026-11-09 18:40** | `CIV222` (FICA) | Certamen 2 | **En 4 días (09-Nov)** | Sala de cátedra |
+| **2026-11-09 23:59** | `CIV222` (FICA) | Vencimiento de CIV222 2026-20 Entrega Tarea 2 (Gestión de Costos) | **En 4 días (09-Nov)** | Aula USM |
+| **2026-11-10 20:00** | `CIV233` (FAE) | Certamen 3 | **En 5 días (10-Nov)** | B-103 |
+| **2026-11-16 23:59** | `CIV233` (FAE) | Vencimiento de Tarea N°2 | **En 11 días (16-Nov)** | Aula USM |
+| **2026-11-18 16:30** | `CIV386` (Transporte) | Certamen 3 | **En 13 días (18-Nov)** | B014 / B103 |
+| **2026-11-20 16:30** | `CIV244` (Fluidos) | Certamen 3 | **En 15 días (20-Nov)** | Campus San Joaquín |
+| **2026-11-23 18:40** | `CIV222` (FICA) | Presentación 2 + Informe Final | **En 18 días (23-Nov)** | Sala de cátedra / Aula USM |
+| **2026-11-27 12:00** | `CIV244` (Fluidos) | Publicación notas finales | **En 22 días (27-Nov)** | Aula USM / SIGA |
+| **2026-12-02 16:30** | `CIV386` (Transporte) | Certamen recuperativo | **En 27 días (02-Dec)** | B014 / B103 |
+| **2026-12-02 20:00** | `CIV233` (FAE) | Certamen 4 | **En 27 días (02-Dec)** | A012 |

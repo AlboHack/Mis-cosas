@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Fundamentos de Análisis Estructural
 **Sigla:** `CIV233` | **Aula ID:** `62178` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62178
-**Última Sincronización:** `2026-11-03 17:25 -03`
+**Última Sincronización:** `2026-11-05 09:46 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV233`.
@@ -24,9 +24,9 @@ El estudiante determina las fuerzas internas y desplazamientos causados por soli
 |---|-------------------|--------|------------------|------------------|-------|--------|
 | 1 | **Certamen 2** | 2026-10-27 17:30 | 2026-10-27 20:00 | Finalizada | B-103 / A012 | Aula API |
 | 2 | **Entrega Tarea 1 SAP2000** | 2026-10-27 23:59 | 2026-10-27 23:59 | Finalizada | Aula USM | Aula API |
-| 3 | **Certamen 3** | 2026-11-10 17:30 | 2026-11-10 20:00 | En 7 días (10-Nov) | B-103 | Aula API |
-| 4 | **Vencimiento de Tarea N°2** | 2026-11-16 23:59 | 2026-11-16 23:59 | En 13 días (16-Nov) | Aula USM | Aula API |
-| 5 | **Certamen 4** | 2026-12-02 17:30 | 2026-12-02 20:00 | En 29 días (02-Dec) | A012 | Aula API |
+| 3 | **Certamen 3** | 2026-11-10 17:30 | 2026-11-10 20:00 | En 5 días (10-Nov) | B-103 | Aula API |
+| 4 | **Vencimiento de Tarea N°2** | 2026-11-16 23:59 | 2026-11-16 23:59 | En 11 días (16-Nov) | Aula USM | Aula API |
+| 5 | **Certamen 4** | 2026-12-02 17:30 | 2026-12-02 20:00 | En 27 días (02-Dec) | A012 | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 ### 📌 Tarea N°1
@@ -35,16 +35,16 @@ El estudiante determina las fuerzas internas y desplazamientos causados por soli
 - **Habilitada desde:** 2026-10-05 00:00
 - **Fecha Límite (Due Date):** 2026-10-27 23:59 (Finalizada)
 - **Archivos de Enunciado Adjuntos:**
-  - 📄 **Tarea_01.pdf** (`Evaluaciones_y_Entregas/Tarea_01.pdf`)
+  - 📄 **Tarea_01.pdf** (`00 Información General/Tareas/Tarea_01.pdf`)
 - **Instrucciones:** *Sin texto adicional en la descripción; ver archivos adjuntos.*
 
 ### 📌 Tarea N°2
 - **Enlace en Aula:** [Tarea N°2](https://aula.usm.cl/mod/assign/view.php?id=8361195)
 - **Sección:** Información General
 - **Habilitada desde:** 2026-11-01 00:00
-- **Fecha Límite (Due Date):** 2026-11-16 23:59 (En 13 días (16-Nov))
+- **Fecha Límite (Due Date):** 2026-11-16 23:59 (En 11 días (16-Nov))
 - **Archivos de Enunciado Adjuntos:**
-  - 📄 **Tarea_02.pdf** (`Evaluaciones_y_Entregas/Tarea_02.pdf`)
+  - 📄 **Tarea_02.pdf** (`00 Información General/Tareas/Tarea_02.pdf`)
 - **Instrucciones:** *Sin texto adicional en la descripción; ver archivos adjuntos.*
 
 ## 🗂️ 4. Estructura Detallada de Unidades y Módulos en Aula USM
@@ -85,35 +85,36 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
   - 📎 `CIV 233 - Fundamentos del Análisis Estructural final.pdf` (149.5 KB)
 - **[📁 Carpeta] Planificación de la Asignatura**
 - **[📄 Documento/Recurso] Reglas del Curso**
-  - 📎 `00_Reglas del Curso.pdf` (564.0 KB) -> `Planificacion/Información General/00_Reglas del Curso.pdf`
+  - 📎 `00_Reglas del Curso.pdf` (564.0 KB) -> `00 Información General/00_Reglas del Curso.pdf`
 - **[📁 Carpeta] Clases**
-  - 📎 `01_Conceptos_Basicos.pdf` (3.56 MB) -> `Material_y_Apuntes/01_Conceptos_Basicos.pdf`
-  - 📎 `02_Trabajo_Virtual.pdf` (1.85 MB) -> `Material_y_Apuntes/02_Trabajo_Virtual.pdf`
-  - 📎 `03_CargaUnitaria.pdf` (1.82 MB) -> `Material_y_Apuntes/03_CargaUnitaria.pdf`
-  - 📎 `A_Tablas_Integrales (REV2).pdf` (785.5 KB) -> `Material_y_Apuntes/A_Tablas_Integrales (REV2).pdf`
-  - 📎 `04_Flexibilidad_SistHiperestaticos.pdf` (2.10 MB) -> `Material_y_Apuntes/04_Flexibilidad_SistHiperestaticos.pdf`
+  - 📎 `01_Conceptos_Basicos.pdf` (3.56 MB) -> `00 Información General/Clases/01_Conceptos_Basicos.pdf`
+  - 📎 `02_Trabajo_Virtual.pdf` (1.85 MB) -> `00 Información General/Clases/02_Trabajo_Virtual.pdf`
+  - 📎 `03_CargaUnitaria.pdf` (1.82 MB) -> `00 Información General/Clases/03_CargaUnitaria.pdf`
+  - 📎 `A_Tablas_Integrales (REV2).pdf` (785.5 KB) -> `00 Información General/Clases/A_Tablas_Integrales (REV2).pdf`
+  - 📎 `04_Flexibilidad_SistHiperestaticos.pdf` (2.10 MB) -> `00 Información General/Clases/04_Flexibilidad_SistHiperestaticos.pdf`
+  - 📎 `05_Lineas_de_Influencia.pdf` (675.2 KB)
 - **[📁 Carpeta] Ayudantías**
-  - 📎 `Ayudantía_01.pdf` (560.9 KB) -> `Material_y_Apuntes/Ayudantía_01.pdf`
-  - 📎 `Ayudantía_02.pdf` (631.2 KB) -> `Material_y_Apuntes/Ayudantía_02.pdf`
-  - 📎 `Ayudantía_03.pdf` (600.4 KB) -> `Material_y_Apuntes/Ayudantía_03.pdf`
-  - 📎 `Ayudantía_04.pdf` (721.0 KB) -> `Material_y_Apuntes/Ayudantía_04.pdf`
-  - 📎 `Ayudantía_05.pdf` (591.7 KB) -> `Material_y_Apuntes/Ayudantía_05.pdf`
-  - 📎 `Ayudantía_06.pdf` (711.7 KB) -> `Material_y_Apuntes/Ayudantía_06.pdf`
+  - 📎 `Ayudantía_01.pdf` (560.9 KB) -> `00 Información General/Ayudantías/Ayudantía_01.pdf`
+  - 📎 `Ayudantía_02.pdf` (631.2 KB) -> `00 Información General/Ayudantías/Ayudantía_02.pdf`
+  - 📎 `Ayudantía_03.pdf` (600.4 KB) -> `00 Información General/Ayudantías/Ayudantía_03.pdf`
+  - 📎 `Ayudantía_04.pdf` (721.0 KB) -> `00 Información General/Ayudantías/Ayudantía_04.pdf`
+  - 📎 `Ayudantía_05.pdf` (591.7 KB) -> `00 Información General/Ayudantías/Ayudantía_05.pdf`
+  - 📎 `Ayudantía_06.pdf` (711.7 KB) -> `00 Información General/Ayudantías/Ayudantía_06.pdf`
 - **[📁 Carpeta] Guías**
-  - 📎 `Guía_01.pdf` (1.45 MB) -> `Material_y_Apuntes/Guía_01.pdf`
-  - 📎 `Guía_02.pdf` (888.8 KB) -> `Material_y_Apuntes/Guía_02.pdf`
-  - 📎 `Guía_03.pdf` (1.26 MB) -> `Material_y_Apuntes/Guía_03.pdf`
-  - 📎 `Guia_04.pdf` (2.53 MB) -> `Material_y_Apuntes/Guia_04.pdf`
+  - 📎 `Guía_01.pdf` (1.45 MB) -> `00 Información General/Guías/Guía_01.pdf`
+  - 📎 `Guía_02.pdf` (888.8 KB) -> `00 Información General/Guías/Guía_02.pdf`
+  - 📎 `Guía_03.pdf` (1.26 MB) -> `00 Información General/Guías/Guía_03.pdf`
+  - 📎 `Guia_04.pdf` (2.53 MB) -> `00 Información General/Guías/Guia_04.pdf`
 - **[📁 Carpeta] Tareas**
-  - 📎 `Instrucciones instalacion SAP2000 27.pdf` (189.9 KB) -> `Evaluaciones_y_Entregas/Instrucciones instalacion SAP2000 27.pdf`
-  - 📎 `Tarea_01.pdf` (564.4 KB) -> `Evaluaciones_y_Entregas/Tarea_01.pdf`
-  - 📎 `Tarea_02.pdf` (468.4 KB) -> `Evaluaciones_y_Entregas/Tarea_02.pdf`
+  - 📎 `Instrucciones instalacion SAP2000 27.pdf` (189.9 KB) -> `00 Información General/Tareas/Instrucciones instalacion SAP2000 27.pdf`
+  - 📎 `Tarea_01.pdf` (564.4 KB) -> `00 Información General/Tareas/Tarea_01.pdf`
+  - 📎 `Tarea_02.pdf` (468.4 KB) -> `00 Información General/Tareas/Tarea_02.pdf`
 - **[📝 Tarea/Entrega] Tarea N°1**
 - **[📝 Tarea/Entrega] Tarea N°2**
 - **[📄 Documento/Recurso] Notas 15-10**
-  - 📎 `Notas 15-10.pdf` (26.1 KB) -> `Evaluaciones_y_Entregas/Notas 15-10.pdf`
+  - 📎 `Notas 15-10.pdf` (26.1 KB) -> `00 Información General/Notas 15-10.pdf`
 - **[📁 Carpeta] Pautas Certámenes**
-  - 📎 `Pauta_C01_2026-2.pdf` (195.7 KB) -> `Evaluaciones_y_Entregas/Pauta_C01_2026-2.pdf`
+  - 📎 `Pauta_C01_2026-2.pdf` (195.7 KB) -> `00 Información General/Pautas Certámenes/Pauta_C01_2026-2.pdf`
 
 ### Sección: Unidad 1
 *Sin módulos publicados en esta sección.*
@@ -127,39 +128,31 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
 ## 💾 5. Inventario de Archivos Locales en Disco y Google Drive
 Total de archivos sincronizados: **22**
 
-### 📂 `Evaluaciones_y_Entregas/` (5 archivos)
+### 📂 `00 Información General/` (22 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
-| `Instrucciones instalacion SAP2000 27.pdf` | 189.9 KB | 2026-10-25 19:11 | Sincronizado |
-| `Notas 15-10.pdf` | 26.1 KB | 2026-10-25 14:24 | Sincronizado |
-| `Pauta_C01_2026-2.pdf` | 195.7 KB | 2026-11-01 13:13 | Sincronizado |
-| `Tarea_01.pdf` | 564.4 KB | 2026-10-25 19:11 | Sincronizado |
-| `Tarea_02.pdf` | 468.4 KB | 2026-11-02 14:58 | Sincronizado |
-
-### 📂 `Material_y_Apuntes/` (15 archivos)
-| Archivo | Tamaño | Modificado | Estado Google Drive |
-|---------|--------|------------|---------------------|
-| `01_Conceptos_Basicos.pdf` | 3.56 MB | 2026-10-25 14:24 | Sincronizado |
-| `02_Trabajo_Virtual.pdf` | 1.85 MB | 2026-10-25 14:24 | Sincronizado |
-| `03_CargaUnitaria.pdf` | 1.82 MB | 2026-10-25 14:24 | Sincronizado |
-| `04_Flexibilidad_SistHiperestaticos.pdf` | 2.10 MB | 2026-10-25 14:24 | Sincronizado |
-| `A_Tablas_Integrales (REV2).pdf` | 785.5 KB | 2026-10-25 14:24 | Sincronizado |
-| `Ayudantía_01.pdf` | 560.9 KB | 2026-10-25 14:24 | Sincronizado |
-| `Ayudantía_02.pdf` | 631.2 KB | 2026-10-25 14:24 | Sincronizado |
-| `Ayudantía_03.pdf` | 600.4 KB | 2026-10-25 14:24 | Sincronizado |
-| `Ayudantía_04.pdf` | 721.0 KB | 2026-10-25 14:24 | Sincronizado |
-| `Ayudantía_05.pdf` | 591.7 KB | 2026-10-25 14:24 | Sincronizado |
-| `Ayudantía_06.pdf` | 711.7 KB | 2026-11-01 13:13 | Sincronizado |
-| `Guia_04.pdf` | 2.53 MB | 2026-11-01 13:13 | Sincronizado |
-| `Guía_01.pdf` | 1.45 MB | 2026-10-25 14:24 | Sincronizado |
-| `Guía_02.pdf` | 888.8 KB | 2026-10-25 14:24 | Sincronizado |
-| `Guía_03.pdf` | 1.26 MB | 2026-10-25 14:24 | Sincronizado |
-
-### 📂 `Planificacion/` (2 archivos)
-| Archivo | Tamaño | Modificado | Estado Google Drive |
-|---------|--------|------------|---------------------|
-| `Información General/00_Reglas del Curso.pdf` | 564.0 KB | 2026-10-25 14:23 | Sincronizado |
-| `Información General/CIV 233 - Fundamentos del Análisis Estructural final.pdf` | 149.5 KB | 2026-10-25 14:23 | Sincronizado |
+| `00_Reglas del Curso.pdf` | 564.0 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantías/Ayudantía_01.pdf` | 560.9 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantías/Ayudantía_02.pdf` | 631.2 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantías/Ayudantía_03.pdf` | 600.4 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantías/Ayudantía_04.pdf` | 721.0 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantías/Ayudantía_05.pdf` | 591.7 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantías/Ayudantía_06.pdf` | 711.7 KB | 2026-11-05 09:44 | Sincronizado |
+| `CIV 233 - Fundamentos del Análisis Estructural final.pdf` | 149.5 KB | 2026-11-05 09:44 | Sincronizado |
+| `Clases/01_Conceptos_Basicos.pdf` | 3.56 MB | 2026-11-05 09:44 | Sincronizado |
+| `Clases/02_Trabajo_Virtual.pdf` | 1.85 MB | 2026-11-05 09:44 | Sincronizado |
+| `Clases/03_CargaUnitaria.pdf` | 1.82 MB | 2026-11-05 09:44 | Sincronizado |
+| `Clases/04_Flexibilidad_SistHiperestaticos.pdf` | 2.10 MB | 2026-11-05 09:44 | Sincronizado |
+| `Clases/A_Tablas_Integrales (REV2).pdf` | 785.5 KB | 2026-11-05 09:44 | Sincronizado |
+| `Guías/Guia_04.pdf` | 2.53 MB | 2026-11-05 09:44 | Sincronizado |
+| `Guías/Guía_01.pdf` | 1.45 MB | 2026-11-05 09:44 | Sincronizado |
+| `Guías/Guía_02.pdf` | 888.8 KB | 2026-11-05 09:44 | Sincronizado |
+| `Guías/Guía_03.pdf` | 1.26 MB | 2026-11-05 09:44 | Sincronizado |
+| `Notas 15-10.pdf` | 26.1 KB | 2026-11-05 09:44 | Sincronizado |
+| `Pautas Certámenes/Pauta_C01_2026-2.pdf` | 195.7 KB | 2026-11-05 09:44 | Sincronizado |
+| `Tareas/Instrucciones instalacion SAP2000 27.pdf` | 189.9 KB | 2026-11-05 09:44 | Sincronizado |
+| `Tareas/Tarea_01.pdf` | 564.4 KB | 2026-11-05 09:44 | Sincronizado |
+| `Tareas/Tarea_02.pdf` | 468.4 KB | 2026-11-05 09:44 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
 ### 📣 Tarea N°2

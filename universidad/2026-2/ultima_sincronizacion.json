@@ -1,11 +1,11 @@
 {
-  "fecha": "2026-11-03T17:26:01-03:00",
+  "fecha": "2026-11-05T09:46:59-03:00",
   "estado": "OK",
-  "archivos_nuevos_o_modificados": 0,
+  "archivos_nuevos_o_modificados": 4,
   "errores": 0,
   "novedades": {
     "avisos_actualizados": 0,
-    "cambios_pagina": 0,
+    "cambios_pagina": 3,
     "mensajes_privados_recientes": 0,
     "alertas_evaluacion": 0
   }

@@ -1,5 +1,10 @@
 # Cambios en la página del ramo
 
+## 2026-11-05
+
+- Archivos agregados en folder «Certámenes» (Información General): CIV244_2026_C2.pdf, CIV244_2026_C2_RUBRICA.pdf
+- Nuevo: folder «Ayudantía 9» (Ayudantías )
+
 ## 2026-11-02
 
 - Archivos agregados en folder «Material de clases» (Información General): CIV244_Clase_18_handout.pdf

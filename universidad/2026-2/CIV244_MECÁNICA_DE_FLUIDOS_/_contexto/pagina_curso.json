@@ -275,7 +275,9 @@
   "8339316": {
    "archivos": [
     "CIV244_2026_C1.pdf",
-    "CIV244_2026_C1_RUBRICA.pdf"
+    "CIV244_2026_C1_RUBRICA.pdf",
+    "CIV244_2026_C2.pdf",
+    "CIV244_2026_C2_RUBRICA.pdf"
    ],
    "descripcion": "",
    "fechas": {},
@@ -318,6 +320,17 @@
    "nombre": "Entrega apuntes C2",
    "seccion": "Información General",
    "tipo": "assign",
+   "visible": 1
+  },
+  "8363034": {
+   "archivos": [
+    "Ayudantía_9.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía 9",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
    "visible": 1
   }
  },

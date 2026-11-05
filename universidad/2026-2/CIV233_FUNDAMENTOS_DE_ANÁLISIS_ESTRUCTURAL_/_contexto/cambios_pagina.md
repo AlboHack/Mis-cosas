@@ -1,5 +1,9 @@
 # Cambios en la página del ramo
 
+## 2026-11-05
+
+- Archivos agregados en folder «Clases» (Información General): 05_Lineas_de_Influencia.pdf
+
 ## 2026-11-02
 
 - Archivos agregados en folder «Tareas» (Información General): Tarea_02.pdf

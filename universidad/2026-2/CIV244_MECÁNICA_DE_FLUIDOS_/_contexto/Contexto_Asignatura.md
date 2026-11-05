@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Mecánica de Fluidos
 **Sigla:** `CIV244` | **Aula ID:** `62182` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62182
-**Última Sincronización:** `2026-11-03 17:26 -03`
+**Última Sincronización:** `2026-11-05 09:46 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV244`.
@@ -22,8 +22,8 @@ El estudiante desarrolla los fundamentos teóricos que le permiten modelar el co
 | # | Evaluación / Hito | Inicio | Cierre / Entrega | Cuenta Regresiva | Lugar | Fuente |
 |---|-------------------|--------|------------------|------------------|-------|--------|
 | 1 | **Vencimiento de Entrega apuntes C2** | 2026-11-02 23:59 | 2026-11-02 23:59 | Finalizada | Aula USM | Aula API |
-| 2 | **Certamen 3** | 2026-11-20 14:00 | 2026-11-20 16:30 | En 16 días (20-Nov) | Campus San Joaquín | Aula API |
-| 3 | **Publicación notas finales** | 2026-11-27 12:00 | 2026-11-27 12:00 | En 23 días (27-Nov) | Aula USM / SIGA | Aula API |
+| 2 | **Certamen 3** | 2026-11-20 14:00 | 2026-11-20 16:30 | En 15 días (20-Nov) | Campus San Joaquín | Aula API |
+| 3 | **Publicación notas finales** | 2026-11-27 12:00 | 2026-11-27 12:00 | En 22 días (27-Nov) | Aula USM / SIGA | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 ### 📌 Entrega apuntes C1
@@ -62,60 +62,62 @@ Dedicación de tiempo (SCT): 203 horas cronológicas
   - 📎 `CIV 244 - Mecánica de Fluidos final.pdf` (143.4 KB)
 - **[📁 Carpeta] Planificación de la Asignatura**
 - **[📄 Documento/Recurso] Programa 2026-25**
-  - 📎 `CIV244-2026-2_Programacion_R1.pdf` (100.2 KB) -> `Planificacion/Información General/CIV244-2026-2_Programacion_R1.pdf`
+  - 📎 `CIV244-2026-2_Programacion_R1.pdf` (100.2 KB) -> `00 Información General/CIV244-2026-2_Programacion_R1.pdf`
 - **[📁 Carpeta] Material de clases**
-  - 📎 `CIV244_Clase_01_handout.pdf` (38.86 MB) -> `Material_y_Apuntes/CIV244_Clase_01_handout.pdf`
-  - 📎 `CIV244_Clase_02_handout.pdf` (3.86 MB) -> `Material_y_Apuntes/CIV244_Clase_02_handout.pdf`
-  - 📎 `CIV244_Clase_03_handout.pdf` (3.66 MB) -> `Material_y_Apuntes/CIV244_Clase_03_handout.pdf`
-  - 📎 `CIV244_Clase_04_handout.pdf` (555.4 KB) -> `Material_y_Apuntes/CIV244_Clase_04_handout.pdf`
-  - 📎 `CIV244_Clase_06_handout.pdf` (889.2 KB) -> `Material_y_Apuntes/CIV244_Clase_06_handout.pdf`
-  - 📎 `CIV244_Clase_05_handout.pdf` (1.09 MB) -> `Material_y_Apuntes/CIV244_Clase_05_handout.pdf`
-  - 📎 `CIV244_Clase_04_Ejemplo.pdf` (1.16 MB) -> `Material_y_Apuntes/CIV244_Clase_04_Ejemplo.pdf`
-  - 📎 `CIV244_Clase_07_handout.pdf` (2.42 MB) -> `Material_y_Apuntes/CIV244_Clase_07_handout.pdf`
-  - 📎 `CIV244_Clase_08_handout.pdf` (3.70 MB) -> `Material_y_Apuntes/CIV244_Clase_08_handout.pdf`
-  - 📎 `CIV244_Clase_09_handout.pdf` (1.20 MB) -> `Material_y_Apuntes/CIV244_Clase_09_handout.pdf`
-  - 📎 `CIV244_Clase_10_handout.pdf` (821.8 KB) -> `Material_y_Apuntes/CIV244_Clase_10_handout.pdf`
-  - 📎 `CIV244_Clase_08_Ejemplo.pdf` (267.3 KB) -> `Material_y_Apuntes/CIV244_Clase_08_Ejemplo.pdf`
-  - 📎 `CIV244_Clase_11.pdf` (4.46 MB) -> `Material_y_Apuntes/CIV244_Clase_11.pdf`
-  - 📎 `CIV244_Clase_12_handout.pdf` (612.0 KB) -> `Material_y_Apuntes/CIV244_Clase_12_handout.pdf`
-  - 📎 `CIV244_Clase_13_handout.pdf` (424.8 KB) -> `Material_y_Apuntes/CIV244_Clase_13_handout.pdf`
-  - 📎 `CIV244_Clase_14_handout.pdf` (565.3 KB) -> `Material_y_Apuntes/CIV244_Clase_14_handout.pdf`
-  - 📎 `CIV244_Clase_15.pdf` (2.59 MB) -> `Material_y_Apuntes/CIV244_Clase_15.pdf`
-  - 📎 `CIV244_Clase_17_handout.pdf` (1.90 MB) -> `Material_y_Apuntes/CIV244_Clase_17_handout.pdf`
-  - 📎 `CIV244_Clase_16_handout.pdf` (502.4 KB) -> `Material_y_Apuntes/CIV244_Clase_16_handout.pdf`
-  - 📎 `CIV244_Clase_18_handout.pdf` (331.9 KB) -> `Material_y_Apuntes/CIV244_Clase_18_handout.pdf`
+  - 📎 `CIV244_Clase_01_handout.pdf` (38.86 MB) -> `00 Información General/Material de clases/CIV244_Clase_01_handout.pdf`
+  - 📎 `CIV244_Clase_02_handout.pdf` (3.86 MB) -> `00 Información General/Material de clases/CIV244_Clase_02_handout.pdf`
+  - 📎 `CIV244_Clase_03_handout.pdf` (3.66 MB) -> `00 Información General/Material de clases/CIV244_Clase_03_handout.pdf`
+  - 📎 `CIV244_Clase_04_handout.pdf` (555.4 KB) -> `00 Información General/Material de clases/CIV244_Clase_04_handout.pdf`
+  - 📎 `CIV244_Clase_06_handout.pdf` (889.2 KB) -> `00 Información General/Material de clases/CIV244_Clase_06_handout.pdf`
+  - 📎 `CIV244_Clase_05_handout.pdf` (1.09 MB) -> `00 Información General/Material de clases/CIV244_Clase_05_handout.pdf`
+  - 📎 `CIV244_Clase_04_Ejemplo.pdf` (1.16 MB) -> `00 Información General/Material de clases/CIV244_Clase_04_Ejemplo.pdf`
+  - 📎 `CIV244_Clase_07_handout.pdf` (2.42 MB) -> `00 Información General/Material de clases/CIV244_Clase_07_handout.pdf`
+  - 📎 `CIV244_Clase_08_handout.pdf` (3.70 MB) -> `00 Información General/Material de clases/CIV244_Clase_08_handout.pdf`
+  - 📎 `CIV244_Clase_09_handout.pdf` (1.20 MB) -> `00 Información General/Material de clases/CIV244_Clase_09_handout.pdf`
+  - 📎 `CIV244_Clase_10_handout.pdf` (821.8 KB) -> `00 Información General/Material de clases/CIV244_Clase_10_handout.pdf`
+  - 📎 `CIV244_Clase_08_Ejemplo.pdf` (267.3 KB) -> `00 Información General/Material de clases/CIV244_Clase_08_Ejemplo.pdf`
+  - 📎 `CIV244_Clase_11.pdf` (4.46 MB) -> `00 Información General/Material de clases/CIV244_Clase_11.pdf`
+  - 📎 `CIV244_Clase_12_handout.pdf` (612.0 KB) -> `00 Información General/Material de clases/CIV244_Clase_12_handout.pdf`
+  - 📎 `CIV244_Clase_13_handout.pdf` (424.8 KB) -> `00 Información General/Material de clases/CIV244_Clase_13_handout.pdf`
+  - 📎 `CIV244_Clase_14_handout.pdf` (565.3 KB) -> `00 Información General/Material de clases/CIV244_Clase_14_handout.pdf`
+  - 📎 `CIV244_Clase_15.pdf` (2.59 MB) -> `00 Información General/Material de clases/CIV244_Clase_15.pdf`
+  - 📎 `CIV244_Clase_17_handout.pdf` (1.90 MB) -> `00 Información General/Material de clases/CIV244_Clase_17_handout.pdf`
+  - 📎 `CIV244_Clase_16_handout.pdf` (502.4 KB) -> `00 Información General/Material de clases/CIV244_Clase_16_handout.pdf`
+  - 📎 `CIV244_Clase_18_handout.pdf` (331.9 KB) -> `00 Información General/Material de clases/CIV244_Clase_18_handout.pdf`
 - **[📁 Carpeta] Apuntes USM**
-  - 📎 `Apunte-02-Propiedades_mecanicas_1.pdf` (731.7 KB) -> `Material_y_Apuntes/Apunte-02-Propiedades_mecanicas_1.pdf`
-  - 📎 `Apunte-03-Propiedades_mecanicas_2.pdf` (1.15 MB) -> `Material_y_Apuntes/Apunte-03-Propiedades_mecanicas_2.pdf`
-  - 📎 `Apunte-04-Analisis_dimensional.pdf` (1.81 MB) -> `Material_y_Apuntes/Apunte-04-Analisis_dimensional.pdf`
-  - 📎 `Apunte-05-Estatica_fluidos_fuerzas.pdf` (956.1 KB) -> `Material_y_Apuntes/Apunte-05-Estatica_fluidos_fuerzas.pdf`
-  - 📎 `Apunte-06-Equilibrio_mecanico.pdf` (1.09 MB) -> `Material_y_Apuntes/Apunte-06-Equilibrio_mecanico.pdf`
-  - 📎 `Apunte-07-Fuerzas_sobre_superficies_planas.pdf` (667.4 KB) -> `Material_y_Apuntes/Apunte-07-Fuerzas_sobre_superficies_planas.pdf`
-  - 📎 `Apunte-08-Fuerzas_sobre_superficies_curvas.pdf` (1.55 MB) -> `Material_y_Apuntes/Apunte-08-Fuerzas_sobre_superficies_curvas.pdf`
-  - 📎 `Apunte-09-Cinematica_introduccion.pdf` (4.19 MB) -> `Material_y_Apuntes/Apunte-09-Cinematica_introduccion.pdf`
-  - 📎 `Apunte-10-Cinematica_conservacion_masa.pdf` (4.86 MB) -> `Material_y_Apuntes/Apunte-10-Cinematica_conservacion_masa.pdf`
-  - 📎 `Apunte-11-Cinematica_movimiento_relativo.pdf` (840.3 KB) -> `Material_y_Apuntes/Apunte-11-Cinematica_movimiento_relativo.pdf`
-  - 📎 `Apunte-12-FlujoIdealReal-EcuacionEuler.pdf` (353.0 KB) -> `Material_y_Apuntes/Apunte-12-FlujoIdealReal-EcuacionEuler.pdf`
-  - 📎 `Apunte-13-FlujoIdealReal-AplicacionesEulerBernoulli.pdf` (2.18 MB) -> `Material_y_Apuntes/Apunte-13-FlujoIdealReal-AplicacionesEulerBernoulli.pdf`
-  - 📎 `Apunte-14-FlujoIdealReal-NavierStokes.pdf` (1.06 MB) -> `Material_y_Apuntes/Apunte-14-FlujoIdealReal-NavierStokes.pdf`
-  - 📎 `Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf` (3.52 MB) -> `Material_y_Apuntes/Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf`
-  - 📎 `Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf` (612.7 KB) -> `Material_y_Apuntes/Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf`
+  - 📎 `Apunte-02-Propiedades_mecanicas_1.pdf` (731.7 KB) -> `00 Información General/Apuntes USM/Apunte-02-Propiedades_mecanicas_1.pdf`
+  - 📎 `Apunte-03-Propiedades_mecanicas_2.pdf` (1.15 MB) -> `00 Información General/Apuntes USM/Apunte-03-Propiedades_mecanicas_2.pdf`
+  - 📎 `Apunte-04-Analisis_dimensional.pdf` (1.81 MB) -> `00 Información General/Apuntes USM/Apunte-04-Analisis_dimensional.pdf`
+  - 📎 `Apunte-05-Estatica_fluidos_fuerzas.pdf` (956.1 KB) -> `00 Información General/Apuntes USM/Apunte-05-Estatica_fluidos_fuerzas.pdf`
+  - 📎 `Apunte-06-Equilibrio_mecanico.pdf` (1.09 MB) -> `00 Información General/Apuntes USM/Apunte-06-Equilibrio_mecanico.pdf`
+  - 📎 `Apunte-07-Fuerzas_sobre_superficies_planas.pdf` (667.4 KB) -> `00 Información General/Apuntes USM/Apunte-07-Fuerzas_sobre_superficies_planas.pdf`
+  - 📎 `Apunte-08-Fuerzas_sobre_superficies_curvas.pdf` (1.55 MB) -> `00 Información General/Apuntes USM/Apunte-08-Fuerzas_sobre_superficies_curvas.pdf`
+  - 📎 `Apunte-09-Cinematica_introduccion.pdf` (4.19 MB) -> `00 Información General/Apuntes USM/Apunte-09-Cinematica_introduccion.pdf`
+  - 📎 `Apunte-10-Cinematica_conservacion_masa.pdf` (4.86 MB) -> `00 Información General/Apuntes USM/Apunte-10-Cinematica_conservacion_masa.pdf`
+  - 📎 `Apunte-11-Cinematica_movimiento_relativo.pdf` (840.3 KB) -> `00 Información General/Apuntes USM/Apunte-11-Cinematica_movimiento_relativo.pdf`
+  - 📎 `Apunte-12-FlujoIdealReal-EcuacionEuler.pdf` (353.0 KB) -> `00 Información General/Apuntes USM/Apunte-12-FlujoIdealReal-EcuacionEuler.pdf`
+  - 📎 `Apunte-13-FlujoIdealReal-AplicacionesEulerBernoulli.pdf` (2.18 MB) -> `00 Información General/Apuntes USM/Apunte-13-FlujoIdealReal-AplicacionesEulerBernoulli.pdf`
+  - 📎 `Apunte-14-FlujoIdealReal-NavierStokes.pdf` (1.06 MB) -> `00 Información General/Apuntes USM/Apunte-14-FlujoIdealReal-NavierStokes.pdf`
+  - 📎 `Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf` (3.52 MB) -> `00 Información General/Apuntes USM/Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf`
+  - 📎 `Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf` (612.7 KB) -> `00 Información General/Apuntes USM/Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf`
 - **[📁 Carpeta] Certámenes anteriores**
-  - 📎 `CIV244_2024_C1.pdf` (145.0 KB) -> `Evaluaciones_y_Entregas/CIV244_2024_C1.pdf`
-  - 📎 `CIV244_2024_C1_Pauta.pdf` (1.43 MB) -> `Evaluaciones_y_Entregas/CIV244_2024_C1_Pauta.pdf`
-  - 📎 `CIV244_2023_C1.pdf` (154.0 KB) -> `Evaluaciones_y_Entregas/CIV244_2023_C1.pdf`
-  - 📎 `CIV244_2023_C1_Pauta.pdf` (1.34 MB) -> `Evaluaciones_y_Entregas/CIV244_2023_C1_Pauta.pdf`
-  - 📎 `CIV244_2022_C1.pdf` (415.5 KB) -> `Evaluaciones_y_Entregas/CIV244_2022_C1.pdf`
-  - 📎 `CIV244_2022_C1_Pauta.pdf` (438.1 KB) -> `Evaluaciones_y_Entregas/CIV244_2022_C1_Pauta.pdf`
-  - 📎 `CIV244_2022_C2.pdf` (463.5 KB) -> `Evaluaciones_y_Entregas/CIV244_2022_C2.pdf`
-  - 📎 `CIV244_2022_C2_Pauta.pdf` (741.8 KB) -> `Evaluaciones_y_Entregas/CIV244_2022_C2_Pauta.pdf`
-  - 📎 `CIV244_2023_C2.pdf` (172.7 KB) -> `Evaluaciones_y_Entregas/CIV244_2023_C2.pdf`
-  - 📎 `CIV244_2023_C2_Pauta.pdf` (2.23 MB) -> `Evaluaciones_y_Entregas/CIV244_2023_C2_Pauta.pdf`
-  - 📎 `CIV244_2024_C2.pdf` (400.3 KB) -> `Evaluaciones_y_Entregas/CIV244_2024_C2.pdf`
+  - 📎 `CIV244_2024_C1.pdf` (145.0 KB) -> `00 Información General/Certámenes anteriores/CIV244_2024_C1.pdf`
+  - 📎 `CIV244_2024_C1_Pauta.pdf` (1.43 MB) -> `00 Información General/Certámenes anteriores/CIV244_2024_C1_Pauta.pdf`
+  - 📎 `CIV244_2023_C1.pdf` (154.0 KB) -> `00 Información General/Certámenes anteriores/CIV244_2023_C1.pdf`
+  - 📎 `CIV244_2023_C1_Pauta.pdf` (1.34 MB) -> `00 Información General/Certámenes anteriores/CIV244_2023_C1_Pauta.pdf`
+  - 📎 `CIV244_2022_C1.pdf` (415.5 KB) -> `00 Información General/Certámenes anteriores/CIV244_2022_C1.pdf`
+  - 📎 `CIV244_2022_C1_Pauta.pdf` (438.1 KB) -> `00 Información General/Certámenes anteriores/CIV244_2022_C1_Pauta.pdf`
+  - 📎 `CIV244_2022_C2.pdf` (463.5 KB) -> `00 Información General/Certámenes anteriores/CIV244_2022_C2.pdf`
+  - 📎 `CIV244_2022_C2_Pauta.pdf` (741.8 KB) -> `00 Información General/Certámenes anteriores/CIV244_2022_C2_Pauta.pdf`
+  - 📎 `CIV244_2023_C2.pdf` (172.7 KB) -> `00 Información General/Certámenes anteriores/CIV244_2023_C2.pdf`
+  - 📎 `CIV244_2023_C2_Pauta.pdf` (2.23 MB) -> `00 Información General/Certámenes anteriores/CIV244_2023_C2_Pauta.pdf`
+  - 📎 `CIV244_2024_C2.pdf` (400.3 KB) -> `00 Información General/Certámenes anteriores/CIV244_2024_C2.pdf`
 - **[📝 Tarea/Entrega] Entrega apuntes C1**
 - **[📁 Carpeta] Certámenes**
-  - 📎 `CIV244_2026_C1.pdf` (1.16 MB) -> `Evaluaciones_y_Entregas/CIV244_2026_C1.pdf`
-  - 📎 `CIV244_2026_C1_RUBRICA.pdf` (232.4 KB) -> `Evaluaciones_y_Entregas/CIV244_2026_C1_RUBRICA.pdf`
+  - 📎 `CIV244_2026_C1.pdf` (1.16 MB) -> `00 Información General/Certámenes/CIV244_2026_C1.pdf`
+  - 📎 `CIV244_2026_C1_RUBRICA.pdf` (232.4 KB) -> `00 Información General/Certámenes/CIV244_2026_C1_RUBRICA.pdf`
+  - 📎 `CIV244_2026_C2_RUBRICA.pdf` (233.8 KB)
+  - 📎 `CIV244_2026_C2.pdf` (225.1 KB)
 - **[📝 Tarea/Entrega] Entrega apuntes C2**
 
 ### Sección: Ayudantías 
@@ -126,33 +128,35 @@ Kathalina Pino González: kathalina.pino@usm.cl
 Luciana Tiraferri Colombo: ltiraferri@usm.cl
 - **[🔗 Enlace Externo] Cápsula Ayudantía 1**
 - **[📁 Carpeta] Ayudantía 1**
-  - 📎 `Ayudantía_1.pdf` (259.9 KB) -> `Material_y_Apuntes/Ayudantías/Ayudantía_1.pdf`
-  - 📎 `Desarrollo Ayudantía 1.pdf` (1.39 MB) -> `Material_y_Apuntes/Ayudantías/Desarrollo Ayudantía 1.pdf`
+  - 📎 `Ayudantía_1.pdf` (259.9 KB) -> `01 Ayudantías/Ayudantía 1/Ayudantía_1.pdf`
+  - 📎 `Desarrollo Ayudantía 1.pdf` (1.39 MB) -> `01 Ayudantías/Ayudantía 1/Desarrollo Ayudantía 1.pdf`
 - **[📁 Carpeta] Ayudantía 2**
   - 📎 `Ayudantía 2.pdf` (280.0 KB)
   - 📎 `Pauta ayudantía 2.pdf` (5.57 MB)
 - **[📁 Carpeta] Ayudantía 3**
-  - 📎 `Ayudantía_3.pdf` (244.5 KB) -> `Material_y_Apuntes/Ayudantías/Ayudantía_3.pdf`
-  - 📎 `Ayudantía_3_pauta.pdf` (274.6 KB) -> `Evaluaciones_y_Entregas/Ayudantía_3_pauta.pdf`
+  - 📎 `Ayudantía_3.pdf` (244.5 KB) -> `01 Ayudantías/Ayudantía 3/Ayudantía_3.pdf`
+  - 📎 `Ayudantía_3_pauta.pdf` (274.6 KB) -> `01 Ayudantías/Ayudantía 3/Ayudantía_3_pauta.pdf`
 - **[📁 Carpeta] Ayudantía 4**
-  - 📎 `Ayudantía 4.pdf` (361.7 KB) -> `Material_y_Apuntes/Ayudantías/Ayudantía 4.pdf`
-  - 📎 `Pauta Ayudantía 4.pdf` (3.71 MB) -> `Evaluaciones_y_Entregas/Pauta Ayudantía 4.pdf`
+  - 📎 `Ayudantía 4.pdf` (361.7 KB) -> `01 Ayudantías/Ayudantía 4/Ayudantía 4.pdf`
+  - 📎 `Pauta Ayudantía 4.pdf` (3.71 MB) -> `01 Ayudantías/Ayudantía 4/Pauta Ayudantía 4.pdf`
 - **[📁 Carpeta] Ayudantía Extra**
-  - 📎 `Ayudantía_extra.pdf` (252.5 KB) -> `Material_y_Apuntes/Ayudantías/Ayudantía_extra.pdf`
+  - 📎 `Ayudantía_extra.pdf` (252.5 KB) -> `01 Ayudantías/Ayudantía Extra/Ayudantía_extra.pdf`
   - 📎 `Desarrollo Ayudantía Extra.pdf` (1.28 MB)
 - **[🔗 Enlace Externo] Cápsula Ayudantía Extra**
 - **[📁 Carpeta] Ayudantía 5**
-  - 📎 `Ayudantía_5 .pdf` (298.7 KB) -> `Material_y_Apuntes/Ayudantías/Ayudantía_5 .pdf`
-  - 📎 `Pauta_ayudantía_5.pdf` (326.3 KB) -> `Evaluaciones_y_Entregas/Pauta_ayudantía_5.pdf`
+  - 📎 `Ayudantía_5 .pdf` (298.7 KB) -> `01 Ayudantías/Ayudantía 5/Ayudantía_5 .pdf`
+  - 📎 `Pauta_ayudantía_5.pdf` (326.3 KB) -> `01 Ayudantías/Ayudantía 5/Pauta_ayudantía_5.pdf`
 - **[📁 Carpeta] Ayudantía 6**
   - 📎 `Ayudantía n°6.pdf` (355.1 KB)
   - 📎 `Pauta Ayudantía 6.pdf` (6.33 MB)
 - **[📁 Carpeta] Ayudantía 7**
-  - 📎 `Ayudantía_7.pdf` (244.6 KB) -> `Material_y_Apuntes/Ayudantías/Ayudantía_7.pdf`
-  - 📎 `Desarrollo_Ayudantía_7.pdf` (324.9 KB) -> `Material_y_Apuntes/Ayudantías/Desarrollo_Ayudantía_7.pdf`
+  - 📎 `Ayudantía_7.pdf` (244.6 KB) -> `01 Ayudantías/Ayudantía 7/Ayudantía_7.pdf`
+  - 📎 `Desarrollo_Ayudantía_7.pdf` (324.9 KB) -> `01 Ayudantías/Ayudantía 7/Desarrollo_Ayudantía_7.pdf`
 - **[📁 Carpeta] Ayudantía 8**
-  - 📎 `Pauta Ayudantía 8.pdf` (5.46 MB) -> `Evaluaciones_y_Entregas/Pauta Ayudantía 8.pdf`
-  - 📎 `Ayudantía n°8 CIV224.pdf` (451.7 KB) -> `Material_y_Apuntes/Ayudantías/Ayudantía n°8 CIV224.pdf`
+  - 📎 `Pauta Ayudantía 8.pdf` (5.46 MB) -> `01 Ayudantías/Ayudantía 8/Pauta Ayudantía 8.pdf`
+  - 📎 `Ayudantía n°8 CIV224.pdf` (451.7 KB) -> `01 Ayudantías/Ayudantía 8/Ayudantía n°8 CIV224.pdf`
+- **[📁 Carpeta] Ayudantía 9**
+  - 📎 `Ayudantía_9.pdf` (231.6 KB)
 
 ### Sección: Unidad 1
 *Sin módulos publicados en esta sección.*
@@ -175,85 +179,81 @@ Luciana Tiraferri Colombo: ltiraferri@usm.cl
 ## 💾 5. Inventario de Archivos Locales en Disco y Google Drive
 Total de archivos sincronizados: **68**
 
-### 📂 `Evaluaciones_y_Entregas/` (19 archivos)
+### 📂 `00 Información General/` (50 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
-| `Ayudantía_3_pauta.pdf` | 274.6 KB | 2026-10-26 09:55 | Sincronizado |
-| `CIV244_2022_C1.pdf` | 415.5 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2022_C1_Pauta.pdf` | 438.1 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2022_C2.pdf` | 463.5 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2022_C2_Pauta.pdf` | 741.8 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2023_C1.pdf` | 154.0 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2023_C1_Pauta.pdf` | 1.34 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2023_C2.pdf` | 172.7 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2023_C2_Pauta.pdf` | 2.23 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2024_C1.pdf` | 145.0 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2024_C1_Pauta.pdf` | 1.43 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2024_C2.pdf` | 400.3 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2026_C1.pdf` | 1.16 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_2026_C1_RUBRICA.pdf` | 232.4 KB | 2026-10-25 14:24 | Sincronizado |
-| `Pauta ayudantía 2.pdf` | 5.57 MB | 2026-10-26 09:55 | Sincronizado |
-| `Pauta Ayudantía 4.pdf` | 3.71 MB | 2026-10-26 09:55 | Sincronizado |
-| `Pauta Ayudantía 6.pdf` | 6.33 MB | 2026-10-26 09:55 | Sincronizado |
-| `Pauta Ayudantía 8.pdf` | 5.46 MB | 2026-10-26 09:55 | Sincronizado |
-| `Pauta_ayudantía_5.pdf` | 326.3 KB | 2026-10-26 09:55 | Sincronizado |
+| `Apuntes USM/Apunte-02-Propiedades_mecanicas_1.pdf` | 731.7 KB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-03-Propiedades_mecanicas_2.pdf` | 1.15 MB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-04-Analisis_dimensional.pdf` | 1.81 MB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-05-Estatica_fluidos_fuerzas.pdf` | 956.1 KB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-06-Equilibrio_mecanico.pdf` | 1.09 MB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-07-Fuerzas_sobre_superficies_planas.pdf` | 667.4 KB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-08-Fuerzas_sobre_superficies_curvas.pdf` | 1.55 MB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-09-Cinematica_introduccion.pdf` | 4.19 MB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-10-Cinematica_conservacion_masa.pdf` | 4.86 MB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-11-Cinematica_movimiento_relativo.pdf` | 840.3 KB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-12-FlujoIdealReal-EcuacionEuler.pdf` | 353.0 KB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-13-FlujoIdealReal-AplicacionesEulerBernoulli.pdf` | 2.18 MB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-14-FlujoIdealReal-NavierStokes.pdf` | 1.06 MB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf` | 3.52 MB | 2026-11-05 09:44 | Sincronizado |
+| `Apuntes USM/Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf` | 612.7 KB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes anteriores/CIV244_2022_C1.pdf` | 415.5 KB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes anteriores/CIV244_2022_C1_Pauta.pdf` | 438.1 KB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes anteriores/CIV244_2022_C2.pdf` | 463.5 KB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes anteriores/CIV244_2022_C2_Pauta.pdf` | 741.8 KB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes anteriores/CIV244_2023_C1.pdf` | 154.0 KB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes anteriores/CIV244_2023_C1_Pauta.pdf` | 1.34 MB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes anteriores/CIV244_2023_C2.pdf` | 172.7 KB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes anteriores/CIV244_2023_C2_Pauta.pdf` | 2.23 MB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes anteriores/CIV244_2024_C1.pdf` | 145.0 KB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes anteriores/CIV244_2024_C1_Pauta.pdf` | 1.43 MB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes anteriores/CIV244_2024_C2.pdf` | 400.3 KB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes/CIV244_2026_C1.pdf` | 1.16 MB | 2026-11-05 09:44 | Sincronizado |
+| `Certámenes/CIV244_2026_C1_RUBRICA.pdf` | 232.4 KB | 2026-11-05 09:44 | Sincronizado |
+| `CIV 244 - Mecánica de Fluidos final.pdf` | 143.4 KB | 2026-11-05 09:44 | Sincronizado |
+| `CIV244-2026-2_Programacion_R1.pdf` | 100.2 KB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_01_handout.pdf` | 38.86 MB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_02_handout.pdf` | 3.86 MB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_03_handout.pdf` | 3.66 MB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_04_Ejemplo.pdf` | 1.16 MB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_04_handout.pdf` | 555.4 KB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_05_handout.pdf` | 1.09 MB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_06_handout.pdf` | 889.2 KB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_07_handout.pdf` | 2.42 MB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_08_Ejemplo.pdf` | 267.3 KB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_08_handout.pdf` | 3.70 MB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_09_handout.pdf` | 1.20 MB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_10_handout.pdf` | 821.8 KB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_11.pdf` | 4.46 MB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_12_handout.pdf` | 612.0 KB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_13_handout.pdf` | 424.8 KB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_14_handout.pdf` | 565.3 KB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_15.pdf` | 2.59 MB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_16_handout.pdf` | 502.4 KB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_17_handout.pdf` | 1.90 MB | 2026-11-05 09:44 | Sincronizado |
+| `Material de clases/CIV244_Clase_18_handout.pdf` | 331.9 KB | 2026-11-05 09:44 | Sincronizado |
 
-### 📂 `Material_y_Apuntes/` (47 archivos)
+### 📂 `01 Ayudantías/` (18 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
-| `Apunte-02-Propiedades_mecanicas_1.pdf` | 731.7 KB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-03-Propiedades_mecanicas_2.pdf` | 1.15 MB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-04-Analisis_dimensional.pdf` | 1.81 MB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-05-Estatica_fluidos_fuerzas.pdf` | 956.1 KB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-06-Equilibrio_mecanico.pdf` | 1.09 MB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-07-Fuerzas_sobre_superficies_planas.pdf` | 667.4 KB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-08-Fuerzas_sobre_superficies_curvas.pdf` | 1.55 MB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-09-Cinematica_introduccion.pdf` | 4.19 MB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-10-Cinematica_conservacion_masa.pdf` | 4.86 MB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-11-Cinematica_movimiento_relativo.pdf` | 840.3 KB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-12-FlujoIdealReal-EcuacionEuler.pdf` | 353.0 KB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-13-FlujoIdealReal-AplicacionesEulerBernoulli.pdf` | 2.18 MB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-14-FlujoIdealReal-NavierStokes.pdf` | 1.06 MB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf` | 3.52 MB | 2026-10-25 14:24 | Sincronizado |
-| `Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf` | 612.7 KB | 2026-10-25 14:24 | Sincronizado |
-| `Ayudantías/Ayudantía 2.pdf` | 280.0 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantías/Ayudantía 4.pdf` | 361.7 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantías/Ayudantía n°6.pdf` | 355.1 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantías/Ayudantía n°8 CIV224.pdf` | 451.7 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantías/Ayudantía_1.pdf` | 259.9 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantías/Ayudantía_3.pdf` | 244.5 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantías/Ayudantía_5 .pdf` | 298.7 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantías/Ayudantía_7.pdf` | 244.6 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantías/Ayudantía_extra.pdf` | 252.5 KB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantías/Desarrollo Ayudantía 1.pdf` | 1.39 MB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantías/Desarrollo Ayudantía Extra.pdf` | 1.28 MB | 2026-10-26 09:55 | Sincronizado |
-| `Ayudantías/Desarrollo_Ayudantía_7.pdf` | 324.9 KB | 2026-10-26 09:55 | Sincronizado |
-| `CIV244_Clase_01_handout.pdf` | 38.86 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_02_handout.pdf` | 3.86 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_03_handout.pdf` | 3.66 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_04_Ejemplo.pdf` | 1.16 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_04_handout.pdf` | 555.4 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_05_handout.pdf` | 1.09 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_06_handout.pdf` | 889.2 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_07_handout.pdf` | 2.42 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_08_Ejemplo.pdf` | 267.3 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_08_handout.pdf` | 3.70 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_09_handout.pdf` | 1.20 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_10_handout.pdf` | 821.8 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_11.pdf` | 4.46 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_12_handout.pdf` | 612.0 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_13_handout.pdf` | 424.8 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_14_handout.pdf` | 565.3 KB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_15.pdf` | 2.59 MB | 2026-10-25 14:24 | Sincronizado |
-| `CIV244_Clase_16_handout.pdf` | 502.4 KB | 2026-11-01 13:14 | Sincronizado |
-| `CIV244_Clase_17_handout.pdf` | 1.90 MB | 2026-11-01 13:14 | Sincronizado |
-| `CIV244_Clase_18_handout.pdf` | 331.9 KB | 2026-11-02 17:56 | Sincronizado |
-
-### 📂 `Planificacion/` (2 archivos)
-| Archivo | Tamaño | Modificado | Estado Google Drive |
-|---------|--------|------------|---------------------|
-| `Información General/CIV 244 - Mecánica de Fluidos final.pdf` | 143.4 KB | 2026-10-25 14:24 | Sincronizado |
-| `Información General/CIV244-2026-2_Programacion_R1.pdf` | 100.2 KB | 2026-10-25 15:34 | Sincronizado |
+| `Ayudantía 1/Ayudantía_1.pdf` | 259.9 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 1/Desarrollo Ayudantía 1.pdf` | 1.39 MB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 2/Ayudantía 2.pdf` | 280.0 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 2/Pauta ayudantía 2.pdf` | 5.57 MB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 3/Ayudantía_3.pdf` | 244.5 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 3/Ayudantía_3_pauta.pdf` | 274.6 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 4/Ayudantía 4.pdf` | 361.7 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 4/Pauta Ayudantía 4.pdf` | 3.71 MB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 5/Ayudantía_5 .pdf` | 298.7 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 5/Pauta_ayudantía_5.pdf` | 326.3 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 6/Ayudantía n°6.pdf` | 355.1 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 6/Pauta Ayudantía 6.pdf` | 6.33 MB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 7/Ayudantía_7.pdf` | 244.6 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 7/Desarrollo_Ayudantía_7.pdf` | 324.9 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 8/Ayudantía n°8 CIV224.pdf` | 451.7 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía 8/Pauta Ayudantía 8.pdf` | 5.46 MB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía Extra/Ayudantía_extra.pdf` | 252.5 KB | 2026-11-05 09:44 | Sincronizado |
+| `Ayudantía Extra/Desarrollo Ayudantía Extra.pdf` | 1.28 MB | 2026-11-05 09:44 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
 ### 📣 Clase martes 03/11
