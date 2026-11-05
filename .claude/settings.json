@@ -1,0 +1,6 @@
+{
+  "enabledPlugins": {
+    "sales@synced": false,
+    "engineering@synced": false
+  }
+}
