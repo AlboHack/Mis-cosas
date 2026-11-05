@@ -7,5 +7,8 @@
   {"skill": "pdf-ingenieria", "repo": "anthropics/skills", "ruta": "skills/pdf/SKILL.md", "licencia": "propietaria: solo referencia, no se copia"},
   {"skill": "verificacion-independiente", "repo": "obra/superpowers", "ruta": "skills/verification-before-completion/SKILL.md", "licencia": "MIT"},
   {"skill": "consejo-tecnico", "repo": "tsenart/council-skill", "ruta": "skills/council/references/protocol.md", "licencia": "MIT"},
-  {"skill": "consejo-tecnico", "repo": "danielmiessler/Personal_AI_Infrastructure", "ruta": "LifeOS/install/skills/Council/SKILL.md", "licencia": "MIT"}
+  {"skill": "consejo-tecnico", "repo": "danielmiessler/Personal_AI_Infrastructure", "ruta": "LifeOS/install/skills/Council/SKILL.md", "licencia": "MIT"},
+  {"skill": "fuente-primaria", "repo": "addyosmani/agent-skills", "ruta": "skills/source-driven-development/SKILL.md", "licencia": "MIT"},
+  {"skill": "seguridad-scripts", "repo": "addyosmani/agent-skills", "ruta": "skills/security-and-hardening/SKILL.md", "licencia": "MIT"},
+  {"skill": "grafo-codigo", "repo": "Graphify-Labs/graphify", "ruta": "README.md", "licencia": "Apache-2.0"}
 ]

@@ -1,3 +1,6 @@
 __pycache__/
 *.egg-info/
 .pytest_cache/
+
+# Salida de graphify (scripts/grafo_codigo.sh la deja fuera del repo)
+graphify-out/
