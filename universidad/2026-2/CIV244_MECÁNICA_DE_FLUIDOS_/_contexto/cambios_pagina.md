@@ -1,5 +1,9 @@
 # Cambios en la página del ramo
 
+## 2026-11-08
+
+- Archivos agregados en folder «Material de clases» (Información General): CIV244_Clase_19_handout.pdf
+
 ## 2026-11-05
 
 - Archivos agregados en folder «Certámenes» (Información General): CIV244_2026_C2.pdf, CIV244_2026_C2_RUBRICA.pdf

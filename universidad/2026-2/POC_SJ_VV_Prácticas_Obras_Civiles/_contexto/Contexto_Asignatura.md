@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Prácticas Obras Civiles
 **Sigla:** `POC` | **Aula ID:** `5623` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=5623
-**Última Sincronización:** `2026-11-05 09:46 -03`
+**Última Sincronización:** `2026-11-08 17:21 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `POC`.
@@ -54,21 +54,21 @@ Total de archivos sincronizados: **15**
 ### 📂 `00 Información General/` (15 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
-| `Documentos Importantes/1- Reglamentos/CRITERIOS OCIV 2025.pdf` | 234.6 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/1- Reglamentos/REGLAMENTO GENERAL Nº43.pdf` | 68.1 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/2- Presentación Explicativa/PRESENTACION EXPLICATIVA 2026.pdf` | 767.1 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/3- Inscripción de Prácticas/FORMULARIOS ONLINE.pdf` | 25.3 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/4- Fichas de Evaluación/EVALUACION DE ALUMNO.pdf` | 216.7 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/4- Fichas de Evaluación/EVALUACION DE EMPRESA.pdf` | 235.9 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/5- Formato de Informe/INSTRUCCIONES.pdf` | 414.1 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/5- Formato de Informe/PAUTA DEL INFORME.pdf` | 354.7 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/5- Formato de Informe/PLANTILLA DEL INFORME.docx` | 419.0 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/6- Preguntas Frecuentes/PREGUNTAS FRECUENTES.pdf` | 59.5 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/7- Artículos de Interés/AYUDA EN LA BÚSQUEDA DE PRÁCTICAS.pdf` | 30.50 MB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/7- Artículos de Interés/DIEZ CLAVES PARA LA PRACTICA PROFESIONAL.pdf` | 54.5 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/7- Artículos de Interés/EL VARIADO APRENDIZAJE QUE OFRECE EL DEBUT EN EL MUNDO LABORAL.pdf` | 59.1 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/7- Artículos de Interés/RECETAS PARA SALTAR LA PRIMERA VALLA.pdf` | 56.9 KB | 2026-11-05 09:44 | Sincronizado |
-| `Documentos Importantes/7- Artículos de Interés/REGISTROS EMPRESAS QUE HAN RECIBIDO PRACTICANTES.png` | 607.6 KB | 2026-11-05 09:44 | Sincronizado |
+| `Documentos Importantes/1- Reglamentos/CRITERIOS OCIV 2025.pdf` | 234.6 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/1- Reglamentos/REGLAMENTO GENERAL Nº43.pdf` | 68.1 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/2- Presentación Explicativa/PRESENTACION EXPLICATIVA 2026.pdf` | 767.1 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/3- Inscripción de Prácticas/FORMULARIOS ONLINE.pdf` | 25.3 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/4- Fichas de Evaluación/EVALUACION DE ALUMNO.pdf` | 216.7 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/4- Fichas de Evaluación/EVALUACION DE EMPRESA.pdf` | 235.9 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/5- Formato de Informe/INSTRUCCIONES.pdf` | 414.1 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/5- Formato de Informe/PAUTA DEL INFORME.pdf` | 354.7 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/5- Formato de Informe/PLANTILLA DEL INFORME.docx` | 419.0 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/6- Preguntas Frecuentes/PREGUNTAS FRECUENTES.pdf` | 59.5 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/7- Artículos de Interés/AYUDA EN LA BÚSQUEDA DE PRÁCTICAS.pdf` | 30.50 MB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/7- Artículos de Interés/DIEZ CLAVES PARA LA PRACTICA PROFESIONAL.pdf` | 54.5 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/7- Artículos de Interés/EL VARIADO APRENDIZAJE QUE OFRECE EL DEBUT EN EL MUNDO LABORAL.pdf` | 59.1 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/7- Artículos de Interés/RECETAS PARA SALTAR LA PRIMERA VALLA.pdf` | 56.9 KB | 2026-11-08 17:18 | Sincronizado |
+| `Documentos Importantes/7- Artículos de Interés/REGISTROS EMPRESAS QUE HAN RECIBIDO PRACTICANTES.png` | 607.6 KB | 2026-11-08 17:18 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
 ### 📣 Solicitud de cartas de presentación

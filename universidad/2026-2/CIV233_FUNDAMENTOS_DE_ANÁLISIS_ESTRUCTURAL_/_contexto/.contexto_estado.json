@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-05 09:46:56",
+  "timestamp": "2026-11-08 17:21:57",
   "archivos": {
     "00_Reglas del Curso.pdf": 577486,
     "CIV 233 - Fundamentos del Análisis Estructural final.pdf": 153139,
@@ -14,6 +14,7 @@
     "02_Trabajo_Virtual.pdf": 1944479,
     "03_CargaUnitaria.pdf": 1909695,
     "04_Flexibilidad_SistHiperestaticos.pdf": 2201776,
+    "05_Lineas_de_Influencia.pdf": 691406,
     "A_Tablas_Integrales (REV2).pdf": 804386,
     "Guia_04.pdf": 2651047,
     "Guía_01.pdf": 1522420,
@@ -59,12 +60,12 @@
     }
   },
   "avisos": [
+    "FAE - Ayudantía 7",
     "Tarea N°2",
     "FAE - Ayudantía",
     "Guía de Ejercicios Unidad 4",
     "Recorreción C1",
-    "Recordatorio Certamen 2",
-    "FAE - Ayudantía Pre-Certamen2"
+    "Recordatorio Certamen 2"
   ],
   "n_sections": 4,
   "n_modules": 16

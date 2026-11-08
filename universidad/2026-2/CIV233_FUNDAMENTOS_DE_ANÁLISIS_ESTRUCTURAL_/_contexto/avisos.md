@@ -1,5 +1,21 @@
 # Avisos y Novedades - FAE
 
+## FAE - Ayudantía 7
+- **Fecha:** 2026-11-05 14:43
+- **Autor:** GABRIEL ALEJANDRO FLORES FUENTES
+- **Foro:** Noticias y avisos
+- **ID:** d503319
+
+Buenas tardes, estimad@s compañer@s:
+
+Esperando que se encuentren bien, les recuerdo que mañana viernes 06/11 tenemos la Ayudantía 7 del curso. Los espero para sus consultas.
+
+Saludos!
+
+Gabriel FF
+
+---
+
 ## Tarea N°2
 - **Fecha:** 2026-11-01 17:39
 - **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
