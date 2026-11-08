@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Fundamentos de Ingeniería de Construcción y Administración
 **Sigla:** `CIV222` | **Aula ID:** `62177` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62177
-**Última Sincronización:** `2026-11-08 17:21 -03`
+**Última Sincronización:** `2026-11-08 17:25 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV222`.

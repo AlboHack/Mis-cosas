@@ -1,11 +1,11 @@
 {
-  "fecha": "2026-11-08T17:21:58-03:00",
-  "estado": "CON ERRORES",
-  "archivos_nuevos_o_modificados": 1,
-  "errores": 1,
+  "fecha": "2026-11-08T17:25:55-03:00",
+  "estado": "OK",
+  "archivos_nuevos_o_modificados": 0,
+  "errores": 0,
   "novedades": {
-    "avisos_actualizados": 1,
-    "cambios_pagina": 1,
+    "avisos_actualizados": 0,
+    "cambios_pagina": 0,
     "mensajes_privados_recientes": 0,
     "alertas_evaluacion": 0
   }
