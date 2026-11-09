@@ -26,6 +26,7 @@ Una especificación corta y aprobada por Nicolás para la versión 2 de `buscar_
   - Los que pasan reciben un puntaje de 0 a 3: 1 punto por cobertura ≥ 0.5, 1 por señales de institución y 1 por vocabulario de derivación. Los 8 mejores pasan a Claude.
 
   Vistas, likes y densidad de términos se descartaron como señales. Sin pauta de referencia, todo es [Supuesto].
+- **[T3. Similitud](#t3-similitud-entre-el-apunte-en-español-y-la-transcripción-en-inglés):** Claude saca del PDF de la clase 10 a 15 términos bilingües y se los muestra a Nicolás antes de buscar. Se ordena por cobertura y, en caso de empate, por rareza (idf). Se probó con 23 videos y la Clase 19 de CIV244 ([script](investigacion/T3_similitud.py)).
 
 ## Tickets
 
@@ -33,8 +34,8 @@ Una especificación corta y aprobada por Nicolás para la versión 2 de `buscar_
 |---|---|---|---|---|
 | T1 | Rúbrica de rigor, calidad y profesionalismo | grilling (con Nicolás) | — | cerrado 2026-11-09 |
 | T2 | Señales automáticas para el filtro | research | — | cerrado 2026-11-09 ([investigación](investigacion/T2-senales.md)) |
-| T3 | Similitud entre el apunte en español y la transcripción en inglés | prototype (con Nicolás) | — | abierto |
-| T4 | Flujo de punta a punta y formato de salida | grilling (con Nicolás) | T1, T2, T3 | bloqueado |
+| T3 | Similitud entre el apunte en español y la transcripción en inglés | prototype (con Nicolás) | — | cerrado 2026-11-09 |
+| T4 | Flujo de punta a punta y formato de salida | grilling (con Nicolás) | T1, T2, T3 | abierto |
 
 ### T1. Rúbrica de rigor, calidad y profesionalismo
 **Pregunta:** ¿qué criterios y qué pesos usa Claude para poner nota a un video a partir de su transcripción? Los criterios candidatos son:
@@ -85,6 +86,14 @@ Hay que verificar qué campos devuelve yt-dlp en realidad y validar contra los 2
 
 El prototipo es probar (a) y (b) con el handout de la clase de momento angular de CIV244 y el JSON del ejemplo, y Nicolás juzga cuál ordena mejor.
 
+**Resolución (2026-11-09, con Nicolás).** Se probó con el handout `CIV244_Clase_19_handout.pdf` (Soto, 2026-11-06), del que salieron 14 términos bilingües, y los 23 videos del ejemplo.
+- **Efecto de los términos bilingües:** los videos en español pasan de 0 a 0.17 a 0.57 a 0.64 de cobertura.
+- **Cobertura (a):** Cimbala baja al 10.° lugar, porque solo trata el volumen de control fijo y la clase pide además el volumen rotatorio y el no inercial.
+- **Rareza (b):** premia lo propio de la clase. El "no inercial" solo aparece en Ziade (0:41) y en Bugg (7:49). Pero también favorece a los videos largos: Ranalli, 8 min y enfocado, cae del 2.° al 6.° lugar.
+- **Decisión:** se ordena por (a) y, en caso de empate, por (b).
+- **Términos:** Claude los saca del PDF, de 10 a 15 con alias hablados en inglés y español, y se los muestra a Nicolás en una línea antes de la búsqueda, por si el profesor vio en clase algo que el PDF no dice.
+- **Descartado:** (c), embeddings multilingües. Exigen instalar un modelo en el PC, y (a)+(b) ya cruza los idiomas con la lista bilingüe.
+
 ### T4. Flujo de punta a punta y formato de salida
 **Pregunta:** ¿quién corre cada paso y qué se entrega? Una propuesta de flujo:
 1. Nicolás nombra la clase.
@@ -93,6 +102,12 @@ El prototipo es probar (a) y (b) con el handout de la clase de momento angular d
 4. Claude evalúa los mejores con la rúbrica y entrega el orden de visionado.
 
 Hay que definir qué fragmentos de la transcripción lee Claude y con qué tope de tokens, y cómo se presenta la nota de cada video.
+
+**Pregunta de Nicolás (2026-11-09):** ¿se puede lanzar la búsqueda desde un chat normal del proyecto en claude.ai? [Supuesto] Directamente no: el sandbox de claude.ai está en la nube, y YouTube bloquea esas IP. T4 debe definir:
+- cómo pasa el pedido del chat a Antigravity PC: un texto que Nicolás copia, o un archivo en el canal;
+- cómo vuelve el resultado al chat. El JSON pesa 836 KB, así que no conviene meterlo en el conocimiento del proyecto. Una opción es un extracto con solo los fragmentos de los 8 videos que pasan el filtro.
+
+Antes, hay que verificarlo en el chat con `curl -sI https://www.youtube.com`.
 
 ## Sin especificar todavía
 
