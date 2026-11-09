@@ -20,12 +20,13 @@ Una especificación corta y aprobada por Nicolás para la versión 2 de `buscar_
 - **Destino:** primero la spec y después la construcción (2026-11-09, Nicolás).
 - **Mapa:** este archivo, sin issues de GitHub (2026-11-09, Nicolás).
 - **Prerrequisitos ya hechos:** alias hablados cortos y en español, y desempate por menciones (commit `35adc9d`).
+- **[T1. Rúbrica](#t1-rúbrica-de-rigor-calidad-y-profesionalismo):** cinco criterios con niveles de 0 a 3, como N/P/M/L en los certámenes, y pesos 30/25/20/15/10. Un error conceptual limita el rigor y se informa con su minuto. Se recomienda con 60/100. Cada video lleva un rol, "clase" o "ejemplo".
 
 ## Tickets
 
 | # | Ticket | Tipo | Bloqueado por | Estado |
 |---|---|---|---|---|
-| T1 | Rúbrica de rigor, calidad y profesionalismo | grilling (con Nicolás) | — | abierto |
+| T1 | Rúbrica de rigor, calidad y profesionalismo | grilling (con Nicolás) | — | cerrado 2026-11-09 |
 | T2 | Señales automáticas para el filtro | research | — | abierto |
 | T3 | Similitud entre el apunte en español y la transcripción en inglés | prototype (con Nicolás) | — | abierto |
 | T4 | Flujo de punta a punta y formato de salida | grilling (con Nicolás) | T1, T2, T3 | bloqueado |
@@ -41,6 +42,23 @@ Una especificación corta y aprobada por Nicolás para la versión 2 de `buscar_
 - estructura y claridad.
 
 ¿Qué nota mínima hace falta para recomendar un video? ¿Cuenta como prueba de rigor que el video coincida con lo que piden las rúbricas de los certámenes?
+
+**Resolución (2026-11-09, con Nicolás).** Nicolás valora cuatro cosas: que el video se parezca a sus clases, que dé contexto y alcances, que explique paso a paso y que ponga ejemplos. Sus profesores exigen mucho rigor, y una clase universitaria grabada vale más. La escala es la de la rúbrica del certamen C2 de CIV244, que pone nota a estos criterios: procedimiento paso a paso, parámetros, modelo correcto, condiciones de borde, interpretación y diagramas.
+
+| Criterio | Peso | Qué mira Claude en la transcripción | Rúbrica C2 |
+|---|---|---|---|
+| Rigor del modelo | 30 % | Si el modelo es correcto para el caso, si declara los supuestos, las condiciones de borde, las unidades y la convención de signos | c, d, b |
+| Paso a paso | 25 % | Si la derivación se puede seguir sin explicaciones adicionales, desde el principio físico (RTT, equilibrio) | a |
+| Ejemplo resuelto e interpretado | 20 % | Si resuelve un problema completo y comenta el resultado | d, e |
+| Contexto y alcances | 15 % | Si dice para qué sirve el modelo, cuándo vale y cuándo no (régimen, flujo permanente, incompresible) | c |
+| Origen universitario | 10 % | 3: clase grabada de un curso universitario. 2: profesor universitario en canal propio. 1: ingeniero o tutor que se identifica. 0: no se sabe | — |
+
+- **Niveles:** 0 = N, 1 = P, 2 = M, 3 = L, como en la rúbrica. La nota es Σ peso · nivel / 3, de 0 a 100.
+- **Diagramas (criterio f):** no se juzgan, porque la transcripción no los muestra. Si el video dice "dibujamos el volumen de control", se anota como indicio [Supuesto].
+- **Error conceptual:** baja la nota, no la veta. El rigor queda en 1 como máximo, y el error se informa siempre con su minuto y su corrección, aunque el video siga recomendado.
+- **Umbral:** se recomienda con 60/100.
+- **Rol:** cada video es "clase" (teoría y derivación) o "ejemplo" (resuelve un problema). A un "ejemplo" no se le exige contexto: se quita ese criterio y los pesos se reparten de nuevo de forma proporcional, quedando 35.3/29.4/23.5/11.8. La recomendación combina una clase seguida de un ejemplo.
+- **Evidencia:** cada nivel se justifica con un minuto de la transcripción. Si no hay evidencia, el nivel es 0 y no se supone.
 
 ### T2. Señales automáticas para el filtro
 **Pregunta:** ¿qué señales que entregan yt-dlp y la transcripción, sin gastar tokens, separan una clase rigurosa de un video flojo, y con qué umbral? Candidatas:
