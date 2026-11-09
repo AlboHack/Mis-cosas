@@ -21,13 +21,18 @@ Una especificación corta y aprobada por Nicolás para la versión 2 de `buscar_
 - **Mapa:** este archivo, sin issues de GitHub (2026-11-09, Nicolás).
 - **Prerrequisitos ya hechos:** alias hablados cortos y en español, y desempate por menciones (commit `35adc9d`).
 - **[T1. Rúbrica](#t1-rúbrica-de-rigor-calidad-y-profesionalismo):** cinco criterios con niveles de 0 a 3, como N/P/M/L en los certámenes, y pesos 30/25/20/15/10. Un error conceptual limita el rigor y se informa con su minuto. Se recomienda con 60/100. Cada video lleva un rol, "clase" o "ejemplo".
+- **[T2. Señales para el filtro](investigacion/T2-senales.md):** el filtro tiene dos pasos.
+  - Una compuerta descarta al video que no tiene transcripción, que dura menos de 3 min o que habla a menos de 60 palabras por minuto.
+  - Los que pasan reciben un puntaje de 0 a 3: 1 punto por cobertura ≥ 0.5, 1 por señales de institución y 1 por vocabulario de derivación. Los 8 mejores pasan a Claude.
+
+  Vistas, likes y densidad de términos se descartaron como señales. Sin pauta de referencia, todo es [Supuesto].
 
 ## Tickets
 
 | # | Ticket | Tipo | Bloqueado por | Estado |
 |---|---|---|---|---|
 | T1 | Rúbrica de rigor, calidad y profesionalismo | grilling (con Nicolás) | — | cerrado 2026-11-09 |
-| T2 | Señales automáticas para el filtro | research | — | abierto |
+| T2 | Señales automáticas para el filtro | research | — | cerrado 2026-11-09 ([investigación](investigacion/T2-senales.md)) |
 | T3 | Similitud entre el apunte en español y la transcripción en inglés | prototype (con Nicolás) | — | abierto |
 | T4 | Flujo de punta a punta y formato de salida | grilling (con Nicolás) | T1, T2, T3 | bloqueado |
 
