@@ -134,7 +134,9 @@ def puntuar(v: Video, claves: list[list[str]]) -> None:
 
 
 def ordenar(videos: list[Video]) -> list[Video]:
-    return sorted(videos, key=lambda v: (-v.puntaje, -(v.vistas or 0)))
+    """Puntaje; a igual puntaje, más menciones de las claves; luego vistas."""
+    menciones = lambda v: sum(h["veces"] for h in v.en_transcripcion.values())  # noqa: E731
+    return sorted(videos, key=lambda v: (-v.puntaje, -menciones(v), -(v.vistas or 0)))
 
 
 def a_markdown(tema: str, claves: list[list[str]], videos: list[Video]) -> str:

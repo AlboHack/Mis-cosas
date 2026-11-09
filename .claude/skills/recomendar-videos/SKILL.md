@@ -14,9 +14,11 @@ Un video se recomienda por lo que dice, no por el título. La evidencia es la tr
 
 ## Elegir las palabras clave
 1. Partir del material del ramo: láminas, apunte, pauta o enunciado (`universidad/<sección>/<módulo>/`). Si no hay material, preguntar qué cubre la clase, en vez de inventar el temario.
-2. Elegir entre 5 y 8 claves que distingan el tema: el principio, la ecuación con nombre, el caso típico y el término que confunde. Por ejemplo, para momento angular en un volumen de control: `control volume, angular momentum, sprinkler, torque, r x V|r cross V, Euler turbomachine`.
-3. Escribir las claves como se dicen en voz alta, porque la transcripción es audio. Los símbolos llevan su alias hablado (`r x V|r cross V`, `ΔP|pressure drop`). Si se busca en español, se agregan alias en ese idioma (`aspersor`, `momento angular`).
-4. El tema va en inglés y `--tema-es` en español. Casi todo el material de buena calidad está en inglés.
+2. Elegir entre 5 y 8 claves que distingan el tema: el principio, el caso típico y el término que confunde. Por ejemplo, para momento angular en un volumen de control: `control volume|volumen de control, angular momentum|momento angular|cantidad de movimiento angular, sprinkler|aspersor|regador, torque|momento torsor, r x V|r cross|r times v`.
+3. Escribir las claves como se dicen en voz alta, porque la transcripción es audio. El alias hablado debe ser un fragmento corto: `r cross`, no `r cross V`, porque se dice "r cross u" o "r cross the velocity". En la corrida del 2026-11-09, "r cross" aparecía en 10 transcripciones y `r cross V` coincidió solo en 2.
+4. Toda clave lleva su alias en español. Sin ellos, los videos en español puntúan 0 aunque traten el tema.
+5. Descartar los nombres de libro que nadie pronuncia. "Euler turbomachine" no apareció en ninguno de 21 videos.
+6. El tema va en inglés y `--tema-es` en español. Casi todo el material de buena calidad está en inglés.
 
 ## Presentar la recomendación
 - **Lo incómodo va primero:** si ningún video cubre una clave del ramo, decirlo, con la clave que falta.
