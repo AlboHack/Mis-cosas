@@ -14,8 +14,8 @@ pip install yt-dlp youtube-transcript-api
 
 ```
 python herramientas/youtube/buscar_videos.py "angular momentum control volume sprinkler" ^
-  --claves "control volume, angular momentum, sprinkler, torque, r x V|r cross V, Euler turbomachine" ^
-  --tema-es "momento angular volumen de control aspersor" -n 15 --salida herramientas/youtube/ejemplos
+  --terminos "control volume|volumen de control, angular momentum|momento angular, sprinkler|aspersor, torque|momento torsor, r cross|producto cruz" ^
+  --tema-es "momento angular volumen de control aspersor" -n 15 --salida herramientas/youtube/resultados/CIV244/clase19
 ```
 
 En PowerShell, la continuación de línea es `` ` `` en vez de `^`.
@@ -23,18 +23,32 @@ En PowerShell, la continuación de línea es `` ` `` en vez de `^`.
 | Opción | Qué hace |
 |---|---|
 | `tema` | Consulta en inglés |
-| `--claves` | Claves separadas por coma. Los alias de una clave van con `\|`. Por ejemplo, `r x V\|r cross V`, porque en el audio nadie dice "r x V" |
-| `--tema-es` | Consulta en español. Si se omite, usa `tema + " en español"` |
+| `--terminos` | Términos del apunte separados por coma (`--claves` también sirve). Los alias van con `\|`. Por ejemplo, `r cross\|producto cruz`, porque en el audio nadie dice "r x V" |
+| `--tema-es` | Consulta en español (obligatoria) |
+| `--top` | Videos que pasan al extracto (8) |
+| `--desde-json` | Repuntúa el JSON de una corrida anterior con otros términos, sin red. Este sí corre en la nube |
 | `-n` | Resultados por idioma (15 por defecto) |
 | `--pausa` | Segundos entre videos (1.0). Si aparece un 429, conviene subirla |
 
-## Cómo puntúa
+## Salida
+
+- `<tema>.json`: todo, incluidas las transcripciones completas.
+- `<tema>.md`: el ranking de similitud, con el minuto de cada término.
+- `<tema>_extracto.md`: lo que se adjunta al chat de claude.ai para que Claude aplique la rúbrica de la skill `recomendar-videos`. Contiene los 8 videos que pasan el filtro, con los primeros 90 s y hasta 5 fragmentos de ±30 s alrededor de los términos más raros. Pesa unas 6 000 palabras (ejemplo: `ejemplos/clase19_CIV244/`).
+
+## Filtro (antes de Claude)
+
+- **Compuerta:** queda fuera todo video sin transcripción `en` o `es`, de menos de 3 min, short o en vivo, o que habla a menos de 60 palabras por minuto, porque en ese caso el contenido está en la imagen.
+- **Puntaje de 0 a 3:** 1 punto por cobertura ≥ 0.5. Otro por evidencia institucional (código de ramo, o las palabras lecture, professor, clase o módulo N; "curso" no cuenta). Otro por vocabulario de derivación: 5 o más palabras como assume o despejamos, y 2.0 o más por cada 1000 palabras.
+- **Evidencia:** los umbrales están en `investigacion/T2-senales.md`. Se ajustaron con 23 videos, así que son [Supuesto] hasta revisarlos en otros ramos.
+
+## Cómo puntúa la similitud
 
 Cada clave suma según dónde aparece:
 - 1 punto si aparece en la transcripción o en un título de capítulo, con su minuto.
 - 0.5 si aparece solo en el título o en la descripción, sin minuto.
 
-El puntaje se divide por el número de claves: 1.00 significa que todas las claves aparecen con minuto. Los empates se ordenan por vistas.
+El puntaje se divide por el número de términos: 1.00 significa que todos los términos aparecen con minuto. Los empates se ordenan por rareza: pesa más el término que pocos videos tratan, con el idf de la corrida. Después se ordena por menciones.
 
 La búsqueda ignora mayúsculas y tildes, y no coincide dentro de otra palabra: `torque` no encuentra `torques`. Para cada clave usa la primera aparición. Los alias se escriben con `|`.
 

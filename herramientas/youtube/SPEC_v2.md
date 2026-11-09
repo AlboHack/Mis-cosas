@@ -1,6 +1,6 @@
 # Spec: recomendador de videos v2
 
-Esta especificación sale del [mapa](MAPA.md), donde está el porqué de cada decisión (T1 a T4). Estado: **por aprobar por Nicolás**.
+Esta especificación sale del [mapa](MAPA.md), donde está el porqué de cada decisión (T1 a T4). Estado: **aprobada por Nicolás el 2026-11-09 y construida**.
 
 ## Flujo
 

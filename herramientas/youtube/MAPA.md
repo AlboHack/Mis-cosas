@@ -27,7 +27,7 @@ Una especificación corta y aprobada por Nicolás para la versión 2 de `buscar_
 
   Vistas, likes y densidad de términos se descartaron como señales. Sin pauta de referencia, todo es [Supuesto].
 - **[T3. Similitud](#t3-similitud-entre-el-apunte-en-español-y-la-transcripción-en-inglés):** Claude saca del PDF de la clase 10 a 15 términos bilingües y se los muestra a Nicolás antes de buscar. Se ordena por cobertura y, en caso de empate, por rareza (idf). Se probó con 23 videos y la Clase 19 de CIV244 ([script](investigacion/T3_similitud.py)).
-- **[T4. Flujo](#t4-flujo-de-punta-a-punta-y-formato-de-salida):** el chat entrega un bloque para copiar, Antigravity PC corre el script, y Nicolás adjunta al chat un extracto de unos 9 000 tokens. Resultado: [SPEC_v2.md](SPEC_v2.md), por aprobar.
+- **[T4. Flujo](#t4-flujo-de-punta-a-punta-y-formato-de-salida):** el chat entrega un bloque para copiar, Antigravity PC corre el script, y Nicolás adjunta al chat un extracto de unos 9 000 tokens. Resultado: [SPEC_v2.md](SPEC_v2.md), aprobada y construida el 2026-11-09. El mapa llegó a su destino.
 
 ## Tickets
 
