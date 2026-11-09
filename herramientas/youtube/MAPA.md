@@ -27,6 +27,7 @@ Una especificación corta y aprobada por Nicolás para la versión 2 de `buscar_
 
   Vistas, likes y densidad de términos se descartaron como señales. Sin pauta de referencia, todo es [Supuesto].
 - **[T3. Similitud](#t3-similitud-entre-el-apunte-en-español-y-la-transcripción-en-inglés):** Claude saca del PDF de la clase 10 a 15 términos bilingües y se los muestra a Nicolás antes de buscar. Se ordena por cobertura y, en caso de empate, por rareza (idf). Se probó con 23 videos y la Clase 19 de CIV244 ([script](investigacion/T3_similitud.py)).
+- **[T4. Flujo](#t4-flujo-de-punta-a-punta-y-formato-de-salida):** el chat entrega un bloque para copiar, Antigravity PC corre el script, y Nicolás adjunta al chat un extracto de unos 9 000 tokens. Resultado: [SPEC_v2.md](SPEC_v2.md), por aprobar.
 
 ## Tickets
 
@@ -35,7 +36,7 @@ Una especificación corta y aprobada por Nicolás para la versión 2 de `buscar_
 | T1 | Rúbrica de rigor, calidad y profesionalismo | grilling (con Nicolás) | — | cerrado 2026-11-09 |
 | T2 | Señales automáticas para el filtro | research | — | cerrado 2026-11-09 ([investigación](investigacion/T2-senales.md)) |
 | T3 | Similitud entre el apunte en español y la transcripción en inglés | prototype (con Nicolás) | — | cerrado 2026-11-09 |
-| T4 | Flujo de punta a punta y formato de salida | grilling (con Nicolás) | T1, T2, T3 | abierto |
+| T4 | Flujo de punta a punta y formato de salida | grilling (con Nicolás) | T1, T2, T3 | cerrado 2026-11-09 |
 
 ### T1. Rúbrica de rigor, calidad y profesionalismo
 **Pregunta:** ¿qué criterios y qué pesos usa Claude para poner nota a un video a partir de su transcripción? Los criterios candidatos son:
@@ -108,6 +109,12 @@ Hay que definir qué fragmentos de la transcripción lee Claude y con qué tope 
 - cómo vuelve el resultado al chat. El JSON pesa 836 KB, así que no conviene meterlo en el conocimiento del proyecto. Una opción es un extracto con solo los fragmentos de los 8 videos que pasan el filtro.
 
 Antes, hay que verificarlo en el chat con `curl -sI https://www.youtube.com`.
+
+**Resolución (2026-11-09, con Nicolás).** El chat confirmó el bloqueo: devolvió 403 y curl terminó con exit 56. Habilitar dominios no basta, porque esta sesión ya los tuvo habilitados y YouTube igual devolvió 429 e `IpBlocked`.
+- **Quién corre la búsqueda:** solo el PC, no la tablet.
+- **Cómo llega el pedido:** el chat entrega un bloque para copiar en Antigravity PC, porque no puede escribir en GitHub.
+- **Cómo vuelve el resultado:** un extracto `.md` con los 8 videos filtrados, los primeros 90 s y hasta 5 fragmentos de ±30 s por video. Son unas 6 400 palabras, alrededor de 9 000 tokens, calculado con los 23 videos y una mediana de 124 palabras por minuto. Nicolás lo adjunta al chat; no entra al conocimiento del proyecto.
+- **Formato de salida:** está en la [spec](SPEC_v2.md).
 
 ## Sin especificar todavía
 
