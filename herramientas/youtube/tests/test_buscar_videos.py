@@ -171,3 +171,54 @@ def test_desde_json_sin_red(tmp_path):
     assert rc == 0
     ext = (tmp_path / "out" / "steady_flow_extracto.md").read_text(encoding="utf-8")
     assert "## 1. Lesson on steady flow" in ext
+
+
+# ---------------------------------------------------------------- caché y corte por bloqueo
+
+def test_cache_solo_guarda_videos_con_transcripcion(tmp_path):
+    import json
+    con = bv.asdict(_clase(id="a"))
+    sin = bv.asdict(bv.Video(id="b", titulo="sin subs"))
+    (tmp_path / "r.json").write_text(json.dumps({"videos": [con, sin]}), encoding="utf-8")
+    (tmp_path / "roto.json").write_text("{no es json", encoding="utf-8")
+    cache = bv.cargar_cache(tmp_path)
+    assert list(cache) == ["a"] and cache["a"]["transcripcion"]
+
+
+def _red_falsa(monkeypatch, ids, bloquea):
+    """Reemplaza YouTube: la búsqueda entrega `ids`; la transcripción falla con IpBlocked si `bloquea`."""
+    import types
+    pedidos = []
+    monkeypatch.setitem(sys.modules, "youtube_transcript_api",
+                        types.SimpleNamespace(YouTubeTranscriptApi=lambda: None))
+    monkeypatch.setattr(bv, "buscar", lambda consulta, n: [{"id": i, "title": i} for i in ids])
+    monkeypatch.setattr(bv, "completar_metadatos", lambda v: None)
+    monkeypatch.setattr(bv.time, "sleep", lambda s: None)
+
+    def transcribir(v, api):
+        pedidos.append(v.id)
+        if bloquea:
+            v.transcripcion_tipo = "sin_transcripcion"
+            v.errores.append("transcripción: IpBlocked")
+    monkeypatch.setattr(bv, "descargar_transcripcion", transcribir)
+    return pedidos
+
+
+def test_corta_tras_tres_bloqueos_seguidos(monkeypatch, tmp_path):
+    pedidos = _red_falsa(monkeypatch, [f"v{i}" for i in range(10)], bloquea=True)
+    rc = bv.main(["t", "--tema-es", "t", "--terminos", "x", "--salida", str(tmp_path), "--cache", ""])
+    assert rc == 2 and len(pedidos) == bv.CORTE_BLOQUEOS
+    ext = (tmp_path / "t_extracto.md").read_text(encoding="utf-8")
+    assert "Ningún video pasó la compuerta." in ext and "10 de 10 fallaron por bloqueo" in ext
+
+
+def test_cache_evita_pedir_de_nuevo(monkeypatch, tmp_path):
+    import json
+    (tmp_path / "cache").mkdir()
+    previo = bv.asdict(_clase(id="v0", titulo="Lesson cacheada"))
+    (tmp_path / "cache" / "r.json").write_text(json.dumps({"videos": [previo]}), encoding="utf-8")
+    pedidos = _red_falsa(monkeypatch, ["v0", "v1"], bloquea=False)
+    rc = bv.main(["t", "--tema-es", "t", "--terminos", "steady", "--salida", str(tmp_path / "out"),
+                  "--cache", str(tmp_path / "cache")])
+    assert rc == 0 and pedidos == ["v1"]
+    assert "Lesson cacheada" in (tmp_path / "out" / "t_extracto.md").read_text(encoding="utf-8")

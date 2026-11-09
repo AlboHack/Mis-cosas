@@ -28,7 +28,8 @@ En PowerShell, la continuación de línea es `` ` `` en vez de `^`.
 | `--top` | Videos que pasan al extracto (8) |
 | `--desde-json` | Repuntúa el JSON de una corrida anterior con otros términos, sin red. Este sí corre en la nube |
 | `-n` | Resultados por idioma (15 por defecto) |
-| `--pausa` | Segundos entre videos (1.0). Si aparece un 429, conviene subirla |
+| `--pausa` | Segundos entre videos (2.0) |
+| `--cache` | Carpeta con JSON de corridas anteriores (por defecto, `herramientas/youtube/`). Los videos que ya tienen transcripción ahí no se vuelven a pedir. `--cache ""` lo desactiva |
 
 ## Salida
 
@@ -51,6 +52,13 @@ Cada clave suma según dónde aparece:
 El puntaje se divide por el número de términos: 1.00 significa que todos los términos aparecen con minuto. Los empates se ordenan por rareza: pesa más el término que pocos videos tratan, con el idf de la corrida. Después se ordena por menciones.
 
 La búsqueda ignora mayúsculas y tildes, y no coincide dentro de otra palabra: `torque` no encuentra `torques`. Para cada clave usa la primera aparición. Los alias se escriben con `|`.
+
+## Bloqueo de YouTube
+
+YouTube también bloquea IP residenciales cuando reciben muchas peticiones en el día (`IpBlocked`, "Sign in to confirm you're not a bot"). Ocurrió el 2026-11-09 en el PC tras unas 100 peticiones.
+- Si 3 videos seguidos salen bloqueados, el script deja de pedir, escribe lo que tiene y termina con código 2. El extracto dice que el resultado viene de un bloqueo y no de los videos.
+- Reintentar en unas horas. Lo ya bajado queda en caché.
+- No usar cookies: la librería advierte que YouTube termina baneando la cuenta.
 
 ## Errores por video
 

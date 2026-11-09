@@ -266,6 +266,10 @@ def a_extracto(tema: str, claves: list[list[str]], seleccion: list[Video], idf: 
     lin = [f"# Extracto para evaluar: {tema}", "",
            f"Términos: {', '.join(nombres)}", "",
            "Rúbrica: skill recomendar-videos. Cada nivel se justifica con un minuto de abajo; sin evidencia, 0.", ""]
+    if not seleccion:
+        bloqueos = sum(1 for v in excluidos if bloqueado(v) or any(e.startswith("no se pidió") for e in v.errores))
+        lin += [f"**Ningún video pasó la compuerta.** {bloqueos} de {len(excluidos)} fallaron por bloqueo de YouTube a "
+                "esta IP: no es un resultado sobre los videos. Reintentar en unas horas.", ""]
     for i, v in enumerate(seleccion, 1):
         faltan = [c for c in nombres if c not in v.en_transcripcion]
         lin += [f"## {i}. {v.titulo}", "",
@@ -351,6 +355,31 @@ def completar_metadatos(v: Video) -> None:
         v.errores.append(f"metadatos: {type(e).__name__}: {str(e)[:150]}")
 
 
+BLOQUEOS = ("IpBlocked", "RequestBlocked", "TooManyRequests", "YouTubeRequestFailed")
+CORTE_BLOQUEOS = 3
+_CAMPOS_CACHE = ("titulo", "canal", "duracion", "vistas", "fecha", "descripcion", "capitulos", "transcripcion",
+                 "transcripcion_idioma", "transcripcion_tipo", "channel_id", "uploader_id", "channel_is_verified",
+                 "channel_follower_count", "like_count", "comment_count", "categories", "tags", "media_type",
+                 "live_status", "availability")
+
+
+def cargar_cache(carpeta: Path) -> dict:
+    """{id: datos} de los videos con transcripción en los JSON de corridas anteriores bajo `carpeta`."""
+    cache = {}
+    for f in sorted(carpeta.rglob("*.json")):
+        try:
+            for d in json.loads(f.read_text(encoding="utf-8")).get("videos", []):
+                if d.get("id") and d.get("transcripcion"):
+                    cache[d["id"]] = {k: d[k] for k in _CAMPOS_CACHE if k in d}
+        except (ValueError, AttributeError, OSError):
+            continue
+    return cache
+
+
+def bloqueado(v: Video) -> bool:
+    return any(e.startswith("transcripción: ") and e.split(": ", 1)[1] in BLOQUEOS for e in v.errores)
+
+
 def descargar_transcripcion(v: Video, api) -> None:
     try:
         lista = api.list(v.id)
@@ -374,7 +403,9 @@ def main(argv=None) -> int:
     p.add_argument("--top", type=int, default=8, help="videos que pasan al extracto (8)")
     p.add_argument("-n", type=int, default=15, help="resultados por idioma (15)")
     p.add_argument("--salida", default=".", help="carpeta de salida")
-    p.add_argument("--pausa", type=float, default=1.0, help="segundos entre videos, para no gatillar 429")
+    p.add_argument("--pausa", type=float, default=2.0, help="segundos entre videos, para no gatillar bloqueos")
+    p.add_argument("--cache", default=str(Path(__file__).resolve().parent),
+                   help="carpeta con JSON de corridas anteriores; sus transcripciones no se vuelven a pedir")
     p.add_argument("--desde-json", help="repuntúa un JSON de una corrida anterior, sin red (para probar términos)")
     a = p.parse_args(argv)
 
@@ -400,14 +431,30 @@ def main(argv=None) -> int:
         except Exception as e:
             print(f"Búsqueda '{consulta}' falló: {type(e).__name__}: {e}", file=sys.stderr)
 
+    cache = cargar_cache(Path(a.cache)) if a.cache else {}
+    seguidos, cortado = 0, False
     for i, v in enumerate(vistos.values(), 1):
-        print(f"[{i}/{len(vistos)}] {v.id} {v.titulo[:60]}", file=sys.stderr)
-        completar_metadatos(v)
-        descargar_transcripcion(v, api)
+        if v.id in cache:
+            for k, val in cache[v.id].items():
+                setattr(v, k, val)
+            print(f"[{i}/{len(vistos)}] {v.id} (caché) {v.titulo[:50]}", file=sys.stderr)
+        elif cortado:
+            v.transcripcion_tipo = "sin_transcripcion"
+            v.errores.append("no se pidió: YouTube estaba bloqueando esta IP")
+        else:
+            print(f"[{i}/{len(vistos)}] {v.id} {v.titulo[:60]}", file=sys.stderr)
+            completar_metadatos(v)
+            descargar_transcripcion(v, api)
+            seguidos = seguidos + 1 if bloqueado(v) else 0
+            if seguidos >= CORTE_BLOQUEOS:
+                cortado = True
+                print(f"YouTube bloqueó {CORTE_BLOQUEOS} videos seguidos: se deja de pedir para no alargar el "
+                      "bloqueo. Reintentar en unas horas (los videos ya bajados quedan en caché).", file=sys.stderr)
+            time.sleep(a.pausa)
         puntuar(v, claves)
         calcular_senales(v)
-        time.sleep(a.pausa)
-    return _escribir(a, claves, vistos)
+    rc = _escribir(a, claves, vistos)
+    return 2 if cortado else rc
 
 
 def _escribir(a, claves: list[list[str]], vistos: dict) -> int:
