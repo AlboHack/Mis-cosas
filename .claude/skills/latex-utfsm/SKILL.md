@@ -89,4 +89,4 @@ Compila, mueve a la página siguiente todo punto numerado que quedó partido y c
 
 2. Leer con la herramienta de imágenes todas las hojas `main-figuras-N.png` (cada figura a tamaño legible) y `main-paginas-N.png`. El revisor no ve lo siguiente, y se mira ahí: geometría, cargas o cotas distintas de la fuente; un arco de ángulo que cruza una flecha; figuras insertadas como imagen; orden de las páginas, encabezado y portada.
 3. Repetir hasta `RESULTADO: OK` y revisión visual sin observaciones. Los `aviso` se leen y se decide: una página a medio llenar suele ser el costo de no partir un punto.
-4. Entregar el PDF y un `.zip` con `main.tex`, `utfsm.sty`, `img/` y los archivos incluidos, listo para Collab Text. Informar en una línea: páginas, figuras revisadas y `RESULTADO: OK`. Si algo quedó sin resolver, decir qué y en qué página.
+4. Entregar el PDF compilado (las imágenes van incrustadas, no hace falta zip). El `.tex` y un `.zip` con `main.tex`, `utfsm.sty`, `img/` y los archivos incluidos son opcionales: solo si Nicolás los pide. Informar en una línea: páginas, figuras revisadas y `RESULTADO: OK`. Si algo quedó sin resolver, decir qué y en qué página.
