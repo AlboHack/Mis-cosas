@@ -17,5 +17,14 @@ Instalación: `pip install --break-system-packages git+https://github.com/<usuar
 | latex | `hc_setup()` | Decorador handcalcs configurado (`equation*`, punto decimal) |
 | latex | `tabla_comparacion([(nombre, teo, sw)])` | Tabla booktabs/siunitx; `---` si el teórico es 0 |
 | latex | `pendientes('informe.tex')` | Lista de `\pend` y `\completar{}` con número de línea |
+| plantilla | `python -m utfsm_calc.plantilla CARPETA --tipo informe\|guia\|particular` | Copia `utfsm.sty`, los logos y un `main.tex` de partida |
+| compaginacion | `python -m utfsm_calc.compaginacion main.tex` | Evita puntos cortados (`\Needspace{..}% anticorte`), detecta cajas partidas, desbordes y, por figura TikZ, etiquetas superpuestas, trazos sobre etiquetas y leyendas sobre curvas; deja `-paginas-N.png` y `-figuras-N.png` |
 
 Convenciones: giro antihorario +, w hacia arriba, N > 0 tracción. `elems`: `dict(i, j, E, A, I, q=0, hinge_end=None|'i'|'j', kappa0=0)`; `apoyos`: `{nudo: [0, 1, 2]}` (u, w, θ); `resortes`: `{(nudo, gdl): k}`.
+
+## Formato LaTeX (`utfsm_calc/tex/`)
+
+- `utfsm.sty`: formato de la casa (portada, encabezado, cajas indivisibles, macros TikZ, estilo pgfplots). Va junto al `.tex` en la entrega. Opciones `particular`, `coma`, `sinmarca`, `stanli`.
+- `ejemplo.tex`: guía corta que usa todas las macros y pasa el revisor.
+- `utfsm-marcas.sty` y `utfsm-figs.sty`: los inyecta el revisor al compilar; no van en la entrega. El primero escribe en `<doc>.marcas` la página y la altura exacta de cada título numerado y de cada parte de un tcolorbox partido. El segundo compila cada `tikzpicture` en una página propia y rodea cada nodo con un trazo invisible, que el revisor lee del PDF para saber dónde está cada etiqueta.
+- Límites del revisor: no ve arcos de ángulo que cruzan flechas, figuras insertadas como imagen ni errores de geometría; eso se revisa en las hojas `-figuras-N.png`. La prueba `tests/test_compaginacion.py` necesita pdflatex y babel-spanish (se salta si faltan).

@@ -1,0 +1,209 @@
+% utfsm.sty -- formato de la casa para informes, guías y apuntes (Nicolás Albornoz, Obras Civiles UTFSM).
+% Lo copia `python -m utfsm_calc.plantilla`; se entrega junto al .tex (Collab Text no lo trae).
+% Opciones: particular (clases particulares: sin logos, coma decimal, marca de agua de texto),
+%           coma (coma decimal), sinmarca (sin marca de agua), stanli (carga la librería stanli).
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{utfsm}[2026/11/16 v1.0 Formato UTFSM Obras Civiles]
+
+\newif\ifutfsm@particular \newif\ifutfsm@coma \newif\ifutfsm@stanli
+\newif\ifutfsm@marca \utfsm@marcatrue
+\DeclareOption{particular}{\utfsm@particulartrue\utfsm@comatrue}
+\DeclareOption{coma}{\utfsm@comatrue}
+\DeclareOption{sinmarca}{\utfsm@marcafalse}
+\DeclareOption{stanli}{\utfsm@stanlitrue}
+\ProcessOptions\relax
+
+% ---------- Base ----------
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\ifutfsm@coma
+  \RequirePackage[spanish,es-noshorthands,es-tabla]{babel}
+\else
+  \RequirePackage[spanish,es-noshorthands,es-nodecimaldot,es-tabla]{babel}
+\fi
+\RequirePackage{lmodern}
+\RequirePackage[letterpaper,margin=2.5cm,top=3.2cm,headheight=1.4cm,headsep=0.6cm]{geometry}
+\RequirePackage{amsmath,amssymb,mathtools}
+\RequirePackage{graphicx,xcolor}
+\RequirePackage{booktabs,array,tabularx,longtable}
+\RequirePackage{siunitx}
+\sisetup{group-separator={\,},group-minimum-digits=5,per-mode=symbol}
+\ifutfsm@coma\sisetup{output-decimal-marker={,}}\fi
+\DeclareSIUnit\tonf{Tonf}
+\RequirePackage{fancyhdr,enumitem,caption,float,adjustbox,eso-pic}
+\RequirePackage{needspace,etoolbox}
+\RequirePackage[section]{placeins}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,patterns,decorations.pathmorphing,calc,angles,quotes,positioning,babel}
+\ifutfsm@stanli\RequirePackage{stanli}\fi
+\RequirePackage[hidelinks]{hyperref}
+\graphicspath{{img/}{./}}
+\captionsetup{labelsep=colon,font=small,labelfont=bf}
+\setlength{\parskip}{4pt}
+
+\definecolor{usmazul}{RGB}{0,70,160}
+\definecolor{usmrojo}{RGB}{200,25,25}
+\definecolor{usmverde}{RGB}{20,120,60}
+\definecolor{usmgris}{RGB}{90,90,90}
+
+\newcommand{\EI}{E\!I}
+\newcommand{\EA}{E\!A}
+\newcommand{\GJ}{G\!J}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\gC}{\,^{\circ}\mathrm{C}}
+\newcommand{\pend}{\textcolor{red}{\textbf{??}}}
+\newcommand{\completar}[1]{\textcolor{red}{[\textit{#1}]}}
+
+% ---------- Compaginación: nada cortado ----------
+% Títulos nunca solos al pie, sin viudas ni huérfanas, tablas y figuras fijas dentro de su punto.
+\pretocmd{\section}{\needspace{8\baselineskip}}{}{}
+\pretocmd{\subsection}{\needspace{6\baselineskip}}{}{}
+\pretocmd{\subsubsection}{\needspace{5\baselineskip}}{}{}
+\widowpenalty=10000 \clubpenalty=10000 \displaywidowpenalty=10000 \raggedbottom
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
+
+% Cajas: indivisibles por defecto. Una caja más alta que la página se declara `breakable` a mano.
+\tcbset{utfsm/.style={enhanced,unbreakable,colback=white,colframe=#1,coltitle=white,
+  fonttitle=\bfseries\small,arc=1.5pt,boxrule=0.6pt,left=6pt,right=6pt,top=4pt,bottom=4pt,
+  boxsep=1pt,before skip=8pt,after skip=8pt},utfsm/.default=usmazul}
+\newtcolorbox{enunciado}[2][]{utfsm=usmgris,title={Enunciado -- #2},#1}
+\newtcolorbox{resultado}[1][]{utfsm=usmverde,colback=usmverde!6,#1}
+\newtcolorbox{nota}[1][]{utfsm=usmazul!60,colback=usmazul!5,leftrule=3pt,#1}
+\newtcolorbox{cuidado}[1][]{utfsm=usmrojo,colback=usmrojo!4,leftrule=3pt,#1}
+\newtcolorbox{caja}[2][]{utfsm,title={#2},#1}
+% juntos: bloque invisible que no se parte (pregunta con sus alternativas, texto con su figura).
+\newtcolorbox{juntos}[1][]{blanker,unbreakable,before skip=6pt,after skip=6pt,#1}
+\newcounter{pregunta}
+\newenvironment{pregunta}{\refstepcounter{pregunta}\begin{juntos}\textbf{\thepregunta.}\ }{\end{juntos}}
+\newlist{alternativas}{enumerate}{1}
+\setlist[alternativas]{label=\textbf{\Alph*)},leftmargin=2.6em,itemsep=3pt,topsep=3pt}
+
+% ---------- Datos, portada, encabezado ----------
+\pgfkeys{/utfsm/.cd,
+  titulo/.store in=\utfsm@titulo, subtitulo/.store in=\utfsm@subtitulo,
+  ramo/.store in=\utfsm@ramo, profesor/.store in=\utfsm@profesor,
+  autor/.store in=\utfsm@autor, fecha/.store in=\utfsm@fecha, pie/.store in=\utfsm@pie,
+  titulo={}, subtitulo={}, ramo={}, profesor={}, pie={}, autor={Nicolás Albornoz Pavez}, fecha={\today}}
+\newcommand{\datos}[1]{\pgfkeys{/utfsm/.cd,#1}}
+\newcommand{\utfsm@logo}[3]{\IfFileExists{img/#2}{\includegraphics[#1]{#2}}{\IfFileExists{#2}{\includegraphics[#1]{#2}}{\fbox{\scriptsize #3}}}}
+\newcommand{\logoUTFSM}[1]{\utfsm@logo{#1}{Logo_UTFSM.png}{Logo UTFSM}}
+\newcommand{\logoDepa}[1]{\utfsm@logo{#1}{Logo_depa.png}{Logo Depto.}}
+\newcommand{\logoObras}[1]{\utfsm@logo{#1}{depto_obras.png}{Depto. Obras Civiles}}
+
+% Portada: tamaños de logo fijos (1.6 y 1.4 cm), proporcionados al título.
+\newcommand{\portada}{\begin{titlepage}\centering
+  \ifutfsm@particular\else
+    \logoUTFSM{height=1.6cm}\hfill\logoDepa{height=1.4cm}\par\vspace{0.6cm}
+    {\large\scshape Universidad Técnica Federico Santa María\par}
+    {\normalsize Departamento de Obras Civiles\par}
+  \fi
+  \vspace*{\stretch{1}}
+  {\color{usmazul}\rule{\linewidth}{0.8pt}\par}\vspace{0.5cm}
+  {\LARGE\bfseries\utfsm@titulo\par}
+  \ifx\utfsm@subtitulo\empty\else\vspace{0.3cm}{\large\utfsm@subtitulo\par}\fi
+  \vspace{0.4cm}{\color{usmazul}\rule{\linewidth}{0.8pt}\par}
+  \vspace{0.8cm}{\large\utfsm@ramo\par}
+  \vspace*{\stretch{2}}
+  \begin{flushright}\begin{tabular}{@{}rl@{}}
+    \textbf{Autor:} & \utfsm@autor\\
+    \ifx\utfsm@profesor\empty\else\textbf{Profesor:} & \utfsm@profesor\\\fi
+    \textbf{Fecha:} & \utfsm@fecha
+  \end{tabular}\end{flushright}
+\end{titlepage}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}
+\ifutfsm@particular
+  \setlength{\parindent}{0pt}
+  \fancyhead[L]{\small\color{gray!60!black}Clases particulares de Matemática y Física}
+  \fancyhead[R]{\small\color{gray!60!black}Prof.\ Nicolás Albornoz}
+  \fancyfoot[C]{\small\thepage}
+\else
+  \fancyhead[L]{\logoUTFSM{height=1.1cm}}
+  \fancyhead[C]{\textbf{\utfsm@titulo}\\[1pt]\small\utfsm@ramo}
+  \fancyhead[R]{\logoObras{height=0.8cm}}
+  \fancyfoot[L]{\footnotesize\utfsm@autor}
+  \fancyfoot[C]{\footnotesize\utfsm@pie}
+  \fancyfoot[R]{\footnotesize Pág.\ \thepage}
+  \renewcommand{\footrulewidth}{0.3pt}
+\fi
+
+% Marca de agua: logo del departamento al 5 % (UTFSM) o texto gris en diagonal (particular).
+\ifutfsm@marca
+  \ifutfsm@particular
+    \AddToShipoutPictureBG{\AtPageCenter{\makebox[0pt]{\raisebox{-0.5\height}{%
+      \begin{tikzpicture}\foreach \x/\y in {-4/8,0/0,4/-8}
+        \node[rotate=35,text=gray!22,font=\sffamily\large] at (\x,\y)
+          {Clases particulares \textperiodcentered\ Prof.\ Nicolás Albornoz};
+      \end{tikzpicture}}}}}
+  \else
+    \AddToShipoutPictureBG{\AtPageCenter{\IfFileExists{img/Logo_depa.png}{\makebox[0pt]{\raisebox{-0.5\height}{%
+      \tikz\node[opacity=0.05,inner sep=0pt]{\includegraphics[width=12cm]{Logo_depa.png}};}}}{}}}
+  \fi
+\fi
+
+% ---------- TikZ: estilos y macros de la casa ----------
+\newcommand{\utfsmR}{1.5cm}    % largo de las flechas de un DCL
+\newcommand{\utfsmRin}{2.5mm}  % separación entre el nudo y el inicio de la flecha
+\tikzset{
+  barra/.style={line width=1.4pt,line cap=round,line join=round},
+  eje/.style={thin,dash dot,usmgris},
+  carga/.style={-{Stealth[length=2.2mm]},usmrojo,thick},
+  reaccion/.style={-{Stealth[length=2.2mm]},usmverde,thick},
+  interna/.style={-{Stealth[length=2.2mm]},usmazul,thick},
+  cotalinea/.style={{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},thin},
+  etq/.style={font=\footnotesize,inner sep=1.5pt},
+  nudo/.style={circle,fill,inner sep=0pt,minimum size=3.5pt},
+  rotula/.style={circle,draw,fill=white,inner sep=0pt,minimum size=5pt,line width=0.8pt},
+  % Apoyos: \pic[rotate=..] at (A) {apoyo fijo};  el punto de apoyo es el origen del pic.
+  apoyo fijo/.pic={\draw[thick,fill=white] (0,0)--(-0.22,-0.34)--(0.22,-0.34)--cycle;
+    \fill[pattern=north east lines] (-0.34,-0.46) rectangle (0.34,-0.34);\draw[thick] (-0.34,-0.34)--(0.34,-0.34);},
+  apoyo movil/.pic={\draw[thick,fill=white] (0,0)--(-0.22,-0.30)--(0.22,-0.30)--cycle;
+    \draw[thick,fill=white] (-0.12,-0.36) circle (0.06) (0.12,-0.36) circle (0.06);
+    \fill[pattern=north east lines] (-0.34,-0.54) rectangle (0.34,-0.42);\draw[thick] (-0.34,-0.42)--(0.34,-0.42);},
+  empotrado/.pic={\fill[pattern=north east lines] (-0.4,-0.14) rectangle (0.4,0);\draw[thick] (-0.4,0)--(0.4,0);}
+}
+% \cota[desplazamiento]{A}{B}{texto}: línea de cota paralela a AB, a la izquierda del sentido A->B
+% (desplazamiento negativo: al otro lado). El texto va sobre la línea con fondo blanco.
+\newcommand{\cota}[4][-7mm]{%
+  \coordinate (utfsm@a) at ($(#2)!#1!90:(#3)$); \coordinate (utfsm@b) at ($(#3)!#1!-90:(#2)$);
+  \draw[very thin,usmgris] ($(#2)!0.25!(utfsm@a)$)--($(#2)!1.15!(utfsm@a)$) ($(#3)!0.25!(utfsm@b)$)--($(#3)!1.15!(utfsm@b)$);
+  \draw[cotalinea] (utfsm@a)--node[etq,fill=white]{#4}(utfsm@b);}
+% \cargadist[alto]{A}{B}{texto}: carga distribuida uniforme sobre AB, a la izquierda del sentido
+% A->B (alto negativo: al otro lado). El texto queda por fuera de la carga.
+\newcommand{\cargadist}[4][7mm]{%
+  \ifdim#1>0pt \def\utfsm@lado{left}\else\def\utfsm@lado{right}\fi
+  \coordinate (utfsm@a) at ($(#2)!#1!90:(#3)$); \coordinate (utfsm@b) at ($(#3)!#1!-90:(#2)$);
+  \draw[usmrojo,thick] (utfsm@a)--node[etq,auto=\utfsm@lado]{#4}(utfsm@b);
+  \foreach \utfsm@t in {0,0.2,0.4,0.6,0.8,1}
+    \draw[carga,thin] ($(utfsm@a)!\utfsm@t!(utfsm@b)$)--($(#2)!\utfsm@t!(#3)$);}
+% Fuerzas de un DCL: la etiqueta va en el extremo libre de la flecha, con el anchor opuesto al
+% nudo, de modo que no pisa la flecha ni las etiquetas vecinas.
+%   \fuerzasale[estilo]{nudo}{ángulo}{etiqueta}   flecha que se aleja del nudo
+%   \fuerzaentra[estilo]{nudo}{ángulo}{etiqueta}  flecha que llega al nudo desde ese ángulo
+% \tramobarra{nudo}{ángulo}: tramo gris de la barra que llega al nudo; va antes de las fuerzas.
+\newcommand{\tramobarra}[2]{\draw[line width=3pt,gray!35,line cap=round] (#1)--($(#1)+(#2:0.7*\utfsmR)$);}
+\newcommand{\utfsm@anc}[1]{\pgfmathtruncatemacro{\utfsm@op}{mod(round(#1)+180,360)}}
+\newcommand{\fuerzasale}[4][interna]{\utfsm@anc{#3}%
+  \draw[#1] ($(#2)+(#3:\utfsmRin)$)--($(#2)+(#3:\utfsmR)$) node[etq,anchor=\utfsm@op]{#4};}
+\newcommand{\fuerzaentra}[4][carga]{\utfsm@anc{#3}%
+  \draw[#1] ($(#2)+(#3:\utfsmR)$) node[etq,anchor=\utfsm@op]{#4}--($(#2)+(#3:\utfsmRin)$);}
+% \angulo[radio]{A}{O}{B}{texto}: arco antihorario de OA a OB con el texto fuera del arco.
+\newcommand{\angulo}[5][7mm]{\pic[draw,thin,angle radius=#1,angle eccentricity=1.55,pic text={#5},
+  pic text options={etq}]{angle=#2--#3--#4};}
+% \momento[estilo]{O}{inicio}{fin}{etiqueta}: momento como arco de radio 4.5 mm, etiqueta en la punta.
+\newcommand{\momento}[5][carga]{\utfsm@anc{#4}%
+  \draw[#1] ($(#2)+(#3:4.5mm)$) arc[start angle=#3,end angle=#4,radius=4.5mm] node[etq,anchor=\utfsm@op]{#5};}
+
+% ---------- pgfplots: la leyenda va fuera del eje, nunca sobre los datos ----------
+\pgfplotsset{utfsm/.style={width=0.82\linewidth,height=0.5\linewidth,grid=major,grid style={gray!30},
+  tick label style={font=\footnotesize},label style={font=\small},
+  every axis plot/.append style={thick},legend cell align=left,
+  legend style={at={(0.5,1.03)},anchor=south,legend columns=-1,font=\footnotesize,draw=none,fill=none,
+    /tikz/every even column/.append style={column sep=10pt}}}}
+\ifutfsm@coma\pgfplotsset{/pgf/number format/use comma}\fi
+\pgfplotsset{/pgf/number format/1000 sep={\,}}
+\endinput

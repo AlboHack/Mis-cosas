@@ -1,59 +1,92 @@
 ---
 name: "latex-utfsm"
-description: "Usar al generar o corregir LaTeX con formato UTFSM: informes, tablas booktabs/siunitx, TikZ, pgfplots, memorias de cálculo con handcalcs, errores de compilación y paso de PDF, capturas o transcripciones de clases a LaTeX."
+description: "Usar al generar o corregir LaTeX con formato UTFSM: informes, guías de ejercicios resueltos, material de clases particulares, tablas booktabs/siunitx, TikZ, pgfplots, memorias con handcalcs, errores de compilación, paso de PDF a LaTeX y la revisión de compaginación y de figuras antes de entregar un PDF."
 ---
 
-# LaTeX estándar UTFSM (Depto. de Obras Civiles)
+# LaTeX con el formato de la casa (UTFSM, Obras Civiles)
 
-## 1. Preámbulo base
-```latex
-\documentclass[letterpaper, 10pt]{article}
-\usepackage[spanish,es-noshorthands,es-nodecimaldot]{babel}
-\usepackage{amsmath,booktabs,siunitx,graphicx,xcolor,fancyhdr}
-\usepackage{tikz,pgfplots}
-\pgfplotsset{compat=1.18}
-\usetikzlibrary{arrows.meta,patterns,decorations.pathmorphing,calc,babel}
+El formato, las cajas, las macros de dibujo y el revisor están en el paquete utfsm-calc (regla 3 de las instrucciones). No se reescribe el preámbulo ni se copian scripts al chat: se instala el paquete y se ejecuta.
 
-\newcommand{\logoUTFSM}[1]{\IfFileExists{Logo_UTFSM.png}{\includegraphics[#1]{Logo_UTFSM.png}}{\fbox{\scriptsize Logo UTFSM}}}
-\newcommand{\logoDepa}[1]{\IfFileExists{Logo depa.png}{\includegraphics[#1]{Logo depa.png}}{\fbox{\scriptsize Logo Depto.}}}
-\newcommand{\EI}{E\!I}
-\newcommand{\EA}{E\!A}
-\newcommand{\gC}{\,^{\circ}\mathrm{C}}
-\newcommand{\pend}{\textcolor{red}{\textbf{??}}}
-\newcommand{\completar}[1]{\textcolor{red}{[\textit{#1}]}}
+## 1. Partir un documento
 ```
-Punto decimal en todo el documento, también en siunitx (sin `output-decimal-marker={,}`).
-
-## 2. Gráficos: calcular primero, graficar después
-Calcular en Python las coordenadas exactas (diagramas $N, V, M$; elástica $v(x)$; perfiles $u(y)$; LE/LP; $q(k)$; curvas S) e incrustarlas en:
-```latex
-\addplot table [row sep=\\] { x y \\ ... };
+python -m utfsm_calc.plantilla trabajo --tipo informe      # o: guia | particular
 ```
-No dibujar curvas "a mano" con funciones aproximadas.
+Deja en `trabajo/` el archivo `utfsm.sty`, `img/` con los logos y un `main.tex` de partida. Si LaTeX no encuentra `spanish.ldf`: `apt-get update && apt-get install -y texlive-lang-spanish`.
 
-## 3. Esquemas TikZ paramétricos
-- Definir la geometría al inicio de cada `tikzpicture` con `\pgfmathsetmacro` (`\L`, `\H`, `\q`).
-- Ubicar nudos con `\coordinate (A) at (0,0);` y construir todo a partir de ellos.
-- Reemplazar capturas estáticas de enrejados, vigas o volúmenes de control por esquemas paramétricos.
+El preámbulo es `\usepackage{utfsm}` más los paquetes propios del trabajo. Opciones: `particular` (clases particulares: sin logos, coma decimal, marca de agua de texto), `coma`, `sinmarca`, `stanli`.
 
-## 4. Tipografía científica
-- Matrices y vectores en negrita recta: `\mathbf{K}\mathbf{u} = \mathbf{F}`, con `bmatrix`.
-- Tablas solo con booktabs (`\toprule`, `\midrule`, `\bottomrule`), sin líneas verticales, y columnas `S` de siunitx.
+`utfsm.sty` ya trae, y no se repite: geometría carta, babel con punto decimal, siunitx, booktabs, tcolorbox, TikZ y pgfplots, encabezado con logos, marca de agua, colores `usmazul`, `usmrojo`, `usmverde`, `usmgris`, y `\EI`, `\EA`, `\GJ`, `\dd`, `\gC`, `\pend`, `\completar{}`.
 
-## 5. Memorias de cálculo y tablas desde Python (utfsm-calc)
-El número del informe debe ser el número verificado: el LaTeX se genera desde el mismo código, no se transcribe. Solo para memorias e informes, no para el chat.
-- Fórmula, sustitución y resultado: `handcalc = latex.hc_setup()` y luego `@handcalc(jupyter_display=False, precision=4)` sobre una función que termina en `return locals()`; devuelve `(latex, valores)`.
-- Condiciones para que funcione (probadas): el código va en un archivo .py, porque handcalcs lee el código fuente y falla con `python -` o heredoc; cada asignación lleva espacios alrededor del `=` (`delta = P*L**3/(3*EI)`), porque sin ellos solo imprime el resultado.
-- Limitaciones: una sola precisión por función (con 4 decimales, un valor menor que 5·10⁻⁵ sale como 0: pasar EI ya formado o usar cm⁴); sin notación científica, que convierte también 10 en 1.0000×10¹; solo sentencias de una línea; sin unidades (van en el texto o en la tabla).
-- Comparación teórico/software: `latex.tabla_comparacion([(nombre, teorico, software)], caption, label)`; escribe `---` en el error cuando el teórico es 0.
-- Pendientes antes de entregar: `latex.pendientes('informe.tex')` lista cada `\pend` y `\completar{}` con su línea.
+Datos y portada: `\datos{titulo=..., subtitulo=..., ramo=..., profesor=..., autor=..., fecha=..., pie=...}` y luego `\portada`. Los logos tienen tamaño fijo; no se cambian.
 
-## 6. pdf2tex: PDF, capturas o transcripciones a LaTeX
-1. Separar la derivación teórica de los pasos de software (p. ej. secuencia de modelación en SAP2000).
-2. Describir cada diagrama o DCL con su geometría y cargas, y reconstruirlo en TikZ paramétrico.
-3. Estructurar el resultado como apunte académico o plantilla de tarea, marcando con `\completar{}` lo que no se pueda leer con certeza.
+## 2. Nada cortado por un salto de página
+Se logra al escribir, no al final.
+- Cajas indivisibles: `enunciado{fuente}`, `resultado`, `nota`, `cuidado`, `caja{título}`. Una caja nueva se define con `\newtcolorbox{nombre}{utfsm=color}`. `breakable` se agrega solo a la caja que el revisor informe como más alta que la página.
+- `juntos`: bloque invisible que no se parte. Va ahí todo lo que debe compartir página: un texto con su figura, una tabla con su lectura.
+- `pregunta` con `alternativas` adentro: cada pregunta de selección múltiple queda con sus alternativas.
+- `\begin{figure}` y `\begin{table}` sin opción de posición: quedan fijas donde se escriben, dentro de su punto. Tabla más larga que una página: `longtable`.
+- Un título por línea del `.tex`. Sin `\newpage`, `\clearpage` ni `\vspace` para acomodar páginas: eso lo hace el revisor con líneas `\Needspace{...}% anticorte`, que no se editan a mano.
 
-## 7. latex-rescue: errores de compilación
-1. Ir al primer error del log, no al último.
-2. Revisar en orden: paquete faltante, llave o entorno sin cerrar, conflicto de shorthands de babel con TikZ (falta `\usetikzlibrary{babel}` o `es-noshorthands`), separador decimal en siunitx o pgfplots.
-3. Entregar la corrección como bloque de código exacto indicando dónde va.
+## 3. Figuras TikZ
+- Nombrar las coordenadas al inicio (`\coordinate (A) at (0,0);`) y construir todo desde ellas; dimensiones con `\pgfmathsetmacro`.
+- Usar las macros de la casa. Ubican cada etiqueta donde no puede pisar una flecha ni otra etiqueta:
+
+| Macro | Dibuja |
+|---|---|
+| estilos `barra`, `eje`, `carga`, `reaccion`, `interna`, `etq`, `nudo`, `rotula` | barras, ejes, flechas por tipo, etiquetas, nudos |
+| `\pic[rotate=90] at (A) {apoyo fijo};` también `apoyo movil`, `empotrado` | apoyos; el origen del pic es el punto de apoyo |
+| `\cota[desp]{A}{B}{$4$ m}` | cota paralela a AB, a la izquierda del sentido A→B; `desp` negativo: al otro lado |
+| `\cargadist[alto]{A}{B}{$q$}` | carga distribuida sobre AB, mismo criterio de lado |
+| `\fuerzasale[estilo]{O}{ángulo}{$N$}`, `\fuerzaentra[estilo]{O}{ángulo}{$P$}` | fuerzas de un DCL, etiqueta en el extremo libre; largo `\utfsmR` |
+| `\tramobarra{O}{ángulo}` | tramo gris de la barra bajo la flecha de un DCL; va antes de las fuerzas |
+| `\angulo[radio]{A}{O}{B}{$45^\circ$}` | arco antihorario de OA a OB, texto fuera del arco |
+| `\momento[estilo]{O}{inicio}{fin}{$M$}` | momento como arco, en un sector sin flechas |
+
+- Toda etiqueta suelta lleva `etq`. Una etiqueta que debe ir sobre una línea lleva `fill=white`; si no, va a un lado (`above`, `left`), nunca `midway` a secas.
+- Las etiquetas de nudos y apoyos van fuera del achurado y de la línea de base del apoyo.
+- Un DCL muestra todas las barras que llegan al nudo; si una fuerza es nula, se dice en la leyenda. Paneles que se comparan: misma escala y misma caja (`\path[use as bounding box]`).
+- Curvas (diagramas $N, V, M$, elásticas, perfiles, curvas S): se calculan en Python y entran como `\addplot table [row sep=\\] {...};`. No se dibujan con funciones aproximadas.
+- pgfplots con `\begin{axis}[utfsm, ...]`: deja la leyenda arriba, fuera del eje. Sin `title`: el título es el `\caption`.
+- Ejemplo completo que pasa el revisor: `ejemplo.tex`, junto a `utfsm.sty` en el paquete (`python -c "import utfsm_calc.plantilla as p; print(p.TEX_DIR)"`).
+
+## 4. Guías de ejercicios resueltos y apuntes
+1. Enunciado copiado tal cual de la fuente, dentro de `enunciado` junto con su figura. Lo que se lea de la figura y no esté en el texto va fuera, como nota.
+2. La figura del enunciado se redibuja con todas las longitudes acotadas, cargas con magnitud, $EI$/$EA$ y apoyos. Los dibujos de planteamiento muestran la coordenada $x_i$ de cada tramo, con origen y sentido.
+3. $M(x)$ por corte: DCL de una parte con $M$ en su sentido positivo y $\sum M_{\text{corte}}=0$ con cada fuerza por su brazo y su sentido de giro. Sin $(\mathbf r\times\mathbf F)_z$.
+4. Cada descomposición de ángulos (barra inclinada, tramo curvo, nudo) lleva su DCL o triángulo acotado.
+5. Desarrollo completo, sin saltar pasos: ecuación general, cada término que se anula con su razón, álgebra e integrales.
+
+## 5. Números y tablas desde Python
+El número del informe es el número verificado: el LaTeX se genera desde el mismo código.
+- `handcalc = latex.hc_setup()` y `@handcalc(jupyter_display=False, precision=4)` sobre una función que termina en `return locals()`; devuelve `(latex, valores)`. El código va en un archivo `.py` (falla con heredoc) y cada asignación con espacios alrededor del `=`.
+- Límites de handcalcs: una precisión por función (con 4 decimales, un valor menor que $5\cdot10^{-5}$ sale 0: pasar $EI$ ya formado o usar cm$^4$), sin notación científica, una sentencia por línea, sin unidades. Solo para memorias e informes, no para el chat.
+- `latex.tabla_comparacion([(nombre, teorico, software)], caption, label)` y `latex.pendientes('main.tex')`.
+- Matrices y vectores en negrita recta (`\mathbf{K}\mathbf{u}=\mathbf{F}`). Tablas con booktabs, sin líneas verticales, columnas `S`.
+
+## 6. De PDF, capturas o transcripciones a LaTeX
+Separar la derivación de los pasos de software, reconstruir cada diagrama en TikZ con las macros de la sección 3 y marcar con `\completar{}` lo que no se lea con certeza.
+
+## 7. Errores de compilación
+Ir al primer error del log. Revisar en orden: paquete faltante, llave o entorno sin cerrar, shorthands de babel dentro de TikZ, separador decimal en siunitx o pgfplots.
+
+## 8. Revisión antes de entregar (obligatoria)
+```
+python -m utfsm_calc.compaginacion main.tex
+```
+Compila, mueve a la página siguiente todo punto numerado que quedó partido y cabe en una página, y revisa páginas y figuras. Termina en `RESULTADO: OK` o lista los problemas.
+
+1. Corregir cada `PROBLEMA` y volver a correr:
+
+| Mensaje | Corrección |
+|---|---|
+| ETIQUETAS SUPERPUESTAS, TRAZO SOBRE ETIQUETA, ETIQUETA SOBRE ACHURADO | redibujar con las macros de la sección 3 o mover la etiqueta a un sector libre |
+| CAJA OPACA TAPA CURVAS | leyenda fuera del eje: estilo `utfsm` |
+| CAJA PARTIDA | quitar `breakable` o usar una caja de la sección 2 |
+| CONTENIDO SE SALE POR ABAJO | achicar la figura o tabla, o dar `breakable` a esa caja |
+| LEYENDA separada, PÁGINA VACÍA | la figura o tabla no va en `figure`/`table`, o no cabe: reducir `width` o partirla |
+| OVERFULL, TEXTO FUERA DEL MARGEN | `multline` o `split` en la ecuación; `tabularx` en la tabla |
+| REFERENCIA o CITA INDEFINIDA | falta el `\label` o va antes del `\caption` |
+
+2. Leer con la herramienta de imágenes todas las hojas `main-figuras-N.png` (cada figura a tamaño legible) y `main-paginas-N.png`. El revisor no ve lo siguiente, y se mira ahí: geometría, cargas o cotas distintas de la fuente; un arco de ángulo que cruza una flecha; figuras insertadas como imagen; orden de las páginas, encabezado y portada.
+3. Repetir hasta `RESULTADO: OK` y revisión visual sin observaciones. Los `aviso` se leen y se decide: una página a medio llenar suele ser el costo de no partir un punto.
+4. Entregar el PDF y un `.zip` con `main.tex`, `utfsm.sty`, `img/` y los archivos incluidos, listo para Collab Text. Informar en una línea: páginas, figuras revisadas y `RESULTADO: OK`. Si algo quedó sin resolver, decir qué y en qué página.

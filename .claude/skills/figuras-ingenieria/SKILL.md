@@ -21,7 +21,10 @@ Adaptado del enfoque de figuras de publicación científica (K-Dense scientific-
 - Diagramas de esfuerzos: convención de signos declarada en la leyenda o el pie (M dibujado del lado traccionado; N + tracción), valores en máximos, apoyos y rótulas, y la misma escala entre sistemas que se comparan.
 - Deformadas: indicar factor de amplificación y la geometría original en gris.
 - Sin título dentro del gráfico si va en LaTeX: el título es el \caption, que dice qué se muestra y la conclusión principal.
+- Leyenda fuera del área de datos, nunca sobre las curvas: en pgfplots, `\begin{axis}[utfsm, ...]` (la deja arriba del eje); en matplotlib, `ax.legend(loc="lower center", bbox_to_anchor=(0.5, 1.02), ncol=n, frameon=False)`.
+- Esquemas y DCL en TikZ: con las macros de latex-utfsm (sección 3), que ubican las etiquetas sin superposiciones.
 
 ## Verificación
 - Comprobar 2 o 3 puntos de la figura contra el CSV o el cálculo (máximos, cruces por cero, valor en un apoyo).
-- Compilar y renderizar la página; revisar que no haya `Overfull`, texto ilegible ni leyendas que tapen datos.
+- Figuras en LaTeX: correr el revisor de latex-utfsm (sección 8) y leer la hoja `*-figuras-N.png`; detecta etiquetas superpuestas, trazos sobre etiquetas y leyendas sobre curvas, y muestra cada figura a tamaño legible.
+- Figuras de matplotlib: abrir el PNG o PDF exportado al tamaño final y revisar que no haya texto ilegible, etiquetas encimadas ni leyenda sobre los datos.
