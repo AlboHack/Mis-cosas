@@ -130,3 +130,21 @@ def test_particular_y_titulos_en_archivos_incluidos(tmp_path):
     with pdfplumber.open(str(t)[:-4] + ".pdf") as pdf:
         texto = pdf.pages[0].extract_text()
     assert "3,5" in texto and "Clases particulares" in texto                               # coma decimal y encabezado
+
+
+def test_documento_sin_utfsm_sty(tmp_path):
+    # informes anteriores con preámbulo propio: el revisor inyecta las marcas y agrega needspace solo si hace falta
+    t = tmp_path / "viejo.tex"
+    t.write_text("\n".join([r"\documentclass[letterpaper,10pt]{article}", r"\usepackage[T1]{fontenc}",
+                            r"\usepackage[spanish,es-noshorthands,es-nodecimaldot]{babel}", r"\usepackage{tikz,lipsum}",
+                            r"\begin{document}", r"\section{Uno}", r"\lipsum[1-5]", r"\section{Dos}", r"\lipsum[6]",
+                            r"\subsection{Dos uno}", r"\lipsum[7-9]", r"\section{Tres}", r"\lipsum[1]", r"\end{document}"]),
+                 encoding="utf-8")
+    geo, tit, fin, _, _, pdf, _ = cp.anticorte(str(t), eco=lambda *_: None)
+    assert cp.puntos_cortados(geo, tit, fin, cp.fondo_de_paginas(pdf, geo)) == []
+    ls = t.read_text(encoding="utf-8").split("\n")
+    assert r"\usepackage{needspace}% anticorte" in ls
+    for i, l in enumerate(ls):                               # cada marca queda justo antes de un título
+        if l.startswith(r"\Needspace"):
+            assert ls[i + 1].startswith((r"\section", r"\subsection"))
+    assert subprocess.run(["pdflatex", "-interaction=nonstopmode", "viejo.tex"], cwd=tmp_path, capture_output=True).returncode == 0

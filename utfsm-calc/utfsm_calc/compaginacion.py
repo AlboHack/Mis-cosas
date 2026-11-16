@@ -129,6 +129,18 @@ def _ruta(tex, archivo):
     return r if os.path.exists(r) else r + ".tex"
 
 
+def _asegurar_needspace(tex):
+    """\\Needspace exige el paquete needspace en el entregable: lo agrega si el preámbulo no lo trae.
+    Devuelve True si modificó el archivo."""
+    src = open(tex, encoding="utf-8").read()
+    pre = src.split(r"\begin{document}")[0]
+    pre += "".join(open(_ruta(tex, x), encoding="utf-8").read() for x in re.findall(r"\\input\{([^}]+)\}", pre) if os.path.exists(_ruta(tex, x)))
+    if "needspace" not in pre and not re.search(r"\\usepackage(\[[^\]]*\])?\{utfsm\}", pre) and r"\begin{document}" in src:
+        open(tex, "w", encoding="utf-8").write(src.replace(r"\begin{document}", "\\usepackage{needspace}% anticorte\n\\begin{document}", 1))
+        return True
+    return False
+
+
 def anticorte(tex, nmax=12, eco=print):
     """Inserta marcas \\Needspace hasta que ningún punto que quepa en una página quede partido."""
     src = open(tex, encoding="utf-8").read()
@@ -140,11 +152,6 @@ def anticorte(tex, nmax=12, eco=print):
                 open(r, "w", encoding="utf-8").write(MARCA.sub("", t))
     if MARCA.search(src):
         open(tex, "w", encoding="utf-8").write(MARCA.sub("", src))
-    src = open(tex, encoding="utf-8").read()
-    pre = src.split(r"\begin{document}")[0]
-    pre += "".join(open(_ruta(tex, x), encoding="utf-8").read() for x in re.findall(r"\\input\{([^}]+)\}", pre) if os.path.exists(_ruta(tex, x)))
-    if "needspace" not in pre and not re.search(r"\\usepackage(\[[^\]]*\])?\{utfsm\}", pre) and r"\begin{document}" in src:
-        open(tex, "w", encoding="utf-8").write(src.replace(r"\begin{document}", "\\usepackage{needspace}% anticorte\n\\begin{document}", 1))
     movidos = 0
     for it in range(1, nmax + 1):
         ok, pdf, log = compilar(tex, "utfsm-marcas")
@@ -157,6 +164,8 @@ def anticorte(tex, nmax=12, eco=print):
         if not cortados:
             eco(f"Anticorte: ningún punto cortado ({movidos} marca(s), {it} compilación(es)).")
             return geo, tit, fin, ci, cf, pdf, log
+        if _asegurar_needspace(tex):                        # cambió la numeración de líneas: medir de nuevo
+            continue
         por_archivo = {}
         for h, alto in cortados:
             por_archivo.setdefault(_ruta(tex, h["archivo"]), {})[h["linea"]] = alto
