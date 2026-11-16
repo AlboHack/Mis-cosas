@@ -184,6 +184,8 @@
 % nudo, de modo que no pisa la flecha ni las etiquetas vecinas.
 %   \fuerzasale[estilo]{nudo}{ángulo}{etiqueta}   flecha que se aleja del nudo
 %   \fuerzaentra[estilo]{nudo}{ángulo}{etiqueta}  flecha que llega al nudo desde ese ángulo
+% \tramobarra{nudo}{ángulo}: tramo gris de la barra que llega al nudo; va antes de las fuerzas.
+\newcommand{\tramobarra}[2]{\draw[line width=3pt,gray!35,line cap=round] (#1)--($(#1)+(#2:0.7*\utfsmR)$);}
 \newcommand{\utfsm@anc}[1]{\pgfmathtruncatemacro{\utfsm@op}{mod(round(#1)+180,360)}}
 \newcommand{\fuerzasale}[4][interna]{\utfsm@anc{#3}%
   \draw[#1] ($(#2)+(#3:\utfsmRin)$)--($(#2)+(#3:\utfsmR)$) node[etq,anchor=\utfsm@op]{#4};}

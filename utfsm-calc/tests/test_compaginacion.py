@@ -41,7 +41,7 @@ def test_etiquetas_superpuestas_y_trazo_sobre_etiqueta(tmp_path):
 
 def test_macros_de_la_casa_no_chocan(tmp_path):
     t = doc(tmp_path, fig(r"""\coordinate (O) at (0,0); \coordinate (X) at (1,0); \coordinate (D) at (36.87:1);
-      \node[nudo] at (O) {};
+      \tramobarra{O}{0} \tramobarra{O}{36.87} \tramobarra{O}{180} \node[nudo] at (O) {};
       \fuerzasale{O}{0}{$N_{BC}$} \fuerzasale{O}{36.87}{$N_{BD}$} \fuerzasale{O}{180}{$N_{AB}$}
       \fuerzaentra{O}{90}{$P=10$ T} \angulo{X}{O}{D}{$36.9^\circ$} \node[etq] at (250:5mm) {$B$};""")
         + fig(r"""\coordinate (A) at (0,0); \coordinate (B) at (6,0); \coordinate (C) at (2,0);

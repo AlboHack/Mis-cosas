@@ -38,6 +38,7 @@ Se logra al escribir, no al final.
 | `\cota[desp]{A}{B}{$4$ m}` | cota paralela a AB, a la izquierda del sentido A→B; `desp` negativo: al otro lado |
 | `\cargadist[alto]{A}{B}{$q$}` | carga distribuida sobre AB, mismo criterio de lado |
 | `\fuerzasale[estilo]{O}{ángulo}{$N$}`, `\fuerzaentra[estilo]{O}{ángulo}{$P$}` | fuerzas de un DCL, etiqueta en el extremo libre; largo `\utfsmR` |
+| `\tramobarra{O}{ángulo}` | tramo gris de la barra bajo la flecha de un DCL; va antes de las fuerzas |
 | `\angulo[radio]{A}{O}{B}{$45^\circ$}` | arco antihorario de OA a OB, texto fuera del arco |
 | `\momento[estilo]{O}{inicio}{fin}{$M$}` | momento como arco, en un sector sin flechas |
 
@@ -58,7 +59,7 @@ Se logra al escribir, no al final.
 ## 5. Números y tablas desde Python
 El número del informe es el número verificado: el LaTeX se genera desde el mismo código.
 - `handcalc = latex.hc_setup()` y `@handcalc(jupyter_display=False, precision=4)` sobre una función que termina en `return locals()`; devuelve `(latex, valores)`. El código va en un archivo `.py` (falla con heredoc) y cada asignación con espacios alrededor del `=`.
-- Límites de handcalcs: una precisión por función (con 4 decimales, un valor menor que $5\cdot10^{-5}$ sale 0), sin notación científica, una sentencia por línea, sin unidades.
+- Límites de handcalcs: una precisión por función (con 4 decimales, un valor menor que $5\cdot10^{-5}$ sale 0: pasar $EI$ ya formado o usar cm$^4$), sin notación científica, una sentencia por línea, sin unidades. Solo para memorias e informes, no para el chat.
 - `latex.tabla_comparacion([(nombre, teorico, software)], caption, label)` y `latex.pendientes('main.tex')`.
 - Matrices y vectores en negrita recta (`\mathbf{K}\mathbf{u}=\mathbf{F}`). Tablas con booktabs, sin líneas verticales, columnas `S`.
 
