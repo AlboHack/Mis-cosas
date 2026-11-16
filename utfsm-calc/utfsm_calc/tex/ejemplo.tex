@@ -1,0 +1,56 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage{utfsm}
+\datos{titulo={Guía de prueba del formato}, ramo={CIV-233 Fundamentos de Análisis Estructural}}
+\begin{document}
+\section{Marco con rótula}
+\begin{enunciado}{Guía 4, Problema 8}
+Marco $ABCDE$ con carga distribuida en la viga y carga horizontal en $B$. Determine las reacciones.\par\centering
+\begin{tikzpicture}[scale=0.8]
+  \coordinate (A) at (0,0); \coordinate (B) at (0,4); \coordinate (C) at (3,4); \coordinate (D) at (6,4); \coordinate (E) at (6,0);
+  \draw[barra] (A)--(B)--(D)--(E);
+  \pic at (A) {empotrado}; \pic at (E) {apoyo fijo};
+  \node[rotula] at (C) {};
+  \cargadist{B}{D}{$q=4$ T/m}
+  \fuerzaentra{B}{180}{$P=6$ T}
+  \node[etq,above left=2pt and 2pt] at (A) {$A$}; \node[etq,below right=1pt and 2pt] at (B) {$B$};
+  \node[etq,below=3pt] at (C) {$C$}; \node[etq,below left=1pt and 2pt] at (D) {$D$}; \node[etq,right=5pt] at (E) {$E$};
+  \cota[-12mm]{A}{E}{$6$ m} \cota[10mm]{A}{B}{$4$ m}
+  \node[etq,right] at (0,2) {$EI$}; \node[etq,left] at (6,2) {$EI$};
+\end{tikzpicture}
+\end{enunciado}
+
+\subsection{Equilibrio del nudo D}
+\begin{figure}\centering
+\begin{tikzpicture}
+  \coordinate (O) at (0,0); \coordinate (X) at (1,0); \coordinate (Q) at (45:1); \coordinate (Y) at (0,1); \coordinate (R) at (135:1);
+  \node[nudo] at (O) {};
+  \fuerzasale{O}{0}{$N_{DE}$}
+  \fuerzasale{O}{45}{$N_{DF}=12.5$ T}
+  \fuerzasale{O}{135}{$N_{DG}$}
+  \fuerzasale{O}{180}{$N_{CD}$}
+  \fuerzaentra[reaccion]{O}{270}{$R_D=8.25$ T}
+  \fuerzaentra{O}{90}{$P$}
+  \angulo{X}{O}{Q}{$45^\circ$}
+  \momento{O}{300}{345}{$M_D$}
+\end{tikzpicture}
+\caption{DCL del nudo $D$ con seis fuerzas y un momento.}
+\end{figure}
+
+\subsection{Diagrama de momento}
+\begin{figure}\centering
+\begin{tikzpicture}
+\begin{axis}[utfsm,xlabel={$x$ [m]},ylabel={$M$ [T\,m]},y dir=reverse]
+\addplot[usmazul,thick] table[row sep=\\]{x y\\ 0 0\\ 1 5\\ 2 8\\ 3 9\\ 4 8\\ 5 5\\ 6 0\\};
+\addplot[usmrojo,thick,dashed] table[row sep=\\]{x y\\ 0 -3\\ 3 4.5\\ 6 -3\\};
+\legend{Isostática $M_0$, Final $M$}
+\end{axis}
+\end{tikzpicture}
+\caption{Diagrama de momento; $M>0$ tracciona la fibra inferior.}
+\end{figure}
+\begin{resultado}
+$A_y = 12.0$ T, $E_y = 12.0$ T, $M_A = -3.0$ T\,m.
+\end{resultado}
+\begin{table}\centering\caption{Comparación.}
+\begin{tabular}{lSS}\toprule Magnitud & {Teórico} & {SAP2000}\\\midrule $A_y$ [T] & 12.000 & 12.001\\\bottomrule\end{tabular}
+\end{table}
+\end{document}

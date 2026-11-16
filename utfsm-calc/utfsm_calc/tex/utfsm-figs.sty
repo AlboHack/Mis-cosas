@@ -1,0 +1,35 @@
+% utfsm-figs.sty -- pase de figuras para utfsm_calc.compaginacion. No va en el entregable.
+% Con preview, cada tikzpicture queda en una página propia y recortada. Cada nodo se rodea con un
+% trazo de color reservado y grosor ínfimo, que el revisor lee del PDF para ubicar las etiquetas.
+\ProvidesPackage{utfsm-figs}[2026/11/16 v1.0]
+\RequirePackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{4pt}
+\RequirePackage{xcolor}
+\definecolor{utfsmmarca}{rgb}{1,0,0.6}
+\newwrite\utfsm@f
+\immediate\openout\utfsm@f=\jobname.figuras
+\AddToHook{begindocument/end}{%
+  % sin fondos de página (marca de agua): dibujarlos dentro de una figura anida envíos de página
+  \RemoveFromHook{shipout/background}[*]\RemoveFromHook{shipout/foreground}[*]%
+  % una línea por página de figura: entorno que la invoca (tikzpicture, o el de la caja cuando es
+  % un dibujo interno de tcolorbox), línea y archivo
+  \let\utfsm@tp\tikzpicture
+  \def\tikzpicture{\ifpr@outer\immediate\write\utfsm@f{\@currenvir\space\the\inputlineno\space
+    [\CurrentFilePath][\CurrentFile]}\fi\utfsm@tp}%
+  \let\utfsm@pmn\pgfmultipartnode
+  \def\pgfmultipartnode#1#2#3#4{\edef\utfsm@nom{#3}%
+    \ifx\utfsm@nom\pgfutil@empty\def\utfsm@nom{utfsm@nodo}\fi
+    \utfsm@pmn{#1}{#2}{\utfsm@nom}{#4}\utfsm@borde{\utfsm@nom}}}
+\def\utfsm@borde#1{%
+  \ifx\pgf@positionnodelater@macro\relax
+  \expandafter\ifx\csname pgf@sh@ns@#1\endcsname\relax\else
+  \edef\utfsm@forma{\csname pgf@sh@ns@#1\endcsname}%
+  \expandafter\ifx\csname pgf@anchor@\utfsm@forma @south west\endcsname\relax\else
+    \begingroup\pgf@relevantforpicturesizefalse
+    \pgfscope\pgfsetstrokecolor{utfsmmarca}\pgfsetlinewidth{0.03pt}\pgfsetdash{}{0pt}\pgfsetstrokeopacity{0}%
+    \pgfpathmoveto{\pgfpointanchor{#1}{south west}}\pgfpathlineto{\pgfpointanchor{#1}{south east}}%
+    \pgfpathlineto{\pgfpointanchor{#1}{north east}}\pgfpathlineto{\pgfpointanchor{#1}{north west}}%
+    \pgfpathclose\pgfusepath{stroke}\endpgfscope\endgroup
+  \fi\fi\fi}
+\endinput

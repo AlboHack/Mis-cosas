@@ -1,0 +1,24 @@
+% utfsm-marcas.sty -- marcas de posición para utfsm_calc.compaginacion. No va en el entregable:
+% el revisor lo inyecta al compilar. Escribe <jobname>.marcas con la página y la altura de cada
+% título numerado y de cada parte de un tcolorbox partido. No agrega material a la página.
+\ProvidesPackage{utfsm-marcas}[2026/11/16 v1.0]
+\newwrite\utfsm@m
+\immediate\openout\utfsm@m=\jobname.marcas
+\AddToHook{begindocument/end}{\immediate\write\utfsm@m{G \the\paperheight\space\the\textheight\space
+  \the\dimexpr 1in+\voffset+\topmargin+\headheight+\headsep\relax}}
+% #1 tipo, #2 datos fijos. Página y altura (sp desde el borde inferior) se resuelven al enviar la página.
+\protected\def\utfsm@marca#1#2{\begingroup
+  \edef\utfsm@x{\endgroup\pdfsavepos\write\utfsm@m{#1 \noexpand\the\noexpand\ReadonlyShipoutCounter
+    \space\noexpand\the\pdflastypos\space #2}}\utfsm@x}
+% Títulos numerados: la marca va dentro de la línea del título (no altera el espaciado vertical).
+\let\utfsm@scf\@seccntformat
+\def\@seccntformat#1{\utfsm@marca{T}{#1 \the\inputlineno\space[\CurrentFilePath][\CurrentFile]}\utfsm@scf{#1}}
+\AddToHook{enddocument}{\par\utfsm@marca{Z}{}}
+% Cajas partidas: borde superior de la primera parte y borde inferior de la última.
+\@ifpackageloaded{tcolorbox}{%
+  \newcount\utfsm@caja
+  \tcbset{every box/.append style={
+    overlay first={\global\advance\utfsm@caja 1
+      \node[inner sep=0pt,outer sep=0pt] at (frame.north) {\utfsm@marca{CI}{\the\utfsm@caja\space\the\inputlineno\space[\CurrentFilePath][\CurrentFile]}};},
+    overlay last={\node[inner sep=0pt,outer sep=0pt] at (frame.south) {\utfsm@marca{CF}{\the\utfsm@caja}};}}}}{}
+\endinput

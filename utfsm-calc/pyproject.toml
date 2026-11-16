@@ -1,11 +1,13 @@
 [project]
 name = "utfsm-calc"
-version = "0.1.0"
+version = "0.2.0"
 description = "Herramientas de cálculo verificadas para Ingeniería Civil UTFSM"
 requires-python = ">=3.9"
-dependencies = ["numpy", "scipy", "sympy", "networkx", "PyniteFEA", "handcalcs"]
+dependencies = ["numpy", "scipy", "sympy", "networkx", "PyniteFEA", "handcalcs", "pdfplumber", "pillow"]
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 [tool.setuptools]
 packages = ["utfsm_calc"]
+[tool.setuptools.package-data]
+utfsm_calc = ["tex/*.sty", "tex/*.tex", "tex/img/*.png"]

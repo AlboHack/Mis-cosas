@@ -1,6 +1,6 @@
 ---
 name: "consejo-tecnico"
-description: "Usar solo cuando Nicolás pida un consejo (council), varias perspectivas o evaluar una decisión desde varios ángulos: elegir método, modelo o enfoque de un informe, un plan de estudio o de práctica, una decisión con trade-offs. La revisión de un entregable terminado es de revision-critica-y-certamenes; preguntarle a él por sus supuestos, de interrogar-planteamiento."
+description: "Usar solo cuando Nicolás pida un consejo (council), varias perspectivas o evaluar una decisión desde varios ángulos: elegir método, modelo o enfoque de un informe, un plan de estudio o de práctica, una decisión con trade-offs."
 ---
 
 # Consejo técnico
