@@ -1,5 +1,25 @@
 # Avisos y Novedades - FICA
 
+## CIV222 2026-20 Certamen 2 en bloque 2 (17.30h)
+- **Fecha:** 2026-11-08 19:28
+- **Autor:** FRANCISCO OMAR LAGOS PERALTA
+- **Foro:** Noticias y avisos
+- **ID:** d504001
+
+Estimado Curso,
+
+Les escribo el presente mensaje, para informarles que el Certamen 2 lo haremos en el bloque 2. Eso es, desde las 17.30h a las 18.40h.
+En el bloque 1 de las 16.05h a las 17.15h, no haremos clases.
+Esto, dado que algunas y algunos compañeros presentan tope con evaluaciones en el bloque 1.
+
+Nos vemos mañana.
+
+Saludos cordiales,
+
+Francisco Lagos P.
+
+---
+
 ## CIV222 2026-20 - Código Liberado ExpoEdifica 2026 - clase lunes 19-octubre
 - **Fecha:** 2026-10-16 10:29
 - **Autor:** FRANCISCO OMAR LAGOS PERALTA

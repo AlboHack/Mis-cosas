@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-08 17:25:54",
+  "timestamp": "2026-11-18 10:24:42",
   "archivos": {
     "CIV 244 - Mecánica de Fluidos final.pdf": 146822,
     "CIV244-2026-2_Programacion_R1.pdf": 102627,
@@ -53,6 +53,7 @@
     "CIV244_Clase_16_handout.pdf": 514507,
     "CIV244_Clase_17_handout.pdf": 1988072,
     "CIV244_Clase_18_handout.pdf": 339886,
+    "CIV244_Clase_19_handout.pdf": 1182429,
     "Ayudantía_1.pdf": 266116,
     "Desarrollo Ayudantía 1.pdf": 1452916,
     "Ayudantía 2.pdf": 286764,
@@ -108,5 +109,5 @@
     "Laboratorio 2 recuperativo"
   ],
   "n_sections": 8,
-  "n_modules": 27
+  "n_modules": 29
 }

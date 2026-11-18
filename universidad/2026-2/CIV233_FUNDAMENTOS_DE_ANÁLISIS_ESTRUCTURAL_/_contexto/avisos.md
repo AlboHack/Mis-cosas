@@ -1,5 +1,151 @@
 # Avisos y Novedades - FAE
 
+## Recorreción Certamen 2
+- **Fecha:** 2026-11-15 13:44
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d505778
+
+Estimados/as:
+
+Les recuerdo que la pauta del Certamen 2 se encuentra disponible en la página principal de AULA.
+
+Para solicitar una recorrección del Certamen 2, deberán seguir las siguientes instrucciones:
+
+Revisar la pauta de corrección, disponible en la carpeta Pauta Certámenes de la página principal del curso.
+
+Escanear su certamen y, utilizando un editor de texto o PDF, incorporar sus observaciones al costado de cada desarrollo que deseen someter a recorrección. En cada caso, deberán explicar de manera clara y fundamentada por qué consideran que el puntaje asignado no corresponde al desarrollo presentado.
+
+Enviar la solicitud por correo electrónico, adjuntando el documento en PDF con las observaciones, a más tardar el miércoles 18 de noviembre. El asunto del correo debe tener el siguiente formato: “Recorrección C1 - Nombre Apellido”.
+
+Es importante que las solicitudes sean específicas y estén fundamentadas en el desarrollo realizado y en los criterios establecidos en la pauta. Eviten juicios de valor o comentarios generales que no justifiquen objetivamente la solicitud. Por ejemplo, indicar que “sabía todo, pero me equivoqué en un signo” no constituye una justificación suficiente; en su lugar, deben señalar el desarrollo realizado, identificar el criterio de corrección que consideran que no se aplicó correctamente y explicar por qué correspondería asignar un puntaje diferente.
+
+Las solicitudes que no cumplan con estas instrucciones o que no se envíen dentro del plazo establecido podrían no ser consideradas.
+
+Aquel alumno que no retiró su certamen el pasado viernes, me lo puede pedir este miércoles en clases.
+
+Saludos,
+
+---
+
+## Fecha Entrega Tarea N°2
+- **Fecha:** 2026-11-15 13:38
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d505777
+
+Estimados/as:
+
+Les informo que se ha actualizado en AULA la fecha límite de entrega de la Tarea N°2 del curso, estableciéndose como nuevo plazo el viernes 20 de noviembre.
+
+Saludos cordiales,
+
+---
+
+## Clase Viernes 12/11
+- **Fecha:** 2026-11-12 23:06
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d505384
+
+Estimados/as:
+
+Les recuerdo que mañana en el bloque y sala de ayudantía tendremos clases. Además se entregaran los Certámenes 2.
+
+Saludos,
+
+---
+
+## Link Teams Clase 11-11
+- **Fecha:** 2026-11-11 16:51
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d505006
+
+Estimados/as:
+
+Adjunto link de la clase de hoy. Comenzamos a las 17:30.
+
+Reunión de Microsoft Teams
+
+Unirse: https://teams.microsoft.com/meet/2415006811811433?p=WrDgyo2k61WA4aimak
+
+Id. de reunión: 241 500 681 181 143 3
+
+Código de acceso: Rh6Li6ve
+
+Saludos,
+
+---
+
+## Clase Miércoles 11 Noviembre
+- **Fecha:** 2026-11-10 23:38
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d504790
+
+Estimados/as:
+
+Les informo que la clase de mañana se realizará exclusivamente durante los bloques 13-14 (17:30 a 18:40), en modalidad online.
+
+Esta modificación se debe a los cortes de carretera que probablemente se mantengan durante la jornada de mañana, los cuales podrían generar retrasos importantes en mi traslado hacia la Universidad desde la Región de Valparaíso, donde resido.
+
+El enlace de acceso a la reunión de Microsoft Teams será enviado durante el transcurso del día de mañana.
+
+Por otra parte, con el objetivo de recuperar presencialmente parte de los contenidos que se abordarían en la clase de mañana, este viernes 13 de noviembre realizaremos una cátedra adicional, en el horario y sala habituales de ayudantía.
+
+Agradezco de antemano su comprensión.
+
+Saludos cordiales,
+
+---
+
+## Notas Certamen 2
+- **Fecha:** 2026-11-09 10:38
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d504121
+
+Estimados/as:
+
+Les comento que las notas del Certamen N°2 del curso se encuentran disponibles en la página principal de AULA.
+
+Los certámenes serán entregados el día miércoles durante el horario de clases.
+
+Saludos,
+
+---
+
+## Instrucciones Certamen N°3
+- **Fecha:** 2026-11-09 10:04
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d504110
+
+Estimados/as:
+
+Les recuerdo que el Certamen N°3 del curso se realizará mañana martes 10 de noviembre, durante los Bloques 13-16 (17:30-20:00) en la Sala B-103.
+
+Los contenidos evaluados corresponden a los asociados a la Unidad 4 (Método de Flexibilidad Aplicado a Estructuras Hiperestáticas) hasta el tópico de Defectos de Fabricación (incluido).
+
+Para su correcto desarrollo, considere las siguientes instrucciones:
+
+El certamen tendrá una duración máxima de 2 horas con 30 minutos. Llegue al menos 10 minutos antes del inicio del certamen.
+
+A diferencia de los certámenes anteriores, se permite y sugiere el uso de calculadora programable, un formulario personal (máximo 1 plana, debidamente identificado con su nombre, solo fórmulas sin ejemplos ni ejercicios resueltos y se deberá entregar junto con el certamen).
+
+No se permite el uso de apuntes, libros, teléfonos celulares u otros dispositivos electrónicos. Los celulares deberán permanecer apagados y guardados dentro de su mochila.
+
+Cada estudiante deberá traer hojas blancas o cuadriculadas tamaño carta o A4 para desarrollar el certamen. Todas las hojas entregadas deben estar numeradas e incluir el nombre del estudiante en la esquina superior derecha. No se aceptarán hojas sin identificación.
+
+El desarrollo puede realizarse con lápiz mina, pero las respuestas finales deben escribirse con lápiz pasta.
+
+Durante el certamen no se permite comunicación entre estudiantes. Solo se responderán dudas relacionadas con la interpretación del enunciado.
+
+Mucho éxito en el certamen.
+
+---
+
 ## FAE - Ayudantía 7
 - **Fecha:** 2026-11-05 14:43
 - **Autor:** GABRIEL ALEJANDRO FLORES FUENTES

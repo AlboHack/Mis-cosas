@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Mecánica de Fluidos
 **Sigla:** `CIV244` | **Aula ID:** `62182` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62182
-**Última Sincronización:** `2026-11-08 17:25 -03`
+**Última Sincronización:** `2026-11-18 10:24 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV244`.
@@ -21,9 +21,8 @@ El estudiante desarrolla los fundamentos teóricos que le permiten modelar el co
 ## 📅 2. Calendario Consolidado de Evaluaciones y Entregas
 | # | Evaluación / Hito | Inicio | Cierre / Entrega | Cuenta Regresiva | Lugar | Fuente |
 |---|-------------------|--------|------------------|------------------|-------|--------|
-| 1 | **Vencimiento de Entrega apuntes C2** | 2026-11-02 23:59 | 2026-11-02 23:59 | Finalizada | Aula USM | Aula API |
-| 2 | **Certamen 3** | 2026-11-20 14:00 | 2026-11-20 16:30 | En 11 días (20-Nov) | Campus San Joaquín | Aula API |
-| 3 | **Publicación notas finales** | 2026-11-27 12:00 | 2026-11-27 12:00 | En 18 días (27-Nov) | Aula USM / SIGA | Aula API |
+| 1 | **Certamen 3** | 2026-11-20 14:00 | 2026-11-20 16:30 | En 2 días (20-Nov) | Campus San Joaquín | Aula API |
+| 2 | **Publicación notas finales** | 2026-11-27 12:00 | 2026-11-27 12:00 | En 9 días (27-Nov) | Aula USM / SIGA | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 ### 📌 Entrega apuntes C1
@@ -84,7 +83,8 @@ Dedicación de tiempo (SCT): 203 horas cronológicas
   - 📎 `CIV244_Clase_17_handout.pdf` (1.90 MB) -> `00 Información General/Material de clases/CIV244_Clase_17_handout.pdf`
   - 📎 `CIV244_Clase_16_handout.pdf` (502.4 KB) -> `00 Información General/Material de clases/CIV244_Clase_16_handout.pdf`
   - 📎 `CIV244_Clase_18_handout.pdf` (331.9 KB) -> `00 Información General/Material de clases/CIV244_Clase_18_handout.pdf`
-  - 📎 `CIV244_Clase_19_handout.pdf` (1.13 MB)
+  - 📎 `CIV244_Clase_19_handout.pdf` (1.13 MB) -> `00 Información General/Material de clases/CIV244_Clase_19_handout.pdf`
+  - 📎 `CIV244_Clase_20_handout.pdf` (490.9 KB)
 - **[📁 Carpeta] Apuntes USM**
   - 📎 `Apunte-02-Propiedades_mecanicas_1.pdf` (731.7 KB) -> `00 Información General/Apuntes USM/Apunte-02-Propiedades_mecanicas_1.pdf`
   - 📎 `Apunte-03-Propiedades_mecanicas_2.pdf` (1.15 MB) -> `00 Información General/Apuntes USM/Apunte-03-Propiedades_mecanicas_2.pdf`
@@ -101,6 +101,12 @@ Dedicación de tiempo (SCT): 203 horas cronológicas
   - 📎 `Apunte-14-FlujoIdealReal-NavierStokes.pdf` (1.06 MB) -> `00 Información General/Apuntes USM/Apunte-14-FlujoIdealReal-NavierStokes.pdf`
   - 📎 `Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf` (3.52 MB) -> `00 Información General/Apuntes USM/Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf`
   - 📎 `Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf` (612.7 KB) -> `00 Información General/Apuntes USM/Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf`
+  - 📎 `Apunte-17-LeyesConservacion-TeoremaTrasporteReynolds.pdf` (1.51 MB)
+  - 📎 `Apunte-18 -LeyesConservacion-EjMomentumLineal.pdf` (2.02 MB)
+  - 📎 `Apunte-19-LeyesConservacion-EjMomentumAngular.pdf` (5.76 MB)
+  - 📎 `Apunte-20-LeyesConservacion-Energia.pdf` (1.52 MB)
+  - 📎 `Apunte-21-FlujoTurbulento.pdf` (776.4 KB)
+  - 📎 `Apunte-22-CapaLimite.pdf` (1.63 MB)
 - **[📁 Carpeta] Certámenes anteriores**
   - 📎 `CIV244_2024_C1.pdf` (145.0 KB) -> `00 Información General/Certámenes anteriores/CIV244_2024_C1.pdf`
   - 📎 `CIV244_2024_C1_Pauta.pdf` (1.43 MB) -> `00 Información General/Certámenes anteriores/CIV244_2024_C1_Pauta.pdf`
@@ -113,6 +119,11 @@ Dedicación de tiempo (SCT): 203 horas cronológicas
   - 📎 `CIV244_2023_C2.pdf` (172.7 KB) -> `00 Información General/Certámenes anteriores/CIV244_2023_C2.pdf`
   - 📎 `CIV244_2023_C2_Pauta.pdf` (2.23 MB) -> `00 Información General/Certámenes anteriores/CIV244_2023_C2_Pauta.pdf`
   - 📎 `CIV244_2024_C2.pdf` (400.3 KB) -> `00 Información General/Certámenes anteriores/CIV244_2024_C2.pdf`
+  - 📎 `CIV244_2022_C3.pdf` (460.3 KB)
+  - 📎 `CIV244_2022_C3_Pauta.pdf` (466.1 KB)
+  - 📎 `CIV244_2023_C3.pdf` (180.7 KB)
+  - 📎 `CIV244_2023_C3_Pauta.pdf` (1.47 MB)
+  - 📎 `CIV244_2024_C3.pdf` (149.7 KB)
 - **[📝 Tarea/Entrega] Entrega apuntes C1**
 - **[📁 Carpeta] Certámenes**
   - 📎 `CIV244_2026_C1.pdf` (1.16 MB) -> `00 Información General/Certámenes/CIV244_2026_C1.pdf`
@@ -158,6 +169,13 @@ Luciana Tiraferri Colombo: ltiraferri@usm.cl
   - 📎 `Ayudantía n°8 CIV224.pdf` (451.7 KB) -> `01 Ayudantías/Ayudantía 8/Ayudantía n°8 CIV224.pdf`
 - **[📁 Carpeta] Ayudantía 9**
   - 📎 `Ayudantía_9.pdf` (231.6 KB) -> `01 Ayudantías/Ayudantía 9/Ayudantía_9.pdf`
+  - 📎 `Desarrollo Ayudantía 9.pdf` (2.72 MB)
+- **[📁 Carpeta] Ayudantía 10**
+  - 📎 `Ayudantía n°10 CIV224.pdf` (171.0 KB)
+  - 📎 `Pauta Ayudantía 10.pdf` (6.40 MB)
+- **[📁 Carpeta] Ayudantía N°11**
+  - 📎 `Pauta_Ayudantía_N_11.pdf` (311.3 KB)
+  - 📎 `Ayudantía_11.pdf` (252.8 KB)
 
 ### Sección: Unidad 1
 *Sin módulos publicados en esta sección.*
@@ -178,9 +196,9 @@ Luciana Tiraferri Colombo: ltiraferri@usm.cl
 *Sin módulos publicados en esta sección.*
 
 ## 💾 5. Inventario de Archivos Locales en Disco y Google Drive
-Total de archivos sincronizados: **71**
+Total de archivos sincronizados: **72**
 
-### 📂 `00 Información General/` (52 archivos)
+### 📂 `00 Información General/` (53 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
 | `Apuntes USM/Apunte-02-Propiedades_mecanicas_1.pdf` | 731.7 KB | 2026-11-08 17:18 | Sincronizado |
@@ -235,6 +253,7 @@ Total de archivos sincronizados: **71**
 | `Material de clases/CIV244_Clase_16_handout.pdf` | 502.4 KB | 2026-11-08 17:18 | Sincronizado |
 | `Material de clases/CIV244_Clase_17_handout.pdf` | 1.90 MB | 2026-11-08 17:18 | Sincronizado |
 | `Material de clases/CIV244_Clase_18_handout.pdf` | 331.9 KB | 2026-11-08 17:18 | Sincronizado |
+| `Material de clases/CIV244_Clase_19_handout.pdf` | 1.13 MB | 2026-11-08 17:20 | Sincronizado |
 
 ### 📂 `01 Ayudantías/` (19 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
@@ -324,6 +343,9 @@ Saludos
 Ricardo Quinteros
 
 ## 📜 Historial Incremental de Cambios
+### 🔄 Actualización: 2026-11-18 10:24 -03
+- Nuevos archivos en disco y repo: CIV244_Clase_19_handout.pdf
+
 ### 🔄 Actualización: 2026-11-08 17:21 -03
 - Nuevos archivos en disco y repo: CIV244_2026_C2.pdf, CIV244_2026_C2_RUBRICA.pdf, Ayudantía_9.pdf
 

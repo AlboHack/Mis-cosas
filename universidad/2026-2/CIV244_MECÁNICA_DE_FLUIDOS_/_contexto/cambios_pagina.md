@@ -1,5 +1,14 @@
 # Cambios en la página del ramo
 
+## 2026-11-18
+
+- Archivos agregados en folder «Material de clases» (Información General): CIV244_Clase_20_handout.pdf
+- Archivos agregados en folder «Apuntes USM» (Información General): Apunte-17-LeyesConservacion-TeoremaTrasporteReynolds.pdf, Apunte-18 -LeyesConservacion-EjMomentumLineal.pdf, Apunte-19-LeyesConservacion-EjMomentumAngular.pdf, Apunte-20-LeyesConservacion-Energia.pdf, Apunte-21-FlujoTurbulento.pdf, Apunte-22-CapaLimite.pdf
+- Archivos agregados en folder «Certámenes anteriores» (Información General): CIV244_2022_C3.pdf, CIV244_2022_C3_Pauta.pdf, CIV244_2023_C3.pdf, CIV244_2023_C3_Pauta.pdf, CIV244_2024_C3.pdf
+- Archivos agregados en folder «Ayudantía 9» (Ayudantías ): Desarrollo Ayudantía 9.pdf
+- Nuevo: folder «Ayudantía 10» (Ayudantías )
+- Nuevo: folder «Ayudantía N°11» (Ayudantías )
+
 ## 2026-11-08
 
 - Archivos agregados en folder «Material de clases» (Información General): CIV244_Clase_19_handout.pdf

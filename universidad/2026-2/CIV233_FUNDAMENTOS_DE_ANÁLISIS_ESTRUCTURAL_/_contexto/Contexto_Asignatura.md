@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Fundamentos de Análisis Estructural
 **Sigla:** `CIV233` | **Aula ID:** `62178` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62178
-**Última Sincronización:** `2026-11-08 17:25 -03`
+**Última Sincronización:** `2026-11-18 10:24 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV233`.
@@ -24,9 +24,9 @@ El estudiante determina las fuerzas internas y desplazamientos causados por soli
 |---|-------------------|--------|------------------|------------------|-------|--------|
 | 1 | **Certamen 2** | 2026-10-27 17:30 | 2026-10-27 20:00 | Finalizada | B-103 / A012 | Aula API |
 | 2 | **Entrega Tarea 1 SAP2000** | 2026-10-27 23:59 | 2026-10-27 23:59 | Finalizada | Aula USM | Aula API |
-| 3 | **Certamen 3** | 2026-11-10 17:30 | 2026-11-10 20:00 | En 2 días (10-Nov) | B-103 | Aula API |
-| 4 | **Vencimiento de Tarea N°2** | 2026-11-16 23:59 | 2026-11-16 23:59 | En 8 días (16-Nov) | Aula USM | Aula API |
-| 5 | **Certamen 4** | 2026-12-02 17:30 | 2026-12-02 20:00 | En 24 días (02-Dec) | A012 | Aula API |
+| 3 | **Certamen 3** | 2026-11-10 17:30 | 2026-11-10 20:00 | Finalizada | B-103 | Aula API |
+| 4 | **Vencimiento de Tarea N°2** | 2026-11-20 23:59 | 2026-11-20 23:59 | En 2 días (20-Nov) | Aula USM | Aula API |
+| 5 | **Certamen 4** | 2026-12-02 17:30 | 2026-12-02 20:00 | En 14 días (02-Dec) | A012 | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 ### 📌 Tarea N°1
@@ -42,7 +42,7 @@ El estudiante determina las fuerzas internas y desplazamientos causados por soli
 - **Enlace en Aula:** [Tarea N°2](https://aula.usm.cl/mod/assign/view.php?id=8361195)
 - **Sección:** Información General
 - **Habilitada desde:** 2026-11-01 00:00
-- **Fecha Límite (Due Date):** 2026-11-16 23:59 (En 8 días (16-Nov))
+- **Fecha Límite (Due Date):** 2026-11-20 23:59 (En 2 días (20-Nov))
 - **Archivos de Enunciado Adjuntos:**
   - 📄 **Tarea_02.pdf** (`00 Información General/Tareas/Tarea_02.pdf`)
 - **Instrucciones:** *Sin texto adicional en la descripción; ver archivos adjuntos.*
@@ -93,6 +93,7 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
   - 📎 `A_Tablas_Integrales (REV2).pdf` (785.5 KB) -> `00 Información General/Clases/A_Tablas_Integrales (REV2).pdf`
   - 📎 `04_Flexibilidad_SistHiperestaticos.pdf` (2.10 MB) -> `00 Información General/Clases/04_Flexibilidad_SistHiperestaticos.pdf`
   - 📎 `05_Lineas_de_Influencia.pdf` (675.2 KB) -> `00 Información General/Clases/05_Lineas_de_Influencia.pdf`
+  - 📎 `06_Introduccion_AnPlastico.pdf` (1.69 MB)
 - **[📁 Carpeta] Ayudantías**
   - 📎 `Ayudantía_01.pdf` (560.9 KB) -> `00 Información General/Ayudantías/Ayudantía_01.pdf`
   - 📎 `Ayudantía_02.pdf` (631.2 KB) -> `00 Información General/Ayudantías/Ayudantía_02.pdf`
@@ -105,6 +106,7 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
   - 📎 `Guía_02.pdf` (888.8 KB) -> `00 Información General/Guías/Guía_02.pdf`
   - 📎 `Guía_03.pdf` (1.26 MB) -> `00 Información General/Guías/Guía_03.pdf`
   - 📎 `Guia_04.pdf` (2.53 MB) -> `00 Información General/Guías/Guia_04.pdf`
+  - 📎 `Guía_05.pdf` (1.23 MB)
 - **[📁 Carpeta] Tareas**
   - 📎 `Instrucciones instalacion SAP2000 27.pdf` (189.9 KB) -> `00 Información General/Tareas/Instrucciones instalacion SAP2000 27.pdf`
   - 📎 `Tarea_01.pdf` (564.4 KB) -> `00 Información General/Tareas/Tarea_01.pdf`
@@ -113,8 +115,11 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
 - **[📝 Tarea/Entrega] Tarea N°2**
 - **[📄 Documento/Recurso] Notas 15-10**
   - 📎 `Notas 15-10.pdf` (26.1 KB) -> `00 Información General/Notas 15-10.pdf`
+- **[📄 Documento/Recurso] Notas 09-11**
+  - 📎 `Notas 15-10.pdf` (28.2 KB) -> `00 Información General/Notas 15-10.pdf`
 - **[📁 Carpeta] Pautas Certámenes**
   - 📎 `Pauta_C01_2026-2.pdf` (195.7 KB) -> `00 Información General/Pautas Certámenes/Pauta_C01_2026-2.pdf`
+  - 📎 `Pauta_C02_2026-2.pdf` (197.2 KB)
 
 ### Sección: Unidad 1
 *Sin módulos publicados en esta sección.*
@@ -156,67 +161,76 @@ Total de archivos sincronizados: **23**
 | `Tareas/Tarea_02.pdf` | 468.4 KB | 2026-11-08 17:18 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
-### 📣 FAE - Ayudantía 7
-- **Fecha:** 2026-11-05 14:43 | **Autor:** GABRIEL ALEJANDRO FLORES FUENTES
-> Buenas tardes, estimad@s compañer@s:
-
-Esperando que se encuentren bien, les recuerdo que mañana viernes 06/11 tenemos la Ayudantía 7 del curso. Los espero para sus consultas.
-
-Saludos!
-
-Gabriel FF
-
-### 📣 Tarea N°2
-- **Fecha:** 2026-11-01 17:39 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+### 📣 Recorreción Certamen 2
+- **Fecha:** 2026-11-15 13:44 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
 > Estimados/as:
 
-Les comento que ya se encuentra en AULA el enunciado e instrucciones de la Tarea N°2 del curso, cuya fecha de entrega está proyectada para el próximo lunes 16 de noviembre.
+Les recuerdo que la pauta del Certamen 2 se encuentra disponible en la página principal de AULA.
 
-Saludos,
+Para solicitar una recorrección del Certamen 2, deberán seguir las siguientes instrucciones:
 
-### 📣 FAE - Ayudantía
-- **Fecha:** 2026-10-29 17:53 | **Autor:** GABRIEL ALEJANDRO FLORES FUENTES
-> Buenas tardes, estimad@s compañer@s:
+Revisar la pauta de corrección, disponible en la carpeta Pauta Certámenes de la página principal del curso.
 
-Esperando que estén bien, les recuerdo que mañana 30/10 tenemos ayudantía. Los espero!
+Escanear su certamen y, utilizando un editor de texto o PDF, incorporar sus observac...
 
-Saludos!
-
-Gabriel FF
-
-### 📣 Guía de Ejercicios Unidad 4
-- **Fecha:** 2026-10-29 12:46 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+### 📣 Fecha Entrega Tarea N°2
+- **Fecha:** 2026-11-15 13:38 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
 > Estimados/as:
 
-Les informo que la guía de ejercicios correspondiente a los contenidos de la Unidad 4, que serán evaluados en el Certamen 3, ya se encuentra disponible en la plataforma AULA.
-
-Les recomiendo utilizar este material como complemento para el estudio y la preparación del certamen.
+Les informo que se ha actualizado en AULA la fecha límite de entrega de la Tarea N°2 del curso, estableciéndose como nuevo plazo el viernes 20 de noviembre.
 
 Saludos cordiales,
 
-### 📣 Recorreción C1
-- **Fecha:** 2026-10-29 12:44 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
-> Estimados/as,
-
-Para solicitar una recorrección del Certamen 1, deberán seguir las siguientes instrucciones:
-
-Revisar la pauta de corrección, disponible en la carpeta “Pautas Certámenes” de la página principal del curso.
-
-Escanear su certamen y, utilizando un editor de texto o PDF, incorporar sus observaciones al costado de cada desarrollo que deseen someter a recorrección. En cada caso, deberán ex...
-
-### 📣 Recordatorio Certamen 2
-- **Fecha:** 2026-10-27 10:50 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+### 📣 Clase Viernes 12/11
+- **Fecha:** 2026-11-12 23:06 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
 > Estimados/as:
 
-Les recuerdo que el Certamen N°2 del curso se realizará hoy martes 27 de octubre, durante los Bloques 13-16 (17:30-20:00) en la Sala B-103.
+Les recuerdo que mañana en el bloque y sala de ayudantía tendremos clases. Además se entregaran los Certámenes 2.
 
-Los contenidos evaluados corresponden a todos los asociados a la Unidad 3 (Método de Carga Unitaria Aplicado a Estructuras Isostáticas)
+Saludos,
 
-Para su correcto desarrollo, considere las siguientes instrucciones:
+### 📣 Link Teams Clase 11-11
+- **Fecha:** 2026-11-11 16:51 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+> Estimados/as:
 
-El certamen tendrá una duración máxim...
+Adjunto link de la clase de hoy. Comenzamos a las 17:30.
+
+Reunión de Microsoft Teams
+
+Unirse: https://teams.microsoft.com/meet/2415006811811433?p=WrDgyo2k61WA4aimak
+
+Id. de reunión: 241 500 681 181 143 3
+
+Código de acceso: Rh6Li6ve
+
+Saludos,
+
+### 📣 Clase Miércoles 11 Noviembre
+- **Fecha:** 2026-11-10 23:38 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+> Estimados/as:
+
+Les informo que la clase de mañana se realizará exclusivamente durante los bloques 13-14 (17:30 a 18:40), en modalidad online.
+
+Esta modificación se debe a los cortes de carretera que probablemente se mantengan durante la jornada de mañana, los cuales podrían generar retrasos importantes en mi traslado hacia la Universidad desde la Región de Valparaíso, donde resido.
+
+El enlace de a...
+
+### 📣 Notas Certamen 2
+- **Fecha:** 2026-11-09 10:38 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+> Estimados/as:
+
+Les comento que las notas del Certamen N°2 del curso se encuentran disponibles en la página principal de AULA.
+
+Los certámenes serán entregados el día miércoles durante el horario de clases.
+
+Saludos,
 
 ## 📜 Historial Incremental de Cambios
+### 🔄 Actualización: 2026-11-18 10:24 -03
+- Fecha modificada en «Tarea N°2»: 2026-11-16 23:59 → 2026-11-20 23:59
+- Fecha modificada en «Tarea N°2»: 2026-11-16 23:59 → 2026-11-20 23:59
+- Nuevos avisos docentes en foros: Recorreción Certamen 2, Fecha Entrega Tarea N°2, Clase Viernes 12/11, Link Teams Clase 11-11, Clase Miércoles 11 Noviembre, Notas Certamen 2
+
 ### 🔄 Actualización: 2026-11-08 17:21 -03
 - Nuevos archivos en disco y repo: 05_Lineas_de_Influencia.pdf
 - Nuevos avisos docentes en foros: FAE - Ayudantía 7

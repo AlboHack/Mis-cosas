@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Fundamentos de Ingeniería de Construcción y Administración
 **Sigla:** `CIV222` | **Aula ID:** `62177` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62177
-**Última Sincronización:** `2026-11-08 17:25 -03`
+**Última Sincronización:** `2026-11-18 10:24 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV222`.
@@ -23,16 +23,16 @@ El estudiante inicia el aprendizaje al concepto de proyecto en la industria de l
 |---|-------------------|--------|------------------|------------------|-------|--------|
 | 1 | **Control 2** | 2026-10-26 16:00 | 2026-10-26 18:40 | Finalizada | Aula USM | Aula API |
 | 2 | **Caso Práctico 2** | 2026-11-02 16:00 | 2026-11-02 18:40 | Finalizada | Aula USM | Aula API |
-| 3 | **Certamen 2** | 2026-11-09 16:00 | 2026-11-09 18:40 | Vence mañana | Sala de cátedra | Aula API |
-| 4 | **Vencimiento de CIV222 2026-20 Entrega Tarea 2 (Gestión de Costos)** | 2026-11-09 23:59 | 2026-11-09 23:59 | Vence mañana | Aula USM | Aula API |
-| 5 | **Presentación 2 + Informe Final** | 2026-11-23 16:00 | 2026-11-23 18:40 | En 15 días (23-Nov) | Sala de cátedra / Aula USM | Aula API |
+| 3 | **Certamen 2** | 2026-11-09 16:00 | 2026-11-09 18:40 | Finalizada | Sala de cátedra | Aula API |
+| 4 | **Vencimiento de CIV222 2026-20 Entrega Tarea 2 (Gestión de Costos)** | 2026-11-09 23:59 | 2026-11-09 23:59 | Finalizada | Aula USM | Aula API |
+| 5 | **Presentación 2 + Informe Final** | 2026-11-23 16:00 | 2026-11-23 18:40 | En 5 días (23-Nov) | Sala de cátedra / Aula USM | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 ### 📌 CIV222 2026-20 Entrega Tarea 2 (Gestión de Costos)
 - **Enlace en Aula:** [CIV222 2026-20 Entrega Tarea 2 (Gestión de Costos)](https://aula.usm.cl/mod/assign/view.php?id=8361957)
 - **Sección:** Información General
 - **Habilitada desde:** 2026-11-02 00:00
-- **Fecha Límite (Due Date):** 2026-11-09 23:59 (Vence mañana)
+- **Fecha Límite (Due Date):** 2026-11-09 23:59 (Finalizada)
 - **Archivos de Enunciado Adjuntos:**
   - 📄 **CIV222 2026-20 Ejercicio Gestión de Costos.pdf** (`00 Información General/CIV222 2026-20 PPTs y Apuntes/Apuntes/CIV222 2026-20 Ejercicio Gestión de Costos.pdf`)
 - **Instrucciones:** *Sin texto adicional en la descripción; ver archivos adjuntos.*
@@ -293,6 +293,20 @@ Total de archivos sincronizados: **66**
 | `Presentaciones/Presentación Unidad 3_Técnicas basicas de planificacion.pdf` | 883.0 KB | 2026-11-08 17:18 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
+### 📣 CIV222 2026-20 Certamen 2 en bloque 2 (17.30h)
+- **Fecha:** 2026-11-08 19:28 | **Autor:** FRANCISCO OMAR LAGOS PERALTA
+> Estimado Curso,
+
+Les escribo el presente mensaje, para informarles que el Certamen 2 lo haremos en el bloque 2. Eso es, desde las 17.30h a las 18.40h.
+En el bloque 1 de las 16.05h a las 17.15h, no haremos clases.
+Esto, dado que algunas y algunos compañeros presentan tope con evaluaciones en el bloque 1.
+
+Nos vemos mañana.
+
+Saludos cordiales,
+
+Francisco Lagos P.
+
 ### 📣 CIV222 2026-20 - Código Liberado ExpoEdifica 2026 - clase lunes 19-octubre
 - **Fecha:** 2026-10-16 10:29 | **Autor:** FRANCISCO OMAR LAGOS PERALTA
 > Estimado Curso,
@@ -322,6 +336,9 @@ Gracias a Tod@s.
 En cuanto a lo académico, les comunico que los horarios de AM de los días lunes están asignados para ayudantías, las que iremos coordinando semana a semana. Por tanto, para este lunes 10 de agosto próximo, con...
 
 ## 📜 Historial Incremental de Cambios
+### 🔄 Actualización: 2026-11-18 10:24 -03
+- Nuevos avisos docentes en foros: CIV222 2026-20 Certamen 2 en bloque 2 (17.30h)
+
 ### 🔄 Actualización: 2026-11-02 17:56 -03
 - Nueva tarea / entrega en Aula: «CIV222 2026-20 Entrega de Proyectos» (Vence: 2026-08-10 17:00)
 - Nueva tarea / entrega en Aula: «CIV222 2026-20 Entrega de Proyectos» (Vence: 2026-08-10 17:00)

@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Ingeniería de Transporte
 **Sigla:** `CIV386` | **Aula ID:** `62192` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62192
-**Última Sincronización:** `2026-11-08 17:25 -03`
+**Última Sincronización:** `2026-11-18 10:24 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV386`.
@@ -21,8 +21,8 @@ El estudiante distingue y analiza sistemas de transporte urbano, entendiendo los
 ## 📅 2. Calendario Consolidado de Evaluaciones y Entregas
 | # | Evaluación / Hito | Inicio | Cierre / Entrega | Cuenta Regresiva | Lugar | Fuente |
 |---|-------------------|--------|------------------|------------------|-------|--------|
-| 1 | **Certamen 3** | 2026-11-18 14:00 | 2026-11-18 16:30 | En 9 días (18-Nov) | B014 / B103 | Aula API |
-| 2 | **Certamen recuperativo** | 2026-12-02 14:00 | 2026-12-02 16:30 | En 23 días (02-Dec) | B014 / B103 | Aula API |
+| 1 | **Certamen 3** | 2026-11-18 14:00 | 2026-11-18 16:30 | ¡VENCE HOY! (en 6 h) | B014 / B103 | Aula API |
+| 2 | **Certamen recuperativo** | 2026-12-02 14:00 | 2026-12-02 16:30 | En 14 días (02-Dec) | B014 / B103 | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 *No se registran módulos de tipo entrega en este curso.*
@@ -52,6 +52,10 @@ Dedicación de tiempo (SCT): 145 horas cronológicas
 - **[📁 Carpeta] Ayudantías**
   - 📎 `Ayudantia 1 (Enunciado).pdf` (422.0 KB) -> `00 Información General/Ayudantías/Ayudantia 1 (Enunciado).pdf`
   - 📎 `Ayudantia 1 (Pauta).pdf` (406.4 KB) -> `00 Información General/Ayudantías/Ayudantia 1 (Pauta).pdf`
+  - 📎 `Ayudantia 3 (Enunciado).pdf` (537.6 KB)
+  - 📎 `Ayudantia 3 (Pauta).pdf` (415.4 KB)
+  - 📎 `Ayudantia 2 (Enunciado).pdf` (370.0 KB)
+  - 📎 `Ayudantia 2 (Pauta).pdf` (435.3 KB)
 - **[📁 Carpeta] Certamenes**
   - 📎 `Certamen 1 (Pauta).pdf` (520.1 KB) -> `00 Información General/Certamenes/Certamen 1 (Pauta).pdf`
   - 📎 `Certamen 1 (Enunciado).pdf` (476.7 KB) -> `00 Información General/Certamenes/Certamen 1 (Enunciado).pdf`

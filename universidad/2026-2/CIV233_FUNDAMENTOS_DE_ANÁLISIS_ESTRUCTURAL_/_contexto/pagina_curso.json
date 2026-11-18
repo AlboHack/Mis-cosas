@@ -72,6 +72,7 @@
     "03_CargaUnitaria.pdf",
     "04_Flexibilidad_SistHiperestaticos.pdf",
     "05_Lineas_de_Influencia.pdf",
+    "06_Introduccion_AnPlastico.pdf",
     "A_Tablas_Integrales (REV2).pdf"
    ],
    "descripcion": "",
@@ -102,7 +103,8 @@
     "Guia_04.pdf",
     "Guía_01.pdf",
     "Guía_02.pdf",
-    "Guía_03.pdf"
+    "Guía_03.pdf",
+    "Guía_05.pdf"
    ],
    "descripcion": "",
    "fechas": {},
@@ -160,7 +162,8 @@
   },
   "8359777": {
    "archivos": [
-    "Pauta_C01_2026-2.pdf"
+    "Pauta_C01_2026-2.pdf",
+    "Pauta_C02_2026-2.pdf"
    ],
    "descripcion": "",
    "fechas": {},
@@ -174,11 +177,22 @@
    "descripcion": "",
    "fechas": {
     "Apertura:": 1793502000,
-    "Cierre:": 1794884340
+    "Cierre:": 1795229940
    },
    "nombre": "Tarea N°2",
    "seccion": "Información General",
    "tipo": "assign",
+   "visible": 1
+  },
+  "8365915": {
+   "archivos": [
+    "Notas 15-10.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Notas 09-11",
+   "seccion": "Información General",
+   "tipo": "resource",
    "visible": 1
   }
  },

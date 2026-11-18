@@ -98,7 +98,8 @@
     "CIV244_Clase_16_handout.pdf",
     "CIV244_Clase_17_handout.pdf",
     "CIV244_Clase_18_handout.pdf",
-    "CIV244_Clase_19_handout.pdf"
+    "CIV244_Clase_19_handout.pdf",
+    "CIV244_Clase_20_handout.pdf"
    ],
    "descripcion": "",
    "fechas": {},
@@ -123,7 +124,13 @@
     "Apunte-13-FlujoIdealReal-AplicacionesEulerBernoulli.pdf",
     "Apunte-14-FlujoIdealReal-NavierStokes.pdf",
     "Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf",
-    "Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf"
+    "Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf",
+    "Apunte-17-LeyesConservacion-TeoremaTrasporteReynolds.pdf",
+    "Apunte-18 -LeyesConservacion-EjMomentumLineal.pdf",
+    "Apunte-19-LeyesConservacion-EjMomentumAngular.pdf",
+    "Apunte-20-LeyesConservacion-Energia.pdf",
+    "Apunte-21-FlujoTurbulento.pdf",
+    "Apunte-22-CapaLimite.pdf"
    ],
    "descripcion": "",
    "fechas": {},
@@ -204,13 +211,18 @@
     "CIV244_2022_C1_Pauta.pdf",
     "CIV244_2022_C2.pdf",
     "CIV244_2022_C2_Pauta.pdf",
+    "CIV244_2022_C3.pdf",
+    "CIV244_2022_C3_Pauta.pdf",
     "CIV244_2023_C1.pdf",
     "CIV244_2023_C1_Pauta.pdf",
     "CIV244_2023_C2.pdf",
     "CIV244_2023_C2_Pauta.pdf",
+    "CIV244_2023_C3.pdf",
+    "CIV244_2023_C3_Pauta.pdf",
     "CIV244_2024_C1.pdf",
     "CIV244_2024_C1_Pauta.pdf",
-    "CIV244_2024_C2.pdf"
+    "CIV244_2024_C2.pdf",
+    "CIV244_2024_C3.pdf"
    ],
    "descripcion": "",
    "fechas": {},
@@ -325,11 +337,36 @@
   },
   "8363034": {
    "archivos": [
-    "Ayudantía_9.pdf"
+    "Ayudantía_9.pdf",
+    "Desarrollo Ayudantía 9.pdf"
    ],
    "descripcion": "",
    "fechas": {},
    "nombre": "Ayudantía 9",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8368346": {
+   "archivos": [
+    "Ayudantía n°10 CIV224.pdf",
+    "Pauta Ayudantía 10.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía 10",
+   "seccion": "Ayudantías ",
+   "tipo": "folder",
+   "visible": 1
+  },
+  "8372671": {
+   "archivos": [
+    "Ayudantía_11.pdf",
+    "Pauta_Ayudantía_N_11.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Ayudantía N°11",
    "seccion": "Ayudantías ",
    "tipo": "folder",
    "visible": 1
