@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Ingeniería de Transporte
 **Sigla:** `CIV386` | **Aula ID:** `62192` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62192
-**Última Sincronización:** `2026-11-18 10:24 -03`
+**Última Sincronización:** `2026-11-18 11:07 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV386`.
@@ -21,7 +21,7 @@ El estudiante distingue y analiza sistemas de transporte urbano, entendiendo los
 ## 📅 2. Calendario Consolidado de Evaluaciones y Entregas
 | # | Evaluación / Hito | Inicio | Cierre / Entrega | Cuenta Regresiva | Lugar | Fuente |
 |---|-------------------|--------|------------------|------------------|-------|--------|
-| 1 | **Certamen 3** | 2026-11-18 14:00 | 2026-11-18 16:30 | ¡VENCE HOY! (en 6 h) | B014 / B103 | Aula API |
+| 1 | **Certamen 3** | 2026-11-18 14:00 | 2026-11-18 16:30 | ¡VENCE HOY! (en 5 h) | B014 / B103 | Aula API |
 | 2 | **Certamen recuperativo** | 2026-12-02 14:00 | 2026-12-02 16:30 | En 14 días (02-Dec) | B014 / B103 | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
@@ -52,10 +52,10 @@ Dedicación de tiempo (SCT): 145 horas cronológicas
 - **[📁 Carpeta] Ayudantías**
   - 📎 `Ayudantia 1 (Enunciado).pdf` (422.0 KB) -> `00 Información General/Ayudantías/Ayudantia 1 (Enunciado).pdf`
   - 📎 `Ayudantia 1 (Pauta).pdf` (406.4 KB) -> `00 Información General/Ayudantías/Ayudantia 1 (Pauta).pdf`
-  - 📎 `Ayudantia 3 (Enunciado).pdf` (537.6 KB)
-  - 📎 `Ayudantia 3 (Pauta).pdf` (415.4 KB)
-  - 📎 `Ayudantia 2 (Enunciado).pdf` (370.0 KB)
-  - 📎 `Ayudantia 2 (Pauta).pdf` (435.3 KB)
+  - 📎 `Ayudantia 3 (Enunciado).pdf` (537.6 KB) -> `00 Información General/Ayudantías/Ayudantia 3 (Enunciado).pdf`
+  - 📎 `Ayudantia 3 (Pauta).pdf` (415.4 KB) -> `00 Información General/Ayudantías/Ayudantia 3 (Pauta).pdf`
+  - 📎 `Ayudantia 2 (Enunciado).pdf` (370.0 KB) -> `00 Información General/Ayudantías/Ayudantia 2 (Enunciado).pdf`
+  - 📎 `Ayudantia 2 (Pauta).pdf` (435.3 KB) -> `00 Información General/Ayudantías/Ayudantia 2 (Pauta).pdf`
 - **[📁 Carpeta] Certamenes**
   - 📎 `Certamen 1 (Pauta).pdf` (520.1 KB) -> `00 Información General/Certamenes/Certamen 1 (Pauta).pdf`
   - 📎 `Certamen 1 (Enunciado).pdf` (476.7 KB) -> `00 Información General/Certamenes/Certamen 1 (Enunciado).pdf`
@@ -132,14 +132,18 @@ Dedicación de tiempo (SCT): 145 horas cronológicas
 - **🏷️ Etiqueta/Texto:** Evaluaciones a realizar en periodos de modalidad online.
 
 ## 💾 5. Inventario de Archivos Locales en Disco y Google Drive
-Total de archivos sincronizados: **36**
+Total de archivos sincronizados: **40**
 
-### 📂 `00 Información General/` (15 archivos)
+### 📂 `00 Información General/` (19 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
 | `2026pr Notas.pdf` | 67.7 KB | 2026-11-08 17:18 | Sincronizado |
 | `Ayudantías/Ayudantia 1 (Enunciado).pdf` | 422.0 KB | 2026-11-08 17:18 | Sincronizado |
 | `Ayudantías/Ayudantia 1 (Pauta).pdf` | 406.4 KB | 2026-11-08 17:18 | Sincronizado |
+| `Ayudantías/Ayudantia 2 (Enunciado).pdf` | 370.0 KB | 2026-11-18 10:13 | Sincronizado |
+| `Ayudantías/Ayudantia 2 (Pauta).pdf` | 435.3 KB | 2026-11-18 10:13 | Sincronizado |
+| `Ayudantías/Ayudantia 3 (Enunciado).pdf` | 537.6 KB | 2026-11-18 10:13 | Sincronizado |
+| `Ayudantías/Ayudantia 3 (Pauta).pdf` | 415.4 KB | 2026-11-18 10:13 | Sincronizado |
 | `Certamenes/Certamen 1 (Enunciado).pdf` | 476.7 KB | 2026-11-08 17:18 | Sincronizado |
 | `Certamenes/Certamen 1 (Pauta).pdf` | 520.1 KB | 2026-11-08 17:18 | Sincronizado |
 | `Certamenes/Certamen 2 (Enunciado).pdf` | 414.3 KB | 2026-11-08 17:18 | Sincronizado |
@@ -266,6 +270,9 @@ Para la realización de este certamen, al igual que en la evaluación pasada, se
 Desde AGURTO hasta HUDSON: s...
 
 ## 📜 Historial Incremental de Cambios
+### 🔄 Actualización: 2026-11-18 11:07 -03
+- Nuevos archivos en disco y repo: Ayudantia 3 (Enunciado).pdf, Ayudantia 3 (Pauta).pdf, Ayudantia 2 (Enunciado).pdf, Ayudantia 2 (Pauta).pdf
+
 ### 🚀 Línea Base de Contexto: 2026-11-02 17:51 -03
 - Inicialización integral del archivo de contexto de la asignatura a partir de Aula USM.
 - Total de 5 secciones y 72 módulos registrados.

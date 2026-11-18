@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Fundamentos de Análisis Estructural
 **Sigla:** `CIV233` | **Aula ID:** `62178` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62178
-**Última Sincronización:** `2026-11-18 10:24 -03`
+**Última Sincronización:** `2026-11-18 11:07 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV233`.
@@ -93,7 +93,7 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
   - 📎 `A_Tablas_Integrales (REV2).pdf` (785.5 KB) -> `00 Información General/Clases/A_Tablas_Integrales (REV2).pdf`
   - 📎 `04_Flexibilidad_SistHiperestaticos.pdf` (2.10 MB) -> `00 Información General/Clases/04_Flexibilidad_SistHiperestaticos.pdf`
   - 📎 `05_Lineas_de_Influencia.pdf` (675.2 KB) -> `00 Información General/Clases/05_Lineas_de_Influencia.pdf`
-  - 📎 `06_Introduccion_AnPlastico.pdf` (1.69 MB)
+  - 📎 `06_Introduccion_AnPlastico.pdf` (1.69 MB) -> `00 Información General/Clases/06_Introduccion_AnPlastico.pdf`
 - **[📁 Carpeta] Ayudantías**
   - 📎 `Ayudantía_01.pdf` (560.9 KB) -> `00 Información General/Ayudantías/Ayudantía_01.pdf`
   - 📎 `Ayudantía_02.pdf` (631.2 KB) -> `00 Información General/Ayudantías/Ayudantía_02.pdf`
@@ -106,7 +106,7 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
   - 📎 `Guía_02.pdf` (888.8 KB) -> `00 Información General/Guías/Guía_02.pdf`
   - 📎 `Guía_03.pdf` (1.26 MB) -> `00 Información General/Guías/Guía_03.pdf`
   - 📎 `Guia_04.pdf` (2.53 MB) -> `00 Información General/Guías/Guia_04.pdf`
-  - 📎 `Guía_05.pdf` (1.23 MB)
+  - 📎 `Guía_05.pdf` (1.23 MB) -> `00 Información General/Guías/Guía_05.pdf`
 - **[📁 Carpeta] Tareas**
   - 📎 `Instrucciones instalacion SAP2000 27.pdf` (189.9 KB) -> `00 Información General/Tareas/Instrucciones instalacion SAP2000 27.pdf`
   - 📎 `Tarea_01.pdf` (564.4 KB) -> `00 Información General/Tareas/Tarea_01.pdf`
@@ -119,7 +119,7 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
   - 📎 `Notas 15-10.pdf` (28.2 KB) -> `00 Información General/Notas 15-10.pdf`
 - **[📁 Carpeta] Pautas Certámenes**
   - 📎 `Pauta_C01_2026-2.pdf` (195.7 KB) -> `00 Información General/Pautas Certámenes/Pauta_C01_2026-2.pdf`
-  - 📎 `Pauta_C02_2026-2.pdf` (197.2 KB)
+  - 📎 `Pauta_C02_2026-2.pdf` (197.2 KB) -> `00 Información General/Pautas Certámenes/Pauta_C02_2026-2.pdf`
 
 ### Sección: Unidad 1
 *Sin módulos publicados en esta sección.*
@@ -131,9 +131,9 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
 *Sin módulos publicados en esta sección.*
 
 ## 💾 5. Inventario de Archivos Locales en Disco y Google Drive
-Total de archivos sincronizados: **23**
+Total de archivos sincronizados: **27**
 
-### 📂 `00 Información General/` (23 archivos)
+### 📂 `00 Información General/` (27 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
 | `00_Reglas del Curso.pdf` | 564.0 KB | 2026-11-08 17:18 | Sincronizado |
@@ -149,13 +149,17 @@ Total de archivos sincronizados: **23**
 | `Clases/03_CargaUnitaria.pdf` | 1.82 MB | 2026-11-08 17:18 | Sincronizado |
 | `Clases/04_Flexibilidad_SistHiperestaticos.pdf` | 2.10 MB | 2026-11-08 17:18 | Sincronizado |
 | `Clases/05_Lineas_de_Influencia.pdf` | 675.2 KB | 2026-11-08 17:18 | Sincronizado |
+| `Clases/06_Introduccion_AnPlastico.pdf` | 1.69 MB | 2026-11-18 10:13 | Sincronizado |
 | `Clases/A_Tablas_Integrales (REV2).pdf` | 785.5 KB | 2026-11-08 17:18 | Sincronizado |
 | `Guías/Guia_04.pdf` | 2.53 MB | 2026-11-08 17:18 | Sincronizado |
 | `Guías/Guía_01.pdf` | 1.45 MB | 2026-11-08 17:18 | Sincronizado |
 | `Guías/Guía_02.pdf` | 888.8 KB | 2026-11-08 17:18 | Sincronizado |
 | `Guías/Guía_03.pdf` | 1.26 MB | 2026-11-08 17:18 | Sincronizado |
+| `Guías/Guía_05.pdf` | 1.23 MB | 2026-11-18 10:13 | Sincronizado |
+| `Notas 15-10 [8365915].pdf` | 28.2 KB | 2026-11-18 10:13 | Sincronizado |
 | `Notas 15-10.pdf` | 26.1 KB | 2026-11-08 17:18 | Sincronizado |
 | `Pautas Certámenes/Pauta_C01_2026-2.pdf` | 195.7 KB | 2026-11-08 17:18 | Sincronizado |
+| `Pautas Certámenes/Pauta_C02_2026-2.pdf` | 197.2 KB | 2026-11-18 10:13 | Sincronizado |
 | `Tareas/Instrucciones instalacion SAP2000 27.pdf` | 189.9 KB | 2026-11-08 17:18 | Sincronizado |
 | `Tareas/Tarea_01.pdf` | 564.4 KB | 2026-11-08 17:18 | Sincronizado |
 | `Tareas/Tarea_02.pdf` | 468.4 KB | 2026-11-08 17:18 | Sincronizado |
@@ -226,6 +230,9 @@ Los certámenes serán entregados el día miércoles durante el horario de clase
 Saludos,
 
 ## 📜 Historial Incremental de Cambios
+### 🔄 Actualización: 2026-11-18 11:07 -03
+- Nuevos archivos en disco y repo: Notas 15-10 [8365915].pdf, 06_Introduccion_AnPlastico.pdf, Guía_05.pdf, Pauta_C02_2026-2.pdf
+
 ### 🔄 Actualización: 2026-11-18 10:24 -03
 - Fecha modificada en «Tarea N°2»: 2026-11-16 23:59 → 2026-11-20 23:59
 - Fecha modificada en «Tarea N°2»: 2026-11-16 23:59 → 2026-11-20 23:59

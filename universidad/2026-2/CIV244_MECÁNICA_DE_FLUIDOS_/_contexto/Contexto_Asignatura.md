@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Mecánica de Fluidos
 **Sigla:** `CIV244` | **Aula ID:** `62182` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62182
-**Última Sincronización:** `2026-11-18 10:24 -03`
+**Última Sincronización:** `2026-11-18 11:07 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV244`.
@@ -84,7 +84,7 @@ Dedicación de tiempo (SCT): 203 horas cronológicas
   - 📎 `CIV244_Clase_16_handout.pdf` (502.4 KB) -> `00 Información General/Material de clases/CIV244_Clase_16_handout.pdf`
   - 📎 `CIV244_Clase_18_handout.pdf` (331.9 KB) -> `00 Información General/Material de clases/CIV244_Clase_18_handout.pdf`
   - 📎 `CIV244_Clase_19_handout.pdf` (1.13 MB) -> `00 Información General/Material de clases/CIV244_Clase_19_handout.pdf`
-  - 📎 `CIV244_Clase_20_handout.pdf` (490.9 KB)
+  - 📎 `CIV244_Clase_20_handout.pdf` (490.9 KB) -> `00 Información General/Material de clases/CIV244_Clase_20_handout.pdf`
 - **[📁 Carpeta] Apuntes USM**
   - 📎 `Apunte-02-Propiedades_mecanicas_1.pdf` (731.7 KB) -> `00 Información General/Apuntes USM/Apunte-02-Propiedades_mecanicas_1.pdf`
   - 📎 `Apunte-03-Propiedades_mecanicas_2.pdf` (1.15 MB) -> `00 Información General/Apuntes USM/Apunte-03-Propiedades_mecanicas_2.pdf`
@@ -101,12 +101,12 @@ Dedicación de tiempo (SCT): 203 horas cronológicas
   - 📎 `Apunte-14-FlujoIdealReal-NavierStokes.pdf` (1.06 MB) -> `00 Información General/Apuntes USM/Apunte-14-FlujoIdealReal-NavierStokes.pdf`
   - 📎 `Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf` (3.52 MB) -> `00 Información General/Apuntes USM/Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf`
   - 📎 `Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf` (612.7 KB) -> `00 Información General/Apuntes USM/Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf`
-  - 📎 `Apunte-17-LeyesConservacion-TeoremaTrasporteReynolds.pdf` (1.51 MB)
-  - 📎 `Apunte-18 -LeyesConservacion-EjMomentumLineal.pdf` (2.02 MB)
-  - 📎 `Apunte-19-LeyesConservacion-EjMomentumAngular.pdf` (5.76 MB)
-  - 📎 `Apunte-20-LeyesConservacion-Energia.pdf` (1.52 MB)
-  - 📎 `Apunte-21-FlujoTurbulento.pdf` (776.4 KB)
-  - 📎 `Apunte-22-CapaLimite.pdf` (1.63 MB)
+  - 📎 `Apunte-17-LeyesConservacion-TeoremaTrasporteReynolds.pdf` (1.51 MB) -> `00 Información General/Apuntes USM/Apunte-17-LeyesConservacion-TeoremaTrasporteReynolds.pdf`
+  - 📎 `Apunte-18 -LeyesConservacion-EjMomentumLineal.pdf` (2.02 MB) -> `00 Información General/Apuntes USM/Apunte-18 -LeyesConservacion-EjMomentumLineal.pdf`
+  - 📎 `Apunte-19-LeyesConservacion-EjMomentumAngular.pdf` (5.76 MB) -> `00 Información General/Apuntes USM/Apunte-19-LeyesConservacion-EjMomentumAngular.pdf`
+  - 📎 `Apunte-20-LeyesConservacion-Energia.pdf` (1.52 MB) -> `00 Información General/Apuntes USM/Apunte-20-LeyesConservacion-Energia.pdf`
+  - 📎 `Apunte-21-FlujoTurbulento.pdf` (776.4 KB) -> `00 Información General/Apuntes USM/Apunte-21-FlujoTurbulento.pdf`
+  - 📎 `Apunte-22-CapaLimite.pdf` (1.63 MB) -> `00 Información General/Apuntes USM/Apunte-22-CapaLimite.pdf`
 - **[📁 Carpeta] Certámenes anteriores**
   - 📎 `CIV244_2024_C1.pdf` (145.0 KB) -> `00 Información General/Certámenes anteriores/CIV244_2024_C1.pdf`
   - 📎 `CIV244_2024_C1_Pauta.pdf` (1.43 MB) -> `00 Información General/Certámenes anteriores/CIV244_2024_C1_Pauta.pdf`
@@ -119,11 +119,11 @@ Dedicación de tiempo (SCT): 203 horas cronológicas
   - 📎 `CIV244_2023_C2.pdf` (172.7 KB) -> `00 Información General/Certámenes anteriores/CIV244_2023_C2.pdf`
   - 📎 `CIV244_2023_C2_Pauta.pdf` (2.23 MB) -> `00 Información General/Certámenes anteriores/CIV244_2023_C2_Pauta.pdf`
   - 📎 `CIV244_2024_C2.pdf` (400.3 KB) -> `00 Información General/Certámenes anteriores/CIV244_2024_C2.pdf`
-  - 📎 `CIV244_2022_C3.pdf` (460.3 KB)
-  - 📎 `CIV244_2022_C3_Pauta.pdf` (466.1 KB)
-  - 📎 `CIV244_2023_C3.pdf` (180.7 KB)
-  - 📎 `CIV244_2023_C3_Pauta.pdf` (1.47 MB)
-  - 📎 `CIV244_2024_C3.pdf` (149.7 KB)
+  - 📎 `CIV244_2022_C3.pdf` (460.3 KB) -> `00 Información General/Certámenes anteriores/CIV244_2022_C3.pdf`
+  - 📎 `CIV244_2022_C3_Pauta.pdf` (466.1 KB) -> `00 Información General/Certámenes anteriores/CIV244_2022_C3_Pauta.pdf`
+  - 📎 `CIV244_2023_C3.pdf` (180.7 KB) -> `00 Información General/Certámenes anteriores/CIV244_2023_C3.pdf`
+  - 📎 `CIV244_2023_C3_Pauta.pdf` (1.47 MB) -> `00 Información General/Certámenes anteriores/CIV244_2023_C3_Pauta.pdf`
+  - 📎 `CIV244_2024_C3.pdf` (149.7 KB) -> `00 Información General/Certámenes anteriores/CIV244_2024_C3.pdf`
 - **[📝 Tarea/Entrega] Entrega apuntes C1**
 - **[📁 Carpeta] Certámenes**
   - 📎 `CIV244_2026_C1.pdf` (1.16 MB) -> `00 Información General/Certámenes/CIV244_2026_C1.pdf`
@@ -169,13 +169,13 @@ Luciana Tiraferri Colombo: ltiraferri@usm.cl
   - 📎 `Ayudantía n°8 CIV224.pdf` (451.7 KB) -> `01 Ayudantías/Ayudantía 8/Ayudantía n°8 CIV224.pdf`
 - **[📁 Carpeta] Ayudantía 9**
   - 📎 `Ayudantía_9.pdf` (231.6 KB) -> `01 Ayudantías/Ayudantía 9/Ayudantía_9.pdf`
-  - 📎 `Desarrollo Ayudantía 9.pdf` (2.72 MB)
+  - 📎 `Desarrollo Ayudantía 9.pdf` (2.72 MB) -> `01 Ayudantías/Ayudantía 9/Desarrollo Ayudantía 9.pdf`
 - **[📁 Carpeta] Ayudantía 10**
-  - 📎 `Ayudantía n°10 CIV224.pdf` (171.0 KB)
-  - 📎 `Pauta Ayudantía 10.pdf` (6.40 MB)
+  - 📎 `Ayudantía n°10 CIV224.pdf` (171.0 KB) -> `01 Ayudantías/Ayudantía 10/Ayudantía n°10 CIV224.pdf`
+  - 📎 `Pauta Ayudantía 10.pdf` (6.40 MB) -> `01 Ayudantías/Ayudantía 10/Pauta Ayudantía 10.pdf`
 - **[📁 Carpeta] Ayudantía N°11**
-  - 📎 `Pauta_Ayudantía_N_11.pdf` (311.3 KB)
-  - 📎 `Ayudantía_11.pdf` (252.8 KB)
+  - 📎 `Pauta_Ayudantía_N_11.pdf` (311.3 KB) -> `01 Ayudantías/Ayudantía N°11/Pauta_Ayudantía_N_11.pdf`
+  - 📎 `Ayudantía_11.pdf` (252.8 KB) -> `01 Ayudantías/Ayudantía N°11/Ayudantía_11.pdf`
 
 ### Sección: Unidad 1
 *Sin módulos publicados en esta sección.*
@@ -196,9 +196,9 @@ Luciana Tiraferri Colombo: ltiraferri@usm.cl
 *Sin módulos publicados en esta sección.*
 
 ## 💾 5. Inventario de Archivos Locales en Disco y Google Drive
-Total de archivos sincronizados: **72**
+Total de archivos sincronizados: **89**
 
-### 📂 `00 Información General/` (53 archivos)
+### 📂 `00 Información General/` (65 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
 | `Apuntes USM/Apunte-02-Propiedades_mecanicas_1.pdf` | 731.7 KB | 2026-11-08 17:18 | Sincronizado |
@@ -216,17 +216,28 @@ Total de archivos sincronizados: **72**
 | `Apuntes USM/Apunte-14-FlujoIdealReal-NavierStokes.pdf` | 1.06 MB | 2026-11-08 17:18 | Sincronizado |
 | `Apuntes USM/Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf` | 3.52 MB | 2026-11-08 17:18 | Sincronizado |
 | `Apuntes USM/Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf` | 612.7 KB | 2026-11-08 17:18 | Sincronizado |
+| `Apuntes USM/Apunte-17-LeyesConservacion-TeoremaTrasporteReynolds.pdf` | 1.51 MB | 2026-11-18 10:13 | Sincronizado |
+| `Apuntes USM/Apunte-18 -LeyesConservacion-EjMomentumLineal.pdf` | 2.02 MB | 2026-11-18 10:13 | Sincronizado |
+| `Apuntes USM/Apunte-19-LeyesConservacion-EjMomentumAngular.pdf` | 5.76 MB | 2026-11-18 10:13 | Sincronizado |
+| `Apuntes USM/Apunte-20-LeyesConservacion-Energia.pdf` | 1.52 MB | 2026-11-18 10:13 | Sincronizado |
+| `Apuntes USM/Apunte-21-FlujoTurbulento.pdf` | 776.4 KB | 2026-11-18 10:13 | Sincronizado |
+| `Apuntes USM/Apunte-22-CapaLimite.pdf` | 1.63 MB | 2026-11-18 10:13 | Sincronizado |
 | `Certámenes anteriores/CIV244_2022_C1.pdf` | 415.5 KB | 2026-11-08 17:18 | Sincronizado |
 | `Certámenes anteriores/CIV244_2022_C1_Pauta.pdf` | 438.1 KB | 2026-11-08 17:18 | Sincronizado |
 | `Certámenes anteriores/CIV244_2022_C2.pdf` | 463.5 KB | 2026-11-08 17:18 | Sincronizado |
 | `Certámenes anteriores/CIV244_2022_C2_Pauta.pdf` | 741.8 KB | 2026-11-08 17:18 | Sincronizado |
+| `Certámenes anteriores/CIV244_2022_C3.pdf` | 460.3 KB | 2026-11-18 10:13 | Sincronizado |
+| `Certámenes anteriores/CIV244_2022_C3_Pauta.pdf` | 466.1 KB | 2026-11-18 10:13 | Sincronizado |
 | `Certámenes anteriores/CIV244_2023_C1.pdf` | 154.0 KB | 2026-11-08 17:18 | Sincronizado |
 | `Certámenes anteriores/CIV244_2023_C1_Pauta.pdf` | 1.34 MB | 2026-11-08 17:18 | Sincronizado |
 | `Certámenes anteriores/CIV244_2023_C2.pdf` | 172.7 KB | 2026-11-08 17:18 | Sincronizado |
 | `Certámenes anteriores/CIV244_2023_C2_Pauta.pdf` | 2.23 MB | 2026-11-08 17:18 | Sincronizado |
+| `Certámenes anteriores/CIV244_2023_C3.pdf` | 180.7 KB | 2026-11-18 10:13 | Sincronizado |
+| `Certámenes anteriores/CIV244_2023_C3_Pauta.pdf` | 1.47 MB | 2026-11-18 10:13 | Sincronizado |
 | `Certámenes anteriores/CIV244_2024_C1.pdf` | 145.0 KB | 2026-11-08 17:18 | Sincronizado |
 | `Certámenes anteriores/CIV244_2024_C1_Pauta.pdf` | 1.43 MB | 2026-11-08 17:18 | Sincronizado |
 | `Certámenes anteriores/CIV244_2024_C2.pdf` | 400.3 KB | 2026-11-08 17:18 | Sincronizado |
+| `Certámenes anteriores/CIV244_2024_C3.pdf` | 149.7 KB | 2026-11-18 10:13 | Sincronizado |
 | `Certámenes/CIV244_2026_C1.pdf` | 1.16 MB | 2026-11-08 17:18 | Sincronizado |
 | `Certámenes/CIV244_2026_C1_RUBRICA.pdf` | 232.4 KB | 2026-11-08 17:18 | Sincronizado |
 | `Certámenes/CIV244_2026_C2.pdf` | 225.1 KB | 2026-11-08 17:18 | Sincronizado |
@@ -254,12 +265,15 @@ Total de archivos sincronizados: **72**
 | `Material de clases/CIV244_Clase_17_handout.pdf` | 1.90 MB | 2026-11-08 17:18 | Sincronizado |
 | `Material de clases/CIV244_Clase_18_handout.pdf` | 331.9 KB | 2026-11-08 17:18 | Sincronizado |
 | `Material de clases/CIV244_Clase_19_handout.pdf` | 1.13 MB | 2026-11-08 17:20 | Sincronizado |
+| `Material de clases/CIV244_Clase_20_handout.pdf` | 490.9 KB | 2026-11-18 10:13 | Sincronizado |
 
-### 📂 `01 Ayudantías/` (19 archivos)
+### 📂 `01 Ayudantías/` (24 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
 | `Ayudantía 1/Ayudantía_1.pdf` | 259.9 KB | 2026-11-08 17:18 | Sincronizado |
 | `Ayudantía 1/Desarrollo Ayudantía 1.pdf` | 1.39 MB | 2026-11-08 17:18 | Sincronizado |
+| `Ayudantía 10/Ayudantía n°10 CIV224.pdf` | 171.0 KB | 2026-11-18 10:13 | Sincronizado |
+| `Ayudantía 10/Pauta Ayudantía 10.pdf` | 6.40 MB | 2026-11-18 10:13 | Sincronizado |
 | `Ayudantía 2/Ayudantía 2.pdf` | 280.0 KB | 2026-11-08 17:18 | Sincronizado |
 | `Ayudantía 2/Pauta ayudantía 2.pdf` | 5.57 MB | 2026-11-08 17:18 | Sincronizado |
 | `Ayudantía 3/Ayudantía_3.pdf` | 244.5 KB | 2026-11-08 17:18 | Sincronizado |
@@ -275,8 +289,11 @@ Total de archivos sincronizados: **72**
 | `Ayudantía 8/Ayudantía n°8 CIV224.pdf` | 451.7 KB | 2026-11-08 17:18 | Sincronizado |
 | `Ayudantía 8/Pauta Ayudantía 8.pdf` | 5.46 MB | 2026-11-08 17:18 | Sincronizado |
 | `Ayudantía 9/Ayudantía_9.pdf` | 231.6 KB | 2026-11-08 17:18 | Sincronizado |
+| `Ayudantía 9/Desarrollo Ayudantía 9.pdf` | 2.72 MB | 2026-11-18 10:13 | Sincronizado |
 | `Ayudantía Extra/Ayudantía_extra.pdf` | 252.5 KB | 2026-11-08 17:18 | Sincronizado |
 | `Ayudantía Extra/Desarrollo Ayudantía Extra.pdf` | 1.28 MB | 2026-11-08 17:18 | Sincronizado |
+| `Ayudantía N°11/Ayudantía_11.pdf` | 252.8 KB | 2026-11-18 10:13 | Sincronizado |
+| `Ayudantía N°11/Pauta_Ayudantía_N_11.pdf` | 311.3 KB | 2026-11-18 10:13 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
 ### 📣 Clase martes 03/11
@@ -343,6 +360,9 @@ Saludos
 Ricardo Quinteros
 
 ## 📜 Historial Incremental de Cambios
+### 🔄 Actualización: 2026-11-18 11:07 -03
+- Nuevos archivos en disco y repo: Apunte-17-LeyesConservacion-TeoremaTrasporteReynolds.pdf, Apunte-18 -LeyesConservacion-EjMomentumLineal.pdf, Apunte-19-LeyesConservacion-EjMomentumAngular.pdf, Apunte-20-LeyesConservacion-Energia.pdf, Apunte-21-FlujoTurbulento.pdf, Apunte-22-CapaLimite.pdf, CIV244_2022_C3.pdf, CIV244_2022_C3_Pauta.pdf, CIV244_2023_C3.pdf, CIV244_2023_C3_Pauta.pdf, CIV244_2024_C3.pdf, CIV244_Clase_20_handout.pdf, Desarrollo Ayudantía 9.pdf, Ayudantía n°10 CIV224.pdf, Pauta Ayudantía 10.pdf, Pauta_Ayudantía_N_11.pdf, Ayudantía_11.pdf
+
 ### 🔄 Actualización: 2026-11-18 10:24 -03
 - Nuevos archivos en disco y repo: CIV244_Clase_19_handout.pdf
 

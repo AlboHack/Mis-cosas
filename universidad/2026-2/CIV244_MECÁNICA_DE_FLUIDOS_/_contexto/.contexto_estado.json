@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-18 10:24:42",
+  "timestamp": "2026-11-18 11:07:38",
   "archivos": {
     "CIV 244 - Mecánica de Fluidos final.pdf": 146822,
     "CIV244-2026-2_Programacion_R1.pdf": 102627,
@@ -18,6 +18,12 @@
     "Apunte-14-FlujoIdealReal-NavierStokes.pdf": 1111393,
     "Apunte-15-FlujoIdealReal-NavierStokes-PlacasParalelas.pdf": 3696144,
     "Apunte-16-FlujoIdealReal-NavierStokes-Normalizacion.pdf": 627399,
+    "Apunte-17-LeyesConservacion-TeoremaTrasporteReynolds.pdf": 1579920,
+    "Apunte-18 -LeyesConservacion-EjMomentumLineal.pdf": 2120370,
+    "Apunte-19-LeyesConservacion-EjMomentumAngular.pdf": 6042384,
+    "Apunte-20-LeyesConservacion-Energia.pdf": 1589664,
+    "Apunte-21-FlujoTurbulento.pdf": 795048,
+    "Apunte-22-CapaLimite.pdf": 1705653,
     "CIV244_2022_C1.pdf": 425492,
     "CIV244_2022_C1_Pauta.pdf": 448631,
     "CIV244_2022_C2.pdf": 474575,
@@ -29,6 +35,11 @@
     "CIV244_2024_C1.pdf": 148522,
     "CIV244_2024_C1_Pauta.pdf": 1503285,
     "CIV244_2024_C2.pdf": 409888,
+    "CIV244_2022_C3.pdf": 471315,
+    "CIV244_2022_C3_Pauta.pdf": 477274,
+    "CIV244_2023_C3.pdf": 184990,
+    "CIV244_2023_C3_Pauta.pdf": 1540698,
+    "CIV244_2024_C3.pdf": 153313,
     "CIV244_2026_C1.pdf": 1216185,
     "CIV244_2026_C1_RUBRICA.pdf": 237977,
     "CIV244_2026_C2.pdf": 230552,
@@ -54,6 +65,7 @@
     "CIV244_Clase_17_handout.pdf": 1988072,
     "CIV244_Clase_18_handout.pdf": 339886,
     "CIV244_Clase_19_handout.pdf": 1182429,
+    "CIV244_Clase_20_handout.pdf": 502639,
     "Ayudantía_1.pdf": 266116,
     "Desarrollo Ayudantía 1.pdf": 1452916,
     "Ayudantía 2.pdf": 286764,
@@ -71,8 +83,13 @@
     "Ayudantía n°8 CIV224.pdf": 462571,
     "Pauta Ayudantía 8.pdf": 5724777,
     "Ayudantía_9.pdf": 237120,
+    "Desarrollo Ayudantía 9.pdf": 2853346,
     "Ayudantía_extra.pdf": 258514,
-    "Desarrollo Ayudantía Extra.pdf": 1338638
+    "Desarrollo Ayudantía Extra.pdf": 1338638,
+    "Ayudantía n°10 CIV224.pdf": 175145,
+    "Pauta Ayudantía 10.pdf": 6714793,
+    "Pauta_Ayudantía_N_11.pdf": 318737,
+    "Ayudantía_11.pdf": 258879
   },
   "assignments": {
     "8323629": {

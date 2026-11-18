@@ -1,7 +1,7 @@
 # 🎓 Contexto Maestro del Semestre 2026-2 (UTFSM)
 **Estudiante:** Nicolás Eduardo Albornoz Pavez (`nicolas.albornozp@usm.cl`)
 **Carrera:** Ingeniería Civil — Universidad Técnica Federico Santa María
-**Fecha de Corte:** `2026-11-18 10:24 -03`
+**Fecha de Corte:** `2026-11-18 11:07 -03`
 
 > [!IMPORTANT]
 > Este documento indexa y resume el estado actual del semestre 2026-2.
@@ -20,7 +20,7 @@
 ## 🚨 2. Cronograma Maestro de Evaluaciones Pendientes y Próximas
 | Fecha | Asignatura | Evaluación / Hito | Cuenta Regresiva | Lugar |
 |-------|------------|-------------------|------------------|-------|
-| **2026-11-18 16:30** | `CIV386` (Transporte) | Certamen 3 | **¡VENCE HOY! (en 6 h)** | B014 / B103 |
+| **2026-11-18 16:30** | `CIV386` (Transporte) | Certamen 3 | **¡VENCE HOY! (en 5 h)** | B014 / B103 |
 | **2026-11-20 16:30** | `CIV244` (Fluidos) | Certamen 3 | **En 2 días (20-Nov)** | Campus San Joaquín |
 | **2026-11-20 23:59** | `CIV233` (FAE) | Vencimiento de Tarea N°2 | **En 2 días (20-Nov)** | Aula USM |
 | **2026-11-23 18:40** | `CIV222` (FICA) | Presentación 2 + Informe Final | **En 5 días (23-Nov)** | Sala de cátedra / Aula USM |
