@@ -1,0 +1,3736 @@
+{
+ "directed": true,
+ "multigraph": true,
+ "graph": {},
+ "nodes": [
+  {
+   "tipo": "Fuente",
+   "texto": "NCh353.Of2000 Construcción - Cubicación de obras de edificación - Requisitos (texto completo leído, copia escaneada)",
+   "url": "",
+   "estado": "vista",
+   "id": "F_NCh353"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "NCh1156/1 a /3.Of1999 Especificaciones técnicas - Ordenación y designación de partidas (partes 1, 2 y 3 leídas)",
+   "url": "",
+   "estado": "vista",
+   "id": "F_NCh1156"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "NCh169.Of2001 Ladrillos cerámicos - Clasificación y requisitos",
+   "url": "",
+   "estado": "vista",
+   "id": "F_NCh169"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "NCh204:2020 Barras laminadas en caliente para hormigón armado (tabla 4 masas nominales; 4.3.2 largos; 4.6 tolerancias)",
+   "url": "",
+   "estado": "vista",
+   "id": "F_NCh204"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "NCh2123.Of1997 Mod. 2003 Albañilería confinada (copia parcial: solo cláusula 5 Materiales y Anexo B)",
+   "url": "",
+   "estado": "parcial",
+   "id": "F_NCh2123"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "NCh1928.Of1993 Mod. 2009 Albañilería armada (copia de 54 ppi leída página a página: cláusulas 6, 7 y Anexo A; la resistencia del hormigón de relleno en A.4 no se lee)",
+   "url": "",
+   "estado": "vista",
+   "id": "F_NCh1928"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "ACI 318-19 Building Code Requirements for Structural Concrete (cap. 25: 25.3 ganchos, 25.4 desarrollo, 25.5 empalmes; copia en unidades inch-pound)",
+   "url": "",
+   "estado": "vista",
+   "id": "F_ACI318"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "INACAP, apunte de albañilería confinada que resume NCh2123 (fuente secundaria; texto escaneado de baja calidad)",
+   "url": "",
+   "estado": "secundaria",
+   "id": "F_NCh2123_inacap"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "Ficha técnica de escalerilla de un fabricante (masa por metro y ancho según espesor de muro)",
+   "url": "",
+   "estado": "falta",
+   "id": "F_fichaEscalerilla"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "NCh430-2007 Hormigón armado (solo las modificaciones nacionales al ACI 318-05; anclajes y empalmes se leyeron en ACI 318-19, no en la versión 318-05 que adopta)",
+   "url": "",
+   "estado": "parcial",
+   "id": "F_NCh430"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "NCh170:2016 Hormigón - Requisitos generales (grados G por resistencia cilíndrica; designación 5.2)",
+   "url": "",
+   "estado": "vista",
+   "id": "F_NCh170"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "NCh2256/1.Of2001 Morteros - Requisitos generales (grados M; 7.1 mortero de junta)",
+   "url": "",
+   "estado": "vista",
+   "id": "F_NCh2256"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "NCh2257/3.Of1996 Morteros - Consistencia por asentamiento de cono (método de ensayo)",
+   "url": "",
+   "estado": "vista",
+   "id": "F_NCh2257"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "Solminihac y Thenoux, Procesos y Técnicas de Construcción, 5ª ed., Ediciones UC (cap. 5 presupuesto; cap. 10 albañilería; 14.3 techumbre)",
+   "url": "",
+   "estado": "vista",
+   "id": "F_Solminihac"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "Curso 'Capacitación Inspectores Albañilería' (resume NCh1928 y NCh2123; fuente secundaria)",
+   "url": "",
+   "estado": "secundaria",
+   "id": "F_cursoInsp"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "Mineduc, guía 'Cubicación de materiales e insumos' (resume NCh353; reemplazada por el texto de la norma)",
+   "url": "https://www.curriculumnacional.cl/614/articles-228610_recurso_6.docx",
+   "estado": "secundaria",
+   "id": "F_guiaMineduc"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "CDT, Manual de tolerancias para edificaciones",
+   "url": "https://cdt.cl/download/76541",
+   "estado": "secundaria",
+   "id": "F_CDT_tol"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "MINVU, Tabla de precios referenciales DS27 por región (UF por partida)",
+   "url": "https://www.minvu.gob.cl/wp-content/uploads/2026/09/TABLA-DE-PRECIOS-REFERENCIALES-DS27-REGION-DE-AYSEN-2026.pdf",
+   "estado": "secundaria",
+   "id": "F_MINVU_precios"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "Hidalgo (2008), U. de Chile: pérdidas de materiales en edificación en extensión",
+   "url": "https://repositorio.uchile.cl/handle/2250/104976",
+   "estado": "secundaria",
+   "id": "F_tesisPerdidas"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "Mancilla (2023), UDD: brechas presupuestarias en proyectos de construcción",
+   "url": "https://repositorio.udd.cl/bitstreams/685a8b7e-a239-4bf3-bbee-9ae6817c5ca8/download",
+   "estado": "secundaria",
+   "id": "F_UDD_brechas"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "Mastering AutoCAD Civil 3D (Sybex), cap. Quantity Takeoff; Autodesk Help QTO",
+   "url": "https://help.autodesk.com/cloudhelp/2025/ENU/Civil3D-Tutorials/files/GUID-E870AEEA-4E45-480B-9DA3-BE6846A41A8F.htm",
+   "estado": "secundaria",
+   "id": "F_C3D_QTO"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "AutoCAD: MEASUREGEOM, AREA/LIST, hatch con campos, DATAEXTRACTION",
+   "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-LT/files/GUID-5D5B0EE1-DD90-47AE-8A55-642FBFF5E4E4.htm",
+   "estado": "secundaria",
+   "id": "F_ACAD_area"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "Presupuestos FSPR 2019: escalerilla 1.03 a 1.13 kg/m² de muro",
+   "url": "https://subinterior-2018.interior.gob.cl/media/2019/02/ANEXO-3.1-PRESUPUESTO-SEDE-SOCIAL.pdf",
+   "estado": "secundaria",
+   "id": "F_FSPR2019"
+  },
+  {
+   "tipo": "Fuente",
+   "texto": "Caso propio: Sede C FSPR 2023 (revisión en frío y conciliación)",
+   "url": "",
+   "estado": "caso",
+   "id": "F_SedeC"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Literatura y normas disponibles",
+   "detalle": "Por cada sistema constructivo del encargo, listar las normas y fuentes que citan sus reglas y su estado (python cerebro.py literatura <sistemas>); pedir a Nicolás lo que esté parcial, secundario o falte, y esperar su respuesta antes de ejecutar",
+   "orden": 1,
+   "id": "E00"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Alcance y encargo",
+   "detalle": "Qué se entrega, para quién, insumos, plazo y modalidad de contrato (suma alzada, serie de precios, administración); versión y fecha de cada documento",
+   "orden": 2,
+   "id": "E01"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Revisión de insumos",
+   "detalle": "Cotas, escalas, coherencia plano-EETT-itemizado; contradicciones a una lista de consultas",
+   "orden": 3,
+   "id": "E02"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Marco normativo y designaciones",
+   "detalle": "Sistema constructivo, normas que lo rigen, designación vigente de hormigón, acero, ladrillo y mortero",
+   "orden": 4,
+   "id": "E03"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Itemizado",
+   "detalle": "Partidas ordenadas según NCh1156, medibles, presupuestables y controlables, con unidad según EETT o NCh353",
+   "orden": 5,
+   "id": "E04"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Extracción de geometría",
+   "detalle": "PDF vectorial o DWG a DXF; calibrar escala con dos o más cotas por vista",
+   "orden": 6,
+   "id": "E05"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Datos de entrada",
+   "detalle": "Cada dato una sola vez, con unidad, base (M/E/I/S) y fuente",
+   "orden": 7,
+   "id": "E06"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Cubicación por partida",
+   "detalle": "Cantidades según NCh353, por ejes y sin agrupar; sin pérdidas",
+   "orden": 8,
+   "id": "E07"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Verificación independiente",
+   "detalle": "Segundo método por partida crítica; recubicación ciega; planilla contra script",
+   "orden": 9,
+   "id": "E08"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Análisis de precios unitarios",
+   "detalle": "Materiales puestos en obra con pérdidas, mano de obra con rendimientos y leyes sociales, equipos y otros",
+   "orden": 10,
+   "id": "E09"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Presupuesto",
+   "detalle": "Costo directo, gastos generales, imprevistos, utilidad, IVA; partidas faltantes u omitidas al final",
+   "orden": 11,
+   "id": "E10"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Conciliación con referencia",
+   "detalle": "Si existe un presupuesto previo: causa de cada diferencia, sin ajustar hacia la referencia",
+   "orden": 12,
+   "id": "E11"
+  },
+  {
+   "tipo": "Etapa",
+   "texto": "Entregable y cierre",
+   "detalle": "Planilla con controles, informe, consultas al proyectista; boleta, cobro y registro de errores",
+   "orden": 13,
+   "id": "E12"
+  },
+  {
+   "tipo": "Sistema",
+   "texto": "Albañilería armada",
+   "id": "S_armada"
+  },
+  {
+   "tipo": "Sistema",
+   "texto": "Albañilería confinada",
+   "id": "S_confinada"
+  },
+  {
+   "tipo": "Sistema",
+   "texto": "Hormigón armado",
+   "id": "S_HA"
+  },
+  {
+   "tipo": "Sistema",
+   "texto": "Techumbre y cubierta",
+   "id": "S_techo"
+  },
+  {
+   "tipo": "Sistema",
+   "texto": "Terminaciones",
+   "id": "S_termin"
+  },
+  {
+   "tipo": "Sistema",
+   "texto": "Movimiento de tierras",
+   "id": "S_tierra"
+  },
+  {
+   "tipo": "Partida",
+   "texto": "Excavaciones y rellenos",
+   "id": "P_excav"
+  },
+  {
+   "tipo": "Partida",
+   "texto": "Hormigones (fundación, sobrecimiento, cadena)",
+   "id": "P_horm"
+  },
+  {
+   "tipo": "Partida",
+   "texto": "Radieres y emplantillados",
+   "id": "P_radier"
+  },
+  {
+   "tipo": "Partida",
+   "texto": "Moldajes",
+   "id": "P_mold"
+  },
+  {
+   "tipo": "Partida",
+   "texto": "Enfierraduras, escalerillas y tensores",
+   "id": "P_fierro"
+  },
+  {
+   "tipo": "Partida",
+   "texto": "Albañilería",
+   "id": "P_alb"
+  },
+  {
+   "tipo": "Partida",
+   "texto": "Techumbre y cubierta",
+   "id": "P_techo"
+  },
+  {
+   "tipo": "Partida",
+   "texto": "Hojalatería (canales, bajadas, forros)",
+   "id": "P_hoja"
+  },
+  {
+   "tipo": "Partida",
+   "texto": "Cerámicos y revestimientos",
+   "id": "P_ceram"
+  },
+  {
+   "tipo": "Partida",
+   "texto": "Pavimentos y cielos",
+   "id": "P_piso_cielo"
+  },
+  {
+   "tipo": "Partida",
+   "texto": "Estucos y pinturas",
+   "id": "P_estuco"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 1.3: las pérdidas (despuntes, mortero caído, envases rotos, excesos) no van en la cubicación sino en el rendimiento del precio unitario",
+   "id": "R01"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 4.4: lo que pertenece a la vez a más de un elemento se mide una sola vez (esquinas, encuentros, cruces)",
+   "id": "R02"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 5.1.5 y Tabla 1: sobreancho de excavación solo si la fundación lleva moldaje (0.20 m por lado hasta 0.5 m de alto; 0.40 hasta 1.0; 0.50 hasta 1.5; 0.70 hasta 2.5; 0.80 sobre 2.5); con talud, 0.10 m por lado (5.1.6); zanja de cañería: diámetro exterior + 0.45 m (5.1.7)",
+   "id": "R03"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 5.2 y Tabla 2: transporte de excedentes = volumen en banco + esponjamiento (10, 15, 25, 30 % o más según terreno); el asentamiento en el transporte no se descuenta",
+   "id": "R04"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 5.3.1: rellenos por volumen neto rellenado; rellenos de excavaciones de fundación en partida separada de los rellenos de piso; compactación estimable con Tabla 3",
+   "id": "R05"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 5.4.1: escarpes por superficie explanada",
+   "id": "R06"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 6.1: hormigón por volumen sin descontar armaduras ni tuberías hasta 0.25 m; se descuentan aberturas mayores a 0.05 m²; partidas separadas por tipo de hormigón, elemento y moldaje",
+   "id": "R07"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 6.2.1 a 6.2.3: barras por masa nominal x largo total (resistentes, repartición, suples y estribos); por diámetro y largo comercial indicar número de barras y masa; barras de más de 12 m aparte",
+   "id": "R08"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 6.2.4 y 6.2.5: +5 % sobre la masa medida (4 % trabas, patas, guías, elementos de posición y despuntes; 1 % sobredimensión), salvo que el proyecto cuantifique trabas y patas",
+   "id": "R09"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 6.2.7 y 6.2.8: verticales de pilares y muros empalmadas 40 d en el piso superior; penetración en fundaciones no detallada = 40 d (la norma impresa dice 'quedando 10,1 m sobre el fondo', errata evidente: interpretar 0.1 m) [Por verificar la errata]",
+   "id": "R10"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 6.2.6 y 6.2.10: alambre de amarre en el precio unitario; enfierradura subcontratada a suma alzada: +1 % sobre cubicación de planos",
+   "id": "R11"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 6.3: emplantillados por superficie o volumen indicando espesor; fundaciones por volumen real; radier por superficie con espesor",
+   "id": "R12"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 6.4 a 6.6 y 6.10.2: alturas de muros entre niveles superiores de losas o hasta el fondo de viga; vigas por luz libre; intersecciones en orden 1° pilares y muros, 2° vigas, 3° losas",
+   "id": "R13"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 7.1 a 7.3: cadenas por volumen real medido como vigas; pilares de refuerzo sin el hormigón entre endentados; apoyo de dintel no indicado = 0.30 m por extremo",
+   "id": "R14"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 8.1.1 y Tabla 4.a: albañilería por superficie efectiva; vanos en ladrillo a máquina: <1.5 m² 0 % (50 % con pilar), 1.5 a 3.0 m² 50 % (75 %), >3.0 m² 100 %. Tabla 4.b para ladrillo a mano",
+   "id": "R15"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 8.1.3: se descuentan de la albañilería los espacios de cadenas, dinteles, vigas y pilares embutidos; muros endentados desde el ladrillo más saliente",
+   "id": "R16"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 8.1.6: refuerzos de acero en las juntas entre hiladas (escalerilla) se incluyen en la partida de albañilería, no en fierro",
+   "id": "R17"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 8.1.2 y 8.1.4: partidas separadas por naturaleza y espesor; la mano de obra de formar vanos de 2 m² o más va en el precio unitario del muro",
+   "id": "R18"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 9.1.1: tabiques de madera por longitud con altura, sin descontar vanos menores a 3 m² si el dintel es del mismo material",
+   "id": "R19"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 9.5 y 9.6: estructura de techumbre por superficie proyectada horizontal (incluye canes de una pieza); aleros por ml con ancho; forros, canes a la vista y frontones aparte",
+   "id": "R20"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 13: cubiertas por superficie de vertientes sin traslapos; incluye elementos intermedios entre cubierta y estructura (costaneras, entablado)",
+   "id": "R21"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 12: caballetes, limatesas y forros por longitud sin traslapos y con ancho desarrollado; canales y bajadas por longitud incluyendo curvas, tes y ves; anclajes en el precio",
+   "id": "R22"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 14: aislación e impermeabilización en láminas por superficie con retornos y sin traslapos; vanos <=1 m² no se descuentan, mayores se descuentan en el exceso",
+   "id": "R23"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 15 y 16: pavimentos y cielos por superficie efectiva entre paramentos terminados; cielo incluye sobre vanos sin dintel; radier en partida aparte del pavimento",
+   "id": "R24"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 18.2: cerámicos por superficie a la vista, sin descontar superficies no revestidas menores a 0.5 m²; biselado 0.5 ml por m² en el APU",
+   "id": "R25"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 11: estucos por superficie proyectada; espesor supuesto 2.5 cm salvo EETT; descuento de vanos según 11.3",
+   "id": "R26"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 24: pinturas por superficie recubierta, partida por clase de pintura",
+   "id": "R27"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh353 Anexo A: el APU se desglosa en materiales, mano de obra (rendimiento y leyes sociales), herramientas o equipos menores y subcontratos",
+   "id": "R28"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Moldaje por superficie de contacto con el hormigón, en partida por elemento (NCh353 6.1.4); incluye fondos bajo dinteles y tapas de extremos; madera tradicional ~3 usos (hasta 5)",
+   "id": "R29"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh1156/1 a /3: secciones 0 informaciones generales, 1 gastos adicionales, obras provisionales y trabajos previos, 2 obras de construcción (2/1 obra gruesa, 2/2 terminaciones), 3 instalaciones, 4 obras complementarias; la medición de cada partida remite a NCh353 (7.8)",
+   "id": "R30"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Partidas medibles, presupuestables y controlables, con código y unidad; una partida omitida es pérdida para el contratista",
+   "id": "R31"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh204:2020: masas nominales 6 mm 0.222, 8 mm 0.395, 10 mm 0.617, 12 mm 0.888, 16 mm 1.58 kg/m; largos normales 6 y 12 m; diámetros hasta 16 mm en rollo; tolerancia de masa ±3.5 %",
+   "id": "R32"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh170:2016: grados G05 a G60 por resistencia cilíndrica fc' (MPa); la designación incluye grado, fracción defectuosa, tamaño máximo de árido y asentamiento. EETT con 'H-xx' usan la designación antigua: pedir el grado G equivalente al proveedor [Por verificar la equivalencia]",
+   "id": "R33"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh169.Of2001: clases MqM, MqP, MqH y grados 1, 2, 3; tolerancias largo ±5 mm, ancho y alto ±3 mm. Armada exige grado 1 o 2 [Por verificar en NCh1928]; confinada exige MqM o MqP (NCh2123 5.2.1)",
+   "id": "R34"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh2256/1.Of2001: grados de mortero M0.5 a M30; mortero de junta con Dn de arena <= 1/3 de la junta, consistencia 180 a 220 mm, resistencia según NCh1928 o NCh2123",
+   "id": "R35"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Junta de albañilería de 10 a 15 mm (rango de validez de NCh2123 y NCh1928): fija el escantillón y el número de hiladas y de filas de escalerilla",
+   "id": "R36"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh1928 6.4.1.1 y 6.4.3.2 a 6.4.3.5, 6.4.3.8: espesor >= máx(1/25 de la menor dimensión libre; 14 cm); cuantía >= 0.06 % por dirección y >= 0.15 % total, contando solo barras que recorren todo el ancho o alto; vertical >= 8 mm a <= 6e y <= 120 cm; en cada borde libre y encuentro al menos una barra de 12 mm; verticales fijadas cada <= 300 d y <= 3 m",
+   "id": "R37"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh1928 6.1.2 y 6.4.3.6: armadura de junta de diámetro <= mitad del espesor de la junta; refuerzo horizontal en el remate de cimientos, base y remate de vanos, nivel de piso, techo y parapetos; verticales >= 10 mm a cada lado de vano, prolongadas 60 cm más allá de las esquinas",
+   "id": "R38"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh1928 A.3.2 y A.4: mortero fm >= 10 MPa (fracción defectuosa 4 %), retentividad >= 70 %; sin ensayos, 1:0.22:4 en peso (cemento:cal:arena) con cono <= 18 cm; árido del hormigón de relleno <= 12.5 mm; resistencia del relleno 17.5 MPa [Por verificar: cifra del curso, ilegible en A.4]",
+   "id": "R39"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Anclajes y empalmes: NCh1928 6.1.5 traslapo >= 40 veces el menor diámetro; en huecos menores que 6 veces el diámetro mayor solo empalme soldado, mecánico o traslapo dentro de la cadena; 6.1.6 anclajes según hormigón armado. ACI 318-19 25.4.2.3: ld = fy ψt ψe ψg db / (2.1 λ √f'c) para barras <= 19 mm con espaciamiento y recubrimiento suficientes, >= 300 mm; 25.5.2.1 traslapo clase B = 1.3 ld; Tabla 25.3.1 ganchos de 90° y 180° con diámetro interior 6 db. A440-280H con G25: ld = 27 d y clase B = 35 d (40 d cubre); A630-420H con G25: ld = 40 d y clase B = 52 d (40 d no alcanza). NCh430 adopta ACI 318-05 [Por verificar que la ecuación coincide]",
+   "id": "R40"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Presupuesto de venta = costo directo + gastos generales de obra + gastos generales indirectos (financiero, garantías, oficina central) + imprevistos + utilidad + IVA",
+   "id": "R41"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Costo de materiales puesto en obra, cotizado por proveedor; incluye pérdidas por robo, mal almacenamiento y transporte; P.U. = total de la partida / cantidad",
+   "id": "R42"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Mano de obra: rendimiento real (trabajo productivo, contributorio y no contributorio) y costo con leyes sociales",
+   "id": "R43"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Visita a terreno y lista de antecedentes (accesos, agua, energía, botaderos, suelo, napa, mano de obra local) antes de cerrar precios",
+   "id": "R44"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Incertidumbre: por partida relevante, valores optimista, más probable y pesimista; simular o usar PERT para el rango del costo",
+   "id": "R45"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Precios de referencia: tabla MINVU DS27 de la región y cotizaciones; justificar cada P.U.",
+   "id": "R46"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Las EETT fijan el alcance de cada partida (dónde va, qué incluye) y prevalecen sobre la costumbre",
+   "id": "R47"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Plano sin cotas no se cubica: se consulta; trabajar por ejes y pisos sin agrupar",
+   "id": "R48"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "NCh1928 7.1: todo hueco que aloja armadura se llena con hormigón de relleno, por etapas de altura limitada según el hueco (5 cm: 30 cm; 8 cm: 120 cm; >= 12 cm: 240 cm). Se cubica el volumen de huecos rellenos en m³, como partida propia o declarado dentro del APU de albañilería",
+   "id": "R49"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Albañilería confinada (NCh2123 vía apunte INACAP) [Por verificar]: espesor >= 14 cm con ladrillo a máquina y 15 cm artesanal; paño <= 12.5 m² y <= 6 m entre pilares; pilares en bordes libres e intersecciones; cadenas a nivel de piso y techo de ancho >= espesor del muro; mortero 5 MPa artesanal y 10 MPa a máquina",
+   "id": "R50"
+  },
+  {
+   "tipo": "Regla",
+   "texto": "Antes de ejecutar: listar por sistema las fuentes que citan sus reglas; si una está parcial, secundaria o falta, pedirla a Nicolás y esperar; sin ella se trabaja solo con su OK y con las reglas afectadas marcadas [Por verificar]",
+   "id": "R51"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Doble conteo en esquinas y encuentros en T",
+   "id": "X01"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Muro pasante entero y el que llega cortado en la cara (NCh353 4.4); contraste con área de muros / espesor",
+   "id": "C01"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Vanos descontados al 100 % o no descontados, sin la Tabla 4 de NCh353",
+   "id": "X02"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Lista de vanos con área y si llevan pilar; aplicar NCh353 Tabla 4.a fila por fila",
+   "id": "C02"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Escala mal calibrada o asumida (vistas a escalas distintas en la misma lámina)",
+   "id": "X03"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Calibrar cada vista con dos cotas independientes y declarar el factor",
+   "id": "C03"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Unidad equivocada (m² con valor de m³) o magnitud incoherente",
+   "id": "X04"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Unidad contra magnitud: espesor implícito = volumen / área",
+   "id": "C04"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Cifra copiada entre partidas (canales = bajadas = forros)",
+   "id": "X05"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Buscar valores repetidos en el itemizado y justificar cada uno",
+   "id": "C05"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Alcance de EETT ignorado (cerámica en todo el interior; relleno sobre la huella)",
+   "id": "X06"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Leer la EETT de cada partida antes de cubicarla y anotar su alcance en Datos",
+   "id": "C06"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Pérdidas metidas en la cubicación, o criterio confundido con error",
+   "id": "X07"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Cantidad neta en Cubicación (NCh353 1.3); pérdidas solo en APU; conciliación declara el criterio",
+   "id": "C07"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Masa por metro mal tomada (escalerilla al doble)",
+   "id": "X08"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Masa = π/4 d² ρ por alambre; contrastar kg/m² de muro con referencias",
+   "id": "C08"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Armadura sin estribos, traslapos, patas ni penetración en fundación",
+   "id": "X09"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "kg/m teórico del elemento con NCh353 6.2.4 a 6.2.8 contra la cantidad",
+   "id": "C09"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Coincidencia artificial: calzar con la referencia",
+   "id": "X10"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Recubicación ciega antes de mirar la referencia; coincidencias exactas se revisan igual",
+   "id": "C10"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Verificación circular: supuesto elegido porque coincide",
+   "id": "X11"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Un supuesto nunca se justifica por coincidir; marcarlo S o I y dar su sensibilidad",
+   "id": "C11"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Error de fórmula o de rango en la planilla",
+   "id": "X12"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Hoja Control planilla contra script de Python; recalc sin errores; auditor de estilo",
+   "id": "C12"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Rótulo del plano contradice el dibujo (pendiente 60 % rotulada, 40 % dibujada)",
+   "id": "X13"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Medir en corte y elevación; reportar la contradicción como consulta",
+   "id": "C13"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Elemento exigido por EETT o norma sin partida (armadura de sobrecimiento; refuerzo horizontal en base de vanos)",
+   "id": "X14"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Recorrer EETT capítulo por capítulo y los mínimos de R37-R38 contra el itemizado; lo que falte va a partidas omitidas",
+   "id": "C14"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Plano o EETT en versión desactualizada",
+   "id": "X15"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Registrar versión y fecha de cada documento en Datos",
+   "id": "C15"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Brecha presupuestaria por alcance mal definido",
+   "id": "X16"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Lista de supuestos y exclusiones aceptada por el cliente antes de cubicar",
+   "id": "C16"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Designación de hormigón obsoleta (H-xx por cubo) usada para cotizar",
+   "id": "X17"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Traducir a grado G de NCh170:2016 con el proveedor antes del APU",
+   "id": "C17"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Fierro sin número de barras por diámetro y largo comercial",
+   "id": "X18"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Tabla de corte: por diámetro, largo de 6 o 12 m, número de barras y masa (NCh353 6.2.2; NCh204 4.3.2)",
+   "id": "C18"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Diseño bajo mínimos normativos sin advertir al cliente (Sede C: 10 mm en encuentros; NCh1928 6.4.3.5 exige 12 mm)",
+   "id": "X19"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Contrastar EETT con R37 a R40 y reportar como consulta, sin rediseñar",
+   "id": "C19"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Escalerilla presupuestada como fierro aparte y además dentro del m² de albañilería",
+   "id": "X20"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Ubicar la escalerilla en una sola partida (NCh353 8.1.6) y decirlo en el itemizado",
+   "id": "C20"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Hormigón de relleno de huecos sin partida ni APU en albañilería armada",
+   "id": "X21"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Volumen de huecos con armadura (NCh1928 7.1) en m³: partida propia o declarado en el APU de albañilería",
+   "id": "C21"
+  },
+  {
+   "tipo": "Error",
+   "texto": "Ejecutar con una norma parcial, secundaria o ausente sin advertirlo",
+   "id": "X22"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Tabla de literatura por sistema (cerebro.py literatura) revisada; lo que no esté vista se pide a Nicolás antes de ejecutar",
+   "id": "C22"
+  },
+  {
+   "tipo": "Error",
+   "texto": "EETT contradictorias entre cláusulas para un mismo elemento (Sede C: cadena 6φ10 en 3.4 y 12 mm en 3.5)",
+   "id": "X23"
+  },
+  {
+   "tipo": "Chequeo",
+   "texto": "Cruzar cada elemento entre todas las cláusulas de EETT que lo nombran; la contradicción va a consultas con su efecto en kg",
+   "id": "C23"
+  },
+  {
+   "tipo": "Herramienta",
+   "texto": "pdf_a_dxf.py y cubicar_dxf.py (kit): geometría vectorial y largos/áreas por capa",
+   "id": "H01"
+  },
+  {
+   "tipo": "Herramienta",
+   "texto": "AutoCAD: MEASUREGEOM, AREA/LIST, hatch con campos de área, QSELECT, DATAEXTRACTION a Excel",
+   "id": "H02"
+  },
+  {
+   "tipo": "Herramienta",
+   "texto": "Civil 3D Quantity Takeoff y Navisworks Quantification",
+   "id": "H03"
+  },
+  {
+   "tipo": "Herramienta",
+   "texto": "Planilla de la casa (skill planillas-ingenieria, auditor estilo.py)",
+   "id": "H04"
+  },
+  {
+   "tipo": "Herramienta",
+   "texto": "Skill verificacion-independiente y agentes en frío",
+   "id": "H05"
+  },
+  {
+   "tipo": "Herramienta",
+   "texto": "LaTeX utfsm (sinmarca) para el informe; compaginación OK",
+   "id": "H06"
+  },
+  {
+   "tipo": "Herramienta",
+   "texto": "SII: boleta de honorarios electrónica",
+   "id": "H07"
+  },
+  {
+   "tipo": "Herramienta",
+   "texto": "python cerebro.py literatura <sistemas>: fuentes por sistema con su estado y lista de lo que hay que pedir",
+   "id": "H10"
+  },
+  {
+   "tipo": "Herramienta",
+   "texto": "Copia de normas en la biblioteca USM o INN; registro de qué está leído y qué es secundario",
+   "id": "H08"
+  },
+  {
+   "tipo": "Herramienta",
+   "texto": "Plantilla de itemizado NCh1156 (secciones 0 a 4)",
+   "id": "H09"
+  },
+  {
+   "tipo": "Estudio",
+   "texto": "NCh1928 en copia de mejor resolución, solo para A.4 (resistencia del hormigón de relleno)",
+   "id": "S01"
+  },
+  {
+   "tipo": "Estudio",
+   "texto": "NCh2123 completa (requisitos de pilares y cadenas), no solo la modificación de materiales",
+   "id": "S02"
+  },
+  {
+   "tipo": "Estudio",
+   "texto": "ACI 318-05 o NCh430 completa para confirmar que ld y las clases de empalme coinciden con 318-19 (R40)",
+   "id": "S03"
+  },
+  {
+   "tipo": "Estudio",
+   "texto": "Ficha técnica de escalerilla de fabricante para el kg/m² de muro (X08, X20)",
+   "id": "S08"
+  },
+  {
+   "tipo": "Estudio",
+   "texto": "Manual de tolerancias CDT para cotejar escantillón y alturas",
+   "id": "S04"
+  },
+  {
+   "tipo": "Estudio",
+   "texto": "Tabla MINVU de la región del cliente para APU",
+   "id": "S05"
+  },
+  {
+   "tipo": "Estudio",
+   "texto": "Capítulo QTO de Civil 3D para movimiento de tierras",
+   "id": "S06"
+  },
+  {
+   "tipo": "Estudio",
+   "texto": "Ensayo de cono de morteros solo si un encargo pide control de calidad",
+   "id": "S07"
+  }
+ ],
+ "edges": [
+  {
+   "rel": "precede",
+   "source": "E00",
+   "target": "E01",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E00",
+   "target": "H10",
+   "key": 0
+  },
+  {
+   "rel": "precede",
+   "source": "E01",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "precede",
+   "source": "E02",
+   "target": "E03",
+   "key": 0
+  },
+  {
+   "rel": "precede",
+   "source": "E03",
+   "target": "E04",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E03",
+   "target": "H08",
+   "key": 0
+  },
+  {
+   "rel": "precede",
+   "source": "E04",
+   "target": "E05",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E04",
+   "target": "H09",
+   "key": 0
+  },
+  {
+   "rel": "precede",
+   "source": "E05",
+   "target": "E06",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E05",
+   "target": "H01",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E05",
+   "target": "H02",
+   "key": 0
+  },
+  {
+   "rel": "precede",
+   "source": "E06",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E06",
+   "target": "H04",
+   "key": 0
+  },
+  {
+   "rel": "precede",
+   "source": "E07",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E07",
+   "target": "H01",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E07",
+   "target": "H02",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E07",
+   "target": "H03",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E07",
+   "target": "H04",
+   "key": 0
+  },
+  {
+   "rel": "precede",
+   "source": "E08",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E08",
+   "target": "H05",
+   "key": 0
+  },
+  {
+   "rel": "precede",
+   "source": "E09",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E09",
+   "target": "H04",
+   "key": 0
+  },
+  {
+   "rel": "precede",
+   "source": "E10",
+   "target": "E11",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E10",
+   "target": "H04",
+   "key": 0
+  },
+  {
+   "rel": "precede",
+   "source": "E11",
+   "target": "E12",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E11",
+   "target": "H05",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E12",
+   "target": "H04",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E12",
+   "target": "H06",
+   "key": 0
+  },
+  {
+   "rel": "usa",
+   "source": "E12",
+   "target": "H07",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R08",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R09",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R10",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R14",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R15",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R16",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R17",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R18",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R29",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R32",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R34",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R35",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R36",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R37",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R38",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R39",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R40",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R49",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_armada",
+   "target": "R51",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R08",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R09",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R10",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R14",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R15",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R16",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R17",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R18",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R32",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R34",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R35",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R36",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R40",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R50",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_confinada",
+   "target": "R51",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R07",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R08",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R09",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R10",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R11",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R12",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R13",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R29",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R32",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R33",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R40",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_HA",
+   "target": "R51",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_techo",
+   "target": "R20",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_techo",
+   "target": "R21",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_techo",
+   "target": "R22",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_techo",
+   "target": "R23",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_techo",
+   "target": "R51",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_termin",
+   "target": "R19",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_termin",
+   "target": "R23",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_termin",
+   "target": "R24",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_termin",
+   "target": "R25",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_termin",
+   "target": "R26",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_termin",
+   "target": "R27",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_termin",
+   "target": "R51",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_tierra",
+   "target": "R03",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_tierra",
+   "target": "R04",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_tierra",
+   "target": "R05",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_tierra",
+   "target": "R06",
+   "key": 0
+  },
+  {
+   "rel": "exige",
+   "source": "S_tierra",
+   "target": "R51",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R01",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R01",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R01",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R01",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R01",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R01",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R02",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R02",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R02",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R02",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R02",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R03",
+   "target": "P_excav",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R03",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R03",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R04",
+   "target": "P_excav",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R04",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R04",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R04",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R05",
+   "target": "P_excav",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R05",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R05",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R06",
+   "target": "P_excav",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R06",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R06",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R07",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R07",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R07",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R08",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R08",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R08",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R08",
+   "target": "F_NCh204",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R09",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R09",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R09",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R10",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R10",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R10",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R11",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R11",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R11",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R12",
+   "target": "P_radier",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R12",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R12",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R12",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R13",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R13",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R13",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R14",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R14",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R14",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R15",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R15",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R15",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R16",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R16",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R16",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R17",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R17",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R17",
+   "target": "E04",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R17",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R17",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R18",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R18",
+   "target": "E04",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R18",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R18",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R19",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R19",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R19",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R20",
+   "target": "P_techo",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R20",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R20",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R20",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R21",
+   "target": "P_techo",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R21",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R21",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R21",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R22",
+   "target": "P_hoja",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R22",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R22",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R23",
+   "target": "P_techo",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R23",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R23",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R24",
+   "target": "P_piso_cielo",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R24",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R24",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R25",
+   "target": "P_ceram",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R25",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R25",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R25",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R26",
+   "target": "P_estuco",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R26",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R26",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R27",
+   "target": "P_estuco",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R27",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R27",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R28",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R28",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R28",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R28",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R28",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R29",
+   "target": "P_mold",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R29",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R29",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R29",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R29",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R29",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R30",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R30",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R30",
+   "target": "E04",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R30",
+   "target": "F_NCh1156",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R30",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R31",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R31",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R31",
+   "target": "E04",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R31",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R31",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R32",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R32",
+   "target": "E03",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R32",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R32",
+   "target": "F_NCh204",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R33",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R33",
+   "target": "E03",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R33",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R33",
+   "target": "F_NCh170",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R34",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R34",
+   "target": "E03",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R34",
+   "target": "F_NCh169",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R34",
+   "target": "F_NCh2123",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R34",
+   "target": "F_cursoInsp",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R35",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R35",
+   "target": "E03",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R35",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R35",
+   "target": "F_NCh2256",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R36",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R36",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R36",
+   "target": "E03",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R36",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R36",
+   "target": "F_NCh2123",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R36",
+   "target": "F_cursoInsp",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R36",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R37",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R37",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R37",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R37",
+   "target": "F_NCh1928",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R37",
+   "target": "F_cursoInsp",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R38",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R38",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R38",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R38",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R38",
+   "target": "F_NCh1928",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R38",
+   "target": "F_cursoInsp",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R39",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R39",
+   "target": "E03",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R39",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R39",
+   "target": "F_NCh1928",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R39",
+   "target": "F_cursoInsp",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R39",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R40",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R40",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R40",
+   "target": "F_NCh1928",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R40",
+   "target": "F_ACI318",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R40",
+   "target": "F_NCh430",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R40",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R41",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R41",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R41",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R41",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R42",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R42",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R42",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R42",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R42",
+   "target": "F_tesisPerdidas",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R43",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R43",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R43",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R43",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R44",
+   "target": "P_excav",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R44",
+   "target": "E01",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R44",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R44",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R45",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R45",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R45",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R45",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R45",
+   "target": "F_UDD_brechas",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R46",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R46",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R46",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R46",
+   "target": "F_MINVU_precios",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R46",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R47",
+   "target": "P_ceram",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R47",
+   "target": "P_excav",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R47",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R47",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R47",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R47",
+   "target": "F_NCh1156",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R48",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R48",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R48",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R48",
+   "target": "E05",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R48",
+   "target": "F_guiaMineduc",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R49",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R49",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R49",
+   "target": "E03",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R49",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R49",
+   "target": "E09",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R49",
+   "target": "F_NCh1928",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R50",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R50",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R50",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R50",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R50",
+   "target": "F_NCh2123_inacap",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R50",
+   "target": "F_NCh2123",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R51",
+   "target": "P_excav",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R51",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R51",
+   "target": "P_radier",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R51",
+   "target": "P_mold",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R51",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R51",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R51",
+   "target": "P_techo",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R51",
+   "target": "P_hoja",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R51",
+   "target": "P_ceram",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R51",
+   "target": "P_piso_cielo",
+   "key": 0
+  },
+  {
+   "rel": "aplica_a",
+   "source": "R51",
+   "target": "P_estuco",
+   "key": 0
+  },
+  {
+   "rel": "se_aplica_en",
+   "source": "R51",
+   "target": "E00",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "R51",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X01",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X01",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X01",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X01",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X01",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C01",
+   "target": "X01",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C01",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X02",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X02",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X02",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X02",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C02",
+   "target": "X02",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C02",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X03",
+   "target": "E05",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X03",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X03",
+   "target": "P_techo",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X03",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C03",
+   "target": "X03",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C03",
+   "target": "E05",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X04",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X04",
+   "target": "P_excav",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X04",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C04",
+   "target": "X04",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C04",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X05",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X05",
+   "target": "P_hoja",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X05",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C05",
+   "target": "X05",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C05",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X06",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X06",
+   "target": "P_ceram",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X06",
+   "target": "P_excav",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X06",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C06",
+   "target": "X06",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C06",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X07",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X07",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X07",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X07",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X07",
+   "target": "F_tesisPerdidas",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C07",
+   "target": "X07",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C07",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X08",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X08",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X08",
+   "target": "F_FSPR2019",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X08",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C08",
+   "target": "X08",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C08",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X09",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X09",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X09",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X09",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C09",
+   "target": "X09",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C09",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X10",
+   "target": "E11",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X10",
+   "target": "P_excav",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X10",
+   "target": "P_ceram",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X10",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C10",
+   "target": "X10",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C10",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X11",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X11",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X11",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C11",
+   "target": "X11",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C11",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X12",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X12",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X12",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X12",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C12",
+   "target": "X12",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C12",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X13",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X13",
+   "target": "P_techo",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X13",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C13",
+   "target": "X13",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C13",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X14",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X14",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X14",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X14",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X14",
+   "target": "F_cursoInsp",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X14",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C14",
+   "target": "X14",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C14",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X15",
+   "target": "E01",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X15",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X15",
+   "target": "F_Solminihac",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C15",
+   "target": "X15",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C15",
+   "target": "E01",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X16",
+   "target": "E01",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X16",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X16",
+   "target": "F_UDD_brechas",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C16",
+   "target": "X16",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C16",
+   "target": "E01",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X17",
+   "target": "E03",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X17",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X17",
+   "target": "F_NCh170",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C17",
+   "target": "X17",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C17",
+   "target": "E03",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X18",
+   "target": "E07",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X18",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X18",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X18",
+   "target": "F_NCh204",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C18",
+   "target": "X18",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C18",
+   "target": "E08",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X19",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X19",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X19",
+   "target": "F_NCh1928",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X19",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C19",
+   "target": "X19",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C19",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X20",
+   "target": "E04",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X20",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X20",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X20",
+   "target": "F_NCh353",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C20",
+   "target": "X20",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C20",
+   "target": "E04",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X21",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X21",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X21",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X21",
+   "target": "F_NCh1928",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X21",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C21",
+   "target": "X21",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C21",
+   "target": "E10",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X22",
+   "target": "E00",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X22",
+   "target": "P_alb",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X22",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X22",
+   "target": "P_horm",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X22",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C22",
+   "target": "X22",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C22",
+   "target": "E00",
+   "key": 0
+  },
+  {
+   "rel": "ocurre_en",
+   "source": "X23",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "afecta",
+   "source": "X23",
+   "target": "P_fierro",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "X23",
+   "target": "F_SedeC",
+   "key": 0
+  },
+  {
+   "rel": "previene",
+   "source": "C23",
+   "target": "X23",
+   "key": 0
+  },
+  {
+   "rel": "se_hace_en",
+   "source": "C23",
+   "target": "E02",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "H02",
+   "target": "F_ACAD_area",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "H03",
+   "target": "F_C3D_QTO",
+   "key": 0
+  },
+  {
+   "rel": "cita",
+   "source": "H09",
+   "target": "F_NCh1156",
+   "key": 0
+  },
+  {
+   "rel": "estudia",
+   "source": "S01",
+   "target": "F_NCh1928",
+   "key": 0
+  },
+  {
+   "rel": "estudia",
+   "source": "S01",
+   "target": "F_cursoInsp",
+   "key": 0
+  },
+  {
+   "rel": "estudia",
+   "source": "S02",
+   "target": "F_NCh2123",
+   "key": 0
+  },
+  {
+   "rel": "estudia",
+   "source": "S03",
+   "target": "F_NCh430",
+   "key": 0
+  },
+  {
+   "rel": "estudia",
+   "source": "S03",
+   "target": "F_ACI318",
+   "key": 0
+  },
+  {
+   "rel": "estudia",
+   "source": "S08",
+   "target": "F_fichaEscalerilla",
+   "key": 0
+  },
+  {
+   "rel": "estudia",
+   "source": "S08",
+   "target": "F_FSPR2019",
+   "key": 0
+  },
+  {
+   "rel": "estudia",
+   "source": "S04",
+   "target": "F_CDT_tol",
+   "key": 0
+  },
+  {
+   "rel": "estudia",
+   "source": "S05",
+   "target": "F_MINVU_precios",
+   "key": 0
+  },
+  {
+   "rel": "estudia",
+   "source": "S06",
+   "target": "F_C3D_QTO",
+   "key": 0
+  },
+  {
+   "rel": "estudia",
+   "source": "S07",
+   "target": "F_NCh2257",
+   "key": 0
+  }
+ ]
+}

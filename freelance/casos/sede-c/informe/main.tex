@@ -1,0 +1,127 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[sinmarca]{utfsm}
+\usepackage{tabularx}
+\datos{titulo={Cubicación independiente y conciliación del presupuesto tipo}, ramo={Sede Social Tipo C, albañilería armada},
+  autor={Nicolás Albornoz Pavez}, fecha={20 de noviembre de 2026}, pie={Ejercicio de portafolio, no oficial}}
+% Documento profesional, no universitario: encabezado sin logos institucionales.
+\fancyhf{}
+\fancyhead[L]{\small Cubicación independiente: Sede Social Tipo C (FSPR 2023)}
+\fancyhead[R]{\small Nicolás Albornoz Pavez}
+\fancyfoot[L]{\footnotesize Ejercicio de portafolio, no oficial \textperiodcentered\ versión 5}
+\fancyfoot[R]{\footnotesize Pág.\ \thepage}
+\input{valores.tex}
+\tikzset{muro/.style={line width=0.55pt}, elem/.style={usmazul,line width=0.2pt}}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Cubicación independiente y conciliación del presupuesto tipo\par}
+\vspace{2pt}{\large Sede Social Tipo C en albañilería armada, Fondo Social Presidente de la República (2023)\par}
+\vspace{4pt}{\small Nicolás Albornoz Pavez \textperiodcentered\ Estudiante de Ingeniería Civil, UTFSM \textperiodcentered\ 20 de noviembre de 2026\par}
+\end{center}
+
+\section{Resumen}
+Se cubicó la obra gruesa y parte de las terminaciones desde el plano vectorial y las especificaciones técnicas (EETT), con los criterios de NCh353.Of2000 (cantidades sin pérdidas; fierro con traslapos, patas y penetración en fundación; vanos de albañilería por tabla 4.a), y se comparó con el presupuesto tipo oficial. \vDentro{} de \vTotal{} partidas quedan dentro de $\pm5$\,\%. Cada una de las restantes se explicó reconstruyendo la cifra del presupuesto: todas, salvo el cielo, se reproducen dentro de $\pm2$\,\% con un criterio identificable.
+
+\begin{resultado}
+\begin{itemize}[nosep]
+\item \textbf{Criterio de cubicación} (diferencias legítimas): ladrillo sin descuento de vanos menores, sobreexcavación de 5\,\%, moldajes con holgura, tensores todos de $\phi$10 y cubierta sin traslapos.
+\item \textbf{Errores del presupuesto}: escalerilla con el doble de la masa del alambre de \SI{4}{mm}, cadena sin estribos ni traslapos y solo en el perímetro, relleno en m$^2$ sobre la huella, bajadas que repiten la cifra de canales y cerámica en todo el interior cuando las EETT la piden en cocina y baño.
+\item \textbf{Efecto}: la escalerilla queda sobrepresupuestada en unos \$\vSob{} mil y la cadena (hormigón y acero) subpresupuestada en unos \$\vFal{} mil. El capítulo 3 parece razonable en total, pero la plata está mal repartida y falta justo en una partida estructural.
+\end{itemize}
+\end{resultado}
+
+\section{Fuentes y método}
+Fuentes públicas del FSPR (2023): Anexo 5.3, Planimetría Sede Social Tipo C (lámina 1/1); Anexo 3.3, Presupuesto; Anexo 4.3, EETT. Criterios de medición de NCh353.Of2000 (texto de la norma); ordenación de partidas según NCh1156; masas nominales y largos de barra según NCh204:2020; requisitos de albañilería armada según NCh1928.Of1993 Mod. 2009 (cláusulas 6, 7 y Anexo A); largos de desarrollo y empalmes según ACI 318-19, capítulo 25.
+
+\begin{juntos}
+La planta 1:50 se extrajo del PDF vectorial a DXF con un script propio y se escaló con la cota total de \SI{12.85}{m}. La escala se comprobó con cotas que no se usaron para calibrar:
+\begin{table}
+\centering\small
+\begin{tabular}{lSSr}
+\toprule
+Cota del plano & {Cota [m]} & {Medido [m]} & Diferencia\\
+\midrule
+Proyección de techumbre & 6.50 & 6.502 & 0.0\,\%\\
+Muro exterior a muro exterior & 5.30 & 5.301 & 0.0\,\%\\
+Espesor de muro (3 muros) & 0.15 & {0.148--0.151} & $-1.2$ a $+0.6$\,\%\\
+\bottomrule
+\end{tabular}
+\caption{Verificación de la escala de la geometría extraída.}
+\label{tab:escala}
+\end{table}
+\end{juntos}
+
+El largo de muros, base de casi todas las partidas, se obtuvo por tres caminos independientes: ejes del DXF (\SI{\vLeje}{m}), recubicación ciega hecha por otro analista desde el PDF sin conocer este resultado (\SI{37.32}{m}) y área rasterizada de muros dividida por el espesor (\SI{37.31}{m}). La dispersión es de 0.4\,\%.
+
+\begin{juntos}
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1.05]
+\input{planta_lineas.tex}
+\coordinate (V0) at (-1.151,0); \coordinate (P0) at (0,0); \coordinate (P1) at (10.504,0);
+\coordinate (Q1) at (10.504,-5.301);
+\cota[7mm]{V0}{P0}{\num{1.15}}
+\cota[7mm]{P0}{P1}{\num{10.50}}
+\cota[-9mm]{P1}{Q1}{\num{5.30}}
+\node[etq,align=center] at (5.2,-2.65) {Salón multiuso};
+\node[etq,align=left,anchor=west] at (-1.10,-2.65) {Vestíbulo};
+\end{tikzpicture}
+\caption{Planta de muros extraída del plano (muros cortados en negro, ventanas y artefactos en azul). Cotas medidas en el DXF, en metros; acceso a la izquierda.}
+\label{fig:planta}
+\end{figure}
+\end{juntos}
+
+La verificación tuvo tres capas: la planilla se contrasta fila por fila con un script de Python que calcula por otro camino (22 de 22 controles en OK); un revisor externo auditó el código y los datos contra las EETT; y un segundo analista recubicó a ciegas las partidas con mayor diferencia. Base de cada cantidad: M, medida en el plano; E, con sección o armadura de las EETT; I, con sección inferida porque las EETT remiten a planos de estructuras que no están en el expediente; S, con un supuesto declarado en la sección~\ref{sec:supuestos}.
+
+\section{Comparación partida por partida}
+\begin{juntos}
+\input{tabla_comp.tex}
+Las partidas sin causa indicada están dentro de $\pm5$\,\%. El ladrillo se incluye en la conciliación porque su diferencia cambió de $+15$\,\% a $+1.6$\,\% al aplicar NCh 353.
+\end{juntos}
+
+\section{Por qué difiere el presupuesto}
+\begin{juntos}
+Para cada partida fuera de tolerancia se buscó el criterio que reproduce la cifra del presupuesto. Se clasifica como criterio cuando la cifra sale de una práctica legítima (NCh 353 o práctica de obra) y como error cuando solo se explica con una cantidad que no corresponde a la geometría ni a las EETT, una unidad equivocada o una cifra repetida.
+\input{tabla_conc.tex}
+\end{juntos}
+
+\begin{itemize}[nosep]
+\item \textbf{Ladrillo.} NCh 353 no descuenta vanos menores a \SI{1.5}{m^2} en ladrillo hecho a máquina y descuenta al 50\,\% los de 1.5 a \SI{3}{m^2}: las ventanas (\SI{1.08}{m^2}) no se descuentan y la puerta (\SI{2.73}{m^2}) a medias. Resultado: \SI{\vLad}{m^2}, a 1.6\,\% del presupuesto. Si los vanos llevaran pilar, \SI{\vLadPilar}{m^2}.
+\item \textbf{Cadena.} Con 6\,$\phi$10 y estribos $\phi$6 a 0.20 (EETT 3.4), traslapos de 40\,$d$ (EETT 3.5) y +5\,\% de patas (NCh 353): \SI{\vFcad}{kg}, el doble de los \SI{93}{kg} presupuestados. El hormigón presupuestado (\SI{1.28}{m^3}) corresponde a una cadena solo en el perímetro, pero el moldaje (\SI{30}{m^2}) corresponde al largo completo: el presupuesto es incoherente consigo mismo.
+\item \textbf{Escalerilla.} Una fila cada 3 hiladas (EETT 3.2) da 9 filas bajo la cadena y \SI{\vLesc}{m} netos de vanos; con alambre de \SI{4}{mm} (\SI{\vEscKgm}{kg/m}) son \SI{\vEsc}{kg}. El presupuesto implica \SI{2.07}{kg/m^2} de muro; presupuestos FSPR de 2019 usan 1.03 a \SI{1.13}{kg/m^2}.
+\item \textbf{Pendiente de cubierta.} La planta rotula 60\,\%; el corte, las elevaciones y el propio presupuesto (faldón de \SI{3.50}{m}) dan 40\,\%. La cubierta medida es \SI{\vTecho}{m^2}, sin traslapos según NCh 353.
+\end{itemize}
+
+\Needspace{382pt}% anticorte
+\section{Otras inconsistencias del expediente}
+\begin{itemize}[nosep]
+\item Las EETT se contradicen en la cadena: 6\,$\phi$10 con estribos a 0.20 (punto 3.4) frente a $\phi$12 con estribos a 0.15 (punto 3.5). La planilla usa el punto 3.4; con 6\,$\phi$12 la masa por metro sube de 4.63 a \SI{6.57}{kg/m} (+42\,\%) y la partida 3.5 pasaría de 195 a unos \SI{276}{kg} (estimación por razón de masas, sin recalcular traslapos).
+\item El sobrecimiento se especifica armado con 4\,$\phi$12 y estribos $\phi$6 a 0.20 (EETT 2.8), sin partida propia; puede estar incluido en el precio unitario, que es igual al de fundaciones armadas.
+\item El ladrillo de las EETT mide 14\,cm de ancho y el muro se dibuja de 15\,cm. La ventana chica mide 0.80\,m de alto en elevación y la partida 15.2 dice 40\,$\times$\,60.
+\item Radier, poliestireno y cielo usan \SI{53.3}{m^2}; el interior medido es \SI{51.03}{m^2} y la diferencia no se reproduce con ningún criterio encontrado.
+\item Las EETT piden $\phi$10 en encuentros de muros; NCh1928 6.4.3.5 exige al menos una barra de \SI{12}{mm} en cada borde libre y encuentro. Se informa como consulta al proyectista, sin rediseñar. Las cuantías mínimas de 6.4.3.2 (0.06\,\% por dirección y 0.15\,\% total) se cumplen (0.09\,\% vertical y 0.07\,\% horizontal), y la escalerilla de \SI{4}{mm} cumple 6.1.2 (diámetro no mayor que la mitad de la junta de \SI{10}{mm}).
+\item NCh1928 7.1 exige llenar con hormigón de relleno todo hueco que aloja armadura. Ni el presupuesto ni las EETT tienen esa partida; su volumen depende de los huecos del ladrillo, que el expediente no define, por lo que no se cubicó. NCh1928 6.4.3.6 pide además refuerzo horizontal en la base y el remate de los vanos, que tampoco aparece.
+\item El acero especificado es A440-280H. Con hormigón G25, ACI 318-19 (25.4.2.3 y 25.5.2.1) da un largo de desarrollo de 27\,$d$ y un traslapo clase B de 35\,$d$, de modo que los 40\,$d$ de las EETT y de NCh1928 6.1.5 bastan. Con A630-420H se necesitarían 52\,$d$. NCh430 adopta ACI 318-05; que la ecuación coincida está [Por verificar].
+\item Las EETT designan los hormigones como H-5 y H-25, designación anterior a NCh170:2016 (grados G por probeta cilíndrica); para cotizar hay que fijar el grado G con el proveedor.
+\item Las EETT remiten a planos de estructuras y fundaciones que el expediente no incluye.
+\end{itemize}
+
+\section{Correcciones a la cubicación propia}
+\begin{juntos}
+La primera versión de esta cubicación tenía errores que la revisión en frío y la lectura de NCh 353 detectaron. Dos de ellos fabricaban coincidencias falsas con el presupuesto (relleno y cerámica), lo que muestra por qué una coincidencia no se acepta sin revisar la base.
+\input{tabla_corr.tex}
+Todas las correcciones quedaron registradas en la hoja Conciliacion de la planilla, con el valor anterior y el nuevo.
+\end{juntos}
+
+\section{Supuestos y límites}
+\label{sec:supuestos}
+\begin{itemize}[nosep]
+\item Ladrillo de NPT $\pm0.00$ a +2.40 y cadena de $15\times30$ de +2.40 a +2.70 (elevaciones y EETT 3.4). El corte dibuja el muro hasta cerca de +2.94; si el ladrillo llegara a +2.70, el ladrillo subiría a \SI{99.8}{m^2}.
+\item Fundación $0.40\times0.60$, sobrecimiento $0.15\times0.20$ y emplantillado de \SI{5}{cm}, inferidos a falta de planos de estructuras.
+\item Hilada de \SI{8.1}{cm} (ladrillo de 7.1 y junta de \SI{1.0}{cm}); escalerilla de dos alambres de \SI{4}{mm} con travesaños de \SI{8.5}{cm} cada \SI{25}{cm}, a confirmar con la ficha del fabricante.
+\item Tensores: 38 de $\phi$8 y 40 de $\phi$10 contados panel por panel, con penetración de 40\,$d$ en la fundación (NCh353 6.2.8): \SI{3.22}{m} y \SI{3.30}{m}. Bajadas: 4 de \SI{3.90}{m}. Vanos sin pilar.
+\item No se revisaron cerchas, terminaciones restantes ni precios unitarios.
+\end{itemize}
+Cubicación referencial elaborada desde los documentos públicos indicados, como ejercicio independiente. No reemplaza un proyecto ni un presupuesto firmado por un profesional competente. La planilla de respaldo (SedeC\_cubicacion\_v6.xlsx) contiene los datos con su fuente, las fórmulas, la conciliación y los controles.
+
+\end{document}
