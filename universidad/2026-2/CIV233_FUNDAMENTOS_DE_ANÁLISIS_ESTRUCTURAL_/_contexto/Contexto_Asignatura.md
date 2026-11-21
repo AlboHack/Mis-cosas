@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Fundamentos de Análisis Estructural
 **Sigla:** `CIV233` | **Aula ID:** `62178` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62178
-**Última Sincronización:** `2026-11-21 10:09 -03`
+**Última Sincronización:** `2026-11-21 16:09 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV233`.
@@ -54,7 +54,7 @@ El estudiante determina las fuerzas internas y desplazamientos causados por soli
 - **Habilitada desde:** 2026-11-21 00:00
 - **Fecha Límite (Due Date):** 2026-12-02 23:59 (En 11 días (02-Dec))
 - **Archivos de Enunciado Adjuntos:**
-  - 📄 **Tarea_03.pdf** (Descarga gestionada)
+  - 📄 **Tarea_03.pdf** (`00 Información General/Tarea N°3/Tarea_03.pdf`)
 - **Instrucciones:** *Sin texto adicional en la descripción; ver archivos adjuntos.*
 
 ## 🗂️ 4. Estructura Detallada de Unidades y Módulos en Aula USM
@@ -111,20 +111,20 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
   - 📎 `Ayudantía_04.pdf` (721.0 KB) -> `00 Información General/Ayudantías/Ayudantía_04.pdf`
   - 📎 `Ayudantía_05.pdf` (591.7 KB) -> `00 Información General/Ayudantías/Ayudantía_05.pdf`
   - 📎 `Ayudantía_06.pdf` (711.7 KB) -> `00 Información General/Ayudantías/Ayudantía_06.pdf`
-  - 📎 `Ayudantía_07.pdf` (607.8 KB)
-  - 📎 `Ayudantía_08.pdf` (752.8 KB)
+  - 📎 `Ayudantía_07.pdf` (607.8 KB) -> `00 Información General/Ayudantías/Ayudantía_07.pdf`
+  - 📎 `Ayudantía_08.pdf` (752.8 KB) -> `00 Información General/Ayudantías/Ayudantía_08.pdf`
 - **[📁 Carpeta] Guías**
   - 📎 `Guía_01.pdf` (1.45 MB) -> `00 Información General/Guías/Guía_01.pdf`
   - 📎 `Guía_02.pdf` (888.8 KB) -> `00 Información General/Guías/Guía_02.pdf`
   - 📎 `Guía_03.pdf` (1.26 MB) -> `00 Información General/Guías/Guía_03.pdf`
   - 📎 `Guia_04.pdf` (2.53 MB) -> `00 Información General/Guías/Guia_04.pdf`
   - 📎 `Guía_05.pdf` (1.23 MB) -> `00 Información General/Guías/Guía_05.pdf`
-  - 📎 `Guía_06.pdf` (906.3 KB)
+  - 📎 `Guía_06.pdf` (906.3 KB) -> `00 Información General/Guías/Guía_06.pdf`
 - **[📁 Carpeta] Tareas**
   - 📎 `Instrucciones instalacion SAP2000 27.pdf` (189.9 KB) -> `00 Información General/Tareas/Instrucciones instalacion SAP2000 27.pdf`
   - 📎 `Tarea_01.pdf` (564.4 KB) -> `00 Información General/Tareas/Tarea_01.pdf`
   - 📎 `Tarea_02.pdf` (468.4 KB) -> `00 Información General/Tareas/Tarea_02.pdf`
-  - 📎 `Tarea_03.pdf` (549.0 KB)
+  - 📎 `Tarea_03.pdf` (549.0 KB) -> `00 Información General/Tarea N°3/Tarea_03.pdf`
 - **[📝 Tarea/Entrega] Tarea N°1**
 - **[📝 Tarea/Entrega] Tarea N°2**
 - **[📝 Tarea/Entrega] Tarea N°3**
@@ -133,12 +133,12 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
 - **[📄 Documento/Recurso] Notas 09-11**
   - 📎 `Notas 15-10.pdf` (28.2 KB) -> `00 Información General/Notas 15-10.pdf`
 - **[📄 Documento/Recurso] Notas 19-11**
-  - 📎 `Notas 19-11.pdf` (28.7 KB)
+  - 📎 `Notas 19-11.pdf` (28.7 KB) -> `00 Información General/Notas 19-11.pdf`
 - **[📁 Carpeta] Pautas Certámenes**
   - 📎 `Pauta_C01_2026-2.pdf` (195.7 KB) -> `00 Información General/Pautas Certámenes/Pauta_C01_2026-2.pdf`
   - 📎 `Pauta_C02_2026-2.pdf` (197.2 KB) -> `00 Información General/Pautas Certámenes/Pauta_C02_2026-2.pdf`
 - **[📄 Documento/Recurso] Rúbrica Evaluación Tarea 1**
-  - 📎 `Rúbrica Evaluación Tarea 1.pdf` (59.7 KB)
+  - 📎 `Rúbrica Evaluación Tarea 1.pdf` (59.7 KB) -> `00 Información General/Rúbrica Evaluación Tarea 1.pdf`
 
 ### Sección: Unidad 1
 *Sin módulos publicados en esta sección.*
@@ -150,9 +150,9 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
 *Sin módulos publicados en esta sección.*
 
 ## 💾 5. Inventario de Archivos Locales en Disco y Google Drive
-Total de archivos sincronizados: **27**
+Total de archivos sincronizados: **33**
 
-### 📂 `00 Información General/` (27 archivos)
+### 📂 `00 Información General/` (33 archivos)
 | Archivo | Tamaño | Modificado | Estado Google Drive |
 |---------|--------|------------|---------------------|
 | `00_Reglas del Curso.pdf` | 564.0 KB | 2026-11-08 17:18 | Sincronizado |
@@ -162,6 +162,8 @@ Total de archivos sincronizados: **27**
 | `Ayudantías/Ayudantía_04.pdf` | 721.0 KB | 2026-11-08 17:18 | Sincronizado |
 | `Ayudantías/Ayudantía_05.pdf` | 591.7 KB | 2026-11-08 17:18 | Sincronizado |
 | `Ayudantías/Ayudantía_06.pdf` | 711.7 KB | 2026-11-08 17:18 | Sincronizado |
+| `Ayudantías/Ayudantía_07.pdf` | 607.8 KB | 2026-11-21 10:07 | Sincronizado |
+| `Ayudantías/Ayudantía_08.pdf` | 752.8 KB | 2026-11-21 10:07 | Sincronizado |
 | `CIV 233 - Fundamentos del Análisis Estructural final.pdf` | 149.5 KB | 2026-11-08 17:18 | Sincronizado |
 | `Clases/01_Conceptos_Basicos.pdf` | 3.56 MB | 2026-11-08 17:18 | Sincronizado |
 | `Clases/02_Trabajo_Virtual.pdf` | 1.85 MB | 2026-11-08 17:18 | Sincronizado |
@@ -175,10 +177,14 @@ Total de archivos sincronizados: **27**
 | `Guías/Guía_02.pdf` | 888.8 KB | 2026-11-08 17:18 | Sincronizado |
 | `Guías/Guía_03.pdf` | 1.26 MB | 2026-11-08 17:18 | Sincronizado |
 | `Guías/Guía_05.pdf` | 1.23 MB | 2026-11-18 10:13 | Sincronizado |
+| `Guías/Guía_06.pdf` | 906.3 KB | 2026-11-21 10:07 | Sincronizado |
 | `Notas 15-10 [8365915].pdf` | 28.2 KB | 2026-11-18 10:13 | Sincronizado |
 | `Notas 15-10.pdf` | 26.1 KB | 2026-11-08 17:18 | Sincronizado |
+| `Notas 19-11.pdf` | 28.7 KB | 2026-11-21 10:07 | Sincronizado |
 | `Pautas Certámenes/Pauta_C01_2026-2.pdf` | 195.7 KB | 2026-11-08 17:18 | Sincronizado |
 | `Pautas Certámenes/Pauta_C02_2026-2.pdf` | 197.2 KB | 2026-11-18 10:13 | Sincronizado |
+| `Rúbrica Evaluación Tarea 1.pdf` | 59.7 KB | 2026-11-21 10:07 | Sincronizado |
+| `Tarea N°3/Tarea_03.pdf` | 549.0 KB | 2026-11-21 10:07 | Sincronizado |
 | `Tareas/Instrucciones instalacion SAP2000 27.pdf` | 189.9 KB | 2026-11-08 17:18 | Sincronizado |
 | `Tareas/Tarea_01.pdf` | 564.4 KB | 2026-11-08 17:18 | Sincronizado |
 | `Tareas/Tarea_02.pdf` | 468.4 KB | 2026-11-08 17:18 | Sincronizado |
@@ -241,6 +247,9 @@ Les recuerdo que mañana en el bloque y sala de ayudantía tendremos clases. Ade
 Saludos,
 
 ## 📜 Historial Incremental de Cambios
+### 🔄 Actualización: 2026-11-21 16:09 -03
+- Nuevos archivos en disco y repo: Notas 19-11.pdf, Rúbrica Evaluación Tarea 1.pdf, Ayudantía_07.pdf, Ayudantía_08.pdf, Guía_06.pdf, Tarea_03.pdf
+
 ### 🔄 Actualización: 2026-11-21 10:09 -03
 - Nueva tarea / entrega en Aula: «Tarea N°3» (Vence: 2026-12-02 23:59)
 - Nueva tarea / entrega en Aula: «Tarea N°3» (Vence: 2026-12-02 23:59)

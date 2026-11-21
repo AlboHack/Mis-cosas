@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Mecánica de Fluidos
 **Sigla:** `CIV244` | **Aula ID:** `62182` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62182
-**Última Sincronización:** `2026-11-21 10:09 -03`
+**Última Sincronización:** `2026-11-21 16:09 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV244`.
@@ -22,7 +22,7 @@ El estudiante desarrolla los fundamentos teóricos que le permiten modelar el co
 | # | Evaluación / Hito | Inicio | Cierre / Entrega | Cuenta Regresiva | Lugar | Fuente |
 |---|-------------------|--------|------------------|------------------|-------|--------|
 | 1 | **Certamen 3** | 2026-11-20 14:00 | 2026-11-20 16:30 | Finalizada | Campus San Joaquín | Aula API |
-| 2 | **Publicación notas finales** | 2026-11-27 12:00 | 2026-11-27 12:00 | En 6 días (27-Nov) | Aula USM / SIGA | Aula API |
+| 2 | **Publicación notas finales** | 2026-11-27 12:00 | 2026-11-27 12:00 | En 5 días (27-Nov) | Aula USM / SIGA | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 ### 📌 Entrega apuntes C1
