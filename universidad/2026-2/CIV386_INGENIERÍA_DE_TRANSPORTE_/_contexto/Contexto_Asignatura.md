@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Ingeniería de Transporte
 **Sigla:** `CIV386` | **Aula ID:** `62192` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62192
-**Última Sincronización:** `2026-11-18 11:07 -03`
+**Última Sincronización:** `2026-11-21 10:09 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV386`.
@@ -21,8 +21,8 @@ El estudiante distingue y analiza sistemas de transporte urbano, entendiendo los
 ## 📅 2. Calendario Consolidado de Evaluaciones y Entregas
 | # | Evaluación / Hito | Inicio | Cierre / Entrega | Cuenta Regresiva | Lugar | Fuente |
 |---|-------------------|--------|------------------|------------------|-------|--------|
-| 1 | **Certamen 3** | 2026-11-18 14:00 | 2026-11-18 16:30 | ¡VENCE HOY! (en 5 h) | B014 / B103 | Aula API |
-| 2 | **Certamen recuperativo** | 2026-12-02 14:00 | 2026-12-02 16:30 | En 14 días (02-Dec) | B014 / B103 | Aula API |
+| 1 | **Certamen 3** | 2026-11-18 14:00 | 2026-11-18 16:30 | Finalizada | B014 / B103 | Aula API |
+| 2 | **Certamen recuperativo** | 2026-12-02 14:00 | 2026-12-02 16:30 | En 11 días (02-Dec) | B014 / B103 | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 *No se registran módulos de tipo entrega en este curso.*
@@ -195,6 +195,22 @@ Total de archivos sincronizados: **40**
 | `Presentaciones/54 Paradojas.pdf` | 1.55 MB | 2026-11-08 17:18 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
+### 📣 CIV386 Indicaciones Certamen N°3
+- **Fecha:** 2026-11-20 16:57 | **Autor:** CRISTOBAL PINEDA ANDRADEZ
+> Estimados/as,
+
+Con respecto al Certamen N°3 del curso de Ingeniería de Transporte, los contenidos a controlar serán los siguientes:
+
+Unidad III Modelos de Oferta
+
+Unidad IV Modelos de Equilibrio
+
+Para la realización de este certamen, al igual que en las evaluaciones pasadas, dividiremos el curso en grupos según orden alfabético por apellido paterno:
+
+Desde AGURTO hasta GUZMAN: sala B103
+
+Desde HEN...
+
 ### 📣 CIV386 Suspende Clases 26/10
 - **Fecha:** 2026-10-25 21:22 | **Autor:** CRISTOBAL PINEDA ANDRADEZ
 > Estimados/as,
@@ -257,19 +273,10 @@ Muchas gracias, saludos.
 
 Cristóbal Pineda A.
 
-### 📣 CIV386 Indicaciones Certamen N°2
-- **Fecha:** 2026-10-04 21:34 | **Autor:** CRISTOBAL PINEDA ANDRADEZ
-> Estimados/as,
-
-Con respecto al Certamen N°2 del curso de Ingeniería de Transporte, los contenidos a controlar serán los siguientes:
-
-Unidad II Modelos de Demanda: Modelos de Distribución, Modelos de Partición Modal
-
-Para la realización de este certamen, al igual que en la evaluación pasada, separaremos el curso en dos salas según orden alfabético por apellido paterno:
-
-Desde AGURTO hasta HUDSON: s...
-
 ## 📜 Historial Incremental de Cambios
+### 🔄 Actualización: 2026-11-21 10:09 -03
+- Nuevos avisos docentes en foros: CIV386 Indicaciones Certamen N°3
+
 ### 🔄 Actualización: 2026-11-18 11:07 -03
 - Nuevos archivos en disco y repo: Ayudantia 3 (Enunciado).pdf, Ayudantia 3 (Pauta).pdf, Ayudantia 2 (Enunciado).pdf, Ayudantia 2 (Pauta).pdf
 

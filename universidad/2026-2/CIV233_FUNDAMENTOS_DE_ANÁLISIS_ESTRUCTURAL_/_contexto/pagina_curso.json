@@ -89,7 +89,9 @@
     "Ayudantía_03.pdf",
     "Ayudantía_04.pdf",
     "Ayudantía_05.pdf",
-    "Ayudantía_06.pdf"
+    "Ayudantía_06.pdf",
+    "Ayudantía_07.pdf",
+    "Ayudantía_08.pdf"
    ],
    "descripcion": "",
    "fechas": {},
@@ -104,7 +106,8 @@
     "Guía_01.pdf",
     "Guía_02.pdf",
     "Guía_03.pdf",
-    "Guía_05.pdf"
+    "Guía_05.pdf",
+    "Guía_06.pdf"
    ],
    "descripcion": "",
    "fechas": {},
@@ -117,7 +120,8 @@
    "archivos": [
     "Instrucciones instalacion SAP2000 27.pdf",
     "Tarea_01.pdf",
-    "Tarea_02.pdf"
+    "Tarea_02.pdf",
+    "Tarea_03.pdf"
    ],
    "descripcion": "",
    "fechas": {},
@@ -193,6 +197,40 @@
    "nombre": "Notas 09-11",
    "seccion": "Información General",
    "tipo": "resource",
+   "visible": 1
+  },
+  "8373686": {
+   "archivos": [
+    "Notas 19-11.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Notas 19-11",
+   "seccion": "Información General",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8373735": {
+   "archivos": [
+    "Rúbrica Evaluación Tarea 1.pdf"
+   ],
+   "descripcion": "",
+   "fechas": {},
+   "nombre": "Rúbrica Evaluación Tarea 1",
+   "seccion": "Información General",
+   "tipo": "resource",
+   "visible": 1
+  },
+  "8375490": {
+   "archivos": [],
+   "descripcion": "",
+   "fechas": {
+    "Apertura:": 1795230000,
+    "Cierre:": 1796266740
+   },
+   "nombre": "Tarea N°3",
+   "seccion": "Información General",
+   "tipo": "assign",
    "visible": 1
   }
  },

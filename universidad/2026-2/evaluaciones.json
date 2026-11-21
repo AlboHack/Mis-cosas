@@ -138,5 +138,15 @@
     "fin": "2026-12-02T20:00:00-03:00",
     "lugar": "A012",
     "fuente": "claude/Semestre_2026-2.md (corte 2026-10-25)"
+  },
+  {
+    "uid": "1144560",
+    "ramo": "FAE",
+    "codigo": "CIV233",
+    "evaluacion": "Vencimiento de Tarea N°3",
+    "inicio": "2026-12-02T23:59:00-03:00",
+    "fin": "2026-12-02T23:59:00-03:00",
+    "lugar": "Aula USM",
+    "fuente": "api:core_calendar_get_calendar_events"
   }
 ]

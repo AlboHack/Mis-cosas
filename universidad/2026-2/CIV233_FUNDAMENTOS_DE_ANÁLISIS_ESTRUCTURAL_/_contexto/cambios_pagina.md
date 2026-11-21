@@ -1,5 +1,14 @@
 # Cambios en la página del ramo
 
+## 2026-11-21
+
+- Archivos agregados en folder «Ayudantías» (Información General): Ayudantía_07.pdf, Ayudantía_08.pdf
+- Archivos agregados en folder «Guías» (Información General): Guía_06.pdf
+- Archivos agregados en folder «Tareas» (Información General): Tarea_03.pdf
+- Nuevo: assign «Tarea N°3» (Información General) [Apertura:: 2026-11-21 00:00; Cierre:: 2026-12-02 23:59]
+- Nuevo: resource «Notas 19-11» (Información General)
+- Nuevo: resource «Rúbrica Evaluación Tarea 1» (Información General)
+
 ## 2026-11-18
 
 - Archivos agregados en folder «Clases» (Información General): 06_Introduccion_AnPlastico.pdf

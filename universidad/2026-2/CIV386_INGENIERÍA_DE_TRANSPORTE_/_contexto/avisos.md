@@ -1,5 +1,38 @@
 # Avisos y Novedades - Transporte
 
+## CIV386 Indicaciones Certamen N°3
+- **Fecha:** 2026-11-20 16:57
+- **Autor:** CRISTOBAL PINEDA ANDRADEZ
+- **Foro:** Noticias y avisos
+- **ID:** d507536
+
+Estimados/as,
+
+Con respecto al Certamen N°3 del curso de Ingeniería de Transporte, los contenidos a controlar serán los siguientes:
+
+Unidad III Modelos de Oferta
+
+Unidad IV Modelos de Equilibrio
+
+Para la realización de este certamen, al igual que en las evaluaciones pasadas, dividiremos el curso en grupos según orden alfabético por apellido paterno:
+
+Desde AGURTO hasta GUZMAN: sala B103
+
+Desde HENRÍQUEZ OHMKE hasta VENEGAS: sala B014
+
+Con respecto a los materiales permitidos durante el certamen, éstos son:
+
+Calculadora de tipo científica o TI (altamente necesaria!)
+
+Cualquier tipo de apunte en soporte papel
+
+Estará estrictamente prohibido el uso de otros dispositivos tecnológicos (celulares, tablets, notebooks, etc.). El uso de cualquiera de éstos será motivo de descalificación automática del certamen, y se aplicarán las medidas disciplinarias correspondientes.
+
+Saludos,
+Cristóbal Pineda A.
+
+---
+
 ## CIV386 Suspende Clases 26/10
 - **Fecha:** 2026-10-25 21:22
 - **Autor:** CRISTOBAL PINEDA ANDRADEZ

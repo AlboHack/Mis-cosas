@@ -1,5 +1,40 @@
 # Avisos y Novedades - Fluidos
 
+## Instrucciones C3
+**⚠ POSIBLE CAMBIO DE EVALUACIÓN**
+- **Fecha:** 2026-11-20 09:25
+- **Autor:** LUCIANA SOFIA TIRAFERRI COLOMBO
+- **Foro:** Noticias y avisos
+- **ID:** d507381
+
+¡Buenos días!
+
+Para la prueba de hoy:
+
+Horario de los viernes (11-14).
+
+Sala F400 desde Albornoz hasta Manriquez.
+
+Sala F402 desde Miranda hasta Venegas.
+
+Por favor, ubicarse en la sala como lo hicimos la vez anterior.
+
+Hojas blancas tamaño carta con nombre para sus respuestas. En ningún caso con recortes de anillado.
+
+Cada problema debe ser resuelto y entregado en un conjunto de hojas independiente.
+
+Teléfonos deben permanecer apagados y guardados en sus mochilas.
+
+Mochilas y otros deben dejarse adelante, no entre los puestos o arriba de las mesas.
+
+Sin calculadora.
+
+Sin formulario. Se les entregarán las formulas necesarias.
+
+Saludos.
+
+---
+
 ## Clase martes 03/11
 - **Fecha:** 2026-11-02 17:28
 - **Autor:** FRANCISCO JOSE SOTO SIMPSON

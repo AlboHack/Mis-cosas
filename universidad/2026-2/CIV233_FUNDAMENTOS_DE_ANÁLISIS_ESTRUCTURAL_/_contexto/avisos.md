@@ -1,5 +1,51 @@
 # Avisos y Novedades - FAE
 
+## Tarea N°3 y Guía de Ejercicios 6
+- **Fecha:** 2026-11-21 01:27
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d507628
+
+Estimados/as:
+
+Les informo que ya se encuentra disponible en AULA el enunciado de la Tarea N°3 del curso, cuya fecha de entrega esta programada para el miércoles 2 de diciembre. Además, les comento que ya se encuentra disponible la guía de ejercicios N°6 correspondiente a la unidad de Análisis Plástico.
+
+Saludos,
+
+---
+
+## Notas Tarea 1
+- **Fecha:** 2026-11-19 22:03
+- **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+- **Foro:** Noticias y avisos
+- **ID:** d507294
+
+Estimados/as:
+
+Les informo que en la página principal de AULA se encuentra disponible la Rúbrica de Evaluación de la Tarea 1, junto con las notas respectivas.
+
+Saludos,
+
+---
+
+## FAE - Ayudantía 8
+- **Fecha:** 2026-11-19 20:24
+- **Autor:** GABRIEL ALEJANDRO FLORES FUENTES
+- **Foro:** Noticias y avisos
+- **ID:** d507279
+
+Buenas tardes, estimad@s compañer@s:
+
+Esperando que se encuentren bien, les recuerdo que mañana viernes 20/11 tenemos la Ayudantía 8 del curso, que tratará de Líneas de Influencia. Los espero para sus consultas.
+
+Ánimo con su semestre!
+
+Saludos,
+
+Gabriel FF
+
+---
+
 ## Recorreción Certamen 2
 - **Fecha:** 2026-11-15 13:44
 - **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ

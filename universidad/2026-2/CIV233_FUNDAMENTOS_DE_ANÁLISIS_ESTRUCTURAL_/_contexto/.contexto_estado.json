@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-18 11:07:37",
+  "timestamp": "2026-11-21 10:09:45",
   "archivos": {
     "00_Reglas del Curso.pdf": 577486,
     "CIV 233 - Fundamentos del Análisis Estructural final.pdf": 153139,
@@ -61,16 +61,32 @@
       "attachments": [
         "Tarea_02.pdf"
       ]
+    },
+    "8375490": {
+      "name": "Tarea N°3",
+      "due": 1796266740,
+      "cutoff": 0,
+      "attachments": [
+        "Tarea_03.pdf"
+      ]
+    },
+    "139576": {
+      "name": "Tarea N°3",
+      "due": 1796266740,
+      "cutoff": 0,
+      "attachments": [
+        "Tarea_03.pdf"
+      ]
     }
   },
   "avisos": [
+    "Tarea N°3 y Guía de Ejercicios 6",
+    "Notas Tarea 1",
+    "FAE - Ayudantía 8",
     "Recorreción Certamen 2",
     "Fecha Entrega Tarea N°2",
-    "Clase Viernes 12/11",
-    "Link Teams Clase 11-11",
-    "Clase Miércoles 11 Noviembre",
-    "Notas Certamen 2"
+    "Clase Viernes 12/11"
   ],
   "n_sections": 4,
-  "n_modules": 17
+  "n_modules": 20
 }

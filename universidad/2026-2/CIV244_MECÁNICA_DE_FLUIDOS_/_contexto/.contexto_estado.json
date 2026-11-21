@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-18 11:07:38",
+  "timestamp": "2026-11-21 10:09:45",
   "archivos": {
     "CIV 244 - Mecánica de Fluidos final.pdf": 146822,
     "CIV244-2026-2_Programacion_R1.pdf": 102627,
@@ -118,12 +118,12 @@
     }
   },
   "avisos": [
+    "Instrucciones C3",
     "Clase martes 03/11",
     "Notas C2",
     "Entrega apuntes C2",
     "Actividades semana 26oct",
-    "Instrucciones C2",
-    "Laboratorio 2 recuperativo"
+    "Instrucciones C2"
   ],
   "n_sections": 8,
   "n_modules": 29

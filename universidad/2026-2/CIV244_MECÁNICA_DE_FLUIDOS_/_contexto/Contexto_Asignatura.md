@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Mecánica de Fluidos
 **Sigla:** `CIV244` | **Aula ID:** `62182` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62182
-**Última Sincronización:** `2026-11-18 11:07 -03`
+**Última Sincronización:** `2026-11-21 10:09 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV244`.
@@ -21,8 +21,8 @@ El estudiante desarrolla los fundamentos teóricos que le permiten modelar el co
 ## 📅 2. Calendario Consolidado de Evaluaciones y Entregas
 | # | Evaluación / Hito | Inicio | Cierre / Entrega | Cuenta Regresiva | Lugar | Fuente |
 |---|-------------------|--------|------------------|------------------|-------|--------|
-| 1 | **Certamen 3** | 2026-11-20 14:00 | 2026-11-20 16:30 | En 2 días (20-Nov) | Campus San Joaquín | Aula API |
-| 2 | **Publicación notas finales** | 2026-11-27 12:00 | 2026-11-27 12:00 | En 9 días (27-Nov) | Aula USM / SIGA | Aula API |
+| 1 | **Certamen 3** | 2026-11-20 14:00 | 2026-11-20 16:30 | Finalizada | Campus San Joaquín | Aula API |
+| 2 | **Publicación notas finales** | 2026-11-27 12:00 | 2026-11-27 12:00 | En 6 días (27-Nov) | Aula USM / SIGA | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 ### 📌 Entrega apuntes C1
@@ -296,6 +296,24 @@ Total de archivos sincronizados: **89**
 | `Ayudantía N°11/Pauta_Ayudantía_N_11.pdf` | 311.3 KB | 2026-11-18 10:13 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
+### 📣 Instrucciones C3 ⚠️ **[POSIBLE CAMBIO DE EVALUACIÓN]**
+- **Fecha:** 2026-11-20 09:25 | **Autor:** LUCIANA SOFIA TIRAFERRI COLOMBO
+> ¡Buenos días!
+
+Para la prueba de hoy:
+
+Horario de los viernes (11-14).
+
+Sala F400 desde Albornoz hasta Manriquez.
+
+Sala F402 desde Miranda hasta Venegas.
+
+Por favor, ubicarse en la sala como lo hicimos la vez anterior.
+
+Hojas blancas tamaño carta con nombre para sus respuestas. En ningún caso con recortes de anillado.
+
+Cada problema debe ser resuelto y entregado en un conjunto de hojas independien...
+
 ### 📣 Clase martes 03/11
 - **Fecha:** 2026-11-02 17:28 | **Autor:** FRANCISCO JOSE SOTO SIMPSON
 > Hola,
@@ -349,17 +367,10 @@ Cada problema debe ser resuelto y entregado en un conjunto de hojas independient
 
 Teléfonos ...
 
-### 📣 Laboratorio 2 recuperativo ⚠️ **[POSIBLE CAMBIO DE EVALUACIÓN]**
-- **Fecha:** 2026-10-20 18:49 | **Autor:** RICARDO ALFONSO QUINTEROS OBREGON
-> Estimados,
-
-De acuerdo a los horarios q me han enviado, la programación del laboratorio queda para mañana, miércoles 21, con dos opciones: bloques 3-4 y 5-6. Pueden asistir en cualquiera de esos bloques sin necesidad de inscribirse.
-
-Saludos
-
-Ricardo Quinteros
-
 ## 📜 Historial Incremental de Cambios
+### 🔄 Actualización: 2026-11-21 10:09 -03
+- Nuevos avisos docentes en foros: Instrucciones C3
+
 ### 🔄 Actualización: 2026-11-18 11:07 -03
 - Nuevos archivos en disco y repo: Apunte-17-LeyesConservacion-TeoremaTrasporteReynolds.pdf, Apunte-18 -LeyesConservacion-EjMomentumLineal.pdf, Apunte-19-LeyesConservacion-EjMomentumAngular.pdf, Apunte-20-LeyesConservacion-Energia.pdf, Apunte-21-FlujoTurbulento.pdf, Apunte-22-CapaLimite.pdf, CIV244_2022_C3.pdf, CIV244_2022_C3_Pauta.pdf, CIV244_2023_C3.pdf, CIV244_2023_C3_Pauta.pdf, CIV244_2024_C3.pdf, CIV244_Clase_20_handout.pdf, Desarrollo Ayudantía 9.pdf, Ayudantía n°10 CIV224.pdf, Pauta Ayudantía 10.pdf, Pauta_Ayudantía_N_11.pdf, Ayudantía_11.pdf
 

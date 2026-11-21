@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-18 11:07:39",
+  "timestamp": "2026-11-21 10:09:46",
   "archivos": {
     "2026pr Notas.pdf": 69359,
     "CIV 386 - Ingeniería de Transporte final.pdf": 146048,
@@ -44,12 +44,12 @@
   },
   "assignments": {},
   "avisos": [
+    "CIV386 Indicaciones Certamen N°3",
     "CIV386 Suspende Clases 26/10",
     "Re: CIV386 Notas C2",
     "CIV386 Notas C2",
     "Re: CIV386 Indicaciones Certamen N°2",
-    "Re: CIV386 Indicaciones Certamen N°2",
-    "CIV386 Indicaciones Certamen N°2"
+    "Re: CIV386 Indicaciones Certamen N°2"
   ],
   "n_sections": 5,
   "n_modules": 72

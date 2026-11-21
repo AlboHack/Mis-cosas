@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Fundamentos de Análisis Estructural
 **Sigla:** `CIV233` | **Aula ID:** `62178` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62178
-**Última Sincronización:** `2026-11-18 11:07 -03`
+**Última Sincronización:** `2026-11-21 10:09 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV233`.
@@ -25,8 +25,9 @@ El estudiante determina las fuerzas internas y desplazamientos causados por soli
 | 1 | **Certamen 2** | 2026-10-27 17:30 | 2026-10-27 20:00 | Finalizada | B-103 / A012 | Aula API |
 | 2 | **Entrega Tarea 1 SAP2000** | 2026-10-27 23:59 | 2026-10-27 23:59 | Finalizada | Aula USM | Aula API |
 | 3 | **Certamen 3** | 2026-11-10 17:30 | 2026-11-10 20:00 | Finalizada | B-103 | Aula API |
-| 4 | **Vencimiento de Tarea N°2** | 2026-11-20 23:59 | 2026-11-20 23:59 | En 2 días (20-Nov) | Aula USM | Aula API |
-| 5 | **Certamen 4** | 2026-12-02 17:30 | 2026-12-02 20:00 | En 14 días (02-Dec) | A012 | Aula API |
+| 4 | **Vencimiento de Tarea N°2** | 2026-11-20 23:59 | 2026-11-20 23:59 | Finalizada | Aula USM | Aula API |
+| 5 | **Certamen 4** | 2026-12-02 17:30 | 2026-12-02 20:00 | En 11 días (02-Dec) | A012 | Aula API |
+| 6 | **Vencimiento de Tarea N°3** | 2026-12-02 23:59 | 2026-12-02 23:59 | En 11 días (02-Dec) | Aula USM | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 ### 📌 Tarea N°1
@@ -42,9 +43,18 @@ El estudiante determina las fuerzas internas y desplazamientos causados por soli
 - **Enlace en Aula:** [Tarea N°2](https://aula.usm.cl/mod/assign/view.php?id=8361195)
 - **Sección:** Información General
 - **Habilitada desde:** 2026-11-01 00:00
-- **Fecha Límite (Due Date):** 2026-11-20 23:59 (En 2 días (20-Nov))
+- **Fecha Límite (Due Date):** 2026-11-20 23:59 (Finalizada)
 - **Archivos de Enunciado Adjuntos:**
   - 📄 **Tarea_02.pdf** (`00 Información General/Tareas/Tarea_02.pdf`)
+- **Instrucciones:** *Sin texto adicional en la descripción; ver archivos adjuntos.*
+
+### 📌 Tarea N°3
+- **Enlace en Aula:** [Tarea N°3](https://aula.usm.cl/mod/assign/view.php?id=8375490)
+- **Sección:** Información General
+- **Habilitada desde:** 2026-11-21 00:00
+- **Fecha Límite (Due Date):** 2026-12-02 23:59 (En 11 días (02-Dec))
+- **Archivos de Enunciado Adjuntos:**
+  - 📄 **Tarea_03.pdf** (Descarga gestionada)
 - **Instrucciones:** *Sin texto adicional en la descripción; ver archivos adjuntos.*
 
 ## 🗂️ 4. Estructura Detallada de Unidades y Módulos en Aula USM
@@ -101,25 +111,34 @@ C4: Miércoles 2 de Diciembre - Bloques 13-14-15-16 | Sala A012
   - 📎 `Ayudantía_04.pdf` (721.0 KB) -> `00 Información General/Ayudantías/Ayudantía_04.pdf`
   - 📎 `Ayudantía_05.pdf` (591.7 KB) -> `00 Información General/Ayudantías/Ayudantía_05.pdf`
   - 📎 `Ayudantía_06.pdf` (711.7 KB) -> `00 Información General/Ayudantías/Ayudantía_06.pdf`
+  - 📎 `Ayudantía_07.pdf` (607.8 KB)
+  - 📎 `Ayudantía_08.pdf` (752.8 KB)
 - **[📁 Carpeta] Guías**
   - 📎 `Guía_01.pdf` (1.45 MB) -> `00 Información General/Guías/Guía_01.pdf`
   - 📎 `Guía_02.pdf` (888.8 KB) -> `00 Información General/Guías/Guía_02.pdf`
   - 📎 `Guía_03.pdf` (1.26 MB) -> `00 Información General/Guías/Guía_03.pdf`
   - 📎 `Guia_04.pdf` (2.53 MB) -> `00 Información General/Guías/Guia_04.pdf`
   - 📎 `Guía_05.pdf` (1.23 MB) -> `00 Información General/Guías/Guía_05.pdf`
+  - 📎 `Guía_06.pdf` (906.3 KB)
 - **[📁 Carpeta] Tareas**
   - 📎 `Instrucciones instalacion SAP2000 27.pdf` (189.9 KB) -> `00 Información General/Tareas/Instrucciones instalacion SAP2000 27.pdf`
   - 📎 `Tarea_01.pdf` (564.4 KB) -> `00 Información General/Tareas/Tarea_01.pdf`
   - 📎 `Tarea_02.pdf` (468.4 KB) -> `00 Información General/Tareas/Tarea_02.pdf`
+  - 📎 `Tarea_03.pdf` (549.0 KB)
 - **[📝 Tarea/Entrega] Tarea N°1**
 - **[📝 Tarea/Entrega] Tarea N°2**
+- **[📝 Tarea/Entrega] Tarea N°3**
 - **[📄 Documento/Recurso] Notas 15-10**
   - 📎 `Notas 15-10.pdf` (26.1 KB) -> `00 Información General/Notas 15-10.pdf`
 - **[📄 Documento/Recurso] Notas 09-11**
   - 📎 `Notas 15-10.pdf` (28.2 KB) -> `00 Información General/Notas 15-10.pdf`
+- **[📄 Documento/Recurso] Notas 19-11**
+  - 📎 `Notas 19-11.pdf` (28.7 KB)
 - **[📁 Carpeta] Pautas Certámenes**
   - 📎 `Pauta_C01_2026-2.pdf` (195.7 KB) -> `00 Información General/Pautas Certámenes/Pauta_C01_2026-2.pdf`
   - 📎 `Pauta_C02_2026-2.pdf` (197.2 KB) -> `00 Información General/Pautas Certámenes/Pauta_C02_2026-2.pdf`
+- **[📄 Documento/Recurso] Rúbrica Evaluación Tarea 1**
+  - 📎 `Rúbrica Evaluación Tarea 1.pdf` (59.7 KB)
 
 ### Sección: Unidad 1
 *Sin módulos publicados en esta sección.*
@@ -165,6 +184,34 @@ Total de archivos sincronizados: **27**
 | `Tareas/Tarea_02.pdf` | 468.4 KB | 2026-11-08 17:18 | Sincronizado |
 
 ## 📢 6. Avisos y Novedades Docentes (Foros de Aula)
+### 📣 Tarea N°3 y Guía de Ejercicios 6
+- **Fecha:** 2026-11-21 01:27 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+> Estimados/as:
+
+Les informo que ya se encuentra disponible en AULA el enunciado de la Tarea N°3 del curso, cuya fecha de entrega esta programada para el miércoles 2 de diciembre. Además, les comento que ya se encuentra disponible la guía de ejercicios N°6 correspondiente a la unidad de Análisis Plástico.
+
+Saludos,
+
+### 📣 Notas Tarea 1
+- **Fecha:** 2026-11-19 22:03 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
+> Estimados/as:
+
+Les informo que en la página principal de AULA se encuentra disponible la Rúbrica de Evaluación de la Tarea 1, junto con las notas respectivas.
+
+Saludos,
+
+### 📣 FAE - Ayudantía 8
+- **Fecha:** 2026-11-19 20:24 | **Autor:** GABRIEL ALEJANDRO FLORES FUENTES
+> Buenas tardes, estimad@s compañer@s:
+
+Esperando que se encuentren bien, les recuerdo que mañana viernes 20/11 tenemos la Ayudantía 8 del curso, que tratará de Líneas de Influencia. Los espero para sus consultas.
+
+Ánimo con su semestre!
+
+Saludos,
+
+Gabriel FF
+
 ### 📣 Recorreción Certamen 2
 - **Fecha:** 2026-11-15 13:44 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
 > Estimados/as:
@@ -193,43 +240,12 @@ Les recuerdo que mañana en el bloque y sala de ayudantía tendremos clases. Ade
 
 Saludos,
 
-### 📣 Link Teams Clase 11-11
-- **Fecha:** 2026-11-11 16:51 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
-> Estimados/as:
-
-Adjunto link de la clase de hoy. Comenzamos a las 17:30.
-
-Reunión de Microsoft Teams
-
-Unirse: https://teams.microsoft.com/meet/2415006811811433?p=WrDgyo2k61WA4aimak
-
-Id. de reunión: 241 500 681 181 143 3
-
-Código de acceso: Rh6Li6ve
-
-Saludos,
-
-### 📣 Clase Miércoles 11 Noviembre
-- **Fecha:** 2026-11-10 23:38 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
-> Estimados/as:
-
-Les informo que la clase de mañana se realizará exclusivamente durante los bloques 13-14 (17:30 a 18:40), en modalidad online.
-
-Esta modificación se debe a los cortes de carretera que probablemente se mantengan durante la jornada de mañana, los cuales podrían generar retrasos importantes en mi traslado hacia la Universidad desde la Región de Valparaíso, donde resido.
-
-El enlace de a...
-
-### 📣 Notas Certamen 2
-- **Fecha:** 2026-11-09 10:38 | **Autor:** ESTEBAN ARIEL CORTÉS HERNÁNDEZ
-> Estimados/as:
-
-Les comento que las notas del Certamen N°2 del curso se encuentran disponibles en la página principal de AULA.
-
-Los certámenes serán entregados el día miércoles durante el horario de clases.
-
-Saludos,
-
 ## 📜 Historial Incremental de Cambios
+### 🔄 Actualización: 2026-11-21 10:09 -03
+- Nueva tarea / entrega en Aula: «Tarea N°3» (Vence: 2026-12-02 23:59)
+- Nueva tarea / entrega en Aula: «Tarea N°3» (Vence: 2026-12-02 23:59)
+- Nuevos avisos docentes en foros: Tarea N°3 y Guía de Ejercicios 6, Notas Tarea 1, FAE - Ayudantía 8
+
 ### 🔄 Actualización: 2026-11-18 11:07 -03
 - Nuevos archivos en disco y repo: Notas 15-10 [8365915].pdf, 06_Introduccion_AnPlastico.pdf, Guía_05.pdf, Pauta_C02_2026-2.pdf
 
