@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Ingeniería de Transporte
 **Sigla:** `CIV386` | **Aula ID:** `62192` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62192
-**Última Sincronización:** `2026-11-21 16:09 -03`
+**Última Sincronización:** `2026-11-21 22:13 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV386`.
@@ -22,7 +22,7 @@ El estudiante distingue y analiza sistemas de transporte urbano, entendiendo los
 | # | Evaluación / Hito | Inicio | Cierre / Entrega | Cuenta Regresiva | Lugar | Fuente |
 |---|-------------------|--------|------------------|------------------|-------|--------|
 | 1 | **Certamen 3** | 2026-11-18 14:00 | 2026-11-18 16:30 | Finalizada | B014 / B103 | Aula API |
-| 2 | **Certamen recuperativo** | 2026-12-02 14:00 | 2026-12-02 16:30 | En 11 días (02-Dec) | B014 / B103 | Aula API |
+| 2 | **Certamen recuperativo** | 2026-12-02 14:00 | 2026-12-02 16:30 | En 10 días (02-Dec) | B014 / B103 | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 *No se registran módulos de tipo entrega en este curso.*

@@ -1,7 +1,7 @@
 # 📘 Contexto Integral de Asignatura: Fundamentos de Ingeniería de Construcción y Administración
 **Sigla:** `CIV222` | **Aula ID:** `62177` | **Semestre:** 2026-2 (UTFSM)
 **URL Aula USM:** https://aula.usm.cl/course/view.php?id=62177
-**Última Sincronización:** `2026-11-21 16:09 -03`
+**Última Sincronización:** `2026-11-21 22:13 -03`
 
 > [!NOTE]
 > Este archivo es la **fuente única de verdad** para Claude y agentes de asistencia académica sobre `CIV222`.
@@ -25,7 +25,7 @@ El estudiante inicia el aprendizaje al concepto de proyecto en la industria de l
 | 2 | **Caso Práctico 2** | 2026-11-02 16:00 | 2026-11-02 18:40 | Finalizada | Aula USM | Aula API |
 | 3 | **Certamen 2** | 2026-11-09 16:00 | 2026-11-09 18:40 | Finalizada | Sala de cátedra | Aula API |
 | 4 | **Vencimiento de CIV222 2026-20 Entrega Tarea 2 (Gestión de Costos)** | 2026-11-09 23:59 | 2026-11-09 23:59 | Finalizada | Aula USM | Aula API |
-| 5 | **Presentación 2 + Informe Final** | 2026-11-23 16:00 | 2026-11-23 18:40 | En 2 días (23-Nov) | Sala de cátedra / Aula USM | Aula API |
+| 5 | **Presentación 2 + Informe Final** | 2026-11-23 16:00 | 2026-11-23 18:40 | Vence mañana | Sala de cátedra / Aula USM | Aula API |
 
 ## 📝 3. Entregas, Tareas y Asignaciones en Aula (mod_assign)
 ### 📌 CIV222 2026-20 Entrega Tarea 2 (Gestión de Costos)
